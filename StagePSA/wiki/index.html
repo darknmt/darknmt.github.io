@@ -3187,7 +3187,7 @@ Direction à suivre quand on n'est pas dans un EV
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#darknmt">
 darknmt
-</a> 4th August 2016 at 7:58pm
+</a> 4th August 2016 at 8:06pm
 </div>
 </div>
 <div class=" tc-reveal">
@@ -3206,7 +3206,7 @@ color:#333333;">
 </div>
 <div class="tc-tiddler-body tc-reveal"><p>Il n'est pas précisé dans l'article, non plus. Mais l'idée est quand même triviale.</p><ul><li>Le cross field nous propose 4 directions</li><li>Choisir la direction la plus proche de celle que l'on est arrivé avec.</li><li>Lorsque on est proche d'une autre branche, on le joint</li></ul><h2 class=""><strong>Des subtilités</strong></h2><ul><li>Collage de deux branches qui sont proches l'une de l'autre.</li><li>Le resultat n'est pas sous forme NURBS 2D.</li></ul><h2 class=""><strong>Résultat d'implémentation</strong></h2><p>Les deux cas suivant se font sans Metropolis (pour faciliter le débogage)</p><blockquote class="tc-quote"><p><img src="./images/cross-field/test22queue.png"></p><p><code>/images/cross-field/test22queue.png</code>
 </p><cite>Parcour en largeur (file d'attente)</cite></blockquote><blockquote class="tc-quote"><p><img src="./images/cross-field/test22stack.png"></p><p><code>/images/cross-field/test22stack.png</code>
-</p><cite>Parcour en profondeur (pile LIFO) </cite></blockquote><h2 class=""><strong>Conversion en patchs</strong></h2><p>J'arrive à 2 algorithmes pour le faire:</p><p>Quand on parcourt le graphe, on stoque (puis mettre à jour) tous les voisins d'un sommet (déjà fait)</p><p><strike><u>Algorithme 1:</u> (à compléter)
+</p><cite>Parcour en profondeur (pile LIFO) </cite></blockquote><h2 class=""><strong>Les éléments aplatis</strong></h2><p>Cela peut venir:</p><ul><li>D'un mauvais cross-field (la discrétisation, le solveur, etc...)</li><li>Des limites de la méthode (voir l'image suivante dans l'article original).</li></ul><blockquote><p><img src="./images/cross-field/Limit-of-method.png"></p></blockquote><h2 class=""><strong>Conversion en patchs</strong></h2><p>J'arrive à 2 algorithmes pour le faire:</p><p>Quand on parcourt le graphe, on stoque (puis mettre à jour) tous les voisins d'un sommet (déjà fait)</p><p><strike><u>Algorithme 1:</u> (à compléter)
 
 *Effectuer un sort de parcours qui détecte les sous régions (difficulté: comment traiter le bord). Une idée est de parcourir toujour dans sens antihoraire</strike></p><p><u>Algorithme 2:</u> (pratique)</p><ul><li>Intégrer le bord dans le graphe (une dixaine de sommets et d'arête de plus. E.g. dans l'exemple en dessus, il faut ajouter 16 arêtes et 8 sommets). </li><li>Puis chercher tous les boucles de longeur minimale (<em>subtilité:</em> quelle metrique).</li></ul><h2 class=""><strong>Encore à faire</strong></h2><ul><li><strong>Des éléments aplatis.</strong></li><li>Un solveur de Mix-Integer Programming</li><li>La conversion de patchs vers NURBS 2D</li><li><strong>La documentation (<em>Sphinx pour Python</em>)</strong></li></ul></div>
 
