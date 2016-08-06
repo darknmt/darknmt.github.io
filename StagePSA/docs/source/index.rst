@@ -1,0 +1,23 @@
+.. Trimmed Surface Meshing documentation master file, created by
+   sphinx-quickstart on Fri Aug  5 13:32:54 2016.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to Trimmed Surface Meshing's documentation!
+===================================================
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   NURBS.rst
+
+.. automodule:: NURBS_Class
+    :members:
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
