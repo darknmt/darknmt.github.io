@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>NURBS_Class module &mdash; Trimmed Surface Meshing 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Trimmed Surface Meshing 0.1 documentation" href="index.html"/>
+        <link rel="up" title="code" href="modules.html"/>
+        <link rel="next" title="drawCurve module" href="drawCurve.html"/>
+        <link rel="prev" title="NURBS module" href="NURBS.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Trimmed Surface Meshing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dependency.html">Dependency</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Interpolate2DSurface.html">Interpolate2DSurface module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MetropolisTest.html">MetropolisTest module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NURBS.html">NURBS module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">NURBS_Class module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drawCurve.html">drawCurve module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drawNURBS.html">drawNURBS module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drawSurface.html">drawSurface module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Trimmed Surface Meshing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="modules.html">code</a> &raquo;</li>
+      
+    <li>NURBS_Class module</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/NURBS_Class.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-NURBS_Class">
+<span id="nurbs-class-module"></span><h1>NURBS_Class module<a class="headerlink" href="#module-NURBS_Class" title="Permalink to this headline">¶</a></h1>
+<p>Implementation of NURBS/BSpline class.</p>
+<p>We overide the __add__ operator to join 2 NURBS/BSpline quickly by sing NURBS1 + NURBS2.</p>
+<p>Our code is more adapted for second-order NURBS.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">param dknot:</th><td class="field-body">knot vector.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">type dknot:</th><td class="field-body">float array</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">param dB:</th><td class="field-body">Base points.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">type dB:</th><td class="field-body">point array</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">param dp:</th><td class="field-body">polynomial degree (default=2).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">type dp:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="NURBS_Class.knot">
+<code class="descclassname">NURBS_Class.</code><code class="descname">knot</code><a class="headerlink" href="#NURBS_Class.knot" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float array</em> &#8211; knot vector.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="NURBS_Class.Base">
+<code class="descclassname">NURBS_Class.</code><code class="descname">Base</code><a class="headerlink" href="#NURBS_Class.Base" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>point array</em> &#8211; base points.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="NURBS_Class.p">
+<code class="descclassname">NURBS_Class.</code><code class="descname">p</code><a class="headerlink" href="#NURBS_Class.p" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> &#8211; polynomial degree.</p>
+</dd></dl>
+
+<p class="rubric">Examples</p>
+<p>A square created by joining parallel lines.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">BSpline</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">BSpline</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">BSpline</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">BSpline</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">rec</span> <span class="o">=</span> <span class="n">b</span><span class="o">+</span><span class="n">a</span><span class="o">+</span><span class="n">d</span><span class="o">+</span><span class="n">c</span>
+<span class="n">rec</span><span class="o">.</span><span class="n">drawCurve</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>A curve created by joining 4 NURBS.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">BSpline</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[[</span><span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">BSpline</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[[</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">]])</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">BSpline</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]])</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">BSpline</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[[</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">]])</span>
+<span class="n">trimCurve</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span><span class="o">+</span><span class="n">d</span>
+<span class="n">trimCurve</span><span class="o">.</span><span class="n">drawCurve</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="class">
+<dt id="NURBS_Class.BSpline">
+<em class="property">class </em><code class="descclassname">NURBS_Class.</code><code class="descname">BSpline</code><span class="sig-paren">(</span><em>dknot</em>, <em>dB</em>, <em>dp=2</em><span class="sig-paren">)</span><a class="headerlink" href="#NURBS_Class.BSpline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="NURBS_Class.BSpline.drawCurve">
+<code class="descname">drawCurve</code><span class="sig-paren">(</span><em>nPoint=300</em>, <em>c='red'</em>, <em>lw=1</em><span class="sig-paren">)</span><a class="headerlink" href="#NURBS_Class.BSpline.drawCurve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Drawing NURBS/BSpline using matplotlib</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nPoint=300</strong> (<em>int</em>) &#8211; number of discret points (default: 300)</li>
+<li><strong>c='red'</strong> &#8211; color (default: &#8216;red&#8217;)</li>
+<li><strong>lw=1</strong> &#8211; line width (default = 1)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">BSpline</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[[</span><span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">BSpline</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[[</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">]])</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">BSpline</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]])</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">BSpline</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[[</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">]])</span>
+<span class="n">trimCurve</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span><span class="o">+</span><span class="n">d</span>
+<span class="n">trimCurve</span><span class="o">.</span><span class="n">drawCurve</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="NURBS_Class.BSpline.reverse">
+<code class="descname">reverse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#NURBS_Class.BSpline.reverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reverse the parametric direction of the curve.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">New class describing the same curve but in the reversed direction.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="NURBS_Class.BSpline.toArray">
+<code class="descname">toArray</code><span class="sig-paren">(</span><em>nPoint=300</em><span class="sig-paren">)</span><a class="headerlink" href="#NURBS_Class.BSpline.toArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert current class to an array composed by discrete (x,y) value.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Used mainly in debugging or plotting.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nPoint</strong> (<em>int</em>) &#8211; number of points for discretization.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="drawCurve.html" class="btn btn-neutral float-right" title="drawCurve module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="NURBS.html" class="btn btn-neutral" title="NURBS module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Manh Tien NGUYEN.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

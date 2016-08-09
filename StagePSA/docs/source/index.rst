@@ -9,12 +9,12 @@ Welcome to Trimmed Surface Meshing's documentation!
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
-   NURBS.rst
+   dependency.rst
 
-.. automodule:: NURBS_Class
-    :members:
+   modules.rst
+
 Indices and tables
 ==================
 

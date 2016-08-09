@@ -1,3 +1,9 @@
+""" This is my attemp to write a Mixed-Integer-Programming Solver. As I have not completed
+this part, the documentation may not appeared clear and well-organized.
+
+
+"""
+
 import numpy as np
 from NURBS_Class import BSpline
 import matplotlib.pyplot as plt
@@ -191,11 +197,11 @@ def drawCrossFieldFromAngle(arrAngleField, arrHasValue, sqrPoint=[0,0], sqrSide=
 
 
 
-"""
-"""""""""""""""""""""""""""""""""""""""
-"""          Test goes here         """
-"""""""""""""""""""""""""""""""""""""""
-"""
+
+#######################################
+###          Test goes here         ###
+#######################################
+
 #draw square
 a = BSpline([0, 0, 0, 1, 1, 1], [[2, 2], [0, 2], [-2, 2]])
 b = BSpline([0, 0, 0, 1, 1, 1], [[2, -2], [2, 0], [2, 2]])

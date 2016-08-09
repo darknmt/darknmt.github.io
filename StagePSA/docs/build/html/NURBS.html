@@ -31,7 +31,9 @@
 
   
     <link rel="top" title="Trimmed Surface Meshing 0.1 documentation" href="index.html"/>
-        <link rel="prev" title="Welcome to Trimmed Surface Meshing’s documentation!" href="index.html"/> 
+        <link rel="up" title="code" href="modules.html"/>
+        <link rel="next" title="NURBS_Class module" href="NURBS_Class.html"/>
+        <link rel="prev" title="MetropolisTest module" href="MetropolisTest.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -81,7 +83,17 @@
             
             
                 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">NURBS module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dependency.html">Dependency</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Interpolate2DSurface.html">Interpolate2DSurface module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MetropolisTest.html">MetropolisTest module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">NURBS module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NURBS_Class.html">NURBS_Class module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drawCurve.html">drawCurve module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drawNURBS.html">drawNURBS module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drawSurface.html">drawSurface module</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -112,6 +124,8 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
+          <li><a href="modules.html">code</a> &raquo;</li>
+      
     <li>NURBS module</li>
       <li class="wy-breadcrumbs-aside">
         
@@ -129,26 +143,32 @@
   <div class="section" id="module-NURBS">
 <span id="nurbs-module"></span><h1>NURBS module<a class="headerlink" href="#module-NURBS" title="Permalink to this headline">¶</a></h1>
 <p>Basic NURBS Manipulation</p>
+<p>This module implement certain base functions of isogeometric analysis, including the B-Splines given the knot vector and base points,
+or the NURBS given the weight vector in addition.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">A comprehensive reference can be found in the book of Thomas J.R. Hughes.</p>
+</div>
 <dl class="function">
 <dt id="NURBS.BSpline">
 <code class="descclassname">NURBS.</code><code class="descname">BSpline</code><span class="sig-paren">(</span><em>knot</em>, <em>i</em>, <em>p</em>, <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#NURBS.BSpline" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function generating BSpline function by recurrence.</p>
+<dd><p>Function generating B-Spline function by recurrence.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>knot</strong> (<em>array</em>) &#8211; knot vector.</li>
-<li><strong>i</strong> (<em>int</em>) &#8211; order of BSpline</li>
+<li><strong>i</strong> (<em>int</em>) &#8211; order of B-Spline</li>
 <li><strong>p</strong> (<em>int</em>) &#8211; polynomial degree.</li>
 <li><strong>x</strong> (<em>float</em>) &#8211; position in parametric domain.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>res</strong> &#8211; value of the i-th BSpline function of degree p at point x.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">value of the i-th B-Spline function of degree p at point x.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">(float)</p>
 </td>
 </tr>
 </tbody>
@@ -158,11 +178,11 @@
 <dl class="function">
 <dt id="NURBS.BSplineArray">
 <code class="descclassname">NURBS.</code><code class="descname">BSplineArray</code><span class="sig-paren">(</span><em>knot</em>, <em>p</em>, <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#NURBS.BSplineArray" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function generating BSpline functions by array recurrence.
-This function calculates all BSpline of degree p, thus has better running time.</p>
+<dd><p>Function generating B-Spline functions by array recurrence.
+This function calculates all B-Spline of degree p, thus has better running time.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">To facilitate the implementation, we add [-1] to the beginning of knot vector.
+<p class="last">To facilitate the implementation, we add [-1] to the beginning of knot vector and the return vector.
 For example, one should call the function with knot = [-1,0,1,2] if one want the knot vector to be [0,1,2]</p>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -176,10 +196,10 @@ For example, one should call the function with knot = [-1,0,1,2] if one want the
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>res</strong> &#8211; value of the all i-th BSplines of degree p at point x.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">value of the all i-th B-Splines of degree p at point x.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float array</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">(float array)</p>
 </td>
 </tr>
 </tbody>
@@ -208,10 +228,10 @@ For example, one should call the function with knot = [-1,0,1,2] if one want the
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>res</strong> &#8211; value of the all i-th BSplines of degree p at point x.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">value of the all i-th B-Splines of degree p at point x.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float array</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">(float array)</p>
 </td>
 </tr>
 </tbody>
@@ -227,8 +247,10 @@ For example, one should call the function with knot = [-1,0,1,2] if one want the
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="NURBS_Class.html" class="btn btn-neutral float-right" title="NURBS_Class module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="index.html" class="btn btn-neutral" title="Welcome to Trimmed Surface Meshing’s documentation!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="MetropolisTest.html" class="btn btn-neutral" title="MetropolisTest module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

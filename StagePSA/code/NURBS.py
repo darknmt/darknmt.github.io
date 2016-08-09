@@ -1,5 +1,10 @@
 """ Basic NURBS Manipulation
 
+This module implement certain base functions of isogeometric analysis, including the B-Splines given the knot vector and base points,
+or the NURBS given the weight vector in addition.
+
+See also:
+    A comprehensive reference can be found in the book of Thomas J.R. Hughes.
 
 """
 
@@ -7,16 +12,16 @@
 import numpy as np
 
 def BSpline(knot, i, p, x): #i from 1 to len(knot) - p - 1
-    """Function generating BSpline function by recurrence.
+    """Function generating B-Spline function by recurrence.
 
     Args:
         knot (array): knot vector.
-        i (int): order of BSpline
+        i (int): order of B-Spline
         p (int): polynomial degree.
         x (float): position in parametric domain.
 
     Returns:
-        res (float): value of the i-th BSpline function of degree p at point x.
+        (float): value of the i-th B-Spline function of degree p at point x.
 
     """
     if p == 0:
@@ -35,11 +40,11 @@ def BSpline(knot, i, p, x): #i from 1 to len(knot) - p - 1
 # Input: [-1] + knot
 # Output: [-1] + N[i]
 def BSplineArray(knot, p, x): #return BSpline[i] for i from 1 to len(knot) - p - 2 since knot = [-1] + real_knot
-    """Function generating BSpline functions by array recurrence.
-    This function calculates all BSpline of degree p, thus has better running time.
+    """Function generating B-Spline functions by array recurrence.
+    This function calculates all B-Spline of degree p, thus has better running time.
 
     Note:
-        To facilitate the implementation, we add [-1] to the beginning of knot vector.
+        To facilitate the implementation, we add [-1] to the beginning of knot vector and the return vector.
         For example, one should call the function with knot = [-1,0,1,2] if one want the knot vector to be [0,1,2]
 
     Args:
@@ -48,7 +53,7 @@ def BSplineArray(knot, p, x): #return BSpline[i] for i from 1 to len(knot) - p -
         x (float): position in parametric domain.
 
     Returns:
-        res (float array): value of the all i-th BSplines of degree p at point x.
+        (float array): value of the all i-th B-Splines of degree p at point x.
 
     """
     res = [-1]
@@ -87,7 +92,7 @@ def NURBSArray(knot, w, p, x):
         x (float): position in parametric domain.
 
     Returns:
-        res (float array): value of the all i-th BSplines of degree p at point x.
+        (float array): value of the all i-th B-Splines of degree p at point x.
 
     """
     BSA = np.array(BSplineArray(knot, p, x))

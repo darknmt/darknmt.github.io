@@ -31,7 +31,8 @@ sys.path.insert(0, os.path.abspath('/Users/Tien/Desktop/Notebook/darknmt.github.
 extensions = [
     'sphinx.ext.autodoc',
     'sphinxcontrib.napoleon',
-    'sphinx.ext.todo'
+    'sphinx.ext.todo',
+    'sphinx.ext.pngmath'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

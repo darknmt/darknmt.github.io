@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>drawSurface module &mdash; Trimmed Surface Meshing 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Trimmed Surface Meshing 0.1 documentation" href="index.html"/>
+        <link rel="up" title="code" href="modules.html"/>
+        <link rel="prev" title="drawNURBS module" href="drawNURBS.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Trimmed Surface Meshing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dependency.html">Dependency</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Interpolate2DSurface.html">Interpolate2DSurface module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MetropolisTest.html">MetropolisTest module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NURBS.html">NURBS module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NURBS_Class.html">NURBS_Class module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drawCurve.html">drawCurve module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drawNURBS.html">drawNURBS module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">drawSurface module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Trimmed Surface Meshing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="modules.html">code</a> &raquo;</li>
+      
+    <li>drawSurface module</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/drawSurface.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-drawSurface">
+<span id="drawsurface-module"></span><h1>drawSurface module<a class="headerlink" href="#module-drawSurface" title="Permalink to this headline">¶</a></h1>
+<p>This is a module to draw B-Spline and NURBS Surface. The main implementation lies in
+<code class="docutils literal"><span class="pre">drawWithBSpline</span></code> and <code class="docutils literal"><span class="pre">drawWithNURBS</span></code>.</p>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">knot1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">knot2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">1.0</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span>
+              <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span>
+              <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span>
+              <span class="p">[[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span>
+              <span class="p">[[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span>
+              <span class="p">[[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]],</span>
+              <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]],</span>
+              <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]],</span>
+              <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]])</span>
+<span class="n">w</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+     <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+     <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+     <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+     <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="c1">#drawWithBSpline(knot1, knot2, B, p1=2, p2=1, nPoint1=49, nPoint2=9)</span>
+<span class="n">drawWithNURBS</span><span class="p">(</span><span class="n">knot1</span><span class="p">,</span> <span class="n">knot2</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">w</span><span class="p">),</span> <span class="n">p1</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">p2</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nPoint1</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">nPoint2</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="function">
+<dt id="drawSurface.drawArray2D">
+<code class="descclassname">drawSurface.</code><code class="descname">drawArray2D</code><span class="sig-paren">(</span><em>arrBig</em>, <em>nx1</em>, <em>nx2</em>, <em>knot1</em>, <em>knot2</em>, <em>withCurve=False</em><span class="sig-paren">)</span><a class="headerlink" href="#drawSurface.drawArray2D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Procedure to plot a 2D array.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This was used mainly for debugging. At user-level, please use <code class="docutils literal"><span class="pre">drawWithBSpline</span></code> and <code class="docutils literal"><span class="pre">drawWithNURBS</span></code>.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>arrBig</strong> (<em>2D point array</em>) &#8211; array of size (nx1, nx2) that is a discretisation of parametric space.</li>
+<li><strong>nx1</strong> (<em>int</em>) &#8211; number of points used in discretisation of the first dimension.</li>
+<li><strong>nx2</strong> (<em>int</em>) &#8211; number of points used in discretisation of the second dimension.</li>
+<li><strong>knot1</strong> (<em>point array</em>) &#8211; knot vector of the first dimension.</li>
+<li><strong>knot2</strong> (<em>point array</em>) &#8211; knot vector of the second dimension.</li>
+<li><strong>withCurve</strong> (<em>bool</em>) &#8211; if <code class="docutils literal"><span class="pre">True</span></code> than plot parametric curves (default=False).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="drawSurface.drawWithBSpline">
+<code class="descclassname">drawSurface.</code><code class="descname">drawWithBSpline</code><span class="sig-paren">(</span><em>knot1</em>, <em>knot2</em>, <em>arrayB</em>, <em>p1=2</em>, <em>p2=2</em>, <em>nPoint1=25</em>, <em>nPoint2=25</em>, <em>withCurve=False</em><span class="sig-paren">)</span><a class="headerlink" href="#drawSurface.drawWithBSpline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Procedure to plot a B-Spline Surface.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>knot1</strong> (<em>point array</em>) &#8211; knot vector of the first dimension.</li>
+<li><strong>knot2</strong> (<em>point array</em>) &#8211; knot vector of the second dimension.</li>
+<li><strong>arrayB</strong> (<em>2D point array</em>) &#8211; array of base points.</li>
+<li><strong>p1</strong> (<em>int</em>) &#8211; horizontal polynomial degree(default=2).</li>
+<li><strong>p2</strong> (<em>int</em>) &#8211; vertical polynomial degree(default=2).</li>
+<li><strong>nPoint1</strong> (<em>int</em>) &#8211; number of points used in discretisation of the horizonal dimension (default=25).</li>
+<li><strong>nPoint2</strong> (<em>int</em>) &#8211; number of points used in discretisation of the vertical dimension(default=25).</li>
+<li><strong>withCurve</strong> (<em>bool</em>) &#8211; if <code class="docutils literal"><span class="pre">True</span></code> than plot parametric curves (default=False).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="drawSurface.drawWithNURBS">
+<code class="descclassname">drawSurface.</code><code class="descname">drawWithNURBS</code><span class="sig-paren">(</span><em>knot1</em>, <em>knot2</em>, <em>arrayB</em>, <em>w</em>, <em>p1=2</em>, <em>p2=2</em>, <em>nPoint1=15</em>, <em>nPoint2=15</em>, <em>withCurve=False</em><span class="sig-paren">)</span><a class="headerlink" href="#drawSurface.drawWithNURBS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Procedure to plot a NURBS Surface.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>knot1</strong> (<em>point array</em>) &#8211; knot vector of the first dimension.</li>
+<li><strong>knot2</strong> (<em>point array</em>) &#8211; knot vector of the second dimension.</li>
+<li><strong>arrayB</strong> (<em>2D point array</em>) &#8211; array of base points.</li>
+<li><strong>w</strong> (<em>2D float array</em>) &#8211; weight array.</li>
+<li><strong>p1</strong> (<em>int</em>) &#8211; horizontal polynomial degree(default=2).</li>
+<li><strong>p2</strong> (<em>int</em>) &#8211; vertical polynomial degree(default=2).</li>
+<li><strong>nPoint1</strong> (<em>int</em>) &#8211; number of points used in discretisation of the horizonal dimension (default=25).</li>
+<li><strong>nPoint2</strong> (<em>int</em>) &#8211; number of points used in discretisation of the vertical dimension(default=25).</li>
+<li><strong>withCurve</strong> (<em>bool</em>) &#8211; if <code class="docutils literal"><span class="pre">True</span></code> than plot parametric curves (default=False).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="drawSurface.exampleBSpline">
+<code class="descclassname">drawSurface.</code><code class="descname">exampleBSpline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#drawSurface.exampleBSpline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="drawSurface.exampleNURBS">
+<code class="descclassname">drawSurface.</code><code class="descname">exampleNURBS</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#drawSurface.exampleNURBS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="drawSurface.main">
+<code class="descclassname">drawSurface.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#drawSurface.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="drawNURBS.html" class="btn btn-neutral" title="drawNURBS module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Manh Tien NGUYEN.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

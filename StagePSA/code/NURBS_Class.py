@@ -1,6 +1,18 @@
-"""Implementation of NURBS/BSpline class
+"""Implementation of NURBS/BSpline class.
+
 We overide the __add__ operator to join 2 NURBS/BSpline quickly by sing NURBS1 + NURBS2.
+
 Our code is more adapted for second-order NURBS.
+
+Args:
+    dknot (float array): knot vector.
+    dB (point array): Base points.
+    dp (int): polynomial degree (default=2).
+
+Attributes:
+    knot (float array): knot vector.
+    Base (point array): base points.
+    p (int) : polynomial degree.
 
 Examples:
     A square created by joining parallel lines.
@@ -34,9 +46,7 @@ from NURBS import NURBSArray as RA
 
 
 class BSpline(object):
-#    knot =[]
-#    Base = []
-#    p = 2
+
     def __init__(self, dknot, dB, dp=2):
         self.knot = np.array(map(float,dknot))
         self.knot = self.knot/self.knot[-1]
@@ -52,13 +62,14 @@ class BSpline(object):
             lw=1 : line width (default = 1)
 
         Example:
-        .. doctest::
-            >>> a = BSpline([0, 0, 0, 1, 1, 1], [[0.3, -0.7], [1.3, -0.7], [1.3, 0.3]])
-            >>> b = BSpline([0, 0, 0, 1, 1, 1], [[1.3, 0.3], [1.3, 1.3], [0.3, 1.3]])
-            >>> c = BSpline([0, 0, 0, 1, 1, 1], [[0.3, 1.3], [-0.7, 1.3], [-0.7, 0.3]])
-            >>> d = BSpline([0, 0, 0, 1, 1, 1], [[-0.7, 0.3], [-0.7, -0.7], [0.3, -0.7]])
-            >>> trimCurve = a+b+c+d
-            >>> trimCurve.drawCurve()
+        ::
+
+            a = BSpline([0, 0, 0, 1, 1, 1], [[0.3, -0.7], [1.3, -0.7], [1.3, 0.3]])
+            b = BSpline([0, 0, 0, 1, 1, 1], [[1.3, 0.3], [1.3, 1.3], [0.3, 1.3]])
+            c = BSpline([0, 0, 0, 1, 1, 1], [[0.3, 1.3], [-0.7, 1.3], [-0.7, 0.3]])
+            d = BSpline([0, 0, 0, 1, 1, 1], [[-0.7, 0.3], [-0.7, -0.7], [0.3, -0.7]])
+            trimCurve = a+b+c+d
+            trimCurve.drawCurve()
 
         """
         knotVector = np.append(-1,self.knot)
@@ -72,26 +83,30 @@ class BSpline(object):
         #plt.scatter(arrB[:, 0], arrB[:, 1], s=30, c='red')
         #plt.plot(arrB[:, 0], arrB[:, 1])
         #plt.show()
-    def __add__(a, b):
-        """Joining 2 NURBS/BSpline by juxtaposition
+    def __add__(first, second):
+        """Joining 2 NURBS/BSpline by juxtaposition.
 
         Note:
             * Adapted for second-order NURBS/BSpline.
             * The end-point of the fist NURBS/BSpline has to be the starting point of the second.
+            * The two curves are suppose to be of same polynomial degree.
 
 
         Args:
-            a (BSpline): first curve.
-            b (BSpline): second curve.
+            first (BSpline): first curve.
+            second (BSpline): second curve.
 
         Returns:
-            res (BSpline): Juxtaposition of a and b in that order.
+            (BSpline): Juxtaposition of a and b in that order.
 
         """
-        return BSpline(np.append(a.knot[:-a.p-1], a.knot[-1] - b.knot[0] + b.knot[1:]), np.append(a.Base[:-1], b.Base, axis=0), a.p)
+        return BSpline(np.append(first.knot[:-first.p-1], first.knot[-1] - second.knot[0] + second.knot[1:]), np.append(first.Base[:-1], second.Base, axis=0), first.p)
 
     def reverse(self):
-        """reverse
+        """Reverse the parametric direction of the curve.
+
+        Returns:
+            New class describing the same curve but in the reversed direction.
 
         """
         return BSpline(self.knot[-1] - self.knot[::-1], self.Base[::-1], self.p)
@@ -100,14 +115,22 @@ class BSpline(object):
         """Use to print the NURBS/BSpline info (Knot vector and Base points) for debugging.
 
         Example:
-            >>> myBSpline = BSpline([0, 0, 0, 1, 1, 1], [[0.3, -0.7], [1.3, -0.7], [1.3, 0.3]])
-            >>> print "Hey, this is my BSpline: " + myBSpline
+        ::
+
+            myBSpline = BSpline([0, 0, 0, 1, 1, 1], [[0.3, -0.7], [1.3, -0.7], [1.3, 0.3]])
+            print "Hey, this is my BSpline: " + myBSpline
 
         """
         return "BSpline:\n - Knot Vector =\n" + str(self.knot) + "\n - Base points = \n" + str(self.Base)
 
     def toArray(self,nPoint=300):
-        """Convert to array
+        """Convert current class to an array composed by discrete (x,y) value.
+
+        Note:
+            Used mainly in debugging or plotting.
+
+        Args:
+            nPoint(int) : number of points for discretization.
 
         """
         knotVector = np.append(-1,self.knot)

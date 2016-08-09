@@ -1,3 +1,17 @@
+"""This is a module to draw base functions of isogeometric analysis. It uses the functions ``BSpline`` and ``BSplineArray`` from the NURBS Module.
+
+This module was used mainly for debugging purposes.
+
+Example:
+::
+
+    #Taken from __main__, so you can just call ``python drawNURBS.py`` instead.
+    drawb([0, 0, 0, 1, 1, 1])
+
+Please see ``main()`` for other examples.
+"""
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 from NURBS import BSpline as N
@@ -7,6 +21,18 @@ from NURBS import BSplineArray as NA
 # 50 steps for x
 #
 def draw(knot, p=2,nPoint=200):
+    """Draw base functions from knot vector and polynomial degree.
+
+    Args:
+        knot (float array): knot vector.
+        p (int): polynomial degree.
+        nPoint (int): number of points for discretization (default=200).
+
+    Note:
+        This is a depricated methode, please use ``drawb`` instead.
+
+
+    """
     knotVector = [-1] + knot
     knotVector = map(float, knotVector)
 
@@ -21,6 +47,14 @@ def draw(knot, p=2,nPoint=200):
     plt.show()
 
 def drawb(knot, p=2, nPoint=200):
+    """Draw base functions from knot vector and polynomial degree.
+
+    Args:
+        knot (float array): knot vector.
+        p (int): polynomial degree.
+        nPoint (int): number of points for discretization (default=200).
+
+    """
     knotVector = [-1] + knot
     knotVector = map(float, knotVector)
 

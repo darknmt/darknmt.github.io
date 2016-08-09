@@ -1,0 +1,362 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>drawCurve module &mdash; Trimmed Surface Meshing 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Trimmed Surface Meshing 0.1 documentation" href="index.html"/>
+        <link rel="up" title="code" href="modules.html"/>
+        <link rel="next" title="drawNURBS module" href="drawNURBS.html"/>
+        <link rel="prev" title="NURBS_Class module" href="NURBS_Class.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Trimmed Surface Meshing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dependency.html">Dependency</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Interpolate2DSurface.html">Interpolate2DSurface module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MetropolisTest.html">MetropolisTest module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NURBS.html">NURBS module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NURBS_Class.html">NURBS_Class module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">drawCurve module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drawNURBS.html">drawNURBS module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drawSurface.html">drawSurface module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Trimmed Surface Meshing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="modules.html">code</a> &raquo;</li>
+      
+    <li>drawCurve module</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/drawCurve.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-drawCurve">
+<span id="drawcurve-module"></span><h1>drawCurve module<a class="headerlink" href="#module-drawCurve" title="Permalink to this headline">¶</a></h1>
+<p>This is a module to draw B-Spline and NURBS curves. It uses the NURBS Module.</p>
+<p>This module also includes an artistic example, <code class="docutils literal"><span class="pre">drawWithBSplineColorful</span></code>.</p>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">knot</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">1.0</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">w</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">drawWithNURBS</span><span class="p">(</span><span class="n">knot</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#Artistic Example that generates random NURBS.</span>
+<span class="n">randomBSplineColorful</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Please see <code class="docutils literal"><span class="pre">main()</span></code> for more examples.</p>
+<dl class="function">
+<dt id="drawCurve.drawWithBSpline">
+<code class="descclassname">drawCurve.</code><code class="descname">drawWithBSpline</code><span class="sig-paren">(</span><em>knot</em>, <em>arrayB</em>, <em>p=2</em>, <em>nPoint=300</em>, <em>pControl=False</em><span class="sig-paren">)</span><a class="headerlink" href="#drawCurve.drawWithBSpline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Procedure for plotting B-Spline from knot vector and Base points.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>knot</strong> (<em>float array</em>) &#8211; knot vector.</li>
+<li><strong>arrayB</strong> (<em>point array</em>) &#8211; base points.</li>
+<li><strong>p</strong> (<em>int</em>) &#8211; polynomial degree (default=2).</li>
+<li><strong>nPoint</strong> (<em>int</em>) &#8211; number of points for discretization (default=300).</li>
+<li><strong>pControl</strong> (<em>bool</em>) &#8211; if <code class="docutils literal"><span class="pre">True</span></code>, control point will be scattered (default=False).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="drawCurve.drawWithBSplineColorful">
+<code class="descclassname">drawCurve.</code><code class="descname">drawWithBSplineColorful</code><span class="sig-paren">(</span><em>knot</em>, <em>arrayB</em>, <em>p=2</em>, <em>nPoint=300</em>, <em>pControl=False</em><span class="sig-paren">)</span><a class="headerlink" href="#drawCurve.drawWithBSplineColorful" title="Permalink to this definition">¶</a></dt>
+<dd><p>Procedure for plotting B-Spline from knot vector and Base points. This is just an artistic implementation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>knot</strong> (<em>float array</em>) &#8211; knot vector.</li>
+<li><strong>arrayB</strong> (<em>point array</em>) &#8211; base points.</li>
+<li><strong>p</strong> (<em>int</em>) &#8211; polynomial degree (default=2).</li>
+<li><strong>nPoint</strong> (<em>int</em>) &#8211; number of points for discretization (default=300).</li>
+<li><strong>pControl</strong> (<em>bool</em>) &#8211; if <code class="docutils literal"><span class="pre">True</span></code>, control point will be scattered (default=False).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>&#8216;ColorfulBSpline.png&#8217;</strong> &#8211; PNG file.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">file</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="drawCurve.drawWithNURBS">
+<code class="descclassname">drawCurve.</code><code class="descname">drawWithNURBS</code><span class="sig-paren">(</span><em>knot</em>, <em>arrayB</em>, <em>w</em>, <em>p=2</em>, <em>nPoint=300</em><span class="sig-paren">)</span><a class="headerlink" href="#drawCurve.drawWithNURBS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Procedure for plotting NURBS from knot vector and Base points.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>knot</strong> (<em>float array</em>) &#8211; knot vector.</li>
+<li><strong>arrayB</strong> (<em>point array</em>) &#8211; base points.</li>
+<li><strong>w</strong> (<em>float array</em>) &#8211; weight vector.</li>
+<li><strong>p</strong> (<em>int</em>) &#8211; polynomial degree (default=2).</li>
+<li><strong>nPoint</strong> (<em>int</em>) &#8211; number of points for discretization (default=300).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="drawCurve.exampleBSpline">
+<code class="descclassname">drawCurve.</code><code class="descname">exampleBSpline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#drawCurve.exampleBSpline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="drawCurve.exampleCloseBSpline">
+<code class="descclassname">drawCurve.</code><code class="descname">exampleCloseBSpline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#drawCurve.exampleCloseBSpline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="drawCurve.exampleNURBS">
+<code class="descclassname">drawCurve.</code><code class="descname">exampleNURBS</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#drawCurve.exampleNURBS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="drawCurve.main">
+<code class="descclassname">drawCurve.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#drawCurve.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="drawCurve.randomBSpline">
+<code class="descclassname">drawCurve.</code><code class="descname">randomBSpline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#drawCurve.randomBSpline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Procedure generating and plotting a random monochrome B-Spline.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>numPoint</strong> (<em>int</em>) &#8211; Number of random points (default=550)</li>
+<li><strong>numBreak</strong> (<em>int</em>) &#8211; Number of break, smaller than <code class="docutils literal"><span class="pre">numPoint</span></code> (default=350). Bigger <code class="docutils literal"><span class="pre">numBreak</span></code> means less regular.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="drawCurve.randomBSplineColorful">
+<code class="descclassname">drawCurve.</code><code class="descname">randomBSplineColorful</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#drawCurve.randomBSplineColorful" title="Permalink to this definition">¶</a></dt>
+<dd><p>Procedure generating and plotting random B-Spline. Colors are taken from cmap <code class="docutils literal"><span class="pre">Blues</span></code>.</p>
+<p>Returned figure is saved as <code class="docutils literal"><span class="pre">ColorfulBSpline.png</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>numPoint</strong> (<em>int</em>) &#8211; Number of random points (default=260)</li>
+<li><strong>numBreak</strong> (<em>int</em>) &#8211; Number of break, smaller than <code class="docutils literal"><span class="pre">numPoint</span></code> (default=100). Bigger <code class="docutils literal"><span class="pre">numBreak</span></code> means less regular.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>&#8216;ColorfulBSpline.png&#8217;</strong> &#8211; PNG file.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">file</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="drawNURBS.html" class="btn btn-neutral float-right" title="drawNURBS module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="NURBS_Class.html" class="btn btn-neutral" title="NURBS_Class module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Manh Tien NGUYEN.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
