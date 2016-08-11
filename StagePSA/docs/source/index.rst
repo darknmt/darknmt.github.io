@@ -9,8 +9,8 @@ Welcome to Trimmed Surface Meshing's documentation!
 Source code
 -----------
 The source code of this project can be found `here <https://darknmt.github.io/StagePSA/code.zip>`_.
-As I am not a majored in Computer Sciences and rarely take courses in the field,
-my code is far from well-organized or optimized.
+As I am not majored in Computer Sciences and rarely take courses in the field,
+my code is hence far from well-organized or optimized.
 
 .. note:: The code is still incomplete, the Mix-Integer-Programming is still under development.
 
