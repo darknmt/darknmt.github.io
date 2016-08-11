@@ -1,11 +1,13 @@
-code
+Code
 ====
 
 .. toctree::
    :maxdepth: 4
 
-   Interpolate2DSurface
+   MIP-Solver
+   MeshByCrossField
    MetropolisTest
+   Interpolate2DSurface
    NURBS
    NURBS_Class
    drawCurve
