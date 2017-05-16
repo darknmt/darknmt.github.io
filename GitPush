@@ -1,16 +1,16 @@
 #!/bin/bash
 
 #Proxy
-export http_proxy="http://kuzh.polytechnique.fr:8080"
-export https_proxy=$http_proxy
-export ftp_proxy=$http_proxy
-export all_proxy=$http_proxy
-export no_proxy="polytechnique.fr"
+#export http_proxy="http://kuzh.polytechnique.fr:8080"
+#export https_proxy=$http_proxy
+#export ftp_proxy=$http_proxy
+#export all_proxy=$http_proxy
+#export no_proxy="polytechnique.fr"
 
 #Git Proxy
 git config --global url."https://github.com/".insteadOf git://github.com/
-git config --global http.proxy http://kuzh.polytechnique.fr:8080
-git config --global https.proxy http://kuzh.polytechnique.fr:8080
+#git config --global http.proxy http://kuzh.polytechnique.fr:8080
+#git config --global https.proxy http://kuzh.polytechnique.fr:8080
 
 cd "$(dirname "$0")"
 git add .
