@@ -1,8 +1,499 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-  <meta http-equiv="refresh" content="0; url=http://darknmt.github.io/Notebook.html" />
+<!-- 2017-05-16 Tue 15:04 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Welcome to my declassified Notebook</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="darknmt" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
+<div id="content">
+<h1 class="title">Welcome to my declassified Notebook</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org0dbadd3">1. About this website</a></li>
+<li><a href="#orgfc7ad6f">2. About me</a></li>
+<li><a href="#orgc697d55">3. Mathematical writing</a></li>
+<li><a href="#orgdb6b058">4. Philosophy</a></li>
+<li><a href="#org99a73f4">5. Blog</a>
+<ul>
+<li><a href="#org4ae071a">5.1. Alexander Grothendieck <span class="timestamp-wrapper"><span class="timestamp">[2017-05-12 Fri 22:37]</span></span></a>
+<ul>
+<li><a href="#org7e87cb4">5.1.1. Builder and explorer</a></li>
+<li><a href="#org6c6ff10">5.1.2. The fear</a></li>
+</ul>
+</li>
+<li><a href="#org358e191">5.2. Film review: Manchester by the sea and Spring-Summer-Fall-Winter and Spring <span class="timestamp-wrapper"><span class="timestamp">[2017-05-15 Mon 10:13]</span></span></a>
+<ul>
+<li><a href="#orgbdfc870">5.2.1. Làm sao mình biết những phim này</a></li>
+<li><a href="#orgd2ba55b">5.2.2. Manchester by the sea</a></li>
+<li><a href="#org344c2bb">5.2.3. Spring-Summer-Fall-Winter and Spring</a></li>
+</ul>
+</li>
+<li><a href="#org30366f0">5.3. Writing of Mathematics <span class="timestamp-wrapper"><span class="timestamp">[2017-05-16 Tue 11:57]</span></span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0dbadd3" class="outline-2">
+<h2 id="org0dbadd3"><span class="section-number-2">1</span> About this website</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+This website is written using <a href="https://en.wikipedia.org/wiki/Emacs">emacs</a> <a href="http://orgmode.org/">org-mode</a> with the HTML theme <a href="https://github.com/fniessen/org-html-themes">Bigblow</a>
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgfc7ad6f" class="outline-2">
+<h2 id="orgfc7ad6f"><span class="section-number-2">2</span> About me</h2>
+</div>
+
+<div id="outline-container-orgc697d55" class="outline-2">
+<h2 id="orgc697d55"><span class="section-number-2">3</span> Mathematical writing</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+ Some of my mathematical writings are uploaded to sharelatex. <b>org-mode</b> supports for LaTeX is in
+my oppinion even better than Wordpress and I am not bluffing, this \(\nabla_{\dot\gamma}\dot\gamma =
+ 0\) is one, and here is another
+</p>
+
+<p>
+\[ \int_0^\infty e^{-x^2}dx = \frac{\sqrt{\pi}}{2} \]
+</p>
+
+<p>
+. Mathematics however (at least mine) are
+  not just about what you write between the $-signs, mathematics are also about structures, things
+  you put between
+</p>
+
+<p>
+\begin{lemma}, \end{theorem}, \ref{lem}, &#x2026;
+</p>
+
+<p>
+There seems to be no easy and reusable method for this (that is more efficient than emacs +
+auctex + reftex + yasnippet) and that is why I will put everything in sharelatex. Here they are
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdb6b058" class="outline-2">
+<h2 id="orgdb6b058"><span class="section-number-2">4</span> Philosophy</h2>
+</div>
+<div id="outline-container-org99a73f4" class="outline-2">
+<h2 id="org99a73f4"><span class="section-number-2">5</span> Blog</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-org4ae071a" class="outline-3">
+<h3 id="org4ae071a"><span class="section-number-3">5.1</span> Alexander Grothendieck <span class="timestamp-wrapper"><span class="timestamp">[2017-05-12 Fri 22:37]</span></span></h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+His work is <b>simplifying</b>, not <b>generalizing</b>.
+I do not agree with his metaphor of rising sea about mathematician's methods:
+</p>
+<ul class="org-ul">
+<li>Firstly, it suggests that the two methods deal with the same object.</li>
+<li>Secondly, it suggests that there are no hereditary relation between the two.</li>
+</ul>
+
+<p>
+Dieck is hot-tempered and had a different life style (Laurent Schwartz had to calculate to find a
+day then an hour to have dinner with Dieck)
+</p>
+</div>
+
+<div id="outline-container-org7e87cb4" class="outline-4">
+<h4 id="org7e87cb4"><span class="section-number-4">5.1.1</span> Builder and explorer</h4>
+<div class="outline-text-4" id="text-5-1-1">
+<p>
+<span class="underline">Masculin</span>: Child-builder, duty
+</p>
+
+<p>
+<span class="underline">Feminin</span>: Child-explorer, joy
+</p>
+
+<p>
+Grothendieck kept himself a builder (with a <span class="underline">concious effort to justify</span> it). Serre also said that
+Grothendieck did maths not for the joy or delight or beauty, but as a duty. His method is to set the
+<b>"grand tâche"</b> (theory-building) and <b>restrain from going too far</b> (exploring), and make some
+<b>responsibility/ fidelity with the tasks</b> (He even said he was a prisonner of them).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6c6ff10" class="outline-4">
+<h4 id="org6c6ff10"><span class="section-number-4">5.1.2</span> The fear</h4>
+<div class="outline-text-4" id="text-5-1-2">
+<ul class="org-ul">
+<li>of not being regconised: lead to problem-solving</li>
+<li>of being wrong</li>
+</ul>
+<p>
+Grothendieck said that if there was a personal trait in him that was not found in his colleage, it
+had to be the <b>total lack of fear</b> (may be due to his childhood?).
+</p>
+
+<p>
+Anyway, I believe that anyone who do not fear being wrong had to be very experienced of being fool
+by the pathology nature of rigor. Grothendieck hence had to have plenty examples for his
+theory-building works. The <span class="underline">"Grothendieck prime" blurf</span> may be just another <span class="underline">Da Vinci's burning</span> of
+sketch to show that one is genius and do not have to practice to archieve perfection.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org358e191" class="outline-3">
+<h3 id="org358e191"><span class="section-number-3">5.2</span> Film review: Manchester by the sea and Spring-Summer-Fall-Winter and Spring <span class="timestamp-wrapper"><span class="timestamp">[2017-05-15 Mon 10:13]</span></span></h3>
+<div class="outline-text-3" id="text-5-2">
+</div><div id="outline-container-orgbdfc870" class="outline-4">
+<h4 id="orgbdfc870"><span class="section-number-4">5.2.1</span> Làm sao mình biết những phim này</h4>
+<div class="outline-text-4" id="text-5-2-1">
+<p>
+Cứ nghe Duy nó ca Manchester by the sea hoài nên phải xem cho biết, xem xong thấy quá chán nên lên
+Ebert kiếm phim khác xem và thấy Xuân Hạ Thu Đông.
+</p>
+
+<p>
+Xem xong Manchester by the sea còn viết thư cho Duy hỏi xem nó thấy hay chỗ nào nữa :))
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd2ba55b" class="outline-4">
+<h4 id="orgd2ba55b"><span class="section-number-4">5.2.2</span> Manchester by the sea</h4>
+<div class="outline-text-4" id="text-5-2-2">
+<p>
+Phim xoay quanh 1 thanh niên làm lao công, sửa ống nước đủ kiêủ, một ngày nghe tin anh trai
+mất. Thanh niên có nghĩa vụ phaỉ giám hộ con cuả anh mình, 1 nhi đồng thích chịch. Sau đó bằng đủ
+kiểu cắt cảnh nonlinear soắn tít cả não, phim cho hay quá khứ của anh thanh niên: từng có vợ và 2
+con, 1 đêm ăn nhậu lỡ tay đốt cmn nhà nên mất con và bị vợ bỏ.
+</p>
+
+<p>
+Trái ngược với hình ảnh đó là đứa cháu hot boy, gái gú đếm không xuể. Phim xoay quanh mâu thuẫn giữa
+2 chú cháu về việc ai chuyển nhà về ở với ai (lúc này xuất hiện tuyến nhân vật mẹ khó hiểu được đâu
+15 phút lên TV). Nhưng sau cùng cũng tìm được cách giải quyết. Kết thúc phim cho thấy đứa cháu chủ
+động nói chuyện và giỡn với cậu mình trong đám tang của cha.
+</p>
+
+<p>
+Thể loại khổ, túng quẩn và mâu thuẫn gia đình không có gì mơí, hay cái mâu thuẫn giữa ông câụ và xã
+hội cũng không quá đặc sắc. Nhạc phim là Adagio, quá quen với mấy phim nghèo VN. Về mood và
+atmosphere thì quá chậm và cũng không cuốn hút được mình (xem trong 2 ngày, và không có cái cảm giác
+không muốn ngừng xem như Xuân Hạ Thu Đông)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org344c2bb" class="outline-4">
+<h4 id="org344c2bb"><span class="section-number-4">5.2.3</span> Spring-Summer-Fall-Winter and Spring</h4>
+<div class="outline-text-4" id="text-5-2-3">
+<p>
+Phim về các thầy chùa, lúc nhỏ chơi ác với thú (cá, ếch, rắn), lớn tí đi chịch gái, giết người và đi
+tù. Về già thì vào chuà tập võ.
+</p>
+
+<p>
+Phim cho thấy những cái khổ của con ngươì: tôị lỗi, ham muốn, sự tuần hoàn (hình ảnh bánh xe và phât
+Di Lạc cuối phim). Hai cái đầu có thể giải quyét được bằng giáo dục và pháp luật, cái thứ ba thì
+không (nưóc mắt sư phụ lúc tự tử). Cảnh phim được expect là chậm, nhưng hoàn toàn hợp lý. Mình xem
+đến 2h30 sáng và phải đi ngủ để hôm sau dậy sớm (9h40 :v) và cứ phải hóng ăn gian từng phút.
+</p>
+
+<p>
+Phim hay, chùa đẹp, gái cũng vậy. Có dịp chắc sẽ xem lại.
+</p>
+
+<p>
+It is so paradoxical that I am afraid of both periodicity and new things.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org30366f0" class="outline-3">
+<h3 id="org30366f0"><span class="section-number-3">5.3</span> Writing of Mathematics <span class="timestamp-wrapper"><span class="timestamp">[2017-05-16 Tue 11:57]</span></span></h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+It is difficult to write reusable notes in mathematics. Many (including anh Tu) use writing as a way
+to reformulate ideas/knownledge and do not read their own notes again. But memory is obviously not
+my advantage and I will have to consult my writings later for sure.
+</p>
+
+<p>
+My mathematical writings in this moment is not a blog, that is I have no public audience hence no
+obligation to keep things formal. The disadvantage of this hermit life is that I usually find myself
+unable to understand my own notes.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: darknmt</p>
+<p class="date">Created: 2017-05-16 Tue 15:04</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
 </body>
 </html>
