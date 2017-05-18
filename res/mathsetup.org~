@@ -1,5 +1,4 @@
 #+OPTIONS: tex:t
-#+SETUPFILE:theme-bigblow-local.setup
 #+LATEX_HEADER: \usepackage{amsthm}
 #+LATEX_HEADER: \newtheorem{remark}{Remark}  
 #+LATEX_HEADER: \newtheorem{theorem}{Theorem}

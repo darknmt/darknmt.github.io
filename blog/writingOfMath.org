@@ -1,5 +1,5 @@
 #+TITLE: Writing of Mathematics in LaTeX
-#+SETUPFILE: mathsetup.org
+#+SETUPFILE: ../res/mathsetup.org
 
 * First para
 It is difficult to write reusable notes in mathematics. Many (including anh Tu) use writing as a way
@@ -39,3 +39,5 @@ If $1+1=2$ then $2+2=4$, therefore
 e=mc^2
 \]
    #+END_lemma
+
+Is it working?

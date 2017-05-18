@@ -1,4 +1,4 @@
-#+TITLE: Blog
+#+TITLE: Welcome to my blog
 
    + [[file:writingOfMath.org][Writing of Mathematics in LaTeX]]
    + [[file:mathsetup.org][mathsetup]]
