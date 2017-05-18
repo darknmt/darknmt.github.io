@@ -6,4 +6,7 @@ from [[https://ogbe.net/blog/blogging_with_org.html][here]] and [[https://nicola
 
 
 * About me
+
+#+attr_html: :width 30%
+[[file:../img/randomProfile.png]]
  

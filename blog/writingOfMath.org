@@ -27,8 +27,6 @@ Here is another $a+b=c$.
 #+END_theorem
 
 
-[[file:../img/randomProfile.png]]
-
 a 
 ** Much more complecated
    # <<lem:1>>

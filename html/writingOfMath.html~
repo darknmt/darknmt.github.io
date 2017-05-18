@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-05-18 Thu 11:56 -->
+<!-- 2017-05-18 Thu 12:00 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Writing of Mathematics in LaTeX</title>
@@ -229,21 +229,21 @@ for the JavaScript code in this tag.
 </script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
-        displayAlign: "%ALIGN",
-        displayIndent: "%INDENT",
+        displayAlign: "center",
+        displayIndent: "0em",
 
-        "HTML-CSS": { scale: %SCALE,
-                        linebreaks: { automatic: "%LINEBREAKS" },
-                        webFont: "%FONT"
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
                        },
-        SVG: {scale: %SCALE,
-              linebreaks: { automatic: "%LINEBREAKS" },
-              font: "%FONT"},
-        NativeMML: {scale: %SCALE},
-        TeX: { equationNumbers: {autoNumber: "%AUTONUMBER"},
-               MultLineWidth: "%MULTLINEWIDTH",
-               TagSide: "%TAGSIDE",
-               TagIndent: "%TAGINDENT"
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
              }
 });
 </script>
@@ -338,6 +338,10 @@ e=mc^2
 </p>
 
 </div>
+
+<p>
+Is it working?
+</p>
 </div>
 </div>
 </div>
@@ -345,7 +349,7 @@ e=mc^2
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-05-18 Thu 11:56. <br>
+Last updated 2017-05-18 Thu 12:00. <br>
 Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 9.0.5).
 </div>
 </div>

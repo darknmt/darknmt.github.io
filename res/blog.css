@@ -74,7 +74,7 @@
 	overflow: auto; }
     #table-of-contents h2 {
 	font-size: 13pt;
-	max-width: 9em;
+	max-width: 19em;
 	border: 0;
 	font-weight: normal;
 	padding-left: 0.5em;
@@ -237,10 +237,10 @@
     }
 
     img {
-	padding: 1.2em;
-	box-shadow: 0 0 1em #F78536;
-	-webkit-box-shadow: 0 0 1em #F78536;
-	-moz-box-shadow: 0 0 1em #F78536;
+	padding: 0.2em;
+	box-shadow: 0 0 0.7em #F78536;
+	-webkit-box-shadow: 0 0 0.7em #F78536;
+	-moz-box-shadow: 0 0 0.7em #F78536;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	overflow: auto;
