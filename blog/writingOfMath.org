@@ -1,0 +1,41 @@
+#+TITLE: Writing of Mathematics in LaTeX
+#+SETUPFILE: mathsetup.org
+
+* First para
+It is difficult to write reusable notes in mathematics. Many (including anh Tu) use writing as a way
+to reformulate ideas/knownledge and do not read their own notes again. But memory is obviously not
+my advantage and I will have to consult my writings later for sure.
+
+* Second para
+My mathematical writings in this moment is not a blog, that is I have no public audience hence no
+obligation to keep things formal. The disadvantage of this hermit life is that I usually find myself
+unable to understand my own notes.
+
+
+# <<thm:1>>
+#+BEGIN_theorem
+This is a theorem
+\[
+a^2 +a^2 = 2a^2 +\int_0^1 0dx
+\]
+#+END_theorem
+
+# <<thm:2>>
+#+BEGIN_theorem
+#+latex: \label{thm:2}%
+Here is another $a+b=c$.
+#+END_theorem
+
+
+[[file:../img/randomProfile.png]]
+
+a 
+** Much more complecated
+   # <<lem:1>>
+   #+BEGIN_lemma
+   #+LATEX: \label{lem:1}%
+If $1+1=2$ then $2+2=4$, therefore
+\[
+e=mc^2
+\]
+   #+END_lemma

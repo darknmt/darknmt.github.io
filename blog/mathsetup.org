@@ -1,0 +1,12 @@
+#+OPTIONS: tex:t
+#+SETUPFILE:theme-bigblow-local.setup
+#+LATEX_HEADER: \usepackage{amsthm}
+#+LATEX_HEADER: \newtheorem{remark}{Remark}  
+#+LATEX_HEADER: \newtheorem{theorem}{Theorem}
+#+LATEX_HEADER: \newtheorem{lemma}[theorem]{Lemma}
+#+LATEX_HEADER: \newtheorem{corollary}{Corollary}[theorem]
+#+LATEX_HEADER: \newtheorem{conjecture}[theorem]{Conjecture} 
+#+LATEX_HEADER: \newtheorem{proposition}{Proposition}[theorem]
+#+LATEX_HEADER: \newtheorem{problem}{Problem} 
+#+LATEX_HEADER: \newtheorem{example}{Example} 
+#+LATEX_HEADER: \newtheorem{definition}{Definition} 

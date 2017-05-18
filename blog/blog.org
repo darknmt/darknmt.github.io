@@ -1,0 +1,4 @@
+#+TITLE: Blog
+
+   + [[file:writingOfMath.org][Writing of Mathematics in LaTeX]]
+   + [[file:mathsetup.org][mathsetup]]

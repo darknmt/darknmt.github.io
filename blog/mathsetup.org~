@@ -2,6 +2,17 @@
 #+OPTIONS: tex:t
 #+HTML_MATHJAX: path:"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"
 #+SETUPFILE:theme-bigblow-local.setup
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="theorems.css" />
+#+LATEX_HEADER: \usepackage{amsthm}
+#+LATEX_HEADER: \newtheorem{remark}{Remark}  
+#+LATEX_HEADER: \newtheorem{theorem}{Theorem}[section]
+#+LATEX_HEADER: \newtheorem{lemma}[theorem]{Lemma}
+#+LATEX_HEADER: \newtheorem{corollary}{Corollary}[theorem]
+#+LATEX_HEADER: \newtheorem{conjecture}[theorem]{Conjecture} 
+#+LATEX_HEADER: \newtheorem{proposition}{Proposition}[theorem]
+#+LATEX_HEADER: \newtheorem{problem}{Problem} 
+#+LATEX_HEADER: \newtheorem{example}{Example} 
+#+LATEX_HEADER: \newtheorem{definition}{Definition} 
 
 
 * About this website
@@ -27,8 +38,6 @@ Mathematics however (at least mine) are
   There seems to be no easy and reusable method for this (that is more efficient than emacs +
   auctex + reftex + yasnippet) and that is why I will put almost everything in sharelatex. Here they
   are
-
-
 
 * Philosophy
 * Blog
@@ -99,6 +108,13 @@ Phim hay, chùa đẹp, gái cũng vậy. Có dịp chắc sẽ xem lại.
 
 It is so paradoxical that I am afraid of both periodicity and new things.
 
+# <<thm:1>>
+#+BEGIN_theorem
+#+latex: \label{thm:1}%
+First theorem of last.
+#+END_theorem
+
+
 ** Writing of Mathematics [2017-05-16 Tue 11:57]
 It is difficult to write reusable notes in mathematics. Many (including anh Tu) use writing as a way
 to reformulate ideas/knownledge and do not read their own notes again. But memory is obviously not
@@ -110,3 +126,18 @@ unable to understand my own notes.
 
 
 
+
+
+# <<thm:1>>
+#+BEGIN_theorem
+This is a theorem
+\[
+a^2 +a^2 = 2a^2 +\int_0^1 0dx
+\]
+#+END_theorem
+
+# <<thm:2>>
+#+BEGIN_theorem
+#+latex: \label{thm:2}%
+Here is another $a+b=c$.
+#+END_theorem

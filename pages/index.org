@@ -1,0 +1,9 @@
+#+TITLE: Welcome to my homepage
+
+* About this site
+This website is written using [[https://en.wikipedia.org/wiki/Emacs][emacs]] [[http://orgmode.org/][org-mode]] with a modified version of [[https://github.com/SteveLane/org-css][this CSS]]. It is motivated
+from [[https://ogbe.net/blog/blogging_with_org.html][here]] and [[https://nicolas.petton.fr/blog/blogging-with-org-mode.html][here]].
+
+
+* About me
+ 
