@@ -31,12 +31,11 @@
 	-moz-osx-font-smoothing: grayscale;
 	margin: 0;
 	padding: 0;
-    text-align: justify
 
     }
     body #content {
 	padding-top: 0px;
-	max-width: 60%;
+	max-width: 80%;
 	min-width: 700px;
 	margin-left: 20px;
 	background-color: white;
@@ -113,11 +112,9 @@
 
     /* Redefine heading sizes */
     h1 {
-    font-family: "Times New Roman", Times, serif;
 	font-size: 1.6rem; }
     
     h2 {
-    font-family: "Times New Roman", Times, serif;
 	/* font-size: 1.25rem; } */
 	font-size: 1.3rem; }
     
@@ -141,8 +138,8 @@
 	padding:0 0 30px 0;
 	margin-top: 10px;
 	margin-bottom: 10px;
-    color: #f56c0d;
-    font-variant: small-caps;
+	margin-right: 7%;
+	/*    color: #6C5D4F; */
 	/* color: grey; */
     }
 
@@ -150,8 +147,6 @@
 	padding:10px 0 10px 0;
 	/* color: black; */
 	border-bottom: 1px solid #ddd;
-    font-variant: small-caps;
-    color: #f56c0d;
     }
 
     .outline-text-2 {
@@ -1008,14 +1003,13 @@
     #postamble {
 	font-size: 75%;
 	min-width: 700px;
-	max-width: 60%;
+	max-width: 80%;
 	margin-left: 20px;
 	margin-top: 10px;
 	padding: .2em;
 	border-top: 1px solid gray;
 	background-color: #ffffff;
 	z-index: -1000;
-    text-align: right;
     }
 
 
@@ -1028,7 +1022,7 @@
     #table-of-contents {
 	float: right;
 	border: 1px solid #CCC;
-	max-width: 60%;
+	max-width: 50%;
 	overflow: auto;
     }
 } /* END OF @media screen */
@@ -1039,9 +1033,9 @@ body .nav {
   text-align: left;
   margin-top: 10px;
   margin-left: 20px;
-  margin-right: 20%;
+  margin-right: 7%;
   padding: 2em;
-  max-width: 60%;
+  max-width: 80%;
 }
 
 body .nav ul {
