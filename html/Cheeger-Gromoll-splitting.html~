@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-05-19 Fri 12:41 -->
+<!-- 2017-05-19 Fri 12:44 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>From Busemann function to Cheeger-Gromoll splitting</title>
@@ -366,15 +366,14 @@ following lemma.
 </p>
 
 
+<div class="lemma">
 <p>
-#+BEGIN_lemma[E.Calabi- E.Hopf]
+In a connected Riemannian manifold, if a continuous function \(f\) is supported at any point \(x\) by
+a family \(f_\epsilon\) (depending on \(x\)) with \(\Delta(f_\epsilon)\leq \epsilon\), then \(f\) can not
+attain maximum (unless when \(f\) is constant).
 </p>
-<p>
-  In a connected Riemannian manifold, if a continuous function \(f\) is supported at any point \(x\) by
-  a family \(f_\epsilon\) (depending on \(x\)) with \(\Delta(f_\epsilon)\leq \epsilon\), then \(f\) can not
-  attain maximum (unless when \(f\) is constant).
-#+END_lemma
-</p>
+
+</div>
 
 <div class="proof">
 <p>
@@ -428,7 +427,7 @@ splitting theorem of Cheeger-Gromoll follows.
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-05-19 Fri 12:35. <br>
+Last updated 2017-05-19 Fri 12:42. <br>
 Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 9.0.5).
 </div>
 </div>

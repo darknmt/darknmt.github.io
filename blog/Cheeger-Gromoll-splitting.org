@@ -10,7 +10,6 @@ A. Besse.
 Let $M$ be a complete, connected Riemannian manifold with non negative Ricci curvature. Suppose
 that $M$ contains a line then $M$ is isometric to $M'\times \mathbb{R}$ with $M'$ a complete,
 connected Riemannian manifold with non negative Ricci curvature.
-\end{theorem}
 #+END_theorem
 
 
@@ -91,6 +90,7 @@ $\nabla \phi \ne 0$ and a large  $\alpha$ such that
 \[
 \Delta h = \eta (-\alpha^2\| \nabla \phi\| + \alpha \Delta \phi)e^{\alpha \phi}.
 \]
+is negative.
 #+END_proof
 
 
