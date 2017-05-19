@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-05-18 Thu 12:39 -->
+<!-- 2017-05-19 Fri 12:44 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Welcome to my homepage</title>
+<title>From Busemann function to Cheeger-Gromoll splitting</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="darknmt" />
 <style type="text/css">
@@ -227,6 +227,28 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -240,34 +262,172 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div id="content">
-<h1 class="title">Welcome to my homepage</h1>
-
-<div id="outline-container-org1fafcc8" class="outline-2">
-<h2 id="org1fafcc8">About this site</h2>
-<div class="outline-text-2" id="text-org1fafcc8">
+<h1 class="title">From Busemann function to Cheeger-Gromoll splitting</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org782682f">1. Busemann function</a></li>
+<li><a href="#org813249c">2. Harmonicity</a></li>
+</ul>
+</div>
+</div>
 <p>
-This website is written using <a href="https://en.wikipedia.org/wiki/Emacs">emacs</a> <a href="http://orgmode.org/">org-mode</a> with a modified version of <a href="https://github.com/SteveLane/org-css">this CSS</a>. It is motivated
-from <a href="https://ogbe.net/blog/blogging_with_org.html">here</a> and <a href="https://nicolas.petton.fr/blog/blogging-with-org-mode.html">here</a>.
+We will prove the following result by Cheeger and Gromoll by a slightly modified approach of
+A. Besse.
 </p>
-</div>
-</div>
 
-
-<div id="outline-container-orgd9fe62f" class="outline-2">
-<h2 id="orgd9fe62f">About me</h2>
-<div class="outline-text-2" id="text-orgd9fe62f">
-
-<div class="figure">
-<p><img src="../img/randomProfile.png" alt="randomProfile.png" width="30%" />
+<div class="theorem">
+<p>
+Let \(M\) be a complete, connected Riemannian manifold with non negative Ricci curvature. Suppose
+that \(M\) contains a line then \(M\) is isometric to \(M'\times \mathbb{R}\) with \(M'\) a complete,
+connected Riemannian manifold with non negative Ricci curvature.
+\end{theorem}
 </p>
+
 </div>
+
+
+<div id="outline-container-org782682f" class="outline-2">
+<h2 id="org782682f"><span class="section-number-2">1</span> Busemann function</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Let \(\gamma\) be a geodesic ray. We construct the Busemann function \(b\) associated to the ray as
+\[
+b(x) = \lim_{t\to+\infty}f_t(x) = t - d(x,\gamma(t))
+\]
+where the limit exists because the sequence \(f_t\) is non-decreasing and bounded by
+\(d(x,\gamma(0))\). The convergence is also uniform in every compact. 
+</p>
+
+
+<p>
+In Euclidean space for example, the Busemann function is the orthogonal projection on \(\gamma\). We
+will see that in a Riemannian manifold with non negative curvature, the Busemann function will serve
+as a projection.
+</p>
+
+
+<p>
+Now with a fixed \(x_0\in M\), the tangent vector at \(x_0\) of the geodesics connecting \(x_0\) and
+\(\gamma(t)\) is in the unit sphere of \(T_xM\), which is compact. Let \(X\) be a limit point of these
+tangents vectors and pose
+\[
+b_{X,t}(x) = b(x_0) + t - d(x, C_X(t))
+\]
+where \(C_X(t)\) is the geodesic flow starting at \(x_0\) with velocity \(X\).
+</p>
+
+<div class="remark">
+<ul class="org-ul">
+<li>From the construction of \(X\), one has \(b(x_0) + t = b(C_X(t))\), therefore \(b_{X,t} \leq b\) with</li>
+</ul>
+<p>
+equality in \(x_0\). We say that \(b\) is supported by \(b_{X,t}\) at \(x_0\). In general a function \(f\) is
+{\em supported} by \(g\) at \(x_0\) if \(f(x_0)=g(x_0)\) and \(f\geq g\) in a neighborhood of \(x_0\).
+\item \(b_{X,t}\) is smooth and a computation in local coordinate gives
+  \(\Delta b_{X,t} \leq \frac{\dim M - 1}{t}\)
+</p>
+<ul class="org-ul">
+<li>\(\|\nabla b_{X,t}\| = 1\)</li>
+</ul>
+
+</div>
+
+<p>
+We also note that it suffices to show that \(b\) is harmonic. In fact, from the smoothness one has
+\(\nabla b(x_0) =\nabla b_{X,t}(x_0)\), which means \(\|\nabla b\| = 1\) at every point in \(M\). 
+For each point \(y\in M\), there exists a unique \(x\) with \(b(x)=0\) and time \(t\) when the flow of
+\(\nabla b\) arrive at \(x\). \(M\) is therefore homeomorphic to \(\bar M\times \mathbb{R}\) by the above
+\(y\mapsto (x,t)\) map. To see that this map is isometric, it remains to prove that \(\nabla b\) is
+parallel, which follows from harmonicity of \(b\)
+\[
+Ric(\nabla b,\nabla b) = -\|\nabla (\nabla b) \| - (\nabla b).(\Delta b)
+\]
+we see that \(\nabla b\) is parallel if \(\Delta b =0\).
+</p>
+
+<div class="remark">
+<p>
+One can show (see A. Besse) that every gradient field \(\nabla b\) of norm 1 at every point is
+actually harmonic.
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org813249c" class="outline-2">
+<h2 id="org813249c"><span class="section-number-2">2</span> Harmonicity</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+The Busemann function associated to a geodesic ray is subharmonic, it is a consequence of the
+following lemma.
+</p>
+
+
+<div class="lemma">
+<p>
+In a connected Riemannian manifold, if a continuous function \(f\) is supported at any point \(x\) by
+a family \(f_\epsilon\) (depending on \(x\)) with \(\Delta(f_\epsilon)\leq \epsilon\), then \(f\) can not
+attain maximum (unless when \(f\) is constant).
+</p>
+
+</div>
+
+<div class="proof">
+<p>
+Given a small geodesic ball \(B\), suppose that we have a function \(h\) on \(B\) with \(\Delta h <0\) in \(B\) and
+\(f+h\) attains maximum at \(x\) in the interior of \(B\). Then \(f_\epsilon + h\) also attains maximum at
+\(x\), which means \(\Delta f_\epsilon + \Delta h \geq 0\), which is contradictory.
+</p>
+
+<p>
+For the construction of the function \(h\), one suppose that \(B\) is small enough such that
+\(f|_{\partial B} \leq max_B f=: f(x_0)\) and equality is not attained at every points in \(\partial B\). Then
+choose
+\[
+h = \eta (e^{\alpha \phi} - 1)
+\]
+with and \(\phi(x) = -1\) if \(x\in \partial B\) and \(f(x) = f(x_0)\), \(\phi(x_0) = 0\),
+\(\nabla \phi \ne 0\) and a large  \(\alpha\) such that
+\[
+\Delta h = \eta (-\alpha^2\| \nabla \phi\| + \alpha \Delta \phi)e^{\alpha \phi}.
+\]
+</p>
+
+</div>
+
+
+<p>
+Now for subharmonicity of \(b\), given a harmonic function \(h\) that coincides with \(b\) in the boundary \(\partial B\) of a
+geodesic ball \(B\), then \(b-h\) is supported by \(b_{X,t} - h\) with \(\Delta (b_{X,t}-h) \to 0\) as \(t\)
+tends to \(+\infty\), therefore \(b-h \leq (b-h)|_{\partial B} = 0\) in \(B\). hence \(b\) is subharmonic.
+</p>
+
+<div class="corollary">
+<p>
+The Busemann function of a geodesic ray in a Riemannian manifold \(M\) with non-negative Ricci
+curvature is subharmonic.
+</p>
+
+</div>
+
+
+<p>
+Now let \(b_+\) be the function previously constructed for the ray \(\gamma|_{[0,+\infty[}\) and \(b_-\)
+the Busemann function for the ray \(\tilde\gamma|_{[0,+\infty[}\) where \(\tilde\gamma(t) =
+\gamma(-t)\). Note that \(b_+ + b_-\leq 0\) with equality on the line \(\gamma\), but the sum is
+subharmonic therefore by maximum principle \(b_+ = -b_-\) and \(b\) is harmonic hence smooth. The
+splitting theorem of Cheeger-Gromoll follows.
+</p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-05-18 Thu 12:39. <br>
+Last updated 2017-05-19 Fri 12:42. <br>
 Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 9.0.5).
 </div>
 </div>
