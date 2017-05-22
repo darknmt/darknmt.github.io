@@ -1,17 +1,16 @@
 #+TITLE: From Busemann function to Cheeger-Gromoll splitting
 #+SETUPFILE: ../res/mathsetup.org
-
 We will prove the following result by Cheeger and Gromoll by a slightly modified approach of
 A. Besse.
 
-# <<thm:Cheeger-Gromoll>>
+
+#+ATTR_LATEX: :options [Cheeger-Gromoll]
 #+BEGIN_theorem
-#+latex: \label{thm:Cheeger-Gromoll}%
+<<thm:cheeger-gromoll>>
 Let $M$ be a complete, connected Riemannian manifold with non negative Ricci curvature. Suppose
 that $M$ contains a line then $M$ is isometric to $M'\times \mathbb{R}$ with $M'$ a complete,
 connected Riemannian manifold with non negative Ricci curvature.
 #+END_theorem
-
 
 * Busemann function
 
@@ -37,12 +36,12 @@ b_{X,t}(x) = b(x_0) + t - d(x, C_X(t))
 where $C_X(t)$ is the geodesic flow starting at $x_0$ with velocity $X$.
 
 #+BEGIN_remark
-- From the construction of $X$, one has $b(x_0) + t = b(C_X(t))$, therefore $b_{X,t} \leq b$ with
-equality in $x_0$. We say that $b$ is supported by $b_{X,t}$ at $x_0$. In general a function $f$ is
-{\em supported} by $g$ at $x_0$ if $f(x_0)=g(x_0)$ and $f\geq g$ in a neighborhood of $x_0$.
-\item $b_{X,t}$ is smooth and a computation in local coordinate gives
-  $\Delta b_{X,t} \leq \frac{\dim M - 1}{t}$
-- $\|\nabla b_{X,t}\| = 1$
+1. From the construction of $X$, one has $b(x_0) + t = b(C_X(t))$, therefore $b_{X,t} \leq b$ withe
+   quality in $x_0$. We say that $b$ is supported by $b_{X,t}$ at $x_0$. In general a function $f$
+   is /supported/ by $g$ at $x_0$ if $f(x_0)=g(x_0)$ and $f\geq g$ in a neighborhood of $x_0$.
+2. $b_{X,t}$ is smooth and a computation in local coordinate gives $\Delta b_{X,t} \leq \frac{\dim
+   M - 1}{t}$
+3. $\|\nabla b_{X,t}\| = 1$
 #+END_remark
 
 We also note that it suffices to show that $b$ is harmonic. In fact, from the smoothness one has

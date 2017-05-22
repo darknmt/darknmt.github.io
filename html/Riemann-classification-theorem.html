@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-05-20 Sat 23:48 -->
+<!-- 2017-05-20 Sat 23:49 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>From Busemann function to Cheeger-Gromoll splitting</title>
+<title>Classification theorems in Remannian geometry</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="darknmt" />
 <style type="text/css">
@@ -262,171 +262,175 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div id="content">
-<h1 class="title">From Busemann function to Cheeger-Gromoll splitting</h1>
+<h1 class="title">Classification theorems in Remannian geometry</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org782682f">1. Busemann function</a></li>
-<li><a href="#org813249c">2. Harmonicity</a></li>
+<li><a href="#org80e87e6">1. What is holonomy and why it is important</a></li>
+<li><a href="#org612e05e">2. De Rham decomposition</a></li>
+<li><a href="#orgde4981b">3. Berger classification for non-symmetric manifolds</a></li>
+<li><a href="#orgf875fa5">4. Chern class and Calabi conjecture (Yau theorem)</a></li>
+<li><a href="#orgab29336">5. Cheeger-Gromoll splitting theorem</a></li>
+<li><a href="#org5e40148">6. Bogomolov-Beauville classification</a></li>
 </ul>
 </div>
 </div>
-<div class="PREVIEW">
 <p>
-We will prove the following result by Cheeger and Gromoll by a slightly modified approach of
-A. Besse.
+This is part of my reading in the summer of 2017. I will try not to mention the details here as they
+will be covered in future posts. The big question is to 
+</p>
+<ol class="org-ol">
+<li>first determine which groups can be a holonomy group (results of E. Cartan then Berger).</li>
+<li>then study Bogomolov-Beauville result: hyperkahler manifolds and Calabi-Yau manifolds are
+building blocks of Kahler manifold with vanishing Chern class.</li>
+</ol>
+
+<div id="outline-container-org80e87e6" class="outline-2">
+<h2 id="org80e87e6"><span class="section-number-2">1</span> What is holonomy and why it is important</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<i>Holonomy</i> is the action of closed curves starting from a point \(x\) in a Riemannian manifold \(M\) to
+the tangent space \(T_xM\). It is important because
 </p>
 
+<ol class="org-ol">
+<li>Knowing the holonomy means knowing the parallel tensors, in fact each parallel tensor is uniquely
+determined by its value on a fiber \(T_xM\) (for other fibers just transport), and this value has
+to be invariant by the action of holonomy.</li>
+<li>The smaller the holonomy is, the more structure the manifold can have. For example, if somehow
+one knows that the holonomy group is in \(SU(n)\) for a manifold of dimension \(2n\), then as \(SU(n)\)
+is exactly those that preserve a almost complex structure \(J\), by transporting \(J\), we see that
+\(M\) has a almost complex structure.</li>
+<li>It serves as a geometric invariant (unlike the cohomology, which are topological invariants)</li>
+</ol>
+
+
+<p>
+Note that we defined the holonomy group by its representation. In most case, we only consider
+Levi-Civita connection and the holonomy representation is then orthogonal.
+</p>
+</div>
+</div>
+<div id="outline-container-org612e05e" class="outline-2">
+<h2 id="org612e05e"><span class="section-number-2">2</span> De Rham decomposition</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+De Rham theorem allows us to decompose a Riemannian manifold under certain conditions (complete and
+connected) as Riemannian product of complete connected manifold with <i>irreducible holonomy representation</i>.
+</p>
+
+<p>
+The idea behind this results is to prove that if a fiber \(T_xM\) decompose to subspaces stable by
+holonomy, then by parallel transport \(TM\) also decompose. But by direct computation each
+component of \(TM\) is involutive and by Frobenius theorem locally tangent to a submanifold of
+\(M\). The completeness allows us to join the local pieces.
+</p>
+
+<p>
+Now it remains to deal with irreducible holonomies. If the manifold is <i>locally symmetric</i> then one
+can prove that it is isometric to the homogeneous space \(G/H\) with \(H\) (the holonomy) a closed Lie
+subgroup of \(G\). The theory of Lie groups developed by E. Cartan gave a complete list of these spaces.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgde4981b" class="outline-2">
+<h2 id="orgde4981b"><span class="section-number-2">3</span> Berger classification for non-symmetric manifolds</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+For the non-symmetric manifold, Berger proved that a irreducible holonomy has to be one of the
+following
+</p>
+<ol class="org-ol">
+<li>\(SO(n)\)</li>
+<li>\(U(m)\subset SO(2m)\)</li>
+<li>\(SU(m)\subset SO(2m)\)</li>
+<li>\(Sp(m) \subset SO(4m)\)</li>
+<li>\(SO(m)Sp(1) \subset SO(4m)\)</li>
+<li>\(G_2\subset SO(7)\)</li>
+<li>\(\text{Spin}(7)\subset SO(8)\)</li>
+</ol>
+
+<p>
+where \(n\) is the dimension. Here are some notations, note always that
+\[
+Sp(m)\subset SU(2m)\subset U(2m)\subset SO(4m)
+\]
+</p>
+<ol class="org-ol">
+<li>If \(Hol(g)\subset U(m)\subset SO(2m)\), \(g\) is called a <i>Kahler metric</i>.</li>
+<li>If \(Hol(g)\subset SU(m)\subset SO(2m)\), \(g\) is called a <i>Calabi-Yau</i> metric. We will see that a
+Calabi-Yau metric is a Kahler metric that is also Ricci-flat.</li>
+<li>If \(Hol(g)\subset Sp(m)\subset SO(4m)\) then \(g\) is called a <i>hyperkahler</i> metric.</li>
+<li>\(G_2\) and \(\text{Spin}(7)\) are called <i>exceptional holonomies</i></li>
+</ol>
+
+<p>
+Therefore hyperkahler \(\longrightarrow\) Calabi-Yau \(\longrightarrow\) Kahler
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf875fa5" class="outline-2">
+<h2 id="orgf875fa5"><span class="section-number-2">4</span> Chern class and Calabi conjecture (Yau theorem)</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+The Chern class \(c_1(M)\) of a Riemannian manifold is the class in \(H^{1,1}(M)\) of the Ricci
+curvature. It is easy to see that two different kahler metric give the same Chern class. The
+conjecture posed by Calabi asks <b>whether we can modify the kahler metric to attain, as Ricci
+curvature, every \((1,1)\) form in the original Chern class</b>. The response, which is positive, was
+given by S.T. Yau.
+</p>
 
 <div class="theorem">
 <p>
-<a id="orgfa4ccda"></a>
-Let \(M\) be a complete, connected Riemannian manifold with non negative Ricci curvature. Suppose
-that \(M\) contains a line then \(M\) is isometric to \(M'\times \mathbb{R}\) with \(M'\) a complete,
-connected Riemannian manifold with non negative Ricci curvature.
+<a id="orgcf4f5fc"></a>
+Let \(M\) be a compact manifold with a Kahler form \(\omega\) and the corresponding Ricci curvature
+\(R_\omega\). Let \(R\) be a \((1,1)\) form cohomologous to \(R_\omega\), then there exists a Kahler form
+\(\omega'\) cohomologous to \(\omega\) such that \(R'\) is the Ricci curvature of \(\omega'\).
 </p>
 
 </div>
-
 </div>
-<div id="outline-container-org782682f" class="outline-2">
-<h2 id="org782682f"><span class="section-number-2">1</span> Busemann function</h2>
-<div class="outline-text-2" id="text-1">
+</div>
+
+
+
+<div id="outline-container-orgab29336" class="outline-2">
+<h2 id="orgab29336"><span class="section-number-2">5</span> Cheeger-Gromoll splitting theorem</h2>
+</div>
+
+<div id="outline-container-org5e40148" class="outline-2">
+<h2 id="org5e40148"><span class="section-number-2">6</span> Bogomolov-Beauville classification</h2>
+<div class="outline-text-2" id="text-6">
 <p>
-Let \(\gamma\) be a geodesic ray. We construct the Busemann function \(b\) associated to the ray as
+Bogomolov result, later refined by Beauville showed that the building blocks of Kahler manifolds
+with vanishing Chern class are the complex torus, simply-connected Hyperkahler manifolds or
+simply-connected Calabi-Yau manifolds.
+</p>
+
+<div class="theorem">
+<p>
+<a id="orgba25bf7"></a>
+Let \(M\) be a compact manifold of Kahler type with \(c_1(M)=0\) then there exists a finite etale
+covering space \(\tilde M\) of \(M\) of form
 \[
-b(x) = \lim_{t\to+\infty}f_t(x) = t - d(x,\gamma(t))
+\tilde X = T\times \prod_i V_i \prod_j X_j
 \]
-where the limit exists because the sequence \(f_t\) is non-decreasing and bounded by
-\(d(x,\gamma(0))\). The convergence is also uniform in every compact. 
-</p>
-
-
-<p>
-In Euclidean space for example, the Busemann function is the orthogonal projection on \(\gamma\). We
-will see that in a Riemannian manifold with non negative curvature, the Busemann function will serve
-as a projection.
-</p>
-
-
-<p>
-Now with a fixed \(x_0\in M\), the tangent vector at \(x_0\) of the geodesics connecting \(x_0\) and
-\(\gamma(t)\) is in the unit sphere of \(T_xM\), which is compact. Let \(X\) be a limit point of these
-tangents vectors and pose
-\[
-b_{X,t}(x) = b(x_0) + t - d(x, C_X(t))
-\]
-where \(C_X(t)\) is the geodesic flow starting at \(x_0\) with velocity \(X\).
-</p>
-
-<div class="remark">
-<ol class="org-ol">
-<li>From the construction of \(X\), one has \(b(x_0) + t = b(C_X(t))\), therefore \(b_{X,t} \leq b\) withe
-quality in \(x_0\). We say that \(b\) is supported by \(b_{X,t}\) at \(x_0\). In general a function \(f\)
-is <i>supported</i> by \(g\) at \(x_0\) if \(f(x_0)=g(x_0)\) and \(f\geq g\) in a neighborhood of \(x_0\).</li>
-<li>\(b_{X,t}\) is smooth and a computation in local coordinate gives \(\Delta b_{X,t} \leq \frac{\dim
-   M - 1}{t}\)</li>
-<li>\(\|\nabla b_{X,t}\| = 1\)</li>
-</ol>
-
-</div>
-
-<p>
-We also note that it suffices to show that \(b\) is harmonic. In fact, from the smoothness one has
-\(\nabla b(x_0) =\nabla b_{X,t}(x_0)\), which means \(\|\nabla b\| = 1\) at every point in \(M\). 
-For each point \(y\in M\), there exists a unique \(x\) with \(b(x)=0\) and time \(t\) when the flow of
-\(\nabla b\) arrive at \(x\). \(M\) is therefore homeomorphic to \(\bar M\times \mathbb{R}\) by the above
-\(y\mapsto (x,t)\) map. To see that this map is isometric, it remains to prove that \(\nabla b\) is
-parallel, which follows from harmonicity of \(b\)
-\[
-Ric(\nabla b,\nabla b) = -\|\nabla (\nabla b) \| - (\nabla b).(\Delta b)
-\]
-we see that \(\nabla b\) is parallel if \(\Delta b =0\).
-</p>
-
-<div class="remark">
-<p>
-One can show (see A. Besse) that every gradient field \(\nabla b\) of norm 1 at every point is
-actually harmonic.
+where \(V_i\) is a simply-connected, projective manifold with \(H^0(V_i,\Omega_{V_i}^*) = \mathbb{C}
+\oplus \mathbb{C}\omega\), \(\omega\in \Omega^{n_i}\) and \(X_j\) irreducible symplectic manifold.
 </p>
 
 </div>
-</div>
-</div>
-
-<div id="outline-container-org813249c" class="outline-2">
-<h2 id="org813249c"><span class="section-number-2">2</span> Harmonicity</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-The Busemann function associated to a geodesic ray is subharmonic, it is a consequence of the
-following lemma.
-</p>
-
-
-<div class="lemma">
-<p>
-In a connected Riemannian manifold, if a continuous function \(f\) is supported at any point \(x\) by
-a family \(f_\epsilon\) (depending on \(x\)) with \(\Delta(f_\epsilon)\leq \epsilon\), then \(f\) can not
-attain maximum (unless when \(f\) is constant).
-</p>
-
-</div>
-
-<div class="proof">
-<p>
-Given a small geodesic ball \(B\), suppose that we have a function \(h\) on \(B\) with \(\Delta h <0\) in \(B\) and
-\(f+h\) attains maximum at \(x\) in the interior of \(B\). Then \(f_\epsilon + h\) also attains maximum at
-\(x\), which means \(\Delta f_\epsilon + \Delta h \geq 0\), which is contradictory.
-</p>
-
-<p>
-For the construction of the function \(h\), one suppose that \(B\) is small enough such that
-\(f|_{\partial B} \leq max_B f=: f(x_0)\) and equality is not attained at every points in \(\partial B\). Then
-choose
-\[
-h = \eta (e^{\alpha \phi} - 1)
-\]
-with and \(\phi(x) = -1\) if \(x\in \partial B\) and \(f(x) = f(x_0)\), \(\phi(x_0) = 0\),
-\(\nabla \phi \ne 0\) and a large  \(\alpha\) such that
-\[
-\Delta h = \eta (-\alpha^2\| \nabla \phi\| + \alpha \Delta \phi)e^{\alpha \phi}.
-\]
-is negative.
-</p>
-
-</div>
-
-
-<p>
-Now for subharmonicity of \(b\), given a harmonic function \(h\) that coincides with \(b\) in the boundary \(\partial B\) of a
-geodesic ball \(B\), then \(b-h\) is supported by \(b_{X,t} - h\) with \(\Delta (b_{X,t}-h) \to 0\) as \(t\)
-tends to \(+\infty\), therefore \(b-h \leq (b-h)|_{\partial B} = 0\) in \(B\). hence \(b\) is subharmonic.
-</p>
-
-<div class="corollary">
-<p>
-The Busemann function of a geodesic ray in a Riemannian manifold \(M\) with non-negative Ricci
-curvature is subharmonic.
-</p>
-
-</div>
-
-
-<p>
-Now let \(b_+\) be the function previously constructed for the ray \(\gamma|_{[0,+\infty[}\) and \(b_-\)
-the Busemann function for the ray \(\tilde\gamma|_{[0,+\infty[}\) where \(\tilde\gamma(t) =
-\gamma(-t)\). Note that \(b_+ + b_-\leq 0\) with equality on the line \(\gamma\), but the sum is
-subharmonic therefore by maximum principle \(b_+ = -b_-\) and \(b\) is harmonic hence smooth. The
-splitting theorem of Cheeger-Gromoll follows.
-</p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-05-20 Sat 23:14. <br>
+Last updated 2017-05-20 Sat 23:48. <br>
 </div>
 </div>
 </body>
