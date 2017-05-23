@@ -1,0 +1,39 @@
+#+TITLE: De Rham decomposition
+#+SETUPFILE: ../res/mathsetup.org
+
+We observe that if a manifold $(M,g)$ is globally a product $(M_1,g_1)\times (M_2,g_2)$ then
+$Hol_{g}(M) = Hol_{g_1}(M_1)\times Hol_{g_2}(M_2)$ and the holonomy representation of $M$ is
+reducible. A result of de Rham says that one can decompose a Riemannian manifold as product of ones
+with irreducible holonomy representation.
+
+
+#+ATTR_LATEX: :options [De Rham decomposition]
+#+BEGIN_theorem
+<<thm:de-Rham-decomposition>>
+Given $(M,g)$ a simply connected and complete Riemannian manifold, there exists a unique
+decomposition upto isometry and permutation of factors
+\[
+(M,g) = \prod_{i=1}^n(M_i,g_i)
+\]
+where $(M_i,g_i)$ are complete, simply connected Riemannian irreducible manifolds
+#+END_theorem
+
+
+The proof of this theorem contains two steps:
+1. Remark that if the holonomy group is reducible then locally $M$ is a product of Riemannian
+  manifolds, i.e. for every $x\in M$ there exists a neighborhood $U$ containing $x$ with
+  $(U,g)=(M_1,g_1)\times (M_2,g_2)$.
+2. Obtain the global product structure from local one. This is where completeness is put in use.
+
+
+We now discuss the first point with a bit more details. Suppose that $T_xM = U_x \oplus^\perp V_x$
+where $U_x, V_x$ are stable under action of holonomy group, then by transporting $U_x, V_x$ to the
+tangent space of any point $y$ (as they are stable by holonomy, the result is independent of the
+curve along which the transport is taken), we obtain then two sub fibers $A$ and $B$ of $TM$ over
+$M$ that are stable by transport. Then for every vector field $u_A$ in $A$ and $v$ in $TM$,
+$\nabla_v u_A \in A$, as the Levi-Civita connection is torsionless, one deduces
+$[u_A,v_A] = \nabla_{u_A}v_A - \nabla_{v_A}u_A$ remains in $A$. By Frobenius theorem, locally at a
+point $x\in M$, there exist manifolds $M_1, M_2$ whose tangent spaces are $A$ and $B$. It then
+remains to show that $M$ is isometric to $M_1\times M_2$. Details can be found in the book of
+Kobayashi-Nomizu.
+

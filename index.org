@@ -1,0 +1,143 @@
+#+TITLE: Welcome to my declassified Notebook
+#+OPTIONS: tex:t
+#+HTML_MATHJAX: path:"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"
+#+SETUPFILE:theme-bigblow-local.setup
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="theorems.css" />
+#+LATEX_HEADER: \usepackage{amsthm}
+#+LATEX_HEADER: \newtheorem{remark}{Remark}  
+#+LATEX_HEADER: \newtheorem{theorem}{Theorem}[section]
+#+LATEX_HEADER: \newtheorem{lemma}[theorem]{Lemma}
+#+LATEX_HEADER: \newtheorem{corollary}{Corollary}[theorem]
+#+LATEX_HEADER: \newtheorem{conjecture}[theorem]{Conjecture} 
+#+LATEX_HEADER: \newtheorem{proposition}{Proposition}[theorem]
+#+LATEX_HEADER: \newtheorem{problem}{Problem} 
+#+LATEX_HEADER: \newtheorem{example}{Example} 
+#+LATEX_HEADER: \newtheorem{definition}{Definition} 
+
+
+* About this website
+This website is written using [[https://en.wikipedia.org/wiki/Emacs][emacs]] [[http://orgmode.org/][org-mode]] with the HTML theme [[https://github.com/fniessen/org-html-themes][Bigblow]]
+
+
+   
+* About me
+
+* Mathematical writing
+  Some of my mathematical writings are uploaded to sharelatex. *org-mode* support for LaTeX is in
+ my oppinion even better than Wordpress and I am not bluffing, this $\nabla_{\dot\gamma}\dot\gamma =
+ 0$ is one, and here is another
+
+\[ \int_0^\infty e^{-x^2}dx = \frac{\sqrt{\pi}}{2} \]
+
+Mathematics however (at least mine) are
+  not just about what you write between the $-signs, mathematics are also about structures, things
+  you put between
+
+  \begin{lemma}, \end{theorem}, \ref{lem}, ...
+
+  There seems to be no easy and reusable method for this (that is more efficient than emacs +
+  auctex + reftex + yasnippet) and that is why I will put almost everything in sharelatex. Here they
+  are
+
+* Philosophy
+* Blog
+** Alexander Grothendieck [2017-05-12 Fri 22:37]
+His work is *simplifying*, not *generalizing*.
+I do not agree with his metaphor of rising sea about mathematician's methods:
+ - Firstly, it suggests that the two methods deal with the same object.
+ - Secondly, it suggests that there are no hereditary relation between the two.
+
+Dieck is hot-tempered and had a different life style (Laurent Schwartz had to calculate to find a
+day then an hour to have dinner with Dieck)
+
+*** Builder and explorer
+
+_Masculin_: Child-builder, duty
+
+_Feminin_: Child-explorer, joy
+
+Grothendieck kept himself a builder (with a _concious effort to justify_ it). Serre also said that
+Grothendieck did maths not for the joy or delight or beauty, but as a duty. His method is to set the
+*"grand tâche"* (theory-building) and *restrain from going too far* (exploring), and make some
+*responsibility/ fidelity with the tasks* (He even said he was a prisonner of them).
+
+*** The fear
+- of not being regconised: lead to problem-solving
+- of being wrong
+Grothendieck said that if there was a personal trait in him that was not found in his colleage, it
+had to be the *total lack of fear* (may be due to his childhood?).
+
+Anyway, I believe that anyone who do not fear being wrong had to be very experienced of being fool
+by the pathology nature of rigor. Grothendieck hence had to have plenty examples for his
+theory-building works. The _"Grothendieck prime" blurf_ may be just another _Da Vinci's burning_ of
+sketch to show that one is genius and do not have to practice to archieve perfection.
+
+** Film review: Manchester by the sea and Spring-Summer-Fall-Winter and Spring [2017-05-15 Mon 10:13]
+*** Làm sao mình biết những phim này
+Cứ nghe Duy nó ca Manchester by the sea hoài nên phải xem cho biết, xem xong thấy quá chán nên lên
+Ebert kiếm phim khác xem và thấy Xuân Hạ Thu Đông.
+
+Xem xong Manchester by the sea còn viết thư cho Duy hỏi xem nó thấy hay chỗ nào nữa :))
+
+*** Manchester by the sea
+Phim xoay quanh 1 thanh niên làm lao công, sửa ống nước đủ kiêủ, một ngày nghe tin anh trai
+mất. Thanh niên có nghĩa vụ phaỉ giám hộ con cuả anh mình, 1 nhi đồng thích chịch. Sau đó bằng đủ
+kiểu cắt cảnh nonlinear soắn tít cả não, phim cho hay quá khứ của anh thanh niên: từng có vợ và 2
+con, 1 đêm ăn nhậu lỡ tay đốt cmn nhà nên mất con và bị vợ bỏ.
+
+Trái ngược với hình ảnh đó là đứa cháu hot boy, gái gú đếm không xuể. Phim xoay quanh mâu thuẫn giữa
+2 chú cháu về việc ai chuyển nhà về ở với ai (lúc này xuất hiện tuyến nhân vật mẹ khó hiểu được đâu
+15 phút lên TV). Nhưng sau cùng cũng tìm được cách giải quyết. Kết thúc phim cho thấy đứa cháu chủ
+động nói chuyện và giỡn với cậu mình trong đám tang của cha.
+
+Thể loại khổ, túng quẩn và mâu thuẫn gia đình không có gì mơí, hay cái mâu thuẫn giữa ông câụ và xã
+hội cũng không quá đặc sắc. Nhạc phim là Adagio, quá quen với mấy phim nghèo VN. Về mood và
+atmosphere thì quá chậm và cũng không cuốn hút được mình (xem trong 2 ngày, và không có cái cảm giác
+không muốn ngừng xem như Xuân Hạ Thu Đông)
+
+*** Spring-Summer-Fall-Winter and Spring
+Phim về các thầy chùa, lúc nhỏ chơi ác với thú (cá, ếch, rắn), lớn tí đi chịch gái, giết người và đi
+tù. Về già thì vào chuà tập võ.
+
+Phim cho thấy những cái khổ của con ngươì: tôị lỗi, ham muốn, sự tuần hoàn (hình ảnh bánh xe và phât
+Di Lạc cuối phim). Hai cái đầu có thể giải quyét được bằng giáo dục và pháp luật, cái thứ ba thì
+không (nưóc mắt sư phụ lúc tự tử). Cảnh phim được expect là chậm, nhưng hoàn toàn hợp lý. Mình xem
+đến 2h30 sáng và phải đi ngủ để hôm sau dậy sớm (9h40 :v) và cứ phải hóng ăn gian từng phút.
+
+Phim hay, chùa đẹp, gái cũng vậy. Có dịp chắc sẽ xem lại.
+
+It is so paradoxical that I am afraid of both periodicity and new things.
+
+# <<thm:1>>
+#+BEGIN_theorem
+#+latex: \label{thm:1}%
+First theorem of last.
+#+END_theorem
+
+
+** Writing of Mathematics [2017-05-16 Tue 11:57]
+It is difficult to write reusable notes in mathematics. Many (including anh Tu) use writing as a way
+to reformulate ideas/knownledge and do not read their own notes again. But memory is obviously not
+my advantage and I will have to consult my writings later for sure.
+
+My mathematical writings in this moment is not a blog, that is I have no public audience hence no
+obligation to keep things formal. The disadvantage of this hermit life is that I usually find myself
+unable to understand my own notes.
+
+
+
+
+
+# <<thm:1>>
+#+BEGIN_theorem
+This is a theorem
+\[
+a^2 +a^2 = 2a^2 +\int_0^1 0dx
+\]
+#+END_theorem
+
+# <<thm:2>>
+#+BEGIN_theorem
+#+latex: \label{thm:2}%
+Here is another $a+b=c$.
+#+END_theorem

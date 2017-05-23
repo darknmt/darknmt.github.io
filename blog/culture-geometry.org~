@@ -1,0 +1,14 @@
+#+TITLE: Well-known results in Geometry
+#+SETUPFILE: ../res/mathsetup.org
+
+1. Grassmannian is a homogeneous space (quotient of Lie group) $Grass(k,n) = O(n)/(O(k)\times
+   O(n-k))$ of dimension $k(n-k)$.
+2. Kervaire (1961) found a topological manifold that has no differential structure.
+3. Classification of surfaces: Topological equivalence implies differential equivalence.
+
+
+* Levels of classification:
+1. Homology: Betty numbers, etc...
+2. Homotopy type
+3. Homeomorphy
+4. Diffeomorphy: Quotient Diffeo/ Homeo is finite when dimension > 4.
