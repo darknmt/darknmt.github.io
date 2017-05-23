@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-05-23 Tue 00:19 -->
+<!-- 2017-05-23 Tue 10:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Symmetric spaces and Lie groups</title>
@@ -263,6 +263,20 @@ for the JavaScript code in this tag.
 </div>
 <div id="content">
 <h1 class="title">Symmetric spaces and Lie groups</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgc668720">1. Symmetric space</a></li>
+<li><a href="#org2eb2fc9">2. Locally symmetric space</a></li>
+<li><a href="#org3f4889d">3. Appendice: Group of isometries as Lie group</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc668720" class="outline-2">
+<h2 id="orgc668720"><span class="section-number-2">1</span> Symmetric space</h2>
+<div class="outline-text-2" id="text-1">
 <p>
 By the sake of de Rham decomposition, we now focus more in Riemannian manifold with irreducible
 holonomy representation. The theory of Lie groups allows us to understand symmetric spaces.
@@ -330,9 +344,13 @@ classify all such pairs \((\frak{g},\frak{h})\).
 </p>
 
 </div>
+</div>
+</div>
 
 
-
+<div id="outline-container-org2eb2fc9" class="outline-2">
+<h2 id="org2eb2fc9"><span class="section-number-2">2</span> Locally symmetric space</h2>
+<div class="outline-text-2" id="text-2">
 <p>
 The previous results can be extended to locally symmetric spaces.
 </p>
@@ -370,10 +388,54 @@ As a result, the holonomy group can not tell the difference between a symmetric 
 symmetric manifold.
 </p>
 </div>
+</div>
+
+<div id="outline-container-org3f4889d" class="outline-2">
+<h2 id="org3f4889d"><span class="section-number-2">3</span> Appendice: Group of isometries as Lie group</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Every topological subtleties should be explained in this appendice. We claim, with
+Montgomery-Zippin, <i>Transformation groups</i> as reference a general result 
+</p>
+
+<div class="theorem">
+<p>
+<a id="orge348f33"></a>
+Let \(G\) be a group acting faithfully on a connected manifold \(M\) of class \(C^k\) such that each
+action is \(C^1\). Then \(G\) is a Lie group and the map \(G\times M\longrightarrow M\) is \(C^1\).
+</p>
+
+</div>
+
+<p>
+Then the problem becomes a topological one: to prove that the underlying group is locally
+compact. Note that we equipe with <span class="underline">a group</span> of isometries with the <b>compact-open topology</b>,
+ as \(M\) is locally compact and hence second-countable (i.e. the topology admits a countable
+base), we see that a group of isometries is also second-countable. It suffices to prove the
+second-countability for <span class="underline">the group</span> of (all) isometries. The detail can be found in
+Kobayashi-Nomizu's <i>Foundations of differential geometry</i> (Volume I, Theorem 4.7).
+</p>
+
+<div class="theorem">
+<p>
+<a id="org3183f74"></a>
+Let \(M\) be a connected, locally-compact metric space and \(G\) be the group of isometries of
+\(M\), then
+</p>
+<ol class="org-ol">
+<li>\(G\) is locally compact.</li>
+<li>\(G_a\) the subset of isometries fixing a point \(a\in M\) is compact.</li>
+<li>If, in addition, \(M\) is compact then \(G\) is also compact.</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-05-22 Mon 23:57. <br>
+Last updated 2017-05-23 Tue 10:08. <br>
 </div>
 </div>
 </body>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-05-22 Mon 23:55 -->
+<!-- 2017-05-23 Tue 00:19 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Symmetric spaces and Lie groups</title>
@@ -350,7 +350,7 @@ Let \(M\) is a Riemannian manifold, the followings are equivalent
 \[
 \nabla R = 0
 \]
-In this case, \(M\) is called {\em locally symmetric}.
+In this case, \(M\) is called  <i>locally symmetric</i>.
 </p>
 
 </div>
@@ -373,7 +373,7 @@ symmetric manifold.
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-05-22 Mon 23:55. <br>
+Last updated 2017-05-22 Mon 23:57. <br>
 </div>
 </div>
 </body>

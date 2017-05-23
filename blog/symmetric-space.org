@@ -1,6 +1,7 @@
 #+TITLE: Symmetric spaces and Lie groups
 #+SETUPFILE: ../res/mathsetup.org
 
+* Symmetric space
 By the sake of de Rham decomposition, we now focus more in Riemannian manifold with irreducible
 holonomy representation. The theory of Lie groups allows us to understand symmetric spaces.
 
@@ -54,7 +55,7 @@ classify all such pairs $(\frak{g},\frak{h})$.
 #+END_remark
 
 
-
+* Locally symmetric space
 The previous results can be extended to locally symmetric spaces.
 
 #+BEGIN_definition
@@ -78,3 +79,31 @@ $x\in M$ and $y\in N$, there exists neighborhoods $U$ of $x$ and $V$ of $y$ that
 
 As a result, the holonomy group can not tell the difference between a symmetric and a locally
 symmetric manifold.
+
+* Appendice: Group of isometries as Lie group
+
+Every topological subtleties should be explained in this appendice. We claim, with
+Montgomery-Zippin, /Transformation groups/ as reference a general result 
+
+#+ATTR_LATEX: :options [faithful + locally compact $\geq$ Lie]
+#+BEGIN_theorem
+<<thm:faithful-locally-compact>>
+Let $G$ be a group acting faithfully on a connected manifold $M$ of class $C^k$ such that each
+action is $C^1$. Then $G$ is a Lie group and the map $G\times M\longrightarrow M$ is $C^1$.
+#+END_theorem
+
+Then the problem becomes a topological one: to prove that the underlying group is locally
+compact. Note that we equipe with _a group_ of isometries with the *compact-open topology*,
+ as $M$ is locally compact and hence second-countable (i.e. the topology admits a countable
+base), we see that a group of isometries is also second-countable. It suffices to prove the
+second-countability for _the group_ of (all) isometries. The detail can be found in
+Kobayashi-Nomizu's /Foundations of differential geometry/ (Volume I, Theorem 4.7).
+
+#+BEGIN_theorem
+<<thm:isometry-locally-compact>>
+Let $M$ be a connected, locally-compact metric space and $G$ be the group of isometries of
+$M$, then
+1. $G$ is locally compact.
+2. $G_a$ the subset of isometries fixing a point $a\in M$ is compact.
+3. If, in addition, $M$ is compact then $G$ is also compact.
+#+END_theorem
