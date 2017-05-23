@@ -1,2 +1,0 @@
-#+TITLE: Title
-#+SETUPFILE: ../res/mathsetup.org
