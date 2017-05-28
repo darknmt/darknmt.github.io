@@ -1,0 +1,271 @@
+% Created 2017-05-29 Mon 00:52
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\newtheorem{remark}{Remark}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{proposition}{Proposition}[theorem]
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{definition}{Definition}
+\author{darknmt}
+\date{\today}
+\title{From Busemann function to Cheeger-Gromoll splitting}
+\hypersetup{
+ pdfauthor={darknmt},
+ pdftitle={From Busemann function to Cheeger-Gromoll splitting},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 24.5.1 (Org mode 9.0.5)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+We will prove the following result by Cheeger and Gromoll by a slightly modified approach of
+A. Besse.
+
+
+\begin{theorem}[Cheeger-Gromoll]
+\label{orgb894694}
+\label{thm:cheeger-gromoll}
+Let \(M\) be a complete, connected Riemannian manifold with non negative Ricci curvature. Suppose
+that \(M\) contains a line then \(M\) is isometric to \(M'\times \mathbb{R}\) with \(M'\) a complete,
+connected Riemannian manifold with non negative Ricci curvature.
+\end{theorem}
+
+\section{Busemann function}
+\label{sec:org989b52f}
+
+Let \(\gamma\) be a geodesic ray. We construct the Busemann function \(b\) associated to the ray as
+\[
+b(x) = \lim_{t\to+\infty}f_t(x) = t - d(x,\gamma(t))
+\]
+where the limit exists because the sequence \(f_t\) is non-decreasing and bounded by
+\(d(x,\gamma(0))\). The convergence is also uniform in every compact. 
+
+
+In Euclidean space for example, the Busemann function is the orthogonal projection on \(\gamma\). We
+will see that in a Riemannian manifold with non negative curvature, the Busemann function will serve
+as a projection.
+
+
+Now with a fixed \(x_0\in M\), the tangent vector at \(x_0\) of the geodesics connecting \(x_0\) and
+\(\gamma(t)\) is in the unit sphere of \(T_xM\), which is compact. Let \(X\) be a limit point of these
+tangents vectors and pose
+\[
+b_{X,t}(x) = b(x_0) + t - d(x, C_X(t))
+\]
+where \(C_X(t)\) is the geodesic flow starting at \(x_0\) with velocity \(X\).
+
+\begin{remark}
+\begin{enumerate}
+\item From the construction of \(X\), one has \(b(x_0) + t = b(C_X(t))\), therefore \(b_{X,t} \leq b\) withe
+quality in \(x_0\). We say that \(b\) is supported by \(b_{X,t}\) at \(x_0\). In general a function \(f\)
+is \emph{supported} by \(g\) at \(x_0\) if \(f(x_0)=g(x_0)\) and \(f\geq g\) in a neighborhood of \(x_0\).
+\item \(b_{X,t}\) is smooth and a computation in local coordinate gives \(\Delta b_{X,t} \geq -\frac{\dim
+   M - 1}{t}\)
+\item \(\|\nabla b_{X,t}\| = 1\)
+\end{enumerate}
+\end{remark}
+
+The estimation given on the second point is established using Jacobi fields:
+
+\begin{lemma}[]
+The function \(f(x) = d(x,x_0)\) satisfies at a point \(x\) out of the cut-locus of \(x_0\):
+\[
+\nabla f(x) \leq \frac{n-1}{l}
+\]
+where \(n=\dim M, l = d(x,x_0) = f(x)\) in Riemannian manifold \(M\) with non-negative Ricci curvature.
+\end{lemma}
+
+\begin{proof}
+Let \(N(t), t\in\overline{0,l}\) be the velocity of the geodesic \(\gamma\) from \(x_0\) to \(x\), and
+\(E_1,\dots, E_{n-1},N\) be a parallel frame along \(\gamma\). Let \(J_i\) be the unique Jacobi
+fields along \(\gamma\) with \(J_i(l) = E_i(l)\) and \(J_i(0)=0\) (existence and uniqueness of \(J_i\) is
+due to the fact that \(x\) is not in the cut-locus).
+
+Then basic manipulation of Jacobi fields gives (without the fact that curvature is non-negative):
+\[
+\Delta f(x) = \int_0^l \sum_{i=1}^{n-1}<\Delta_N J_i, \Delta_N J_i> - < R(N,J_i)J_i,N > = \sum_{i=1}^{n-1} I_\gamma(J_i,J_i)
+\]
+where \(I_\gamma\) is the index form of \(\gamma\). Note that the Jacobi fields \(J_i\) coincide with the
+fields \(\frac{t}{l}E(t)\) at \(0\) and \(l\), therefore by the Fundamental inequality of index form
+\[
+I_\gamma(J_i,J_i)\leq I_\gamma(\frac{t}{l}E_i,\frac{t}{l}E_i)
+\]
+hence
+\[
+\Delta f(x) \leq \int_0^l \sum_{i=1}^{n-1}<\Delta_N \frac{t}{l}E_i, \Delta_N \frac{t}{l}E_i> -
+< R(N,\frac{t}{l}E_i)\frac{t}{l}E_i,N >
+\]
+
+The curvature term being \(\frac{t^2}{l^2}Ric(N,N)\) hence non-negative, one has
+\[
+\Delta f(x) \leq \int_0^l \sum_{i=1}^{n-1}<\Delta_N \frac{t}{l}E_i, \Delta_N \frac{t}{l}E_i> = \frac{n-1}{l}
+\]
+\end{proof}
+
+
+We also note that it suffices to show that \(b\) is harmonic. In fact, from the smoothness one has
+\(\nabla b(x_0) =\nabla b_{X,t}(x_0)\), which means \(\|\nabla b\| = 1\) at every point in \(M\). 
+For each point \(y\in M\), there exists a unique \(x\) with \(b(x)=0\) and time \(t\) when the flow of
+\(\nabla b\) arrive at \(x\). \(M\) is therefore homeomorphic to \(\bar M\times \mathbb{R}\) by the map
+\(F: y\mapsto (x,t)\) map. To see that this map is isometric, it remains to prove that the gradient field
+\(\nabla b\) is parallel. In fact, \(\bar M\) being equiped with the restriction of the metric on \(M\),
+the isometry of \(F\) is equivalent to the isometry of \(\Phi^t\) the flow of \(\nabla b\) in every time
+\(t\), which means \(\frac{d}{dt} <\Phi_*^t u, \Phi_*^t u>\) vanishes at \(t=0\)
+\[
+\frac{d}{dt}<\Phi_*^t u,\Phi_*^t u> = 2 <\nabla_{\partial t}\Phi_*^t u, u>|_{t=0} = 2<\nabla_u
+\nabla f,u> 
+\]
+where for the second equality we used Schwarz lemma for \(\Phi(t,x) = \Phi^t(x)\). The vanishing of
+\(<\nabla_u \nabla f(x),u>\) for every vector \(u\) is, by bilinearity, equivalent to that of \(\nabla_u
+\nabla f\) for every \(u\), meaning that \(\nabla f\) is parallel. The last one is a simple computation:
+\[
+Ric(N,N) = -N(\Delta b) - \|\nabla N \|^2
+\]
+where \(\|\nabla N\|^2 = \sum_{i=1}^{n-1}<\nabla_{E_i}N, E_j>^2\). We see that \(N = \nabla b\) is parallel if \(\Delta b =0\).
+
+\begin{remark}
+\begin{enumerate}
+\item One can show (see A. Besse) that every gradient field \(\nabla b\) of norm 1 at every point is actually harmonic.
+\item Using de Rham decomposition, one has directly the splitting of \(M\) since \(N\) is parallel and \(M\) is complete.
+\end{enumerate}
+\end{remark}
+
+\section{Harmonicity}
+\label{sec:org9569f29}
+The Busemann function associated to a geodesic ray is subharmonic, it is a consequence of the
+following lemma.
+
+
+\begin{lemma}
+\label{lem:1}%
+In a connected Riemannian manifold, if a continuous function \(f\) is supported at any point \(x\) by
+a family \(f_\epsilon\) (depending on \(x\)) with \(\Delta(f_\epsilon)\leq \epsilon\), then \(f\) can not
+attain maximum (unless when \(f\) is constant).
+\end{lemma}
+
+\begin{proof}
+Given a small geodesic ball \(B\), suppose that we have a function \(h\) on \(B\) with \(\Delta h <0\) in \(B\) and
+\(f+h\) attains maximum at \(x\) in the interior of \(B\). Then \(f_\epsilon + h\) also attains maximum at
+\(x\), which means \(\Delta f_\epsilon + \Delta h \geq 0\), which is contradictory.
+
+For the construction of the function \(h\), one suppose that \(B\) is small enough such that
+\(f|_{\partial B} \leq max_B f=: f(x_0)\) and equality is not attained at every points in \(\partial B\). Then
+choose
+\[
+h = \eta (e^{\alpha \phi} - 1)
+\]
+with and \(\phi(x) = -1\) if \(x\in \partial B\) and \(f(x) = f(x_0)\), \(\phi(x_0) = 0\),
+\(\nabla \phi \ne 0\) and a large  \(\alpha\) such that
+\[
+\Delta h = \eta (-\alpha^2\| \nabla \phi\| + \alpha \Delta \phi)e^{\alpha \phi}.
+\]
+is negative.
+\end{proof}
+
+
+Now for subharmonicity of \(b\), given a harmonic function \(h\) that coincides with \(b\) in the boundary \(\partial B\) of a
+geodesic ball \(B\), then \(b-h\) is supported by \(b_{X,t} - h\) with \(\Delta (b_{X,t}-h) \to 0\) as \(t\)
+tends to \(+\infty\), therefore \(b-h \leq (b-h)|_{\partial B} = 0\) in \(B\). hence \(b\) is subharmonic.
+
+\begin{corollary}
+The Busemann function of a geodesic ray in a Riemannian manifold \(M\) with non-negative Ricci
+curvature is subharmonic.
+\end{corollary}
+
+
+Now let \(b_+\) be the function previously constructed for the ray \(\gamma|_{[0,+\infty[}\) and \(b_-\)
+the Busemann function for the ray \(\tilde\gamma|_{[0,+\infty[}\) where \(\tilde\gamma(t) =
+\gamma(-t)\). Note that \(b_+ + b_-\leq 0\) with equality on the line \(\gamma\), but the sum is
+subharmonic therefore by maximum principle \(b_+ = -b_-\) and \(b\) is harmonic hence smooth. The
+splitting theorem of Cheeger-Gromoll follows.
+
+
+\section{Application}
+\label{sec:org79eaa71}
+Theorem \ref{orgb894694} gives the following result from A. Beauville, \emph{Variétés kahleriennes dont la première classe
+de Chern est nulle} (Theorem 1)
+\begin{theorem}[]
+\label{thm:decomp-Ricci-non-negative}
+\label{org42111b9}
+Let \(M\) be a compact Riemannian manifold with non-negative Ricci curvature, then the universal
+covering of \(M\) is of form \(\mathcal{M} = \mathbb{R}^n\times \bar M\) where \(\bar M\) does not contain
+any lines. Then
+\begin{enumerate}
+\item \(\bar M\) is compact.
+\item If \(M\) is Ricci-flat then \(\bar M = \prod V_i\times X_j\) where \(V_i\) and \(X_j\) are
+simply-connected Kahler manifold with \(Hol(V_i) = SU(m_i/2)\) and \(Hol(X_j) = Sp(r_j/4)\) where
+\(m_i=\dim V_i\) and \(r_j = \dim X_j\).
+\item \(M\) is, upto a finite covering, the product \(T\times \prod V_i \times \prod X_j\) where \(T\) is a
+complex torus.
+\end{enumerate}
+\end{theorem}
+
+Note that the second point follow directly from Berger classification. The third point is a
+consequence of Bieberbach theorem. We will prove here the first point, which is in fact Theorem 2 in
+J.Cheeger- D.Gromoll, \emph{The splitting theorem for manifold of nonnegative ricci curvature}.
+
+\begin{proof}
+It suffices to prove that if \(\bar M\) is not compact, then it contains a line. In fact, it is easy
+to see that such \(\bar M\) must contains a minimal ray. In fact it is obvious that with a fixed \(p\in
+M\) the function
+\[
+F: v\mapsto \inf \{t>0: d(p,exp_p(tv)) < t\}
+\]
+defined on the unit ball \(U_p\) of \(T_p\bar M\) is upper semi-continuous. Therefore if \(F(v)<\infty\)
+for all \(v\) unit tangent vector at \(p\) then \(F\) is bounded in \(U_p\) by a constant \(c\). Therefore
+\(\bar M\subset exp_p(cU_p)\) which is compact (contradiction). Therefore there exists a minimal ray
+at every point \(p\in \bar M\).
+
+The existence of a line in general might not be true, the only extra property of \(\bar M\) that we
+will need is that it has a (fundamental) domain \(K\) compact and a family \(\sigma_i\) of isometries
+such that \(\bar M = \cup_i g_i K\).
+
+Let us first prove that such domain \(K\) exists. Remarque that every isometry of \(\mathcal{M}\) acts
+separately on \(\mathcal{M}\), i.e. of form \(\sigma(u) = (\sigma_1(x), \sigma_2(y))\) for \(u=(x,y)\in
+\mathcal{M}\) with \(g_1, g_2\) isometries of \(\mathbb{R}^n\) and \(\bar M\). In fact such \(\sigma\) maps
+the \$ \mathbb{R}\(^{\text{n}}\)\$-component of \(T_u\mathcal{M}\) to the corresponding component of \(T_\sigma(u)
+\mathcal{M}\) since a vector in this component is characterized by the fact that its geodesics is a
+line. As \(\mathbb{R}^n \times \{y\}\) is a totally geodesic submanifold of \(\mathcal{M}\), this
+means that \(\sigma(\mathbb{R}^n \times \{ y\}) = \mathbb{R}^n \times \{y\}\), and hence
+\(\sigma(x\times \bar M) = \sigma(x)\times \bar M\) by isometry.
+
+Let \(G_1\) (resp. \(G_2\)) be the group formed by \(\sigma_1\) (resp. \(\sigma_2\)) the \(\mathbb{R}^n\)
+(resp. \(\bar M\) of \(\sigma = (\sigma_1,\sigma_2)\in \pi_1(M)\) that acts on \(\mathcal{M}\) we have a
+surjection \(M = \mathcal{M}/\pi_1 \longrightarrow \mathbb{R}^n/G_1\times \bar M/G_2\), meaning that
+\(M/G_2\) is compact. Such domain \(K\) can be chosen, for example, as a ball in \(\bar M\) large enough that its
+image in the quotient \(M/G_2\) contains every equivalent classes.
+
+Now let \(\gamma\) be a minimal ray starting from \(p\in M\), for each \(x\in \gamma\) there exists an
+isometry \(\sigma\) of \(\bar M\) such that \(\sigma(x)\in K\). By compactness of \(K\), there exists a
+sequence \(t_n \to +\infty\) with \(x_n =\gamma(t_n)\), \(v_n = \dot\gamma(t_n)\) that satisfies \(y_n =
+\sigma_n(x_n) \to y\in K\) and \((\sigma_n)_* v_n \to v\in T_y\bar M\) in the tangent bundle \(T\bar
+M\). Then the geodesic of \(\bar M\) starting at \(y\) with vector \(v\) is a
+line. In fact it suffices to prove that \(d(exp_y(t v), exp_y(-s v)) = s+t\) for \(s,t>0\): for \(n\)
+large enough that \(t_n > s\) then
+\[
+d(exp_{y_n}(tv_n), exp_{y_n}(-sv_n)) = s+t
+\]
+then let \(n\to +\infty\) and the result follows.
+\end{proof}
+\end{document}

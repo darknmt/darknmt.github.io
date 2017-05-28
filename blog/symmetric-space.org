@@ -54,7 +54,6 @@ The second condition is quite strong and allowed E. Cartan to
 classify all such pairs $(\frak{g},\frak{h})$.
 #+END_remark
 
-
 * Locally symmetric space
 The previous results can be extended to locally symmetric spaces.
 

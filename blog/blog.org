@@ -1,7 +1,7 @@
 #+TITLE: Welcome to my blog
 
+   + [[file:Cheeger-Gromoll-splitting.org][From Busemann function to Cheeger-Gromoll splitting]]
    + [[file:symmetric-space.org][Symmetric spaces and Lie groups]]
    + [[file:de-rham-decomposition.org][De Rham decomposition]]
    + [[file:culture-geometry.org][Well-known results in Geometry]]
    + [[file:Riemann-classification-theorem.org][Classification theorems in Remannian geometry]]
-   + [[file:Cheeger-Gromoll-splitting.org][From Busemann function to Cheeger-Gromoll splitting]]
