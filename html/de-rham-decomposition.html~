@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-06-05 Mon 23:31 -->
+<!-- 2017-06-05 Mon 20:21 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Classification theorem in Riemannian geometry</title>
+<title>De Rham decomposition</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="darknmt" />
 <style type="text/css">
@@ -262,170 +262,256 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div id="content">
-<h1 class="title">Classification theorem in Riemannian geometry</h1>
+<h1 class="title">De Rham decomposition</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org80e87e6">1. What is holonomy and why it is important</a></li>
-<li><a href="#org612e05e">2. De Rham decomposition</a></li>
-<li><a href="#orgde4981b">3. Berger classification for non-symmetric manifolds</a></li>
-<li><a href="#orgf875fa5">4. Chern class and Calabi conjecture (Yau theorem)</a></li>
-<li><a href="#org5e40148">5. Bogomolov-Beauville classification</a></li>
+<li><a href="#orgeab4745">1. Decomposition theorem of de Rham</a></li>
+<li><a href="#org3a1332d">2. Uniqueness</a></li>
+<li><a href="#org335264a">3. Application of uniqueness lemma: decomposition for Kahler manifold</a></li>
 </ul>
 </div>
 </div>
-<p>
-This is part of my reading in the summer of 2017. I will try not to mention the details here as they
-will be covered in future posts. The big question is to 
-</p>
-<ol class="org-ol">
-<li>first determine which groups can be a holonomy group (results of E. Cartan then Berger).</li>
-<li>then study Bogomolov-Beauville result: hyperkahler manifolds and Calabi-Yau manifolds are
-building blocks of Kahler manifold with vanishing Chern class.</li>
-</ol>
 
-<div id="outline-container-org80e87e6" class="outline-2">
-<h2 id="org80e87e6"><span class="section-number-2">1</span> What is holonomy and why it is important</h2>
+<div id="outline-container-orgeab4745" class="outline-2">
+<h2 id="orgeab4745"><span class="section-number-2">1</span> Decomposition theorem of de Rham</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-<i>Holonomy</i> is the action of closed curves starting from a point \(x\) in a Riemannian manifold \(M\) to
-the tangent space \(T_xM\). It is important because
+We observe that if a manifold \((M,g)\) is globally a product \((M_1,g_1)\times (M_2,g_2)\) then
+\(Hol_{g}(M) = Hol_{g_1}(M_1)\times Hol_{g_2}(M_2)\) and the holonomy representation of \(M\) is
+reducible. A result of de Rham says that one can decompose a Riemannian manifold as product of ones
+with irreducible holonomy representation.
 </p>
 
+
+<div class="theorem">
+<p>
+<a id="orgcdf7a2e"></a>
+Given \((M,g)\) a simply connected and complete Riemannian manifold, there exists a unique
+decomposition upto isometry and permutation of factors
+\[
+(M,g) = \prod_{i=1}^n(M_i,g_i)
+\]
+where \((M_i,g_i)\) are complete, simply connected Riemannian irreducible manifolds. Moreover the
+holonomy representation of \(M\) over \(T_xM\) is the product of holonomy representations of \(M_i\) over
+\(T_{x_i}M_i\) where \(x = (x_1,\dots, x_n)\)
+</p>
+
+</div>
+
+<div class="proof">
+<p>
+The proof of this theorem contains two steps:
+</p>
 <ol class="org-ol">
-<li>Knowing the holonomy means knowing the parallel tensors, in fact each parallel tensor is uniquely
-determined by its value on a fiber \(T_xM\) (for other fibers just transport), and this value has
-to be invariant by the action of holonomy.</li>
-<li>The smaller the holonomy is, the more structure the manifold can have. For example, if somehow
-one knows that the holonomy group is in \(SU(n)\) for a manifold of dimension \(2n\), then as \(SU(n)\)
-is exactly those that preserve a almost complex structure \(J\), by transporting \(J\), we see that
-\(M\) has a almost complex structure.</li>
-<li>It serves as a geometric invariant (unlike the cohomology, which are topological invariants)</li>
+<li>Remark that if the holonomy group is reducible then locally \(M\) is a product of Riemannian
+manifolds, i.e. for every \(x\in M\) there exists a neighborhood \(U\) containing \(x\) with
+\((U,g)=(M_1,g_1)\times (M_2,g_2)\).</li>
+<li>Obtain the global product structure from local one. This is where completeness is put in use.</li>
 </ol>
 
 
 <p>
-Note that we defined the holonomy group by its representation. In most case, we only consider
-Levi-Civita connection and the holonomy representation is then orthogonal.
+We now discuss the first point with a bit more details. Suppose that \(T_xM = U_x \oplus^\perp V_x\)
+where \(U_x, V_x\) are stable under action of holonomy group, then by transporting \(U_x, V_x\) to the
+tangent space of any point \(y\) (as they are stable by holonomy, the result is independent of the
+curve along which the transport is taken), we obtain then two sub fibers \(A\) and \(B\) of \(TM\) over
+\(M\) that are stable by transport. Then for every vector field \(u_A\) in \(A\) and \(v\) in \(TM\),
+\(\nabla_v u_A \in A\), as the Levi-Civita connection is torsionless, one deduces
+\([u_A,v_A] = \nabla_{u_A}v_A - \nabla_{v_A}u_A\) remains in \(A\). By Frobenius theorem, locally at a
+point \(x\in M\), there exist manifolds \(M_1, M_2\) whose tangent spaces are \(A\) and \(B\). 
 </p>
+
+
+<div class="theorem">
+<p>
+<a id="orgf52fef9"></a>
+Given distribution \(D\) which to each point \(x\) associates a $k$-dimensional hyperplans of \(T_xM\)
+which satisfies:
+</p>
+<ol class="org-ol">
+<li>\(D\) varies smoothly by \(x\), i.e. there exist \(k\) smooth vector fields that at each point \(x\)
+form a base of \(D(x)\).</li>
+<li>\(D\) is stable by Lie bracket, i.e. for every vector fields \(X,Y\) on \(M\) that take value in \(D\),
+\([X,Y]\) takes value in \(D\).</li>
+</ol>
+<p>
+Then at each point \(x\in M\), there exists a maximal $k$-dimension sub-manifold \(N\) of \(M\) containing
+\(x\) such that \(D(y)\) is the tangent of \(N\) at \(y\). The maximality means that every sub-manifold of
+\(M\) that satisfies this condition is an open sub-manifold of \(N\).
+</p>
+
+</div>
+
+<p>
+Back to our It then remains to show that \(M\) is isometric to \(M_1\times M_2\), by the following map
+</p>
+
+<p>
+<code>==</code> TO BE CONTINUED <code>===</code>
+</p>
+
 </div>
 </div>
-<div id="outline-container-org612e05e" class="outline-2">
-<h2 id="org612e05e"><span class="section-number-2">2</span> De Rham decomposition</h2>
+</div>
+
+
+<div id="outline-container-org3a1332d" class="outline-2">
+<h2 id="org3a1332d"><span class="section-number-2">2</span> Uniqueness</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-De Rham theorem allows us to decompose a Riemannian manifold under certain conditions (complete and
-connected) as Riemannian product of complete connected manifold with <i>irreducible holonomy representation</i>.
+We note that the decomposition is unique in the following sense: 
+</p>
+
+<div class="proposition">
+<p>
+<a id="orgbbd11e3"></a>
+If \(M\) is decomposed as \(E\times \prod M_i\) and \(E'\times\prod M'_j\) where \(M_i, M'j\) are
+irreducible and \(E,E'\) are maximal Euclidean components (i.e. none of \(M_i, M'_j\) are isometric to \(
+\mathbb{R}\). Then up to a rearrangement of indice \(j\) the composed map \(f: E\times\prod M_i
+\longrightarrow E'\times \prod M'_i\) are product of the isometries \(f_E: E\longrightarrow E'\) and
+\(f_i:M_i \longrightarrow M'_i\).
+</p>
+
+</div>
+
+<p>
+We first explain the appearance of <i>Euclidean</i> components \(E,E'\). They are product of trivial
+representations in the \(T_{x_i}M_i\) appeared in the decomposition on each fiber. I call them
+Euclidean because they are, up to an isometric, \( \mathbb{R}^k\) with the usual metric. This follows
+from the fact that \( \mathbb{R}\) with any Riemannian metric is isometric to \( \mathbb{R}\) with
+Euclidean metric.
 </p>
 
 <p>
-The idea behind this results is to prove that if a fiber \(T_xM\) decompose to subspaces stable by
-holonomy, then by parallel transport \(TM\) also decompose. But by direct computation each
-component of \(TM\) is involutive and by Frobenius theorem locally tangent to a submanifold of
-\(M\). The completeness allows us to join the local pieces.
+We first note that the uniqueness stated in Proposition <a href="#orgbbd11e3">2</a> come from the uniqueness of
+the decomposition of each tangent fiber to irreducible representation of holonomy group, that is
+</p>
+
+<div class="lemma">
+<p>
+<a id="orgc426051"></a>
+Let \(f: M\longrightarrow M'\) be an isometry that send \(x\in M\) to \(y\in M'\). Let 
+\[
+T_x M = E \oplus^\perp \oplus_i V_i,\quad T_yM' = E' \oplus^\perp \oplus_j V'_j
+\]
+be a decomposition of \(T_xM\) and \(T_yM'\) as direct sum of trivial subspaces \(E,E'\) and irreducible
+subspaces \(V_i, V_j'\) under holonomy action. Then up to a rearrangement of \(j\), \(f_*\) send \(E\) to
+\(E'\) and \(V_i\) to \(V'_i\). 
+</p>
+
+</div>
+
+<div class="remark">
+<p>
+One may note that a similar result is <span class="underline">not true</span> for general representations: one can prove the
+uniqueness of the irreducible factors and their multiplicity. But the individual irreducible
+summands might not map to individual summands (However if one group all irreducible summands of
+the same type, then each group maps to another).
+</p>
+
+</div>
+
+<p>
+The supplementary property of holonomy representation put in used here is the following:
+</p>
+
+<div class="remark">
+<p>
+The holonomy representation \(H\subset SO(V)\) on a fiber \(V=T_xM\) satisfies the property <b>(H)</b>: if \(V = V_1 \oplus^\perp V_2\) where
+\(V_i\) are stable by \(H\) then \(H = (H\cap End(V_1))\times (H\cap End(V_2))\). In other words, let \(H_i
+:= \{ h\in H: h|_{V_j} = Id, j\ne i\}\) then \(H_i\) is the action of \(H\) on \(V_i\).
+This property is a consequence of  de Rham
+decomposition along \(V_1, V_2\) and the fact that \(Hol(M_1\times M_2) = Hol(M_1)\times Hol(M_2)\),
+</p>
+
+</div>
+
+<p>
+We prove the following lemma, which is evidently more general than Lemma <a href="#orgc426051">2</a>.
+</p>
+<div class="lemma">
+<p>
+<a id="org326df61"></a>
+Let \(G\subset SO(V)\) be an orthonormal representation over a finite dimension vector space \(V\) with
+property (H), given any two decompositions
+\[
+V = E \times \prod V_i = E' \times \prod V'_j
+\]
+where \(G\) acts trivially on \(E, E'\), \(V_i, V'_j\) are irreducible and of dimension larger than 2,
+one has \(E = E'\) and \(V_i = V'_i\) up to a rearrangement of index \(j\).
 </p>
 
 <p>
-Now it remains to deal with irreducible holonomies. If the manifold is <i>locally symmetric</i> then one
-can prove that it is isometric to the homogeneous space \(G/H\) with \(H\) (the holonomy) a closed Lie
-subgroup of \(G\). The theory of Lie groups developed by E. Cartan gave a complete list of these spaces.
+Moreover, given \(J\in Hom_G(V,V)\cap SO(V)\) then \(J\) sends \(E\) and \(V_i\) to themselves.
 </p>
+
+</div>
+
+<div class="proof">
+<p>
+Note that since action of \(G\) is special orthonormal, any one dimensional subspace of \(V\) stable by
+\(G\) are trivial under \(G\), that explains why we supposed \(V_i, V'_j\) are of dimension larger
+than 2. It suffices to see that every irreducible subspace \(N\) of \(V\) is either in \(E\) or equal to
+\(V_i\).
+</p>
+
+<p>
+Let \(pr_i\) and \(pr_E\) be orthogonal projection of \(V\) to \(V_i\) and \(E\). As \(E\) and \(V_i\) are $G$-stable, these
+projections are $ G $-invariant. Let \(N_i = pr_i(N)\), then \(N_i\) is a subspace of \(V_i\) stable
+by \(G\), hence either \(0\) or all \(V_i\). If all \(N_i=0\) then clearly \(N\) is perpendicular to \(\oplus
+V_i\), that is \(N\subset E\). If \(pr_E(N)\ne 0\) then \(Hom_G(N, E) \ne 0\) since it contains \(pr_E\). As
+\(N\) is irreducible, \(N\subset E\) also. Therefore one can suppose that at least one \(N_i = V_i\) and
+\(pr_E(N) = 0\). The second condition means \(E\perp N\). 
+</p>
+
+<p>
+Note that \(pr_i\) is bijective (Schur lemma for example gives \(Hom_G(N,V_i) = \mathbb{R}pr_i\)). 
+Let \(G_i = G\cap End(V_i) = \{g\in G: g|_{V_j} = Id \forall j\ne i \}\) the action of \(G\) on \(V_i\)
+then \(Fix(\prod_{j\ne i} G_j)= E\oplus V_i\), in fact each \(v = e +\sum v_i\in Fix(\prod_{j\ne i}
+G_j)\) where \(e\in E, v_i\in V_i\), one has \(g_i v_i = v_i \forall g_i \in G_i\), hence \(g_i v_i = v_i
+\forall g_i\in G\), hence \(v_i = 0\). It remains to note that as \(pr_i\) is \(G\) invariant, \(N_i\) is
+also fixed by \(\prod_{j\ne i}G_j\), therefore \(N_i\subset E \oplus^\perp V_i\). Therefore \(N_i=V_i\) as
+\(N_i\perp E\).
+</p>
+
+<p>
+For the last point, note that as \(J\) commutes with all elements of \(G\), \(J\) sends \(Fix(\prod_{j\in A}
+G_j)\) to itself. By taking \(A\) to be all indices \(j\) then all indices \(j\ne i\) one see that \(J|_E:
+E\longrightarrow E\) and \(J|_{E\oplus V_i}: E\oplus V_i\longrightarrow E\oplus V_i\), hence by
+orthogonality \(J\) sends \(E\) and \(V_i\) to themselves.
+</p>
+
+</div>
 </div>
 </div>
 
 
-<div id="outline-container-orgde4981b" class="outline-2">
-<h2 id="orgde4981b"><span class="section-number-2">3</span> Berger classification for non-symmetric manifolds</h2>
+<div id="outline-container-org335264a" class="outline-2">
+<h2 id="org335264a"><span class="section-number-2">3</span> Application of uniqueness lemma: decomposition for Kahler manifold</h2>
 <div class="outline-text-2" id="text-3">
 <p>
-For the non-symmetric manifold, Berger proved that a irreducible holonomy has to be one of the
-following
+Now let apply the de Rham decomposition to a complete Riemannian manifold \(M\) with holonomy \(SU(n)
+\subset SO(2n)\) (called a <i>Kahler manifold</i>). There exists on a fixed fiber \(T_xM\) an automorphism
+\(J\) that preserve the riemannian metric and satisfies \(J^2 = -1\). By transporting \(J\) to every other
+fibers of \(TM\) one obtains a <i>almost complex structure</i> on \(M\).
 </p>
-<ol class="org-ol">
-<li>\(SO(n)\)</li>
-<li>\(U(m)\subset SO(2m)\)</li>
-<li>\(SU(m)\subset SO(2m)\)</li>
-<li>\(Sp(m) \subset SO(4m)\)</li>
-<li>\(SO(m)Sp(1) \subset SO(4m)\)</li>
-<li>\(G_2\subset SO(7)\)</li>
-<li>\(\text{Spin}(7)\subset SO(8)\)</li>
-</ol>
 
 <p>
-where \(n\) is the dimension. Here are some notations, note always that
-\[
-Sp(m)\subset SU(2m)\subset U(2m)\subset SO(4m)
-\]
+Apply Lemma <a href="#org326df61">2</a> to \(J\) which is obviously $ G $-invariant and orthonormal, one
+see that such structure \(J\) passes to every manifold \(M_i\) and the Euclidean component \( \mathbb{R}^n\) and
+remains parallel on these manifolds. We proved that \(M\) is decomposed to \( \mathbb{C}^{n/2}\times
+\prod M_i\) where \(M_i\) are Kahler manifold. The decomposition map is both a Riemannian isometry and a
+Kahler isomorphism (morphism that preserves complex structure and kahler form). 
 </p>
-<ol class="org-ol">
-<li>If \(Hol(g)\subset U(m)\subset SO(2m)\), \(g\) is called a <i>Kahler metric</i>.</li>
-<li>If \(Hol(g)\subset SU(m)\subset SO(2m)\), \(g\) is called a <i>Calabi-Yau</i> metric. We will see that a
-Calabi-Yau metric is a Kahler metric that is also Ricci-flat.</li>
-<li>If \(Hol(g)\subset Sp(m)\subset SO(4m)\) then \(g\) is called a <i>hyperkahler</i> metric.</li>
-<li>\(G_2\) and \(\text{Spin}(7)\) are called <i>exceptional holonomies</i></li>
-</ol>
-
-<p>
-Therefore hyperkahler \(\longrightarrow\) Calabi-Yau \(\longrightarrow\) Kahler
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgf875fa5" class="outline-2">
-<h2 id="orgf875fa5"><span class="section-number-2">4</span> Chern class and Calabi conjecture (Yau theorem)</h2>
-<div class="outline-text-2" id="text-4">
-<p>
-The Chern class \(c_1(M)\) of a Riemannian manifold is the class in \(H^{1,1}(M)\) of the Ricci
-curvature. It is easy to see that two different kahler metric give the same Chern class. The
-conjecture posed by Calabi asks <b>whether we can modify the kahler metric to attain, as Ricci
-curvature, every \((1,1)\) form in the original Chern class</b>. The response, which is positive, was
-given by S.T. Yau.
-</p>
-
-<div class="theorem">
-<p>
-<a id="orgcf4f5fc"></a>
-Let \(M\) be a compact manifold with a Kahler form \(\omega\) and the corresponding Ricci curvature
-\(R_\omega\). Let \(R\) be a \((1,1)\) form cohomologous to \(R_\omega\), then there exists a Kahler form
-\(\omega'\) cohomologous to \(\omega\) such that \(R'\) is the Ricci curvature of \(\omega'\).
-</p>
-
-</div>
-</div>
-</div>
-
-
-
-<div id="outline-container-org5e40148" class="outline-2">
-<h2 id="org5e40148"><span class="section-number-2">5</span> Bogomolov-Beauville classification</h2>
-<div class="outline-text-2" id="text-5">
-<p>
-Bogomolov result, later refined by Beauville showed that the building blocks of Kahler manifolds
-with vanishing Chern class are the complex torus, simply-connected Hyperkahler manifolds or
-simply-connected Calabi-Yau manifolds.
-</p>
-
-<div class="theorem">
-<p>
-<a id="orgba25bf7"></a>
-Let \(M\) be a compact manifold of Kahler type with \(c_1(M)=0\) then there exists a finite etale
-covering space \(\tilde M\) of \(M\) of form
-\[
-\tilde X = T\times \prod_i V_i \prod_j X_j
-\]
-where \(V_i\) is a simply-connected, projective manifold with \(H^0(V_i,\Omega_{V_i}^*) = \mathbb{C}
-\oplus \mathbb{C}\omega\), \(\omega\in \Omega^{n_i}\) and \(X_j\) irreducible symplectic manifold.
-</p>
-
-</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-06-05 Mon 23:23. <br>
+Last updated 2017-06-05 Mon 20:20. <br>
 </div>
 </div>
 </body>

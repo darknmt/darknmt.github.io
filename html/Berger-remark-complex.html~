@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-06-06 Tue 00:11 -->
+<!-- 2017-06-05 Mon 23:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Welcome to my blog</title>
+<title>Berger classification and remarks on parallel complex structure</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="darknmt" />
 <style type="text/css">
@@ -227,6 +227,28 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -240,20 +262,97 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div id="content">
-<h1 class="title">Welcome to my blog</h1>
-<ul class="org-ul">
-<li><a href="Berger-remark-complex.html">Berger classification and remarks on parallel structures</a></li>
-<li><a href="Riemann-classification-theorem.html">Classification theorem in Riemannian geometry</a></li>
-<li><a href="de-rham-decomposition.html">De Rham decomposition</a></li>
-<li><a href="Cheeger-Gromoll-splitting.html">From Busemann function to Cheeger-Gromoll splitting</a></li>
-<li><a href="symmetric-space.html">Symmetric spaces and Lie groups</a></li>
-<li><a href="culture-geometry.html">Well-known results in Geometry</a></li>
+<h1 class="title">Berger classification and remarks on parallel complex structure</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgd528a91">1. Our story so far</a></li>
+<li><a href="#org8cb08e7">2. Berger classification for non-symmetric manifolds</a></li>
+<li><a href="#org410da11">3. Chern class and Calabi conjecture (Yau theorem)</a></li>
 </ul>
+</div>
+</div>
+
+<div id="outline-container-orgd528a91" class="outline-2">
+<h2 id="orgd528a91"><span class="section-number-2">1</span> Our story so far</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<a href="./de-rham-decomposition.html">De Rham decomposition theorem</a> theorem allows us to split a Riemannian manifold under certain
+conditions (complete and connected) as Riemannian product of complete connected manifold with
+<i>irreducible holonomy representation</i>. We will now interest in manifolds with irreducible
+holonomies. If the manifold is <a href="./symmetric-space.html"><i>locally symmetric</i></a> then one can prove that it is isometric to the
+homogeneous space \(G/H\) with \(H\) (the holonomy) a closed Lie subgroup of \(G\). The theory of Lie
+groups developed by E. Cartan gave a complete list of these spaces.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org8cb08e7" class="outline-2">
+<h2 id="org8cb08e7"><span class="section-number-2">2</span> Berger classification for non-symmetric manifolds</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+For the non-symmetric manifold, Berger proved that a irreducible holonomy has to be one of the
+following
+</p>
+<ol class="org-ol">
+<li>\(SO(n)\)</li>
+<li>\(U(m)\subset SO(2m)\)</li>
+<li>\(SU(m)\subset SO(2m)\)</li>
+<li>\(Sp(m) \subset SO(4m)\)</li>
+<li>\(SO(m)Sp(1) \subset SO(4m)\)</li>
+<li>\(G_2\subset SO(7)\)</li>
+<li>\(\text{Spin}(7)\subset SO(8)\)</li>
+</ol>
+
+<p>
+where \(n\) is the dimension. Here are some notations, note always that
+\[
+Sp(m)\subset SU(2m)\subset U(2m)\subset SO(4m)
+\]
+</p>
+<ol class="org-ol">
+<li>If \(Hol(g)\subset U(m)\subset SO(2m)\), \(g\) is called a <i>Kahler metric</i>.</li>
+<li>If \(Hol(g)\subset SU(m)\subset SO(2m)\), \(g\) is called a <i>Calabi-Yau</i> metric. We will see that a
+Calabi-Yau metric is a Kahler metric that is also Ricci-flat.</li>
+<li>If \(Hol(g)\subset Sp(m)\subset SO(4m)\) then \(g\) is called a <i>hyperkahler</i> metric.</li>
+<li>\(G_2\) and \(\text{Spin}(7)\) are called <i>exceptional holonomies</i></li>
+</ol>
+
+<p>
+Therefore hyperkahler \(\longrightarrow\) Calabi-Yau \(\longrightarrow\) Kahler
+</p>
+</div>
+</div>
+
+<div id="outline-container-org410da11" class="outline-2">
+<h2 id="org410da11"><span class="section-number-2">3</span> Chern class and Calabi conjecture (Yau theorem)</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+The Chern class \(c_1(M)\) of a Riemannian manifold is the class in \(H^{1,1}(M)\) of the Ricci
+curvature. It is easy to see that two different kahler metric give the same Chern class. The
+conjecture posed by Calabi asks <b>whether we can modify the kahler metric to attain, as Ricci
+curvature, every \((1,1)\) form in the original Chern class</b>. The response, which is positive, was
+given by S.T. Yau.
+</p>
+
+<div class="theorem">
+<p>
+<a id="orgf495135"></a>
+Let \(M\) be a compact manifold with a Kahler form \(\omega\) and the corresponding Ricci curvature
+\(R_\omega\). Let \(R\) be a \((1,1)\) form cohomologous to \(R_\omega\), then there exists a Kahler form
+\(\omega'\) cohomologous to \(\omega\) such that \(R'\) is the Ricci curvature of \(\omega'\).
+</p>
+
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-06-06 Tue 00:11. <br>
+Last updated 2017-06-05 Mon 23:35. <br>
 </div>
 </div>
 </body>

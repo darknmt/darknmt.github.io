@@ -1,0 +1,68 @@
+#+TITLE: Berger classification and remarks on parallel structures
+#+SETUPFILE: ../res/mathsetup.org
+
+* Our story so far
+
+[[file:./de-rham-decomposition.org][De Rham decomposition theorem]] theorem allows us to split a Riemannian manifold under certain
+conditions (complete and connected) as Riemannian product of complete connected manifold with
+/irreducible holonomy representation/. We will now interest in manifolds with irreducible
+holonomies. If the manifold is [[file:./symmetric-space.org][/locally symmetric/]] then one can prove that it is isometric to the
+homogeneous space $G/H$ with $H$ (the holonomy) a closed Lie subgroup of $G$. The theory of Lie
+groups developed by E. Cartan gave a complete list of these spaces.
+
+
+* Berger classification for non-symmetric manifolds
+
+#+ATTR_LATEX: :options [Berger classification]
+#+BEGIN_theorem
+#+LATEX: \label{thm:Berger}
+<<thm:Berger>>
+For the non-symmetric irreducible manifold, the holonomy representation has to be one of the
+following
+1. $SO(n)$
+2. $U(m)\subset SO(2m)$
+3. $SU(m)\subset SO(2m)$
+4. $Sp(r) \subset SO(4r)$
+5. $SO(r)Sp(1) \subset SO(4r)$
+6. $G_2\subset SO(7)$
+7. $\text{Spin}(7)\subset SO(8)$
+where $n=2m=4r$ is the dimension.
+#+END_theorem
+
+ Here are some notations, note always that
+\[
+Sp(m)\subset SU(2m)\subset U(2m)\subset SO(4m)
+\]
+1. If $Hol(g)\subset U(m)\subset SO(2m)$, $g$ is called a /Kahler metric/.
+2. If $Hol(g)\subset SU(m)\subset SO(2m)$, $g$ is called a /Calabi-Yau/ metric. We will see that a
+   Calabi-Yau metric is a Kahler metric that is also Ricci-flat.
+3. If $Hol(g)\subset Sp(m)\subset SO(4m)$ then $g$ is called a /hyperkahler/ metric.
+4. $G_2$ and $\text{Spin}(7)$ are called /exceptional holonomies/
+
+To resume: hyperkahler $\longrightarrow$ Calabi-Yau $\longrightarrow$ Kahler
+
+But wait.. you said $SU(n)\subset SO(2n)$? To embed $SU(n)$ in $SO(2n)$ one need to identify $
+\mathbb{C}$ and $ \mathbb{R}^{2n}$, this can be done using an almost complex structure $J$ of $
+\mathbb{R}^n$. We will prove that when we change the almost complex structure, the embeded image of
+$SU(n)$ in $SO(2n)$ always remains in the same conjugacy class, which works out perfectly with the
+fact that while holonomy representation is well-defined, the holonomy group in $SO(2n)$ is only
+defined up to its conjugacy class as one has to fix a basis
+
+* Almost complex structure
+
+
+
+* Chern class and Calabi conjecture (Yau theorem)
+The Chern class $c_1(M)$ of a Riemannian manifold is the class in $H^{1,1}(M)$ of the Ricci
+curvature. It is easy to see that two different kahler metric give the same Chern class. The
+conjecture posed by Calabi asks *whether we can modify the kahler metric to attain, as Ricci
+curvature, every $(1,1)$ form in the original Chern class*. The response, which is positive, was
+given by S.T. Yau.
+
+#+ATTR_LATEX: :options [Calabi-Yau]
+#+BEGIN_theorem
+<<thm:Calabi-Yau>>
+Let $M$ be a compact manifold with a Kahler form $\omega$ and the corresponding Ricci curvature
+$R_\omega$. Let $R$ be a $(1,1)$ form cohomologous to $R_\omega$, then there exists a Kahler form
+$\omega'$ cohomologous to $\omega$ such that $R'$ is the Ricci curvature of $\omega'$.
+#+END_theorem

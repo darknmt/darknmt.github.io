@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-05-20 Sat 23:48 -->
+<!-- 2017-05-20 Sat 23:49 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Classification theorems in Remannian geometry</title>
@@ -277,7 +277,6 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <p>
-#+BEGIN_PREVIEW 
 This is part of my reading in the summer of 2017. I will try not to mention the details here as they
 will be covered in future posts. The big question is to 
 </p>
@@ -310,7 +309,6 @@ is exactly those that preserve a almost complex structure \(J\), by transporting
 <p>
 Note that we defined the holonomy group by its representation. In most case, we only consider
 Levi-Civita connection and the holonomy representation is then orthogonal.
-#+END_PREVIEW
 </p>
 </div>
 </div>
@@ -432,7 +430,7 @@ where \(V_i\) is a simply-connected, projective manifold with \(H^0(V_i,\Omega_{
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-05-20 Sat 23:15. <br>
+Last updated 2017-05-20 Sat 23:48. <br>
 </div>
 </div>
 </body>
