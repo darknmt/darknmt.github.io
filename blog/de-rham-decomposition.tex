@@ -1,0 +1,219 @@
+% Created 2017-06-06 Tue 00:14
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\newtheorem{remark}{Remark}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{proposition}{Proposition}[theorem]
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{definition}{Definition}
+\author{darknmt}
+\date{\today}
+\title{De Rham decomposition}
+\hypersetup{
+ pdfauthor={darknmt},
+ pdftitle={De Rham decomposition},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 24.5.1 (Org mode 9.0.5)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Decomposition theorem of de Rham}
+\label{sec:org1c44441}
+
+We observe that if a manifold \((M,g)\) is globally a product \((M_1,g_1)\times (M_2,g_2)\) then
+\(Hol_{g}(M) = Hol_{g_1}(M_1)\times Hol_{g_2}(M_2)\) and the holonomy representation of \(M\) is
+reducible. A result of de Rham says that one can decompose a Riemannian manifold as product of ones
+with irreducible holonomy representation.
+
+
+\begin{theorem}[De Rham decomposition]
+\label{org889e5be}
+Given \((M,g)\) a simply connected and complete Riemannian manifold, there exists a unique
+decomposition upto isometry and permutation of factors
+\[
+(M,g) = \prod_{i=1}^n(M_i,g_i)
+\]
+where \((M_i,g_i)\) are complete, simply connected Riemannian irreducible manifolds. Moreover the
+holonomy representation of \(M\) over \(T_xM\) is the product of holonomy representations of \(M_i\) over
+\(T_{x_i}M_i\) where \(x = (x_1,\dots, x_n)\)
+\end{theorem}
+
+\begin{proof}
+The proof of this theorem contains two steps:
+\begin{enumerate}
+\item Remark that if the holonomy group is reducible then locally \(M\) is a product of Riemannian
+manifolds, i.e. for every \(x\in M\) there exists a neighborhood \(U\) containing \(x\) with
+\((U,g)=(M_1,g_1)\times (M_2,g_2)\).
+\item Obtain the global product structure from local one. This is where completeness is put in use.
+\end{enumerate}
+
+
+We now discuss the first point with a bit more details. Suppose that \(T_xM = U_x \oplus^\perp V_x\)
+where \(U_x, V_x\) are stable under action of holonomy group, then by transporting \(U_x, V_x\) to the
+tangent space of any point \(y\) (as they are stable by holonomy, the result is independent of the
+curve along which the transport is taken), we obtain then two sub fibers \(A\) and \(B\) of \(TM\) over
+\(M\) that are stable by transport. Then for every vector field \(u_A\) in \(A\) and \(v\) in \(TM\),
+\(\nabla_v u_A \in A\), as the Levi-Civita connection is torsionless, one deduces
+\([u_A,v_A] = \nabla_{u_A}v_A - \nabla_{v_A}u_A\) remains in \(A\). By Frobenius theorem, locally at a
+point \(x\in M\), there exist manifolds \(M_1, M_2\) whose tangent spaces are \(A\) and \(B\). 
+
+
+\begin{theorem}[Frobenius]
+\label{thm:Frobenius}
+\label{org7e97a60}
+Given distribution \(D\) which to each point \(x\) associates a \$k\$-dimensional hyperplans of \(T_xM\)
+which satisfies:
+\begin{enumerate}
+\item \(D\) varies smoothly by \(x\), i.e. there exist \(k\) smooth vector fields that at each point \(x\)
+form a base of \(D(x)\).
+\item \(D\) is stable by Lie bracket, i.e. for every vector fields \(X,Y\) on \(M\) that take value in \(D\),
+\([X,Y]\) takes value in \(D\).
+\end{enumerate}
+Then at each point \(x\in M\), there exists a maximal \$k\$-dimension sub-manifold \(N\) of \(M\) containing
+\(x\) such that \(D(y)\) is the tangent of \(N\) at \(y\). The maximality means that every sub-manifold of
+\(M\) that satisfies this condition is an open sub-manifold of \(N\).
+\end{theorem}
+
+Back to our It then remains to show that \(M\) is isometric to \(M_1\times M_2\), by the following map
+
+\texttt{==} TO BE CONTINUED \texttt{===}
+\end{proof}
+
+
+\section{Uniqueness}
+\label{sec:org02debfa}
+We note that the decomposition is unique in the following sense: 
+
+\begin{proposition}[Uniqueness of de Rham decomposition]
+\label{prop:uniqueness}
+\label{org1efc5ca}
+If \(M\) is decomposed as \(E\times \prod M_i\) and \(E'\times\prod M'_j\) where \(M_i, M'j\) are
+irreducible and \(E,E'\) are maximal Euclidean components (i.e. none of \(M_i, M'_j\) are isometric to \(\mathbb{R}\). Then up to a rearrangement of indice \(j\) the composed map \(f: E\times\prod M_i
+\longrightarrow E'\times \prod M'_i\) are product of the isometries \(f_E: E\longrightarrow E'\) and
+\(f_i:M_i \longrightarrow M'_i\).
+\end{proposition}
+
+We first explain the appearance of \emph{Euclidean} components \(E,E'\). They are product of trivial
+representations in the \(T_{x_i}M_i\) appeared in the decomposition on each fiber. I call them
+Euclidean because they are, up to an isometric, \(\mathbb{R}^k\) with the usual metric. This follows
+from the fact that \(\mathbb{R}\) with any Riemannian metric is isometric to \(\mathbb{R}\) with
+Euclidean metric.
+
+We first note that the uniqueness stated in Proposition \ref{org1efc5ca} come from the uniqueness of
+the decomposition of each tangent fiber to irreducible representation of holonomy group, that is
+
+\begin{lemma}[Uniqueness of fiber decomposition]
+\label{lem:uniqueness-fiber}
+\label{org995dfdc}
+Let \(f: M\longrightarrow M'\) be an isometry that send \(x\in M\) to \(y\in M'\). Let 
+\[
+T_x M = E \oplus^\perp \oplus_i V_i,\quad T_yM' = E' \oplus^\perp \oplus_j V'_j
+\]
+be a decomposition of \(T_xM\) and \(T_yM'\) as direct sum of trivial subspaces \(E,E'\) and irreducible
+subspaces \(V_i, V_j'\) under holonomy action. Then up to a rearrangement of \(j\), \(f_*\) send \(E\) to
+\(E'\) and \(V_i\) to \(V'_i\). 
+\end{lemma}
+
+\begin{remark}
+One may note that a similar result is \uline{not true} for general representations: one can prove the
+uniqueness of the irreducible factors and their multiplicity. But the individual irreducible
+summands might not map to individual summands (However if one group all irreducible summands of
+the same type, then each group maps to another).
+\end{remark}
+
+The supplementary property of holonomy representation put in used here is the following:
+
+\begin{remark}
+\begin{enumerate}
+\item The holonomy representation \(H\subset SO(V)\) on a fiber \(V=T_xM\) satisfies the property \textbf{(H)}: if
+\(V = V_1 \oplus^\perp V_2\) where \(V_i\) are stable by \(H\) then \(H = (H\cap End(V_1))\times (H\cap
+   End(V_2))\). In other words, let \(H_i:= \{ h\in H: h|_{V_j} = Id, j\ne i\}\) then \(H_i\) is the
+action of \(H\) on \(V_i\). This property is a consequence of  de Rham decomposition along \(V_1, V_2\)
+and the fact that \(Hol(M_1\times M_2) = Hol(M_1)\times Hol(M_2)\).
+\item An example of representation that do satisfies this property \textbf{(H)} is the group \(G = \{\pm
+   I_2\}\). Take \(V_i = \mathbb{R}e_i\), then \(G_1 = G_2 = \{I_2\}\) therefore \(G_1\times G_2\ne
+   G\). This also illustrates the fact that not every group (representation) are holonomy group
+(representation).
+\end{enumerate}
+\end{remark}
+
+
+We prove the following lemma, which is evidently more general than Lemma \ref{org995dfdc}.
+\begin{lemma}[Uniqueness of representation decomposition]
+\label{lem:unique-representation}
+\label{org7773dca}
+Let \(G\subset SO(V)\) be an orthonormal representation over a finite dimension vector space \(V\) with
+property (H), given any two decompositions
+\[
+V = E \times \prod V_i = E' \times \prod V'_j
+\]
+where \(G\) acts trivially on \(E, E'\), \(V_i, V'_j\) are irreducible and of dimension larger than 2,
+one has \(E = E'\) and \(V_i = V'_i\) up to a rearrangement of index \(j\).
+
+Moreover, given \(J\in Hom_G(V,V)\cap SO(V)\) then \(J\) sends \(E\) and \(V_i\) to themselves.
+\end{lemma}
+
+\begin{proof}
+Note that since action of \(G\) is special orthonormal, any one dimensional subspace of \(V\) stable by
+\(G\) are trivial under \(G\), that explains why we supposed \(V_i, V'_j\) are of dimension larger
+than 2. It suffices to see that every irreducible subspace \(N\) of \(V\) is either in \(E\) or equal to
+\(V_i\).
+
+Let \(pr_i\) and \(pr_E\) be orthogonal projection of \(V\) to \(V_i\) and \(E\). As \(E\) and \(V_i\) are \$G\$-stable, these
+projections are \$ G \$-invariant. Let \(N_i = pr_i(N)\), then \(N_i\) is a subspace of \(V_i\) stable
+by \(G\), hence either \(0\) or all \(V_i\). If all \(N_i=0\) then clearly \(N\) is perpendicular to \(\oplus
+V_i\), that is \(N\subset E\). If \(pr_E(N)\ne 0\) then \(Hom_G(N, E) \ne 0\) since it contains \(pr_E\). As
+\(N\) is irreducible, \(N\subset E\) also. Therefore one can suppose that at least one \(N_i = V_i\) and
+\(pr_E(N) = 0\). The second condition means \(E\perp N\). 
+
+Note that \(pr_i\) is bijective (Schur lemma for example gives \(Hom_G(N,V_i) = \mathbb{R}pr_i\)). 
+Let \(G_i = G\cap End(V_i) = \{g\in G: g|_{V_j} = Id \forall j\ne i \}\) the action of \(G\) on \(V_i\)
+then \(Fix(\prod_{j\ne i} G_j)= E\oplus V_i\), in fact each \(v = e +\sum v_i\in Fix(\prod_{j\ne i}
+G_j)\) where \(e\in E, v_i\in V_i\), one has \(g_i v_i = v_i \forall g_i \in G_i\), hence \(g_i v_i = v_i
+\forall g_i\in G\), hence \(v_i = 0\). It remains to note that as \(pr_i\) is \(G\) invariant, \(N_i\) is
+also fixed by \(\prod_{j\ne i}G_j\), therefore \(N_i\subset E \oplus^\perp V_i\). Therefore \(N_i=V_i\) as
+\(N_i\perp E\).
+
+For the last point, note that as \(J\) commutes with all elements of \(G\), \(J\) sends \(Fix(\prod_{j\in A}
+G_j)\) to itself. By taking \(A\) to be all indices \(j\) then all indices \(j\ne i\) one see that \(J|_E:
+E\longrightarrow E\) and \(J|_{E\oplus V_i}: E\oplus V_i\longrightarrow E\oplus V_i\), hence by
+orthogonality \(J\) sends \(E\) and \(V_i\) to themselves.
+\end{proof}
+
+
+\section{Application of uniqueness lemma: decomposition for Kahler manifold}
+\label{sec:orgd517714}
+Now let apply the de Rham decomposition to a complete Riemannian manifold \(M\) with holonomy \(SU(n)
+\subset SO(2n)\) (called a \emph{Kahler manifold}). There exists on a fixed fiber \(T_xM\) an automorphism
+\(J\) that preserve the riemannian metric and satisfies \(J^2 = -1\). By transporting \(J\) to every other
+fibers of \(TM\) one obtains a \emph{almost complex structure} on \(M\).
+
+Apply Lemma \ref{org7773dca} to \(J\) which is obviously \$ G \$-invariant and orthonormal, one
+see that such structure \(J\) passes to every manifold \(M_i\) and the Euclidean component \(\mathbb{R}^n\) and
+remains parallel on these manifolds. We proved that \(M\) is decomposed to \(\mathbb{C}^{n/2}\times
+\prod M_i\) where \(M_i\) are Kahler manifold. The decomposition map is both a Riemannian isometry and a
+Kahler isomorphism (morphism that preserves complex structure and kahler form). 
+\end{document}

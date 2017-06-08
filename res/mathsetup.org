@@ -1,6 +1,10 @@
-#+OPTIONS: tex:t
+#+OPTIONS: tex:t H:4 num:3
 #+HTML_MATHJAX: path:"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"
 #+LATEX_HEADER: \usepackage{amsthm}
+#+LATEX_HEADER: \usepackage{tikz-cd}
+#+BEGIN_COMMENT
+#+LATEX_HEADER: \usepackage[all]{xy}
+#+END_COMMENT
 #+LATEX_HEADER: \newtheorem{remark}{Remark}  
 #+LATEX_HEADER: \newtheorem{theorem}{Theorem}
 #+LATEX_HEADER: \newtheorem{lemma}[theorem]{Lemma}

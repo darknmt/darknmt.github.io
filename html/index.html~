@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-05-23 Tue 10:08 -->
+<!-- 2017-05-29 Mon 01:04 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Welcome to my homepage</title>
@@ -249,20 +249,8 @@ for the JavaScript code in this tag.
 This website is written using <a href="https://en.wikipedia.org/wiki/Emacs">emacs</a> <a href="http://orgmode.org/">org-mode</a> with <a href="https://github.com/SteveLane/org-css">this CSS</a> and a small <a href="https://github.com/darknmt/darknmt.github.io/blob/master/res/theorems.css">modification</a> to display LaTeX
 structure. The blog is inspired from <a href="https://ogbe.net/blog/blogging_with_org.html">here</a> and <a href="https://nicolas.petton.fr/blog/blogging-with-org-mode.html">here</a>.
 </p>
-
-<p>
-The reasons that I write this blog instead of using Wordpress are 
-</p>
-<ol class="org-ol">
-<li>I am more convenient with editing in emacs using <a href="https://github.com/joaotavora/yasnippet">YASnippet</a>. The fact that org-mode is both a MarkDown language
-and a <a href="http://orgmode.org/manual/Publishing.html">publishing tool</a> is also taken into account.</li>
-<li>LaTeX (and the writing of mathematics) is not just about mathematical formulae, structures like
-theorem/lemma/definition also play a crucial role.</li>
-<li><a href="https://darknmt.github.io/html/Cheeger-Gromoll-splitting.html">Here</a> is a webpage, <a href="https://raw.githubusercontent.com/darknmt/darknmt.github.io/master/blog/Cheeger-Gromoll-splitting.org">here</a> is what I have to type, and here are the LaTeX exports in <a href="../res/Cheeger-Gromoll-splitting.tex">TEX</a> and <a href="../res/Cheeger-Gromoll-splitting.pdf">PDF</a>.</li>
-</ol>
 </div>
 </div>
-
 <div id="outline-container-orgd9fe62f" class="outline-2">
 <h2 id="orgd9fe62f">About me</h2>
 <div class="outline-text-2" id="text-orgd9fe62f">
@@ -277,7 +265,7 @@ theorem/lemma/definition also play a crucial role.</li>
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-05-23 Tue 00:22. <br>
+Last updated 2017-05-29 Mon 01:03. <br>
 </div>
 </div>
 </body>

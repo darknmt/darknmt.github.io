@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-05-20 Sat 23:49 -->
+<!-- 2017-06-05 Mon 23:31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Classification theorems in Remannian geometry</title>
+<title>Classification theorem in Riemannian geometry</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="darknmt" />
 <style type="text/css">
@@ -262,7 +262,7 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div id="content">
-<h1 class="title">Classification theorems in Remannian geometry</h1>
+<h1 class="title">Classification theorem in Riemannian geometry</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
@@ -271,8 +271,7 @@ for the JavaScript code in this tag.
 <li><a href="#org612e05e">2. De Rham decomposition</a></li>
 <li><a href="#orgde4981b">3. Berger classification for non-symmetric manifolds</a></li>
 <li><a href="#orgf875fa5">4. Chern class and Calabi conjecture (Yau theorem)</a></li>
-<li><a href="#orgab29336">5. Cheeger-Gromoll splitting theorem</a></li>
-<li><a href="#org5e40148">6. Bogomolov-Beauville classification</a></li>
+<li><a href="#org5e40148">5. Bogomolov-Beauville classification</a></li>
 </ul>
 </div>
 </div>
@@ -398,13 +397,9 @@ Let \(M\) be a compact manifold with a Kahler form \(\omega\) and the correspond
 
 
 
-<div id="outline-container-orgab29336" class="outline-2">
-<h2 id="orgab29336"><span class="section-number-2">5</span> Cheeger-Gromoll splitting theorem</h2>
-</div>
-
 <div id="outline-container-org5e40148" class="outline-2">
-<h2 id="org5e40148"><span class="section-number-2">6</span> Bogomolov-Beauville classification</h2>
-<div class="outline-text-2" id="text-6">
+<h2 id="org5e40148"><span class="section-number-2">5</span> Bogomolov-Beauville classification</h2>
+<div class="outline-text-2" id="text-5">
 <p>
 Bogomolov result, later refined by Beauville showed that the building blocks of Kahler manifolds
 with vanishing Chern class are the complex torus, simply-connected Hyperkahler manifolds or
@@ -430,7 +425,7 @@ where \(V_i\) is a simply-connected, projective manifold with \(H^0(V_i,\Omega_{
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-05-20 Sat 23:48. <br>
+Last updated 2017-06-05 Mon 23:23. <br>
 </div>
 </div>
 </body>

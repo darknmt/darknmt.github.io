@@ -1,0 +1,18 @@
+#+TITLE: Prelude to Riemannian geomeotry
+#+SETUPFILE: ../res/mathsetup.org
+
+* Riemannian manifold
+
+#+ATTR_LATEX: :options [Hopf-Rinow]
+#+BEGIN_theorem
+#+LATEX: \label{thm:hopf-rinow}
+<<thm:hopf-rinow>>
+Given a Riemannian manifold $M$, the followings are equivalent
+1. Every geodesic is well-defined at all time
+2. Closed and bounded sets are compact.
+#+END_theorem
+
+* Exponential function
+
+
+* Jacobi fields

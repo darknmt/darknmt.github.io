@@ -1,0 +1,35 @@
+#+TITLE: Bogomolov-Beauville classification
+#+SETUPFILE: ../res/mathsetup.org
+
+* From the Riemannian results of de Rham and Berger
+
+We will first prove a (conceptually) straightforward result of [[de-rham-decomposition.org][de Rham decomposition]] and
+[[Berger-remark-complex][Berger classification]]. The following theorem is taken from Beauville's article
+#+ATTR_LATEX: :options []
+#+BEGIN_theorem
+Let $X$ be a compact Kahler manifold with flat Ricci curvature, then
+1. The universal covering space $\tilde X$ of $X$ decomposes isometrically as \[\tilde X =
+   E \times\prod_i V_i\times \prod_j X_j\] where $E = \mathbb{C}^k$, $V_i$ and $X_j$ are simply-connected
+   compact manifolds with irreducible homonomy $SU(m_i/2)$ for $V_i$ and $Sp(r_j/4)$ for $X_j$. One
+   also has uniqueness in the strong sense as in de Rham decomposition.
+2. There exists a finite etale covering space $X'$ of $X$ such that \[ X' = T\times \prod_i V_i
+   \times \prod_j X_j\] where $T$ is a complex torus.
+#+END_theorem
+#+BEGIN_proof
+Note that the first point is obtained directly from de Rham decomposition. The one-dimensional
+parallel subspaces (with trivial holonomy) are regrouped to $E$. By [[Cheeger-Gromoll-splitting.org][Cheeger-Gromoll splitting]],
+$\tilde X = E\times M$ where $M$ contains no line and is compact (note that we use compactness of
+$X$ here). The irreducible factors in $M$ are not symmetric spaces as the Ricci curvature of
+symmetric spaces is non-degenerate. Holonomy of these factors are $SU(m_i/2)$ and $Sp(r_j/4)$
+according to Berger list since they are Kahler manifolds and Ricci-flat. It remains to prove the
+second point.
+
+We will regard each element of $\pi_1(X)$ by its isometric, free and proper action on $\tilde X$. As
+pointed out the arguments in our discussion of uniqueness of de Rham decomposition, every isometry
+of $\tilde X$ to itself preserves the components $T_{x_0}E$, $T_{x_i}V_i$ and $T_{x_j}X_j$
+of $T_x \tilde X$, each isometry $\phi$ on $\tilde X$ is of form $(\phi_1,\phi_2)$ where $\phi_1\in
+Isom(E)$ and $\phi_2\in Isom(M)$.
+#+END_proof
+
+
+* To a classification for complex manifold

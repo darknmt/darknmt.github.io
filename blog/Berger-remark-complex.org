@@ -41,28 +41,217 @@ Sp(m)\subset SU(2m)\subset U(2m)\subset SO(4m)
 
 To resume: hyperkahler $\longrightarrow$ Calabi-Yau $\longrightarrow$ Kahler
 
-But wait.. you said $SU(n)\subset SO(2n)$? To embed $SU(n)$ in $SO(2n)$ one need to identify $
+*But wait.. you said $U(n)\subset SO(2n)$?* To embed $U(n)$ in $SO(2n)$ one need to identify $
 \mathbb{C}$ and $ \mathbb{R}^{2n}$, this can be done using an almost complex structure $J$ of $
 \mathbb{R}^n$. We will prove that when we change the almost complex structure, the embeded image of
-$SU(n)$ in $SO(2n)$ always remains in the same conjugacy class, which works out perfectly with the
+$U(n)$ in $SO(2n)$ always remains in the same conjugacy class, which works out perfectly with the
 fact that while holonomy representation is well-defined, the holonomy group in $SO(2n)$ is only
 defined up to its conjugacy class as one has to fix a basis
 
 * Almost complex structure
+#+BEGIN_definition
+A _(almost) complex structure_ $J$ on a vector space $V$ is an automorphism $J:\ V\longrightarrow V$
+with $J^2 = -Id_V$. If $V$ has a scalar product $g$, we suppose in addition that $g\circ J = J$.
+
+A _(almost) complex structure_ $J$ on manifold $M$ is a vector bundle automorphism $J: TM\longrightarrow
+TM$ that satisfies $J_x^2 = -Id_{T_xM}$ for every $x\in $M$. If $M$ is a Riemannian manifold, we
+supose in addition that $g\circ J = g$.
+#+END_definition
+
+Let us first have a look at a complex structure $J$ /on a fiber/ (vector space) $V$. Here are some
+direct consequences:
+
+#+options: num:nil
+**** The complexifieds. 
+$g$ and $J$ extends in an unique way over $V_{ \mathbb{C}}$ to a
+hermitian product $g_{\mathbb{C}}$ and a $\mathbb{C}$ -linear automorphism (also noted by $J$). One
+also has $g_{\mathbb{C}}\circ J = g_{\mathbb{C}}$.
+
+**** Eigenspaces.
+The complexified space $V_{ \mathbb{C}}$ is decomposed to $V_{\mathbb{C}} =
+V^{1,0} \oplus^\perp V^{0,1}$ where $V^{1,0}$ and $V^{0,1}$ are eigenspaces (complex vector space)
+corresponding to eigenvalues $i$ and $-i$ of $J$ on $V_{\mathbb{C}}$. The orthogonality is by
+$g_{\mathbb{C}}$. The complex conjugate $\sum z_i x_i \mapsto \sum \bar z_i x_i$ where $z_i\in
+\mathbb{C}$ and $x_i\in V$ maps $V^{1,0}$ to $V^{0,1}$. Their dimensions are therefore the same.
+
+**** Hermitian form.
+The _fundamental form_ $\omega$ of $(V,J)$ is defined by
+\[
+\omega(a,b) = g(Ja,b) = -g(a, Jb) \quad \text{on } V
+\]
+which is an antisymmetric real 2-form with $\omega\circ J = \omega$. $V$ equiped with the following
+_Hermitian form_
+\[
+h(a,b) = g(a,b) - i\omega(a,b)  \quad \text{on } V
+\]
+in the sense that $h(.,.)$ is $\mathbb{R}$ -linear with $(Ja,b) = i(a,b)$ and $(a,Jb) = -i(a,b)$.
+
+**** Identification.
+One usually identifies $(V,J)$ and $(V^{1,0},i)$ as vector spaces equiped with complex structure,
+using the following map:
+\[
+\iota_J: x \mapsto \frac{1}{2}(x - iJ(x))
+\]
+which is $\mathbb{C}$ -linear in the sense of complex structure $\iota_J(Jx) = i\iota_J(x)$. Note
+that one $(V,J)$ is also isomorphic to $(V^{0,1},-i)$ by the conjugate of $\iota_J$: $x\mapsto
+\frac{1}{2}(x + iJ(x))$.
+
+Now note that on we have on $(V,J)$ an hermitian product $h(.,.)$ and on $(V^{1,0},i)$ the restricted
+hermitian product $g_{\mathbb{C}}$ of $V_{\mathbb{C}}$. The following lemma gives their relation
+(the proof is straightforward computation, see Manuscript).
+
+#+BEGIN_lemma
+The identification $(V,J) = (V^{1,0},i)$ by $\iota_J$ give
+\[
+\frac{1}{2}h = g_\mathbb{C}|_{V^{1,0}}
+\]
+#+END_lemma
+
+
+We can now embed $U(n)$ to $SO(2n)$, in other words $U(V^{1,0})$ to $SO(V)$ by the map
+$\phi\mapsto \tilde\phi$ as follow:
+\begin{tikzcd}
+  V \ar["\iota_J", d] \ar["\tilde\phi", r] & V \ar["\iota_J", d] \\
+  V^{1,0} \ar["\phi", r] & V^{1,0} 
+\end{tikzcd}
+
+Note that the correspondance $\phi \leftrightarrow \tilde\phi$ is one-to-one between $\{\phi:\
+V^{1,0}\longrightarrow V^{1,0} \mathbb{C}\text{-linear}\}$ and $\{\tilde\phi:\ V\longrightarrow V\
+\mathbb{R}\text{-linear}\}$. Then
+1. $\phi$ is $\mathbb{C}$ -linear if and only if $\tilde\phi J = J\tilde\phi$.
+2. $\phi$ preserves $g_{\mathbb{C}}$ if and only if $\tilde\phi$ preserves $h$. Taking the real
+   and imaginary part, the latter is equivalent to the fact that $\tilde\phi$ preserves $g$ and
+   $\omega$.
+3. Every $\mathbb{C}$ -linear $\tilde \phi$ preserves orientation of $V^{1,0}$ as $\mathbb{R}^2n$
+   (note that the fact that $\tilde\phi$ preserves orientation or not is independent of how one
+   identifies $V^{1,0}$ and $\mathbb{R}^{2n}$ 
+Hence for every $J$, $\phi\mapsto\tilde\phi$ gives a embedding of $U(V^{1,0})$ to $SO(V)$. By each
+a orthonormal base of $V^{1,0}$ and that of $V$ give a embedding $U(n)\subset SO(2n)$.
+
+#+BEGIN_remark
+The image of $U(n)$ in $SO(2n)$ may depends on $J$ and the orthonormal base of $V$, but its
+conjugacy class in $SO(2n)$ is _uniquely defined_. This is because every complex structure $J$ is,
+up to a orthonormal conjugation, 
+\[
+J_0 = \begin{pmatrix}
+0 & I_n \\
+-I_n & 0 \\
+\end{pmatrix}.
+\]
+#+END_remark
+
+
+* Complexified dual and forms, prelude to Kahler geometry
+
+We state first some linear algebra facts, whose proofs are unremarkable.
+
+#+ATTR_LATEX: :options [Linear algebra facts]
+#+BEGIN_lemma
+#+LATEX: \label{lem:alg-exterior}
+<<lem:alg-exterior>>
+1. Let $V = W_1 \oplus W_2$ be $R$ -module then the exterior algebra of $V$ splits into \[\wedge^nV
+   = \oplus_{p+q = n}\wedge^p W_1 \otimes \wedge^q W_2 \]. We remark that the tensor product here
+   is formal, and not related to the tensor product defining the exterior algebra.
+2. If $V$ has a complex structure $J$ then $J$ gives a complex structure on $V^* =
+   Hom_{\mathbb{R}}(V, \mathbb{R})$, naturally by $\phi\mapsto \phi\circ J$.
+#+END_lemma
+
+One has 
+\[
+(V^*)_{\mathbb{C}} = Hom_{\mathbb{R}}(V,\mathbb{C}) \equiv Hom_{\mathbb{C}}(V_{\mathbb{C}},
+\mathbb{C})
+\]
+and 
+\[
+(V^*)^{1,0} = Hom_{\mathbb{C}}((V,J), \mathbb{C}),\quad (V^*)^{0,1} = Hom_{\mathbb{C}}((V,-J),\mathbb{C})
+\]
+where $Hom_{C}(V,\mathbb{C})$ denotes the set of $\mathbb{R}$ -linear morphisms that preserves
+complex structures ($\mathbb{C}$ is implicitly with the complex structure $z\mapsto iz$)
+
+Therefore $V^*_{\mathbb{C}} = (V^*)^{1,0} \oplus (V^{*})^{0,1}$ is rewriten as
+\[
+Hom_{\mathbb{R}}(V,\mathbb{C}) = Hom_{\mathbb{C}}((V,J),\mathbb{C}) \oplus Hom_{\mathbb{C}}((V,-J), \mathbb{C})
+\]
+Using the first point of Lemma [[lem:alg-exterior]], one has
+\[
+\wedge^n V_{\mathbb{C}}^* = \oplus_{p+q=n}\wedge^{p,q}V^*_{\mathbb{C}}
+\]
+where $\wedge^{p,q}T^*_{\mathbb{C}}M$ denotes the $\mathbb{C}$ -vector space of forms $p$ times $
+\mathbb{C}$ -linear and $q$ times $ \mathbb{C}$ -antilinear.
+
+
+Note one can easily find in $V$ an orthonormal basis $\partial_{x_i},\partial_{y_i}$ with
+$J(\partial_{x_i}) = \partial_{y_i}$. We clarify here the definition and implicit identifications of
+basic objects such as $dz_i$ and $d\bar{z_i}$.
+
+| *Object*                                                                                         | *Where it belongs/ properties*                                   | *$\mathbb{C}$ -linear extension/ properties*                                      |
+|--------------------------------------------------------------------------------------------------+------------------------------------------------------------------+-----------------------------------------------------------------------------------|
+| $\partial_{z_i} = \iota_J(\partial_{x_i}) = \frac{1}{2}(\partial_{x_i}-i\partial_{y_i})$         | $V^{1,0}$                                                        | $dz_i(\partial_{z_j}) = \delta_{i,j}, dz_i(\partial_{\bar{z_j}}) = 0$             |
+| $\partial_{\bar z_i} = \iota_{-J}(\partial_{x_i}) = \frac{1}{2}(\partial_{x_i}+i\partial_{y_i})$ | $V^{0,1}$                                                        | $d\bar{z_i}(\partial_{z_j}) = 0, d\bar{z_i}(\partial_{\bar{z_j}}) = \delta_{i,j}$ |
+| $dz_i = dx_i +idy_i$                                                                             | $Hom_{\mathbb{C}}((V,J),\mathbb{C})$, $\mathbb{C}$ -linear       | $Hom_{\mathbb{C}}(V_{\mathbb{C}}, \mathbb{C})$, null on $V^{0,1}$,                |
+| $d\bar{z_i} = dx_i -idy_i$                                                                       | $Hom_{\mathbb{C}}((V,-J), \mathbb{C})$, $\mathbb{C}$ -antilinear | $Hom_{\mathbb{C}}(V_{\mathbb{C}}, \mathbb{C})$, null on $V^{1,0}$                 |
+|--------------------------------------------------------------------------------------------------+------------------------------------------------------------------+-----------------------------------------------------------------------------------|
 
 
 
-* Chern class and Calabi conjecture (Yau theorem)
-The Chern class $c_1(M)$ of a Riemannian manifold is the class in $H^{1,1}(M)$ of the Ricci
-curvature. It is easy to see that two different kahler metric give the same Chern class. The
-conjecture posed by Calabi asks *whether we can modify the kahler metric to attain, as Ricci
-curvature, every $(1,1)$ form in the original Chern class*. The response, which is positive, was
-given by S.T. Yau.
+#+BEGIN_remark
+One can note a subtlety here: there are two natural ways to extend $dz_i$ to $V^{1,0}$
+1. by first make a $ \mathbb{C}$ -linear extension on $V_{\mathbb{C}}$, then make a restriction on $V^{1,0}$
+2. using the identification $(V,J)\equiv (V^{1,0},i)$
+but these two coincide, as they are all $ \mathbb{C}$ -linear and satisfies $dz_i(\partial_{z_j}) =
+\delta_{i,j}, dz_i(\partial_{\bar{z_j}}) = 0$. Same story with $d\bar{z_i}$. See Figure \ref{fig:dz}
+and Figure \ref{fig:dzbar}
+#+END_remark
 
-#+ATTR_LATEX: :options [Calabi-Yau]
-#+BEGIN_theorem
-<<thm:Calabi-Yau>>
-Let $M$ be a compact manifold with a Kahler form $\omega$ and the corresponding Ricci curvature
-$R_\omega$. Let $R$ be a $(1,1)$ form cohomologous to $R_\omega$, then there exists a Kahler form
-$\omega'$ cohomologous to $\omega$ such that $R'$ is the Ricci curvature of $\omega'$.
-#+END_theorem
+\begin{figure}
+\centering
+\label{fig:dz}
+\begin{tikzcd}
+  (V,J) \ar["\iota_J", d, swap] \ar["dz_i", r] & \mathbb{C} & V \ar["dz_i", r] \ar["\mathbb{C} \text{-lin}", d, swap] & \mathbb{C} \\
+  (V^{1,0},i) \ar["dz_i", ur, swap] &  & V_\mathbb{C} \ar["dz_i", ur, swap] &  
+\end{tikzcd}
+\caption{Two natural ways to define $dz_i$ on $V^{1,0}$}
+\end{figure}
+
+\begin{figure}
+\centering
+\label{fig:dzbar}
+\begin{tikzcd}
+  (V,-J) \ar["\iota_J", d, swap] \ar["d\bar{z_i}", r] & \mathbb{C} & V \ar["d\bar{z_i}", r] \ar["\mathbb{C} \text{-lin}", d, swap] & \mathbb{C} \\
+  (V^{0,1},i) \ar["d\bar{z_i}", ur, swap] &  & V_\mathbb{C} \ar["d\bar{z_i}", ur, swap] &  
+\end{tikzcd}
+\caption{Two natural ways to define $d\bar{z_i}$ on $V^{0,1}$}
+\end{figure}
+
+
+#+BEGIN_definition
+The followings are equivalent and $X$ is called a _Kahler manifold_ if one of them is satisfied.
+1. $X$ is a complex manifold, equiped with a Hermitian structure $(.,.)$ compatible with the complex
+   structure $J$, hence a Riemannian metric $g$ and a fundamental form $\omega$, and $d\omega=0$.
+2. $X$ is a Riemannian manifold with equiped with a parallel complex structure.
+3. $X$ is a complex manifold, equiped with a Hermitian structure such that the Chern connection on
+   $T^{1,0}X$ is, up to an identification by $\iota_J$, the Levi-Civita connection
+4. $X$ is a complex manifold, equiped with a Hermitian structure such that the Chern connection on
+   $T^{1,0}X$ is torsionless
+We call a complex manifold $X$ _of Kahler type_ if there exists a Hermitian structure under which
+$X$ is Kahler.
+#+END_definition
+
+
+
+
+
+
+
+#+BEGIN_COMMENT
+#+begin_src latex :file ../img/fsa.pdf :packages '(("" "tikz-cd")) :results raw
+  % Define block styles
+\begin{tikzcd}
+  (V,-J) \ar["\iota_J", d, swap] \ar["d\bar{z_i}", r] & \mathbb{C} & V \ar["d\bar{z_i}", r] \ar["\mathbb{C} \text{-lin}", d, swap] & \mathbb{C} \\
+  (V^{0,1},i) \ar["d\bar{z_i}", ur, swap] &  & V_\mathbb{C} \ar["d\bar{z_i}", ur, swap] &  
+\end{tikzcd}
+#+end_src
+#+CAPTION: tikz caption
+#+LABEL: fig:tikz
+#+RESULTS:
+#+END_COMMENT

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-06-05 Mon 20:21 -->
+<!-- 2017-06-05 Mon 23:31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>De Rham decomposition</title>
@@ -418,15 +418,20 @@ The supplementary property of holonomy representation put in used here is the fo
 </p>
 
 <div class="remark">
-<p>
-The holonomy representation \(H\subset SO(V)\) on a fiber \(V=T_xM\) satisfies the property <b>(H)</b>: if \(V = V_1 \oplus^\perp V_2\) where
-\(V_i\) are stable by \(H\) then \(H = (H\cap End(V_1))\times (H\cap End(V_2))\). In other words, let \(H_i
-:= \{ h\in H: h|_{V_j} = Id, j\ne i\}\) then \(H_i\) is the action of \(H\) on \(V_i\).
-This property is a consequence of  de Rham
-decomposition along \(V_1, V_2\) and the fact that \(Hol(M_1\times M_2) = Hol(M_1)\times Hol(M_2)\),
-</p>
+<ol class="org-ol">
+<li>The holonomy representation \(H\subset SO(V)\) on a fiber \(V=T_xM\) satisfies the property <b>(H)</b>: if
+\(V = V_1 \oplus^\perp V_2\) where \(V_i\) are stable by \(H\) then \(H = (H\cap End(V_1))\times (H\cap
+   End(V_2))\). In other words, let \(H_i:= \{ h\in H: h|_{V_j} = Id, j\ne i\}\) then \(H_i\) is the
+action of \(H\) on \(V_i\). This property is a consequence of  de Rham decomposition along \(V_1, V_2\)
+and the fact that \(Hol(M_1\times M_2) = Hol(M_1)\times Hol(M_2)\).</li>
+<li>An example of representation that do satisfies this property <b>(H)</b> is the group \(G = \{\pm
+   I_2\}\). Take \(V_i = \mathbb{R}e_i\), then \(G_1 = G_2 = \{I_2\}\) therefore \(G_1\times G_2\ne
+   G\). This also illustrates the fact that not every group (representation) are holonomy group
+(representation).</li>
+</ol>
 
 </div>
+
 
 <p>
 We prove the following lemma, which is evidently more general than Lemma <a href="#orgc426051">2</a>.
@@ -511,7 +516,7 @@ Kahler isomorphism (morphism that preserves complex structure and kahler form).
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-06-05 Mon 20:20. <br>
+Last updated 2017-06-05 Mon 21:40. <br>
 </div>
 </div>
 </body>

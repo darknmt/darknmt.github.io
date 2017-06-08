@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-05-29 Mon 00:06 -->
+<!-- 2017-05-29 Mon 00:13 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>From Busemann function to Cheeger-Gromoll splitting</title>
@@ -558,7 +558,7 @@ image in the quotient \(M/G_2\) contains every equivalent classes.
 Now let \(\gamma\) be a minimal ray starting from \(p\in M\), for each \(x\in \gamma\) there exists an
 isometry \(\sigma\) of \(\bar M\) such that \(\sigma(x)\in K\). By compactness of \(K\), there exists a
 sequence \(t_n \to +\infty\) with \(x_n =\gamma(t_n)\), \(v_n = \dot\gamma(t_n)\) that satisfies \(y_n =
-\sigma_n(x_n) \to y\in K\) and \((\sigma_n)_* v_n \to v\in T_y\barM\) in the tangent bundle \(T\bar
+\sigma_n(x_n) \to y\in K\) and \((\sigma_n)_* v_n \to v\in T_y\bar M\) in the tangent bundle \(T\bar
 M\). Then the geodesic of \(\bar M\) starting at \(y\) with vector \(v\) is a
 line. In fact it suffices to prove that \(d(exp_y(t v), exp_y(-s v)) = s+t\) for \(s,t>0\): for \(n\)
 large enough that \(t_n > s\) then
@@ -575,7 +575,7 @@ then let \(n\to +\infty\) and the result follows.
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-05-29 Mon 00:06. <br>
+Last updated 2017-05-29 Mon 00:13. <br>
 </div>
 </div>
 </body>

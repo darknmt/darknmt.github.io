@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-06-08 Thu 09:35 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Calabi-Yau theorem</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="darknmt" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' href='../res/blog.css' type='text/css'/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='./index.html'>Home</a></li>
+<li><a href='./blog.html'>Blog</a></li>
+<li><a href='http://github.com/darknmt/'>GitHub</a></li>
+<li><a href='/contact.html'>Contact</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<h1 class="title">Calabi-Yau theorem</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org41a1828">1. Calabi conjecture</a></li>
+<li><a href="#orgc0fad35">2. Reduction to local charts, Yau theorem</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#org406b053">\(h,g,\omega\) in local coordinates.</a></li>
+<li><a href="#org2c520c5">The Ricci curvature.</a></li>
+<li><a href="#orgd3cb0b0">\(dd^c\) lemma .</a></li>
+<li><a href="#org574fcdd">Yau theorem.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgba0dba4">3. A sketch of proof</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org41a1828" class="outline-2">
+<h2 id="org41a1828"><span class="section-number-2">1</span> Calabi conjecture</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+We start with the following fact (which is an exercise in Daniel Huybrechts, <i>Complex geometry - an introduction</i>)
+</p>
+
+<div class="proposition">
+<p>
+Let \((X,g)\) be a compact Kahler manifold, then \(iRic(X,g)\) is the curvature of the Chern connection
+on the canonical bundle \(K_X\). In other words, \(Ric(X,g)\) is in \(Ric(X,g)\in -2\pi c_1(K_X)\) where
+\(c_1(K_X)\) is the first Chern class of \(K_X\).
+</p>
+
+</div>
+
+<p>
+The Calabi conjecture asked whether there exists for each form \(R\in c_1(K_X)\) a metric \(g'\) with
+\(Ric(X,g') = R\). We prefer to work with the fundamental form instead of the metric \(g\) as the former
+is antisymmetric.
+</p>
+
+<div class="definition">
+<p>
+The quadruple \((h, g, \omega, J)\) is said to be <span class="underline">compatible</span> if \(g\circ J = g\) and \(\omega(a,b) =
+g(Ja,b)\) and \(h = g - i\omega\). 
+</p>
+
+</div>
+
+<div class="remark">
+<ol class="org-ol">
+<li>When \(J\) is fixed, one of \(h,g,\omega\) that is invariant by \(J\) determines the two others.</li>
+<li>For a compatible quadruple, the condition \(\nabla J = 0\) is equivalent to \(d\omega = 0\). The
+fundamental form \(\omega\) that satisfies \(d\omega = 0\) is called a <span class="underline">Kahler form</span>.</li>
+</ol>
+
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgc0fad35" class="outline-2">
+<h2 id="orgc0fad35"><span class="section-number-2">2</span> Reduction to local charts, Yau theorem</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-org406b053" class="outline-5">
+<h5 id="org406b053">\(h,g,\omega\) in local coordinates.</h5>
+<div class="outline-text-5" id="text-org406b053">
+<p>
+We note by \(h_{i\bar j} = h(\partial_{x_i},\partial_{x_j}) =
+2g_{\mathbb{C}}(\partial_{z_i},\partial_{z_j})\). By straightforward calculation one has
+</p>
+\begin{align*}
+\omega & = -\frac{1}{2} Im h_{i\bar j} (dx^i\wedge dx^j + dy^i\wedge dy^j) + Re h_{i\bar j}dx^i\wedge dy^j\\
+& = \frac{i}{2}h_{i\bar j}dz^i\wedge d\bar{z^j}
+\end{align*}
+<p>
+and the condition \(d\omega = 0\) is equivalent to
+\[
+\frac{\partial h_{i\bar j}}{\partial z_k} = \frac{\partial h_{k\bar j}}{\partial z_i}
+\]
+We also note by \(h^{i\bar j}\) the inverse transposed of \(h_{i\bar j}\), i.e. \(h^{i\bar j}h_{k\bar j}
+= \delta_j^k\)
+</p>
+<div class="definition">
+<p>
+Let \(X\) be an almost complex manifold (manifold with an almost complex structure). Then
+\(d:\wedge^nT^*X\longrightarrow \wedge^{n+1}T^*X\) sends \(\wedge^{p,q}T^*M\) to
+\(\wedge^{p+1,q}T^*M\oplus \wedge^{p,q+1}T^*M\). We denote by \(\partial\) and \(\bar\partial\) the
+component of \(d\) in \(\wedge^{p+1,q}T^*M\) and \(\wedge^{p,q+1}T^*M\) respectively. 
+</p>
+
+</div>
+<p>
+It would be convenient to define \(d^c =i(\bar\partial - \partial)\) then obviously \(dd^c =
+2i\partial\bar\partial\). 
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org2c520c5" class="outline-5">
+<h5 id="org2c520c5">The Ricci curvature.</h5>
+<div class="outline-text-5" id="text-org2c520c5">
+<p>
+The Ricci curvature is given by
+\[
+Ric_{\omega} = -\frac{1}{2}dd^c\log\det(h_{i\bar j})
+\]
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgd3cb0b0" class="outline-5">
+<h5 id="orgd3cb0b0">\(dd^c\) lemma .</h5>
+<div class="outline-text-5" id="text-orgd3cb0b0">
+<p>
+We then can state the \(dd^c\) lemma
+</p>
+<div class="lemma">
+<p>
+Let \(\alpha\) be a real, (1,1)-form on a compact Kahler manifold \(M\). Then \(\alpha\) is \(d\) -exact if
+and only if there exists \(\eta\in C^\infty(M)\) globally defined such that \(\alpha = dd^c\eta\).
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org574fcdd" class="outline-5">
+<h5 id="org574fcdd">Yau theorem.</h5>
+<div class="outline-text-5" id="text-org574fcdd">
+<p>
+The \(dd^c\) lemma tells us every form \(R\in c_1(K_X)\) is of form \(Ric_{\omega} + dd^c\eta\). If one
+varies the Hermitian product \(h_{i\bar j}\) to \(h_{i\bar j} + \phi_{i\bar j}\) then the new Ricci
+curvature is \(dd^c\log\det(h_{i\bar j} + \phi_{i\bar j})\). The Calabi conjecture can be restated as
+the existence of \(\phi\) such that \(h_{i\bar j} + \phi_{i\bar j}\) is definite positive and
+</p>
+\begin{equation}
+\label{eq:ddc-0}
+dd^c\left( \log\det(h_{i\bar j} + \phi_{i\bar j}) - \log\det(h_{i\bar j}) -eta\right) = 0
+\end{equation}
+
+<p>
+The functions \(f\) that satisfies \(dd^cf = 0\) are called <i>pluriharmonic</i>. They also satisfy the
+maximum principle. By compactness of \(X\), these functions on \(X\) are exactly constant
+functions. Therefore \ref{eq:ddc-0} is equivalent to
+\[
+\det(h_{i\bar j} + \phi_{i\bar j}) = e^{c+\eta}\det(h_{i \bar j})
+\]
+or
+\[
+(\omega + dd^c\phi)^n = e^{c+\eta}\omega^n
+\]
+where \(\omega^n\) denotes the repeated wedge product. Note that \((\omega +dd^c\phi)^n - \omega^n = 0\),
+one has \(\int_M (\omega +dd^c\phi)^n = V\), the conjecture of Calabi is therefore a consequence of
+the following theorem.
+</p>
+
+<div class="theorem">
+<p>
+Given a function \(f\in C^\infty(M), f>0\) such that \(\int_M f\omega^n = V\). There exists, and unique
+up to constant, \(\phi\in C^\infty(M)\) such that \(\omega + dd^c\phi >0\) and
+\[
+(\omega + dd^c\phi)^n = f\omega^n
+\]
+</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgba0dba4" class="outline-2">
+<h2 id="orgba0dba4"><span class="section-number-2">3</span> A sketch of proof</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+The uniqueness is straightforward. We will prove the existence of \(\phi\) under the constraint
+\(\int_M\phi\omega^n = 0\) (which will be useful to prove that \(\mathcal(N)\) is locally diffeomorphism
+later). We will prove that the set \(S\) of \(t\in [0,1]\) such that there exists \(\phi_t\in
+C^{k+2,\alpha}(M)\) with \(\int_M \phi_t\omega^n = 0\) that satisfies
+</p>
+\begin{equation}
+\label{eq:omega-convex-t}
+(\omega + dd^c\phi_t)^n = (tf + 1-t)\omega^n
+\end{equation}
+<p>
+is both open and close in \([0,1]\), therefore is the entire interval as \(0\in S\) is non empty.
+</p>
+
+<p>
+To see that \(S\) is open, one only has to prove that the function \(\mathcal{N}\) defined by
+\[
+\phi\mapsto \mathcal{N}(\phi)= \frac{\det(h_{i\bar j} + \phi_{i\bar j})}{\det(h_{i\bar j})}
+\]
+or in other words \((\omega + dd^c\phi)^n = \mathcal{N}(\phi)\omega^n\), is a local
+diffeomorphism. The differential of \( \mathcal{N}\) is given by
+\[
+D \mathcal{N}(\phi).\eta = \mathcal{N}\tilde\Delta\eta
+\]
+with \(\eta\) varies in \(\{\eta\in C^{k,\alpha}(M):\int_M\eta\omega^n=0\}\). But it is known that the
+Laplace-Beltrami operator \(\tilde\Delta\) is bijective between
+\[
+\left\{\eta\in C^{k+2,\alpha}(M):\ \int_M\eta = 0\right\} \longrightarrow \left\{f\in C^{k,\alpha}(M):\ \int_M f=0\right\}
+\]
+Therefore \( \mathcal{N}\) is a local diffeomorphism and \(S\) is open.
+</p>
+
+<p>
+The proof that \(S\) is closed is more technical. The idea in general is to do 3 things:
+</p>
+<ol class="org-ol">
+<li>Using Arzela-Ascoli, it suffices to show that \(\{\phi_t:\ t\in S\}\) is bounded in
+\(C^{k+2,\alpha}\). Therefore up to a subsequence, one has the uniform convergence of \(\phi_{t_n}\)
+to all partial derivatives of order \(\leq k+1\). The $k+2$-th order follows from \eqref{eq:omega-convex-t}.</li>
+<li>Using Schauder theory, prove that the above bound follows from a priori estimate: There exists
+\(\alpha\in (0,1)\) and \(C(X,\|f\|_{1,1}, 1/\inf_M f)>0\) such that every \(\phi\in C^4(X)\)
+satisfying \((\omega +dd^c\phi)^n = f\omega^n\) and \(\int_M \phi\omega^n=0\) has \[\|
+   \phi\|_{2,\alpha} \leq C\]</li>
+<li>Establish the priori estimate.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<div class='footer'>
+By darknmt.<br>
+Last updated 2017-06-08 Thu 02:15. <br>
+</div>
+</div>
+</body>
+</html>

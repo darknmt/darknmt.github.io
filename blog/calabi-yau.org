@@ -1,0 +1,144 @@
+#+TITLE: Calabi-Yau theorem
+#+SETUPFILE: ../res/mathsetup.org
+
+* Calabi conjecture
+We start with the following fact (which is an exercise in Daniel Huybrechts, /Complex geometry - an introduction/)
+
+#+ATTR_LATEX: :options [Ricci and first Chern class]
+#+BEGIN_proposition
+Let $(X,g)$ be a compact Kahler manifold, then $iRic(X,g)$ is the curvature of the Chern connection
+on the canonical bundle $K_X$. In other words, $Ric(X,g)$ is in $Ric(X,g)\in -2\pi c_1(K_X)$ where
+$c_1(K_X)$ is the first Chern class of $K_X$.
+#+END_proposition
+
+The Calabi conjecture asked whether there exists for each form $R\in c_1(K_X)$ a metric $g'$ with
+$Ric(X,g') = R$. We prefer to work with the fundamental form instead of the metric $g$ as the former
+is antisymmetric.
+
+#+BEGIN_definition
+The quadruple $(h, g, \omega, J)$ is said to be _compatible_ if $g\circ J = g$ and $\omega(a,b) =
+g(Ja,b)$ and $h = g - i\omega$. 
+#+END_definition
+
+#+BEGIN_remark
+1. When $J$ is fixed, one of $h,g,\omega$ that is invariant by $J$ determines the two others.
+2. For a compatible quadruple, the condition $\nabla J = 0$ is equivalent to $d\omega = 0$. The
+   fundamental form $\omega$ that satisfies $d\omega = 0$ is called a _Kahler form_.
+#+END_remark
+
+
+* Reduction to local charts, Yau theorem
+**** $h,g,\omega$ in local coordinates.
+We note by $h_{i\bar j} = h(\partial_{x_i},\partial_{x_j}) =
+2g_{\mathbb{C}}(\partial_{z_i},\partial_{z_j})$. By straightforward calculation one has
+\begin{align*}
+\omega & = -\frac{1}{2} Im h_{i\bar j} (dx^i\wedge dx^j + dy^i\wedge dy^j) + Re h_{i\bar j}dx^i\wedge dy^j\\
+& = \frac{i}{2}h_{i\bar j}dz^i\wedge d\bar{z^j}
+\end{align*}
+and the condition $d\omega = 0$ is equivalent to
+\[
+\frac{\partial h_{i\bar j}}{\partial z_k} = \frac{\partial h_{k\bar j}}{\partial z_i}
+\]
+We also note by $h^{i\bar j}$ the inverse transposed of $h_{i\bar j}$, i.e. $h^{i\bar j}h_{k\bar j}
+= \delta_j^k$
+#+BEGIN_definition
+Let $X$ be an almost complex manifold (manifold with an almost complex structure). Then
+$d:\wedge^nT^*X\longrightarrow \wedge^{n+1}T^*X$ sends $\wedge^{p,q}T^*M$ to
+$\wedge^{p+1,q}T^*M\oplus \wedge^{p,q+1}T^*M$. We denote by $\partial$ and $\bar\partial$ the
+component of $d$ in $\wedge^{p+1,q}T^*M$ and $\wedge^{p,q+1}T^*M$ respectively. 
+#+END_definition
+It would be convenient to define $d^c =i(\bar\partial - \partial)$ then obviously $dd^c =
+2i\partial\bar\partial$. 
+
+
+**** The Ricci curvature.
+The Ricci curvature is given by
+\[
+Ric_{\omega} = -\frac{1}{2}dd^c\log\det(h_{i\bar j})
+\]
+
+
+**** $dd^c$ lemma .
+We then can state the $dd^c$ lemma
+#+ATTR_LATEX: :options []
+#+BEGIN_lemma
+Let $\alpha$ be a real, (1,1)-form on a compact Kahler manifold $M$. Then $\alpha$ is $d$ -exact if
+and only if there exists $\eta\in C^\infty(M)$ globally defined such that $\alpha = dd^c\eta$.
+#+END_lemma
+
+**** Yau theorem. 
+The $dd^c$ lemma tells us every form $R\in c_1(K_X)$ is of form $Ric_{\omega} + dd^c\eta$. If one
+varies the Hermitian product $h_{i\bar j}$ to $h_{i\bar j} + \phi_{i\bar j}$ then the new Ricci
+curvature is $dd^c\log\det(h_{i\bar j} + \phi_{i\bar j})$. The Calabi conjecture can be restated as
+the existence of $\phi$ such that $h_{i\bar j} + \phi_{i\bar j}$ is definite positive and
+\begin{equation}
+\label{eq:ddc-0}
+dd^c\left( \log\det(h_{i\bar j} + \phi_{i\bar j}) - \log\det(h_{i\bar j}) -eta\right) = 0
+\end{equation}
+
+The functions $f$ that satisfies $dd^cf = 0$ are called /pluriharmonic/. They also satisfy the
+maximum principle. By compactness of $X$, these functions on $X$ are exactly constant
+functions. Therefore \ref{eq:ddc-0} is equivalent to
+\[
+\det(h_{i\bar j} + \phi_{i\bar j}) = e^{c+\eta}\det(h_{i \bar j})
+\]
+or
+\[
+(\omega + dd^c\phi)^n = e^{c+\eta}\omega^n
+\]
+where $\omega^n$ denotes the repeated wedge product. Note that $(\omega +dd^c\phi)^n - \omega^n = 0$,
+one has $\int_M (\omega +dd^c\phi)^n = V$, the conjecture of Calabi is therefore a consequence of
+the following theorem.
+
+#+ATTR_LATEX: :options [Yau]
+#+BEGIN_theorem
+Given a function $f\in C^\infty(M), f>0$ such that $\int_M f\omega^n = V$. There exists, and unique
+up to constant, $\phi\in C^\infty(M)$ such that $\omega + dd^c\phi >0$ and
+\[
+(\omega + dd^c\phi)^n = f\omega^n
+\]
+#+END_theorem
+
+* A sketch of proof
+The uniqueness is straightforward. We will prove the existence of $\phi$ under the constraint
+$\int_M\phi\omega^n = 0$ (which will be useful to prove that $\mathcal(N)$ is locally diffeomorphism
+later). We will prove that the set $S$ of $t\in [0,1]$ such that there exists $\phi_t\in
+C^{k+2,\alpha}(M)$ with $\int_M \phi_t\omega^n = 0$ that satisfies
+\begin{equation}
+\label{eq:omega-convex-t}
+(\omega + dd^c\phi_t)^n = (tf + 1-t)\omega^n
+\end{equation}
+is both open and close in $[0,1]$, therefore is the entire interval as $0\in S$ is non empty.
+
+To see that $S$ is open, one only has to prove that the function $\mathcal{N}$ defined by
+\[
+\phi\mapsto \mathcal{N}(\phi)= \frac{\det(h_{i\bar j} + \phi_{i\bar j})}{\det(h_{i\bar j})}
+\]
+or in other words $(\omega + dd^c\phi)^n = \mathcal{N}(\phi)\omega^n$, is a local
+diffeomorphism. The differential of $ \mathcal{N}$ is given by
+\[
+D \mathcal{N}(\phi).\eta = \mathcal{N}\tilde\Delta\eta
+\]
+with $\eta$ varies in $\{\eta\in C^{k,\alpha}(M):\int_M\eta\omega^n=0\}$. But it is known that the
+Laplace-Beltrami operator $\tilde\Delta$ is bijective between
+\[
+\left\{\eta\in C^{k+2,\alpha}(M):\ \int_M\eta = 0\right\} \longrightarrow \left\{f\in C^{k,\alpha}(M):\ \int_M f=0\right\}
+\]
+Therefore $ \mathcal{N}$ is a local diffeomorphism and $S$ is open.
+
+The proof that $S$ is closed is more technical. The idea in general is to do 3 things:
+1. Using Arzela-Ascoli, it suffices to show that $\{\phi_t:\ t\in S\}$ is bounded in
+   $C^{k+2,\alpha}$. Therefore up to a subsequence, one has the uniform convergence of $\phi_{t_n}$
+   to all partial derivatives of order $\leq k+1$. The $k+2$-th order follows from \eqref{eq:omega-convex-t}.
+2. Using Schauder theory, prove that the above bound follows from a priori estimate: There exists
+   $\alpha\in (0,1)$ and $C(X,\|f\|_{1,1}, 1/\inf_M f)>0$ such that every $\phi\in C^4(X)$
+   satisfying $(\omega +dd^c\phi)^n = f\omega^n$ and $\int_M \phi\omega^n=0$ has \[\|
+   \phi\|_{2,\alpha} \leq C\]
+3. Establish the priori estimate.
+
+
+
+
+
+
+

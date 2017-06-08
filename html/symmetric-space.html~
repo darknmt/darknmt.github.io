@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-05-23 Tue 10:08 -->
+<!-- 2017-05-28 Sun 17:01 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Symmetric spaces and Lie groups</title>
@@ -347,7 +347,6 @@ classify all such pairs \((\frak{g},\frak{h})\).
 </div>
 </div>
 
-
 <div id="outline-container-org2eb2fc9" class="outline-2">
 <h2 id="org2eb2fc9"><span class="section-number-2">2</span> Locally symmetric space</h2>
 <div class="outline-text-2" id="text-2">
@@ -435,7 +434,7 @@ Let \(M\) be a connected, locally-compact metric space and \(G\) be the group of
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-05-23 Tue 10:08. <br>
+Last updated 2017-05-28 Sun 17:01. <br>
 </div>
 </div>
 </body>
