@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-05-22 Mon 23:55 -->
+<!-- 2017-06-08 Thu 09:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Well-known results in Geometry</title>
@@ -267,10 +267,10 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org398bb68">1. <span class="todo TODO">TODO</span> Levels of classification:</a></li>
-<li><a href="#org4061e11">2. <span class="todo TODO">TODO</span> Riemann submersion</a></li>
-<li><a href="#org0feece5">3. <span class="todo TODO">TODO</span> Normal coordinates in Riemannian behaves nicely</a></li>
-<li><a href="#org3c0966b">4. <span class="todo TODO">TODO</span> Curvature</a></li>
+<li><a href="#org1e9d2cb">1. <span class="todo TODO">TODO</span> Levels of classification:</a></li>
+<li><a href="#org2efba57">2. <span class="todo TODO">TODO</span> Riemann submersion</a></li>
+<li><a href="#orgd8343b9">3. <span class="todo TODO">TODO</span> Normal coordinates in Riemannian behaves nicely</a></li>
+<li><a href="#org6983586">4. <span class="todo TODO">TODO</span> Curvature</a></li>
 </ul>
 </div>
 </div>
@@ -282,8 +282,8 @@ for the JavaScript code in this tag.
 </ol>
 
 
-<div id="outline-container-org398bb68" class="outline-2">
-<h2 id="org398bb68"><span class="section-number-2">1</span> <span class="todo TODO">TODO</span> Levels of classification:</h2>
+<div id="outline-container-org1e9d2cb" class="outline-2">
+<h2 id="org1e9d2cb"><span class="section-number-2">1</span> <span class="todo TODO">TODO</span> Levels of classification:</h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li>Homology: Betty numbers, etc&#x2026;</li>
@@ -295,16 +295,16 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-org4061e11" class="outline-2">
-<h2 id="org4061e11"><span class="section-number-2">2</span> <span class="todo TODO">TODO</span> Riemann submersion</h2>
+<div id="outline-container-org2efba57" class="outline-2">
+<h2 id="org2efba57"><span class="section-number-2">2</span> <span class="todo TODO">TODO</span> Riemann submersion</h2>
 </div>
 
-<div id="outline-container-org0feece5" class="outline-2">
-<h2 id="org0feece5"><span class="section-number-2">3</span> <span class="todo TODO">TODO</span> Normal coordinates in Riemannian behaves nicely</h2>
+<div id="outline-container-orgd8343b9" class="outline-2">
+<h2 id="orgd8343b9"><span class="section-number-2">3</span> <span class="todo TODO">TODO</span> Normal coordinates in Riemannian behaves nicely</h2>
 </div>
 
-<div id="outline-container-org3c0966b" class="outline-2">
-<h2 id="org3c0966b"><span class="section-number-2">4</span> <span class="todo TODO">TODO</span> Curvature</h2>
+<div id="outline-container-org6983586" class="outline-2">
+<h2 id="org6983586"><span class="section-number-2">4</span> <span class="todo TODO">TODO</span> Curvature</h2>
 </div>
 </div>
 <div id="postamble" class="status">

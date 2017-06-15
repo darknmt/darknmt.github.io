@@ -1,11 +1,11 @@
 #+TITLE: Welcome to my blog
 
    + [[file:bogomolov-beauville.org][Bogomolov-Beauville classification]]
-   + [[file:prelude-riemannian-geo.org][Prelude to Riemannian geomeotry]]
+   + [[file:Cheeger-Gromoll-splitting.org][From Busemann function to Cheeger-Gromoll splitting]]
    + [[file:calabi-yau.org][Calabi-Yau theorem]]
    + [[file:Berger-remark-complex.org][Berger classification and remarks on parallel structures]]
-   + [[file:Riemann-classification-theorem.org][Classification theorem in Riemannian geometry]]
-   + [[file:de-rham-decomposition.org][De Rham decomposition]]
-   + [[file:Cheeger-Gromoll-splitting.org][From Busemann function to Cheeger-Gromoll splitting]]
    + [[file:symmetric-space.org][Symmetric spaces and Lie groups]]
+   + [[file:de-rham-decomposition.org][De Rham decomposition]]
    + [[file:culture-geometry.org][Well-known results in Geometry]]
+   + [[file:prelude-riemannian-geo.org][Prelude to Riemannian geomeotry]]
+   + [[file:Riemann-classification-theorem.org][Classification theorem in Riemannian geometry]]

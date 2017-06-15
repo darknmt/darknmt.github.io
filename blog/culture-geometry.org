@@ -6,7 +6,7 @@
 2. Kervaire (1961) found a topological manifold that has no differential structure.
 3. Classification of surfaces: Topological equivalence implies differential equivalence.
 
-
+haha
 * TODO Levels of classification:
 1. Homology: Betty numbers, etc...
 2. Homotopy type

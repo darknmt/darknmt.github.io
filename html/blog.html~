@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-06-08 Thu 16:05 -->
+<!-- 2017-06-14 Wed 19:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Welcome to my blog</title>
@@ -242,21 +242,21 @@ for the JavaScript code in this tag.
 <div id="content">
 <h1 class="title">Welcome to my blog</h1>
 <ul class="org-ul">
-<li><a href="culture-geometry.html">Well-known results in Geometry</a></li>
-<li><a href="symmetric-space.html">Symmetric spaces and Lie groups</a></li>
-<li><a href="Cheeger-Gromoll-splitting.html">From Busemann function to Cheeger-Gromoll splitting</a></li>
-<li><a href="de-rham-decomposition.html">De Rham decomposition</a></li>
-<li><a href="Riemann-classification-theorem.html">Classification theorem in Riemannian geometry</a></li>
-<li><a href="Berger-remark-complex.html">Berger classification and remarks on parallel structures</a></li>
-<li><a href="calabi-yau.html">Calabi-Yau theorem</a></li>
 <li><a href="bogomolov-beauville.html">Bogomolov-Beauville classification</a></li>
+<li><a href="Cheeger-Gromoll-splitting.html">From Busemann function to Cheeger-Gromoll splitting</a></li>
+<li><a href="calabi-yau.html">Calabi-Yau theorem</a></li>
+<li><a href="Berger-remark-complex.html">Berger classification and remarks on parallel structures</a></li>
+<li><a href="symmetric-space.html">Symmetric spaces and Lie groups</a></li>
+<li><a href="de-rham-decomposition.html">De Rham decomposition</a></li>
+<li><a href="culture-geometry.html">Well-known results in Geometry</a></li>
 <li><a href="prelude-riemannian-geo.html">Prelude to Riemannian geomeotry</a></li>
+<li><a href="Riemann-classification-theorem.html">Classification theorem in Riemannian geometry</a></li>
 </ul>
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-06-08 Thu 16:05. <br>
+Last updated 2017-06-14 Wed 19:46. <br>
 </div>
 </div>
 </body>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-06-07 Wed 21:10 -->
+<!-- 2017-06-11 Sun 16:40 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Calabi-Yau theorem</title>
@@ -267,30 +267,31 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org2650c30">1. Calabi conjecture</a></li>
-<li><a href="#org6777a32">2. Reduction to local charts, Yau theorem</a>
+<li><a href="#org41a1828">1. Calabi conjecture</a></li>
+<li><a href="#orgc0fad35">2. Reduction to local charts, Yau theorem</a>
 <ul>
 <li>
 <ul>
 <li>
 <ul>
-<li><a href="#org4259980">\(h,g,\omega\) in local coordinates.</a></li>
-<li><a href="#orgfa5c236">The Ricci curvature.</a></li>
-<li><a href="#org005b67e">\(dd^c\) lemma .</a></li>
-<li><a href="#orge79bf87">Yau theorem.</a></li>
+<li><a href="#org406b053">\(h,g,\omega\) in local coordinates.</a></li>
+<li><a href="#org2c520c5">The Ricci curvature.</a></li>
+<li><a href="#orgd3cb0b0">\(dd^c\) lemma .</a></li>
+<li><a href="#org574fcdd">Yau theorem.</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgecc89ec">3. A sketch of proof</a></li>
+<li><a href="#orgba0dba4">3. A sketch of proof</a></li>
+<li><a href="#org88c4a8b">4. Calabi-Yau manifold</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org2650c30" class="outline-2">
-<h2 id="org2650c30"><span class="section-number-2">1</span> Calabi conjecture</h2>
+<div id="outline-container-org41a1828" class="outline-2">
+<h2 id="org41a1828"><span class="section-number-2">1</span> Calabi conjecture</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 We start with the following fact (which is an exercise in Daniel Huybrechts, <i>Complex geometry - an introduction</i>)
@@ -308,7 +309,7 @@ on the canonical bundle \(K_X\). In other words, \(Ric(X,g)\) is in \(Ric(X,g)\i
 <p>
 The Calabi conjecture asked whether there exists for each form \(R\in c_1(K_X)\) a metric \(g'\) with
 \(Ric(X,g') = R\). We prefer to work with the fundamental form instead of the metric \(g\) as the former
-is antisymmetric.
+is antisymmetric and its derivative is hence easy to define.
 </p>
 
 <div class="definition">
@@ -331,12 +332,12 @@ fundamental form \(\omega\) that satisfies \(d\omega = 0\) is called a <span cla
 </div>
 
 
-<div id="outline-container-org6777a32" class="outline-2">
-<h2 id="org6777a32"><span class="section-number-2">2</span> Reduction to local charts, Yau theorem</h2>
+<div id="outline-container-orgc0fad35" class="outline-2">
+<h2 id="orgc0fad35"><span class="section-number-2">2</span> Reduction to local charts, Yau theorem</h2>
 <div class="outline-text-2" id="text-2">
-</div><div id="outline-container-org4259980" class="outline-5">
-<h5 id="org4259980">\(h,g,\omega\) in local coordinates.</h5>
-<div class="outline-text-5" id="text-org4259980">
+</div><div id="outline-container-org406b053" class="outline-5">
+<h5 id="org406b053">\(h,g,\omega\) in local coordinates.</h5>
+<div class="outline-text-5" id="text-org406b053">
 <p>
 We note by \(h_{i\bar j} = h(\partial_{x_i},\partial_{x_j}) =
 2g_{\mathbb{C}}(\partial_{z_i},\partial_{z_j})\). By straightforward calculation one has
@@ -370,9 +371,9 @@ It would be convenient to define \(d^c =i(\bar\partial - \partial)\) then obviou
 </div>
 
 
-<div id="outline-container-orgfa5c236" class="outline-5">
-<h5 id="orgfa5c236">The Ricci curvature.</h5>
-<div class="outline-text-5" id="text-orgfa5c236">
+<div id="outline-container-org2c520c5" class="outline-5">
+<h5 id="org2c520c5">The Ricci curvature.</h5>
+<div class="outline-text-5" id="text-org2c520c5">
 <p>
 The Ricci curvature is given by
 \[
@@ -383,9 +384,9 @@ Ric_{\omega} = -\frac{1}{2}dd^c\log\det(h_{i\bar j})
 </div>
 
 
-<div id="outline-container-org005b67e" class="outline-5">
-<h5 id="org005b67e">\(dd^c\) lemma .</h5>
-<div class="outline-text-5" id="text-org005b67e">
+<div id="outline-container-orgd3cb0b0" class="outline-5">
+<h5 id="orgd3cb0b0">\(dd^c\) lemma .</h5>
+<div class="outline-text-5" id="text-orgd3cb0b0">
 <p>
 We then can state the \(dd^c\) lemma
 </p>
@@ -399,9 +400,9 @@ and only if there exists \(\eta\in C^\infty(M)\) globally defined such that \(\a
 </div>
 </div>
 
-<div id="outline-container-orge79bf87" class="outline-5">
-<h5 id="orge79bf87">Yau theorem.</h5>
-<div class="outline-text-5" id="text-orge79bf87">
+<div id="outline-container-org574fcdd" class="outline-5">
+<h5 id="org574fcdd">Yau theorem.</h5>
+<div class="outline-text-5" id="text-org574fcdd">
 <p>
 The \(dd^c\) lemma tells us every form \(R\in c_1(K_X)\) is of form \(Ric_{\omega} + dd^c\eta\). If one
 varies the Hermitian product \(h_{i\bar j}\) to \(h_{i\bar j} + \phi_{i\bar j}\) then the new Ricci
@@ -410,7 +411,7 @@ the existence of \(\phi\) such that \(h_{i\bar j} + \phi_{i\bar j}\) is definite
 </p>
 \begin{equation}
 \label{eq:ddc-0}
-dd^c\left( \log\det(h_{i\bar j} + \phi_{i\bar j}) - \log\det(h_{i\bar j}) -eta\right) = 0
+dd^c\left( \log\det(h_{i\bar j} + \phi_{i\bar j}) - \log\det(h_{i\bar j}) -\eta\right) = 0
 \end{equation}
 
 <p>
@@ -424,7 +425,7 @@ or
 \[
 (\omega + dd^c\phi)^n = e^{c+\eta}\omega^n
 \]
-where \(\omega^n\) denotes the repeated wedge product. Note that \((\omega +dd^c\phi)^n - \omega^n = 0\),
+where \(\omega^n\) denotes the repeated wedge product. Note that \((\omega +dd^c\phi)^n - \omega^n\) is exact,
 one has \(\int_M (\omega +dd^c\phi)^n = V\), the conjecture of Calabi is therefore a consequence of
 the following theorem.
 </p>
@@ -443,14 +444,109 @@ up to constant, \(\phi\in C^\infty(M)\) such that \(\omega + dd^c\phi >0\) and
 </div>
 </div>
 
-<div id="outline-container-orgecc89ec" class="outline-2">
-<h2 id="orgecc89ec"><span class="section-number-2">3</span> A sketch of proof</h2>
+<div id="outline-container-orgba0dba4" class="outline-2">
+<h2 id="orgba0dba4"><span class="section-number-2">3</span> A sketch of proof</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+The uniqueness is straightforward. We will prove the existence of \(\phi\) under the constraint
+\(\int_M\phi\omega^n = 0\) (which will be useful to prove that \(\mathcal(N)\) is locally diffeomorphism
+later). We will prove that the set \(S\) of \(t\in [0,1]\) such that there exists \(\phi_t\in
+C^{k+2,\alpha}(M)\) with \(\int_M \phi_t\omega^n = 0\) that satisfies
+</p>
+\begin{equation}
+\label{eq:omega-convex-t}
+(\omega + dd^c\phi_t)^n = (tf + 1-t)\omega^n
+\end{equation}
+<p>
+is both open and close in \([0,1]\), therefore is the entire interval as \(0\in S\) is non empty.
+</p>
+
+<p>
+To see that \(S\) is open, one only has to prove that the function \(\mathcal{N}\) defined by
+\[
+\phi\mapsto \mathcal{N}(\phi)= \frac{\det(h_{i\bar j} + \phi_{i\bar j})}{\det(h_{i\bar j})}
+\]
+or in other words \((\omega + dd^c\phi)^n = \mathcal{N}(\phi)\omega^n\), is a local
+diffeomorphism. The differential of \( \mathcal{N}\) is given by
+\[
+D \mathcal{N}(\phi).\eta = \mathcal{N}\tilde\Delta\eta
+\]
+with \(\eta\) varies in \(\{\eta\in C^{k,\alpha}(M):\int_M\eta\omega^n=0\}\). But it is known that the
+Laplace-Beltrami operator \(\tilde\Delta\) is bijective between
+\[
+\left\{\eta\in C^{k+2,\alpha}(M):\ \int_M\eta = 0\right\} \longrightarrow \left\{f\in C^{k,\alpha}(M):\ \int_M f=0\right\}
+\]
+Therefore \( \mathcal{N}\) is a local diffeomorphism and \(S\) is open.
+</p>
+
+<p>
+The proof that \(S\) is closed is more technical. The idea in general is to do 3 things:
+</p>
+<ol class="org-ol">
+<li>Using Arzela-Ascoli, it suffices to show that \(\{\phi_t:\ t\in S\}\) is bounded in
+\(C^{k+2,\alpha}\). Therefore up to a subsequence, one has the uniform convergence of \(\phi_{t_n}\)
+to all partial derivatives of order \(\leq k+1\). The $k+2$-th order follows from \eqref{eq:omega-convex-t}.</li>
+<li>Using Schauder theory, prove that the above bound follows from a priori estimate: There exists
+\(\alpha\in (0,1)\) and \(C(X,\|f\|_{1,1}, 1/\inf_M f)>0\) such that every \(\phi\in C^4(X)\)
+satisfying \((\omega +dd^c\phi)^n = f\omega^n\) and \(\int_M \phi\omega^n=0\) has \[\|
+   \phi\|_{2,\alpha} \leq C\]</li>
+<li>Establish the priori estimate.</li>
+</ol>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<div id="outline-container-org88c4a8b" class="outline-2">
+<h2 id="org88c4a8b"><span class="section-number-2">4</span> Calabi-Yau manifold</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Recall that we defined a Calabi-Yau manifold to be a compact Riemannian manifold of dimension \(2n\)
+with holonomy contained in \(SU(n)\). We also remark, using parallel transport, the existence of a compatible
+complex structure (\(U(n)\) suffices) and a holomorphic form non-vanishing at every point. We present
+here some equivalent definitions of compact Calabi-Yau manifolds.
+</p>
+
+<div class="theorem">
+<p>
+Let \(X\) be a compact manifold of Kahler type and complex dimension \(n\) then:
+</p>
+<ol class="org-ol">
+<li>The followings are equivalent
+<ol class="org-ol">
+<li>There exists a Kahler metric such that the global holonomy is in \(SU(n)\).</li>
+<li>There exists a holomorphic \((n,0)\) form that vanishes nowhere.</li>
+<li>The canonical bundle \(K_X\) is trivial.</li>
+<li>The structure group of \(X\) can be reduced to \(SU(n)\).</li>
+</ol></li>
+<li>The following are equivalent. If \(X\) is simply-connected, they are equivalent with the 4
+statements above.
+<ol class="org-ol">
+<li>There exists a Kahler metric such that the local holonomy is in \(SU(n)\).</li>
+<li>The canonical bundle \(K_X\) is flat.</li>
+<li>There exists a Kahler metric such that the Ricci curvature vanishes.</li>
+<li>The first Chern class vanishes.</li>
+</ol></li>
+</ol>
+
+</div>
+
+<p>
+The proof is straightforward (see Manuscript) with the only exception is that one needs Calabi-Yau theorem to
+construct Ricci-flat metric.
+</p>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-06-07 Wed 21:10. <br>
+Last updated 2017-06-11 Sun 16:39. <br>
 </div>
 </div>
 </body>

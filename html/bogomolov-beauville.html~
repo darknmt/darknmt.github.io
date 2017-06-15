@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-06-14 Wed 19:46 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bogomolov-Beauville classification</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="darknmt" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' href='../res/blog.css' type='text/css'/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='./index.html'>Home</a></li>
+<li><a href='./blog.html'>Blog</a></li>
+<li><a href='http://github.com/darknmt/'>GitHub</a></li>
+<li><a href='/contact.html'>Contact</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<h1 class="title">Bogomolov-Beauville classification</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org181d1c4">1. From the Riemannian results of de Rham and Berger</a></li>
+<li><a href="#org05a3ddd">2. Towards a classification for complex manifold</a>
+<ul>
+<li><a href="#orgf24479c">2.1. Special unitary manifold (proper Calabi-Yau manifold)</a></li>
+<li><a href="#orgdf9abc1">2.2. Symplectic manifold</a></li>
+<li><a href="#org6a604ed">2.3. Decomposition for complex manifold with vanishing Chern class</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org181d1c4" class="outline-2">
+<h2 id="org181d1c4"><span class="section-number-2">1</span> From the Riemannian results of de Rham and Berger</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+We will first prove a (conceptually) straightforward result of <a href="de-rham-decomposition.html">de Rham decomposition</a> and
+<a href="Berger-remark-complex">Berger classification</a>. The following theorem is taken from Beauville's article
+</p>
+<div class="theorem">
+<p>
+<a id="org8efbeb5"></a>
+Let \(X\) be a compact Kähler manifold with flat Ricci curvature, then
+</p>
+<ol class="org-ol">
+<li>The universal covering space \(\tilde X\) of \(X\) decomposes isometrically as \[\tilde X =
+   E \times\prod_i V_i\times \prod_j X_j\] where \(E = \mathbb{C}^k\), \(V_i\) and \(X_j\) are simply-connected
+compact manifolds of dimension \(2m_i\) and \(4r_j\) with irreducible homonomy \(SU(m_i)\) for \(V_i\) and \(Sp(r_j)\) for \(X_j\). One
+also has uniqueness in the strong sense as in de Rham decomposition.</li>
+<li>There exists a finite etale covering space \(X'\) of \(X\) such that \[ X' = T\times \prod_i V_i
+   \times \prod_j X_j\] where \(T\) is a complex torus.</li>
+</ol>
+
+</div>
+<div class="proof">
+<p>
+Note that the first point is obtained directly from de Rham decomposition: The one-dimensional
+parallel subspaces (of trivial holonomy) are regrouped to \(E\). By <a href="Cheeger-Gromoll-splitting.html">Cheeger-Gromoll splitting</a>,
+\(\tilde X = E\times M\) where \(M\) contains no line and is compact (note that we use compactness of
+\(X\) here). The irreducible factors in \(M\) are not symmetric spaces as Ricci curvature of
+symmetric spaces is non-degenerate. Holonomy of these factors are \(SU(m_i)\) and \(Sp(r_j)\)
+according to Berger list since they are Kähler manifolds and Ricci-flat. It remains to prove the
+second point.
+</p>
+
+<p>
+We will regard each element of \(\pi_1(X)\) by its isometric, free, proper action on \(\tilde X\). As
+pointed out the arguments in our discussion of uniqueness of de Rham decomposition, every isometry
+of \(\tilde X\) to itself preserves the components \(T_{x_0}E\), \(T_{x_i}V_i\) and \(T_{x_j}X_j\)
+of \(T_x \tilde X\), each isometry \(\phi\) of \(\tilde X\) is of form \((\phi_1,\phi_2)\) where \(\phi_1\in
+Isom(E)\) and \(\phi_2\in Isom(M)\).
+</p>
+
+<p>
+We will use here the fact that if \(M\) is a Kähler manifold, compact and Ricci-flat then \(Isom(M)\)
+equiped with compact-open topology is discrete, therefore finite, which will be proved later (Lemma
+<a href="#org2d60f5c">1</a>). We note \(\Gamma := \{\phi = (\phi_1,\phi_2)\in \pi_1(X),\ \phi_2 = Id_M\}\) and
+sometime abusively regard \(\Gamma\) as a subgroup of \(Isom(E)\). Note that \(\Gamma\) is a normal
+subgroup of \(\pi_1(X)\) with finite index since the quotient is isomorphic to \(Isom(M)\). Therefore
+\(\tilde X/\Gamma = E/\Gamma\times M\) is compact as a finite covering of \(X\).
+</p>
+
+<p>
+We apply the following theorem of Bieberbach.
+</p>
+<div class="theorem">
+<p>
+Let \(E = \mathbb{R}^n\) an Euclidean space and \(\Gamma\) be a subgroup of \(Isom(E)\) satisfies
+</p>
+<ol class="org-ol">
+<li>\(\Gamma\) is discrete under compact-open topology.</li>
+<li>\(E/\Gamma\) is compact.</li>
+</ol>
+<p>
+Then the subgroup \(\Gamma'\) of translations in \(\Gamma\) is of finite index.
+</p>
+
+</div>
+
+<p>
+Suppose that the two conditions are satisfied and the theorem gives \(\tilde X/\Gamma' =
+E/\Gamma'\times M = T\times \prod_i V_i\times \prod_j X_j\) is a finite covering of
+\(\tilde X/\Gamma\) as \(\Gamma'\) is a normal subgroup of \(\Gamma\) since
+</p>
+
+<p>
+<b>Fact.</b> The subgroup of translations in \(Isom(E)\), where \(E = \mathbb{R^n}\) is an Euclidean space, is
+normal.
+</p>
+
+<p>
+Therefore \(X' = \tilde X/\Gamma'\) is a finite covering of \(X\) that we want to find.
+</p>
+
+<p>
+It remains now to prove that \(\Gamma\) is discrete, which is a consequence of
+</p>
+<ol class="org-ol">
+<li>\(\pi_1(X)\) is discrete, without limit point (obvious).</li>
+<li>\(Isom(M)\) is finite (see lemma <a href="#org2d60f5c">1</a>)</li>
+</ol>
+<p>
+In fact given any \(\phi = (\phi_1,\phi_2) \in Isom(E)\times Isom(M)\), there exists by (1.) a neighborhood \(
+\mathcal{U}_1(\phi_1,\phi_2)\times \mathcal{U}_2(\phi_1,\phi_2)\) of \(\phi\) in \(Isom(E)\times
+Isom(M)\) such that all points of \(\pi_1(X)\) lying in this region project to \(\phi_1\). By (2.)
+we can find a neighborhood \( \mathcal{U}_1\) of \(\phi_1\) in \(Isom(E)\) small enough that \(
+\mathcal{U}_1(\phi_1)\times Isom(M) \subset \cup_{\phi_2\in Isom(M)}
+\mathcal{U}_1(\phi_1,\phi_2)\times \mathcal{U}_2(\phi_1,\phi_2)\). Therefore the projection of
+\(\pi_1(X)\) to \(Isom(E)\) is discrete, by consequence \(\Gamma\) is discrete.
+</p>
+
+</div>
+
+<div class="lemma">
+<p>
+<a id="org2d60f5c"></a>
+Let \(M\) be is a compact, simply-connected, Ricci-flat, Kähler manifold, then the group \(Aut(M)\) of
+automorphism of \(M\) equiped with compact-open topology is discrete, therefore \(Isom(M)\) is discrete,
+hence finite. 
+</p>
+
+</div>
+<div class="proof">
+<p>
+The idea is that since \(Aut(M)\) is a Lie group, it suffices to prove that its Lie algebra is of
+dimension 0. This is done using these facts. 
+</p>
+<ol class="org-ol">
+<li>The Lie algebra of \(Aut(M)\) can be identified with the vector space of holomorphic vector
+fields on \(M\).</li>
+<li><i>Bochner's principle</i>: All holomorphic tensor fields on a compact, Ricci-flat Kähler manifold are parallel. This can be seen by the identity
+\(\Delta(\|\tau \|^2) = \|D\tau \|^2\)</li>
+<li>The only invariant vector of the holonomy representation of \(M\) is \(0\) (obvious).</li>
+</ol>
+
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org05a3ddd" class="outline-2">
+<h2 id="org05a3ddd"><span class="section-number-2">2</span> Towards a classification for complex manifold</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+To obtain a translation of Theorem <a href="#org8efbeb5">1</a> in a context of complex manifolds (without any
+prefered metric a priori), we study the 2 building blocks. To be clear, recall that a complex
+manifold \(X\) is called <span class="underline">of Kähler type</span> if one can equipe \(X\) with an Hermitian structure whose
+fundamental form \(\omega\) satisfies \(d\omega= 0\). When we say \(X\) is of Kähler type, we refer to \(X\)
+as a complex manifold without fixing a metric on \(X\). We resume here some results, see the
+manuscript for their proofs.
+</p>
+</div>
+<div id="outline-container-orgf24479c" class="outline-3">
+<h3 id="orgf24479c"><span class="section-number-3">2.1</span> Special unitary manifold (proper Calabi-Yau manifold)</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="remark">
+<p>
+Let \(X\) be a compact Kähler manifold with holonomy \(SU(m)\) and complex dimension \(m\) then:
+</p>
+<ol class="org-ol">
+<li>\(H^0(X, \Omega_X^p)=0\) for all \(0 < p < m\), by consequence \(\chi( \mathcal{O}_X ) = 1 + (-1)^m\).</li>
+<li>\(X\) is <i>projective</i>, that is \(X\) can be embedded into \(\mathbb{P}^N\) as zero-locus of some
+(finitely) homogeneous polynomials.</li>
+</ol>
+
+</div>
+<p>
+The first point is in fact algebraic in nature: it comes from the fact that the representation of
+\(SU(m)\) over \(\wedge^pT^*_xM\) is irreducible for all \(p\) et non-trivial for \(0<p<m\), therefore the
+action of \(SU(m)\) on \(\wedge^pT^*_xM\) for \(0<p<m\) has no invariant element, hence
+\(H^0(X,\Omega^p_X)=0\).
+</p>
+
+
+<p>
+The second point follows the following facts:
+</p>
+<ol class="org-ol">
+<li>A compact Kähler manifold with \(H^{2,0}\) can be embedded in \(\mathbb{P}^N\).</li>
+<li>(Chow's theorem) A compact complex manifold embedded in \( \mathbb{P}^N\) is algebraic,
+i.e. defined by a finite number of homogeneous polynomials.</li>
+</ol>
+
+<div class="theorem">
+<p>
+Given a compact manifold \(X\) of Kähler type and complex dimension \(m\), the following properties are equivalent
+</p>
+<ol class="org-ol">
+<li>There exists a compatible metric \(g\) over \(X\) such that \(Hol(X,g) = SU(m)\).</li>
+<li>\(K_X\) is trivial and \(H^0(X', \Omega_{X'}^p) =0\) for every \(0 < p < m\) and \(X'\) a finite covering of \(X\).</li>
+</ol>
+
+</div>
+
+<div class="proof">
+<p>
+(1) implies (2) as a finite covering space \(X'\) of a special unitary manifold \(X\) is still a special
+unitary. This is due to the following remarks: \(Hol(X)\superset Hol(X')\superset Hol_0(X')
+= Hol_0(X)\) and \(Hol_0(X) = Hol(X) = SU(m)\) as \(SU(n)\) is connected.
+</p>
+
+<p>
+For the second point, by <a href="calabi-yau.html">Yau's theorem</a> we equip \(X\) with a Ricci-flat metric, by Theorem
+<a href="#org8efbeb5">1</a>, there exists a finite covering \(X' = T\times \prod_i V_i\times \prod_j X_j\) where
+\(T\) is a complex torus, \(Hol(V_i) = SU(m_i), Hol(X_j) = Sp(r_j)\). But \(H^0(X',\Omega^p_{X'})=0\) for
+\(0<p<m\), \(X'\) has to be one of the \(V_i\) as \(H^0(X_j,\Omega_{X_j}^{2r_j})\) and
+\(H^0(V_i,\Omega_{V_i}^{m_i})\) do not vanish. Therefore \(Hol(X) \superset Hol(X') = SU(m)\), hence
+\(Hol(X) = SU(m)\).
+</p>
+
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgdf9abc1" class="outline-3">
+<h3 id="orgdf9abc1"><span class="section-number-3">2.2</span> Symplectic manifold</h3>
+<div class="outline-text-3" id="text-2-2">
+<div class="remark">
+<p>
+Let \(X\) be a compact Kähler manifold with holonomy \(Sp(r)\) and complex dimension \(2r\) then:
+</p>
+<ol class="org-ol">
+<li>There exists a holomorphic 2-form \(\varphi\) non-degenerate at every point.</li>
+<li>\(H^0(X,\Omega_X^{2l+1}) = 0, H^0(X,\Omega_X^{2l})=\mathbb{C}\varphi^l\) for all \(0\leq l\leq
+   r\). By consequence \(\chi(\mathcal{O}_X)=r+1\).</li>
+</ol>
+
+</div>
+
+<div class="theorem">
+<p>
+Given a compact manifold \(X\) of Kähler type and complex dimension \(2r\), then:
+</p>
+<ul class="org-ul">
+<li>The followings are equivalent:
+<ol class="org-ol">
+<li>There exists a compatible metric \(g\) such that \(Hol(X,g) \subset Sp(r)\).</li>
+<li>There exists a symplectic structure: a 2-form that is closed, holomorphic and non-degenerate
+at every point</li>
+</ol></li>
+<li>The followings are equivalent, if \(X\) is called <span class="underline">irreducible symplectic</span> or <span class="underline">hyperkahler</span> if it satisfies one of them.
+<ol class="org-ol">
+<li>There exists a compatible metric \(g\) such that \(Hol(X,g) = Sp(r)\)</li>
+<li>\(X\) is simply-connected and there exists (uniquely up to a constant) a symplectic structure on \(X\).</li>
+</ol></li>
+</ul>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6a604ed" class="outline-3">
+<h3 id="org6a604ed"><span class="section-number-3">2.3</span> Decomposition for complex manifold with vanishing Chern class</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Theorem <a href="#org8efbeb5">1</a> can be translated to a decomposition for complex manifold in the following
+way:
+</p>
+<div class="theorem">
+<p>
+Let \(X\) be a compact manifold of Kähler type with vanishing Chern class.
+</p>
+<ol class="org-ol">
+<li><p>
+The universal covering \(\tilde X\) of \(X\) is isomorphic to a product \(\mathbb{E}\times \prod_i
+   V_i\times\prod_j X_j\) where \(E = \mathbb{C}^k\) and
+</p>
+<ol class="org-ol">
+<li>Each \(V_i\) is a projective simply-connected manifold of complex dimension \(m_i\geq 3\), with trivial
+\(K_{V_i}\) and \(H^0(V_i,\Omega_{V_i}^p) = 0\) for \( 0 < p < m_i\)</li>
+<li>Each \(X_j\) is an irreducible compact symplectic manifold of Kähler type.</li>
+</ol>
+<p>
+This decomposition is unique up to an order of \(i\) and \(j\).
+</p></li>
+<li>There exists a finite covering \(X'\) of \(X\) isomorphic to the product \(T\times\prod_i
+   V_i\times\prod_j X_j\).</li>
+</ol>
+
+</div>
+<p>
+The theorem follows directly from Theorem <a href="#org8efbeb5">1</a>, the only point that needs proof is the
+uniqueness, which will be achieved in two steps:
+</p>
+<ol class="org-ol">
+<li>Prove the uniqueness in the case that \(X\) is simply-connected.</li>
+<li>Prove that every isomorphism \(\phi:\ \mathbb{C}^k\times Y\longrightarrow \mathbb{C}^h\times Z\) is
+splitted as \(\phi = (\phi_1,\phi_2)\) where \(\phi_1:\ \mathbb{C}^k\longrightarrow \mathbb{C}^h\) and
+\(\phi_2:\ Y\longrightarrow Z\) are isomorphisms (by consequence \(h=k\)).</li>
+</ol>
+<p>
+These two steps will be accomplished in the following two lemmas
+</p>
+
+<div class="lemma">
+<p>
+Let \(Y = \prod_j Y_j\) be a compact, simply-connected manifold of Kähler type with vanishing Chern
+class. The Calabi-Yau metrics of \(Y\) are then \(g = \sum_l pr_j^*g_l\) where \(g_l\) are Calabi-Yau metrics
+of \(Y_l\).
+</p>
+
+</div>
+<div class="proof">
+<p>
+Let \(g\) be a Calabi-Yau metric of \(Y\) and \([\omega]\) its class in \(H^{1,1}(Y)\). Since \(Y_j\) are
+simply-connected, \([\omega] = \sum_j pr_j^* [\omega_j]\). By <a href="calabi-yau.html">Yau's theorem</a>, there exist unique Calabi-Yau
+metrics \(g_j\) of \(Y_j\) in each class \([\omega_j]\). The metric \(g' = \sum_j pr_j^* g_j\) is in the same
+class \(\omega\) of \(g\) and is also a Calabi-Yau metric, hence \(g= g' = \sum_j pr_j^*g_j\).
+</p>
+
+</div>
+
+<p>
+This lemma asserts that when our manifolds \(Y, Y_j\) are equiped with appropriate Calabi-Yau metrics,
+the decomposition map is also a (Riemannian) isometric, we therefore obtain uniqueness of \(V_i, X_j\)
+from uniqueness of Theorem <a href="#org8efbeb5">1</a>.
+</p>
+
+<div class="lemma">
+<p>
+Let \(Y,Z\) be compact, simply-connected manifold of Kähler type, then any isomorphism \(u:\
+\mathbb{C}^k\times Y\longrightarrow \mathbb{C}^h\times Z\) is splitted as \(\phi = (\phi_1,\phi_2)\)
+where \(\phi_1:\ \mathbb{C}^k\longrightarrow \mathbb{C}^h\) and \(\phi_2:\ Y\longrightarrow Z\) are
+isomorphisms.
+</p>
+
+</div>
+<div class="proof">
+<p>
+It is clear that the function \(u_1: \mathbb{C}^k\times Y \longrightarrow \mathbb{C}^h \times Z
+\longrightarrow \mathbb{C}^h\) is constant in \(Y\), i.e. \(u_1(t,y) = u_1(t)\) as holomorphic
+functions on \(Y\) are constant. Therefore  \(u(t,y) = (u_1(t), u_2(t,y))\), as \(u\) is isomorphic, one
+has \(h\leq k\) then by the same argument for \(u^{-1}\), one has \(h=k\), \(u_1\) is an isomorphism and
+\(u_t(\cdot) := u_2(t,\cdot)\) is an isomorphism from \(Y\) to \(Z\). \(u_0^{-1}\circ u_t\) is then a curve in
+\(Aut(Y)\), which is discrete by Lemma <a href="#org2d60f5c">1</a>. Hence \(u_t= u_0\) independent de \(t\).
+</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<div class='footer'>
+By darknmt.<br>
+Last updated 2017-06-14 Wed 19:46. <br>
+</div>
+</div>
+</body>
+</html>

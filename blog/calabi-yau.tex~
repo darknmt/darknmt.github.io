@@ -1,4 +1,4 @@
-% Created 2017-06-07 Wed 21:11
+% Created 2017-06-11 Sun 16:40
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -34,7 +34,7 @@
  pdftitle={Calabi-Yau theorem},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 24.5.1 (Org mode 9.0.5)}, 
+ pdfcreator={Emacs 25.2.1 (Org mode 9.0.5)}, 
  pdflang={English}}
 \begin{document}
 
@@ -43,7 +43,7 @@
 
 
 \section{Calabi conjecture}
-\label{sec:orgf92f6d4}
+\label{sec:org9dc479a}
 We start with the following fact (which is an exercise in Daniel Huybrechts, \emph{Complex geometry - an introduction})
 
 \begin{proposition}[Ricci and first Chern class]
@@ -54,7 +54,7 @@ on the canonical bundle \(K_X\). In other words, \(Ric(X,g)\) is in \(Ric(X,g)\i
 
 The Calabi conjecture asked whether there exists for each form \(R\in c_1(K_X)\) a metric \(g'\) with
 \(Ric(X,g') = R\). We prefer to work with the fundamental form instead of the metric \(g\) as the former
-is antisymmetric.
+is antisymmetric and its derivative is hence easy to define.
 
 \begin{definition}
 The quadruple \((h, g, \omega, J)\) is said to be \uline{compatible} if \(g\circ J = g\) and \(\omega(a,b) =
@@ -71,9 +71,9 @@ fundamental form \(\omega\) that satisfies \(d\omega = 0\) is called a \uline{Ka
 
 
 \section{Reduction to local charts, Yau theorem}
-\label{sec:org3cb150e}
+\label{sec:org7207a6f}
 \paragraph*{\(h,g,\omega\) in local coordinates.}
-\label{sec:org00a4946}
+\label{sec:orgb139d7d}
 We note by \(h_{i\bar j} = h(\partial_{x_i},\partial_{x_j}) =
 2g_{\mathbb{C}}(\partial_{z_i},\partial_{z_j})\). By straightforward calculation one has
 \begin{align*}
@@ -97,7 +97,7 @@ It would be convenient to define \(d^c =i(\bar\partial - \partial)\) then obviou
 
 
 \paragraph*{The Ricci curvature.}
-\label{sec:org76d0a66}
+\label{sec:org58b6fbf}
 The Ricci curvature is given by
 \[
 Ric_{\omega} = -\frac{1}{2}dd^c\log\det(h_{i\bar j})
@@ -105,7 +105,7 @@ Ric_{\omega} = -\frac{1}{2}dd^c\log\det(h_{i\bar j})
 
 
 \paragraph*{\(dd^c\) lemma .}
-\label{sec:org00c3805}
+\label{sec:org9da7a1b}
 We then can state the \(dd^c\) lemma
 \begin{lemma}[]
 Let \(\alpha\) be a real, (1,1)-form on a compact Kahler manifold \(M\). Then \(\alpha\) is \(d\) -exact if
@@ -113,14 +113,14 @@ and only if there exists \(\eta\in C^\infty(M)\) globally defined such that \(\a
 \end{lemma}
 
 \paragraph*{Yau theorem.}
-\label{sec:orgfa1ea73}
+\label{sec:orge1a05fe}
 The \(dd^c\) lemma tells us every form \(R\in c_1(K_X)\) is of form \(Ric_{\omega} + dd^c\eta\). If one
 varies the Hermitian product \(h_{i\bar j}\) to \(h_{i\bar j} + \phi_{i\bar j}\) then the new Ricci
 curvature is \(dd^c\log\det(h_{i\bar j} + \phi_{i\bar j})\). The Calabi conjecture can be restated as
 the existence of \(\phi\) such that \(h_{i\bar j} + \phi_{i\bar j}\) is definite positive and
 \begin{equation}
 \label{eq:ddc-0}
-dd^c\left( \log\det(h_{i\bar j} + \phi_{i\bar j}) - \log\det(h_{i\bar j}) -eta\right) = 0
+dd^c\left( \log\det(h_{i\bar j} + \phi_{i\bar j}) - \log\det(h_{i\bar j}) -\eta\right) = 0
 \end{equation}
 
 The functions \(f\) that satisfies \(dd^cf = 0\) are called \emph{pluriharmonic}. They also satisfy the
@@ -133,7 +133,7 @@ or
 \[
 (\omega + dd^c\phi)^n = e^{c+\eta}\omega^n
 \]
-where \(\omega^n\) denotes the repeated wedge product. Note that \((\omega +dd^c\phi)^n - \omega^n = 0\),
+where \(\omega^n\) denotes the repeated wedge product. Note that \((\omega +dd^c\phi)^n - \omega^n\) is exact,
 one has \(\int_M (\omega +dd^c\phi)^n = V\), the conjecture of Calabi is therefore a consequence of
 the following theorem.
 
@@ -146,5 +146,80 @@ up to constant, \(\phi\in C^\infty(M)\) such that \(\omega + dd^c\phi >0\) and
 \end{theorem}
 
 \section{A sketch of proof}
-\label{sec:orgf0ea360}
+\label{sec:org0daa2e6}
+The uniqueness is straightforward. We will prove the existence of \(\phi\) under the constraint
+\(\int_M\phi\omega^n = 0\) (which will be useful to prove that \(\mathcal(N)\) is locally diffeomorphism
+later). We will prove that the set \(S\) of \(t\in [0,1]\) such that there exists \(\phi_t\in
+C^{k+2,\alpha}(M)\) with \(\int_M \phi_t\omega^n = 0\) that satisfies
+\begin{equation}
+\label{eq:omega-convex-t}
+(\omega + dd^c\phi_t)^n = (tf + 1-t)\omega^n
+\end{equation}
+is both open and close in \([0,1]\), therefore is the entire interval as \(0\in S\) is non empty.
+
+To see that \(S\) is open, one only has to prove that the function \(\mathcal{N}\) defined by
+\[
+\phi\mapsto \mathcal{N}(\phi)= \frac{\det(h_{i\bar j} + \phi_{i\bar j})}{\det(h_{i\bar j})}
+\]
+or in other words \((\omega + dd^c\phi)^n = \mathcal{N}(\phi)\omega^n\), is a local
+diffeomorphism. The differential of \(\mathcal{N}\) is given by
+\[
+D \mathcal{N}(\phi).\eta = \mathcal{N}\tilde\Delta\eta
+\]
+with \(\eta\) varies in \(\{\eta\in C^{k,\alpha}(M):\int_M\eta\omega^n=0\}\). But it is known that the
+Laplace-Beltrami operator \(\tilde\Delta\) is bijective between
+\[
+\left\{\eta\in C^{k+2,\alpha}(M):\ \int_M\eta = 0\right\} \longrightarrow \left\{f\in C^{k,\alpha}(M):\ \int_M f=0\right\}
+\]
+Therefore \(\mathcal{N}\) is a local diffeomorphism and \(S\) is open.
+
+The proof that \(S\) is closed is more technical. The idea in general is to do 3 things:
+\begin{enumerate}
+\item Using Arzela-Ascoli, it suffices to show that \(\{\phi_t:\ t\in S\}\) is bounded in
+\(C^{k+2,\alpha}\). Therefore up to a subsequence, one has the uniform convergence of \(\phi_{t_n}\)
+to all partial derivatives of order \(\leq k+1\). The \$k+2\$-th order follows from \eqref{eq:omega-convex-t}.
+\item Using Schauder theory, prove that the above bound follows from a priori estimate: There exists
+\(\alpha\in (0,1)\) and \(C(X,\|f\|_{1,1}, 1/\inf_M f)>0\) such that every \(\phi\in C^4(X)\)
+satisfying \((\omega +dd^c\phi)^n = f\omega^n\) and \(\int_M \phi\omega^n=0\) has \[\|
+   \phi\|_{2,\alpha} \leq C\]
+\item Establish the priori estimate.
+\end{enumerate}
+
+
+
+
+
+
+
+
+\section{Calabi-Yau manifold}
+\label{sec:orgc2b4ece}
+Recall that we defined a Calabi-Yau manifold to be a compact Riemannian manifold of dimension \(2n\)
+with holonomy contained in \(SU(n)\). We also remark, using parallel transport, the existence of a compatible
+complex structure (\(U(n)\) suffices) and a holomorphic form non-vanishing at every point. We present
+here some equivalent definitions of compact Calabi-Yau manifolds.
+
+\begin{theorem}[]
+Let \(X\) be a compact manifold of Kahler type and complex dimension \(n\) then:
+\begin{enumerate}
+\item The followings are equivalent
+\begin{enumerate}
+\item There exists a Kahler metric such that the global holonomy is in \(SU(n)\).
+\item There exists a holomorphic \((n,0)\) form that vanishes nowhere.
+\item The canonical bundle \(K_X\) is trivial.
+\item The structure group of \(X\) can be reduced to \(SU(n)\).
+\end{enumerate}
+\item The following are equivalent. If \(X\) is simply-connected, they are equivalent with the 4
+statements above.
+\begin{enumerate}
+\item There exists a Kahler metric such that the local holonomy is in \(SU(n)\).
+\item The canonical bundle \(K_X\) is flat.
+\item There exists a Kahler metric such that the Ricci curvature vanishes.
+\item The first Chern class vanishes.
+\end{enumerate}
+\end{enumerate}
+\end{theorem}
+
+The proof is straightforward (see Manuscript) with the only exception is that one needs Calabi-Yau theorem to
+construct Ricci-flat metric.
 \end{document}

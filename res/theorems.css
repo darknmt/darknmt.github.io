@@ -4,8 +4,26 @@ counter-reset: theorem;
 counter-reset: lemma;
 counter-reset: definition;
 counter-reset: remark;
+counter-reset: proposition;
 }
 
+
+.proposition {
+    counter-increment: proposition;
+    display: block;
+    margin: 12px 0;
+    font-style: italic;
+    background-color: Lavender;
+    border-left: 6px solid;
+    border-color: DarkGrey;
+    padding:10px 10px 10px 20px;
+}
+.proposition:before {
+    content: "Proposition " counter(proposition) ".";
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: underline;
+}
 
 .remark {
     counter-increment: remark;
