@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-06-14 Wed 19:46 -->
+<!-- 2017-06-24 Sat 22:53 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Calabi-Yau theorem</title>
@@ -294,23 +294,41 @@ for the JavaScript code in this tag.
 <h2 id="org41a1828"><span class="section-number-2">1</span> Calabi conjecture</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-We start with the following fact (which is an exercise in Daniel Huybrechts, <i>Complex geometry - an introduction</i>)
+In complex geometry, one usually defines the <i>Ricci curvature</i> to be the real (1,1)-form \(\rho\)
+with \(\rho(u,v) = Ric(Ju, v) = \text{tr}(w \mapsto R(w,v).Ju)\), as it has the advantage of being an
+antisymmetric form.
+</p>
+
+<p>
+We will call \(\rho\) the <span class="underline">Ricci form</span> when it is easy to confuse with the Ricci
+curvature tensor in Riemannian geometry. We start with the following fact (which is exercise 4.A.3
+in Huybrechts, <i>Complex geometry: an introduction</i>).
+</p>
+
+<div class="remark">
+<p>
+For our convenience when talking about positivity, we would rather use the anticanonical
+bundle. Then \(K_{X}^{-1}\) is positive (resp. semi-positive) if and only if \(Ric\) is positive
+definite (resp. positive semi-definite) as a symmetric form.
+</p>
+
+</div>
+
+
+
+<p>
+We start with the following fact (which is exercise 4.A.3 in Daniel Huybrechts, <i>Complex geometry: an introduction</i>)
 </p>
 
 <div class="proposition">
 <p>
-Let \((X,g)\) be a compact Kähler manifold, then \(iRic(X,g)\) is the curvature of the Chern connection
-on the canonical bundle \(K_X\). In other words, \(Ric(X,g)\in -2\pi c_1(K_X)\) where
+Let \((X,g)\) be a compact Kähler manifold. Then \(i\rho(X,g)\) is the curvature of the Chern connection
+on the canonical bundle \(K_X\). In other words, \(\rho(X,g)\in -2\pi c_1(K_X)\) where
 \(c_1(K_X)\) is the first Chern class of \(K_X\).
 </p>
 
 </div>
 
-<p>
-The Calabi conjecture asked whether there exists for each form \(R\in c_1(K_X)\) a metric \(g'\) with
-\(Ric(X,g') = R\). We prefer to work with the fundamental form instead of the metric \(g\) as the former
-is antisymmetric and its derivative is hence easy to define.
-</p>
 
 <div class="definition">
 <p>
@@ -328,9 +346,16 @@ fundamental form \(\omega\) that satisfies \(d\omega = 0\) is called a <span cla
 </ol>
 
 </div>
-</div>
-</div>
 
+
+<p>
+The Calabi conjecture asked whether for each form \(R\in c_1(K_X)\) one can find a metric \(g'\) whose
+new fundamental form \(\omega'\) is in the same class of \(\omega\) and \(Ric(X,g') = R\). We prefer to
+work with the fundamental form instead of the metric \(g\) as the former is antisymmetric and its
+derivative is hence easy to define.
+</p>
+</div>
+</div>
 
 <div id="outline-container-orgc0fad35" class="outline-2">
 <h2 id="orgc0fad35"><span class="section-number-2">2</span> Reduction to local charts, Yau theorem</h2>
@@ -357,9 +382,9 @@ We also note by \(h^{i\bar j}\) the inverse transposed of \(h_{i\bar j}\), i.e. 
 <div class="definition">
 <p>
 Let \(X\) be an almost complex manifold (manifold with an almost complex structure). Then
-\(d:\wedge^nT^*X\longrightarrow \wedge^{n+1}T^*X\) sends \(\wedge^{p,q}T^*M\) to
-\(\wedge^{p+1,q}T^*M\oplus \wedge^{p,q+1}T^*M\). We denote by \(\partial\) and \(\bar\partial\) the
-component of \(d\) in \(\wedge^{p+1,q}T^*M\) and \(\wedge^{p,q+1}T^*M\) respectively. 
+\(d:\bigwedge^nT^*X\longrightarrow \bigwedge^{n+1}T^*X\) sends \(\bigwedge^{p,q}T^*M\) to
+\(\bigwedge^{p+1,q}T^*M\oplus \bigwedge^{p,q+1}T^*M\). We denote by \(\partial\) and \(\bar\partial\) the
+component of \(d\) in \(\bigwedge^{p+1,q}T^*M\) and \(\bigwedge^{p,q+1}T^*M\) respectively. 
 </p>
 
 </div>
@@ -375,7 +400,7 @@ It would be convenient to define \(d^c =i(\bar\partial - \partial)\) then obviou
 <h5 id="org2c520c5"><span class="section-number-5">2.0.0.2</span> The Ricci curvature.</h5>
 <div class="outline-text-5" id="text-2-0-0-2">
 <p>
-The Ricci curvature is given by
+The Ricci curvature form is given in local coordinates by
 \[
 Ric_{\omega} = -\frac{1}{2}dd^c\log\det(h_{i\bar j})
 \]
@@ -404,7 +429,7 @@ and only if there exists \(\eta\in C^\infty(M)\) globally defined such that \(\a
 <h5 id="org03b6163"><span class="section-number-5">2.0.0.4</span> Yau's theorem.</h5>
 <div class="outline-text-5" id="text-2-0-0-4">
 <p>
-The \(dd^c\) lemma tells us every form \(R\in c_1(K_X)\) is of form \(Ric_{\omega} + dd^c\eta\). If one
+The \(dd^c\) lemma tells us that every form \(R\in c_1(K_X)\) is of form \(Ric_{\omega} + dd^c\eta\). If one
 varies the Hermitian product \(h_{i\bar j}\) to \(h_{i\bar j} + \phi_{i\bar j}\) then the new Ricci
 curvature is \(dd^c\log\det(h_{i\bar j} + \phi_{i\bar j})\). The Calabi conjecture can be restated as
 the existence of \(\phi\) such that \(h_{i\bar j} + \phi_{i\bar j}\) is definite positive and
@@ -421,7 +446,7 @@ functions. Therefore \eqref{eq:ddc-0} is equivalent to
 \[
 \det(h_{i\bar j} + \phi_{i\bar j}) = e^{c+\eta}\det(h_{i \bar j})
 \]
-or
+or by \(dd^c\) lemma:
 \[
 (\omega + dd^c\phi)^n = e^{c+\eta}\omega^n
 \]
@@ -432,7 +457,7 @@ the following theorem.
 
 <div class="theorem">
 <p>
-Given a function \(f\in C^\infty(M), f>0\) such that \(\int_M f\omega^n = V\). There exists, and unique
+Given a function \(f\in C^\infty(M), f>0\) such that \(\int_M f\omega^n = V\). There exists, uniquely
 up to constant, \(\phi\in C^\infty(M)\) such that \(\omega + dd^c\phi >0\) and
 \[
 (\omega + dd^c\phi)^n = f\omega^n
@@ -448,7 +473,23 @@ up to constant, \(\phi\in C^\infty(M)\) such that \(\omega + dd^c\phi >0\) and
 <h2 id="orgba0dba4"><span class="section-number-2">3</span> A sketch of proof</h2>
 <div class="outline-text-2" id="text-3">
 <p>
-The uniqueness is straightforward. We will prove the existence of \(\phi\) under the constraint
+The uniqueness is straightforward. In fact if \(\phi\) and \(\psi\)
+both satisfy \(\omega + dd^c\phi >0\), \(\omega + dd^c \psi >0\) and \((\omega + dd^c\phi)^n = (\omega +
+dd^c\psi)^n\) then \(D(\phi - \psi) = 0\) as \[ 0 = \int_M (\phi - \psi)((\omega + dd^c\phi)^n -
+(\omega + dd^c\psi)^n) = \int_M d(\phi -\psi)\wedge d^c (\phi -\psi) \wedge T \] where 
+\[ 
+T =\sum_{j=0}^{n-1}(\omega + dd^c\phi)^j\wedge (\omega + dd^c\psi)^{n-1-j} 
+\] 
+is a closed (strongly)
+positive \((n-1,n-1)\) -form.
+</p>
+
+
+
+
+
+<p>
+We will prove the existence of \(\phi\) under the constraint
 \(\int_M\phi\omega^n = 0\) (which will be useful to prove that \(\mathcal(N)\) is locally diffeomorphism
 later). We will prove that the set \(S\) of \(t\in [0,1]\) such that there exists \(\phi_t\in
 C^{k+2,\alpha}(M)\) with \(\int_M \phi_t\omega^n = 0\) that satisfies
@@ -458,7 +499,7 @@ C^{k+2,\alpha}(M)\) with \(\int_M \phi_t\omega^n = 0\) that satisfies
 (\omega + dd^c\phi_t)^n = (tf + 1-t)\omega^n
 \end{equation}
 <p>
-is both open and close in \([0,1]\), therefore is the entire interval as \(0\in S\) is non empty.
+is both open and close in \([0,1]\), therefore is the entire interval as \(0\in S\).
 </p>
 
 <p>
@@ -484,14 +525,173 @@ The proof that \(S\) is closed is more technical and is accomplished in 3 steps:
 </p>
 <ol class="org-ol">
 <li>Using Arzela-Ascoli theorem, it suffices to show that \(\{\phi_t:\ t\in S\}\) is bounded in
-\(C^{k+2,\alpha}\). Therefore up to a subsequence, one has the uniform convergence of \(\phi_{t_n}\)
+\(C^{k+2,\alpha}\). Then up to a subsequence, one has the uniform convergence of \(\phi_{t_n}\)
 and all its partial derivatives of order \(\leq k+1\). The \(k+2\) -th order follows from \eqref{eq:omega-convex-t}.</li>
-<li>Using Schauder theory, prove that the above bound follows from a <i>priori estimate</i>: There exists
+<li>Using Schauder theory, prove that the above bound follows from <i>a priori estimate</i>: \newline There exists
 \(\alpha\in (0,1)\) and \(C(X,\|f\|_{1,1}, 1/\inf_M f)>0\) such that every \(\phi\in C^4(X)\)
-satisfying \((\omega +dd^c\phi)^n = f\omega^n\) and \(\int_M \phi\omega^n=0\) has \[\|
-   \phi\|_{2,\alpha} \leq C\]</li>
-<li>Establish the priori estimate.</li>
+satisfying \((\omega +dd^c\phi)^n = f\omega^n\), \(\omega + dd^c\phi >0\) and \(\int_M \phi\omega^n=0\)
+(we will call such \(\phi\) <i>admissible</i>)
+has \[\|
+   \phi\|_{2,\alpha} \leq C.\]</li>
+<li>Establish the a priori estimate.</li>
 </ol>
+
+<p>
+To achieve the a priori estimate, one firstly bounds \(\phi\) in \(C^0\), then bound \(\| \Delta\phi\|\)
+and finally establishs the \(C^{2,\alpha}\) estimate. We will give here some detail of the first
+step. For more detail, see Z. Blocki, <i>The Calabi-Yau Theorem</i>.
+</p>
+
+<div class="proof">
+<p>
+Since \(\phi\) is defined up to an additive constant, what we mean by the \(C^0\) -estimate for \(\phi\) is in
+fact the estimate of
+\[
+\text{osc}_M \phi := \max_M \phi - \min_M \phi
+\]
+by a constant \(C\) that depends only on \(M\) and \(f\). Without losing of generality, one assumes that
+\(\int_M \omega^n = 1\) and  \(\max_M \phi = -1\). Therefore \(\| \phi \|_p \leq \| \phi\|_q\) for \(p\leq
+q<\infty\).  
+</p>
+
+<p>
+One has
+</p>
+\begin{align}
+\int_M (-\phi)^p (f-1)\omega^n &= \int_M (-\phi)^p dd^c\phi \wedge \left( \sum_{j=0}^{n-1} (\omega +
+dd^c\phi)^j\wedge \omega^{n-1-j}\right) \\
+ &= p \int_M (-\phi)^{p-1} d\phi \wedge d^c\phi \wedge \left( \omega^{n-1} + \sum_{j=1}^{n-1}(\omega +
+dd^c\phi)^j\wedge \omega^{n-1-j}  \right)\\
+&\geq p\int_M (-\phi)^{p-1}d\phi\wedge d^c\phi\wedge \omega^{n-1}\\
+&=\frac{4p}{(p+1)^2}\int_M d(-\phi)^{(p+1)/2}\wedge d^c(-\phi)^{(p+1)/2}\wedge \omega^{n-1}\\
+&=\frac{c_n p}{(p+1)^2}\| D(-\phi)^{(p+1)/2}\|_2^2
+\label{eq:long-edp}
+\end{align}
+<p>
+where we used the fact that \(\omega + dd^c\phi >0\) in the inequality, and \(c_n\) is a constant depending only on \(n\).
+</p>
+
+<p>
+Now we use the following Sobolev inequality on \(M\) (i.e. use Sobolev inequality in each chart as a
+domain of \( \mathbb{R}^m\) then add up the results):
+\[
+\|v \|_{mq/(m-q)} \leq C(M,q) (\| v\|_q + \|Dv\|_q),\quad \forall v\in W^{1,q}(M), q<m
+\]
+with \(v = \phi\), \(m=2n\) the real dimension of \(M\) and \(q=2\), then use \eqref{eq:long-edp} to bound
+the \(D\phi\) term:
+\[
+\| (-\phi)^{(p+1)/2}\|_{2n/(n-1)} \leq C_M \left[ \|(-\phi)^{(p+1)/2}\|_2 +
+\frac{p+1}{\sqrt{p}}\left(\int_M (-\phi)^p (f-1) \omega^n\right)^{1/2} 
+\right]
+\]
+Replace \(p+1\) by \(p\) and use the fact that \(|\phi|\geq 1\), one has
+\[
+\|\phi \|_{np/(n-1)} \leq (Cp)^{1/p} \|\phi\|_p,\quad \forall p\geq 2
+\]
+where \(C\) depends only on \(M\) and \(\|f\|_{\infty}\). 
+</p>
+
+<p>
+Repeatedly apply this inequality (this technique is called <i>Moser's iteration</i>) one has \(\|\phi
+\|_{p_{k+1}} \leq (Cp_k)^{1/p_k} \|\phi\|_{p_k}\) where the sequence \(p_k\) is defined by \(p_0 = 2\)
+and \(p_{k+1} = \frac{n}{n-1}p_{k-1} = 2(\frac{n}{n-1})^k\) and \[ \|\phi\|_{\infty} =
+\lim_{k\to\infty}\|\phi\|_{p_k} \leq \|\phi\|_2 \prod_{j=0}^\infty (Cp_j)^{1/p_j} \] with
+\(\prod_{j=0}^\infty (Cp_j)^{1/p_j} = (n/(n-1))^{n(n-1)/2} (2C)^{n/2}\)
+</p>
+
+<p>
+The fact that \(\|\phi\|_2\) is bounded follows directly from the following lemma. 
+</p>
+
+</div>
+
+<div class="lemma">
+<p>
+For any admissible \(\phi\) with \(\max_M \phi = -1\) one has
+\[
+\| \phi\|_p\leq C(M,p),\quad \forall 1\leq p\leq\infty
+\]
+</p>
+
+</div>
+
+<div class="proof">
+<p>
+We will prove the lemma with \(p=1\) first. Let \(g\) be the local potential of the Kähler form
+\(\omega\), i.e. a function defined on each chart (not necessarily agrees on zones where
+charts are glued together) such that \(\omega = dd^c g = \frac{\sqrt{-1}}{2}g_{i\bar j}dz_i\wedge d\bar
+z_j\) where \(g_{i\bar j}\) can also be intepreted as \(\frac{\partial^2}{\partial z_i \partial\bar z_j}
+g\). We also suppose that the function \(g\) is negative on every chart. The fact that \(\omega +
+dd^c\phi >0\) is rewritten as \((g_{i\bar j} + \phi_{i\bar j}) >0\) in local coordinates.
+</p>
+
+<p>
+Note \(u=g + \phi\) the potential of \(\omega + dd^c\phi\) locally defined on each chart, then \(u\)
+is negative and plurisubharmonic (psh). For every \(x\in B(y,R)\) one has
+\[
+u(x) \leq \frac{1}{\text{vol}(B(x,2R)}\int_{B(x,2R)} u \leq \frac{1}{\text{vol}(B(y,2R))}\int_{B(y,R)}u
+\]
+where the first inequality is due to plurisubharmonicity and the second is due to \(u\leq
+0\). Therefore
+\[
+\| u\|_{L^1(B(y,R))} \leq \text{vol}(B(y,2R)) \inf_{B(y,R)} |u|,
+\]
+hence
+\[
+\|\phi\|_{L^1(B(y,R))} \leq \|u\|_{L^1(B(y,R))} \leq \text{vol}(B(y,2R)) (\inf_{B(y,R)} |\phi| + \max_M |g|)
+\]
+To see that \(\|\phi\|_1\) is bounded, we apply the following Lemma <a href="#org691dad7">3</a> to the covering of \(M\) by
+finitely many ball \(B(y_i,R_i)\), \(c_i = \text{vol}(B(y_i,2R_i))\), \(d_i = c_i \max_M |g|\) and
+\(r=1\).
+</p>
+
+<p>
+The case \(p>1\) follows analoguously using the following estimate: if \(u\) is negative and psh in \(B(y,2R)\) then
+\[
+\|u \|_{L^{p}(B(y,R)} \leq C(n,p,R)\|u\|_{L^1(B(y,2R))}
+\]
+</p>
+
+</div>
+
+<div class="lemma">
+<p>
+<a id="org691dad7"></a>
+Let \(M\) be a connected compact manifold covered by finitely many local charts \(\{V_i\}_{i=1}^{l}\) and
+\(r, c_i, d_i>0\). Then for any continuous function \(\phi\) globally
+defined on \(M\) such that
+\[
+\|\phi\|_{L^1(V_i)} \leq c_i \inf_{V_i} |\phi| + d_i,\quad \min_M |\phi| \leq r,
+\]
+one has \(\|\phi\|_1:= \sum_i \|\phi\|_{L^1(V_i)}\leq C(\{V_i\},\{c_i\}, \{d_i\}, r)\)
+</p>
+
+</div>
+
+<div class="proof">
+<p>
+Let \(p\) be a point in \(M\) where \(|\phi|\) attains its minimum. Since \(M\) is connected, for every \(V_i\), there exists a sequence \(V_{i_k}, 0\leq k\leq l\) such that
+\[
+i_0 = i,\quad V_{i_k}\cap V_{i_{k+1}}\ne \emptyset,\quad p\in V_{i_l}
+\]
+One has
+</p>
+\begin{align*}
+\|\phi\|_{L^1(V_{i_k})} &\leq c_{i_k} \inf_{V_{i_k}} |\phi| + d_{i_k} \leq  c_{i_k} \inf_{V_{i_k}\cap V_{i_{k+1}}} |\phi| + d_{i_k}\\
+ &\leq c_{i_k}\frac{1}{\text{vol}(V_{i_k}\cap V_{i_{k+1}})}\|\phi\|_{L^1(V_{i_{k+1}})} + d_{i_k}
+\end{align*}
+<p>
+Repeatedly apply this inequality for \(k=0,\dots,l-1\), one has
+</p>
+\begin{align*}
+\|\phi\|_{L^1(V_i)} &\leq A(i,\{V_j\},\{c_j\}, \{d_j\}) \|\phi\|_{L^1(V_{i_l})} + B(i,\{V_j\},\{c_j\}, \{d_j\})\\
+&\leq A(i,\{V_j\},\{c_j\}, \{d_j\}) (c_{i_l} r+ d_{i_l}) + B(i,\{V_j\},\{c_j\}, \{d_j\})
+\end{align*}
+<p>
+Take the sum for all \(i=0,\dots, l\) and the result follows.
+</p>
+
+</div>
 </div>
 </div>
 
@@ -537,7 +737,7 @@ statements above.
 </div>
 
 <p>
-The proof is straightforward (see Manuscript) with the only exception is that one needs Calabi-Yau theorem to
+The proof is straightforward (see Manuscript) with the only non-trivial part is when one needs Calabi-Yau theorem to
 construct Ricci-flat metric.
 </p>
 </div>
@@ -546,7 +746,7 @@ construct Ricci-flat metric.
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-06-14 Wed 12:43. <br>
+Last updated 2017-06-24 Sat 11:56. <br>
 </div>
 </div>
 </body>

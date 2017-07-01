@@ -10,21 +10,22 @@ We will first prove a (conceptually) straightforward result of [[file:de-rham-de
 #+LATEX: \label{thm:beauville-1}
 <<thm:beauville-1>>
 Let $X$ be a compact Kähler manifold with flat Ricci curvature, then
-1. The universal covering space $\tilde X$ of $X$ decomposes isometrically as \[\tilde X =
-   E \times\prod_i V_i\times \prod_j X_j\] where $E = \mathbb{C}^k$, $V_i$ and $X_j$ are simply-connected
-   compact manifolds of dimension $2m_i$ and $4r_j$ with irreducible homonomy $SU(m_i)$ for $V_i$ and $Sp(r_j)$ for $X_j$. One
-   also has uniqueness in the strong sense as in de Rham decomposition.
-2. There exists a finite etale covering space $X'$ of $X$ such that \[ X' = T\times \prod_i V_i
+1. The universal covering space $\tilde X$ of $X$ decomposes isometrically and holomorphically as
+   \[\tilde X = E \times\prod_i V_i\times \prod_j X_j\] where $E = \mathbb{C}^k$, $V_i$ and $X_j$
+   are simply-connected compact manifolds of real dimension $2m_i$ and $4r_j$ with irreducible homonomy
+   $SU(m_i)$ for $V_i$ and $Sp(r_j)$ for $X_j$. One also has uniqueness in the strong sense as in de
+   Rham decomposition.
+2. There exists a finite covering space $X'$ of $X$ such that \[ X' = T\times \prod_i V_i
    \times \prod_j X_j\] where $T$ is a complex torus.
 #+END_theorem
 #+BEGIN_proof
-Note that the first point is obtained directly from de Rham decomposition: The one-dimensional
-parallel subspaces (of trivial holonomy) are regrouped to $E$. By [[file:Cheeger-Gromoll-splitting.org][Cheeger-Gromoll splitting]],
-$\tilde X = E\times M$ where $M$ contains no line and is compact (note that we use compactness of
-$X$ here). The irreducible factors in $M$ are not symmetric spaces as Ricci curvature of
-symmetric spaces is non-degenerate. Holonomy of these factors are $SU(m_i)$ and $Sp(r_j)$
-according to Berger list since they are Kähler manifolds and Ricci-flat. It remains to prove the
-second point.
+Note that the first point is obtained directly from Cheeger-Gromoll splitting and de Rham
+decomposition: The one-dimensional parallel subspaces (of trivial holonomy) are regrouped to $E$. By
+[[file:Cheeger-Gromoll-splitting.org][Cheeger-Gromoll splitting]], $\tilde X = E\times M$ where $M$ contains no line and is compact (note
+that we use compactness of $X$ here). The irreducible factors in $M$ are not symmetric spaces as
+Ricci curvature of symmetric spaces is non-degenerate. Holonomy of these factors are $SU(m_i)$ and
+$Sp(r_j)$ according to Berger list since they are Kähler manifolds and Ricci-flat. It remains to
+prove the second point.
 
 We will regard each element of $\pi_1(X)$ by its isometric, free, proper action on $\tilde X$. As
 pointed out the arguments in our discussion of uniqueness of de Rham decomposition, every isometry
@@ -33,33 +34,33 @@ of $T_x \tilde X$, each isometry $\phi$ of $\tilde X$ is of form $(\phi_1,\phi_2
 Isom(E)$ and $\phi_2\in Isom(M)$.
 
 We will use here the fact that if $M$ is a Kähler manifold, compact and Ricci-flat then $Isom(M)$
-equiped with compact-open topology is discrete, therefore finite, which will be proved later (Lemma
+equipped with compact-open topology is discrete, therefore finite, which will be proved later (Lemma
 [[lem:Isom-discrete]]). We note $\Gamma := \{\phi = (\phi_1,\phi_2)\in \pi_1(X),\ \phi_2 = Id_M\}$ and
 sometime abusively regard $\Gamma$ as a subgroup of $Isom(E)$. Note that $\Gamma$ is a normal
-subgroup of $\pi_1(X)$ with finite index since the quotient is isomorphic to $Isom(M)$. Therefore
-$\tilde X/\Gamma = E/\Gamma\times M$ is compact as a finite covering of $X$.
+subgroup of $\pi_1(X)$ with finite index since the quotient is isomorphic to a subgroup of
+$Isom(M)$. Therefore $\tilde X/\Gamma = E/\Gamma\times M$ is compact as a finite cover of $X$.
 
 We apply the following theorem of Bieberbach.
 #+ATTR_LATEX: :options [Bieberbach]
 #+BEGIN_theorem
-Let $E = \mathbb{R}^n$ an Euclidean space and $\Gamma$ be a subgroup of $Isom(E)$ satisfies
+Let $E = \mathbb{R}^n$ be an Euclidean space and $\Gamma$ be a subgroup of $Isom(E)$ that satisfies
 1. $\Gamma$ is discrete under compact-open topology.
 2. $E/\Gamma$ is compact.
 Then the subgroup $\Gamma'$ of translations in $\Gamma$ is of finite index.
 #+END_theorem
 
-Suppose that the two conditions are satisfied and the theorem gives $\tilde X/\Gamma' =
-E/\Gamma'\times M = T\times \prod_i V_i\times \prod_j X_j$ is a finite covering of
-$\tilde X/\Gamma$ as $\Gamma'$ is a normal subgroup of $\Gamma$ since
+Suppose that the two conditions are satisfied then the theorem gives: $\tilde X/\Gamma' =
+E/\Gamma'\times M = T\times \prod_i V_i\times \prod_j X_j$ is a finite cover of
+$\tilde X/\Gamma$ as $\Gamma'$ is a normal subgroup of $\Gamma$:
 
-*Fact.* The subgroup of translations in $Isom(E)$, where $E = \mathbb{R^n}$ is an Euclidean space, is
+*Fact.* The subgroup of translations in $Isom(E)$, where $E = \mathbb{R}^n$ is an Euclidean space, is
 normal.
 
-Therefore $X' = \tilde X/\Gamma'$ is a finite covering of $X$ that we want to find.
+Therefore $X' = \tilde X/\Gamma'$ is a finite cover of $X$ that we want to find.
 
-It remains now to prove that $\Gamma$ is discrete, which is a consequence of
-1. $\pi_1(X)$ is discrete, without limit point (obvious).
-2. $Isom(M)$ is finite (see lemma [[lem:Isom-discrete]])
+It remains to prove that $\Gamma$ is discrete, which is a consequence of
+1. $\pi_1(X)$ is discrete, without limit point in $Isom(E)\times Isom(M)$ (obvious).
+2. $Isom(M)$ is compact.
 In fact given any $\phi = (\phi_1,\phi_2) \in Isom(E)\times Isom(M)$, there exists by (1.) a neighborhood $
 \mathcal{U}_1(\phi_1,\phi_2)\times \mathcal{U}_2(\phi_1,\phi_2)$ of $\phi$ in $Isom(E)\times
 Isom(M)$ such that all points of $\pi_1(X)$ lying in this region project to $\phi_1$. By (2.)
@@ -74,7 +75,7 @@ $\pi_1(X)$ to $Isom(E)$ is discrete, by consequence $\Gamma$ is discrete.
 #+LATEX: \label{lem:Isom-discrete}
 <<lem:Isom-discrete>>
 Let $M$ be is a compact, simply-connected, Ricci-flat, Kähler manifold, then the group $Aut(M)$ of
-automorphism of $M$ equiped with compact-open topology is discrete, therefore $Isom(M)$ is discrete,
+automorphism of $M$ equipped with compact-open topology is discrete, therefore $Isom(M)$ is discrete,
 hence finite. 
 #+END_lemma
 #+BEGIN_proof
@@ -82,39 +83,87 @@ The idea is that since $Aut(M)$ is a Lie group, it suffices to prove that its Li
 dimension 0. This is done using these facts. 
 1. The Lie algebra of $Aut(M)$ can be identified with the vector space of holomorphic vector
    fields on $M$.
-2. /Bochner's principle/: All holomorphic tensor fields on a compact, Ricci-flat Kähler manifold are parallel. This can be seen by the identity
-   $\Delta(\|\tau \|^2) = \|D\tau \|^2$
+2. /Bochner's principle/: All holomorphic tensor fields on a compact, Ricci-flat Kähler manifold are
+   parallel.
 3. The only invariant vector of the holonomy representation of $M$ is $0$ (obvious).
 #+END_proof
 
+Bochner principle for holomorphic vector fields comes from the following identity (called /Weitzenbock formula/):
+\[
+\Delta (\frac{1}{2}\|X\|^2) = \| \Delta X\|^2 + g(X, \nabla \text{div} X) + Ric(X,X)
+\]
+for every vector field $X$. If $X$ is holomorphic then it is harmonic and has $\text{div} X = 0$. The
+fact that $M$ is Ricci-flat gives $\Delta (\frac{1}{2}\|X\|^2) = \| \nabla X\|^2$ and the
+function $\| X\|^2$ is subharmonic, therefore constant since $M$ is compact. We then have $\nabla X =
+0$,i.e. $X$ is parallel. The method of Bochner also works for tensor fields of any type in
+a Ricci-flat Kähler manifold and one also has $\Delta(\|\tau \|^2) = \|\nabla\tau \|^2$ and that every
+holomorphic tensor field is parallel. See P. Petersen, /Riemannian geometry/ and A. Besse, /Einstein
+Manifolds/ for more detail.
+
+#+BEGIN_COMMENT
+#+ATTR_LATEX: :options [Technical improvement]
+#+BEGIN_remark
+#+LATEX: \label{rem:technical-campana}
+<<rem:technical-campana>>
+We claim that in the proof of Theorem [[thm:beauville-1]], the compactness of $Isom(M)$ is enough. In
+fact, our proof of Theorem [[thm:beauville-1]] only used the finiteness of $Isom(M)$ to prove that $\Gamma$ is of finite index in
+$Isom(E)$, so that $\tilde X/\Gamma$ is a finite cover of $X$. Here is an alternative:
+1. Note that action of $\pi_1(X)$ is not only isometric on $E$, but also holomorphic. We can
+   therefore regard $\pi_1(X)$ as subgroup of $IsoUni(E)\times Isom(M)$ instead of $Isom(E)\times
+   Isom(M)$ where $IsoUni(E) = Isom(E)\cap U(E)$ has the advantage of being compact.
+2. By the same argument that proves that the projected image of $\pi_1(X)$ to $Isom(E)$ is discrete,
+   if we project on $Isom(M)$ instead, then the projected image of $\pi_1(X)$ to $Isom(M)$ is a discrete subgroup $G$ of
+   $Isom(M)$ (Note that we use the compactness of $IsoUni(E)$ here), therefore finite by the
+   compactness of $Isom(M)$. $\pi_1(X)/\Gamma$ is finite as it is isomorphic to a subgroup of $G$.
+
+This improvement is used by Campana-Demailly-Peternell to extend Theorem [[thm:beauville-1]] to manifold
+with non-negative Ricci curvature, since we no longer need Bochner principle.
+#+END_remark
+#+END_COMMENT
 
 * Towards a classification for complex manifold
 To obtain a translation of Theorem [[thm:beauville-1]] in a context of complex manifolds (without any
-prefered metric a priori), we study the 2 building blocks. To be clear, recall that a complex
-manifold $X$ is called _of Kähler type_ if one can equipe $X$ with an Hermitian structure whose
-fundamental form $\omega$ satisfies $d\omega= 0$. When we say $X$ is of Kähler type, we refer to $X$
-as a complex manifold without fixing a metric on $X$. We resume here some results, see the
-manuscript for their proofs.
-** Special unitary manifold (proper Calabi-Yau manifold)
+preferred metric a priori), we study the 2 building blocks: manifolds with holonomy $SU(m)$ and
+$Sp(r)$. To be clear, recall that a complex manifold $X$ is called _of Kähler type_ if one can
+equip $X$ with an Hermitian structure whose fundamental form $\omega$ satisfies $d\omega= 0$. When
+we say $X$ is of Kähler type, we refer to $X$ as a complex manifold without fixing a metric on
+$X$. 
+** Special unitary manifolds (proper Calabi-Yau manifolds)
 #+BEGIN_remark
-Let $X$ be a compact Kähler manifold with holonomy $SU(m)$ and complex dimension $m$ then:
+#+LATEX: \label{rem:SU}
+<<rem:SU>>
+Let $X$ be a compact Kähler manifold with holonomy $SU(m)$ and complex dimension $m\geq 3$ then:
 1. $H^0(X, \Omega_X^p)=0$ for all $0 < p < m$, by consequence $\chi( \mathcal{O}_X ) = 1 + (-1)^m$.
 2. $X$ is /projective/, that is $X$ can be embedded into $\mathbb{P}^N$ as zero-locus of some
    (finitely) homogeneous polynomials.
+3. $\pi_1(X)$ is finite and if $m$ is even, $X$ is simply connected.
 #+END_remark
 The first point is in fact algebraic in nature: it comes from the fact that the representation of
-$SU(m)$ over $\wedge^pT^*_xM$ is irreducible for all $p$ et non-trivial for $0<p<m$, therefore the
-action of $SU(m)$ on $\wedge^pT^*_xM$ for $0<p<m$ has no invariant element, hence
+$SU(m)$ over $\bigwedge^pT^*_xM$ is irreducible for all $p$ et non-trivial for $0<p<m$, therefore the
+action of $SU(m)$ on $\bigwedge^pT^*_xM$ for $0<p<m$ has no invariant element, hence
 $H^0(X,\Omega^p_X)=0$.
 
 
 The second point follows the following facts:
-1. A compact Kähler manifold with $H^{2,0}=0$ can be embedded in $\mathbb{P}^N$.
+1. (Kodaira's theorem) A compact Kähler manifold with $H^{2,0}=0$ can be embedded in $\mathbb{P}^N$.
 2. (Chow's theorem) A compact complex manifold embedded in $ \mathbb{P}^N$ is algebraic,
    i.e. defined by a finite number of homogeneous polynomials.
 
+
+The third point is a direct consequence of Riemann-Hurwitz formula. In fact, the universal cover
+$\tilde X$ of $X$ is of holonomy $SU(m)$. This is due to the following remarks: $Hol(X)\supset
+Hol(X')\supset Hol_0(X') = Hol_0(X)$ and $Hol_0(X) = Hol(X) = SU(m)$ as $SU(n)$ is connected.
+
+By Theorem [[thm:beauville-1]], $\tilde X$ is compact by Lemma [[lem:Isom-discrete]] a finite covering of
+$X$ as $\pi_1(X)$ is finite. As $\chi(\mathcal{O}_X) = \chi(\mathcal{O}_{\tilde X}) = 2$, one has $X
+= \tilde X$, hence $X$ is simply-connected.
+
+
+
 #+ATTR_LATEX: :options []
 #+BEGIN_theorem
+#+LATEX: \label{thm:SU-alg}
+<<thm:SU-alg>>
 Given a compact manifold $X$ of Kähler type and complex dimension $m$, the following properties are equivalent
 1. There exists a compatible metric $g$ over $X$ such that $Hol(X,g) = SU(m)$.
 2. $K_X$ is trivial and $H^0(X', \Omega_{X'}^p) =0$ for every $0 < p < m$ and $X'$ a finite covering of $X$.
@@ -122,54 +171,145 @@ Given a compact manifold $X$ of Kähler type and complex dimension $m$, the foll
 
 #+BEGIN_proof
 (1) implies (2) as a finite covering space $X'$ of a special unitary manifold $X$ is still a special
-unitary. This is due to the following remarks: $Hol(X)\supset Hol(X')\supset Hol_0(X')
-= Hol_0(X)$ and $Hol_0(X) = Hol(X) = SU(m)$ as $SU(n)$ is connected.
+unitary. 
 
-For the second point, by [[file:calabi-yau.org][Yau's theorem]] we equip $X$ with a Ricci-flat metric, by Theorem
-[[thm:beauville-1]], there exists a finite covering $X' = T\times \prod_i V_i\times \prod_j X_j$ where
-$T$ is a complex torus, $Hol(V_i) = SU(m_i), Hol(X_j) = Sp(r_j)$. But $H^0(X',\Omega^p_{X'})=0$ for
-$0<p<m$, $X'$ has to be one of the $V_i$ as $H^0(X_j,\Omega_{X_j}^{2r_j})$ and
-$H^0(V_i,\Omega_{V_i}^{m_i})$ do not vanish. Therefore $Hol(X) \supset Hol(X') = SU(m)$, hence
-$Hol(X) = SU(m)$.
+For the implication (2) $\implies$ (1): by [[file:calabi-yau.org][Yau's theorem]] we equip $X$ with a Ricci-flat metric, by
+Theorem [[thm:beauville-1]], there exists a finite cover $X' = T\times \prod_i V_i\times \prod_j X_j$
+where $T$ is a complex torus, $Hol(V_i) = SU(m_i), Hol(X_j) = Sp(r_j)$. But
+$H^0(X',\Omega^p_{X'})=0$ for $0<p<m$, $X'$ has to be one of the $V_i$ as
+$H^0(X_j,\Omega_{X_j}^{2})$ and $H^0(V_i,\Omega_{V_i}^{m_i})$ do not vanish. Therefore $Hol(X') =
+SU(m)$, hence $Hol(X) = SU(m)$.
 #+END_proof
 
+Theorem [[thm:SU-alg]] allows us to check if a manifold $X$ is special unitary by looking at the
+$h^{0,p} (0<p<m)$ coefficients of the Hodge diamond of $X$ and its finite covers. We can see, by
+this criteria that the following examples are special unitary manifolds. All of them are algebraically
+constructed, since a construction by glueing local charts is difficult (or impossible).
 
-** Symplectic manifold
+#+ATTR_LATEX: :options [Special unitary manifold]
+#+BEGIN_exampl
+1. Elliptic curves over $ \mathbb{C}$ are special unitary, as any statement starting with "for every $0<p<1$" is
+   formally true.
+2. A K3 surface (simply-connected surface with trivial canonical bundle) is special
+   unitary, its Hodge diamond is given below.
+3. A quintic threefold (hypersurface of degree 5 in 4-dimensional projective space) is a special
+   unitary manifold, the Hodge diamond of which is given is given below. In particular, the Fermat
+   quintic defined by \[\{(z_0:z_1:z_2:z_3:z_4) \in \mathbb{C}\mathbb{P}^{4}:\ \sum z_i^5 =0 \}\]
+4. In general, any smooth hypersurface $X$ of $\mathbb{C}\mathbb{P}^{m+1}$ of degree $m+2$ satisfies $h^{0,p}=0$
+   for all $0<p<m$. If $X$ is simply-connected then it is a special unitary manifold.
+#+END_exampl
+
+
+#+attr_latex: width=.5\textwidth
+#+ATTR_HTML: width="100%"
+#+caption: Hodge diamond of a K3 surface.
+|   |   |  1 |   |   |
+|   | 0 |    | 0 |   |
+| 1 |   | 20 |   | 1 |
+|   | 0 |    | 0 |   |
+|   |   |  1 |   |   |
+
+#+attr_latex: width=0.5\textwidth
+#+ATTR_HTML: width="80%"
+#+caption: Hodge diamond of a quintic threefold.
+|   |   |     | 1 |     |   |   |
+|   |   |   0 |   |   0 |   |   |
+|   | 0 |     | 1 |     | 0 |   |
+| 1 |   | 101 |   | 101 |   | 1 |
+|   | 0 |     | 1 |     | 0 |   |
+|   |   |   0 |   |   0 |   |   |
+|   |   |     | 1 |     |   |   |
+
+
+
+** Irreducible symplectic and hyperkähler manifolds
 #+BEGIN_remark
 Let $X$ be a compact Kähler manifold with holonomy $Sp(r)$ and complex dimension $2r$ then:
-1. There exists a holomorphic 2-form $\varphi$ non-degenerate at every point.
+1. There exists a holomorphic 2-form $\varphi$ non-degenerate at every points.
 2. $H^0(X,\Omega_X^{2l+1}) = 0, H^0(X,\Omega_X^{2l})=\mathbb{C}\varphi^l$ for all $0\leq l\leq
    r$. By consequence $\chi(\mathcal{O}_X)=r+1$.
+3. $X$ is simply-connected.
 #+END_remark
+
+The first point of the remark follows directly from our discussion of [[file:Berger-remark-complex.org][Berger classification]]. 
+
+The second point is algebraic in nature: The representation of $Sp(r)$ on $\bigwedge^p T^*_xM$ splits
+into 
+\begin{equation}
+\label{eq:decomp-varphi}
+\bigwedge^p T^*_xM = P_p \oplus P_{p-2}\varphi(x) \oplus P_{p-4}\varphi^2(x)\oplus \dots
+\end{equation}
+where $P_k, 0\leq k\leq r$ are irreducible, non-trivial for $k>0$ and $\varphi(x)\in\bigwedge^2
+T^*_xM$ uniquely defined up to a constant. Therefore the only invariant elements are
+$c\varphi^{p/2}$ where $c$ is a scalar.
+
+For the last point, one uses the same arguments as Remark [[rem:SU]].
+
 
 #+ATTR_LATEX: :options []
 #+BEGIN_theorem
+#+LATEX: \label{thm:Sp-alg}
+<<thm:Sp-alg>>
 Given a compact manifold $X$ of Kähler type and complex dimension $2r$, then:
- - The followings are equivalent:
+1. The following properties are equivalent. $X$ is called _hyperkähler_ if it
+   satisfies one of them.
    1. There exists a compatible metric $g$ such that $Hol(X,g) \subset Sp(r)$.
-   2. There exists a symplectic structure: a 2-form that is closed, holomorphic and non-degenerate
-      at every point
- - The followings are equivalent, if $X$ is called _irreducible symplectic_ or _hyperkahler_ if it satisfies one of them.
+   2. There exists a compatible symplectic structure: a 2-form that is closed, holomorphic and non-degenerate
+      at every point.
+2. The following properties are equivalent. $X$ is called _irreducible symplectic_ if it
+   satisfies one of them.
    1. There exists a compatible metric $g$ such that $Hol(X,g) = Sp(r)$
-   2. $X$ is simply-connected and there exists (uniquely up to a constant) a symplectic structure on $X$.
+   2. $X$ is simply-connected and there exists (uniquely up to a constant) a compatible symplectic structure on
+      $X$.
+By "compatible", we mean "compatible with the complex structure".
 #+END_theorem
 
+#+BEGIN_proof
+1. The fact that (a) implies (b) is obvious. For the other way: since $K_X$ is trivial (existence of
+   global non-null section) by [[file:calabi-yau.org][Yau's theorem]] we equip $X$ with a Ricci-flat metric, then the
+   symplectic structure $\varphi$ of $X$ is parallel by Bochner's principle. Hence the holonomy is
+   in $Sp(r)$.
+2. For the implication (a) $\implies$ (b), it suffices to notice that the invariant elements $\varphi$
+   in the decomposition \eqref{eq:decomp-varphi} is unique. For the direction (b) $\implies$ (a),
+   note that $X$ can be equipped with a Calabi-Yau metric by the (b) $\implies$ (a) part of (1.), by
+   Theorem [[thm:beauville-1]], $X = \prod_{j=1}^m X_j$ where $X_j$ are irreducible compact Kähler
+   manifolds. The symplectique structure $\varphi$ on $X$, restricted on each $X_j$, gives a
+   symplectique structure $\varphi_j$ of $X_j$. But any form $\sum_j \lambda_j pr_j^*\varphi_j$ is
+   another symplectic structure of $X$, one must have $m=1$ by uniqueness of $\varphi$. 
+#+END_proof
+
+#+ATTR_LATEX: :options []
+#+BEGIN_exampl
+1. One can notice a trivial example: Every special unitary manifold of 2 complex dimensions is
+   irreducible symplectic because $SU(2)$ is isomorphic to $Sp(1)$.
+2. Let $X$ be a smooth cubic hypersurface in $\mathbb{C}\mathbb{P}^{n+1}$ and $F(X)= \{ L \in Gr(1,
+   \mathbb{C}\mathbb{P}^{n+1}) , L \subset X\} \subset Gr(1, \mathbb{C}\mathbb{P}^{n+1})$ the
+   manifold formed by lines in $X$. $F(X)$ is non-empty when $n>1$, smooth if $X$ is smooth and of
+   dimension $2n-4$. Beauville and Donagi proved that for $n=4$, $F(X)$ is irreducible symplectic,
+   therefore hyperkähler.
+
+
+#+BEGIN_COMMENT
+1. Hilbert schemes of $n$ points on a K3 surface (and deformations of these).
+2. Generalised Kummer varieties.
+#+END_COMMENT
+#+END_exampl
 ** Decomposition for complex manifold with vanishing Chern class
 
 Theorem [[thm:beauville-1]] can be translated to a decomposition for complex manifold in the following
 way:
-#+ATTR_LATEX: :options [Bogomolov- Beauville classification]
+#+ATTR_LATEX: :options [Bogomolov-Beauville classification]
 #+BEGIN_theorem
 #+LATEX: \label{thm:beauville-2}
 <<thm:beauville-2>>
-Let $X$ be a compact manifold of Kähler type with vanishing Chern class.
-1. The universal covering $\tilde X$ of $X$ is isomorphic to a product $\mathbb{E}\times \prod_i
+Let $X$ be a compact manifold of Kähler type of vanishing first Chern class.
+1. The universal covering space $\tilde X$ of $X$ is isomorphic to a product $E\times \prod_i
    V_i\times\prod_j X_j$ where $E = \mathbb{C}^k$ and
    1. Each $V_i$ is a projective simply-connected manifold of complex dimension $m_i\geq 3$, with trivial
       $K_{V_i}$ and $H^0(V_i,\Omega_{V_i}^p) = 0$ for $ 0 < p < m_i$  
-   2. Each $X_j$ is an irreducible compact symplectic manifold of Kähler type.
+   2. Each $X_j$ is an hyperkähler manifold.
    This decomposition is unique up to an order of $i$ and $j$.
-2. There exists a finite covering $X'$ of $X$ isomorphic to the product $T\times\prod_i
+2. There exists a finite cover $X'$ of $X$ isomorphic to the product $T\times\prod_i
    V_i\times\prod_j X_j$.
 #+END_theorem
 The theorem follows directly from Theorem [[thm:beauville-1]], the only point that needs proof is the
@@ -182,9 +322,9 @@ These two steps will be accomplished in the following two lemmas
 
 #+ATTR_LATEX: :options []
 #+BEGIN_lemma
-Let $Y = \prod_j Y_j$ be a compact, simply-connected manifold of Kähler type with vanishing Chern
-class. The Calabi-Yau metrics of $Y$ are then $g = \sum_l pr_j^*g_l$ where $g_l$ are Calabi-Yau metrics
-of $Y_l$.
+Let $Y = \prod_j Y_j$ be a finite product of compact, simply-connected manifold of Kähler type with vanishing Chern
+class. The Calabi-Yau metrics of $Y$ are then $g = \sum_l pr_j^*g_j$ where $g_j$ are Calabi-Yau metrics
+of $Y_j$.
 #+END_lemma
 #+BEGIN_proof
 Let $g$ be a Calabi-Yau metric of $Y$ and $[\omega]$ its class in $H^{1,1}(Y)$. Since $Y_j$ are
@@ -193,7 +333,7 @@ metrics $g_j$ of $Y_j$ in each class $[\omega_j]$. The metric $g' = \sum_j pr_j^
 class $\omega$ of $g$ and is also a Calabi-Yau metric, hence $g= g' = \sum_j pr_j^*g_j$.
 #+END_proof
 
-This lemma asserts that when our manifolds $Y, Y_j$ are equiped with appropriate Calabi-Yau metrics,
+This lemma asserts that when our manifolds $Y, Y_j$ are equipped with appropriate Calabi-Yau metrics,
 the decomposition map is also a (Riemannian) isometric, we therefore obtain uniqueness of $V_i, X_j$
 from uniqueness of Theorem [[thm:beauville-1]].
 
@@ -205,11 +345,14 @@ where $\phi_1:\ \mathbb{C}^k\longrightarrow \mathbb{C}^h$ and $\phi_2:\ Y\longri
 isomorphisms.
 #+END_lemma
 #+BEGIN_proof
-It is clear that the function $u_1: \mathbb{C}^k\times Y \longrightarrow \mathbb{C}^h \times Z
+It is clear that the composed function $u_1: \mathbb{C}^k\times Y \longrightarrow \mathbb{C}^h \times Z
 \longrightarrow \mathbb{C}^h$ is constant in $Y$, i.e. $u_1(t,y) = u_1(t)$ as holomorphic
-functions on $Y$ are constant. Therefore  $u(t,y) = (u_1(t), u_2(t,y))$, as $u$ is isomorphic, one
+functions on $Y$ are constant, therefore  $u(t,y) = (u_1(t), u_2(t,y))$. As $u$ is isomorphic, one
 has $h\leq k$ then by the same argument for $u^{-1}$, one has $h=k$, $u_1$ is an isomorphism and
-$u_t(\cdot) := u_2(t,\cdot)$ is an isomorphism from $Y$ to $Z$. $u_0^{-1}\circ u_t$ is then a curve in
-$Aut(Y)$, which is discrete by Lemma [[lem:Isom-discrete]]. Hence $u_t= u_0$ independent de $t$.
+$u_2(t,\cdot)$ is an isomorphism from $Y$ to $Z$. $u_2(0,\cdot)^{-1}\circ u_2(t,\cdot)$ is then a curve in
+$Aut(Y)$, which is discrete by Lemma [[lem:Isom-discrete]]. Therefore $u_2(t,\cdot)= u_2(0,\cdot)$ independent of $t$.
 #+END_proof
+
+`
+
 

@@ -1,0 +1,126 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /home/darknmt/Dropbox/LaTeX/org/website/blog/bogomolov-beauville.org
+
+
+* From the Riemannian results of de Rham and Berger
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-06-21 Wed 16:26
+  :ARCHIVE_FILE: ~/Dropbox/LaTeX/org/website/blog/bogomolov-beauville.org
+  :ARCHIVE_CATEGORY: bogomolov-beauville
+  :END:
+
+We will first prove a (conceptually) straightforward result of [[file:de-rham-decomposition.org][de Rham decomposition]] and
+[[file:Berger-remark-complex][Berger classification]]. The following theorem is taken from Beauville's article
+#+ATTR_LATEX: :options [Beauville]
+#+BEGIN_theorem
+#+LATEX: \label{thm:beauville-1}
+<<thm:beauville-1>>
+Let $X$ be a compact Kähler manifold with flat Ricci curvature, then
+1. The universal covering space $\tilde X$ of $X$ decomposes isometrically and holomorphically as
+   \[\tilde X = E \times\prod_i V_i\times \prod_j X_j\] where $E = \mathbb{C}^k$, $V_i$ and $X_j$
+   are simply-connected compact manifolds of real dimension $2m_i$ and $4r_j$ with irreducible homonomy
+   $SU(m_i)$ for $V_i$ and $Sp(r_j)$ for $X_j$. One also has uniqueness in the strong sense as in de
+   Rham decomposition.
+2. There exists a finite covering space $X'$ of $X$ such that \[ X' = T\times \prod_i V_i
+   \times \prod_j X_j\] where $T$ is a complex torus.
+#+END_theorem
+#+BEGIN_proof
+Note that the first point is obtained directly from Cheeger-Gromoll splitting and de Rham
+decomposition: The one-dimensional parallel subspaces (of trivial holonomy) are regrouped to $E$. By
+[[file:Cheeger-Gromoll-splitting.org][Cheeger-Gromoll splitting]], $\tilde X = E\times M$ where $M$ contains no line and is compact (note
+that we use compactness of $X$ here). The irreducible factors in $M$ are not symmetric spaces as
+Ricci curvature of symmetric spaces is non-degenerate. Holonomy of these factors are $SU(m_i)$ and
+$Sp(r_j)$ according to Berger list since they are Kähler manifolds and Ricci-flat. It remains to
+prove the second point.
+
+We will regard each element of $\pi_1(X)$ by its isometric, free, proper action on $\tilde X$. As
+pointed out the arguments in our discussion of uniqueness of de Rham decomposition, every isometry
+of $\tilde X$ to itself preserves the components $T_{x_0}E$, $T_{x_i}V_i$ and $T_{x_j}X_j$
+of $T_x \tilde X$, each isometry $\phi$ of $\tilde X$ is of form $(\phi_1,\phi_2)$ where $\phi_1\in
+Isom(E)$ and $\phi_2\in Isom(M)$.
+
+We will use here the fact that if $M$ is a Kähler manifold, compact and Ricci-flat then $Isom(M)$
+equipped with compact-open topology is discrete, therefore finite, which will be proved later (Lemma
+[[lem:Isom-discrete]]). We note $\Gamma := \{\phi = (\phi_1,\phi_2)\in \pi_1(X),\ \phi_2 = Id_M\}$ and
+sometime abusively regard $\Gamma$ as a subgroup of $Isom(E)$. Note that $\Gamma$ is a normal
+subgroup of $\pi_1(X)$ with finite index since the quotient is isomorphic to a subgroup of
+$Isom(M)$. Therefore $\tilde X/\Gamma = E/\Gamma\times M$ is compact as a finite cover of $X$.
+
+We apply the following theorem of Bieberbach.
+#+ATTR_LATEX: :options [Bieberbach]
+#+BEGIN_theorem
+Let $E = \mathbb{R}^n$ be an Euclidean space and $\Gamma$ be a subgroup of $Isom(E)$ that satisfies
+1. $\Gamma$ is discrete under compact-open topology.
+2. $E/\Gamma$ is compact.
+Then the subgroup $\Gamma'$ of translations in $\Gamma$ is of finite index.
+#+END_theorem
+
+Suppose that the two conditions are satisfied then the theorem gives: $\tilde X/\Gamma' =
+E/\Gamma'\times M = T\times \prod_i V_i\times \prod_j X_j$ is a finite cover of
+$\tilde X/\Gamma$ as $\Gamma'$ is a normal subgroup of $\Gamma$:
+
+*Fact.* The subgroup of translations in $Isom(E)$, where $E = \mathbb{R}^n$ is an Euclidean space, is
+normal.
+
+Therefore $X' = \tilde X/\Gamma'$ is a finite cover of $X$ that we want to find.
+
+It remains to prove that $\Gamma$ is discrete, which is a consequence of
+1. $\pi_1(X)$ is discrete, without limit point in $Isom(E)\times Isom(M)$ (obvious).
+2. $Isom(M)$ is compact.
+In fact given any $\phi = (\phi_1,\phi_2) \in Isom(E)\times Isom(M)$, there exists by (1.) a neighborhood $
+\mathcal{U}_1(\phi_1,\phi_2)\times \mathcal{U}_2(\phi_1,\phi_2)$ of $\phi$ in $Isom(E)\times
+Isom(M)$ such that all points of $\pi_1(X)$ lying in this region project to $\phi_1$. By (2.)
+we can find a neighborhood $ \mathcal{U}_1$ of $\phi_1$ in $Isom(E)$ small enough that $
+\mathcal{U}_1(\phi_1)\times Isom(M) \subset \cup_{\phi_2\in Isom(M)}
+\mathcal{U}_1(\phi_1,\phi_2)\times \mathcal{U}_2(\phi_1,\phi_2)$. Therefore the projection of
+$\pi_1(X)$ to $Isom(E)$ is discrete, by consequence $\Gamma$ is discrete.
+#+END_proof
+
+#+ATTR_LATEX: :options []
+#+BEGIN_lemma
+#+LATEX: \label{lem:Isom-discrete}
+<<lem:Isom-discrete>>
+Let $M$ be is a compact, simply-connected, Ricci-flat, Kähler manifold, then the group $Aut(M)$ of
+automorphism of $M$ equipped with compact-open topology is discrete, therefore $Isom(M)$ is discrete,
+hence finite. 
+#+END_lemma
+#+BEGIN_proof
+The idea is that since $Aut(M)$ is a Lie group, it suffices to prove that its Lie algebra is of
+dimension 0. This is done using these facts. 
+1. The Lie algebra of $Aut(M)$ can be identified with the vector space of holomorphic vector
+   fields on $M$.
+2. /Bochner's principle/: All holomorphic tensor fields on a compact, Ricci-flat Kähler manifold are
+   parallel. This can be seen by the identity $\Delta(\|\tau \|^2) = \|\nabla\tau \|^2$ in a Ricci-flat
+   Riemannian manifold.
+3. The only invariant vector of the holonomy representation of $M$ is $0$ (obvious).
+#+END_proof
+
+Bochner principle for holomorphic vector fields comes from the following identity:
+\[
+\Delta (\frac{1}{2}\|X\|^2) = \| \nabla X\|^2 + g(X, \Delta div X) + Ric(X,X)
+\]
+for every vector field $X$. Since $X$ is holomorphic on $M$, it is harmonic hence $div X = 0$. The
+fact that $M$ is Ricci-flat gives $\Delta (\frac{1}{2}\|X\|^2) = \| \nabla X\|^2$
+
+#+ATTR_LATEX: :options [Technical improvement]
+#+BEGIN_remark
+#+LATEX: \label{rem:technical-campana}
+<<rem:technical-campana>>
+We claim that in the proof of Theorem [[thm:beauville-1]], the compactness of $Isom(M)$ is enough. In
+fact, our proof of Theorem [[thm:beauville-1]] only used the finiteness of $Isom(M)$ to prove that $\Gamma$ is of finite index in
+$Isom(E)$, so that $\tilde X/\Gamma$ is a finite cover of $X$. Here is an alternative:
+1. Note that action of $\pi_1(X)$ is not only isometric on $E$, but also holomorphic. We can
+   therefore regard $\pi_1(X)$ as subgroup of $IsoUni(E)\times Isom(M)$ instead of $Isom(E)\times
+   Isom(M)$ where $IsoUni(E) = Isom(E)\cap U(E)$ has the advantage of being compact.
+2. By the same argument that proves that the projected image of $\pi_1(X)$ to $Isom(E)$ is discrete,
+   if we project on $Isom(M)$ instead, then the projected image of $\pi_1(X)$ to $Isom(M)$ is a discrete subgroup $G$ of
+   $Isom(M)$ (Note that we use the compactness of $IsoUni(E)$ here), therefore finite by the
+   compactness of $Isom(M)$. $\pi_1(X)/\Gamma$ is finite as it is isomorphic to a subgroup of $G$.
+
+This improvement is used by Campana-Demailly-Peternell to extend Theorem [[thm:beauville-1]] to manifold
+with non-negative Ricci curvature, since we no longer need Bochner principle.
+#+END_remark
+
+

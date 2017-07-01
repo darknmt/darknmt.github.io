@@ -12,7 +12,7 @@ with irreducible holonomy representation.
 #+ATTR_LATEX: :options [De Rham decomposition]
 #+BEGIN_theorem
 <<thm:de-Rham-decomposition>>
-Given $(M,g)$ a simply connected and complete Riemannian manifold, there exists a unique
+Given $(M,g)$ a simply-connected and complete Riemannian manifold, there exists a unique
 decomposition up to isometry and permutation of factors
 \[
 (M,g) = \prod_{i=1}^n(M_i,g_i)
@@ -31,32 +31,34 @@ The proof of this theorem contains two steps:
 2. Obtain the global product structure from local one. This is where completeness is used.
 
 
-We now discuss the first point with a bit more details. Suppose that $T_xM = U_x \bigoplus^\perp V_x$
-where $U_x, V_x$ are stable under action of holonomy group, then by transporting $U_x, V_x$ to the
-tangent space of any point $y$ (as they are stable by holonomy, the result is independent of the
-curve along which the transport is taken), we obtain then two sub fibers $A$ and $B$ of $TM$ over
-$M$ that are stable by transport. Then for every vector field $u_A$ in $A$ and $v$ in $TM$,
-$\nabla_v u_A \in A$, as the Levi-Civita connection is torsionless, one deduces
-$[u_A,v_A] = \nabla_{u_A}v_A - \nabla_{v_A}u_A$ remains in $A$. By Frobenius theorem, locally at a
-point $x\in M$, there exist manifolds $M_1, M_2$ whose tangent spaces are $A$ and $B$. 
+We now discuss the first point with a bit more details. Suppose that $T_xM = U_x \bigoplus^\perp
+V_x$ where $U_x, V_x$ are stable under action of holonomy group, then by transporting $U_x, V_x$ to
+the tangent space of any point $y$ (as they are stable by holonomy, the result is independent of the
+curve along which the transport is taken), we obtain then two sub bundles $A$ and $B$ of $TM$ over
+$M$ that are stable by parallel transport. Then for every vector field $u_A$ in $A$ and $v$ in $TM$,
+$\nabla_v u_A \in A$. As the Levi-Civita connection is torsionless, one deduces $[u_A,v_A] =
+\nabla_{u_A}v_A - \nabla_{v_A}u_A$ remains in $A$. By Frobenius theorem, locally at a point $x\in
+M$, there exist manifolds $M_1, M_2$ whose tangent spaces are $A$ and $B$.
 
 
 #+ATTR_LATEX: :options [Frobenius]
 #+BEGIN_theorem
 #+LATEX: \label{thm:Frobenius}
 <<thm:Frobenius>>
-Given distribution $D$ which to each point $x$ associates a $k$ -dimensional hyperplanes of $T_xM$
-which satisfies:
-1. $D$ varies smoothly by $x$, i.e. there exist $k$ smooth vector fields that at each point $x$
-   form a base of $D(x)$.
+Given a distribution $D$ which to each point $x$ associates a $k$ -dimensional hyperplane of $T_xM$
+such that:
+1. $D$ varies smoothly by $x$, i.e. for every $x_0$,there exist $k$ smooth vector fields locally
+   defined near $x_0$ that at each point $x$ form a base of $D(x)$.
 2. $D$ is stable by Lie bracket, i.e. for every vector fields $X,Y$ on $M$ that take value in $D$,
    $[X,Y]$ takes value in $D$.
-Then at each point $x\in M$, there exists a maximal $k$ -dimension sub-manifold $N$ of $M$ containing
+Then at each point $x\in M$, there exists a maximal $k$ -dimensional sub-manifold $N$ of $M$ containing
 $x$ such that $D(y)$ is the tangent of $N$ at $y$. The maximality means that every sub-manifold of
 $M$ that satisfies this condition is an open sub-manifold of $N$.
 #+END_theorem
-For a complete proof that $M$ is isometric to $M_1\times M_2$, see Takashi Sakai, /Riemannian geometry/.
+For a complete proof that $M$ is isometric to $M_1\times M_2$, see Takashi Sakai, /Riemannian
+geometry/ (Lemma 6.8- Theorem 6.11, chapter III).
 #+END_proof
+
 
 
 * Uniqueness
@@ -65,23 +67,22 @@ We note that the decomposition is unique in the following sense:
 #+ATTR_LATEX: :options [Uniqueness of de Rham decomposition]
 #+BEGIN_proposition
 #+LATEX: \label{prop:uniqueness}
-<<prop:uniqueness>>
-If $M$ is decomposed as $E\times \prod M_i$ and $E'\times\prod M'_j$ where $M_i, M'j$ are
-irreducible and $E,E'$ are maximal Euclidean components (i.e. none of $M_i, M'_j$ are isometric to $
-\mathbb{R}$. Then up to a rearrangement of indice $j$ the composed map $f: E\times\prod M_i
-\longrightarrow E'\times \prod M'_i$ are product of the isometries $f_E: E\longrightarrow E'$ and
-$f_i:M_i \longrightarrow M'_i$.
+<<prop:uniqueness>> If $M$ is decomposed as $p_1:\ M\longrightarrow E\times \prod M_i$ and $p_2:\
+M\longrightarrow E'\times\prod M'_j$ where $M_i, M'j$ are irreducible and $E,E'$ are maximal
+Euclidean components (i.e. none of $M_i, M'_j$ are isometric to $ \mathbb{R}$). Then up to a
+rearrangement of indice $j$ the composed map $f=p_2\circ p_1^{-1}:\ E\times\prod M_i \longrightarrow
+E'\times \prod M'_i$ are product of the isometries $f_E: E\longrightarrow E'$ and $f_i:M_i
+\longrightarrow M'_i$.
 #+END_proposition
 
 We first explain the appearance of Euclidean components $E,E'$. They come from the parallel
-transport of trivial representations $T_{x_i}M_i$ appeared in the decomposition on each fiber. We call them
-Euclidean because they are, up to an isometric, $ \mathbb{R}^k$ with the usual metric. This follows
+transport of trivial representations appeared in the decomposition on each fiber. We call them
+Euclidean because they are, up to an isometry, $ \mathbb{R}^k$ with the usual metric. This follows
 from the fact that $ \mathbb{R}$ with any Riemannian metric is isometric to $ \mathbb{R}$ with
 Euclidean metric.
 
 We first note that the uniqueness stated in Proposition [[prop:uniqueness]] comes from the uniqueness of
-the decomposition of each tangent fiber to irreducible representation of holonomy group, we have the
-following lemma.
+the decomposition of each tangent fiber, we have the following lemma.
 
 #+ATTR_LATEX: :options [Uniqueness of fiber decomposition]
 #+BEGIN_lemma
@@ -91,7 +92,7 @@ Let $f: M\longrightarrow M'$ be an isometry that send $x\in M$ to $y\in M'$. Let
 \[
 T_x M = E \oplus^\perp \bigoplus_i V_i,\quad T_yM' = E' \oplus^\perp \bigoplus_j V'_j
 \]
-be a decomposition of $T_xM$ and $T_yM'$ as direct sum of trivial subspaces $E,E'$ and irreducible
+be a decomposition of $T_xM$ and $T_yM'$ as direct sum of trivial subspaces $E,E'$ and irreducible non-trivial
 subspaces $V_i, V_j'$ under holonomy action. Then up to a rearrangement of $j$, $f_*$ send $E$ to
 $E'$ and $V_i$ to $V'_i$. 
 #+END_lemma
@@ -108,22 +109,23 @@ The supplementary property of holonomy representation put into use here is the f
 #+BEGIN_remark
 The holonomy representation $H\subset SO(V)$ on a fiber $V=T_xM$ satisfies the _property (H)_: if $V
 = V_1 \oplus^\perp V_2$ where $V_i$ are stable by $H$ then $H = H_1\times H_2$ where $H_i:= \{ h\in
-H: h|_{V_j} = Id, j\ne i\}$ is the action of $H$ on $V_i$. This property is a consequence of de Rham
-decomposition along $V_1, V_2$ and the fact that $Hol(M_1\times M_2) = Hol(M_1)\times Hol(M_2)$.
+H: h|_{V_j} = Id, j\ne i\}$. It is obvious that $H\supset H_1\times H_2$, the other inclusion is a
+consequence of de Rham decomposition along $V_1, V_2$ and the fact that $Hol(M_1\times M_2) =
+Hol(M_1)\times Hol(M_2)$.
 #+END_remark
 
-An example of representation that do satisfies this property (H) is the group $G = \{\pm
+An example of representation that does not satisfies this property (H) is the group $G = \{\pm
 I_2\}$. Take $V_i = \mathbb{R}e_i$, then $G_1 = G_2 = \{I_2\}$ therefore $G_1\times G_2\ne
-G$. This also illustrates the fact that not every group (representation) are holonomy group
-(representation).
+G$. This also illustrates the fact that not every groups (representations) are holonomy groups
+(representations).
 
-We prove the following lemma, which is more general than Lemma [[lem:uniqueness-fiber]].
+We prove the following lemma, which implies Lemma [[lem:uniqueness-fiber]].
 #+ATTR_LATEX: :options [Uniqueness of representation decomposition]
 #+BEGIN_lemma
 #+LATEX: \label{lem:unique-representation}
 <<lem:unique-representation>>
-Let $G\subset SO(V)$ be an orthonormal representation over a finite dimensional vector space $V$ with
-property (H), given any two decompositions
+Let $G\subset SO(V)$ be an orthonormal representation on a finite dimensional vector space $V$ with
+property (H), given any two orthogonal decompositions
 \[
 V = E \times \prod V_i = E' \times \prod V'_j
 \]
@@ -136,7 +138,7 @@ Moreover, given $J\in Hom_G(V,V)\cap SO(V)$ then $J$ sends $E$ and $V_i$ to them
 #+BEGIN_proof
 Note that since action of $G$ is special orthonormal, any one dimensional subspace of $V$ stable by
 $G$ are trivial under $G$, that explains why we supposed $V_i, V'_j$ are of dimension larger
-than 2. It suffices to see that every irreducible subspace $N$ of $V$ is either in $E$ or equal to
+than 2. It suffices to see that every irreducible subspace $N$ of $V$ is either contained in $E$ or equal to
 $V_i$.
 
 Let $pr_i$ and $pr_E$ be orthogonal projection of $V$ to $V_i$ and $E$. As $E$ and $V_i$ are $G$ -stable, these
@@ -144,16 +146,14 @@ projections are $G$ -invariant. Let $N_i = pr_i(N)$, then $N_i$ is a subspace of
 by $G$, hence either $0$ or all $V_i$. If all $N_i=0$ then clearly $N$ is perpendicular to $\bigoplus_i
 V_i$, that is $N\subset E$. If $pr_E(N)\ne 0$ then $Hom_G(N, E) \ne 0$ since it contains $pr_E$. Since
 $N$ is irreducible, $N$ is $G$ -isomorphic to a irreducible component of $N$ by $pr_E$, therefore
-$N$ is $G$ -invariant hence $N\subset E$. Therefore one can suppose that at least one $N_i = V_i$ and
-$pr_E(N) = 0$. The second condition means $E\perp N$. 
-
-Note that $pr_i$ is bijective (Schur lemma). 
-Let $G_i = \{g\in G: g|_{V_j} = Id\ \forall j\ne i \}$ the action of $G$ on $V_i$
-then $Fix(\prod_{j\ne i} G_j)= E\oplus V_i$, in fact each $v = e +\sum v_i\in Fix(\prod_{j\ne i}
-G_j)$ where $e\in E, v_i\in V_i$, one has $g_i v_i = v_i \forall g_i \in G_i$, hence $g_i v_i = v_i
-\forall g_i\in G$, hence $v_i = 0$. It remains to note that as $pr_i$ is $G$ -invariant, $N_i$ is
-also fixed by $\prod_{j\ne i}G_j$, therefore $N_i\subset E \oplus^\perp V_i$. Therefore $N_i=V_i$ as
-$N_i\perp E$.
+$N$ is $G$ -trivial hence $N\subset E$. Therefore one can suppose that at least one $N_i = V_i$ and
+$pr_E(N) = 0$, i.e. $E\perp N$. Note that $pr_i$ is bijective by Schur lemma.
+ 
+Let $G_i = \{g\in G: g|_{V_j} = Id\ \forall j\ne i \}$ then $Fix(\prod_{j\ne i} G_j)= E\oplus V_i$, in fact if $v = e +\sum v_i\in Fix(\prod_{j\ne i}
+G_j)$ where $e\in E, v_k\in V_k$, one has $g_j v_j = v_j \forall g_j \in G_j$, hence $g v_j = v_j
+\forall g\in G$, hence $v_j = 0$. Now note that as $pr_i$ commutes with $G$ and $N_i$ is fixed by
+$\prod_{j\ne i}G_j$, $N$ is also fixed by $\prod_{j\ne i}G_j$. Therefore $N\subset E \oplus^\perp
+V_i$, hence $N = N_i=V_i$ as $N\perp E$.
 
 For the last point, note that as $J$ commutes with all elements of $G$, $J$ sends $Fix(\prod_{j\in
 A} G_j)$ to itself. Therefore $J|_E: E\longrightarrow E$ and $J|_{E\oplus V_i}: E\oplus
@@ -162,16 +162,16 @@ V_i\longrightarrow E\oplus V_i$, hence by orthogonality $J$ sends $E$ and $V_i$ 
 
 
 * Application of uniqueness lemma: decomposition for Kähler manifold
-Now let apply the de Rham decomposition to a complete Riemannian manifold $M$ with holonomy $SU(n)
+Now let apply the de Rham decomposition to a complete Riemannian manifold $M$ with holonomy $U(n)
 \subset SO(2n)$ (called a /Kähler manifold/). There exists on a fixed fiber $T_xM$ an automorphism
-$J$ that preserve the riemannian metric and satisfies $J^2 = -1$. By transporting $J$ to every other
+$J$ that preserves the Riemannian metric and satisfies $J^2 = -1$. By transporting $J$ to every other
 fibers of $TM$ one obtains a /almost complex structure/ on $M$.
 
-Apply Lemma [[lem:unique-representation]] to $J$ which is obviously $G$ -invariant and orthonormal, one
+Apply Lemma [[lem:unique-representation]] to $J$ which obviously commutes with $G$ and orthonormal, one
 see that such structure $J$ passes to every manifold $M_i$ and the Euclidean component $ \mathbb{R}^n$ and
 remains parallel on these manifolds. We proved that $M$ is decomposed to $ \mathbb{C}^{n/2}\times
 \prod M_i$ where $M_i$ are Kähler manifold. The decomposition map is both a Riemannian isometry and
-a isomorphism between complex manifold (morphism that preserves complex structure). 
+a isomorphism between complex manifold (i.e. its preserves complex structure). 
 
 
 

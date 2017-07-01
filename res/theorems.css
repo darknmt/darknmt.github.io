@@ -5,8 +5,26 @@ counter-reset: lemma;
 counter-reset: definition;
 counter-reset: remark;
 counter-reset: proposition;
+counter-reset: exampl;
 }
 
+
+.exampl {
+    counter-increment: exampl;
+    display: block;
+    margin: 12px 0;
+    font-style: italic;
+    background-color: AntiqueWhite;
+    border-left: 6px solid;
+    border-color: BurlyWood;
+    padding:10px 10px 10px 20px;
+}
+.exampl:before {
+    content: "Example " counter(exampl) ".";
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: underline;
+}
 
 .proposition {
     counter-increment: proposition;

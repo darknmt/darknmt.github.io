@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-06-12 Mon 12:23 -->
+<!-- 2017-06-24 Sat 02:11 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Berger classification and remarks on parallel structures</title>
@@ -263,43 +263,68 @@ for the JavaScript code in this tag.
 </div>
 <div id="content">
 <h1 class="title">Berger classification and remarks on parallel structures</h1>
-
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgad77890">1. Our story so far</a></li>
+<li><a href="#org0620d32">2. Berger classification of non-symmetric irreducible manifolds</a></li>
+<li><a href="#org1ef4402">3. Almost complex structure</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#org3511295">3.0.0.1. Complexification.</a></li>
+<li><a href="#org310d1ed">3.0.0.2. Eigenspaces.</a></li>
+<li><a href="#orgdc48e20">3.0.0.3. Hermitian form.</a></li>
+<li><a href="#orge46f182">3.0.0.4. Identification.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgdb4a4d7">4. Complexified dual and forms, prelude to Kähler geometry</a></li>
+<li><a href="#org827c931">5. Symplectic holonomy</a></li>
+</ul>
+</div>
+</div>
 
 <div id="outline-container-orgad77890" class="outline-2">
-<h2 id="orgad77890">Our story so far</h2>
-<div class="outline-text-2" id="text-orgad77890">
+<h2 id="orgad77890"><span class="section-number-2">1</span> Our story so far</h2>
+<div class="outline-text-2" id="text-1">
 <p>
-<a href="./de-rham-decomposition.html">De Rham decomposition theorem</a> theorem allows us to split a Riemannian manifold under certain
-conditions (complete and connected) as Riemannian product of complete connected manifold with
-<i>irreducible holonomy representation</i>. We will now interest in manifolds with irreducible
-holonomies. If the manifold is <a href="./symmetric-space.html"><i>locally symmetric</i></a> then one can prove that it is isometric to the
-homogeneous space \(G/H\) with \(H\) (the holonomy) a closed Lie subgroup of \(G\). The theory of Lie
-groups developed by E. Cartan gave a complete list of these spaces.
+<a href="./de-rham-decomposition.html">De Rham decomposition theorem</a> allows us to split a Riemannian manifold under certain conditions
+(complete and connected) as Riemannian product of complete connected manifold with <i>irreducible
+holonomy representation</i>. If an irreducible building block is <a href="./symmetric-space.html"><i>locally symmetric</i></a>, the theory of Lie
+groups developed by E. Cartan gave a complete list of holonomy of these spaces. We now shift our
+focus on non-symmetric irreducible manifolds.
 </p>
 </div>
 </div>
 
 
-<div id="outline-container-orgaf64981" class="outline-2">
-<h2 id="orgaf64981">Berger classification for non-symmetric manifolds</h2>
-<div class="outline-text-2" id="text-orgaf64981">
+<div id="outline-container-org0620d32" class="outline-2">
+<h2 id="org0620d32"><span class="section-number-2">2</span> Berger classification of non-symmetric irreducible manifolds</h2>
+<div class="outline-text-2" id="text-2">
 <div class="theorem">
 <p>
 <a id="org12907d1"></a>
-For the non-symmetric irreducible manifold, the holonomy representation has to be one of the
+For a non-symmetric irreducible manifold, the holonomy representation has to be one of the
 following
 </p>
 <ol class="org-ol">
-<li>\(SO(n)\)</li>
-<li>\(U(m)\subset SO(2m)\)</li>
-<li>\(SU(m)\subset SO(2m)\)</li>
-<li>\(Sp(r) \subset SO(4r)\)</li>
-<li>\(SO(r)Sp(1) \subset SO(4r)\)</li>
-<li>\(G_2\subset SO(7)\)</li>
-<li>\(\text{Spin}(7)\subset SO(8)\)</li>
+<li>\(SO(n)\),</li>
+<li>\(U(m)\subset SO(2m)\),</li>
+<li>\(SU(m)\subset SO(2m)\),</li>
+<li>\(Sp(r) \subset SO(4r)\),</li>
+<li>\(SO(r)Sp(1) \subset SO(4r)\),</li>
+<li>\(G_2\subset SO(7)\),</li>
+<li>\(\text{Spin}(7)\subset SO(8)\).</li>
 </ol>
 <p>
-where \(n=2m=4r\) is the dimension.
+where \(n=2m=4r\) is the (real) dimension.
 </p>
 
 </div>
@@ -311,21 +336,21 @@ Sp(m)\subset SU(2m)\subset U(2m)\subset SO(4m)
 \]
 </p>
 <ol class="org-ol">
-<li>If \(Hol(g)\subset U(m)\subset SO(2m)\), \(g\) is called a <i>Kahler metric</i>.</li>
+<li>If \(Hol(g)\subset U(m)\subset SO(2m)\), \(g\) is called a <i>Kähler metric</i>.</li>
 <li>If \(Hol(g)\subset SU(m)\subset SO(2m)\), \(g\) is called a <i>Calabi-Yau</i> metric. We will see that a
-Calabi-Yau metric is a Kahler metric that is also Ricci-flat.</li>
-<li>If \(Hol(g)\subset Sp(m)\subset SO(4m)\) then \(g\) is called a <i>hyperkahler</i> metric.</li>
+Calabi-Yau metric is a Kähler metric that is also Ricci-flat.</li>
+<li>If \(Hol(g)\subset Sp(m)\subset SO(4m)\) then \(g\) is called a <i>hyperkähler</i> metric.</li>
 <li>\(G_2\) and \(\text{Spin}(7)\) are called <i>exceptional holonomies</i></li>
 </ol>
 
 <p>
-To resume: hyperkahler \(\longrightarrow\) Calabi-Yau \(\longrightarrow\) Kahler.
+To sum up: hyperkähler \(\longrightarrow\) Calabi-Yau \(\longrightarrow\) Kähler.
 </p>
 
 <p>
-<b>But what do we mean by \(U(n)\subset SO(2n)\)?</b> To embed \(U(n)\) in \(SO(2n)\) one need to identify \(
+<b>But what do we mean by \(U(n)\subset SO(2n)\)?</b> To embed \(U(n)\) in \(SO(2n)\) one needs to identify \(
 \mathbb{C}\) and \( \mathbb{R}^{2n}\), this can be done using an almost complex structure \(J\) of \(
-\mathbb{R}^n\). We will prove that when we change the almost complex structure, the embeded image of
+\mathbb{R}^{2n}\). We will prove that when we change the almost complex structure, the embedded image of
 \(U(n)\) in \(SO(2n)\) always remains in the same conjugacy class, which corresponds to the
 fact that while holonomy representation is well-defined, the holonomy group in \(SO(2n)\) is only
 defined up to its conjugacy class.
@@ -334,18 +359,18 @@ defined up to its conjugacy class.
 </div>
 
 <div id="outline-container-org1ef4402" class="outline-2">
-<h2 id="org1ef4402">Almost complex structure</h2>
-<div class="outline-text-2" id="text-org1ef4402">
+<h2 id="org1ef4402"><span class="section-number-2">3</span> Almost complex structure</h2>
+<div class="outline-text-2" id="text-3">
 <div class="definition">
 <p>
-A <span class="underline">(almost) complex structure</span> \(J\) on a vector space \(V\) is an automorphism \(J:\ V\longrightarrow V\)
+A(n) <span class="underline">(almost) complex structure</span> \(J\) on a vector space \(V\) is an automorphism \(J:\ V\longrightarrow V\)
 with \(J^2 = -Id_V\). If \(V\) has a scalar product \(g\), we suppose in addition that \(g\circ J = J\).
 </p>
 
 <p>
-A <span class="underline">(almost) complex structure</span> \(J\) on manifold \(M\) is a vector bundle automorphism \(J: TM\longrightarrow
+A(n) <span class="underline">(almost) complex structure</span> \(J\) on manifold \(M\) is a vector bundle automorphism \(J: TM\longrightarrow
 TM\) that satisfies \(J_x^2 = -Id_{T_xM}\) for every \(x\in M\). If \(M\) is a Riemannian manifold, we
-supose in addition that \(g\circ J = g\).
+assume in addition that \(g\circ J = g\).
 </p>
 
 </div>
@@ -355,20 +380,21 @@ Let us first have a look at a complex structure \(J\) <i>on a fiber</i> (vector 
 direct consequences:
 </p>
 </div>
-<div id="outline-container-org2c05881" class="outline-5">
-<h5 id="org2c05881">The complexifieds.</h5>
-<div class="outline-text-5" id="text-org2c05881">
+
+<div id="outline-container-org3511295" class="outline-5">
+<h5 id="org3511295"><span class="section-number-5">3.0.0.1</span> Complexification.</h5>
+<div class="outline-text-5" id="text-3-0-0-1">
 <p>
-\(g\) and \(J\) extends in an unique way over \(V_{ \mathbb{C}}\) to a
-hermitian product \(g_{\mathbb{C}}\) and a \(\mathbb{C}\) -linear automorphism (also noted by \(J\)). One
-also has \(g_{\mathbb{C}}\circ J = g_{\mathbb{C}}\).
+\(g\) and \(J\) extend in an unique way over \(V_{ \mathbb{C}}\), the complexification of \(V\), to a
+Hermitian product \(g_{\mathbb{C}}\) and a \(\mathbb{C}\) -linear automorphism (also noted by \(J\)) and one
+still has \(g_{\mathbb{C}}\circ J = g_{\mathbb{C}}\).
 </p>
 </div>
 </div>
 
 <div id="outline-container-org310d1ed" class="outline-5">
-<h5 id="org310d1ed">Eigenspaces.</h5>
-<div class="outline-text-5" id="text-org310d1ed">
+<h5 id="org310d1ed"><span class="section-number-5">3.0.0.2</span> Eigenspaces.</h5>
+<div class="outline-text-5" id="text-3-0-0-2">
 <p>
 The complexified space \(V_{ \mathbb{C}}\) is decomposed to \(V_{\mathbb{C}} =
 V^{1,0} \oplus^\perp V^{0,1}\) where \(V^{1,0}\) and \(V^{0,1}\) are eigenspaces (complex vector space)
@@ -380,46 +406,46 @@ corresponding to eigenvalues \(i\) and \(-i\) of \(J\) on \(V_{\mathbb{C}}\). Th
 </div>
 
 <div id="outline-container-orgdc48e20" class="outline-5">
-<h5 id="orgdc48e20">Hermitian form.</h5>
-<div class="outline-text-5" id="text-orgdc48e20">
+<h5 id="orgdc48e20"><span class="section-number-5">3.0.0.3</span> Hermitian form.</h5>
+<div class="outline-text-5" id="text-3-0-0-3">
 <p>
 The <span class="underline">fundamental form</span> \(\omega\) of \((V,J)\) is defined by
 \[
 \omega(a,b) = g(Ja,b) = -g(a, Jb) \quad \text{on } V
 \]
-which is an antisymmetric real 2-form with \(\omega\circ J = \omega\). \(V\) equiped with the following
+which is an antisymmetric real 2-form with \(\omega\circ J = \omega\). \(V\) equipped with the following
 <span class="underline">Hermitian form</span>
 \[
 h(a,b) = g(a,b) - i\omega(a,b)  \quad \text{on } V
 \]
-in the sense that \(h(.,.)\) is \(\mathbb{R}\) -linear with \(h(Ja,b) = ih(a,b)\) and \(h(a,Jb) = -ih(a,b)\).
+in the sense that \(h(.,.)\) is \(\mathbb{R}\) -bilinear with \(h(Ja,b) = ih(a,b)\) and \(h(a,Jb) = -ih(a,b)\).
 </p>
 </div>
 </div>
 
 <div id="outline-container-orge46f182" class="outline-5">
-<h5 id="orge46f182">Identification.</h5>
-<div class="outline-text-5" id="text-orge46f182">
+<h5 id="orge46f182"><span class="section-number-5">3.0.0.4</span> Identification.</h5>
+<div class="outline-text-5" id="text-3-0-0-4">
 <p>
-One usually identifies \((V,J)\) and \((V^{1,0},i)\) as vector spaces equiped with complex structure,
+One usually identifies \((V,J)\) and \((V^{1,0},i)\) as vector spaces equipped with complex structure,
 using the following map:
 \[
 \iota_J: x \mapsto \frac{1}{2}(x - iJ(x))
 \]
-which is \(\mathbb{C}\) -linear in the sense of complex structure \(\iota_J(Jx) = i\iota_J(x)\). Note
-that one \((V,-J)\) is also isomorphic to \((V^{0,1},i)\) by the conjugate of \(\iota_J\): \(x\mapsto
+which is \(\mathbb{C}\) -linear in the sense of complex structure: \(\iota_J(Jx) = i\iota_J(x)\). Note
+that \((V,-J)\) is also isomorphic to \((V^{0,1},i)\) by the conjugate of \(\iota_J\): \(x\mapsto
 \frac{1}{2}(x + iJ(x))\).
 </p>
 
 <p>
 Now note that on we have on \((V,J)\) an hermitian product \(h(.,.)\) and on \((V^{1,0},i)\) the restricted
-hermitian product \(g_{\mathbb{C}}\) of \(V_{\mathbb{C}}\). The following lemma gives their relation
+Hermitian product \(g_{\mathbb{C}}\) of \(V_{\mathbb{C}}\). The following lemma gives their relation
 (the proof is straightforward computation, see Manuscript).
 </p>
 
 <div class="lemma">
 <p>
-The identification \((V,J) = (V^{1,0},i)\) by \(\iota_J\) give
+The identification \((V,J) = (V^{1,0},i)\) by \(\iota_J\) gives
 \[
 \frac{1}{2}h = g_\mathbb{C}|_{V^{1,0}}
 \]
@@ -439,7 +465,7 @@ We can now embed \(U(n)\) to \(SO(2n)\), in other words \(U(V^{1,0})\) to \(SO(V
 
 <p>
 Note that the correspondance \(\phi \leftrightarrow \tilde\phi\) is one-to-one between \(\{\phi:\
-V^{1,0}\longrightarrow V^{1,0} \mathbb{R}\text{-linear}\}\) and \(\{\tilde\phi:\ V\longrightarrow V\
+V^{1,0}\longrightarrow V^{1,0}\ \mathbb{R}\text{-linear}\}\) and \(\{\tilde\phi:\ V\longrightarrow V\
 \mathbb{R}\text{-linear}\}\). Then
 </p>
 <ol class="org-ol">
@@ -447,13 +473,13 @@ V^{1,0}\longrightarrow V^{1,0} \mathbb{R}\text{-linear}\}\) and \(\{\tilde\phi:\
 <li>\(\phi\) preserves \(g_{\mathbb{C}}\) if and only if \(\tilde\phi\) preserves \(h\). Taking the real
 and imaginary part, the latter is equivalent to the fact that \(\tilde\phi\) preserves \(g\) and
 \(\omega\).</li>
-<li>Every \(\mathbb{C}\) -linear \(\tilde \phi\) preserves orientation of \(V^{1,0}\) as \(\mathbb{R}^2n\)
+<li>Every \(\mathbb{C}\) -linear \(\tilde \phi\) preserves orientation of \(V^{1,0}\) as \(\mathbb{R}^{2n}\)
 (note that the fact that \(\tilde\phi\) preserves orientation or not is independent of how one
-identifies \(V^{1,0}\) and \(\mathbb{R}^{2n}\)</li>
+identifies \(V^{1,0}\) and \(\mathbb{R}^{2n}\)).</li>
 </ol>
 <p>
-Hence for every \(J\), \(\phi\mapsto\tilde\phi\) gives a embedding of \(U(V^{1,0})\) to \(SO(V)\). By each
-a orthonormal base of \(V^{1,0}\) and that of \(V\) give a embedding \(U(n)\subset SO(2n)\).
+Hence for every \(J\), \(\phi\mapsto\tilde\phi\) gives a embedding of \(U(V^{1,0})\) to \(SO(V)\). An
+orthonormal base of \(V^{1,0}\) and that of \(V\) give a embedding \(U(n)\subset SO(2n)\).
 </p>
 
 <div class="remark">
@@ -475,11 +501,11 @@ J_0 = \begin{pmatrix}
 </div>
 
 
-<div id="outline-container-org11b6769" class="outline-2">
-<h2 id="org11b6769">Complexified dual and forms, prelude to Kahler geometry</h2>
-<div class="outline-text-2" id="text-org11b6769">
+<div id="outline-container-orgdb4a4d7" class="outline-2">
+<h2 id="orgdb4a4d7"><span class="section-number-2">4</span> Complexified dual and forms, prelude to Kähler geometry</h2>
+<div class="outline-text-2" id="text-4">
 <p>
-We state first some linear algebra facts, whose proofs are unremarkable and can be consulted in the Manuscript.
+We state first some linear algebra facts, whose proofs are tedious and can be consulted in the Manuscript.
 </p>
 
 <div class="lemma">
@@ -487,8 +513,8 @@ We state first some linear algebra facts, whose proofs are unremarkable and can 
 <a id="org66792cd"></a>
 </p>
 <ol class="org-ol">
-<li>Let \(V = W_1 \oplus W_2\) be \(R\) -module then the exterior algebra of \(V\) splits into \[\wedge^nV
-   = \oplus_{p+q = n}\wedge^p W_1 \otimes \wedge^q W_2 \] We remark that the tensor product here
+<li>Let \(V = W_1 \oplus W_2\) be \(R\) -module then the exterior algebra of \(V\) splits into \[\bigwedge^nV
+   = \bigoplus_{p+q = n}\bigwedge^p W_1 \otimes \bigwedge^q W_2 \] Note that the tensor product here
 is formal, and not related to the tensor product defining the exterior algebra.</li>
 <li>If \(V\) has a complex structure \(J\) then \(J\) gives a complex structure on \(V^* =
    Hom_{\mathbb{R}}(V, \mathbb{R})\), naturally by \(\phi\mapsto \phi\circ J\).</li>
@@ -515,11 +541,11 @@ Therefore \((V^*)_{\mathbb{C}} = (V^*)^{1,0} \oplus (V^{*})^{0,1}\) is rewriten 
 \[
 Hom_{\mathbb{R}}(V,\mathbb{C}) = Hom_{\mathbb{C}}((V,J),\mathbb{C}) \oplus Hom_{\mathbb{C}}((V,-J), \mathbb{C})
 \]
-Using the first point of Lemma <a href="#org66792cd">No description for this link</a>, one has
+Using the first point of Lemma <a href="#org66792cd">4</a>, one has
 \[
-\wedge^n (V^*)_{\mathbb{C}} = \oplus_{p+q=n}\wedge^{p,q}(V^*)_{\mathbb{C}}
+\bigwedge^n (V^*)_{\mathbb{C}} = \bigoplus_{p+q=n}\bigwedge^{p,q}(V^*)_{\mathbb{C}}
 \]
-where \(\wedge^{p,q}T^*_{\mathbb{C}}M\) denotes the \(\mathbb{C}\) -vector space of forms that are \(p\) times \(
+where \(big\wedge^{p,q}T^*_{\mathbb{C}}M\) denotes the \(\mathbb{C}\) -vector space of forms that are \(p\) times \(
 \mathbb{C}\) -linear and \(q\) times \( \mathbb{C}\) -antilinear.
 </p>
 
@@ -544,32 +570,107 @@ basic objects such as \(dz_i\) and \(d\bar{z_i}\).
 <tr>
 <th scope="col" class="org-left"><b>Object</b></th>
 <th scope="col" class="org-left"><b>Where it belongs/ properties</b></th>
-<th scope="col" class="org-left"><b>\(\mathbb{C}\) -linear extension/ properties</b></th>
+<th scope="col" class="org-left"><b>Extension/ properties</b></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="org-left">\(\partial_{z_i} = \iota_J(\partial_{x_i}) = \frac{1}{2}(\partial_{x_i}-i\partial_{y_i})\)</td>
-<td class="org-left">\(V^{1,0}\)</td>
-<td class="org-left">\(dz_i(\partial_{z_j}) = \delta_{i,j}, dz_i(\partial_{\bar{z_j}}) = 0\)</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">\(\partial_{\bar z_i} = \iota_{-J}(\partial_{x_i}) = \frac{1}{2}(\partial_{x_i}+i\partial_{y_i})\)</td>
-<td class="org-left">\(V^{0,1}\)</td>
-<td class="org-left">\(d\bar{z_i}(\partial_{z_j}) = 0, d\bar{z_i}(\partial_{\bar{z_j}}) = \delta_{i,j}\)</td>
+<td class="org-left">\(\partial_{z_i} = \iota_J(\partial_{x_i})\)</td>
+<td class="org-left">\(V^{1,0}\),</td>
+<td class="org-left">\(dz_i(\partial_{z_j}) = \delta_{i,j}\),</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\quad = \frac{1}{2}(\partial_{x_i}-i\partial_{y_i})\)</td>
+<td class="org-left">form a \( \mathbb{C}\) -base</td>
+<td class="org-left">\(dz_i(\partial_{\bar{z_j}}) = 0\)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\partial_{\bar z_i} = \iota_{-J}(\partial_{x_i})\)</td>
+<td class="org-left">\(V^{0,1}\),</td>
+<td class="org-left">\(d\bar{z_i}(\partial_{z_j}) = 0\),</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\quad = \frac{1}{2}(\partial_{x_i}+i\partial_{y_i})\)</td>
+<td class="org-left">form a \( \mathbb{C}\) -base</td>
+<td class="org-left">\(d\bar{z_i}(\partial_{\bar{z_j}}) = \delta_{i,j}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
 <td class="org-left">\(dz_i = dx_i +idy_i\)</td>
-<td class="org-left">\(Hom_{\mathbb{C}}((V,J),\mathbb{C})\), \(\mathbb{C}\) -linear</td>
-<td class="org-left">\(Hom_{\mathbb{C}}(V_{\mathbb{C}}, \mathbb{C})\), null on \(V^{0,1}\),</td>
+<td class="org-left">\(Hom_{\mathbb{C}}((V,J),\mathbb{C}) \equiv Hom_{\mathbb{C}}(V^{1,0}, \mathbb{C})\),</td>
+<td class="org-left">\(Hom_{\mathbb{C}}(V_{\mathbb{C}}, \mathbb{C})\),</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">\(\mathbb{C}\) -linear</td>
+<td class="org-left">null on \(V^{0,1}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
 <td class="org-left">\(d\bar{z_i} = dx_i -idy_i\)</td>
-<td class="org-left">\(Hom_{\mathbb{C}}((V,-J), \mathbb{C})\), \(\mathbb{C}\) -antilinear</td>
-<td class="org-left">\(Hom_{\mathbb{C}}(V_{\mathbb{C}}, \mathbb{C})\), null on \(V^{1,0}\)</td>
+<td class="org-left">\(Hom_{\mathbb{C}}((V,-J), \mathbb{C}) \equiv Hom_{\mathbb{C}}(V^{0,1}, \mathbb{C})\),</td>
+<td class="org-left">\(Hom_{\mathbb{C}}(V_{\mathbb{C}}, \mathbb{C})\),</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">\(\mathbb{C}\) -antilinear</td>
+<td class="org-left">null on \(V^{1,0}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 </tbody>
 </table>
@@ -578,16 +679,16 @@ basic objects such as \(dz_i\) and \(d\bar{z_i}\).
 
 <div class="remark">
 <p>
-One can note a subtlety here: there are two natural ways to extend \(dz_i\) to \(V^{1,0}\)
+One can note that there are two natural ways to extend \(dz_i\) to \(V^{1,0}\)
 </p>
 <ol class="org-ol">
 <li>by first make a \( \mathbb{C}\) -linear extension on \(V_{\mathbb{C}}\), then make a restriction on \(V^{1,0}\)</li>
 <li>using the identification \((V,J)\equiv (V^{1,0},i)\)</li>
 </ol>
 <p>
-but these two coincide, as they are all \( \mathbb{C}\) -linear and satisfy \(dz_i(\partial_{z_j}) =
-\delta_{i,j}, dz_i(\partial_{\bar{z_j}}) = 0\). Same story with \(d\bar{z_i}\). See Figure \ref{fig:dz}
-and Figure \ref{fig:dzbar}
+but these two coincide, as there exists a unique form \( \mathbb{C}\) -linear \(dz_i\) that satisfies
+\(dz_i(\partial_{z_j}) = \delta_{i,j}, dz_i(\partial_{\bar{z_j}}) = 0\). Same story with
+\(d\bar{z_i}\). See Figure \ref{fig:dz} and Figure \ref{fig:dzbar}
 </p>
 
 </div>
@@ -599,7 +700,7 @@ and Figure \ref{fig:dzbar}
   (V,J) \ar["\iota_J", d, swap] \ar["dz_i", r] & \mathbb{C} & V \ar["dz_i", r] \ar["\mathbb{C} \text{-lin}", d, swap] & \mathbb{C} \\
   (V^{1,0},i) \ar["dz_i", ur, swap] &  & V_\mathbb{C} \ar["dz_i", ur, swap] &  
 \end{tikzcd}
-\caption{Two natural ways to define $dz_i$ on $V^{1,0}$}
+\caption{Two natural ways to define $dz_i$ on $V^{1,0}$. They gives the same form.}
 \end{figure}
 
 \begin{figure}
@@ -609,36 +710,114 @@ and Figure \ref{fig:dzbar}
   (V,-J) \ar["\iota_J", d, swap] \ar["d\bar{z_i}", r] & \mathbb{C} & V \ar["d\bar{z_i}", r] \ar["\mathbb{C} \text{-lin}", d, swap] & \mathbb{C} \\
   (V^{0,1},i) \ar["d\bar{z_i}", ur, swap] &  & V_\mathbb{C} \ar["d\bar{z_i}", ur, swap] &  
 \end{tikzcd}
-\caption{Two natural ways to define $d\bar{z_i}$ on $V^{0,1}$}
+\caption{Two natural ways to define $d\bar{z_i}$ on $V^{0,1}$. They gives the same form.}
 \end{figure}
-
 
 <div class="definition">
 <p>
-The followings are equivalent and \(X\) is called a <span class="underline">Kahler manifold</span> if one of them is satisfied.
+The following properties are equivalent and \(X\) is called a <span class="underline">Kähler manifold</span> if one of them is satisfied.
 </p>
 <ol class="org-ol">
-<li>\(X\) is a complex manifold, equiped with a Hermitian structure \(h(.,.)\) compatible with the complex
-structure \(J\), and a fundamental form \(\omega\), and \(d\omega=0\).</li>
-<li>\(X\) is a Riemannian manifold equiped with a parallel complex structure.</li>
-<li>\(X\) is a complex manifold, equiped with a Hermitian structure such that the Chern connection on
-\(T^{1,0}X\) is, up to an identification by \(\iota_J\), the Levi-Civita connection</li>
-<li>\(X\) is a complex manifold, equiped with a Hermitian structure such that the Chern connection on
-\(T^{1,0}X\) is torsionless</li>
+<li>\(X\) is a complex manifold, equipped with a Hermitian structure \(h(.,.)\) compatible with the complex
+structure \(J\), and a fundamental form \(\omega\)  with \(d\omega=0\).</li>
+<li>\(X\) is a Riemannian manifold with a parallel complex structure.</li>
+<li>\(X\) is a complex manifold, equipped with a Hermitian structure such that the Chern connection on
+\(T^{1,0}X\) is, up to an identification by \(\iota_J\), the Levi-Civita connection.</li>
+<li>\(X\) is a complex manifold, equipped with an Hermitian structure such that the Chern connection on
+\(T^{1,0}X\) is torsionless.</li>
 </ol>
 <p>
-We call a complex manifold \(X\) <span class="underline">of Kahler type</span> if there exists a Hermitian structure under which
-\(X\) is Kahler.
+We call a complex manifold \(X\) <span class="underline">of Kähler type</span> if there exists a Hermitian structure under which
+\(X\) is Kähler.
 </p>
 
 </div>
+<p>
+The proof is straightforward. The only part that is not trivial is that parallel almost complex structures
+have to come from a complex atlas, i.e. atlas of \(X\) such that each transition map preserves the
+complex structure. Such globally defined almost complex structure are called <i>integrable</i>.
+</p>
+
+<p>
+To prove this one uses the following <i>Nijenhuis tensor</i> of a (1,1) tensor \(A\) defined by:
+\[
+N_A(X,Y) = -A^2[X,Y] +A[AX, Y] + A[X, AY] - [AX, AY]
+\]
+and the following theorem
+</p>
+<div class="theorem">
+<p>
+An almost complex structure on \(M\) with vanishing \(N_J\) is integrable.
+</p>
+
+</div>
+
+<p>
+The proof that a parallel almost complex structure \(J\) satisfies \(N_J = 0\) is computational in
+nature and can be found in the Manuscript.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org827c931" class="outline-2">
+<h2 id="org827c931"><span class="section-number-2">5</span> Symplectic holonomy</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+One can look at symplectic group \(Sp(r)\) from the following two points of view:
+</p>
+<ol class="org-ol">
+<li>\(Sp(r)\) is subgroup of \(Aut_{\mathbb{H}}(\mathbb{H}^r)\) of elements preserving a quaternion
+Hermitian form \(q\), where \( \mathbb{H}\) is the algebra of quaternions.</li>
+<li>\(Sp(r) = SU(2r)\cap Sp(2r, \mathbb{C})\).</li>
+</ol>
+
+<p>
+The second point of view explains how \(Sp(r)\) is embedded in \(SO(4r)\). Let us consider \(Sp(r)\) from
+the first point. In our context, let \(V\) be a tangent space at one point of the manifold \(M\), that
+is a \(4r\) real dimensional vector space, one can regard \(Sp(r)\) as the group of automorphisms of \(V\)
+preserving the Riemannian metric \(g|_V\) and the complex structures \(I,J\) (hence \(K=IJ\)) satisfying
+\(IJ = -IJ\). Hence we have the following remark:
+</p>
+
+<div class="remark">
+<p>
+The following properties are equivalent for a Riemannian manifold \(M\):
+</p>
+<ol class="org-ol">
+<li>\(Hol(M) \subset Sp(r)\subset SO(2r)\).</li>
+<li>There exists on \(M\) three parallel complex structures \(I,J,K\) that satisfy \(K = IJ = -JI\).</li>
+<li>There exists on \(M\) a parallel complex structure \(I\) and a holomorphic (w.r.t \(I\)), parallel,
+2-form \(\varphi\) that is non-degenerate at a point (hence every point).</li>
+</ol>
+
+</div>
+<p>
+We note that the holomorphic 2-form in the third point is given by
+\[
+\varphi = \omega_J + \sqrt{-1}\omega_K
+\]
+where \(\omega_I\) and \(\omega_K\) are fundamental forms with respect to complex structures \(I\) and
+\(K\), and \(M\) is regarded under the complex structure \(I\).
+</p>
+
+<p>
+The implication (2) \(\implies\) (3) is actually exercise 1.2.5 (page 40) of Daniel Huybrechts,
+<i>Complex geometry: an introduction</i> (see Manuscript).
+</p>
+
+<p>
+For the implication (3) \(\implies\) (2), note that the real and imaginary part of \(\varphi\) are parallel,
+they correspond to complex structures \(J\) and \(K\) on \(M\). Since \(\varphi\) is a (2,0)-form w.r.t
+\(I\), one has \(\varphi(Iu, v) = i\varphi(u,v)\), taking the real part and using the fact that \(g\) is
+non-degenerate, one has \(K = IJ = -JI\).
+</p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-06-12 Mon 03:13. <br>
+Last updated 2017-06-24 Sat 02:11. <br>
 </div>
 </div>
 </body>

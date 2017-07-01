@@ -3,30 +3,29 @@
 
 * Our story so far
 
-[[file:./de-rham-decomposition.org][De Rham decomposition theorem]] theorem allows us to split a Riemannian manifold under certain
-conditions (complete and connected) as Riemannian product of complete connected manifold with
-/irreducible holonomy representation/. We will now interest in manifolds with irreducible
-holonomies. If the manifold is [[file:./symmetric-space.org][/locally symmetric/]] then one can prove that it is isometric to the
-homogeneous space $G/H$ with $H$ (the holonomy) a closed Lie subgroup of $G$. The theory of Lie
-groups developed by E. Cartan gave a complete list of these spaces.
+[[file:./de-rham-decomposition.org][De Rham decomposition theorem]] allows us to split a Riemannian manifold under certain conditions
+(complete and connected) as Riemannian product of complete connected manifold with /irreducible
+holonomy representation/. If an irreducible building block is [[file:./symmetric-space.org][/locally symmetric/]], the theory of Lie
+groups developed by E. Cartan gave a complete list of holonomy of these spaces. We now shift our
+focus on non-symmetric irreducible manifolds.
 
 
-* Berger classification for non-symmetric manifolds
+* Berger classification of non-symmetric irreducible manifolds
 
 #+ATTR_LATEX: :options [Berger classification]
 #+BEGIN_theorem
 #+LATEX: \label{thm:Berger}
 <<thm:Berger>>
-For the non-symmetric irreducible manifold, the holonomy representation has to be one of the
+For a non-symmetric irreducible manifold, the holonomy representation has to be one of the
 following
-1. $SO(n)$
-2. $U(m)\subset SO(2m)$
-3. $SU(m)\subset SO(2m)$
-4. $Sp(r) \subset SO(4r)$
-5. $SO(r)Sp(1) \subset SO(4r)$
-6. $G_2\subset SO(7)$
+1. $SO(n)$,
+2. $U(m)\subset SO(2m)$,
+3. $SU(m)\subset SO(2m)$,
+4. $Sp(r) \subset SO(4r)$,
+5. $SO(r)Sp(1) \subset SO(4r)$,
+6. $G_2\subset SO(7)$,
 7. $\text{Spin}(7)\subset SO(8)$.
-where $n=2m=4r$ is the dimension.
+where $n=2m=4r$ is the (real) dimension.
 #+END_theorem
 
  Here are some notations, note always that
@@ -36,24 +35,24 @@ Sp(m)\subset SU(2m)\subset U(2m)\subset SO(4m)
 1. If $Hol(g)\subset U(m)\subset SO(2m)$, $g$ is called a /Kähler metric/.
 2. If $Hol(g)\subset SU(m)\subset SO(2m)$, $g$ is called a /Calabi-Yau/ metric. We will see that a
    Calabi-Yau metric is a Kähler metric that is also Ricci-flat.
-3. If $Hol(g)\subset Sp(m)\subset SO(4m)$ then $g$ is called a /hyperkahler/ metric.
+3. If $Hol(g)\subset Sp(m)\subset SO(4m)$ then $g$ is called a /hyperkähler/ metric.
 4. $G_2$ and $\text{Spin}(7)$ are called /exceptional holonomies/
 
-To sum up: hyperkahler $\longrightarrow$ Calabi-Yau $\longrightarrow$ Kähler.
+To sum up: hyperkähler $\longrightarrow$ Calabi-Yau $\longrightarrow$ Kähler.
 
 *But what do we mean by $U(n)\subset SO(2n)$?* To embed $U(n)$ in $SO(2n)$ one needs to identify $
 \mathbb{C}$ and $ \mathbb{R}^{2n}$, this can be done using an almost complex structure $J$ of $
-\mathbb{R}^n$. We will prove that when we change the almost complex structure, the embedded image of
+\mathbb{R}^{2n}$. We will prove that when we change the almost complex structure, the embedded image of
 $U(n)$ in $SO(2n)$ always remains in the same conjugacy class, which corresponds to the
 fact that while holonomy representation is well-defined, the holonomy group in $SO(2n)$ is only
 defined up to its conjugacy class.
 
 * Almost complex structure
 #+BEGIN_definition
-A _(almost) complex structure_ $J$ on a vector space $V$ is an automorphism $J:\ V\longrightarrow V$
+A(n) _(almost) complex structure_ $J$ on a vector space $V$ is an automorphism $J:\ V\longrightarrow V$
 with $J^2 = -Id_V$. If $V$ has a scalar product $g$, we suppose in addition that $g\circ J = J$.
 
-A _(almost) complex structure_ $J$ on manifold $M$ is a vector bundle automorphism $J: TM\longrightarrow
+A(n) _(almost) complex structure_ $J$ on manifold $M$ is a vector bundle automorphism $J: TM\longrightarrow
 TM$ that satisfies $J_x^2 = -Id_{T_xM}$ for every $x\in M$. If $M$ is a Riemannian manifold, we
 assume in addition that $g\circ J = g$.
 #+END_definition
@@ -61,11 +60,10 @@ assume in addition that $g\circ J = g$.
 Let us first have a look at a complex structure $J$ /on a fiber/ (vector space) $V$. Here are some
 direct consequences:
 
-#+options: num:nil
 **** Complexification. 
-$g$ and $J$ extend in an unique way over $V_{ \mathbb{C}}$ to a
-hermitian product $g_{\mathbb{C}}$ and a $\mathbb{C}$ -linear automorphism (also noted by $J$). One
-also has $g_{\mathbb{C}}\circ J = g_{\mathbb{C}}$.
+$g$ and $J$ extend in an unique way over $V_{ \mathbb{C}}$, the complexification of $V$, to a
+Hermitian product $g_{\mathbb{C}}$ and a $\mathbb{C}$ -linear automorphism (also noted by $J$) and one
+still has $g_{\mathbb{C}}\circ J = g_{\mathbb{C}}$.
 
 **** Eigenspaces.
 The complexified space $V_{ \mathbb{C}}$ is decomposed to $V_{\mathbb{C}} =
@@ -84,7 +82,7 @@ _Hermitian form_
 \[
 h(a,b) = g(a,b) - i\omega(a,b)  \quad \text{on } V
 \]
-in the sense that $h(.,.)$ is $\mathbb{R}$ -linear with $h(Ja,b) = ih(a,b)$ and $h(a,Jb) = -ih(a,b)$.
+in the sense that $h(.,.)$ is $\mathbb{R}$ -bilinear with $h(Ja,b) = ih(a,b)$ and $h(a,Jb) = -ih(a,b)$.
 
 **** Identification.
 One usually identifies $(V,J)$ and $(V^{1,0},i)$ as vector spaces equipped with complex structure,
@@ -92,12 +90,12 @@ using the following map:
 \[
 \iota_J: x \mapsto \frac{1}{2}(x - iJ(x))
 \]
-which is $\mathbb{C}$ -linear in the sense of complex structure $\iota_J(Jx) = i\iota_J(x)$. Note
-that one $(V,-J)$ is also isomorphic to $(V^{0,1},i)$ by the conjugate of $\iota_J$: $x\mapsto
+which is $\mathbb{C}$ -linear in the sense of complex structure: $\iota_J(Jx) = i\iota_J(x)$. Note
+that $(V,-J)$ is also isomorphic to $(V^{0,1},i)$ by the conjugate of $\iota_J$: $x\mapsto
 \frac{1}{2}(x + iJ(x))$.
 
 Now note that on we have on $(V,J)$ an hermitian product $h(.,.)$ and on $(V^{1,0},i)$ the restricted
-hermitian product $g_{\mathbb{C}}$ of $V_{\mathbb{C}}$. The following lemma gives their relation
+Hermitian product $g_{\mathbb{C}}$ of $V_{\mathbb{C}}$. The following lemma gives their relation
 (the proof is straightforward computation, see Manuscript).
 
 #+BEGIN_lemma
@@ -116,7 +114,7 @@ $\phi\mapsto \tilde\phi$ as follow:
 \end{tikzcd}
 
 Note that the correspondance $\phi \leftrightarrow \tilde\phi$ is one-to-one between $\{\phi:\
-V^{1,0}\longrightarrow V^{1,0} \mathbb{R}\text{-linear}\}$ and $\{\tilde\phi:\ V\longrightarrow V\
+V^{1,0}\longrightarrow V^{1,0}\ \mathbb{R}\text{-linear}\}$ and $\{\tilde\phi:\ V\longrightarrow V\
 \mathbb{R}\text{-linear}\}$. Then
 1. $\phi$ is $\mathbb{C}$ -linear if and only if $\tilde\phi J = J\tilde\phi$.
 2. $\phi$ preserves $g_{\mathbb{C}}$ if and only if $\tilde\phi$ preserves $h$. Taking the real
@@ -124,9 +122,9 @@ V^{1,0}\longrightarrow V^{1,0} \mathbb{R}\text{-linear}\}$ and $\{\tilde\phi:\ V
    $\omega$.
 3. Every $\mathbb{C}$ -linear $\tilde \phi$ preserves orientation of $V^{1,0}$ as $\mathbb{R}^{2n}$
    (note that the fact that $\tilde\phi$ preserves orientation or not is independent of how one
-   identifies $V^{1,0}$ and $\mathbb{R}^{2n}$ 
-Hence for every $J$, $\phi\mapsto\tilde\phi$ gives a embedding of $U(V^{1,0})$ to $SO(V)$. By each
-a orthonormal base of $V^{1,0}$ and that of $V$ give a embedding $U(n)\subset SO(2n)$.
+   identifies $V^{1,0}$ and $\mathbb{R}^{2n}$).
+Hence for every $J$, $\phi\mapsto\tilde\phi$ gives a embedding of $U(V^{1,0})$ to $SO(V)$. An
+orthonormal base of $V^{1,0}$ and that of $V$ give a embedding $U(n)\subset SO(2n)$.
 
 #+BEGIN_remark
 The image of $U(n)$ in $SO(2n)$ may depends on $J$ and the orthonormal base of $V$, but its
@@ -149,8 +147,8 @@ We state first some linear algebra facts, whose proofs are tedious and can be co
 #+BEGIN_lemma
 #+LATEX: \label{lem:alg-exterior}
 <<lem:alg-exterior>>
-1. Let $V = W_1 \oplus W_2$ be $R$ -module then the exterior algebra of $V$ splits into \[\wedge^nV
-   = \bigoplus_{p+q = n}\wedge^p W_1 \otimes \wedge^q W_2 \] We remark that the tensor product here
+1. Let $V = W_1 \oplus W_2$ be $R$ -module then the exterior algebra of $V$ splits into \[\bigwedge^nV
+   = \bigoplus_{p+q = n}\bigwedge^p W_1 \otimes \bigwedge^q W_2 \] Note that the tensor product here
    is formal, and not related to the tensor product defining the exterior algebra.
 2. If $V$ has a complex structure $J$ then $J$ gives a complex structure on $V^* =
    Hom_{\mathbb{R}}(V, \mathbb{R})$, naturally by $\phi\mapsto \phi\circ J$.
@@ -174,9 +172,9 @@ Hom_{\mathbb{R}}(V,\mathbb{C}) = Hom_{\mathbb{C}}((V,J),\mathbb{C}) \oplus Hom_{
 \]
 Using the first point of Lemma [[lem:alg-exterior]], one has
 \[
-\wedge^n (V^*)_{\mathbb{C}} = \oplus_{p+q=n}\wedge^{p,q}(V^*)_{\mathbb{C}}
+\bigwedge^n (V^*)_{\mathbb{C}} = \bigoplus_{p+q=n}\bigwedge^{p,q}(V^*)_{\mathbb{C}}
 \]
-where $\wedge^{p,q}T^*_{\mathbb{C}}M$ denotes the $\mathbb{C}$ -vector space of forms that are $p$ times $
+where $big\wedge^{p,q}T^*_{\mathbb{C}}M$ denotes the $\mathbb{C}$ -vector space of forms that are $p$ times $
 \mathbb{C}$ -linear and $q$ times $ \mathbb{C}$ -antilinear.
 
 
@@ -184,23 +182,38 @@ Note one can easily find in $V$ an orthonormal basis $\partial_{x_i},\partial_{y
 $J(\partial_{x_i}) = \partial_{y_i}$. We clarify here the definition and implicit identifications of
 basic objects such as $dz_i$ and $d\bar{z_i}$.
 
-| *Object*                                                                                         | *Where it belongs/ properties*                                   | *$\mathbb{C}$ -linear extension/ properties*                                      |
-|--------------------------------------------------------------------------------------------------+------------------------------------------------------------------+-----------------------------------------------------------------------------------|
-| $\partial_{z_i} = \iota_J(\partial_{x_i}) = \frac{1}{2}(\partial_{x_i}-i\partial_{y_i})$         | $V^{1,0}$                                                        | $dz_i(\partial_{z_j}) = \delta_{i,j}, dz_i(\partial_{\bar{z_j}}) = 0$             |
-| $\partial_{\bar z_i} = \iota_{-J}(\partial_{x_i}) = \frac{1}{2}(\partial_{x_i}+i\partial_{y_i})$ | $V^{0,1}$                                                        | $d\bar{z_i}(\partial_{z_j}) = 0, d\bar{z_i}(\partial_{\bar{z_j}}) = \delta_{i,j}$ |
-| $dz_i = dx_i +idy_i$                                                                             | $Hom_{\mathbb{C}}((V,J),\mathbb{C})$, $\mathbb{C}$ -linear       | $Hom_{\mathbb{C}}(V_{\mathbb{C}}, \mathbb{C})$, null on $V^{0,1}$,                |
-| $d\bar{z_i} = dx_i -idy_i$                                                                       | $Hom_{\mathbb{C}}((V,-J), \mathbb{C})$, $\mathbb{C}$ -antilinear | $Hom_{\mathbb{C}}(V_{\mathbb{C}}, \mathbb{C})$, null on $V^{1,0}$                 |
-|--------------------------------------------------------------------------------------------------+------------------------------------------------------------------+-----------------------------------------------------------------------------------|
+| *Object*                                              | *Where it belongs/ properties*                                                       | *Extension/ properties*                           |
+|-------------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------|
+|                                                       |                                                                                      |                                                   |
+| $\partial_{z_i} = \iota_J(\partial_{x_i})$            | $V^{1,0}$,                                                                           | $dz_i(\partial_{z_j}) = \delta_{i,j}$,            |
+| $\quad = \frac{1}{2}(\partial_{x_i}-i\partial_{y_i})$ | form a $ \mathbb{C}$ -base                                                           | $dz_i(\partial_{\bar{z_j}}) = 0$                  |
+|                                                       |                                                                                      |                                                   |
+|-------------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------|
+|                                                       |                                                                                      |                                                   |
+| $\partial_{\bar z_i} = \iota_{-J}(\partial_{x_i})$    | $V^{0,1}$,                                                                           | $d\bar{z_i}(\partial_{z_j}) = 0$,                 |
+| $\quad = \frac{1}{2}(\partial_{x_i}+i\partial_{y_i})$ | form a $ \mathbb{C}$ -base                                                           | $d\bar{z_i}(\partial_{\bar{z_j}}) = \delta_{i,j}$ |
+|                                                       |                                                                                      |                                                   |
+|-------------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------|
+|                                                       |                                                                                      |                                                   |
+| $dz_i = dx_i +idy_i$                                  | $Hom_{\mathbb{C}}((V,J),\mathbb{C}) \equiv Hom_{\mathbb{C}}(V^{1,0}, \mathbb{C})$,   | $Hom_{\mathbb{C}}(V_{\mathbb{C}}, \mathbb{C})$,   |
+|                                                       | $\mathbb{C}$ -linear                                                                 | null on $V^{0,1}$                                 |
+|                                                       |                                                                                      |                                                   |
+|-------------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------|
+|                                                       |                                                                                      |                                                   |
+| $d\bar{z_i} = dx_i -idy_i$                            | $Hom_{\mathbb{C}}((V,-J), \mathbb{C}) \equiv Hom_{\mathbb{C}}(V^{0,1}, \mathbb{C})$, | $Hom_{\mathbb{C}}(V_{\mathbb{C}}, \mathbb{C})$,   |
+|                                                       | $\mathbb{C}$ -antilinear                                                             | null on $V^{1,0}$                                 |
+|                                                       |                                                                                      |                                                   |
+|-------------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------|
 
 
 
 #+BEGIN_remark
-One can note a subtlety here: there are two natural ways to extend $dz_i$ to $V^{1,0}$
+One can note that there are two natural ways to extend $dz_i$ to $V^{1,0}$
 1. by first make a $ \mathbb{C}$ -linear extension on $V_{\mathbb{C}}$, then make a restriction on $V^{1,0}$
 2. using the identification $(V,J)\equiv (V^{1,0},i)$
-but these two coincide, as they are all $ \mathbb{C}$ -linear and satisfy $dz_i(\partial_{z_j}) =
-\delta_{i,j}, dz_i(\partial_{\bar{z_j}}) = 0$. Same story with $d\bar{z_i}$. See Figure \ref{fig:dz}
-and Figure \ref{fig:dzbar}
+but these two coincide, as there exists a unique form $ \mathbb{C}$ -linear $dz_i$ that satisfies
+$dz_i(\partial_{z_j}) = \delta_{i,j}, dz_i(\partial_{\bar{z_j}}) = 0$. Same story with
+$d\bar{z_i}$. See Figure \ref{fig:dz} and Figure \ref{fig:dzbar}
 #+END_remark
 
 \begin{figure}
@@ -210,7 +223,7 @@ and Figure \ref{fig:dzbar}
   (V,J) \ar["\iota_J", d, swap] \ar["dz_i", r] & \mathbb{C} & V \ar["dz_i", r] \ar["\mathbb{C} \text{-lin}", d, swap] & \mathbb{C} \\
   (V^{1,0},i) \ar["dz_i", ur, swap] &  & V_\mathbb{C} \ar["dz_i", ur, swap] &  
 \end{tikzcd}
-\caption{Two natural ways to define $dz_i$ on $V^{1,0}$}
+\caption{Two natural ways to define $dz_i$ on $V^{1,0}$. They gives the same form.}
 \end{figure}
 
 \begin{figure}
@@ -220,23 +233,38 @@ and Figure \ref{fig:dzbar}
   (V,-J) \ar["\iota_J", d, swap] \ar["d\bar{z_i}", r] & \mathbb{C} & V \ar["d\bar{z_i}", r] \ar["\mathbb{C} \text{-lin}", d, swap] & \mathbb{C} \\
   (V^{0,1},i) \ar["d\bar{z_i}", ur, swap] &  & V_\mathbb{C} \ar["d\bar{z_i}", ur, swap] &  
 \end{tikzcd}
-\caption{Two natural ways to define $d\bar{z_i}$ on $V^{0,1}$}
+\caption{Two natural ways to define $d\bar{z_i}$ on $V^{0,1}$. They gives the same form.}
 \end{figure}
 
 #+ATTR_LATEX: :options [Theorem]
 #+BEGIN_definition
 The following properties are equivalent and $X$ is called a _Kähler manifold_ if one of them is satisfied.
 1. $X$ is a complex manifold, equipped with a Hermitian structure $h(.,.)$ compatible with the complex
-   structure $J$, and a fundamental form $\omega$, and $d\omega=0$.
-2. $X$ is a Riemannian manifold equipped with a parallel complex structure.
+   structure $J$, and a fundamental form $\omega$  with $d\omega=0$.
+2. $X$ is a Riemannian manifold with a parallel complex structure.
 3. $X$ is a complex manifold, equipped with a Hermitian structure such that the Chern connection on
-   $T^{1,0}X$ is, up to an identification by $\iota_J$, the Levi-Civita connection
-4. $X$ is a complex manifold, equipped with a Hermitian structure such that the Chern connection on
-   $T^{1,0}X$ is torsionless
+   $T^{1,0}X$ is, up to an identification by $\iota_J$, the Levi-Civita connection.
+4. $X$ is a complex manifold, equipped with an Hermitian structure such that the Chern connection on
+   $T^{1,0}X$ is torsionless.
 We call a complex manifold $X$ _of Kähler type_ if there exists a Hermitian structure under which
 $X$ is Kähler.
 #+END_definition
-The proof is straightforward, see Manuscript for details.
+The proof is straightforward. The only part that is not trivial is that a parallel almost complex structure
+has to come from a complex atlas, i.e. atlas of $X$ such that each transition map preserves the
+complex structure. Such almost complex structures are called /integrable/.
+
+To prove this one uses the following (1,2)-tensor called /Nijenhuis tensor/ of a (1,1)-tensor $A$, defined by:
+\[
+N_A(X,Y) = -A^2[X,Y] +A[AX, Y] + A[X, AY] - [AX, AY]
+\]
+and the following theorem
+#+ATTR_LATEX: :options [Newlander–Nirenberg]
+#+BEGIN_theorem
+An almost complex structure on $M$ with vanishing $N_J$ is integrable.
+#+END_theorem
+
+The proof that a parallel almost complex structure $J$ has $N_J = 0$ is computational in
+nature and can be found in the Manuscript.
 
 
 #+BEGIN_COMMENT
@@ -252,3 +280,36 @@ The proof is straightforward, see Manuscript for details.
 #+RESULTS:
 #+END_COMMENT
 
+* Symplectic holonomy
+One can look at symplectic group $Sp(r)$ from the following two points of view:
+1. $Sp(r)$ is subgroup of $Aut_{\mathbb{H}}(\mathbb{H}^r)$ of elements preserving a quaternion
+   Hermitian form $q$, where $ \mathbb{H}$ is the algebra of quaternions.
+2. $Sp(r) = SU(2r)\cap Sp(2r, \mathbb{C})$.
+
+The second point of view explains how $Sp(r)$ is embedded in $SO(4r)$. Let us consider $Sp(r)$ from
+the first point. In our context, let $V$ be a tangent space at one point of the manifold $M$, that
+is a $4r$ real dimensional vector space, one can regard $Sp(r)$ as the group of automorphisms of $V$
+preserving the Riemannian metric $g|_V$ and the complex structures $I,J$ (hence $K=IJ$) satisfying
+$IJ = -IJ$. Hence we have the following remark:
+
+#+BEGIN_remark
+The following properties are equivalent for a Riemannian manifold $M$:
+1. $Hol(M) \subset Sp(r)\subset SO(2r)$.
+2. There exists on $M$ three parallel complex structures $I,J,K$ that satisfy $K = IJ = -JI$.
+3. There exists on $M$ a parallel complex structure $I$ and a holomorphic (w.r.t $I$), parallel,
+   2-form $\varphi$ that is non-degenerate at a point (hence every point).
+#+END_remark
+We note that the holomorphic 2-form in the third point is given by
+\[
+\varphi = \omega_J + \sqrt{-1}\omega_K
+\]
+where $\omega_I$ and $\omega_K$ are fundamental forms with respect to complex structures $I$ and
+$K$, and $M$ is regarded under the complex structure $I$.
+
+The implication (2) $\implies$ (3) is actually exercise 1.2.5 (page 40) of Daniel Huybrechts,
+/Complex geometry: an introduction/ (see Manuscript).
+
+For the implication (3) $\implies$ (2), note that the real and imaginary part of $\varphi$ are parallel,
+they correspond to complex structures $J$ and $K$ on $M$. Since $\varphi$ is a (2,0)-form w.r.t
+$I$, one has $\varphi(Iu, v) = i\varphi(u,v)$, taking the real part and using the fact that $g$ is
+non-degenerate, one has $K = IJ = -JI$.

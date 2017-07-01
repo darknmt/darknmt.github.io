@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-06-14 Wed 11:24 -->
+<!-- 2017-06-14 Wed 19:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>De Rham decomposition</title>
@@ -269,7 +269,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#org2d58b77">1. Decomposition theorem of de Rham</a></li>
 <li><a href="#org0081cce">2. Uniqueness</a></li>
-<li><a href="#orgaf53533">3. Application of uniqueness lemma: decomposition for K\"ahler manifold</a></li>
+<li><a href="#org2b8ccdf">3. Application of uniqueness lemma: decomposition for Kähler manifold</a></li>
 </ul>
 </div>
 </div>
@@ -390,7 +390,7 @@ following lemma.
 <a id="org299f821"></a>
 Let \(f: M\longrightarrow M'\) be an isometry that send \(x\in M\) to \(y\in M'\). Let 
 \[
-T_x M = E \oplus^\perp \oplus_i V_i,\quad T_yM' = E' \oplus^\perp \oplus_j V'_j
+T_x M = E \oplus^\perp \bigoplus_i V_i,\quad T_yM' = E' \oplus^\perp \bigoplus_j V'_j
 \]
 be a decomposition of \(T_xM\) and \(T_yM'\) as direct sum of trivial subspaces \(E,E'\) and irreducible
 subspaces \(V_i, V_j'\) under holonomy action. Then up to a rearrangement of \(j\), \(f_*\) send \(E\) to
@@ -490,12 +490,12 @@ V_i\longrightarrow E\oplus V_i\), hence by orthogonality \(J\) sends \(E\) and \
 </div>
 
 
-<div id="outline-container-orgaf53533" class="outline-2">
-<h2 id="orgaf53533"><span class="section-number-2">3</span> Application of uniqueness lemma: decomposition for K\"ahler manifold</h2>
+<div id="outline-container-org2b8ccdf" class="outline-2">
+<h2 id="org2b8ccdf"><span class="section-number-2">3</span> Application of uniqueness lemma: decomposition for Kähler manifold</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Now let apply the de Rham decomposition to a complete Riemannian manifold \(M\) with holonomy \(SU(n)
-\subset SO(2n)\) (called a <i>Kahler manifold</i>). There exists on a fixed fiber \(T_xM\) an automorphism
+\subset SO(2n)\) (called a <i>Kähler manifold</i>). There exists on a fixed fiber \(T_xM\) an automorphism
 \(J\) that preserve the riemannian metric and satisfies \(J^2 = -1\). By transporting \(J\) to every other
 fibers of \(TM\) one obtains a <i>almost complex structure</i> on \(M\).
 </p>
@@ -504,7 +504,7 @@ fibers of \(TM\) one obtains a <i>almost complex structure</i> on \(M\).
 Apply Lemma <a href="#orgc61316b">2</a> to \(J\) which is obviously \(G\) -invariant and orthonormal, one
 see that such structure \(J\) passes to every manifold \(M_i\) and the Euclidean component \( \mathbb{R}^n\) and
 remains parallel on these manifolds. We proved that \(M\) is decomposed to \( \mathbb{C}^{n/2}\times
-\prod M_i\) where \(M_i\) are Kahler manifold. The decomposition map is both a Riemannian isometry and
+\prod M_i\) where \(M_i\) are Kähler manifold. The decomposition map is both a Riemannian isometry and
 a isomorphism between complex manifold (morphism that preserves complex structure). 
 </p>
 </div>
@@ -513,7 +513,7 @@ a isomorphism between complex manifold (morphism that preserves complex structur
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-06-14 Wed 11:24. <br>
+Last updated 2017-06-14 Wed 11:32. <br>
 </div>
 </div>
 </body>
