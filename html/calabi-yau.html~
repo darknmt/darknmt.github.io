@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-06-24 Sat 02:08 -->
+<!-- 2017-06-24 Sat 22:53 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Calabi-Yau theorem</title>
@@ -294,13 +294,36 @@ for the JavaScript code in this tag.
 <h2 id="org41a1828"><span class="section-number-2">1</span> Calabi conjecture</h2>
 <div class="outline-text-2" id="text-1">
 <p>
+In complex geometry, one usually defines the <i>Ricci curvature</i> to be the real (1,1)-form \(\rho\)
+with \(\rho(u,v) = Ric(Ju, v) = \text{tr}(w \mapsto R(w,v).Ju)\), as it has the advantage of being an
+antisymmetric form.
+</p>
+
+<p>
+We will call \(\rho\) the <span class="underline">Ricci form</span> when it is easy to confuse with the Ricci
+curvature tensor in Riemannian geometry. We start with the following fact (which is exercise 4.A.3
+in Huybrechts, <i>Complex geometry: an introduction</i>).
+</p>
+
+<div class="remark">
+<p>
+For our convenience when talking about positivity, we would rather use the anticanonical
+bundle. Then \(K_{X}^{-1}\) is positive (resp. semi-positive) if and only if \(Ric\) is positive
+definite (resp. positive semi-definite) as a symmetric form.
+</p>
+
+</div>
+
+
+
+<p>
 We start with the following fact (which is exercise 4.A.3 in Daniel Huybrechts, <i>Complex geometry: an introduction</i>)
 </p>
 
 <div class="proposition">
 <p>
-Let \((X,g)\) be a compact Kähler manifold, then \(iRic(X,g)\) is the curvature of the Chern connection
-on the canonical bundle \(K_X\). In other words, \(Ric(X,g)\in -2\pi c_1(K_X)\) where
+Let \((X,g)\) be a compact Kähler manifold. Then \(i\rho(X,g)\) is the curvature of the Chern connection
+on the canonical bundle \(K_X\). In other words, \(\rho(X,g)\in -2\pi c_1(K_X)\) where
 \(c_1(K_X)\) is the first Chern class of \(K_X\).
 </p>
 
@@ -377,7 +400,7 @@ It would be convenient to define \(d^c =i(\bar\partial - \partial)\) then obviou
 <h5 id="org2c520c5"><span class="section-number-5">2.0.0.2</span> The Ricci curvature.</h5>
 <div class="outline-text-5" id="text-2-0-0-2">
 <p>
-The Ricci curvature is given in local coordinates by
+The Ricci curvature form is given in local coordinates by
 \[
 Ric_{\omega} = -\frac{1}{2}dd^c\log\det(h_{i\bar j})
 \]
@@ -723,7 +746,7 @@ construct Ricci-flat metric.
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-06-24 Sat 01:44. <br>
+Last updated 2017-06-24 Sat 11:56. <br>
 </div>
 </div>
 </body>

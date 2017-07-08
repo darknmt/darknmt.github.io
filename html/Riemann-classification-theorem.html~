@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-06-05 Mon 23:31 -->
+<!-- 2017-06-08 Thu 09:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Classification theorem in Riemannian geometry</title>
@@ -267,11 +267,11 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org80e87e6">1. What is holonomy and why it is important</a></li>
-<li><a href="#org612e05e">2. De Rham decomposition</a></li>
-<li><a href="#orgde4981b">3. Berger classification for non-symmetric manifolds</a></li>
-<li><a href="#orgf875fa5">4. Chern class and Calabi conjecture (Yau theorem)</a></li>
-<li><a href="#org5e40148">5. Bogomolov-Beauville classification</a></li>
+<li><a href="#org1d9e8a2">1. What is holonomy and why it is important</a></li>
+<li><a href="#org0596cd2">2. De Rham decomposition</a></li>
+<li><a href="#orgc261cac">3. Berger classification for non-symmetric manifolds</a></li>
+<li><a href="#orgb54fed8">4. Chern class and Calabi conjecture (Yau theorem)</a></li>
+<li><a href="#org2814543">5. Bogomolov-Beauville classification</a></li>
 </ul>
 </div>
 </div>
@@ -285,8 +285,8 @@ will be covered in future posts. The big question is to
 building blocks of Kahler manifold with vanishing Chern class.</li>
 </ol>
 
-<div id="outline-container-org80e87e6" class="outline-2">
-<h2 id="org80e87e6"><span class="section-number-2">1</span> What is holonomy and why it is important</h2>
+<div id="outline-container-org1d9e8a2" class="outline-2">
+<h2 id="org1d9e8a2"><span class="section-number-2">1</span> What is holonomy and why it is important</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <i>Holonomy</i> is the action of closed curves starting from a point \(x\) in a Riemannian manifold \(M\) to
@@ -311,8 +311,8 @@ Levi-Civita connection and the holonomy representation is then orthogonal.
 </p>
 </div>
 </div>
-<div id="outline-container-org612e05e" class="outline-2">
-<h2 id="org612e05e"><span class="section-number-2">2</span> De Rham decomposition</h2>
+<div id="outline-container-org0596cd2" class="outline-2">
+<h2 id="org0596cd2"><span class="section-number-2">2</span> De Rham decomposition</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 De Rham theorem allows us to decompose a Riemannian manifold under certain conditions (complete and
@@ -335,8 +335,8 @@ subgroup of \(G\). The theory of Lie groups developed by E. Cartan gave a comple
 </div>
 
 
-<div id="outline-container-orgde4981b" class="outline-2">
-<h2 id="orgde4981b"><span class="section-number-2">3</span> Berger classification for non-symmetric manifolds</h2>
+<div id="outline-container-orgc261cac" class="outline-2">
+<h2 id="orgc261cac"><span class="section-number-2">3</span> Berger classification for non-symmetric manifolds</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 For the non-symmetric manifold, Berger proved that a irreducible holonomy has to be one of the
@@ -372,8 +372,8 @@ Therefore hyperkahler \(\longrightarrow\) Calabi-Yau \(\longrightarrow\) Kahler
 </div>
 </div>
 
-<div id="outline-container-orgf875fa5" class="outline-2">
-<h2 id="orgf875fa5"><span class="section-number-2">4</span> Chern class and Calabi conjecture (Yau theorem)</h2>
+<div id="outline-container-orgb54fed8" class="outline-2">
+<h2 id="orgb54fed8"><span class="section-number-2">4</span> Chern class and Calabi conjecture (Yau theorem)</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 The Chern class \(c_1(M)\) of a Riemannian manifold is the class in \(H^{1,1}(M)\) of the Ricci
@@ -385,7 +385,7 @@ given by S.T. Yau.
 
 <div class="theorem">
 <p>
-<a id="orgcf4f5fc"></a>
+<a id="org114a7cf"></a>
 Let \(M\) be a compact manifold with a Kahler form \(\omega\) and the corresponding Ricci curvature
 \(R_\omega\). Let \(R\) be a \((1,1)\) form cohomologous to \(R_\omega\), then there exists a Kahler form
 \(\omega'\) cohomologous to \(\omega\) such that \(R'\) is the Ricci curvature of \(\omega'\).
@@ -397,8 +397,8 @@ Let \(M\) be a compact manifold with a Kahler form \(\omega\) and the correspond
 
 
 
-<div id="outline-container-org5e40148" class="outline-2">
-<h2 id="org5e40148"><span class="section-number-2">5</span> Bogomolov-Beauville classification</h2>
+<div id="outline-container-org2814543" class="outline-2">
+<h2 id="org2814543"><span class="section-number-2">5</span> Bogomolov-Beauville classification</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Bogomolov result, later refined by Beauville showed that the building blocks of Kahler manifolds
@@ -408,7 +408,7 @@ simply-connected Calabi-Yau manifolds.
 
 <div class="theorem">
 <p>
-<a id="orgba25bf7"></a>
+<a id="org1f1ca05"></a>
 Let \(M\) be a compact manifold of Kahler type with \(c_1(M)=0\) then there exists a finite etale
 covering space \(\tilde M\) of \(M\) of form
 \[

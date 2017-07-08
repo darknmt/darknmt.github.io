@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-06-24 Sat 22:53 -->
+<!-- 2017-06-24 Sat 22:58 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>From Busemann function to Cheeger-Gromoll splitting</title>
@@ -551,7 +551,7 @@ separately on \( \mathcal{M}\), i.e. of form \(\sigma(u) = (\sigma_1(x), \sigma_
 uniqueness part of <a href="de-rham-decomposition.html">de Rham decomposition</a> or simply by noticing that a tangent vector in the
 \(T_x\mathbb{R}^n\) component is characterized by the fact that its geodesics is a line. As the action
 of \(\pi_1(M)\) on \(\tilde M\) is free and proper, it has a fundamental domain \(H\). We then can choose
-\(K\) to be the projection of \(H\) on \(\bar M\) and \(\sigma_i\) to be the projection of \(\pi_1(M)\) on
+\(K\) to be the projection of \(H\) on \(\bar M\) and \(\{\sigma_i\}\) to be the projection of \(\pi_1(M)\) on
 \(Isom(\bar M)\). 
 </p>
 
@@ -576,7 +576,7 @@ then let \(n\to +\infty\), one sees that \(\bar M\) contains a geodesic line, wh
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-06-24 Sat 22:53. <br>
+Last updated 2017-06-24 Sat 22:57. <br>
 </div>
 </div>
 </body>

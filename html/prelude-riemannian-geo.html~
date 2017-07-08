@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-06-08 Thu 09:35 -->
+<!-- 2017-06-08 Thu 16:05 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Prelude to Riemannian geomeotry</title>
@@ -227,6 +227,28 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -241,11 +263,47 @@ for the JavaScript code in this tag.
 </div>
 <div id="content">
 <h1 class="title">Prelude to Riemannian geomeotry</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org6b9cb8a">1. Riemannian manifold</a></li>
+<li><a href="#org3ab0bb5">2. Exponential function</a></li>
+<li><a href="#org743d436">3. Jacobi fields</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6b9cb8a" class="outline-2">
+<h2 id="org6b9cb8a"><span class="section-number-2">1</span> Riemannian manifold</h2>
+<div class="outline-text-2" id="text-1">
+<div class="theorem">
+<p>
+<a id="org9d3c299"></a>
+Given a Riemannian manifold \(M\), the followings are equivalent
+</p>
+<ol class="org-ol">
+<li>Every geodesic is well-defined at all time</li>
+<li>Closed and bounded sets are compact.</li>
+</ol>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3ab0bb5" class="outline-2">
+<h2 id="org3ab0bb5"><span class="section-number-2">2</span> Exponential function</h2>
+</div>
+
+
+<div id="outline-container-org743d436" class="outline-2">
+<h2 id="org743d436"><span class="section-number-2">3</span> Jacobi fields</h2>
+</div>
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-06-07 Wed 10:59. <br>
+Last updated 2017-06-08 Thu 15:59. <br>
 </div>
 </div>
 </body>

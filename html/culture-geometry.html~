@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-06-08 Thu 09:35 -->
+<!-- 2017-06-12 Mon 12:36 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Well-known results in Geometry</title>
@@ -281,7 +281,9 @@ for the JavaScript code in this tag.
 <li>Classification of surfaces: Topological equivalence implies differential equivalence.</li>
 </ol>
 
-
+<p>
+haha
+</p>
 <div id="outline-container-org1e9d2cb" class="outline-2">
 <h2 id="org1e9d2cb"><span class="section-number-2">1</span> <span class="todo TODO">TODO</span> Levels of classification:</h2>
 <div class="outline-text-2" id="text-1">
@@ -310,7 +312,7 @@ for the JavaScript code in this tag.
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-05-22 Mon 23:33. <br>
+Last updated 2017-06-12 Mon 12:35. <br>
 </div>
 </div>
 </body>

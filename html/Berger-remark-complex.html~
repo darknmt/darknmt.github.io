@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-06-24 Sat 02:11 -->
+<!-- 2017-06-24 Sat 22:53 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Berger classification and remarks on parallel structures</title>
@@ -733,13 +733,13 @@ We call a complex manifold \(X\) <span class="underline">of Kähler type</span> 
 
 </div>
 <p>
-The proof is straightforward. The only part that is not trivial is that parallel almost complex structures
-have to come from a complex atlas, i.e. atlas of \(X\) such that each transition map preserves the
-complex structure. Such globally defined almost complex structure are called <i>integrable</i>.
+The proof is straightforward. The only part that is not trivial is that a parallel almost complex structure
+has to come from a complex atlas, i.e. atlas of \(X\) such that each transition map preserves the
+complex structure. Such almost complex structures are called <i>integrable</i>.
 </p>
 
 <p>
-To prove this one uses the following <i>Nijenhuis tensor</i> of a (1,1) tensor \(A\) defined by:
+To prove this one uses the following (1,2)-tensor called <i>Nijenhuis tensor</i> of a (1,1)-tensor \(A\), defined by:
 \[
 N_A(X,Y) = -A^2[X,Y] +A[AX, Y] + A[X, AY] - [AX, AY]
 \]
@@ -753,7 +753,7 @@ An almost complex structure on \(M\) with vanishing \(N_J\) is integrable.
 </div>
 
 <p>
-The proof that a parallel almost complex structure \(J\) satisfies \(N_J = 0\) is computational in
+The proof that a parallel almost complex structure \(J\) has \(N_J = 0\) is computational in
 nature and can be found in the Manuscript.
 </p>
 </div>
@@ -817,7 +817,7 @@ non-degenerate, one has \(K = IJ = -JI\).
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-06-24 Sat 02:11. <br>
+Last updated 2017-06-24 Sat 02:29. <br>
 </div>
 </div>
 </body>

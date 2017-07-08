@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-07-02 Sun 21:24 -->
+<!-- 2017-07-02 Sun 21:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -255,11 +255,7 @@ for the JavaScript code in this tag.
 I learn during this intership <a href="../blog/de-rham-decomposition.html">de Rham decomposition</a>, some properties of <a href="../blog/symmetric-space.html">symmetric spaces</a>, <a href="../blog/Berger-remark-complex.html">Berger
 classification of holonomy group</a>, <a href="../blog/calabi-yau.html">Calabi-Yau theorem</a>, <a href="../blog/Cheeger-Gromoll-splitting.html">Cheeger-Gromoll works on manifold with
 non-negative Ricci curvature</a> and <a href="../blog/bogomolov-beauville.html">Bogomolov-Beauville classification</a>. I also gave a modified
-statement of a recent result of Campana-Demailly-Peternell.
-</p>
-
-<p>
-<a href="../res/Stage2017.pdf">PDF</a> 
+statement of a recent result of Campana-Demailly-Peternell. [<a href="../res/Stage2017.pdf">PDF</a>]
 </p>
 </div>
 </div>
@@ -268,7 +264,7 @@ statement of a recent result of Campana-Demailly-Peternell.
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-07-02 Sun 21:24. <br>
+Last updated 2017-07-02 Sun 21:25. <br>
 </div>
 </div>
 </body>

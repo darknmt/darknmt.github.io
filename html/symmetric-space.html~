@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-06-20 Tue 17:48 -->
+<!-- 2017-06-20 Tue 18:10 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Symmetric spaces and Lie groups</title>
@@ -357,7 +357,7 @@ classify all such pairs \((\frak{g},\frak{h})\).
 The previous results can be extended to locally symmetric spaces.
 </p>
 
-<div class="definition">
+<div class="propdef">
 <p>
 Let \(M\) is a Riemannian manifold, the followings are equivalent
 </p>
@@ -435,7 +435,7 @@ Let \(M\) be a connected, locally-compact metric space and \(G\) be the group of
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-06-19 Mon 21:01. <br>
+Last updated 2017-06-20 Tue 18:09. <br>
 </div>
 </div>
 </body>
