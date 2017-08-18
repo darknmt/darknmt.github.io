@@ -1,7 +1,7 @@
 #+TITLE: Welcome to my homepage
 
 * About this site
-This website is written using [[https://en.wikipedia.org/wiki/Emacs][emacs]] [[http://orgmode.org/][org-mode]] with [[https://github.com/SteveLane/org-css][this CSS]] and a small [[https://github.com/darknmt/darknmt.github.io/blob/master/res/theorems.css][modification]] to display LaTeX
+This website is written using [[https://en.wikipedia.org/wiki/Emacs][emacs]] [[http://orgmode.org/][org-mode]] with [[https://github.com/SteveLane/org-css][this CSS]] and a small [[https://github.com/darknmt/theorems-css][modification]] to display LaTeX
 structure. The blog is inspired from [[https://ogbe.net/blog/blogging_with_org.html][here]] and [[https://nicolas.petton.fr/blog/blogging-with-org-mode.html][here]].
 #+BEGIN_COMMENT
 The reasons that I write this blog instead of using Wordpress are 

@@ -216,25 +216,61 @@ $dz_i(\partial_{z_j}) = \delta_{i,j}, dz_i(\partial_{\bar{z_j}}) = 0$. Same stor
 $d\bar{z_i}$. See Figure \ref{fig:dz} and Figure \ref{fig:dzbar}
 #+END_remark
 
-\begin{figure}
-\centering
-\label{fig:dz}
+# \begin{figure}
+# \centering
+# \label{fig:dz}
+# \begin{tikzcd}
+# \end{tikzcd}
+# \caption{Two natural ways to define $dz_i$ on $V^{1,0}$. They gives the same form.}
+# \end{figure}
+
+#+HEADER: :imagemagick yes :iminoptions -density 300 -resize 400 :buffer no :fit yes
+#+HEADER: :results raw  :file ../img/dz.png
+#+HEADER: :packages '(("" "tikz-cd"))
+#+HEADER: :exports none
+#+BEGIN_SRC latex 
 \begin{tikzcd}
   (V,J) \ar["\iota_J", d, swap] \ar["dz_i", r] & \mathbb{C} & V \ar["dz_i", r] \ar["\mathbb{C} \text{-lin}", d, swap] & \mathbb{C} \\
   (V^{1,0},i) \ar["dz_i", ur, swap] &  & V_\mathbb{C} \ar["dz_i", ur, swap] &  
 \end{tikzcd}
-\caption{Two natural ways to define $dz_i$ on $V^{1,0}$. They gives the same form.}
-\end{figure}
+#+END_SRC
 
-\begin{figure}
-\centering
-\label{fig:dzbar}
+#+RESULTS:
+[[file:../img/dz.png]]
+
+#+CAPTION: Two natural ways to define $dz_i$ on $V^{1,0}$. They give the same form. label:fig:dz
+#+ATTR_HTML: :alt "Two natural ways to define $dz_i$ on $V^{1,0}$. They give the same form." :width "50%"
+#+ATTR_LATEX: :width 0.50\textwidth
+file:../img/dz.png
+
+# \begin{figure}
+# \centering
+# \label{fig:dzbar}
+# \begin{tikzcd}
+# \end{tikzcd}
+# \caption{Two natural ways to define $d\bar{z_i}$ on $V^{0,1}$. They give the same form.}
+# \end{figure}
+
+
+#+HEADER: :imagemagick yes :iminoptions -density 300 -resize 400 :buffer no :fit yes
+#+HEADER: :results raw  :file ../img/dzbar.png
+#+HEADER: :packages '(("" "tikz-cd"))
+#+HEADER: :exports none
+#+BEGIN_SRC latex 
 \begin{tikzcd}
   (V,-J) \ar["\iota_J", d, swap] \ar["d\bar{z_i}", r] & \mathbb{C} & V \ar["d\bar{z_i}", r] \ar["\mathbb{C} \text{-lin}", d, swap] & \mathbb{C} \\
   (V^{0,1},i) \ar["d\bar{z_i}", ur, swap] &  & V_\mathbb{C} \ar["d\bar{z_i}", ur, swap] &  
 \end{tikzcd}
-\caption{Two natural ways to define $d\bar{z_i}$ on $V^{0,1}$. They gives the same form.}
-\end{figure}
+#+END_SRC
+
+#+RESULTS:
+[[file:../img/dzbar.png]]
+
+#+CAPTION: Two natural ways to define $d\bar{z_i}$ on $V^{0,1}$. They gives the same form. label:fig:dzbar
+#+ATTR_HTML: :alt "" :width "50%"
+#+ATTR_LATEX: :width 0.50\textwidth
+file:../img/dzbar.png
+
 
 #+ATTR_LATEX: :options [Theorem]
 #+BEGIN_definition
@@ -266,19 +302,6 @@ An almost complex structure on $M$ with vanishing $N_J$ is integrable.
 The proof that a parallel almost complex structure $J$ has $N_J = 0$ is computational in
 nature and can be found in the Manuscript.
 
-
-#+BEGIN_COMMENT
-#+begin_src latex :file ../img/fsa.pdf :packages '(("" "tikz-cd")) :results raw
-  % Define block styles
-\begin{tikzcd}
-  (V,-J) \ar["\iota_J", d, swap] \ar["d\bar{z_i}", r] & \mathbb{C} & V \ar["d\bar{z_i}", r] \ar["\mathbb{C} \text{-lin}", d, swap] & \mathbb{C} \\
-  (V^{0,1},i) \ar["d\bar{z_i}", ur, swap] &  & V_\mathbb{C} \ar["d\bar{z_i}", ur, swap] &  
-\end{tikzcd}
-#+end_src
-#+CAPTION: tikz caption
-#+LABEL: fig:tikz
-#+RESULTS:
-#+END_COMMENT
 
 * Symplectic holonomy
 One can look at symplectic group $Sp(r)$ from the following two points of view:

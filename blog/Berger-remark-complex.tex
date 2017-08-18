@@ -1,4 +1,4 @@
-% Created 2017-06-24 Sat 02:29
+% Created 2017-08-13 Sun 16:24
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -26,6 +26,7 @@
 \newtheorem{exampl}{Example}
 \newtheorem{definition}{Definition}
 \newtheorem{propdef}[definition]{Proposition-Definition}
+\DeclareMathOperator{\im}{Im}
 \author{darknmt}
 \date{\today}
 \title{Berger classification and remarks on parallel structures}
@@ -43,7 +44,7 @@
 
 
 \section{Our story so far}
-\label{sec:orgd2f81bf}
+\label{sec:org5f81b1f}
 
 \href{./de-rham-decomposition.org}{De Rham decomposition theorem} allows us to split a Riemannian manifold under certain conditions
 (complete and connected) as Riemannian product of complete connected manifold with \emph{irreducible
@@ -53,11 +54,11 @@ focus on non-symmetric irreducible manifolds.
 
 
 \section{Berger classification of non-symmetric irreducible manifolds}
-\label{sec:orgbb18e66}
+\label{sec:orgf28312a}
 
 \begin{theorem}[Berger classification]
 \label{thm:Berger}
-\label{orgca570d1}
+\label{org5e12bbd}
 For a non-symmetric irreducible manifold, the holonomy representation has to be one of the
 following
 \begin{enumerate}
@@ -92,7 +93,7 @@ fact that while holonomy representation is well-defined, the holonomy group in \
 defined up to its conjugacy class.
 
 \section{Almost complex structure}
-\label{sec:org099b129}
+\label{sec:org96f905f}
 \begin{definition}
 A(n) \uline{(almost) complex structure} \(J\) on a vector space \(V\) is an automorphism \(J:\ V\longrightarrow V\)
 with \(J^2 = -Id_V\). If \(V\) has a scalar product \(g\), we suppose in addition that \(g\circ J = J\).
@@ -106,13 +107,13 @@ Let us first have a look at a complex structure \(J\) \emph{on a fiber} (vector 
 direct consequences:
 
 \paragraph{Complexification.}
-\label{sec:org21cb80b}
+\label{sec:orgd598223}
 \(g\) and \(J\) extend in an unique way over \(V_{ \mathbb{C}}\), the complexification of \(V\), to a
 Hermitian product \(g_{\mathbb{C}}\) and a \(\mathbb{C}\) -linear automorphism (also noted by \(J\)) and one
 still has \(g_{\mathbb{C}}\circ J = g_{\mathbb{C}}\).
 
 \paragraph{Eigenspaces.}
-\label{sec:orgf09b3d6}
+\label{sec:org6a06657}
 The complexified space \(V_{ \mathbb{C}}\) is decomposed to \(V_{\mathbb{C}} =
 V^{1,0} \oplus^\perp V^{0,1}\) where \(V^{1,0}\) and \(V^{0,1}\) are eigenspaces (complex vector space)
 corresponding to eigenvalues \(i\) and \(-i\) of \(J\) on \(V_{\mathbb{C}}\). The orthogonality is by
@@ -120,7 +121,7 @@ corresponding to eigenvalues \(i\) and \(-i\) of \(J\) on \(V_{\mathbb{C}}\). Th
 \mathbb{C}\) and \(x_i\in V\) maps \(V^{1,0}\) to \(V^{0,1}\). Their dimensions are therefore the same.
 
 \paragraph{Hermitian form.}
-\label{sec:org4c5943d}
+\label{sec:org0bc364a}
 The \uline{fundamental form} \(\omega\) of \((V,J)\) is defined by
 \[
 \omega(a,b) = g(Ja,b) = -g(a, Jb) \quad \text{on } V
@@ -133,7 +134,7 @@ h(a,b) = g(a,b) - i\omega(a,b)  \quad \text{on } V
 in the sense that \(h(.,.)\) is \(\mathbb{R}\) -bilinear with \(h(Ja,b) = ih(a,b)\) and \(h(a,Jb) = -ih(a,b)\).
 
 \paragraph{Identification.}
-\label{sec:org2787d44}
+\label{sec:org5765369}
 One usually identifies \((V,J)\) and \((V^{1,0},i)\) as vector spaces equipped with complex structure,
 using the following map:
 \[
@@ -191,13 +192,13 @@ J_0 = \begin{pmatrix}
 
 
 \section{Complexified dual and forms, prelude to Kähler geometry}
-\label{sec:org000bdde}
+\label{sec:org992de83}
 
 We state first some linear algebra facts, whose proofs are tedious and can be consulted in the Manuscript.
 
 \begin{lemma}[Linear algebra facts]
 \label{lem:alg-exterior}
-\label{org8cd15df}
+\label{orga3b6b70}
 \begin{enumerate}
 \item Let \(V = W_1 \oplus W_2\) be \(R\) -module then the exterior algebra of \(V\) splits into \[\bigwedge^nV
    = \bigoplus_{p+q = n}\bigwedge^p W_1 \otimes \bigwedge^q W_2 \] Note that the tensor product here
@@ -223,7 +224,7 @@ Therefore \((V^*)_{\mathbb{C}} = (V^*)^{1,0} \oplus (V^{*})^{0,1}\) is rewriten 
 \[
 Hom_{\mathbb{R}}(V,\mathbb{C}) = Hom_{\mathbb{C}}((V,J),\mathbb{C}) \oplus Hom_{\mathbb{C}}((V,-J), \mathbb{C})
 \]
-Using the first point of Lemma \ref{org8cd15df}, one has
+Using the first point of Lemma \ref{orga3b6b70}, one has
 \[
 \bigwedge^n (V^*)_{\mathbb{C}} = \bigoplus_{p+q=n}\bigwedge^{p,q}(V^*)_{\mathbb{C}}
 \]
@@ -274,25 +275,19 @@ but these two coincide, as there exists a unique form \(\mathbb{C}\) -linear \(d
 \(d\bar{z_i}\). See Figure \ref{fig:dz} and Figure \ref{fig:dzbar}
 \end{remark}
 
-\begin{figure}
+\begin{figure}[htbp]
 \centering
-\label{fig:dz}
-\begin{tikzcd}
-  (V,J) \ar["\iota_J", d, swap] \ar["dz_i", r] & \mathbb{C} & V \ar["dz_i", r] \ar["\mathbb{C} \text{-lin}", d, swap] & \mathbb{C} \\
-  (V^{1,0},i) \ar["dz_i", ur, swap] &  & V_\mathbb{C} \ar["dz_i", ur, swap] &  
-\end{tikzcd}
-\caption{Two natural ways to define $dz_i$ on $V^{1,0}$. They gives the same form.}
+\includegraphics[width=0.50\textwidth]{../img/dz.png}
+\caption{Two natural ways to define \(dz_i\) on \(V^{1,0}\). They give the same form. \label{fig:dz}}
 \end{figure}
 
-\begin{figure}
+
+\begin{figure}[htbp]
 \centering
-\label{fig:dzbar}
-\begin{tikzcd}
-  (V,-J) \ar["\iota_J", d, swap] \ar["d\bar{z_i}", r] & \mathbb{C} & V \ar["d\bar{z_i}", r] \ar["\mathbb{C} \text{-lin}", d, swap] & \mathbb{C} \\
-  (V^{0,1},i) \ar["d\bar{z_i}", ur, swap] &  & V_\mathbb{C} \ar["d\bar{z_i}", ur, swap] &  
-\end{tikzcd}
-\caption{Two natural ways to define $d\bar{z_i}$ on $V^{0,1}$. They gives the same form.}
+\includegraphics[width=0.50\textwidth]{../img/dzbar.png}
+\caption{Two natural ways to define \(d\bar{z_i}\) on \(V^{0,1}\). They gives the same form. \label{fig:dzbar}}
 \end{figure}
+
 
 \begin{definition}[Theorem]
 The following properties are equivalent and \(X\) is called a \uline{Kähler manifold} if one of them is satisfied.
@@ -324,8 +319,9 @@ An almost complex structure on \(M\) with vanishing \(N_J\) is integrable.
 The proof that a parallel almost complex structure \(J\) has \(N_J = 0\) is computational in
 nature and can be found in the Manuscript.
 
+
 \section{Symplectic holonomy}
-\label{sec:org9771caf}
+\label{sec:orgb502420}
 One can look at symplectic group \(Sp(r)\) from the following two points of view:
 \begin{enumerate}
 \item \(Sp(r)\) is subgroup of \(Aut_{\mathbb{H}}(\mathbb{H}^r)\) of elements preserving a quaternion
@@ -362,4 +358,5 @@ For the implication (3) \(\implies\) (2), note that the real and imaginary part 
 they correspond to complex structures \(J\) and \(K\) on \(M\). Since \(\varphi\) is a (2,0)-form w.r.t
 \(I\), one has \(\varphi(Iu, v) = i\varphi(u,v)\), taking the real part and using the fact that \(g\) is
 non-degenerate, one has \(K = IJ = -JI\).
+Emacs 25.2.1 (Org mode 9.0.5)
 \end{document}

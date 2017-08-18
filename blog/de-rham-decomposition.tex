@@ -1,4 +1,4 @@
-% Created 2017-06-21 Wed 23:35
+% Created 2017-08-01 Tue 02:02
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -43,7 +43,7 @@
 
 
 \section{Decomposition theorem of de Rham}
-\label{sec:org9a2ae46}
+\label{sec:org6744296}
 
 We observe that if a manifold \((M,g)\) is globally a product \((M_1,g_1)\times (M_2,g_2)\) then
 \(Hol_{g}(M) = Hol_{g_1}(M_1)\times Hol_{g_2}(M_2)\) and the holonomy representation of \(M\) is
@@ -52,7 +52,7 @@ with irreducible holonomy representation.
 
 
 \begin{theorem}[De Rham decomposition]
-\label{org6cc5e7b}
+\label{orgc11e5b2}
 Given \((M,g)\) a simply-connected and complete Riemannian manifold, there exists a unique
 decomposition up to isometry and permutation of factors
 \[
@@ -85,7 +85,7 @@ M\), there exist manifolds \(M_1, M_2\) whose tangent spaces are \(A\) and \(B\)
 
 \begin{theorem}[Frobenius]
 \label{thm:Frobenius}
-\label{org1837154}
+\label{org907de79}
 Given a distribution \(D\) which to each point \(x\) associates a \(k\) -dimensional hyperplane of \(T_xM\)
 such that:
 \begin{enumerate}
@@ -105,12 +105,12 @@ geometry} (Lemma 6.8- Theorem 6.11, chapter III).
 
 
 \section{Uniqueness}
-\label{sec:orgcaabcb9}
+\label{sec:org7171d65}
 We note that the decomposition is unique in the following sense: 
 
 \begin{proposition}[Uniqueness of de Rham decomposition]
 \label{prop:uniqueness}
-\label{org8482f99} If \(M\) is decomposed as \(p_1:\ M\longrightarrow E\times \prod M_i\) and \(p_2:\
+\label{orgb056b03} If \(M\) is decomposed as \(p_1:\ M\longrightarrow E\times \prod M_i\) and \(p_2:\
 M\longrightarrow E'\times\prod M'_j\) where \(M_i, M'j\) are irreducible and \(E,E'\) are maximal
 Euclidean components (i.e. none of \(M_i, M'_j\) are isometric to \(\mathbb{R}\)). Then up to a
 rearrangement of indice \(j\) the composed map \(f=p_2\circ p_1^{-1}:\ E\times\prod M_i \longrightarrow
@@ -124,12 +124,12 @@ Euclidean because they are, up to an isometry, \(\mathbb{R}^k\) with the usual m
 from the fact that \(\mathbb{R}\) with any Riemannian metric is isometric to \(\mathbb{R}\) with
 Euclidean metric.
 
-We first note that the uniqueness stated in Proposition \ref{org8482f99} comes from the uniqueness of
+We first note that the uniqueness stated in Proposition \ref{orgb056b03} comes from the uniqueness of
 the decomposition of each tangent fiber, we have the following lemma.
 
 \begin{lemma}[Uniqueness of fiber decomposition]
 \label{lem:uniqueness-fiber}
-\label{org9e7ee43}
+\label{orgb7febfa}
 Let \(f: M\longrightarrow M'\) be an isometry that send \(x\in M\) to \(y\in M'\). Let 
 \[
 T_x M = E \oplus^\perp \bigoplus_i V_i,\quad T_yM' = E' \oplus^\perp \bigoplus_j V'_j
@@ -161,10 +161,10 @@ I_2\}\). Take \(V_i = \mathbb{R}e_i\), then \(G_1 = G_2 = \{I_2\}\) therefore \(
 G\). This also illustrates the fact that not every groups (representations) are holonomy groups
 (representations).
 
-We prove the following lemma, which implies Lemma \ref{org9e7ee43}.
+We prove the following lemma, which implies Lemma \ref{orgb7febfa}.
 \begin{lemma}[Uniqueness of representation decomposition]
 \label{lem:unique-representation}
-\label{org1c1939c}
+\label{orgf9bc81e}
 Let \(G\subset SO(V)\) be an orthonormal representation on a finite dimensional vector space \(V\) with
 property (H), given any two orthogonal decompositions
 \[
@@ -203,15 +203,16 @@ V_i\longrightarrow E\oplus V_i\), hence by orthogonality \(J\) sends \(E\) and \
 
 
 \section{Application of uniqueness lemma: decomposition for Kähler manifold}
-\label{sec:org45d2953}
+\label{sec:org83afeb1}
 Now let apply the de Rham decomposition to a complete Riemannian manifold \(M\) with holonomy \(U(n)
 \subset SO(2n)\) (called a \emph{Kähler manifold}). There exists on a fixed fiber \(T_xM\) an automorphism
 \(J\) that preserves the Riemannian metric and satisfies \(J^2 = -1\). By transporting \(J\) to every other
 fibers of \(TM\) one obtains a \emph{almost complex structure} on \(M\).
 
-Apply Lemma \ref{org1c1939c} to \(J\) which obviously commutes with \(G\) and orthonormal, one
+Apply Lemma \ref{orgf9bc81e} to \(J\) which obviously commutes with \(G\) and orthonormal, one
 see that such structure \(J\) passes to every manifold \(M_i\) and the Euclidean component \(\mathbb{R}^n\) and
 remains parallel on these manifolds. We proved that \(M\) is decomposed to \(\mathbb{C}^{n/2}\times
 \prod M_i\) where \(M_i\) are Kähler manifold. The decomposition map is both a Riemannian isometry and
 a isomorphism between complex manifold (i.e. its preserves complex structure). 
+Emacs 25.2.1 (Org mode 9.0.5)
 \end{document}

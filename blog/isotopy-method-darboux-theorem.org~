@@ -1,0 +1,75 @@
+#+TITLE: Moser's Isotopy method and Darboux theorem
+#+SETUPFILE: ../res/mathsetup.org
+
+* Symplectic geometry does not exist
+We will prove a symplectic manifold, i.e. a smooth manifold equiped with a closed
+everywhere non-degenerate 2-form, _does not have local invariant_. This is a significant
+difference between symplectic manifold and riemannian manifold, whose local invariance is
+the _curvature_.
+
+To do this, one uses a trick of Moser which in the compact case show that isotopic
+symplectic structures $\omega_0$ and $\omega_1$ are strongly isotopic, i.e. $\psi_t^* \omega_t = \omega_0$
+* Isotopy method
+** Moser's trick
+Let $M$ be a closed manifold (compact, without boundary) and $\omega_t$ is a family of
+symplectic structures on $M$ such that
+\[
+\frac{d}{dt}\omega_t = d\sigma_t
+\]
+then there exists diffeomorphism $\psi_t$ of $M$ such that $\psi_t^* \omega_t = \omega_0$
+
+
+**** Construction of $\psi_t$.
+One constructs $\psi_t$ by its flow $\frac{d}{dt}\psi_t = X_t \circ \psi_t$ such that
+\[
+0 = \frac{d}{dt}\psi_t^*\omega_t = \psi_t^* \left(\frac{d}{dt} \omega_t +
+\mathcal{L}_{X_t}\omega_t\right) = \psi_t^* \left( d\sigma_t + X_t \neg d\omega_t + d(X_t
+\neg \omega_t) \right)
+\]
+
+Since $\omega_t$ are closed and non-degenerate, it suffits to choose $X_t$, which exists
+uniquely, such that $X_t \neg \omega = \sigma_t$.
+
+** Application: Darboux theorem and Moser Stability
+Using this trick, we can prove the following theorem of Darboux.
+
+#+ATTR_LATEX: :options 
+#+BEGIN_lemma
+#+LATEX: \label{lem1}
+Let $M$ be a closed manifold with symplectic structures $\omega_0$ and $\omega_1$ such
+that they coincide on a fiber $T_qM$. Then there exists neighborhoods $\mathcal{N}_0,
+\mathcal{N}_1$ of $q$ and a diffeomorphism $\psi: \mathcal{N}_0 \longrightarrow
+\mathcal{N}_1$ such that $\psi^* \omega_1 = \omega_0$. 
+#+END_lemma
+
+
+#+BEGIN_proof
+We remark that it is enough to prove that there exists $\sigma$ locally defined near $q$
+with $\omega_1 -\omega_0 = d\sigma$ where $\sigma = 0$ on $T_qM$. In fact, let $\omega_t =
+\omega_0 + t(\omega_1 - \omega_0)$ one then has a neighborhood $ \mathcal{N}_0$ of $q$
+such that $\omega_t$ are non-degenerate and the field $X_t$ constructed by Moser's
+technique ($X_t=0$ at $q$) has its flow well-defined at time $t=1$ when starting at $
+\mathcal{N}_0$. Then $\psi_1$ and $ \mathcal{N}_1$ is what we want.
+
+One then uses _another trick_ to construct $\sigma$: Take any Riemannian metric on $M$ and
+let $\phi_t$ be constructed using the geodesic flow and retricting $ \mathcal{N}_0$ to a
+geodesic ball such that $\phi_0|_{\mathcal{N}_0} = q$, $\phi_1 = Id$ and $d\phi_t (q) =
+Id_{T_qM}$. Then
+
+\[
+\omega_1 - \omega_0 = \int_0^1 \frac{d}{dt}\phi^*_t(\omega_1 - \omega_0) dt = \int_0^1
+\phi_t^* d(Y_t \neg(\omega_1 - \omega_0) )= d \left( \int_0^1 dt \phi_t^*(Y_t \neg
+(\omega_1 - \omega_0) \right).
+\]
+
+It is straight-forward to see that the $\sigma$ constructed this way works.
+#+END_proof
+
+The theorem of Darboux follows easily from Lemma [[ref:lem1]].
+
+#+ATTR_LATEX: :options [Darboux]
+#+BEGIN_theorem
+Every two symplectic form $\omega_0, \omega_1$ on a closed manifold $M$ are locally isomorphic.
+#+END_theorem
+
+

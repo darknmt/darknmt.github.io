@@ -5,6 +5,13 @@
                      '(("article" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem")))
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
+   (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
     "article"
@@ -24,22 +31,25 @@
     "hyperref"
     "amsthm"
     "tikz-cd")
+   (TeX-add-symbols
+    "im")
    (LaTeX-add-labels
-    "sec:org8dadc8b"
-    "sec:orgd7c3657"
+    "sec:org5f81b1f"
+    "sec:orgf28312a"
     "thm:Berger"
-    "org8c4787f"
-    "sec:org7941aae"
-    "sec:org5370687"
-    "sec:org053d618"
-    "sec:org057f73c"
-    "sec:orgee3692a"
-    "sec:orgaca95b1"
+    "org5e12bbd"
+    "sec:org96f905f"
+    "sec:orgd598223"
+    "sec:org6a06657"
+    "sec:org0bc364a"
+    "sec:org5765369"
+    "sec:org992de83"
     "lem:alg-exterior"
-    "orgaa395a7"
+    "orga3b6b70"
     "fig:dz"
-    "fig:dzbar")
-   (LaTeX-add-environments
+    "fig:dzbar"
+    "sec:orgb502420")
+   (LaTeX-add-amsthm-newtheorems
     "remark"
     "theorem"
     "lemma"
@@ -47,7 +57,8 @@
     "conjecture"
     "proposition"
     "problem"
-    "example"
-    "definition"))
+    "exampl"
+    "definition"
+    "propdef"))
  :latex)
 

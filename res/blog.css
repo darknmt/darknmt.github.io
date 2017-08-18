@@ -114,12 +114,12 @@
     /* Redefine heading sizes */
     h1 {
     font-family: "Times New Roman", Times, serif;
-	font-size: 1.6rem; }
+	font-size: 1.7rem; }
     
     h2 {
     font-family: "Times New Roman", Times, serif;
 	/* font-size: 1.25rem; } */
-	font-size: 1.4rem; }
+	font-size: 1.55rem; }
     
     h3 {
 	/* font-size: 1.1875rem; } */
@@ -162,14 +162,16 @@
 	/* font-family:sans-serif; */
 	/* font-size:1.3em; */
 	/* color: grey; */
-	margin-left: 0.6em;
+	/*margin-left: 0.6em;*/
+    /*font-variant: small-caps;*/
+    color: #f56c0d;
     }
 
     /* #A34D32;*/
 
 
     .outline-text-3 {
-	margin-left: 0.9em;
+	/*margin-left: 0.9em;*/
     }
 
     h4 {

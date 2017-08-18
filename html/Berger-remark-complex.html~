@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-06-24 Sat 22:53 -->
+<!-- 2017-08-13 Sun 16:23 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Berger classification and remarks on parallel structures</title>
@@ -256,8 +256,9 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href='./index.html'>Home</a></li>
 <li><a href='./blog.html'>Blog</a></li>
+<li><a href='./writings.html'>Writings</a></li>
 <li><a href='http://github.com/darknmt/'>GitHub</a></li>
-<li><a href='/contact.html'>Contact</a></li>
+<li><a href='./contact.html'>Contact</a></li>
 </ul>
 </div>
 </div>
@@ -693,25 +694,21 @@ but these two coincide, as there exists a unique form \( \mathbb{C}\) -linear \(
 
 </div>
 
-\begin{figure}
-\centering
-\label{fig:dz}
-\begin{tikzcd}
-  (V,J) \ar["\iota_J", d, swap] \ar["dz_i", r] & \mathbb{C} & V \ar["dz_i", r] \ar["\mathbb{C} \text{-lin}", d, swap] & \mathbb{C} \\
-  (V^{1,0},i) \ar["dz_i", ur, swap] &  & V_\mathbb{C} \ar["dz_i", ur, swap] &  
-\end{tikzcd}
-\caption{Two natural ways to define $dz_i$ on $V^{1,0}$. They gives the same form.}
-\end{figure}
 
-\begin{figure}
-\centering
-\label{fig:dzbar}
-\begin{tikzcd}
-  (V,-J) \ar["\iota_J", d, swap] \ar["d\bar{z_i}", r] & \mathbb{C} & V \ar["d\bar{z_i}", r] \ar["\mathbb{C} \text{-lin}", d, swap] & \mathbb{C} \\
-  (V^{0,1},i) \ar["d\bar{z_i}", ur, swap] &  & V_\mathbb{C} \ar["d\bar{z_i}", ur, swap] &  
-\end{tikzcd}
-\caption{Two natural ways to define $d\bar{z_i}$ on $V^{0,1}$. They gives the same form.}
-\end{figure}
+<div class="figure">
+<p><img src="../img/dz.png" alt="&quot;Two natural ways to define $dz_i$ on $V^{1,0}$. They give the same form.&quot;" width="&quot;50%&quot;" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Two natural ways to define \(dz_i\) on \(V^{1,0}\). They give the same form. <div id="fig:dz"></p>
+</div>
+
+
+
+<div class="figure">
+<p><img src="../img/dzbar.png" alt="" width="&quot;50%&quot;" />
+</p>
+<p><span class="figure-number">Figure 2: </span>Two natural ways to define \(d\bar{z_i}\) on \(V^{0,1}\). They gives the same form. <div id="fig:dzbar"></p>
+</div>
+
 
 <div class="definition">
 <p>
@@ -817,7 +814,7 @@ non-degenerate, one has \(K = IJ = -JI\).
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-06-24 Sat 02:29. <br>
+Last updated 2017-08-13 Sun 16:22. <br>
 </div>
 </div>
 </body>

@@ -1,0 +1,223 @@
+#+TITLE: Sheaves and Cohomology
+#+SETUPFILE: ../res/mathsetup.org
+
+* Sheaf and Presheaf
+#+BEGIN_definition
+Let $M$ be a manifold, a *sheaf* over $M$ is a couple $(\mathcal{S}, \pi)$ with $
+\mathcal{S}$ a topologized space and $\pi: \mathcal{S}\longrightarrow M$ a _local
+homeomorphism_ such that each *stalk* \( \pi^{-1}(m) \) is a \(R\)-module.
+
+A *presheaf* is a way to associate each open set $U\subset M$ a \( R \)-module \(
+\mathcal{S}(U) \) and morphisms \( \iota_{V,U}: \mathcal{S}(U) \longrightarrow
+\mathcal{S}(V)\) which satisfy cocycle condition.
+#+END_definition
+
+#+BEGIN_remark
+1. In spirit, by _taking section_ and _taking germ_ (direct limit) the two objects are the
+   same. Technically, in order to obtain an equivalent condition, one has to restrict to
+   presheaves that satisfy: For every covering \( \{U_i\} \) of \( U \)
+   1. $f=g$ in \( \mathcal{S}(U) \) if and only if \( \iota_{U_i, U} f = \iota_{U_i, U} g
+      \) for every $i$.
+   2. For every family \( f_i \in \mathcal{S}(U_i) \) that satisfies \( \iota_{U_i\cap
+      U_j, U_i}f_i = \iota_{U_j\cap U_i, U_j}f_j \) there exists an \( f \in
+      \mathcal{S}(U) \) such that \( \iota_{U_i,U} f = f_i \).
+2. Usual operation on modules can be extend to sheaves. The tensor product, for example,
+   can be defined on presheaves then pass to sheaves (in order not to deal with the
+   topology)
+#+END_remark
+
+* Cohomology of complexes
+
+** Construction and naturality
+  A *complex* is a sequence \( C_0 \longrightarrow C_1 \longrightarrow \dots \longrightarrow C_n
+\longrightarrow \dots \) such that the composition of two consecutive arrows vanishes. The
+cohomology \( H^n(C_*) \) is defined by \( H^n(C_*) = \ker d_{n}/ \im d_{n-1} \).
+
+Then [[https://en.wikipedia.org/wiki/Snake_lemma][Snake lemma]] implies
+
+#+ATTR_LATEX: :options [Long exact sequence + Naturality]
+#+ATTR_HTML: :btit (Long exact sequence + Naturality) :id thm:cohomology-complex
+#+BEGIN_theorem 
+#+LATEX: \label{thm:cohomology-complex}
+If \( 0 \longrightarrow  C_* \longrightarrow D_* \longrightarrow E_* \longrightarrow 0 \)
+is a *short exact sequence of complexes*, then one has
+1. Long exact sequence:
+   \[\dots \longrightarrow  H^n(C_*) \longrightarrow  H^n(D_*) \longrightarrow H^n(E^*) \longrightarrow
+   H^{n+1}(C^*) \longrightarrow \dots \]
+2. Any morphism between short exact sequences gives rise to a morphism between long exact sequences.
+#+END_theorem
+
+#+HEADER: :imagemagick yes :iminoptions -density 300  :buffer no :fit yes
+#+HEADER: :results raw  :file ../img/2017-08-13-morph-short-sequence.png
+#+HEADER: :packages '(("" "tikz-cd"))
+#+HEADER: :exports (if (eq org-export-current-backend 'html) "none" "code")
+#+BEGIN_SRC latex
+\begin{tikzcd}
+  0 \ar[d] & 0 \ar[d] \\
+  C_* \ar[d] \ar[r] & C'_* \ar[d] \\
+  D_* \ar[d] \ar[r] & D'_* \ar[d] \\
+  E_* \ar[d] \ar[r] & E'_* \ar[d] \\
+  0 & 0 
+\end{tikzcd}\quad 
+\begin{tikzcd} 
+  H^n(C_*) \ar[d] \ar[r] & H^n(D_*) \ar[d] \ar[r] & H^n(E_*) \ar[r] \ar[d] & H^{n+1}(C_*) \ar[d] \\
+  H^n(C'_*) \ar[r] & H^n(D'_*) \ar[r] & H^n(E'_*) \ar[r] & H^{n+1}(C'_*) 
+\end{tikzcd}
+%\caption{Morphism between short exact sequences gives rise to a morphism between long exact sequences.}
+\label{fig:morph-short-sequence}
+#+END_SRC
+
+#+RESULTS:
+[[file:../img/2017-08-13-morph-short-sequence.png]]
+
+
+#+CAPTION: Morphism between short exact sequences gives rise to a morphism between long exact sequences. [fig:morph-short-sequence]
+#+ATTR_HTML: :width 50%
+#+ATTR_LATEX: :width 1.0\textwidth
+file:../img/2017-08-13-morph-short-sequence.png
+
+
+The algebraic machinery behind [[http://mathworld.wolfram.com/PoincaresLemma.html][Poincaré lemma]] is the following
+
+#+ATTR_LATEX: :options [Homotopy/Prism operator]
+#+ATTR_HTML: :btit (Homotopy/Prism operator) :id thm:prism-operator
+#+BEGIN_theorem
+#+LATEX: \label{thm:prism-operator}
+Let $f$ and $g$ be two morphism between complexes \( \{C_*\}, \{D_*\} \) such that there
+exists a diagonal morphism \( \epsilon:  C_n \longrightarrow  D_{n-1} \) that satisfies
+$f-g = d_D \circ \epsilon = \epsilon \circ d_C$ then \( f \) and \( g \) induce the same
+morphism from \( H^n(C_*)
+\longrightarrow  H^n(D_*) \).
+#+END_theorem
+
+#+HEADER: :imagemagick yes :iminoptions -density 300 :buffer no :fit yes
+#+HEADER: :results raw  :file ../img/2017-08-13-homotopy-operator.png
+#+HEADER: :packages '(("" "tikz-cd"))
+#+HEADER: :exports (if (eq org-export-current-backend 'html) "none" "code")
+#+BEGIN_SRC latex 
+\begin{tikzcd}
+  C_{n-1} \ar[d] \ar[r] & D_{n-1} \ar[d] \\
+  C_n \ar[d] \ar["\varepsilon", ur] \ar["f-g", r] & D_n \ar[d] \\
+  C_{n+1} \ar["\varepsilon", ur] \ar[r] & D_{n+1} 
+\end{tikzcd}
+%\caption{Homotopy operator \( \varepsilon \).}
+\label{fig:homotopy-operator}
+#+END_SRC
+
+#+RESULTS:
+[[file:../img/2017-08-13-homotopy-operator.png]]
+
+
+#+CAPTION: Homotopy operator \( \varepsilon \). [fig:homotopy-operator].
+#+ATTR_HTML: :width 20%
+#+ATTR_LATEX: :width 0.30\textwidth
+file:../img/2017-08-13-homotopy-operator.png
+
+** Multiplicative structure
+Given two complexes \( \{C_*\},\{D_*\} \), one can define their tensor product as \( E_* =
+C_* \otimes D_* \) with
+\[
+0 \longrightarrow C_0\otimes D_0 \longrightarrow (C_0\otimes D_1) \oplus (C_1\otimes D_0)
+\longrightarrow \dots
+\]
+with the tensor coboundary \( d_E = d_C\otimes1 + (-1)^p\otimes d_D \) where $p$ is the
+degree of the $C$-components. One then has the following algebraic result
+#+ATTR_LATEX: :options [Künneth]
+#+ATTR_HTML: :id thm:Kunneth :btit (Künneth)
+#+BEGIN_theorem
+#+LATEX: \label{thm:Kunneth}
+If $R$ is a field then one has the following decomposition
+\[
+ \oplus_k \left( H^k\left(C_*\right) \otimes_k H^{n-k}\left(D_*\right)
+ \right) \stackrel{\simeq}{\to} H^n\left( C_* \otimes_k D_* \right) 
+\]
+#+END_theorem
+
+
+
+* Cohomology theory
+Let $M$ be a manifold, a *cohomology theory* on $M$ is a _functor_ from the _category of
+sheaves over $M$_ to the _category of graded \( R \)-module_ such that
+1. Each sheaf \( \mathcal{S} \) corresponds to a graded module sequence \(
+   H^n(M,\mathcal{S}) \) with \( H^0(M,\mathcal{S}) = \Gamma(S) \) the module of global
+   sections of \( \mathcal{S} \) and \( H^{n}(M, \mathcal{S}) = 0 \) if \( n<0
+   \). Morphisms between sheaves are transformed to morphisms between cohomology.
+2. Any short exact sequence \( 0 \longrightarrow \mathcal{S}' \longrightarrow \mathcal{S}
+   \longrightarrow \mathcal{S}'' \longrightarrow 0\) gives rise to a long exact sequence
+   \[
+   \dots \longrightarrow H^n(M, \mathcal{S}') \longrightarrow H^n(M, \mathcal{S}) \longrightarrow H^n(M,
+   \mathcal{S}'') \longrightarrow H^{n+1}(M, \mathcal{S}') \longrightarrow \dots
+   \] 
+   One also has the naturality for such long sequence, i.e. for the coboundary map \(
+   H^n(M, \mathcal{S}'') \longrightarrow H^n(M, \mathcal{S}') \).
+3. Cohomology of a fine sheaf is 0.
+
+A sheaf \( \mathcal{S} \) is called *fine* if for every locally finite open cover \( U_i
+\) of \( M \), there exists automorphisms \( f_i \) of \( \mathcal{S} \) such that \(
+\supp f_i \subset U_i \) and \( \sum f_i = Id_\mathcal{S} \).
+
+
+** Existence and Uniqueness
+The next theorem will give a cohomology theory given that one has a *resolution*, i.e. an
+exact sequence 
+\[
+0 \longrightarrow K \longrightarrow \mathcal{C}_0 \longrightarrow
+\mathcal{C}_1 \longrightarrow \dots 
+\] 
+where \( K \) is the constant sheaf \( M\times R\). Such a resolution does exist, the most
+natural one may be the de Rham resolution, which gives de Rham cohomology that we will
+discuss later. 
+
+#+ATTR_LATEX: :options [Existence of cohomolgy theory]
+#+ATTR_HTML: :id thm:existence-cohomology :btit (Existence of cohomology theory) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:existence-cohomology}
+Let \( \mathcal{C}_* \) be a resolution of $M$, then the cohomology of the following
+complex
+\[
+0 \longrightarrow \Gamma(\mathcal{C}_0 \otimes \mathcal{S}) \longrightarrow
+\Gamma(\mathcal{C}_1 \otimes \mathcal{S}) \longrightarrow \dots
+\]
+for an arbitary sheaf \( \mathcal{S} \) is a cohomology theory.
+#+END_theorem
+
+One might note that such a cohomology depends a priori on the resolution \( \mathcal{C}_*
+\), the following result claims that in fact any resolution gives the same theory.
+
+#+ATTR_LATEX: :options [Uniqueness of cohomology theory]
+#+ATTR_HTML: :btit (Uniqueness of cohomology theory) :id thm:uniqueness-cohomology
+#+BEGIN_theorem
+#+LATEX: \label{thm:uniqueness-cohomology}
+Any two cohomology theory \( \mathcal{H}, \tilde{\mathcal{H}} \) has \( \#Func(\mathcal{H},
+\tilde{\mathcal{H}}) =1 \), therefore the two are naturally isomorphic.
+#+END_theorem
+
+
+** Multiplicative structure
+
+We can endow \( H^n(M, \mathcal{S}) \) with a multiplicative structure
+
+* De Rham and Cech
+
+** Picard group
+   
+** Example: A definition of first Chern class $H^2(X, \mathbb{Z})$
+\[
+0 \longrightarrow \mathbb{Z} \longrightarrow \mathcal{O}_X \longrightarrow \mathcal{O}_X^*
+\longrightarrow 0
+\]
+
+Therefore one has the following exact sequence
+\[
+H^1(X, \mathcal{O}_X) \longrightarrow H^1(X, \mathcal{O}_X^*) \longrightarrow H^2(X,
+\mathbb{Z}) \longrightarrow H^2(X, \mathcal{O}_X)
+\]
+Since $H^1(X, \mathcal{O}_X^*)$ is Picard group, the _first Chern class_ $c_1(L)$ of a
+holomorphic line bundle $L$ is the image of $L$ in $H^2(X, \mathbb{Z})$.
+
+* Cech-like results
+
+** Cartier divisors and Weyl divisors
+
+
+** Relation with Picard group

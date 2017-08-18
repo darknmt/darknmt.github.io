@@ -1,4 +1,4 @@
-% Created 2017-06-20 Tue 18:08
+% Created 2017-06-21 Wed 23:35
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -43,7 +43,7 @@
 
 
 \section{Symmetric space}
-\label{sec:org76e9dde}
+\label{sec:org8cdadc9}
 By de Rham decomposition, we now focus more on the building blocks: Riemannian manifolds with irreducible
 holonomy. The theory of Lie groups allows us to understand a block if it is \emph{symmetric}.
 
@@ -72,7 +72,7 @@ connecting \(x\) and \(y\). This shows that a symmetric space is complete and th
 of the form \(s_x\circ s_y\) acts transitively on \(M\).
 
 \begin{theorem}[Symmetric space]
-\label{org6bda4b8} 
+\label{orgcf95720} 
 Let \(M\) be a symmetric Riemannian manifold then 
 \begin{enumerate}
 \item \(M\) is complete.
@@ -99,7 +99,7 @@ classify all such pairs \((\frak{g},\frak{h})\).
 \end{remark}
 
 \section{Locally symmetric space}
-\label{sec:org5149da8}
+\label{sec:orgf771c74}
 The previous results can be extended to locally symmetric spaces.
 
 \begin{propdef}
@@ -116,7 +116,7 @@ If they are satisfied, \(M\) is called  \uline{locally symmetric}.
 \end{propdef}
 
 \begin{theorem}[Locally symmetric space]
-\label{org570a14b}
+\label{orgac5c79e}
 Let \(M\) be a locally symmetric Riemannian manifold, then there exists a unique symmetric simply
 connected Riemannian manifold \(N\) such that \(M\) and \(N\) are locally isometric, i.e. for every
 \(x\in M\) and \(y\in N\), there exists neighborhoods \(U\) of \(x\) and \(V\) of \(y\) that are isometric.
@@ -125,12 +125,12 @@ connected Riemannian manifold \(N\) such that \(M\) and \(N\) are locally isomet
 As a result, the reduced holonomy of \(M\) is the same as the holonomy of \(N\).
 
 \section{Annex: Group of isometries as Lie group}
-\label{sec:org777acfe}
+\label{sec:org58fb4bf}
 We explain in this annex some subtle details: how can a group of isometries be a manifold. We state, with
 Montgomery-Zippin, \emph{Transformation groups} as reference, the following general result:
 
 \begin{theorem}[faithful + locally compact $\implies$ Lie]
-\label{org84b16b1}
+\label{org7fefb45}
 Let \(G\) be a group acting faithfully on a connected manifold \(M\) of class \(C^k\) such that each
 action is \(C^1\) and \(G\) is locally compact. Then \(G\) is a Lie group and the map \(G\times M\longrightarrow M\) is \(C^1\).
 \end{theorem}
@@ -142,7 +142,7 @@ Note that we equip \uline{a group} of isometries with the \textbf{compact-open t
  found in Kobayashi-Nomizu's \emph{Foundations of differential geometry} (Volume I, Theorem 4.7).
 
 \begin{theorem}
-\label{orgea117f4}
+\label{org04da794}
 Let \(M\) be a connected, locally-compact metric space and \(G\) be the group of isometries of
 \(M\), then
 \begin{enumerate}
