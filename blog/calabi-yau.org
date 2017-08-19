@@ -1,5 +1,6 @@
 #+TITLE: Calabi-Yau theorem
 #+SETUPFILE: ../res/mathsetup.org
+#+INCLUDE: ../res/include.org
 
 * Calabi conjecture
 

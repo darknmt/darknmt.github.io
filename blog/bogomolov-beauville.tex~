@@ -1,4 +1,4 @@
-% Created 2017-06-24 Sat 23:35
+% Created 2017-08-18 Fri 23:47
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -15,6 +15,7 @@
 \usepackage{capt-of}
 \usepackage{hyperref}
 \usepackage{amsthm}
+\usepackage{amsmath}
 \usepackage{tikz-cd}
 \newtheorem{remark}{Remark}
 \newtheorem{theorem}{Theorem}
@@ -26,6 +27,9 @@
 \newtheorem{exampl}{Example}
 \newtheorem{definition}{Definition}
 \newtheorem{propdef}[definition]{Proposition-Definition}
+\newcommand{\im}{\mathop{\rm Im}\nolimits}
+\newcommand{\supp}{\mathop{\rm supp}\nolimits}
+\newcommand{\ord}{\mathop{\rm ord}\nolimits}
 \author{darknmt}
 \date{\today}
 \title{Bogomolov-Beauville classification}
@@ -41,15 +45,20 @@
 \maketitle
 \tableofcontents
 
+\begin{info}
+The PDF version of this page is automatically generated (without any guarantee of
+readability or accuracy) and can be downloaded by replacing \texttt{html} in the page address by
+pdf. For example \texttt{/html/sheaf-cohomology.html} should become \texttt{/pdf/sheaf-cohomology.pdf}.
+\end{info}
 
 \section{From the Riemannian results of de Rham and Berger}
-\label{sec:orgfc65ac0}
+\label{sec:org8fd1336}
 
 We will first prove a (conceptually) straightforward result of \href{de-rham-decomposition.org}{de Rham decomposition} and
 \href{Berger-remark-complex}{Berger classification}. The following theorem is taken from Beauville's article
 \begin{theorem}[Beauville]
 \label{thm:beauville-1}
-\label{org56c9e8f}
+\label{orgdf9aa02}
 Let \(X\) be a compact Kähler manifold with flat Ricci curvature, then
 \begin{enumerate}
 \item The universal covering space \(\tilde X\) of \(X\) decomposes isometrically and holomorphically as
@@ -78,7 +87,7 @@ Isom(E)\) and \(\phi_2\in Isom(M)\).
 
 We will use here the fact that if \(M\) is a Kähler manifold, compact and Ricci-flat then \(Isom(M)\)
 equipped with compact-open topology is discrete, therefore finite, which will be proved later (Lemma
-\ref{orgd79d9ad}). We note \(\Gamma := \{\phi = (\phi_1,\phi_2)\in \pi_1(X),\ \phi_2 = Id_M\}\) and
+\ref{org65d013f}). We note \(\Gamma := \{\phi = (\phi_1,\phi_2)\in \pi_1(X),\ \phi_2 = Id_M\}\) and
 sometime abusively regard \(\Gamma\) as a subgroup of \(Isom(E)\). Note that \(\Gamma\) is a normal
 subgroup of \(\pi_1(X)\) with finite index since the quotient is isomorphic to a subgroup of
 \(Isom(M)\). Therefore \(\tilde X/\Gamma = E/\Gamma\times M\) is compact as a finite cover of \(X\).
@@ -116,7 +125,7 @@ we can find a neighborhood \(\mathcal{U}_1\) of \(\phi_1\) in \(Isom(E)\) small 
 
 \begin{lemma}[]
 \label{lem:Isom-discrete}
-\label{orgd79d9ad}
+\label{org65d013f}
 Let \(M\) be is a compact, simply-connected, Ricci-flat, Kähler manifold, then the group \(Aut(M)\) of
 automorphism of \(M\) equipped with compact-open topology is discrete, therefore \(Isom(M)\) is discrete,
 hence finite. 
@@ -146,18 +155,18 @@ holomorphic tensor field is parallel. See P. Petersen, \emph{Riemannian geometry
 Manifolds} for more detail.
 
 \section{Towards a classification for complex manifold}
-\label{sec:org16e5954}
-To obtain a translation of Theorem \ref{org56c9e8f} in a context of complex manifolds (without any
+\label{sec:orgdbfd494}
+To obtain a translation of Theorem \ref{orgdf9aa02} in a context of complex manifolds (without any
 preferred metric a priori), we study the 2 building blocks: manifolds with holonomy \(SU(m)\) and
 \(Sp(r)\). To be clear, recall that a complex manifold \(X\) is called \uline{of Kähler type} if one can
 equip \(X\) with an Hermitian structure whose fundamental form \(\omega\) satisfies \(d\omega= 0\). When
 we say \(X\) is of Kähler type, we refer to \(X\) as a complex manifold without fixing a metric on
 \(X\). 
 \subsection{Special unitary manifolds (proper Calabi-Yau manifolds)}
-\label{sec:orgbdff55d}
+\label{sec:orgf819a06}
 \begin{remark}
 \label{rem:SU}
-\label{org6a14232}
+\label{org16e8097}
 Let \(X\) be a compact Kähler manifold with holonomy \(SU(m)\) and complex dimension \(m\geq 3\) then:
 \begin{enumerate}
 \item \(H^0(X, \Omega_X^p)=0\) for all \(0 < p < m\), by consequence \(\chi( \mathcal{O}_X ) = 1 + (-1)^m\).
@@ -184,7 +193,7 @@ The third point is a direct consequence of Riemann-Hurwitz formula. In fact, the
 \(\tilde X\) of \(X\) is of holonomy \(SU(m)\). This is due to the following remarks: \(Hol(X)\supset
 Hol(X')\supset Hol_0(X') = Hol_0(X)\) and \(Hol_0(X) = Hol(X) = SU(m)\) as \(SU(n)\) is connected.
 
-By Theorem \ref{org56c9e8f}, \(\tilde X\) is compact by Lemma \ref{orgd79d9ad} a finite covering of
+By Theorem \ref{orgdf9aa02}, \(\tilde X\) is compact by Lemma \ref{org65d013f} a finite covering of
 \(X\) as \(\pi_1(X)\) is finite. As \(\chi(\mathcal{O}_X) = \chi(\mathcal{O}_{\tilde X}) = 2\), one has \(X
 = \tilde X\), hence \(X\) is simply-connected.
 
@@ -192,7 +201,7 @@ By Theorem \ref{org56c9e8f}, \(\tilde X\) is compact by Lemma \ref{orgd79d9ad} a
 
 \begin{theorem}[]
 \label{thm:SU-alg}
-\label{org655afbf}
+\label{org69e0400}
 Given a compact manifold \(X\) of Kähler type and complex dimension \(m\), the following properties are equivalent
 \begin{enumerate}
 \item There exists a compatible metric \(g\) over \(X\) such that \(Hol(X,g) = SU(m)\).
@@ -205,14 +214,14 @@ Given a compact manifold \(X\) of Kähler type and complex dimension \(m\), the 
 unitary. 
 
 For the implication (2) \(\implies\) (1): by \href{calabi-yau.org}{Yau's theorem} we equip \(X\) with a Ricci-flat metric, by
-Theorem \ref{org56c9e8f}, there exists a finite cover \(X' = T\times \prod_i V_i\times \prod_j X_j\)
+Theorem \ref{orgdf9aa02}, there exists a finite cover \(X' = T\times \prod_i V_i\times \prod_j X_j\)
 where \(T\) is a complex torus, \(Hol(V_i) = SU(m_i), Hol(X_j) = Sp(r_j)\). But
 \(H^0(X',\Omega^p_{X'})=0\) for \(0<p<m\), \(X'\) has to be one of the \(V_i\) as
 \(H^0(X_j,\Omega_{X_j}^{2})\) and \(H^0(V_i,\Omega_{V_i}^{m_i})\) do not vanish. Therefore \(Hol(X') =
 SU(m)\), hence \(Hol(X) = SU(m)\).
 \end{proof}
 
-Theorem \ref{org655afbf} allows us to check if a manifold \(X\) is special unitary by looking at the
+Theorem \ref{org69e0400} allows us to check if a manifold \(X\) is special unitary by looking at the
 \(h^{0,p} (0<p<m)\) coefficients of the Hodge diamond of \(X\) and its finite covers. We can see, by
 this criteria that the following examples are special unitary manifolds. All of them are algebraically
 constructed, since a construction by glueing local charts is difficult (or impossible).
@@ -261,7 +270,7 @@ for all \(0<p<m\). If \(X\) is simply-connected then it is a special unitary man
 
 
 \subsection{Irreducible symplectic and hyperkähler manifolds}
-\label{sec:orgc69fd43}
+\label{sec:orgb162bf1}
 \begin{remark}
 Let \(X\) be a compact Kähler manifold with holonomy \(Sp(r)\) and complex dimension \(2r\) then:
 \begin{enumerate}
@@ -284,12 +293,12 @@ where \(P_k, 0\leq k\leq r\) are irreducible, non-trivial for \(k>0\) and \(\var
 T^*_xM\) uniquely defined up to a constant. Therefore the only invariant elements are
 \(c\varphi^{p/2}\) where \(c\) is a scalar.
 
-For the last point, one uses the same arguments as Remark \ref{org6a14232}.
+For the last point, one uses the same arguments as Remark \ref{org16e8097}.
 
 
 \begin{theorem}[]
 \label{thm:Sp-alg}
-\label{org2a69182}
+\label{org84293a6}
 Given a compact manifold \(X\) of Kähler type and complex dimension \(2r\), then:
 \begin{enumerate}
 \item The following properties are equivalent. \(X\) is called \uline{hyperkähler} if it
@@ -319,27 +328,32 @@ in \(Sp(r)\).
 \item For the implication (a) \(\implies\) (b), it suffices to notice that the invariant elements \(\varphi\)
 in the decomposition \eqref{eq:decomp-varphi} is unique. For the direction (b) \(\implies\) (a),
 note that \(X\) can be equipped with a Calabi-Yau metric by the (b) \(\implies\) (a) part of (1.), by
-Theorem \ref{org56c9e8f}, \(X = \prod_{j=1}^m X_j\) where \(X_j\) are irreducible compact Kähler
+Theorem \ref{orgdf9aa02}, \(X = \prod_{j=1}^m X_j\) where \(X_j\) are irreducible compact Kähler
 manifolds. The symplectique structure \(\varphi\) on \(X\), restricted on each \(X_j\), gives a
 symplectique structure \(\varphi_j\) of \(X_j\). But any form \(\sum_j \lambda_j pr_j^*\varphi_j\) is
 another symplectic structure of \(X\), one must have \(m=1\) by uniqueness of \(\varphi\).
 \end{enumerate}
 \end{proof}
 
-\begin{exampl}[Hyperkähler manifold]
-One can notice a trivial example: Every special unitary manifold of 2 complex dimensions is
-hyperkähler because \(SU(2)\) is isomorphic to \(Sp(1)\). There are not many known examples of
-hyperkähler manifolds, except from sporadic ones in dimension 6 and 10, only two
-infinite families are known.
+\begin{exampl}[]
+\begin{enumerate}
+\item One can notice a trivial example: Every special unitary manifold of 2 complex dimensions is
+irreducible symplectic because \(SU(2)\) is isomorphic to \(Sp(1)\).
+\item Let \(X\) be a smooth cubic hypersurface in \(\mathbb{C}\mathbb{P}^{n+1}\) and \(F(X)= \{ L \in Gr(1,
+   \mathbb{C}\mathbb{P}^{n+1}) , L \subset X\} \subset Gr(1, \mathbb{C}\mathbb{P}^{n+1})\) the
+manifold formed by lines in \(X\). \(F(X)\) is non-empty when \(n>1\), smooth if \(X\) is smooth and of
+dimension \(2n-4\). Beauville and Donagi proved that for \(n=4\), \(F(X)\) is irreducible symplectic,
+therefore hyperkähler.
+\end{enumerate}
 \end{exampl}
 \subsection{Decomposition for complex manifold with vanishing Chern class}
-\label{sec:orgf475eb4}
+\label{sec:org6b838e2}
 
-Theorem \ref{org56c9e8f} can be translated to a decomposition for complex manifold in the following
+Theorem \ref{orgdf9aa02} can be translated to a decomposition for complex manifold in the following
 way:
 \begin{theorem}[Bogomolov-Beauville classification]
 \label{thm:beauville-2}
-\label{orgc4a5695}
+\label{orgb6cc487}
 Let \(X\) be a compact manifold of Kähler type of vanishing first Chern class.
 \begin{enumerate}
 \item The universal covering space \(\tilde X\) of \(X\) is isomorphic to a product \(E\times \prod_i
@@ -354,7 +368,7 @@ This decomposition is unique up to an order of \(i\) and \(j\).
    V_i\times\prod_j X_j\).
 \end{enumerate}
 \end{theorem}
-The theorem follows directly from Theorem \ref{org56c9e8f}, the only point that needs proof is the
+The theorem follows directly from Theorem \ref{orgdf9aa02}, the only point that needs proof is the
 uniqueness, which will be achieved in two steps:
 \begin{enumerate}
 \item Prove the uniqueness in the case that \(X\) is simply-connected.
@@ -378,7 +392,7 @@ class \(\omega\) of \(g\) and is also a Calabi-Yau metric, hence \(g= g' = \sum_
 
 This lemma asserts that when our manifolds \(Y, Y_j\) are equipped with appropriate Calabi-Yau metrics,
 the decomposition map is also a (Riemannian) isometric, we therefore obtain uniqueness of \(V_i, X_j\)
-from uniqueness of Theorem \ref{org56c9e8f}.
+from uniqueness of Theorem \ref{orgdf9aa02}.
 
 \begin{lemma}[]
 Let \(Y,Z\) be compact, simply-connected manifold of Kähler type, then any isomorphism \(u:\
@@ -392,8 +406,9 @@ It is clear that the composed function \(u_1: \mathbb{C}^k\times Y \longrightarr
 functions on \(Y\) are constant, therefore  \(u(t,y) = (u_1(t), u_2(t,y))\). As \(u\) is isomorphic, one
 has \(h\leq k\) then by the same argument for \(u^{-1}\), one has \(h=k\), \(u_1\) is an isomorphism and
 \(u_2(t,\cdot)\) is an isomorphism from \(Y\) to \(Z\). \(u_2(0,\cdot)^{-1}\circ u_2(t,\cdot)\) is then a curve in
-\(Aut(Y)\), which is discrete by Lemma \ref{orgd79d9ad}. Therefore \(u_2(t,\cdot)= u_2(0,\cdot)\) independent of \(t\).
+\(Aut(Y)\), which is discrete by Lemma \ref{org65d013f}. Therefore \(u_2(t,\cdot)= u_2(0,\cdot)\) independent of \(t\).
 \end{proof}
 
 `
+Emacs 25.2.1 (Org mode 9.0.5)
 \end{document}

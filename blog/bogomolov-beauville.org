@@ -1,5 +1,6 @@
 #+TITLE: Bogomolov-Beauville classification
 #+SETUPFILE: ../res/mathsetup.org
+#+INCLUDE: ../res/include.org
 
 * From the Riemannian results of de Rham and Berger
 

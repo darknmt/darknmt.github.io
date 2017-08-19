@@ -1,4 +1,4 @@
-% Created 2017-06-21 Wed 23:35
+% Created 2017-08-18 Fri 23:47
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -15,6 +15,7 @@
 \usepackage{capt-of}
 \usepackage{hyperref}
 \usepackage{amsthm}
+\usepackage{amsmath}
 \usepackage{tikz-cd}
 \newtheorem{remark}{Remark}
 \newtheorem{theorem}{Theorem}
@@ -26,6 +27,9 @@
 \newtheorem{exampl}{Example}
 \newtheorem{definition}{Definition}
 \newtheorem{propdef}[definition]{Proposition-Definition}
+\newcommand{\im}{\mathop{\rm Im}\nolimits}
+\newcommand{\supp}{\mathop{\rm supp}\nolimits}
+\newcommand{\ord}{\mathop{\rm ord}\nolimits}
 \author{darknmt}
 \date{\today}
 \title{Symmetric spaces and Lie groups}
@@ -41,9 +45,14 @@
 \maketitle
 \tableofcontents
 
+\begin{info}
+The PDF version of this page is automatically generated (without any guarantee of
+readability or accuracy) and can be downloaded by replacing \texttt{html} in the page address by
+pdf. For example \texttt{/html/sheaf-cohomology.html} should become \texttt{/pdf/sheaf-cohomology.pdf}.
+\end{info}
 
 \section{Symmetric space}
-\label{sec:org8cdadc9}
+\label{sec:orgf40c825}
 By de Rham decomposition, we now focus more on the building blocks: Riemannian manifolds with irreducible
 holonomy. The theory of Lie groups allows us to understand a block if it is \emph{symmetric}.
 
@@ -72,7 +81,7 @@ connecting \(x\) and \(y\). This shows that a symmetric space is complete and th
 of the form \(s_x\circ s_y\) acts transitively on \(M\).
 
 \begin{theorem}[Symmetric space]
-\label{orgcf95720} 
+\label{org5e40a8d} 
 Let \(M\) be a symmetric Riemannian manifold then 
 \begin{enumerate}
 \item \(M\) is complete.
@@ -99,7 +108,7 @@ classify all such pairs \((\frak{g},\frak{h})\).
 \end{remark}
 
 \section{Locally symmetric space}
-\label{sec:orgf771c74}
+\label{sec:org7980132}
 The previous results can be extended to locally symmetric spaces.
 
 \begin{propdef}
@@ -116,7 +125,7 @@ If they are satisfied, \(M\) is called  \uline{locally symmetric}.
 \end{propdef}
 
 \begin{theorem}[Locally symmetric space]
-\label{orgac5c79e}
+\label{orgec3332a}
 Let \(M\) be a locally symmetric Riemannian manifold, then there exists a unique symmetric simply
 connected Riemannian manifold \(N\) such that \(M\) and \(N\) are locally isometric, i.e. for every
 \(x\in M\) and \(y\in N\), there exists neighborhoods \(U\) of \(x\) and \(V\) of \(y\) that are isometric.
@@ -125,12 +134,12 @@ connected Riemannian manifold \(N\) such that \(M\) and \(N\) are locally isomet
 As a result, the reduced holonomy of \(M\) is the same as the holonomy of \(N\).
 
 \section{Annex: Group of isometries as Lie group}
-\label{sec:org58fb4bf}
+\label{sec:orga93046c}
 We explain in this annex some subtle details: how can a group of isometries be a manifold. We state, with
 Montgomery-Zippin, \emph{Transformation groups} as reference, the following general result:
 
 \begin{theorem}[faithful + locally compact $\implies$ Lie]
-\label{org7fefb45}
+\label{orgef9ee0b}
 Let \(G\) be a group acting faithfully on a connected manifold \(M\) of class \(C^k\) such that each
 action is \(C^1\) and \(G\) is locally compact. Then \(G\) is a Lie group and the map \(G\times M\longrightarrow M\) is \(C^1\).
 \end{theorem}
@@ -142,7 +151,7 @@ Note that we equip \uline{a group} of isometries with the \textbf{compact-open t
  found in Kobayashi-Nomizu's \emph{Foundations of differential geometry} (Volume I, Theorem 4.7).
 
 \begin{theorem}
-\label{org04da794}
+\label{orgd361322}
 Let \(M\) be a connected, locally-compact metric space and \(G\) be the group of isometries of
 \(M\), then
 \begin{enumerate}
@@ -151,4 +160,5 @@ Let \(M\) be a connected, locally-compact metric space and \(G\) be the group of
 \item If, in addition, \(M\) is compact then \(G\) is also compact.
 \end{enumerate}
 \end{theorem}
+Emacs 25.2.1 (Org mode 9.0.5)
 \end{document}

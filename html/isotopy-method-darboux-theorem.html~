@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-08-01 Tue 01:43 -->
+<!-- 2017-08-19 Sat 00:04 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Moser's Isotopy method and Darboux theorem</title>
@@ -286,6 +286,15 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
+<div class="info">
+<p>
+The PDF version of this page is automatically generated (without any guarantee of
+readability or accuracy) and can be downloaded by replacing <code>html</code> in the page address by
+pdf. 
+For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
+</p>
+
+</div>
 
 <div id="outline-container-org78a80c7" class="outline-2">
 <h2 id="org78a80c7"><span class="section-number-2">1</span> Symplectic geometry does not exist</h2>
@@ -406,7 +415,7 @@ Every two symplectic form \(\omega_0, \omega_1\) on a closed manifold \(M\) are 
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-07-28 Fri 18:25. <br>
+Last updated 2017-08-18 Fri 23:47. <br>
 </div>
 </div>
 </body>

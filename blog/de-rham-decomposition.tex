@@ -1,4 +1,4 @@
-% Created 2017-08-01 Tue 02:02
+% Created 2017-08-19 Sat 00:11
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -15,6 +15,7 @@
 \usepackage{capt-of}
 \usepackage{hyperref}
 \usepackage{amsthm}
+\usepackage{amsmath}
 \usepackage{tikz-cd}
 \newtheorem{remark}{Remark}
 \newtheorem{theorem}{Theorem}
@@ -26,6 +27,9 @@
 \newtheorem{exampl}{Example}
 \newtheorem{definition}{Definition}
 \newtheorem{propdef}[definition]{Proposition-Definition}
+\newcommand{\im}{\mathop{\rm Im}\nolimits}
+\newcommand{\supp}{\mathop{\rm supp}\nolimits}
+\newcommand{\ord}{\mathop{\rm ord}\nolimits}
 \author{darknmt}
 \date{\today}
 \title{De Rham decomposition}
@@ -41,6 +45,12 @@
 \maketitle
 \tableofcontents
 
+\begin{info}
+The PDF version of this page is automatically generated (without any guarantee of
+readability or accuracy) and can be downloaded by replacing \texttt{html} in the page address by
+\texttt{pdf}. 
+For example \texttt{/html/sheaf-cohomology.html} should become \texttt{/pdf/sheaf-cohomology.pdf}.
+\end{info}
 
 \section{Decomposition theorem of de Rham}
 \label{sec:org6744296}

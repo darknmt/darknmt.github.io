@@ -1,5 +1,6 @@
 #+TITLE: From Busemann function to Cheeger-Gromoll splitting
 #+SETUPFILE: ../res/mathsetup.org
+#+INCLUDE: ../res/include.org
 
 
 We will prove the following result by Cheeger and Gromoll by a slightly modified approach of

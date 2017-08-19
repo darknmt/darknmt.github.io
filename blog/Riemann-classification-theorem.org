@@ -1,5 +1,6 @@
 #+TITLE: Classification theorem in Riemannian geometry
 #+SETUPFILE: ../res/mathsetup.org
+#+INCLUDE: ../res/include.org
 
 This is part of my reading in the summer of 2017. I will try not to mention the details here as they
 will be covered in future posts. The big question is to 

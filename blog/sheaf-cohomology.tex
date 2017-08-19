@@ -1,4 +1,4 @@
-% Created 2017-08-16 Wed 17:44
+% Created 2017-08-19 Sat 00:11
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -45,10 +45,16 @@
 \maketitle
 \tableofcontents
 
+\begin{info}
+The PDF version of this page is automatically generated (without any guarantee of
+readability or accuracy) and can be downloaded by replacing \texttt{html} in the page address by
+\texttt{pdf}. 
+For example \texttt{/html/sheaf-cohomology.html} should become \texttt{/pdf/sheaf-cohomology.pdf}.
+\end{info}
 
 
 \section{Sheaf and Presheaf}
-\label{sec:orgb21ab35}
+\label{sec:org89ea00e}
 \begin{definition}
 Let \(M\) be a manifold, a \textbf{sheaf} over \(M\) is a couple \((\mathcal{S}, \pi)\) with \(\mathcal{S}\) a topologized space and \(\pi: \mathcal{S}\longrightarrow M\) a \uline{local
 homeomorphism} such that each \textbf{stalk} \(\pi^{-1}(m)\) is a \(R\)-module.
@@ -75,10 +81,10 @@ topology)
 \end{remark}
 
 \section{Cohomology of complexes}
-\label{sec:org3a8407f}
+\label{sec:orgbad4845}
 
 \subsection{Construction and naturality}
-\label{sec:org1a74cb6}
+\label{sec:orgdb74180}
   A \textbf{complex} is a sequence \(C_0 \longrightarrow C_1 \longrightarrow \dots \longrightarrow C_n
 \longrightarrow \dots\) such that the composition of two consecutive arrows vanishes. The
 cohomology \(H^n(C_*)\) is defined by \(H^n(C_*) = \ker d_{n}/ \im d_{n-1}\).
@@ -150,7 +156,7 @@ morphism from \(H^n(C_*)
 \end{figure}
 
 \subsection{Multiplicative structure}
-\label{sec:orgc84cfe1}
+\label{sec:orgc5845c7}
 Given two complexes \(\{C_*\},\{D_*\}\), one can define their tensor product as \(E_* =
 C_* \otimes D_*\) with
 \[
@@ -171,7 +177,7 @@ If \(R\) is a field then one has the following decomposition
 
 
 \section{Axiomatic cohomology theory}
-\label{sec:orgb3169b7}
+\label{sec:org62ef2d8}
 Let \(M\) be a manifold, a \textbf{cohomology theory} on \(M\) is a \uline{functor} from the \uline{category of
 sheaves over \(M\)} to the \uline{category of graded \(R\)-module} such that
 \begin{enumerate}
@@ -191,7 +197,7 @@ A sheaf \(\mathcal{S}\) is called \textbf{fine} if for every locally finite open
 
 
 \subsection{Existence and Uniqueness}
-\label{sec:orgb23aff9}
+\label{sec:org65911e0}
 The next theorem will give a cohomology theory given that one has a \textbf{resolution}, i.e. an
 exact sequence 
 \[
@@ -284,7 +290,7 @@ By this reason, the base ring \(R\) is not expressed explicitly in the notation 
 
 
 \subsection{Multiplicative structure}
-\label{sec:orga925396}
+\label{sec:org4517615}
 
 If each stalk \(\mathcal{S}(x)\) is more than an \(R\)-module but an \(R\)-algebra, then one can endow \(H^n(M, \mathcal{S})\) with a multiplicative structure
 that it a graded algebra. This structure come from the tensor product of the complex \(\Gamma(\mathcal{C}_n\otimes S)\) with itself and from the natural inclusion
@@ -297,7 +303,7 @@ which give \(H^p(M,\mathcal{S})\otimes H^q(M, \mathcal{S}) \longrightarrow H^{p+
 
 
 \subsection{Examples: de Rham cohomology}
-\label{sec:orgfec47f3}
+\label{sec:orga367f46}
 Taking \(\mathcal{C_n} = \Omega^n(M)\) the sheaves of germs of \(n\)-forms on \(M\), then by Theorem \ref{thm:fine-resolution} one obtains the \textbf{de Rham cohomology} \(H^n(M,
   \mathbb{R}\). By the same way, one can construct \textbf{Alexander–Spanier cohomology} and
 \textbf{singular cohomology}.
@@ -310,7 +316,7 @@ the wedge product in de Rham cohomology to cup-product in singular cohomology.
 \end{theorem}
 
 \section{Čech cohomology}
-\label{sec:org97a966e}
+\label{sec:org73edbc5}
 Čech cohomology is another important cohomology whose construction is not based on a
 resolution. Čech cohomology \(\check{H}(M, \mathcal{S})\) is defined as the direct limit
 of the following \(\check{H}(M,\mathcal{S},\mathcal{U})\) when \(\mathcal{U}\) becomes
@@ -338,7 +344,7 @@ independent of \(j\).
 
 
 \subsection{Example: Picard group}
-\label{sec:org97c2406}
+\label{sec:orge88b1e2}
 Let \(X\) be a complex manifold. A vector bundle of \(X\) is called \textbf{holomorphic}
 iff the projection map is holomorphic. 
 \begin{remark}
@@ -359,7 +365,7 @@ by \(\text{Pic}(X) = \check{H}^1(X, \mathcal{O}^*)\).
 
 
 \subsection{Example: first Chern class in \(H^2(X, \mathbb{Z})\)}
-\label{sec:org070ad7f}
+\label{sec:orge4ba3ee}
    The following short exact sequence of \(\mathbb{Z}\)-module
 \[
 0 \longrightarrow \mathbb{Z} \longrightarrow \mathcal{O}_X \longrightarrow \mathcal{O}_X^*
@@ -374,7 +380,7 @@ Since \(H^1(X, \mathcal{O}_X^*)\) is Picard group, the \uline{first Chern class}
 holomorphic line bundle \(L\) is the image of \(L\) in \(H^2(X, \mathbb{Z})\).
 
 \subsection{Example: from divisor to Picard group}
-\label{sec:orga94f1e5}
+\label{sec:orgb0dd3a9}
 
 An \textbf{analytic subvariety} \(Y\) of a complex manifold \(X\) is a closed set such that
 locally at each \(y\in Y\), \(Y\) is zero of a holomorphic function.
@@ -435,4 +441,5 @@ H^0(X,K_X^*) \longrightarrow \text{Div}(X) = H^0(K_X^*/\mathcal{O}_X^*) \longrig
 H^1(X, \mathcal{O}_X^*) = \text{Pic}(X) \longrightarrow \dots
 \]
 This shows clearly that the kernel of the above group morphism is the group of principal divisors.
+Emacs 25.2.1 (Org mode 9.0.5)
 \end{document}

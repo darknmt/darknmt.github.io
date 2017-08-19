@@ -1,13 +1,23 @@
 body
 {
-counter-reset: definition;
-counter-reset: remark;
-counter-reset: exampl;
+}
+.info {
+    display: block;
+    margin: 50px 70px 50px 70px;
+    font-size: 85%;
+    background-color:   #fce8e8;
+    border-left: 5px solid;
+    border-color:  #f4a4a4;
+    padding:10px 10px 5px 20px;
 }
 
+.info:before {
+    content: "Infomation. ";
+    font-weight: bold;
+    font-style: normal;
+}
 
 .exampl {
-    counter-increment: exampl;
     display: block;
     margin: 20px 0 40px 0;
     font-style: italic;
@@ -17,7 +27,7 @@ counter-reset: exampl;
     padding:10px 10px 10px 20px;
 }
 .exampl:before {
-    content: "Example " counter(exampl) ". ";
+    content: "Example. ";
     font-weight: bold;
     font-style: normal;
     text-decoration: underline;
@@ -51,7 +61,6 @@ counter-reset: exampl;
 }
 
 .remark {
-    counter-increment: remark;
     display: block;
     margin: 20px 0 40px 0;
     font-style: italic;
@@ -61,7 +70,7 @@ counter-reset: exampl;
     padding:10px 10px 10px 20px
 }
 .remark:before {
-    content: "Remark " counter(remark) ".";
+    content: "Remark.";
     font-weight: bold;
     font-style: normal;
     text-decoration: underline;
@@ -149,7 +158,6 @@ counter-reset: exampl;
 }
 
 .definition {
-    counter-increment: definition;
     display: block;
     margin: 20px 0 40px 0;
     font-style: normal;
@@ -159,7 +167,7 @@ counter-reset: exampl;
     padding:10px 20px 10px 20px;
 }
 .definition:before {
-    content: "Definition " counter(definition) ".";
+    content: "Definition.";
     font-weight: bold;
     font-style: normal;
 }

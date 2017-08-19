@@ -1,5 +1,6 @@
 #+TITLE: De Rham decomposition
 #+SETUPFILE: ../res/mathsetup.org
+#+INCLUDE: ../res/include.org
 
 * Decomposition theorem of de Rham
 

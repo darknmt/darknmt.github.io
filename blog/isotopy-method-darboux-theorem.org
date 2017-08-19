@@ -1,5 +1,6 @@
 #+TITLE: Moser's Isotopy method and Darboux theorem
 #+SETUPFILE: ../res/mathsetup.org
+#+INCLUDE: ../res/include.org
 
 * Symplectic geometry does not exist
 We will prove a symplectic manifold, i.e. a smooth manifold equiped with a closed

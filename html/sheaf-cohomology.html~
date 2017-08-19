@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-08-16 Wed 17:55 -->
+<!-- 2017-08-18 Fri 23:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Sheaves and Cohomology</title>
@@ -272,13 +272,13 @@ for the JavaScript code in this tag.
 <li><a href="#orgd6abe18">2. Cohomology of complexes</a>
 <ul>
 <li><a href="#org9e26d47">2.1. Construction and naturality</a></li>
-<li><a href="#orgf16b000">2.2. Multiplicative structure</a></li>
+<li><a href="#org7d0fc74">2.2. Multiplicative structure</a></li>
 </ul>
 </li>
 <li><a href="#org4d346b5">3. Axiomatic cohomology theory</a>
 <ul>
 <li><a href="#org9664495">3.1. Existence and Uniqueness</a></li>
-<li><a href="#org8f1fe56">3.2. Multiplicative structure</a></li>
+<li><a href="#org1264c36">3.2. Multiplicative structure</a></li>
 <li><a href="#org8c83df8">3.3. Examples: de Rham cohomology</a></li>
 </ul>
 </li>
@@ -292,25 +292,15 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<div style="display:none">
-$\newcommand{\im}{\mathop{\rm Im}\nolimits}
-\newcommand{\supp}{\mathop{\rm supp}\nolimits}
-\newcommand{\ord}{\mathop{\rm ord}\nolimits}$
-</div>
-
-
-
-<div style="display:none">
-$
-\newcommand{\sech}{\mathop{\rm sech}\nolimits}
-\newcommand{\csch}{\mathop{\rm csch}\nolimits}
-$
-</div>
-
-
+<div class="info">
 <p>
-This is a test \( \sech 60 \)
+The PDF version of this page is automatically generated (without any guarantee of
+readability or accuracy) and can be downloaded by replacing <code>html</code> in the page address by
+pdf. For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
 </p>
+
+</div>
+
 
 <div id="outline-container-org107e4eb" class="outline-2">
 <h2 id="org107e4eb"><span class="section-number-2">1</span> Sheaf and Presheaf</h2>
@@ -413,8 +403,8 @@ morphism from \( H^n(C_*)
 </div>
 </div>
 
-<div id="outline-container-orgf16b000" class="outline-3">
-<h3 id="orgf16b000"><span class="section-number-3">2.2</span> Multiplicative structure</h3>
+<div id="outline-container-org7d0fc74" class="outline-3">
+<h3 id="org7d0fc74"><span class="section-number-3">2.2</span> Multiplicative structure</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Given two complexes \( \{C_*\},\{D_*\} \), one can define their tensor product as \( E_* =
@@ -592,8 +582,8 @@ H^*(M, \mathcal{S}) \).
 </div>
 
 
-<div id="outline-container-org8f1fe56" class="outline-3">
-<h3 id="org8f1fe56"><span class="section-number-3">3.2</span> Multiplicative structure</h3>
+<div id="outline-container-org1264c36" class="outline-3">
+<h3 id="org1264c36"><span class="section-number-3">3.2</span> Multiplicative structure</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 If each stalk \( \mathcal{S}(x) \) is more than an \( R \)-module but an \( R
@@ -816,7 +806,7 @@ This shows clearly that the kernel of the above group morphism is the group of p
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-08-16 Wed 17:55. <br>
+Last updated 2017-08-18 Fri 23:43. <br>
 </div>
 </div>
 </body>

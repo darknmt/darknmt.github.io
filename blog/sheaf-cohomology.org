@@ -1,5 +1,6 @@
 #+TITLE: Sheaves and Cohomology
 #+SETUPFILE: ../res/mathsetup.org
+#+INCLUDE: ../res/include.org
 
 
 * Sheaf and Presheaf
