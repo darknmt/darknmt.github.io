@@ -1,4 +1,4 @@
-% Created 2017-08-19 Sat 00:11
+% Created 2017-08-31 Thu 02:12
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -45,12 +45,13 @@
 \maketitle
 \tableofcontents
 
+\iffalse
 \begin{info}
-The PDF version of this page is automatically generated (without any guarantee of
-readability or accuracy) and can be downloaded by replacing \texttt{html} in the page address by
+The PDF version of this page can be downloaded by replacing \texttt{html} in the its address by
 \texttt{pdf}. 
 For example \texttt{/html/sheaf-cohomology.html} should become \texttt{/pdf/sheaf-cohomology.pdf}.
 \end{info}
+\fi
 
 \section{Symmetric space}
 \label{sec:orgf40c825}

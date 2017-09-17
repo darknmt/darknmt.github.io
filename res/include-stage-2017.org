@@ -1,0 +1,6 @@
+#+LATEX: \iffalse
+#+BEGIN_info
+This post is a part of the [[file:../res/Stage2017.pdf][memoire of my M1 internship]] at I2M. The memoire contains,
+needless to say, less errors than this page.
+#+END_info
+#+LATEX: \fi

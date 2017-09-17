@@ -1,0 +1,190 @@
+#+TITLE: Hodge decomposition and Kodaira embedding theorem
+#+SETUPFILE: ../res/mathsetup.org
+#+INCLUDE: ../res/include.org
+
+This is my review of lectures 15-19 of [[https://ocw.mit.edu/courses/mathematics/18-966-geometry-of-manifolds-spring-2007/index.htm][Denis Auroux course]] whose goal is to estabish Hodge
+theory for compact Kähler varieties and present a proof of Donaldson for the Kodaira
+embedding theorem.
+
+* Hodge theory
+** Operators and their dual
+*** Scalar product on \( \Omega^k(M) \)
+    The scalar product on \( V \) induces one on \( \Omega^k(V) \) by setting \(
+    \langle u_1\wedge \dots \wedge u_k, v_1\wedge\dots \wedge v_k \rangle = \det(\langle
+    u_i,v_j \rangle) \).
+#+ATTR_LATEX: :options []
+#+BEGIN_exampl
+\(
+\langle \sum \alpha_I dx^I, \beta_J dx^J \rangle =\sum \alpha_I \beta_I
+\) if \( \{\frac{\partial}{\partial x^i}\} \) form an orthonormal basis.
+#+END_exampl
+*** Hodge star and Hodge dual
+#+BEGIN_definition
+    The *Hodge star* is defined from \( \Omega^k(M) \longrightarrow \Omega^{n-k}(M) \)
+    such that \(
+    \alpha \wedge *\beta = \langle \alpha, \beta \rangle \text{vol} \) where \( \text{vol}
+    \) is the volume form.
+#+END_definition
+ 
+
+#+BEGIN_remark
+1. An example: \( *dx^I = dx^{I^C} \) if \( \{\frac{\partial}{\partial x^i}\} \) form an orthonormal
+   basis and the complement \( I^C \) is chosen so that \( \text{sgn}(I, I^C) = 1 \).
+2. Note that \( ** = (-1)^{k(n-k)} \)
+#+END_remark
+
+
+The *Hodge dual* of an operator \( P \) will be defined such that \( \langle P \alpha,
+\beta \rangle_{L^2} = \langle \alpha, P^* \beta \rangle_{L^2} \) where the \( \langle
+\cdot,\cdot\rangle_{L^2} \) is the integral of \( \langle \cdot,\cdot \rangle  \) over \(
+M \). For example,
+
+#+BEGIN_definition
+Let \( d \) be the coboundary operator then \( d^* : \Omega^{k}(M) \longrightarrow
+\Omega^{k-1}(M) \) is defined by \( d^* = (-1)^{n(k-1)+1}*d* \)
+#+END_definition
+
+#+BEGIN_definition
+The *de Rham-Laplace* operator is defined by
+\[
+\Delta = dd^* + d^* d = (d+d^*)^2
+\]
+The space of *harmonic forms* is \( \mathcal{H}^k(M) = \{ \alpha  \in \Omega^k(M) : \Delta
+\alpha = 0 \} \).
+#+END_definition
+
+#+BEGIN_remark
+1. \( \Delta^* = \Delta\).
+2. \( \langle \Delta\alpha, \alpha \rangle  = \|d^*\alpha \|^2 + \|d\alpha\|^2\)
+3. A harmonic form is closed and co-closed.
+#+END_remark
+
+
+** Elliptic theory and Hodge theorem for Riemannian manifolds
+*** Symbol of a differential operator
+#+BEGIN_definition
+A mapping \( L: \Gamma(E) \longrightarrow \Gamma(F) \) where \( E,F \) are vector bundles
+on a manifold \( M \) is called a *differential operator* of order \( k \) if in local coordinates,
+\[
+L(s) = \sum_{|\alpha|\leq k} A_\alpha(x) \frac{\partial^|\alpha| s}{\partial x^\alpha}
+\]
+where \( A_\alpha(x) \) is a matrix with \( C^\infty \) coefficients.
+
+The *symbol* of \( L \) is \( \sigma_k(L,\xi) = \sum_\alpha A_{\alpha} \xi_1^{\alpha_1} \dots
+\xi_n^{\alpha_n} \in Hom(E_x,F_x)\) where \( \xi = \sum \xi_i dx^i\in T^*M \) in the same coordinate as \( A_\alpha \). 
+#+END_definition
+
+#+BEGIN_remark
+1. \( A_\alpha (x) \) depends on the local coordinates and does not transform naturally
+   when one passes from one coordinates to another. In other words, \( A_\alpha(x) \) is
+   not in \( Hom(E_x, F_x) \).
+2. However, the definition of differential operator does not depend on local coordinates.
+3. The symbol transforms naturally (linearly) between coordinates.
+#+END_remark
+
+From the third remark, one can define:
+
+#+BEGIN_definition
+A differential operator \( L \) is called *elliptic* if its symbol \( L(x, \xi): E_x
+\longrightarrow F_x \) is isomorphic.
+#+END_definition
+
+
+*** Elliptic operators
+#+ATTR_LATEX: :options [Elliptic operator]
+#+ATTR_HTML: :id thm:elliptic-operator :btit (Elliptic operator) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:elliptic-operator}
+Every elliptic operator \( L: \Gamma(E) \longrightarrow \Gamma(F) \) 
+1. has a pseudoinverse, i.e. there exists \( P:\Gamma(F) \longrightarrow \Gamma(E) \) such
+   that \( L\circ P - id_{\Gamma(F)}\) and \( P\circ L - id_{\Gamma(E)} \) are smooth operators.
+2. is extended to a Fredhom operator \( L_s : W^s(E) \longrightarrow W^{s-k}(F) \),
+   i.e. \(\ker L = \ker L_s \) and \( coker L_s \) are finite dimensional, \( \im L_s \)
+   is closed.
+Moreover, if \( L : \Gamma(E) \longrightarrow \Gamma(E)\) is elliptic and self-adjoint
+then there exists \( H_L, G_L: \Gamma(E) \longrightarrow \Gamma(E) \) such that 
+1. \( \im H_L\subset \ker L\), \( id_{\Gamma(E)} = H_L + L\circ G_L = H_L + G_L\circ L \).
+2. \( H_L, G_L \) extend to \( W^s(E) \longrightarrow W^s(E) \).
+3. \( \Gamma(E) = \ker L \oplus_{\perp L^2} \im L\circ G_L \).
+#+END_theorem
+
+#+ATTR_LATEX: :options [Hodge]
+#+ATTR_HTML: :id thm:hodge-riemann :btit (Hodge) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:hodge-riemann}
+Let \( M  \) be a compact, oriented Riemannian manifold, then
+1. \( \Omega^k(M) = \mathcal{H}^k(M) \oplus_{\perp L^2} \im d \oplus_{\perp L^2} \im d^* \).
+2. The projection \( \mathcal{H}^k(M) \longrightarrow H^k_{dR}(M, \mathbb{R}) \) is
+   isomorphic. In other words, each class is uniquely represented by a harmonic form.
+#+END_theorem
+
+** Hodge decomposition for Kähler manifolds
+In case of Kähler manifolds, one has the Hodge decomposition of cohomology which comes
+from the following two remarks:
+1. The Hodge star \( *: \Omega^{p,q} \longrightarrow \Omega^{n-q, n-p} \). This is due to
+   the compatible complex structure.
+2. The auxilary operator \( L: \alpha \longrightarrow \omega\wedge \alpha \) and its
+   relation with \(d \). This is due to the compatible symplectic structure.
+
+We resume in the following table the definition, domain and Hodge dual of some operators.
+
+
+| Operator            | Domain                                             | Definition                                                      | Dual                                |
+|---------------------+----------------------------------------------------+-----------------------------------------------------------------+-------------------------------------|
+| \( L \)             | \( \Omega^{p,q} \longrightarrow \Omega^{p+1.q+1}\) | \( \alpha \mapsto \omega\wedge \alpha \)                        | \( L^* = (-1)^{p+q}*L* \)           |
+| \( d_c \)           | \( \Omega^k \longrightarrow \Omega^{k+1}\)         | \( J^{-1} d J \)                                                | \( d_c^* = (-1)^{k+1}Jd^* J \)      |
+| \( \partial \)      | \( \Omega^{p,q} \longrightarrow \Omega^{p+1, q} \) |                                                                 | \( \partial^* = -*\bar \partial* \) |
+| \( \bar \partial \) | \( \Omega^{p,q} \longrightarrow \Omega^{p,q+1}\)   |                                                                 | \(\bar \partial^* = -* \partial *\) |
+| \( \Box \)          | \( \Omega^{p,q} \longrightarrow \Omega^{p,q} \)    | \( \partial \partial^* + \partial^* \partial \)                 |                                     |
+| \( \bar \Box \)     | \( \Omega^{p,q} \longrightarrow \Omega^{p,q} \)    | \( \bar\partial \bar\partial^* + \bar\partial^* \bar\partial \) |                                     |
+|---------------------+----------------------------------------------------+-----------------------------------------------------------------+-------------------------------------|
+
+In case of Kähler manifold, one has the following relation between these operators.
+
+#+BEGIN_lemma
+#+LATEX: \lem{lem:}
+In a compact Kähler manifold, one has 
+1. \( [L,d] = [L^*, d^*] = 0 \)
+2. \( [L, d^*] = d_c \)        
+3. \( [L^*, d] = -d^*_c \)     
+4. \( [L^*,d_c] =d^* \) 
+Therefore,       
+1. \( \Delta_c = d_c d^*_c + d^*_c d_c = \Delta \)
+2. \( \partial^* \) is adjoint to \( \partial \) and \( \bar\partial^* \) to \(
+   \bar\partial \).
+3. \(\Delta = 2\Box = 2\bar\Box\)   
+#+END_lemma
+
+One equip \( \Omega^k \) with the following Hermitian product
+\[
+\langle \phi, \psi \rangle_{L^2} = \int_M \phi\wedge *\bar \psi 
+\]
+under which the \( \Omega^{p,q} \) are orthogonal.
+
+One now applies the elliptic theory for \( \bar \Box: \Omega^{p,q} \longrightarrow \Omega^{p,q}
+\) with \( \mathcal{H}^{p,q}_{\bar \Box} = \ker \Box \) then one sees that
+#+ATTR_LATEX: :options [Hodge decomposition]
+#+ATTR_HTML: :id thm:hodge-decomp :btit (Hodge decomposition) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:hodge-decomp}
+1. Each class in the Dolbeault cohomology \( H^{p,q}_{\bar \partial}(M) \) contains
+   exactly one harmonic form of \( \mathcal{H}^{p,q}_{\bar \Box} = \ker \bar\Box \)
+2. \( H^k(M) = \mathcal{H}_\Delta = \bigoplus_{p+q=k} \mathcal{H}^{p,q}_{\bar\Box} = \bigoplus_{p+q=k} H^{p,q}_{\bar\partial}(M) \).
+#+END_theorem
+
+** Hodge symmetries
+   Let \( h^{p,q} = \dim_{\mathbb{R}} H^{p,q}_{\bar \partial}(M) \) and \( h^k = \dim
+   H^k_{dR}(M, \mathbb{R}) \) then one has \( h^k = \sum_{p+q = k} h^{p,q} \). The \(
+   h^{p,q} \) are usually written down as Hodge's diamond
+
+   | \(h^{n,n}\)   | \(h^{n, n-1}\)  | \(\dots\)   | \( h^{n,0} \) |
+   | \(h^{n-1,n}\) | \(h^{n-1,n-1}\) | \( \dots \) | \(h^{n-1,0}\) |
+   | \(\dots\)     | \(\dots\)       | \(\dots\)   | \(\dots\)     |
+   | \(h^{0,n}\)   | \(h^{0, n-1}\)  | \(\dots\)   | \( h^{0,0} \) |
+
+with the symmetries
+1. \( h^{p,q} = h^{q,p} \) given by conjugation.
+2. \( h^{p,q} =h^{n-q, n-p}\) given by the Hodge star.
+
+
+* Kodaira embedding theorem

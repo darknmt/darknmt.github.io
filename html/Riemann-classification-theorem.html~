@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-08-19 Sat 00:10 -->
+<!-- 2017-08-31 Thu 02:22 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Classification theorem in Riemannian geometry</title>
@@ -278,14 +278,19 @@ for the JavaScript code in this tag.
 </div>
 <div class="info">
 <p>
-The PDF version of this page is automatically generated (without any guarantee of
-readability or accuracy) and can be downloaded by replacing <code>html</code> in the page address by
+The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
 <code>pdf</code>. 
 For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
 </p>
 
 </div>
+<div class="info">
+<p>
+This post is a part of the <a href="../res/Stage2017.pdf">memoire of my M1 internship</a> at I2M. The memoire contains,
+needless to say, less errors than this page.
+</p>
 
+</div>
 <p>
 This is part of my reading in the summer of 2017. I will try not to mention the details here as they
 will be covered in future posts. The big question is to 
@@ -436,7 +441,7 @@ where \(V_i\) is a simply-connected, projective manifold with \(H^0(V_i,\Omega_{
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-08-18 Fri 23:44. <br>
+Last updated 2017-08-31 Thu 02:22. <br>
 </div>
 </div>
 </body>

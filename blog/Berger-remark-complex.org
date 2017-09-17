@@ -1,6 +1,7 @@
 #+TITLE: Berger classification and remarks on parallel structures
 #+SETUPFILE: ../res/mathsetup.org
 #+INCLUDE: ../res/include.org
+#+INCLUDE: ../res/include-stage-2017.org
 
 * Our story so far
 

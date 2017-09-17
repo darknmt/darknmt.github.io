@@ -14,5 +14,5 @@ git config --global url."https://github.com/".insteadOf git://github.com/
 
 cd "$(dirname "$0")"
 git add .
-git commit -m "Update Notebook.html"
+git commit -m "Content update"
 git push

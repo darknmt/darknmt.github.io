@@ -1,6 +1,7 @@
 #+TITLE: Symmetric spaces and Lie groups
 #+SETUPFILE: ../res/mathsetup.org
 #+INCLUDE: ../res/include.org
+#+INCLUDE: ../res/include-stage-2017.org
 
 * Symmetric space
 By de Rham decomposition, we now focus more on the building blocks: Riemannian manifolds with irreducible

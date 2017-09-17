@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-08-19 Sat 00:10 -->
+<!-- 2017-08-31 Thu 02:12 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Sheaves and Cohomology</title>
@@ -272,35 +272,20 @@ for the JavaScript code in this tag.
 <li><a href="#orgd6abe18">2. Cohomology of complexes</a>
 <ul>
 <li><a href="#org9e26d47">2.1. Construction and naturality</a></li>
-<li><a href="#org1264c36">2.2. Multiplicative structure</a></li>
+<li><a href="#org714e6df">2.2. Multiplicative structure</a></li>
 </ul>
 </li>
 <li><a href="#org4d346b5">3. Axiomatic cohomology theory</a>
 <ul>
 <li><a href="#org9664495">3.1. Existence and Uniqueness</a></li>
-<li><a href="#org3dd4ea3">3.2. Multiplicative structure</a></li>
-<li><a href="#org8c83df8">3.3. Examples: de Rham cohomology</a></li>
-</ul>
-</li>
-<li><a href="#orgf61122a">4. Čech cohomology</a>
-<ul>
-<li><a href="#org3a02f51">4.1. Example: Picard group</a></li>
-<li><a href="#orga8397cf">4.2. Example: first Chern class in \(H^2(X, \mathbb{Z})\)</a></li>
-<li><a href="#org01f7bef">4.3. Example: from divisor to Picard group</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div class="info">
 <p>
-The PDF version of this page is automatically generated (without any guarantee of
-readability or accuracy) and can be downloaded by replacing <code>html</code> in the page address by
-<code>pdf</code>. 
-For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
+../res/include.org
 </p>
-
-</div>
 
 
 <div id="outline-container-org107e4eb" class="outline-2">
@@ -404,8 +389,8 @@ morphism from \( H^n(C_*)
 </div>
 </div>
 
-<div id="outline-container-org1264c36" class="outline-3">
-<h3 id="org1264c36"><span class="section-number-3">2.2</span> Multiplicative structure</h3>
+<div id="outline-container-org714e6df" class="outline-3">
+<h3 id="org714e6df"><span class="section-number-3">2.2</span> Multiplicative structure</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Given two complexes \( \{C_*\},\{D_*\} \), one can define their tensor product as \( E_* =
@@ -563,242 +548,15 @@ H^n(M, \mathcal{S}) = \Gamma(\mathcal{C}_n)
 
 </div>
 
-<div class="remark">
 <p>
-A consequence of uniqueness of cohomology theory is the following. Given a sheaf \(
-\mathcal{S} \) of \( R_2 \)module and \( R_1 \) is a subring of \( R_2 \), then the
+#+BEGIN_remark
+<del>A consequence of uniqueness of cohomology theory is the following.</del> From the construction
+in Theorem <a href="#thm:existence-cohomology">thm:existence-cohomology</a>, given a sheaf \(
+\mathcal{S} \) of \( R_2 \)module and \( R_1 \) is a subring of \( R_2 \) then the
 cohomology \( H^*(M, \mathcal{S}) \) of \( \mathcal{S} \) can be defined in the category
 of \( R_1 \)-sheaves or \( R_2 \)-sheaves, noted by the \( R_i \)-modules \( H^*(M,
 \mathcal{S})_{R_i} \). Then \(H^*(M, \mathcal{S})_{R_2}\) is isomorphic to \( H^*(M,
 \mathcal{S})_{R_1} \) as \( R_1 \)-modules.
-</p>
-
-<p>
-By this reason, the base ring \( R \) is not expressed explicitly in the notation \(
-H^*(M, \mathcal{S}) \).
-</p>
-
-</div>
-</div>
-</div>
-
-
-<div id="outline-container-org3dd4ea3" class="outline-3">
-<h3 id="org3dd4ea3"><span class="section-number-3">3.2</span> Multiplicative structure</h3>
-<div class="outline-text-3" id="text-3-2">
-<p>
-If each stalk \( \mathcal{S}(x) \) is more than an \( R \)-module but an \( R
-\)-algebra, then one can endow \( H^n(M, \mathcal{S}) \) with a multiplicative structure
-that it a graded algebra. This structure come from the tensor product of the complex \(
-\Gamma(\mathcal{C}_n\otimes S) \) with itself and from the natural inclusion
-\[
-\Gamma(\mathcal{C}_p\otimes\mathcal{S}) \otimes \Gamma(\mathcal{C}_q\otimes\mathcal{S})
-\longrightarrow \Gamma(\mathcal{C}_{p+q} \otimes \mathcal{S}).
-\]
-which give \( H^p(M,\mathcal{S})\otimes H^q(M, \mathcal{S}) \longrightarrow H^{p+q}(M,
-\mathcal{S}) \).
-</p>
-</div>
-</div>
-
-
-<div id="outline-container-org8c83df8" class="outline-3">
-<h3 id="org8c83df8"><span class="section-number-3">3.3</span> Examples: de Rham cohomology</h3>
-<div class="outline-text-3" id="text-3-3">
-<p>
-Taking \( \mathcal{C_n} = \Omega^n(M) \) the sheaves of germs of \( n \)-forms on \( M
-  \), then by Theorem <a href="#thm:fine-resolution">thm:fine-resolution</a> one obtains the <b>de Rham cohomology</b> \( H^n(M,
-  \mathbb{R}\). By the same way, one can construct <b>Alexander–Spanier cohomology</b> and
-<b>singular cohomology</b>.
-</p>
-
-<div id="thm:de-rham-singular" btit="(de Rham)" class="theorem">
-<p>
-The unique natural transformation from de Rham cohomology to singular cohomology is given
-by \( \omega_n \mapsto \left(\Delta_n \mapsto \int_{\Delta_n}\omega_n \right) \) and sends
-the wedge product in de Rham cohomology to cup-product in singular cohomology.
-</p>
-
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgf61122a" class="outline-2">
-<h2 id="orgf61122a"><span class="section-number-2">4</span> Čech cohomology</h2>
-<div class="outline-text-2" id="text-4">
-<p>
-Čech cohomology is another important cohomology whose construction is not based on a
-resolution. Čech cohomology \( \check{H}(M, \mathcal{S}) \) is defined as the direct limit
-of the following \( \check{H}(M,\mathcal{S},\mathcal{U}) \) when \( \mathcal{U} \) becomes
-finer as an open cover of \( M \).
-</p>
-
-<p>
-Let \( \mathcal{U} \) be an open cover of \( M \). A \( n \)-cocyle in \( C_{n,\mathcal{U}} \) is defined as a
-mapping 
-\[ 
-\sigma: (U_0,\dots, U_n) \mapsto \sigma(U_0,\dots, U_n) \in \mathcal{S}\left(\cap_{i=0}^n
-U_i\right)
-\]
-and the coboundary \( d\sigma \in C_{n+1,\mathcal{U}} : (U_0,\dots, U_{n+1}) \mapsto
-\sum_i \iota_{\cap U_i}(-1)^i
-\sigma (U_0,\dots,\check{U_i},\dots, U_{n+1}) \). The cohomology of this complex is noted
-as \( \check{H}^*(M, \mathcal{S},\mathcal{U}) \).
-</p>
-
-<div class="remark">
-<p>
-Let \( \mathcal{V} \) be a finer cover of \( M \), i.e. every open \( V_i \) in \(
-\mathcal{V} \) is included in an element \( U_{j_i} \) of \( \mathcal{U} \), there exists
-a natural map \( \check{H}^*(M, \mathcal{S},\mathcal{V}) \longrightarrow \check{H}^*(M,
-\mathcal{S},\mathcal{U}) \) induced by the \( C_{n,\mathcal{V}} \longrightarrow
-C_{n,\mathcal{U}} \) which depends on the refining map \( j \). Using Theorem
-<a href="#thm:prism-operator">thm:prism-operator</a>, one can prove that the induced map between cohomology is however
-independent of \( j \).
-</p>
-
-</div>
-</div>
-
-
-<div id="outline-container-org3a02f51" class="outline-3">
-<h3 id="org3a02f51"><span class="section-number-3">4.1</span> Example: Picard group</h3>
-<div class="outline-text-3" id="text-4-1">
-<p>
-Let \( X \) be a complex manifold. A vector bundle of \( X \) is called <b>holomorphic</b>
-iff the projection map is holomorphic. 
-</p>
-<div class="remark">
-<p>
-A holomorphic vector bundle is different from a vector bundle with holomorphic transition
-functions. In 1 dimension for example, an (differential) isomorphic class of line bundle with holomorphic
-transition can be encoded as an element of \( H^1(X, \mathbb{C}) \). Meanwhile, an
-(complex) isomorphic class of holomorphic line bundle is an element of \( H^1(X, \mathcal{O}^*) \).
-</p>
-
-</div>
-
-
-<div class="definition">
-<p>
-The <b>Picard group</b> \( \text{Pic}(X) \) is the commutative group of holomorphic line
-bundles over \( X \) with the tensor product. Another way to regard \( \text{Pic}(X) \) is
-by \( \text{Pic}(X) = \check{H}^1(X, \mathcal{O}^*) \).
-</p>
-
-</div>
-</div>
-</div>
-
-
-
-
-<div id="outline-container-orga8397cf" class="outline-3">
-<h3 id="orga8397cf"><span class="section-number-3">4.2</span> Example: first Chern class in \(H^2(X, \mathbb{Z})\)</h3>
-<div class="outline-text-3" id="text-4-2">
-<p>
-   The following short exact sequence of \( \mathbb{Z} \)-module
-\[
-0 \longrightarrow \mathbb{Z} \longrightarrow \mathcal{O}_X \longrightarrow \mathcal{O}_X^*
-\longrightarrow 0
-\]
-gives the long exact sequence:
-\[
-H^1(X, \mathcal{O}_X) \longrightarrow H^1(X, \mathcal{O}_X^*) \longrightarrow H^2(X,
-\mathbb{Z}) \longrightarrow \dots
-\]
-Since \(H^1(X, \mathcal{O}_X^*)\) is Picard group, the <span class="underline">first Chern class</span> \(c_1(L)\) of a
-holomorphic line bundle \(L\) is the image of \(L\) in \(H^2(X, \mathbb{Z})\).
-</p>
-</div>
-</div>
-
-<div id="outline-container-org01f7bef" class="outline-3">
-<h3 id="org01f7bef"><span class="section-number-3">4.3</span> Example: from divisor to Picard group</h3>
-<div class="outline-text-3" id="text-4-3">
-<p>
-An <b>analytic subvariety</b> \( Y \) of a complex manifold \( X \) is a closed set such that
-locally at each \( y\in Y \), \( Y \) is zero of a holomorphic function.
-</p>
-
-<div class="remark">
-<p>
-A analytic hypersurface \( Y \) can be completely encoded by a family \( ( U_i, f_i) \)
-where \( f_i\) is a meromorphic function on \( U_i \) with \( U_i\cap Y \) its zeros. The
-latter is a global section of \( H^1(X, K^*_X/ \mathcal{O}^*_X) \) where \( K_X^* \)
-denotes the sheaf of meromorphic germs that is not the zero germ and \( \mathcal{O}_X^* \)
-denotes the sheaf of holomorphic germs that is non-zero <span class="underline">at every point</span>
-(invertible). These are sheaves of \( \mathbb{Z} \)-modules.
-</p>
-
-</div>
-
-<p>
-This correspondance is not one-to-one, as \( 2.s = s^2 \in H^1(X, K^*_X/\mathcal{O}_X^*)
-\) describe the same hypersurface. This phenomenon can be avoid with the notion of
-divisor.
-</p>
-
-<div class="definition">
-<p>
-An <b>irreducible hypersurface</b> of \( X \) is a analytic hypersurface that is not union of
-smaller analytic hypersurfaces.
-</p>
-
-<p>
-A <b>divisor</b> \( D \) on \( X \) is a formal sum \( D = \sum a_i Y_i \) where \( a_i\in
-\mathbb{Z} \) and \( Y_i \) is an irreducible hypersurface. \( D \) is called <b>effective</b>
-if and only if \( a_i \geq 0 \).
-</p>
-
-<p>
-Let \( f \) be a meromorphic function on \( X \), the <b>principal divisor</b> associated to \(
-f \) is defined by \( (f) = \sum \ord_{f,Y}Y \) where \( \ord \) denotes the order of \( f
-\) on an irreducible hypersurface \( Y \)
-</p>
-
-</div>
-
-<p>
-Note that an irreducible hypersurface \( Y \) does not necessarily induce irreducible
-germs in every point, but only almost all points (denoted by \( Y_{reg} \)). Therefore, one
-can still define the order \( ord_{f,Y} \) of a meromorphic function \( f \) on \( Y \) as
-the order in any regular points.
-</p>
-
-<p>
-The next theorem follows immediately from the above discussion.
-</p>
-<div id="thm:div-pic-rel" btit="(Divisor-Line bundle relation)" class="theorem">
-<ol class="org-ol">
-<li>Given a divisor \( D = \sum a_i Y_i\), there exists a unique (isomorphic class of)
-holomorphic line bundle \( L = \mathcal{O}(D) \) such that \( D =Z(s) = \sum \ord_{s,Y} Y\), the zero with
-multiple of \( s \), where \( s \) a global section of \( L \). Given an open cover \(
-   U_i \) fine enough, this line bundle is defined such that the functions \(s_i = \prod
-   f_j^{\alpha_j} \) where \( Y_j = Z(f_j)\) in \( U_i \) form a global section.</li>
-<li>On the other hand, given a line bundle \( L \) and any global section \( s \), there
-exists a divisor \( D \) such that \( L = \mathcal{O}(D) \).</li>
-<li>One has group morphism \( \text{Div}(X) \longrightarrow \text{Pic}(X) \) whose kernel
-is the subgroup of principal divisors and every \( L\in \text{Pic}(X) \) with a
-nontrivial global section is image of an effective divisor.</li>
-</ol>
-
-</div>
-
-<p>
-The morphism \( \text{Div}(X) \longrightarrow \text{Pic}(X) \) can also be constructed by
-the following short exact sequence
-\[
-0 \longrightarrow \mathcal{O}_X^* \longrightarrow K_X^* \longrightarrow K_X^*/
-\mathcal{O}_X^* \longrightarrow 0
-\]
-which gives the long exact sequence
-\[
-H^0(X,K_X^*) \longrightarrow \text{Div}(X) = H^0(K_X^*/\mathcal{O}_X^*) \longrightarrow
-H^1(X, \mathcal{O}_X^*) = \text{Pic}(X) \longrightarrow \dots
-\]
-This shows clearly that the kernel of the above group morphism is the group of principal divisors.
 </p>
 </div>
 </div>
@@ -807,7 +565,7 @@ This shows clearly that the kernel of the above group morphism is the group of p
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-08-18 Fri 23:43. <br>
+Last updated 2017-08-31 Thu 02:12. <br>
 </div>
 </div>
 </body>

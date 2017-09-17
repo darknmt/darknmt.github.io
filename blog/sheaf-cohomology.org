@@ -249,8 +249,9 @@ H^n(M, \mathcal{S}) = \Gamma(\mathcal{C}_n)
 #+END_theorem
 
 #+BEGIN_remark
-A consequence of uniqueness of cohomology theory is the following. Given a sheaf \(
-\mathcal{S} \) of \( R_2 \)module and \( R_1 \) is a subring of \( R_2 \), then the
++A consequence of uniqueness of cohomology theory is the following.+ From the construction
+in Theorem ref:thm:existence-cohomology, given a sheaf \(
+\mathcal{S} \) of \( R_2 \)module and \( R_1 \) is a subring of \( R_2 \) then the
 cohomology \( H^*(M, \mathcal{S}) \) of \( \mathcal{S} \) can be defined in the category
 of \( R_1 \)-sheaves or \( R_2 \)-sheaves, noted by the \( R_i \)-modules \( H^*(M,
 \mathcal{S})_{R_i} \). Then \(H^*(M, \mathcal{S})_{R_2}\) is isomorphic to \( H^*(M,
