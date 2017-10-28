@@ -1,6 +1,87 @@
-* Publications
+#+SETUPFILE: ../res/mathsetup.org
+#+OPTIONS: toc:1 num:nil
+# [[file:../img/ly-ngu-vong-nguyet.jpg]]
+* Algebraic Geometry - Lecture 3: <2017-10-23 Mon>
+
+Here are some subtle points in the Lecture 3.
+
+** Proof of $\dim = \deg h_K$: Algebraic and Geometric interpretation of intersection
+
+The idea of the proof is to use recurrence on \(\deg h_K\). For the case $\deg h_K = 0$, it
+was proposed as an exercise to prove that $X$ is affine. Then $X$ is an finite
+dimensional \(k\)-algebra where prime ideals are maximal. The reduction part is base on a
+/good intersection/ of the projective scheme $X$ with a hyperplan defined by $f$.
+
+The geometric condition for a /good intersection/ is that the hyperplan does not contain
+any top dimensional irreducible component, i.e. 
+\[
+f\not\in \bigcup_{p \text{ minimal prime }}p
+\]
+so that the intersection is of dimension decreasing at least 1.
+
+The corresponding algebraic condition is that \( f \) is not a divisor of \( 0 \), so that
+one can apply the following result.
+
+#+ATTR_LATEX: :options [Krull principal ideal theorem]
+#+ATTR_HTML: :id thm:krull-principal :btit (Krull principal ideal theorem) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:krull-principal}
+Let \( A \) be a noetherian ring, \( f\in A \) and \( p \) is a minimal prime ideal among
+those containing \( f \). Then \( ht(p) \leq 1 \), in fact it is \( 0 \) if \( p \)
+divises \( 0 \) and \( 1 \) if not.
+#+END_theorem
+
+#+BEGIN_remark
+One can see that \( \bigcup_{p \text{ minimal prime }}\subset \{ \text{divisors of zero}\}
+\) from the more general point of view of /associated prime ideals/. So the algebraic
+condition is stricter than the geometric one.
+#+END_remark
 
 
-[[file:../img/ly-ngu-vong-nguyet.jpg]]
-* Notes
-*** The memoir of my internship at [[https://www.i2m.univ-amu.fr/][Institut de Mathématiques de Marseille]] (May-June 2017) [[[../res/Stage2017.pdf][PDF]]]
+** \( K \)-points of a scheme are closed if \( K/k \) is algebraic
+The \( K \)-points of a scheme \( X \) over a field \( k \) are defined as the images of
+\( \Spec K \) in \( X \) as \( k \)-scheme. Equivalently, it means that the /residual
+field/ \( k(x) = \mathcal{O}_{X,x}/\mathfrak{m}_x \) is a subfield of \( K \).
+
+If \( K/k \) is an algebraic extension then these are closed points. This is equivalent to
+the fact that such points are closed in _every_ affine open sets of \( X \).
+
+Let \( U=\Spec A \) be an open set containing a \( k \)-point \( p \), denoted as a prime
+ideal of \( A \), then the residual field at \( p \) is \( Frac(A/p) \) the fraction field
+of an integral domain \( A/p \) algebraic over \( k \). This also means that \( A/p \) is
+actually a field, hence \( p \) is maximal and therefore closed in \( U \).
+
+** Proof of locality of "local noetherian" property
+
+To prove that if a schema \( X \) is a union of noetherian affine scheme then every affine
+open set of \( X \) is noetherian, i.e. the property of being local noetherian is a local
+property, one reduces the to the following context: \( A \) is a affine scheme cover by
+noetherian affine open set \( \Spec B_i \) then \( A \) is noetherian. The idea is to use
+quasi-compactness to reduce to the case where \( B_i = A_{f_i} \) and \( i \) belongs to a
+finite set.
+
+The subtle point is that if \( \Spec B \subset \Spec A \) than a set \( D(f) \) in \( \Spec
+A \) is not neccessarily of form \( D(g) \) in \( \Spec B \). The additional data used
+here is that not only \( \Spec B_i \longrightarrow \Spec A \) but this inclusion is also a
+morphism between schemes, one therefore can recover the ring morphism \( A \longrightarrow B \).
+
+#+BEGIN_remark
+The lesson is that an affine open subset of a scheme \( X \) is not just an open subset
+that is affine. It is the image of an affine scheme in \( X \).
+#+END_remark
+
+
+
+* A (decent) map of mathematics <2017-10-17 Tue>
+
+I saw this [[https://www.flickr.com/photos/95869671@N08/32264483720][map of mathematics]] somewhere on YouTube and then again on the door of someone's
+office at the I2M. Although this map may help popularise mathematics, it should raise an
+eyebrow of a serious math student (or even an attentive highschool student, as for example
+1 was listed among prime numbers in an earlier version of this map).
+
+For a decent map of Mathematics, made by a mathematician, see [[http://www.math.unm.edu/~buium/mapp.pdf][this]]. 
+
+* My 2016-2017 internship <2017-07-31 Mon> 
+
+I have just recently finished my Stage3A at [[https://www.i2m.univ-amu.fr/][Institut de Mathématiques de Marseille]]. It is
+also in this period that I start this blog. The memoire can be founded here [[[../res/Stage2017.pdf][PDF]]]

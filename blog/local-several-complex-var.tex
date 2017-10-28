@@ -1,0 +1,425 @@
+% Created 2017-10-28 Sat 18:27
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{tikz-cd}
+\newtheorem{remark}{Remark}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{proposition}{Proposition}[theorem]
+\newtheorem{problem}{Problem}
+\newtheorem{exampl}{Example}
+\newtheorem{definition}{Definition}
+\newtheorem{propdef}[definition]{Proposition-Definition}
+\newcommand{\im}{\mathop{\rm Im}\nolimits}
+\newcommand{\supp}{\mathop{\rm supp}\nolimits}
+\newcommand{\ord}{\mathop{\rm ord}\nolimits}
+\newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
+\newcommand{\vol}{\mathop{\rm vol}\nolimits}
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+\left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+#1 % the function
+\vphantom{\big|} % pretend it's a little taller at normal size
+\right|_{#2} % this is the delimiter
+}}
+\author{darknmt}
+\date{\today}
+\title{Local results of several complex variables}
+\hypersetup{
+ pdfauthor={darknmt},
+ pdftitle={Local results of several complex variables},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.3.1 (Org mode 9.0.5)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\iffalse
+\begin{info}
+The PDF version of this page can be downloaded by replacing \texttt{html} in the its address by
+\texttt{pdf}. 
+For example \texttt{/html/sheaf-cohomology.html} should become \texttt{/pdf/sheaf-cohomology.pdf}.
+\end{info}
+\fi
+
+\section{Subharmonic and Plurisubharmonic functions}
+\label{sec:orgbf45ff7}
+
+Some properties of holomorphic functions that remain in several variables.
+\begin{itemize}
+\item Cauchy formula
+\item Analyticity: series development. Therefore its zeroes never form an open set (except for constant)
+\item Maximum modulus
+\item Cauchy inequality and Montel's theorem
+\end{itemize}
+
+
+\subsection{Subharmonic functions}
+\label{sec:orge070dfc}
+We are now in the context of \(\mathbb{R}^n\).
+
+\begin{theorem}[Green kernel]
+\label{thm:green-kernel}
+Let \(\Omega \Subset \mathbb{R}^n\) be a smoothly bounded domain, then there exists
+uniquely a function \(G_\Omega :\bar\Omega\times\bar\Omega \longrightarrow  [-\infty, 0]\), called \uline{the Green kernel} of \(\Omega\), with the following properties:
+\begin{enumerate}
+\item Regular: \(G_\Omega\) is \(C^\infty\) on \(\bar\Omega\times\bar\Omega\setminus
+   \Delta_\Omega\) where \(\Delta_\Omega\) denotes the diagonal,
+\item Symetric: \(G_\Omega(x,y) = G_\Omega(y,x)\),
+\item Negative: \(G_\Omega(x,y) <0\) on \(\Omega\times\Omega\) and \(G_\Omega(x,y) = 0\) on \(\partial\Omega\times \Omega\),
+\item \(\Delta_x G_\Omega(x,y) = \delta_y\) on \(\Omega\) for every \(y\in \Omega\).
+\end{enumerate}
+\end{theorem}
+aa
+\begin{exampl}[case \( \Omega = B(0,r) \)]
+One can take \(G_{r}=N(x-y) - N(\frac{|y|}{r}(x-\frac{r^2}{|y|^2}y))\) where \(N\) is
+the Newton kernel (or \href{https://en.wikipedia.org/wiki/Newtonian\_potential}{Newtonian potential}, the gravitational potential). Explicitly, one
+has
+\begin{align}
+G_r(x,y) &= \frac{1}{4\pi}\log \frac{|x-y|^2}{r^2 -2 \langle x,y \rangle
++\frac{1}{r^2}|x|^2|y|^2} &\text{ if } n=2\\
+G_r(x,y) &=\frac{-1}{(m-2)\vol(S^{m-1})}(|x-y|^{2-m} - (r^2 - 2 \langle x,y \rangle  + \frac{1}{r^2}|x|^2|y|^2)^{1-m/2}) &\text{ if } n\geq 3
+\end{align}
+\end{exampl}
+
+\begin{proposition}[Green-Riesz representation]
+For \(u\in C^2(\bar \Omega, \mathbb{R})\) one has
+\[
+u(x) = \int_{\Omega}G_\Omega(x,y) \Delta u(y) d\lambda(y) + \int_{\partial\Omega} u(y)
+\frac{\partial G_\Omega}{\partial \nu_y} d\sigma(y)
+\]
+In particular, for \(\Omega = B(0,r)\), one has 
+\[ 
+P_r(x,y) := \frac{\partial G}{\partial
+\nu_y} =\frac{1}{\vol(S^{m-1})r}\frac{r^2 - |x|^2}{|x-y|^m}
+\]
+called the \uline{Poisson kernel}.
+\end{proposition}
+\begin{proof}
+Use the Green-Riesz formula: \(\int_\Omega u\Delta v - v\Delta u = \int_{\partial
+\Omega}u \frac{\partial v}{\partial \nu} - v \frac{\partial u}{\partial \nu}\).
+\end{proof}
+
+\begin{definition}
+Let \(\Omega\subset \mathbb{R}^n\) be an open subset and \(u: \Omega \longrightarrow
+[-\infty,\infty)\) a upper semi-continuous function: \[ \limsup_{x \to x_0}u(x) \leq
+u(x_0) \] 
+One notes by \(\mu_S(u,a,r)\) and \(\mu_B(u,a,r)\) the average of \(u\) in the
+sphere and the disk centered in \(a\) of radius \(r\). Then the following properties are equivalent and a function is called
+\uline{subharmonic} if they are verified.
+\begin{description}
+\item[{1)}] \(u(x) \leq P_{a,r}[u](x) \quad \forall a,r, x\in B(a,r)\subset \Omega\),
+\item[{2)}] \(u(a) \leq \mu_S(u,a,r)\quad \forall B(a,r)\subset\Omega\),
+\item[{2')}] \(u(a) \leq \mu_S(u,a,r)\quad \text{ for } B(a,r_n)\subset\Omega, r_n\to 0\),
+\item[{3)}] \(u(a) \leq \mu_B(u,a,r)\quad \forall B(a,r)\subset \Omega\),
+\item[{3')}] \(u(a) \leq \mu_B(u,a,r)\quad \text{ for } B(a,r_n)\subset \Omega, r_n\to 0\),
+\item[{4)}] If \(u\in C^2\), then \(\Delta u \geq 0\).
+\end{description}
+The convex cone of subharmonic functions on a domain \(\Omega\) is denoted by \(Sh(\Omega)\).
+\end{definition}
+
+\begin{proof}
+It is obvious that \((1) \to (2) \to (3) \to (3')\to (2')\). To prove \((2')\to (1)\)
+one needs the following 2 facts:
+
+\begin{lemma}[u.s.c function as limit of continuous functions]
+Let \(u\) be a u.s.c. function on a compact metric space \(X\), then there exists a
+sequence \(u_n\) continuous function on \(X\) that decreases to \(u\) pointwise.
+\end{lemma}
+\textbf{Proof.} Let \(\tilde u_k(x) = \max \{u(x), -k \}\) to exclude the \(-\infty\) points. Then \(v_k(x) = \sup_{y\in X} \left(u(y) - kd(x,y)\right)\) works.
+
+
+\begin{lemma}
+\((2')\) implies strict maximum principle (see \ref{prop:subhar}).
+\end{lemma}
+\textbf{Proof.} By restriction to smaller neighborhood, one can suppose that \(u\) attains global
+maximum at \(x_0\) in \(\Omega\). Then \(W=\{x\in \Omega:\ u(x) < u(x_0)\}\) is an
+open set, and has a point \(y\) in its boundary if \(W\) nonempty. Then \((2')\) is
+not satisfied at \(y\) since the measure of open arc is nonzero.
+
+
+Note that if \(u\) is continue than \((2') \to (1)\): Let \(h = P_{a,r}[u]\)
+harmonic then \(u-h\) satisfies \((2')\), therefore the maximum principle, hence \(u-h\leq \restr{(u-h)}{S(a,r)} = 0\).
+
+If \(u\) is u.s.c, take a sequence \(v_k\) continuous that decreases to \(u\) and
+let \(h_k = P_{a,r}[v_k]\) then \(h_k\geq v_k\geq u\) and \(h_k\to P_{a,r}[u]\) by
+monotone convergence.
+\end{proof}
+
+
+
+
+
+
+
+\begin{proposition}[]
+\label{prop:subhar}
+Let \(u\in Sh(\Omega)\) then
+\begin{description}
+\item[{(Strict) maximum principle.}] \(u\) cannot attain local maximum unless it is constant in the corresponding connected component,
+\item[{Locally integrable.}] \(u\) is \(L^1_{loc}\) on each connected component where \(u\not\equiv -\infty\),
+\item[{Pointwise decreasing limit}] The pointwise limit \(u\) of a decreasing sequence \(u_k\) of
+subharmonic functions is also subharmonic.
+\item[{Regularisation.}] \(\mu_S(u,a,\varepsilon),\mu_B(u,a,\varepsilon),\rho_\varepsilon
+                    \ast u\) increase in \(\varepsilon\). Moreover, \(\rho_\varepsilon * u \in
+                    Sh(\Omega)\) and decreases to \(u\) pointwise as \(\varepsilon \to
+                    0\).
+\end{description}
+Moreover, for \(u\in \mathcal{D}'(\Omega)\)
+\begin{description}
+\item[{Positive measure.}] \(u\in Sh(\Omega)\) iff \(\Delta u \geq 0\) is a positive measure.
+\end{description}
+\end{proposition}
+
+\begin{proof}
+\begin{description}
+\item[{Locally integrable.}] To see that \(u\in L^1_{loc}(\Omega)\) if \(\Omega\) is
+connected and \(u\not\equiv -\infty\), let \(x\) be a point in the boundary of \(W=\{y\in \Omega:\ u\text{ integrable in neighborhood of } y\}\), then apply mean value property in \(a\in W\) such that \(x\in B(a,r)\).
+\item[{Pointwise decreasing limit.}] Infimum of a family of u.s.c functions is still u.s.c. The
+mean value property comes from monotone convergence.
+\item[{Regularisation.}] Check first for \(C^2\) functions, then regularise. One uses the
+following Gauss formula: 
+\[
+     \mu_S(u,a,r) = u(a) + \frac{1}{n}\int_0^r\mu_B(\Delta u, a, t)tdt
+     \]
+to see that \(\mu_S\) is increasing in \(r\) and
+\[
+     \mu_B(u,a,r) = m\int_0^1 t^{m-1}\mu_S(u,a,rt)dt
+     \]
+to see that \(\mu_B\) is increasing. For the convolution, use
+\[
+     u*\rho_\varepsilon = \vol(S^{n-1})\int_0^1 \mu_S(u,a,\varepsilon t)\rho(t) t^{m-1}dt.
+     \]
+\item[{Positive measure.}] \(\Delta u * \rho_\varepsilon \geq 0\) as function, therefore the
+limit \(\geq 0\) as measure (dominated convergence).
+\end{description}
+\end{proof}
+
+\begin{proposition}[new harmonic functions from old ones]
+let \(u_k \in Sh(\Omega)\) then
+\begin{enumerate}
+\item If \(\{u_k\}\) decrease to \(u\) then \(u\in Sh(\Omega)\).
+\item Let \(\chi\) be a convex function, non-decreasing in each variable then \(\chi(u_1,\dots,u_p) \in Sh(\Omega)\). Therefore, \(\sum u_i\) and \(\max\{u_i\}\)
+are subharmonic.
+\end{enumerate}
+\end{proposition}
+
+\begin{proposition}[Upper regularization]
+\label{prop:upper-regularization}
+\begin{enumerate}
+\item Let \(u\) be a real function on \(\Omega\) then \(u^*(x) = \lim_{\varepsilon\to 0}
+   \sup_{x+\varepsilon B} u\), called the \uline{upper envelope} of \(u\) is u.s.c and is in
+fact the smallest u.s.c function greater than \(u\).
+\item \textbf{Choquet lemma.} Let \(\{u_\alpha\}\) be a family of real function, one defines the
+\uline{upper regularization} of \(\{ u_\alpha\}\) by \(u^*\) where \(u=\sup_\alpha u_\alpha\). Then from every such family, on can always find a countable subfamily \(\{v_i\}\)
+such that \(u^* = v^*\).
+\item If \(\{u_{\alpha}\} \subset Sh(\Omega)\) then \(u^* = u\) a.e. and \(u^*\in Sh(\Omega)\).
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+\begin{enumerate}
+\item Obvious.
+\item Let \(B_i\) be a countable base of the topology and \(x_{i,j}\) be a sequence such
+that \(u(x_{ij}) \to \sup_{B_i}u\). Let \(\{ u_{i,j,k} \}\) be a countable subfamily
+such that \(u_{ijk}(x_i) \to u(x_i)\) then it is a suitable subfamily.
+\item WLOG, suppose that \(\{u_\alpha\} = \{u_i\}\) countable then \(u\) satisfies the
+submean value property: \(u(z)\leq \mu_B(u,z,r)\). By the continuity of \(\mu_B(u,z,r)\) one has \(u^*(z)\leq \mu_B(u,z,r)\leq \mu(u^*,z,r)\) therefore \(u^*\in
+   Sh(\Omega)\) and \(u^*(z) = \lim_{r\to 0} \mu_B(u^*,z,r) = \lim_{r\to 0}\mu_B(u,z,r)\), from which \(u=u^*\) a.e.
+\end{enumerate}
+\end{proof}
+
+
+\section{de Rham currents}
+\label{sec:org5130693}
+
+Let \(M\) be a differential \(m\)-dimensional manifold and \(\mathcal{E}^p(M)\) be
+the vector space of smooth \(p\)-forms on \(M\) and \(\mathcal{D}^p(M)\) be the
+space of those with compact support. Then \(\mathcal{E}^p(M), \mathcal{D}^p(M)\) is a topological vector
+space with the pseudonorms \(p_{K,\Omega}^s(\omega) = \max_{K, |\alpha|\leq s}|D^\alpha
+  u_I|\) where \(K\Subset \Omega\) an coordinated open set. The \uline{space of de Rham
+current} with dimension \(p\) / \uline{degree} \(m - p\) is defined as the dual space of
+\(\mathcal{D}^p(M)\), denoted by \(\mathcal{D}'^{m-p}(M)\) or \(D'_{p}(M)\)
+
+\begin{remark}
+\begin{enumerate}
+\item We are still in \(\mathbb{R}\), but the definition expands to the complex case,
+denoted by \(\mathcal{D}'^{m-p, m-q}(M) = \mathcal{D}'_{p,q}(M)\) where \(m\) is
+the complex dimension of \(M\).
+\item The degree is defined such that the current \(T_\omega: \eta \mapsto \int_M
+   \omega\wedge\eta\) is of the same degree as \(\omega\). The dimension is defined so
+that the current \(T_{[Z]}: \eta \mapsto \int_Z \eta\) is of the same dimension as \(Z\).
+\end{enumerate}
+\end{remark}
+
+\begin{definition}
+One has the following operation on \(\mathcal{D}'^{m-p}(M)\):
+\begin{enumerate}
+\item \textbf{Derivative:} \(\langle dT, \omega \rangle  = (-1)^{\deg{T}} \langle T, d\omega \rangle\)
+\item \textbf{Wedge product with a form:} \(\langle T\wedge \eta,\omega \rangle  = \langle T, \eta \wedge
+   \omega \rangle\)
+\item \textbf{Pushforward:} If \(F: X \longrightarrow Y\) proper on \(\supp T\) then \(\langle
+   F_*T, \omega \rangle = \langle T, F^*\omega \rangle = \langle T, \chi F_* \omega
+   \rangle\) where \(\chi \in C^{\infty}(M)\) identically 1 on \(\supp T\). The
+proper condition is such that the pullback of \(\omega\) is compactly support in \(\supp T\)
+\item \textbf{Pullback:} Let \(F: X \longrightarrow Y\) submersion then the pushforward of a form
+on \(X\) is well-defined by Fubini. One has \(\langle F^* T, \omega \rangle =
+   \langle T, F_* \omega \rangle\)
+\end{enumerate}
+\end{definition}
+
+\begin{remark}
+\begin{enumerate}
+\item The sign of derivative is chosen so that \(dT_\omega = T_{d\omega}\).
+\item Pushforward keeps the dimension, as the arguments are of the same degree.
+\item Pullback keeps the codimension, meaning the degree (think \(F^* T_{[Z]} =
+   T_{[F^{-1}(Z)]}\)).
+\item Locally a current is of form \(T = \sum u_I dx^I\) where \(u_I\) are
+distribution. \textbf{Note:} Here distribution are indentified as a current of maximal degree
+and \uline{not} zero degree as they naturally are. To be exact, the notation of \(u_I\) is
+contravariant and its action is \(\varphi dx^1\wedge\dots\wedge dx^N \mapsto \langle
+   u_I, \varphi \rangle dx^1\wedge\dots\wedge dx^n/\text{vol}\) where \(\text{vol}\) is
+a canonical volume form.
+\end{enumerate}
+\end{remark}
+
+The last two remarks explain the sign in the following proposition.
+
+\begin{proposition}[Pushforward and Pullback]
+Let \(F: M_1 \longrightarrow M_2\), submersion if needed, then
+\begin{enumerate}
+\item \(\supp F_* T \subset F(\supp T)\)
+\item \(d(F_* T) = F_* dT\) (pushforward of a form is still that form)
+\item \(F_*(T\wedge F^* g) = (F_*T)\wedge g\)
+\end{enumerate}
+and
+\begin{enumerate}
+\item \(F^*(dT) = (-1)^{m_1-m_2} d(F^* T)\)
+\item \(F^*(T\wedge g) = (-1)^{m_1-m_2 -\deg g}(F^* T)\wedge F^* g\)
+\end{enumerate}
+\end{proposition}
+
+
+
+
+
+
+\section{Resolution of \(\bar\partial\), Dolbeault-Grothendieck lemma}
+\label{sec:org1c81c81}
+The generalized Cauchy formula for several variables is the following (the formula in
+\href{https://en.wikipedia.org/wiki/Bochner–Martinelli\_formula}{wikipedia} is \(K^{0,0}_{BM}\))
+
+\begin{theorem}[Bochner–Martinelli-Koppelman formula]
+\label{thm:koppelman}
+The \uline{Bochner-Martinelli kernel} is the following \((n,n-1)\)-form on \(\mathbb{C}^n\)
+\[
+k_{BM} = (-1)^{n(n-1)/2}\frac{(n-1)!}{(2\pi i)^n}\sum_{1\leq j\leq n} (-1)^j \frac{\bar
+z_j dz_1\wedge \dots\wedge dz_n\wedge d\bar z_1\wedge\dots \wedge \widehat{d\bar z_j} \wedge \dots \wedge d\bar z_n}{|z|^{2n}}
+\]
+then \(\bar \partial k_{BM} = \delta_0\) on \(\mathbb{C}^n\).
+
+Let \(K_{BM} = \pi^* k_{BM}\) where \(\pi: (z,\zeta)\mapsto z-\zeta\) so that \(\bar \partial K_{BM} = [\Delta]\), then: For any domain \(\Omega\subset \mathbb{C}^n\)
+bounded with piecewise \(C^1\) boundary and \(v\) a \((p,q)\)-form of class \(C^1\) on \(\bar \Omega\) then
+\[
+v(z) = \int_{\partial\Omega}K^{p,q}_{BM}(z,\zeta)\wedge v(\zeta) + \bar \partial
+\int_{\Omega} K^{p,q-1}_{BM}(z,\zeta)\wedge v(\zeta) + \int_\Omega
+K^{p,q}_{BM}(z,\zeta)\wedge \bar \partial v(\zeta)
+\]
+where \(K^{p,q}_{BM}\) denotes the component of \(K_{BM}\) type \((p,q)\) in \(z\)
+and type \((n-p, n-q-1)\) in \(\zeta\)
+\end{theorem}
+
+Another consequence of \ref{thm:koppelman} is the \emph{global} resolution of \(\bar \partial\)
+in case of compact support.
+
+\begin{corollary}
+If \(v\) is a \((p,q)\)-form with \(q\geq 1\) on \(\mathbb{C}^n\), compactly supported, with regularity of class \(C^s\) such that \(\bar \partial v = 0\) then
+there exists an \((p,q-1)\)-form \(u\) on \(\mathbb{C}^n\) with the same regularity
+as \(u\) such
+that \(\bar \partial u =v\). In fact one can take
+\[
+u(z) = \int_{\mathbb{C}^n} K_{BM}^{p,q-1}(z,\zeta)\wedge v(\zeta)
+\]
+In case \((p,q)=(0,1)\) then \(u\) is compactly support. This means that the compact
+support \((0,1)\)-Dolbeault cohomology \(H_c^{0,1}(\mathbb{C}^n) = 0\).
+\end{corollary}
+
+Since \(K_{BM} = O(|z|^{1-2n})\), one has \(|u(z)| = O(|z|^{1-2n})\) at
+infinity. Therefore the compact support of \(u\) in case \((p,q)=(0,1)\) is explained
+by Liouville theorem.
+
+
+The Dolbeault-Grothendieck lemma solves the equation \(\bar \partial u = v\) in a local
+scale if the compact support condition is dropped and gives regular result if \(v\) is a \((p,0)\)-form.
+
+\begin{theorem}[Dolbeault-Grothendieck lemma]
+\label{thm:dolbeault-grothendieck}
+Let \(v \in \mathcal{D}'(p,q)(\Omega)\) such that \(\bar \partial v = 0\).
+\begin{enumerate}
+\item If \(q=0\) then \(v = \sum v_I dz^I\) where \(v_I\in \mathcal{O}(\Omega)\).
+\item If \(q \geq 1\) then there exists \(\omega\subset \Omega\) and \(u\in
+   \mathcal{D}'^(p,q-1)(\Omega)\) such that \(\bar \partial u =v\). Moreover, if \(v\in
+   \mathcal{E}^{p,q}(\Omega)\) then \(u\in \mathcal{E}^{p,q-1}(\Omega)\)
+\end{enumerate}
+\end{theorem}
+
+\begin{corollary}[Hypoellipticity in bidegree \((p,0)\)]
+\(\bar \partial\) is hypoellipticity in bidegree \((p,0)\), i.e. if \(\bar \partial u
+= v\), v of bidegree \((p,1)\) and \(v\) is \(C^\infty\) then \(u\) is also \(C^\infty\) on the entire domain \(\Omega\).
+\end{corollary}
+
+
+\section{Extension theorems, Domain of holomorphy}
+\label{sec:org36f7626}
+
+\begin{theorem}[Hartog extension]
+\label{thm:hartog-ext}
+Let \(\Omega \subset \mathbb{C}^n\) be a domain and \(K \Subset \Omega\) such that \(\Omega\setminus K\) is connected. Then \(\restr{\mathcal{O}(\omega)}{\Omega\setminus K} =
+\mathcal{O}(\Omega\setminus K)\) every holomorphic function on \(\Omega\setminus K\) extends to \(\Omega\)
+\end{theorem}
+\begin{proof}
+Let \(f\in \mathcal{O}(\Omega \setminus K\) be the function we want to extend. Let \(\varphi\) be a function with support in a neighborhood of \(K\) and is identically 1 on
+\(K\) and \(g = (1-\varphi)f\) which coincides with \(f\) outside of \(\supp
+\varphi\). Then \(v = \bar \partial g \in \mathcal{D}^{0,1}\) satisfies \(\bar
+\partial v = 0\), therefore there exists \(u\in C_c^\infty(\mathbb{C}^n\) with \(\supp
+u \subset \supp \varphi\) such that \(\bar \partial u = v = \bar \partial g\), the
+holomorphic function \(g-u\) is well-defined on \(\Omega\) and coincides with \(f\)
+(and \(g\)) on \(\Omega\setminus \supp\varphi\), therefore coincides with \(f\) on
+\(\Omega\setminus K\).
+\end{proof}
+
+Note that although we do not need \(\Omega\) to be small, this theorem counts as a
+\uline{local result due to the hypothesis that we are in \(\mathbb{C}^n\)}.
+
+
+A global result can be obtained using the \href{https://en.wikipedia.org/wiki/Hartogs'\_extension\_theorem}{Hartog figure}, that is the union of an anulus \(\{ (z_1,z'):\ r < |z_1| <
+R\}\) and an open set in other dimension \(\{ (z_1,z'):\ z'\in\omega \text{ open}\}\).
+and use the interpolation \((z_1,z') \mapsto \int_{C_{R}} \frac{f(\zeta_1,z')}{\zeta_1-z_1}d\zeta_1\) to extend \(f\). The open set in \(z'\)-dimension is to show that the interpolation and \(f\)
+coincide on it. With one dimension \(z_1\) to form the anulus an another dimension (says
+\(z_2\) to form the open set, one can extend any holomorphic function to a submanifold
+of (complex) codimension at least 2.
+
+\begin{theorem}[Riemann extension]
+\label{thm:riemann-ext}
+Let \(M\) be a complex manifold and \(N\) a sub complex manifold of codimension \(\geq 2\) then any holomorphic function on \(M\setminus N\) extends uniquely to \(M\).
+\end{theorem}
+Emacs 25.3.1 (Org mode 9.0.5)
+\end{document}

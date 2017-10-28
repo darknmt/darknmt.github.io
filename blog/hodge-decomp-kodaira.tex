@@ -1,4 +1,4 @@
-% Created 2017-08-31 Thu 02:12
+% Created 2017-10-28 Sat 18:27
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -30,6 +30,14 @@
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
 \newcommand{\supp}{\mathop{\rm supp}\nolimits}
 \newcommand{\ord}{\mathop{\rm ord}\nolimits}
+\newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
+\newcommand{\vol}{\mathop{\rm vol}\nolimits}
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+\left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+#1 % the function
+\vphantom{\big|} % pretend it's a little taller at normal size
+\right|_{#2} % this is the delimiter
+}}
 \author{darknmt}
 \date{\today}
 \title{Hodge decomposition and Kodaira embedding theorem}
@@ -38,7 +46,7 @@
  pdftitle={Hodge decomposition and Kodaira embedding theorem},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 25.2.1 (Org mode 9.0.5)}, 
+ pdfcreator={Emacs 25.3.1 (Org mode 9.0.5)}, 
  pdflang={English}}
 \begin{document}
 
@@ -263,5 +271,5 @@ with the symmetries
 
 \section{Kodaira embedding theorem}
 \label{sec:orgef4301b}
-Emacs 25.2.1 (Org mode 9.0.5)
+Emacs 25.3.1 (Org mode 9.0.5)
 \end{document}

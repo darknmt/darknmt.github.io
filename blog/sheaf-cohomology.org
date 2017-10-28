@@ -27,6 +27,12 @@ A *presheaf* is a way to associate each open set $U\subset M$ a \( R \)-module \
    can be defined on presheaves then pass to sheaves (in order not to deal with the
    topology)
 #+END_remark
+** Image, kernel and exact sequence - An algebraist's remark
+To write
+
+** Direct and reverse image of sheaf, ringed space
+To write
+
 
 * Cohomology of complexes
 

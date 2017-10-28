@@ -1,0 +1,40 @@
+#+TITLE: Some results in one complex variable
+#+SETUPFILE: ../res/mathsetup.org
+#+INCLUDE: ../res/include.org
+
+
+#+ATTR_LATEX: :options [Runge]
+#+ATTR_HTML: :id thm:runge :btit (Runge) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:runge}
+Let \( \Omega \) be a domain of \( \mathbb{C} \) and \( K \) a compact in \( \Omega
+\). Then the followings are equivalent
+1. \( K \) /has no hole/ in \( \Omega \), i.e. there is no connected component \( \mathcal{C}
+   \) of \( \Omega \setminus K \) with \( \bar{\mathcal{C}} \subset \Omega \).
+2. Every holomorphic function in \( K \) can be \( \|.\|_{K,\infty} \)-approached by
+   holomorphic functions in \( \Omega \).
+3. For every \( x\in \Omega\setminus K \), there exists a holomorphic function \( f_x \in
+   \mathcal{O}_{\Omega}\) such that \( |f(x)| > \sup_K |f| \).
+#+END_theorem
+
+
+#+ATTR_LATEX: :options [Mittag-Leffler]
+#+ATTR_HTML: :id thm:mittag-leffler :btit (Mittag-Leffler) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:mittag-leffler}
+Let \( (a_i) \) be a discrete sequence of points in \( \Omega \) and \( f_i \) be
+meromorphic functions with pole only at \( a_i \). Then there exists a meromorphic
+function \( f \) with poles only at \( (a_i) \) such that \( f-f_i \) has removable
+singularity at \( a_i \).
+#+END_theorem
+
+#+BEGIN_proof
+Suppose that \( (f_i) \) are globally defined in \( \Omega \). Choose an exhaustive
+sequence \( (\hat K_j=K_j)_j \) that increases slower than \( (a_i) \), i.e. \( a_i \not
+\in K_{i} \). By ref:thm:runge for \( K_i\subset \Omega \), there exist \( g_i\in
+\mathcal{O}(\Omega) \) with \( \|g_i - f_i\|_{K_i,\infty} < 2^{-i}\). Pose
+\[
+f = \sum_i (f_i-g_i).
+\]
+
+#+END_proof

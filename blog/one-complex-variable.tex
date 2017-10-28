@@ -1,0 +1,95 @@
+% Created 2017-10-28 Sat 18:27
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{tikz-cd}
+\newtheorem{remark}{Remark}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{proposition}{Proposition}[theorem]
+\newtheorem{problem}{Problem}
+\newtheorem{exampl}{Example}
+\newtheorem{definition}{Definition}
+\newtheorem{propdef}[definition]{Proposition-Definition}
+\newcommand{\im}{\mathop{\rm Im}\nolimits}
+\newcommand{\supp}{\mathop{\rm supp}\nolimits}
+\newcommand{\ord}{\mathop{\rm ord}\nolimits}
+\newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
+\newcommand{\vol}{\mathop{\rm vol}\nolimits}
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+\left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+#1 % the function
+\vphantom{\big|} % pretend it's a little taller at normal size
+\right|_{#2} % this is the delimiter
+}}
+\author{darknmt}
+\date{\today}
+\title{Some results in one complex variable}
+\hypersetup{
+ pdfauthor={darknmt},
+ pdftitle={Some results in one complex variable},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.3.1 (Org mode 9.0.5)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\iffalse
+\begin{info}
+The PDF version of this page can be downloaded by replacing \texttt{html} in the its address by
+\texttt{pdf}. 
+For example \texttt{/html/sheaf-cohomology.html} should become \texttt{/pdf/sheaf-cohomology.pdf}.
+\end{info}
+\fi
+
+\begin{theorem}[Runge]
+\label{thm:runge}
+Let \(\Omega\) be a domain of \(\mathbb{C}\) and \(K\) a compact in \(\Omega\). Then the followings are equivalent
+\begin{enumerate}
+\item \(K\) \emph{has no hole} in \(\Omega\), i.e. there is no connected component \(\mathcal{C}\) of \(\Omega \setminus K\) with \(\bar{\mathcal{C}} \subset \Omega\).
+\item Every holomorphic function in \(K\) can be \(\|.\|_{K,\infty}\)-approached by
+holomorphic functions in \(\Omega\).
+\item For every \(x\in \Omega\setminus K\), there exists a holomorphic function \(f_x \in
+   \mathcal{O}_{\Omega}\) such that \(|f(x)| > \sup_K |f|\).
+\end{enumerate}
+\end{theorem}
+
+
+\begin{theorem}[Mittag-Leffler]
+\label{thm:mittag-leffler}
+Let \((a_i)\) be a discrete sequence of points in \(\Omega\) and \(f_i\) be
+meromorphic functions with pole only at \(a_i\). Then there exists a meromorphic
+function \(f\) with poles only at \((a_i)\) such that \(f-f_i\) has removable
+singularity at \(a_i\).
+\end{theorem}
+
+\begin{proof}
+Suppose that \((f_i)\) are globally defined in \(\Omega\). Choose an exhaustive
+sequence \((\hat K_j=K_j)_j\) that increases slower than \((a_i)\), i.e. \(a_i \not
+\in K_{i}\). By \ref{thm:runge} for \(K_i\subset \Omega\), there exist \(g_i\in
+\mathcal{O}(\Omega)\) with \(\|g_i - f_i\|_{K_i,\infty} < 2^{-i}\). Pose
+\[
+f = \sum_i (f_i-g_i).
+\]
+\end{proof}
+Emacs 25.3.1 (Org mode 9.0.5)
+\end{document}

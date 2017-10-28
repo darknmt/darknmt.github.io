@@ -1,4 +1,4 @@
-% Created 2017-08-31 Thu 02:12
+% Created 2017-08-31 Thu 02:25
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -52,6 +52,15 @@ The PDF version of this page can be downloaded by replacing \texttt{html} in the
 For example \texttt{/html/sheaf-cohomology.html} should become \texttt{/pdf/sheaf-cohomology.pdf}.
 \end{info}
 \fi
+\iffalse
+\begin{info}
+This post is a part of the \href{../res/Stage2017.pdf}{memoire of my M1 internship} at I2M. The memoire contains,
+needless to say, less errors than this page.
+\end{info}
+\fi
+
+
+
 
 This is part of my reading in the summer of 2017. I will try not to mention the details here as they
 will be covered in future posts. The big question is to 

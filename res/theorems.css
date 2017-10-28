@@ -27,20 +27,31 @@ body
     border-color: BurlyWood;
     padding:10px 10px 10px 20px;
 }
+
 .exampl:before {
-    content: "Example. ";
+    content: "Example " attr(btit) ". " ;
     font-weight: bold;
     font-style: normal;
     text-decoration: underline;
 }
-
+.exampl:after {
+    content: "#REF:    "  attr(id);
+    text-align: right;
+    float:right;
+    font-style: italic;
+    background-color:   #ecdfec;
+    color: Tomato;
+    border-right: 6px solid;
+    border-color:    #b181b1;
+    padding: 5px 15px 5px 15px;
+}    
 .proposition {
     display: block;
     margin: 20px 0 40px 0;
     font-style: italic;
     background-color: Lavender;
     border-left: 6px solid;
-    border-color: DarkGrey;
+    border-color: #1d1d95;
     padding:10px 10px 10px 20px;
 }
 .proposition:before {
@@ -122,7 +133,7 @@ body
     font-style: italic;
     background-color: Lavender;
     border-left: 6px solid;
-    border-color: DarkGrey;
+    border-color: #9595ea;
     padding:10px 10px 10px 20px;
 }
 .lemma:before {
@@ -141,6 +152,35 @@ body
     border-color:    #b181b1;
     padding: 5px 15px 5px 15px;
 }
+
+.corollary {
+    display: block;
+    margin: 20px 0 40px 0;
+    font-style: italic;
+    background-color: #d6ebad;
+    border-left: 6px solid;
+    border-color: #5c7a1f;
+    padding:10px 10px 10px 20px;
+}
+.corollary:before {
+    content: "Corollary " attr(btit) ". ";
+    font-weight: bold;
+    font-style: normal;
+}
+.corollary:after {
+    content: "#REF:    "  attr(id);
+    text-align: right;
+    float:right;
+    font-style: italic;
+    background-color:   #ecdfec;
+    color: Tomato;
+    border-right: 6px solid;
+    border-color:    #b181b1;
+    padding: 5px 15px 5px 15px;
+}
+
+
+
 .proof {
     display: block;
     margin: 20px 0 0 30px;

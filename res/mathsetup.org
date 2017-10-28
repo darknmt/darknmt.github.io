@@ -8,6 +8,7 @@
 #+LATEX_HEADER: \DeclareMathOperator{\im}{Im}
 #+LATEX_HEADER: \DeclareMathOperator{\supp}{supp}
 #+LATEX_HEADER: \DeclareMathOperator{\ord}{ord}
+#+LATEX_HEADER: \DeclareMathOperator{\Spec}{Spec}
 #+END_COMMENT
 #+LATEX_HEADER: \newtheorem{remark}{Remark}  
 #+LATEX_HEADER: \newtheorem{theorem}{Theorem}
@@ -23,3 +24,13 @@
 #+LATEX_HEADER:    \newcommand{\im}{\mathop{\rm Im}\nolimits}
 #+LATEX_HEADER:    \newcommand{\supp}{\mathop{\rm supp}\nolimits}
 #+LATEX_HEADER:    \newcommand{\ord}{\mathop{\rm ord}\nolimits}
+#+LATEX_HEADER:    \newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
+#+LATEX_HEADER:    \newcommand{\vol}{\mathop{\rm vol}\nolimits}
+
+#+LATEX_HEADER: \newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+#+LATEX_HEADER:  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+#+LATEX_HEADER:  #1 % the function
+#+LATEX_HEADER:  \vphantom{\big|} % pretend it's a little taller at normal size
+#+LATEX_HEADER:  \right|_{#2} % this is the delimiter
+#+LATEX_HEADER:  }}
+

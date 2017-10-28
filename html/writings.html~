@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-08-18 Fri 23:34 -->
+<!-- 2017-10-24 Tue 01:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -227,6 +227,28 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -241,28 +263,154 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div id="content">
-<div id="outline-container-org4c5d84c" class="outline-2">
-<h2 id="org4c5d84c">Publications</h2>
-<div class="outline-text-2" id="text-org4c5d84c">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgf321bff">1. Algebraic Geometry - Lecture 3: <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-10-23 Mon&gt;</span></span></a></li>
+<li><a href="#org9ba4fd2">2. A (decent) map of mathematics <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-10-17 Tue&gt;</span></span></a></li>
+<li><a href="#org5aa26c3">3. My 2016-2017 internship <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-07-31 Mon&gt;</span></span></a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf321bff" class="outline-2">
+<h2 id="orgf321bff"><span class="section-number-2">1</span> Algebraic Geometry - Lecture 3: <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-10-23 Mon&gt;</span></span></h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Here are some subtle points in the Lecture 3.
+</p>
+</div>
 
-<div class="figure">
-<p><img src="../img/ly-ngu-vong-nguyet.jpg" alt="ly-ngu-vong-nguyet.jpg" />
+<div id="outline-container-orged01d13" class="outline-3">
+<h3 id="orged01d13">Proof of \(\dim = \deg h_K\): Algebraic and Geometric interpretation of intersection</h3>
+<div class="outline-text-3" id="text-orged01d13">
+<p>
+The idea of the proof is to use recurrence on \(\deg h_K\). For the case \(\deg h_K = 0\), it
+was proposed as an exercise to prove that \(X\) is affine. Then \(X\) is an finite
+dimensional \(k\)-algebra where prime ideals are maximal. The reduction part is base on a
+<i>good intersection</i> of the projective scheme \(X\) with a hyperplan defined by \(f\).
+</p>
+
+<p>
+The geometric condition for a <i>good intersection</i> is that the hyperplan does not contain
+any top dimensional irreducible component, i.e. 
+\[
+f\not\in \bigcup_{p \text{ minimal prime }}p
+\]
+so that the intersection is of dimension decreasing at least 1.
+</p>
+
+<p>
+The corresponding algebraic condition is that \( f \) is not a divisor of \( 0 \), so that
+one can apply the following result.
+</p>
+
+<div id="thm:krull-principal" btit="(Krull principal ideal theorem)" class="theorem">
+<p>
+Let \( A \) be a noetherian ring, \( f\in A \) and \( p \) is a minimal prime ideal among
+those containing \( f \). Then \( ht(p) \leq 1 \), in fact it is \( 0 \) if \( p \)
+divises \( 0 \) and \( 1 \) if not.
+</p>
+
+</div>
+
+<div class="remark">
+<p>
+One can see that \( \bigcup_{p \text{ minimal prime }}\subset \{ \text{divisors of zero}\}
+\) from the more general point of view of <i>associated prime ideals</i>. So the algebraic
+condition is stricter than the geometric one.
+</p>
+
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org5eea98f" class="outline-3">
+<h3 id="org5eea98f">\( K \)-points of a scheme are closed if \( K/k \) is algebraic</h3>
+<div class="outline-text-3" id="text-org5eea98f">
+<p>
+The \( K \)-points of a scheme \( X \) over a field \( k \) are defined as the images of
+\( \Spec K \) in \( X \) as \( k \)-scheme. Equivalently, it means that the <i>residual
+field</i> \( k(x) = \mathcal{O}_{X,x}/\mathfrak{m}_x \) is a subfield of \( K \).
+</p>
+
+<p>
+If \( K/k \) is an algebraic extension then these are closed points. This is equivalent to
+the fact that such points are closed in <span class="underline">every</span> affine open sets of \( X \).
+</p>
+
+<p>
+Let \( U=\Spec A \) be an open set containing a \( k \)-point \( p \), denoted as a prime
+ideal of \( A \), then the residual field at \( p \) is \( Frac(A/p) \) the fraction field
+of an integral domain \( A/p \) algebraic over \( k \). This also means that \( A/p \) is
+actually a field, hence \( p \) is maximal and therefore closed in \( U \).
 </p>
 </div>
 </div>
+
+<div id="outline-container-org5adf38b" class="outline-3">
+<h3 id="org5adf38b">Proof of locality of "local noetherian" property</h3>
+<div class="outline-text-3" id="text-org5adf38b">
+<p>
+To prove that if a schema \( X \) is a union of noetherian affine scheme then every affine
+open set of \( X \) is noetherian, i.e. the property of being local noetherian is a local
+property, one reduces the to the following context: \( A \) is a affine scheme cover by
+noetherian affine open set \( \Spec B_i \) then \( A \) is noetherian. The idea is to use
+quasi-compactness to reduce to the case where \( B_i = A_{f_i} \) and \( i \) belongs to a
+finite set.
+</p>
+
+<p>
+The subtle point is that if \( \Spec B \subset \Spec A \) than a set \( D(f) \) in \( \Spec
+A \) is not neccessarily of form \( D(g) \) in \( \Spec B \). The additional data used
+here is that not only \( \Spec B_i \longrightarrow \Spec A \) but this inclusion is also a
+morphism between schemes, one therefore can recover the ring morphism \( A \longrightarrow B \).
+</p>
+
+<div class="remark">
+<p>
+The lesson is that an affine open subset of a scheme \( X \) is not just an open subset
+that is affine. It is the image of an affine scheme in \( X \).
+</p>
+
 </div>
-<div id="outline-container-orgd063de1" class="outline-2">
-<h2 id="orgd063de1">Notes</h2>
-<div class="outline-text-2" id="text-orgd063de1">
-</div><div id="outline-container-orgfb8e296" class="outline-4">
-<h4 id="orgfb8e296">The memoir of my internship at <a href="https://www.i2m.univ-amu.fr/">Institut de Mathématiques de Marseille</a> (May-June 2017) [<a href="../res/Stage2017.pdf">PDF</a>]</h4>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org9ba4fd2" class="outline-2">
+<h2 id="org9ba4fd2"><span class="section-number-2">2</span> A (decent) map of mathematics <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-10-17 Tue&gt;</span></span></h2>
+<div class="outline-text-2" id="text-2">
+<p>
+I saw this <a href="https://www.flickr.com/photos/95869671@N08/32264483720">map of mathematics</a> somewhere on YouTube and then again on the door of someone's
+office at the I2M. Although this map may help popularise mathematics, it should raise an
+eyebrow of a serious math student (or even an attentive highschool student, as for example
+1 was listed among prime numbers in an earlier version of this map).
+</p>
+
+<p>
+For a decent map of Mathematics, made by a mathematician, see <a href="http://www.math.unm.edu/~buium/mapp.pdf">this</a>. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5aa26c3" class="outline-2">
+<h2 id="org5aa26c3"><span class="section-number-2">3</span> My 2016-2017 internship <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-07-31 Mon&gt;</span></span></h2>
+<div class="outline-text-2" id="text-3">
+<p>
+I have just recently finished my Stage3A at <a href="https://www.i2m.univ-amu.fr/">Institut de Mathématiques de Marseille</a>. It is
+also in this period that I start this blog. The memoire can be founded here [<a href="../res/Stage2017.pdf">PDF</a>]
+</p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-07-18 Tue 19:35. <br>
+Last updated 2017-10-24 Tue 01:25. <br>
 </div>
 </div>
 </body>

@@ -1,4 +1,4 @@
-% Created 2017-08-31 Thu 02:25
+% Created 2017-10-28 Sat 18:27
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -30,6 +30,14 @@
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
 \newcommand{\supp}{\mathop{\rm supp}\nolimits}
 \newcommand{\ord}{\mathop{\rm ord}\nolimits}
+\newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
+\newcommand{\vol}{\mathop{\rm vol}\nolimits}
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+\left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+#1 % the function
+\vphantom{\big|} % pretend it's a little taller at normal size
+\right|_{#2} % this is the delimiter
+}}
 \author{darknmt}
 \date{\today}
 \title{Sheaves and Cohomology}
@@ -38,7 +46,7 @@
  pdftitle={Sheaves and Cohomology},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 25.2.1 (Org mode 9.0.5)}, 
+ pdfcreator={Emacs 25.3.1 (Org mode 9.0.5)}, 
  pdflang={English}}
 \begin{document}
 
@@ -80,6 +88,14 @@ can be defined on presheaves then pass to sheaves (in order not to deal with the
 topology)
 \end{enumerate}
 \end{remark}
+\subsection{Image, kernel and exact sequence - An algebraist's remark}
+\label{sec:org32c7c12}
+To write
+
+\subsection{Direct and reverse image of sheaf, ringed space}
+\label{sec:org8c61468}
+To write
+
 
 \section{Cohomology of complexes}
 \label{sec:orgbad4845}
@@ -157,7 +173,7 @@ morphism from \(H^n(C_*)
 \end{figure}
 
 \subsection{Multiplicative structure}
-\label{sec:org2db2961}
+\label{sec:org35048ea}
 Given two complexes \(\{C_*\},\{D_*\}\), one can define their tensor product as \(E_* =
 C_* \otimes D_*\) with
 \[
@@ -292,7 +308,7 @@ By this reason, the base ring \(R\) is not expressed explicitly in the notation 
 
 
 \subsection{Multiplicative structure}
-\label{sec:org35048ea}
+\label{sec:org47e7da3}
 
 If each stalk \(\mathcal{S}(x)\) is more than an \(R\)-module but an \(R\)-algebra, then one can endow \(H^n(M, \mathcal{S})\) with a multiplicative structure
 that it a graded algebra. This structure come from the tensor product of the complex \(\Gamma(\mathcal{C}_n\otimes S)\) with itself and from the natural inclusion
@@ -443,5 +459,5 @@ H^0(X,K_X^*) \longrightarrow \text{Div}(X) = H^0(K_X^*/\mathcal{O}_X^*) \longrig
 H^1(X, \mathcal{O}_X^*) = \text{Pic}(X) \longrightarrow \dots
 \]
 This shows clearly that the kernel of the above group morphism is the group of principal divisors.
-Emacs 25.2.1 (Org mode 9.0.5)
+Emacs 25.3.1 (Org mode 9.0.5)
 \end{document}
