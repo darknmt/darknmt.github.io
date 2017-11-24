@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-10-24 Tue 01:25 -->
+<!-- 2017-11-08 Wed 00:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -267,12 +267,267 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
+<li><a href="#org387ed6b">Algebraic Geometry - Lecture 5: Changement de base <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-11-07 Tue&gt;</span></span></a></li>
+<li><a href="#org7e034b4">Algebraic Geometry - Lecture 4: Quelques propriétés de schémas <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-11-07 Tue&gt;</span></span></a></li>
 <li><a href="#orgf321bff">Algebraic Geometry - Lecture 3: <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-10-23 Mon&gt;</span></span></a></li>
 <li><a href="#org9ba4fd2">A (decent) map of mathematics <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-10-17 Tue&gt;</span></span></a></li>
 <li><a href="#org5aa26c3">My 2016-2017 internship <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-07-31 Mon&gt;</span></span></a></li>
 </ul>
 </div>
 </div>
+
+<div id="outline-container-org387ed6b" class="outline-2">
+<h2 id="org387ed6b">Algebraic Geometry - Lecture 5: Changement de base <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-11-07 Tue&gt;</span></span></h2>
+<div class="outline-text-2" id="text-org387ed6b">
+</div><div id="outline-container-org4f6f939" class="outline-3">
+<h3 id="org4f6f939">Changement de base</h3>
+<div class="outline-text-3" id="text-org4f6f939">
+<p>
+\[
+X(A)\times Y(A) = (X\times_k Y)(A)
+\]
+pour tout \( k \)-schema \( A,X,Y \).
+</p>
+</div>
+</div>
+<div id="outline-container-org83da4ad" class="outline-3">
+<h3 id="org83da4ad">Fibre schématique</h3>
+<div class="outline-text-3" id="text-org83da4ad">
+<p>
+   Soit \( X \) un schéma sur \( Y \).
+\[
+X_y := X\times_Y \Spec k(y)
+\]
+entant que espace topologique. D'où une structure de schéma sur \( X_y \).
+</p>
+</div>
+</div>
+<div id="outline-container-org1d17483" class="outline-3">
+<h3 id="org1d17483">Propriétés préservées par le changement de base</h3>
+<div class="outline-text-3" id="text-org1d17483">
+<div id="thm:prop-preserve-changement-base" class="theorem">
+<p>
+Soit \( Y' \) un schéma sur \( Y \), alors les propriétés suivantes de \( f:\ X
+\longrightarrow Y \) sont préservées par le morphisme induit \( \tilde f:\ X\times_Y Y'
+\longrightarrow Y' \):
+</p>
+<ol class="org-ol">
+<li>immersion ouverte, immersion fermée,</li>
+<li>localement de type fini, de type fini,</li>
+<li>quasi-compact,</li>
+<li>fini,</li>
+<li>affine.</li>
+</ol>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org50dd796" class="outline-3">
+<h3 id="org50dd796">Schémas intègres</h3>
+<div class="outline-text-3" id="text-org50dd796">
+<div class="definition">
+<p>
+Intègre = irréductible + réduit
+</p>
+
+</div>
+
+<p>
+Existence de \( X^{red} \).
+</p>
+
+<div id="prop:crit-local-integre" btit="(critère local)" class="proposition">
+<ol class="org-ol">
+<li>\( X \) réduit ssi \( \mathcal{O}_X(U) \) est réduit pour tout \( U\subset X \) ouvert.</li>
+<li>\( X \) est intègre ssi \( \mathcal{O}_X(U) \) est intègre pour tout \( U\subset X \) ouvert.</li>
+</ol>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org70294e0" class="outline-3">
+<h3 id="org70294e0">Points génériques</h3>
+<div class="outline-text-3" id="text-org70294e0">
+</div><div id="outline-container-org0d867dd" class="outline-4">
+<h4 id="org0d867dd">Cas schéma intègre</h4>
+<div class="outline-text-4" id="text-org0d867dd">
+<div id="thm:point-generique-irred" btit="(point générique d'un schéma irreductible)" class="theorem">
+<p>
+Soit \( X \) un schéma irreductible.
+</p>
+<ol class="org-ol">
+<li>Il existe un unique point \( \eta \) de \( X \) tq \( \overline{\{\eta\}} = X \). On
+dit que \( \eta \) est <span class="underline">le point générique</span> de \( X \).</li>
+<li>Si \( X \) est intègre, alors \( \mathcal{O}_{X,\eta} \) est le corp \(
+   Frac(\mathcal{O}_X(U)) \) pour tout \( U\subset X \) ouvert affine contenant</li>
+</ol>
+
+</div>
+
+<p>
+morphisme dominant = qui envoie le point générique au point générique.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd43d529" class="outline-4">
+<h4 id="orgd43d529">Cas général</h4>
+<div class="outline-text-4" id="text-orgd43d529">
+<div class="definition">
+<p>
+En général, un point \( \mu \) de \( X \) est dit un <span class="underline">point générique</span> si \( mu \) est le
+seul point \( \beta \) tq \( \overline{\{\beta\}} \ni \mu \)
+</p>
+
+</div>
+
+<div class="remark">
+<p>
+L'ensemble des points génériques est en bijection à celui des composants irreductibles de
+\( X \) par \( \mu \leftrightarrow \overline{\{\mu\}} \).
+</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc66e353" class="outline-3">
+<h3 id="orgc66e353">Morphismes séparés</h3>
+</div>
+</div>
+
+<div id="outline-container-org7e034b4" class="outline-2">
+<h2 id="org7e034b4">Algebraic Geometry - Lecture 4: Quelques propriétés de schémas <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-11-07 Tue&gt;</span></span></h2>
+<div class="outline-text-2" id="text-org7e034b4">
+</div><div id="outline-container-orgf4277cb" class="outline-3">
+<h3 id="orgf4277cb">Propriété locale</h3>
+<div class="outline-text-3" id="text-orgf4277cb">
+<div class="definition">
+<p>
+Une propriété \( P \) est dite <span class="underline">locale</span> si la définition de \( P \) a priori établit sur
+un recouvrement reste valable pour tout ouvert.
+</p>
+
+<p>
+Soit \( f: X \longrightarrow  Y \) un morphisme de schémas. Une propriété \( P \) de \( f
+\) est dite <span class="underline">locale sur la base</span> si les suivants sont équivalents
+</p>
+<ol class="org-ol">
+<li>\( f \) vérifie \( P \).</li>
+<li>\( Y \) admet un recouvrement affine \( Y = \cup V_i \) tq \(\restr{f}{f^{-1}(V_i)}:\ f^{-1}(V_i) \longrightarrow V_i \) vérifie \( P \).</li>
+</ol>
+
+</div>
+
+
+<div id="thm:loc-noetherian" btit="(schéma localement notherien)" class="theorem">
+<p>
+Les énoncés suivants sont équivalents et définissent un schéma <span class="underline">localement noethérien</span>
+</p>
+<ol class="org-ol">
+<li>Il existe un recouvrement affine \( X = \cup_{i\in I} U_i \) avec \( U_i = \Spec(A_i) \) et \(
+   A_i \) sont noethériens.</li>
+<li>Pour tout ouvert affine \( \Spec A = U\subset X \), \( A \) est noethérien.</li>
+</ol>
+<p>
+Si \( I \) est fini, on dit que \( A \) est <span class="underline">noethérien</span>.
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6878c79" class="outline-3">
+<h3 id="org6878c79">Morphisme localement de type fini.</h3>
+<div class="outline-text-3" id="text-org6878c79">
+<p>
+Tous les propriétés introduites dans cette partie sont locales sur la base.
+</p>
+</div>
+
+<div id="outline-container-org8eb952d" class="outline-4">
+<h4 id="org8eb952d">Morphisme quasi-compact</h4>
+<div class="outline-text-4" id="text-org8eb952d">
+<div class="definition">
+<p>
+Un morphisme \( f:\ X \longrightarrow Y \) est dit <span class="underline">quasi-compact</span> si pour tout ouvert
+affine \( V\subset Y \), \( f^{-1}(V) \) est quasi-compact.
+</p>
+
+</div>
+
+<div id="thm:mor-quasi-compact" btit="(morphisme quasi-compact)" class="theorem">
+<p>
+La quasi-compacité d'un morphisme est une propriété locale sur la base.
+</p>
+
+</div>
+
+<div id="thm:loc-type-fini" btit="(localement de type fini)" class="theorem">
+<p>
+Soit \( f: X \longrightarrow Y \) un morphisme de schémas. Les suivants sont équivalents
+et rendent \( f \) un morphisme <span class="underline">localement de type fini</span>:
+</p>
+<ol class="org-ol">
+<li>Pour tout ouvert affine \( V\subset Y \) et tout ouvert affine \( U\subset f^{-1}(Y)
+   \), \( \mathcal{O}_X(U) \) est une \( \mathcal{O}_Y(V) \) algèbre de type fini.</li>
+<li>Il existe un recouvrement affine \( Y = \cup_i V_i \) tq \( f^{-1}(V_i) = \cup_j U_{ij}
+   \) où \( \mathcal{O}_X(V_{ij}) \) est un \( \mathcal{O}_Y(V_i) \) algèbre de type fini.</li>
+</ol>
+<p>
+Si de plus \( f \) est quasi-compact, on dit qu'il est <span class="underline">de type fini</span>.
+</p>
+
+</div>
+
+<div class="proposition">
+<ol class="org-ol">
+<li>La composée de deux morphisme de type fini/quasi-compact/loc. de type fini est de type
+fini/quasi-compact/loc. de type fini.</li>
+<li>Si \( f\circ g \) est localement de type fini, alors \( f \) et \( g \) sont localement
+de type fini.</li>
+</ol>
+
+</div>
+
+<div class="exampl">
+<p>
+Une immersion ouvert est localement de type fini. La raison est que \( A_f \) est une \( A
+\)-algẻbre de type fini.
+</p>
+
+</div>
+
+<div class="definition">
+<ol class="org-ol">
+<li>Un morphisme \( f: \ X \longrightarrow Y \) est dit <span class="underline">affine</span> si \( f^{-1}(V) \) est
+affine \( \forall V\subset Y \) ouvert affine.</li>
+<li>\( f \) est dit <span class="underline">fini</span> s'il est affine et \( \mathcal{O}_X(f^{-1}(V)) \) est une \(
+   \mathcal{O}_Y(V) \) algèbre de type fini.</li>
+</ol>
+
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-orgacb2442" class="outline-4">
+<h4 id="orgacb2442">Morphisme quasi-compact, Morphisme de type fini</h4>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgdb0edbb" class="outline-3">
+<h3 id="orgdb0edbb">Morphisme affine, Morphisme fini</h3>
+</div>
+</div>
+
+
 <div id="outline-container-orgf321bff" class="outline-2">
 <h2 id="orgf321bff">Algebraic Geometry - Lecture 3: <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-10-23 Mon&gt;</span></span></h2>
 <div class="outline-text-2" id="text-orgf321bff">
@@ -410,7 +665,7 @@ also in this period that I start this blog. The memoire can be founded here [<a 
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-10-24 Tue 01:25. <br>
+Last updated 2017-11-08 Wed 00:32. <br>
 </div>
 </div>
 </body>

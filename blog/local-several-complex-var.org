@@ -2,6 +2,70 @@
 #+SETUPFILE: ../res/mathsetup.org
 #+INCLUDE: ../res/include.org
 
+
+* de Rham currents
+
+  Let \( M \) be a differential \( m \)-dimensional manifold and \( \mathcal{E}^p(M) \) be
+  the vector space of smooth \( p \)-forms on \( M \) and \( \mathcal{D}^p(M) \) be the
+  space of those with compact support. Then \( \mathcal{E}^p(M), \mathcal{D}^p(M) \) is a topological vector
+  space with the pseudonorms \( p_{K,\Omega}^s(\omega) = \max_{K, |\alpha|\leq s}|D^\alpha
+  u_I| \) where \( K\Subset \Omega \) an coordinated open set. The _space of de Rham
+  current_ with dimension \( p \) / _degree_ \( m - p \) is defined as the dual space of
+  \( \mathcal{D}^p(M) \), denoted by \( \mathcal{D}'^{m-p}(M) \) or \( D'_{p}(M) \)
+
+#+BEGIN_remark
+1. We are still in \( \mathbb{R} \), but the definition expands to the complex case,
+   denoted by \( \mathcal{D}'^{m-p, m-q}(M) = \mathcal{D}'_{p,q}(M) \) where \( m \) is
+   the complex dimension of \( M \).
+2. The degree is defined such that the current \( T_\omega: \eta \mapsto \int_M
+   \omega\wedge\eta \) is of the same degree as \( \omega \). The dimension is defined so
+   that the current \( T_{[Z]}: \eta \mapsto \int_Z \eta \) is of the same dimension as \( Z \).
+#+END_remark
+
+#+BEGIN_definition
+One has the following operation on \( \mathcal{D}'^{m-p}(M) \):
+1. *Derivative:* \( \langle dT, \omega \rangle  = (-1)^{\deg{T}} \langle T, d\omega \rangle  \)
+2. *Wedge product with a form:* \( \langle T\wedge \eta,\omega \rangle  = \langle T, \eta \wedge
+   \omega \rangle  \)
+3. *Pushforward:* If \( F: X \longrightarrow Y \) proper on \( \supp T \) then \( \langle
+   F_*T, \omega \rangle = \langle T, F^*\omega \rangle = \langle T, \chi F_* \omega
+   \rangle  \) where \( \chi \in C^{\infty}(M) \) identically 1 on \( \supp T \). The
+   proper condition is such that the pullback of \( \omega \) is compactly support in \(
+   \supp T \)
+4. *Pullback:* Let \( F: X \longrightarrow Y \) submersion then the pushforward of a form
+   on \( X \) is well-defined by Fubini. One has \( \langle F^* T, \omega \rangle =
+   \langle T, F_* \omega \rangle  \)
+#+END_definition
+
+#+BEGIN_remark
+1. The sign of derivative is chosen so that \( dT_\omega = T_{d\omega} \).
+2. Pushforward keeps the dimension, as the arguments are of the same degree.
+3. Pullback keeps the codimension, meaning the degree (think \( F^* T_{[Z]} =
+   T_{[F^{-1}(Z)]} \)).
+4. Locally a current is of form \( T = \sum u_I dx^I \) where \( u_I \) are
+   distribution. *Note:* Here distribution are indentified as a current of maximal degree
+   and _not_ zero degree as they naturally are. To be exact, the notation of \( u_I \) is
+   contravariant and its action is \( \varphi dx^1\wedge\dots\wedge dx^N \mapsto \langle
+   u_I, \varphi \rangle dx^1\wedge\dots\wedge dx^n/\text{vol} \) where \( \text{vol} \) is
+   a canonical volume form.
+#+END_remark
+
+The last two remarks explain the sign in the following proposition.
+
+#+ATTR_LATEX: :options [Pushforward and Pullback]
+#+ATTR_HTML: :btit (Pushforward and Pullback) 
+#+BEGIN_proposition
+Let \( F: M_1 \longrightarrow M_2 \), submersion if needed, then
+1. \( \supp F_* T \subset F(\supp T)\)
+2. \(d(F_* T) = F_* dT\) (pushforward of a form is still that form)
+3. \(F_*(T\wedge F^* g) = (F_*T)\wedge g\)
+and
+1. \(F^*(dT) = (-1)^{m_1-m_2} d(F^* T) \) 
+2. \(F^*(T\wedge g) = (-1)^{m_1-m_2 -\deg g}(F^* T)\wedge F^* g\)
+#+END_proposition
+
+
+
 * Subharmonic and Plurisubharmonic functions
 
 Some properties of holomorphic functions that remain in several variables.
@@ -158,7 +222,7 @@ Moreover, for \( u\in \mathcal{D}'(\Omega) \)
 #+ATTR_LATEX: :options [new harmonic functions from old ones]
 #+ATTR_HTML: :btit (new harmonic functions from old ones) 
 #+BEGIN_proposition
-let \( u_k \in Sh(\Omega) \) then
+Let \( u_k \in Sh(\Omega) \) then
 1. If \( \{u_k\} \) decrease to \( u \) then \( u\in Sh(\Omega) \).
 2. Let \( \chi \) be a convex function, non-decreasing in each variable then \(
    \chi(u_1,\dots,u_p) \in Sh(\Omega)\). Therefore, \( \sum u_i\) and \( \max\{u_i\} \)
@@ -187,73 +251,82 @@ let \( u_k \in Sh(\Omega) \) then
    submean value property: \( u(z)\leq \mu_B(u,z,r) \). By the continuity of \( \mu_B(u,z,r)
    \) one has \( u^*(z)\leq \mu_B(u,z,r)\leq \mu(u^*,z,r)  \) therefore \( u^*\in
    Sh(\Omega) \) and \( u^*(z) = \lim_{r\to 0} \mu_B(u^*,z,r) = \lim_{r\to 0}\mu_B(u,z,r)
-   \), from which \( u=u^* \) a.e.
+   \), from which \( u=u^* \)
 #+END_proof
 
+** Plurisubharmonic functions
 
-* de Rham currents
-
-  Let \( M \) be a differential \( m \)-dimensional manifold and \( \mathcal{E}^p(M) \) be
-  the vector space of smooth \( p \)-forms on \( M \) and \( \mathcal{D}^p(M) \) be the
-  space of those with compact support. Then \( \mathcal{E}^p(M), \mathcal{D}^p(M) \) is a topological vector
-  space with the pseudonorms \( p_{K,\Omega}^s(\omega) = \max_{K, |\alpha|\leq s}|D^\alpha
-  u_I| \) where \( K\Subset \Omega \) an coordinated open set. The _space of de Rham
-  current_ with dimension \( p \) / _degree_ \( m - p \) is defined as the dual space of
-  \( \mathcal{D}^p(M) \), denoted by \( \mathcal{D}'^{m-p}(M) \) or \( D'_{p}(M) \)
-
-#+BEGIN_remark
-1. We are still in \( \mathbb{R} \), but the definition expands to the complex case,
-   denoted by \( \mathcal{D}'^{m-p, m-q}(M) = \mathcal{D}'_{p,q}(M) \) where \( m \) is
-   the complex dimension of \( M \).
-2. The degree is defined such that the current \( T_\omega: \eta \mapsto \int_M
-   \omega\wedge\eta \) is of the same degree as \( \omega \). The dimension is defined so
-   that the current \( T_{[Z]}: \eta \mapsto \int_Z \eta \) is of the same dimension as \( Z \).
-#+END_remark
+The analog of harmonic functions over \( \mathbb{C} \) in multidimensional case \(
+\Omega\subset \mathbb{C}^n \) is in fact
+/pluriharmonic functions/ which is defined through the notion of plurisubharmonic functions
 
 #+BEGIN_definition
-One has the following operation on \( \mathcal{D}'^{m-p}(M) \):
-1. *Derivative:* \( \langle dT, \omega \rangle  = (-1)^{\deg{T}} \langle T, d\omega \rangle  \)
-2. *Wedge product with a form:* \( \langle T\wedge \eta,\omega \rangle  = \langle T, \eta \wedge
-   \omega \rangle  \)
-3. *Pushforward:* If \( F: X \longrightarrow Y \) proper on \( \supp T \) then \( \langle
-   F_*T, \omega \rangle = \langle T, F^*\omega \rangle = \langle T, \chi F_* \omega
-   \rangle  \) where \( \chi \in C^{\infty}(M) \) identically 1 on \( \supp T \). The
-   proper condition is such that the pullback of \( \omega \) is compactly support in \(
-   \supp T \)
-4. *Pullback:* Let \( F: X \longrightarrow Y \) submersion then the pushforward of a form
-   on \( X \) is well-defined by Fubini. One has \( \langle F^* T, \omega \rangle =
-   \langle T, F_* \omega \rangle  \)
+1. A real function \( u \) is said to be _plurisubharmonic_ if and only if its restriction to
+   any complex line is subharmonic. One denotes by \( Psh(\Omega) \) the space of
+   plurisubharmonic function on \( \Omega \).
+2. In case \( u\in C^2 \) on \( \Omega\subset \mathbb{C}^n \), this is equivalent to \[ H(u)(\zeta) = \sum
+   \frac{\partial^2 u}{\partial z^j \partial \bar z^k } \zeta^j \bar\zeta^k \geq 0\quad
+   \forall \zeta\in \mathbb{C}^n \] where the notation \( H(u)(\zeta) \) is invariant,
+   i.e. if \( f:\ M_1 \longrightarrow M_2\) is holomorphic then \( H(u\circ f)(\zeta) = H(u) df(\zeta) \).
+3. In the general case, this is equivalent to \( H(u)(\zeta) \geq 0\quad\forall \zeta\in
+   \mathbb{C}^n \) as a measure.
 #+END_definition
 
 #+BEGIN_remark
-1. The sign of derivative is chosen so that \( dT_\omega = T_{d\omega} \).
-2. Pushforward keeps the dimension, as the arguments are of the same degree.
-3. Pullback keeps the codimension, meaning the degree (think \( F^* T_{[Z]} =
-   T_{[F^{-1}(Z)]} \)).
-4. Locally a current is of form \( T = \sum u_I dx^I \) where \( u_I \) are
-   distribution. *Note:* Here distribution are indentified as a current of maximal degree
-   and _not_ zero degree as they naturally are. To be exact, the notation of \( u_I \) is
-   contravariant and its action is \( \varphi dx^1\wedge\dots\wedge dx^N \mapsto \langle
-   u_I, \varphi \rangle dx^1\wedge\dots\wedge dx^n/\text{vol} \) where \( \text{vol} \) is
-   a canonical volume form.
+1. The invariance can be noticed using \( \zeta^j = \zeta^j d\zeta^j + \bar\zeta^j
+   d\bar\zeta^j\) where LHS is intepreted as a vector in \( T \mathbb{C} \). This allows
+   us to extend the notion of \( Psh(M) \) to any complex manifold \( M \).
+2. By consequence, \( f^*u \in Psh(M_1) \) for all \( u\in Psh(M_2) \) and \( f:\ M_1
+   \longrightarrow M_2 \) holomorphic.
 #+END_remark
 
-The last two remarks explain the sign in the following proposition.
-
-#+ATTR_LATEX: :options [Pushforward and Pullback]
-#+ATTR_HTML: :btit (Pushforward and Pullback) 
+#+ATTR_LATEX: :options [new Psh functions from old ones]
+#+ATTR_HTML: :btit (new Psh functions from old ones) 
 #+BEGIN_proposition
-Let \( F: M_1 \longrightarrow M_2 \), submersion if needed, then
-1. \( \supp F_* T \subset F(\supp T)\)
-2. \(d(F_* T) = F_* dT\) (pushforward of a form is still that form)
-3. \(F_*(T\wedge F^* g) = (F_*T)\wedge g\)
-and
-1. \(F^*(dT) = (-1)^{m_1-m_2} d(F^* T) \) 
-2. \(F^*(T\wedge g) = (-1)^{m_1-m_2 -\deg g}(F^* T)\wedge F^* g\)
+The construction of new plurisubharmonic function is the same as that of subharmonic
+function. Let \( u_k \in Psh(\Omega) \) then
+1. If \( \{u_k\} \) decrease to \( u \) then \( u\in Psh(\Omega) \).
+2. Let \( \chi \) be a convex function, non-decreasing in each variable then \(
+   \chi(u_1,\dots,u_p) \in Psh(\Omega)\). Therefore, \( \sum u_i\) and \( \max\{u_i\} \)
+   are plurisubharmonic.
+3. The upper regularization \( u^* \) where \( u = \sup_\alpha u_\alpha \) is also
+   plurisubharmonic and \( u=u^* \) almost everywhere.
 #+END_proposition
+#+BEGIN_proof
+The only nontrivial proof is the third one where upper envelop in \( \mathbb{C^n} \) and
+in a line can be different. To fix this, use Choquet lemma ref:prop:upper-regularization and dominated convergence, \(
+u*\rho_\varepsilon \) satisfies the submean property on every complex line and decrease to
+\( u \) a.e.
+#+END_proof
+
+** Pluriharmonic functions
+
+#+BEGIN_definition
+A function \( u\) is said to be _pluriharmonic_ on \( \Omega \), denoted \( u\in Ph(\Omega)\) if \( u\in
+Psh(\Omega) and \( -u\in Psh(\Omega) \) \) where \( \Psh(\Omega) \).
+
+This is obviously equivalent to \( H(u) = 0 \), i.e. \( \frac{\partial^2 u}{\partial z^j
+\bar\partial z^k} =0 \quad \forall j,k\), i.e. \( \partial \bar \partial u = 0 \). 
+#+END_definition
+
+#+BEGIN_remark
+1. By mean value property, \( Ph(\Omega)\subset Harm(\Omega) \).
+2. If \( f\in \mathcal{O}(M)\) then \( \Re f, \Im f \in \( Ph(M) \)
+#+END_remark
 
 
+#+ATTR_LATEX: :options [analog of harmonic function]
+#+ATTR_HTML: :btit (analog of harmonic function) 
+#+BEGIN_theorem
+If \( M \) is a complex manifold such that \( H^1_{dR}(X, \mathbb{R}) = 0 \) then every
+pluriharmonic function \( u \) is a real part of a holomorphic function \( f\in \mathcal{O}(M) \)
+#+END_theorem
 
+#+BEGIN_proof
+Since \( d (\bar \partial u) = 0 \), and \( H^{1}_{dR} = 0 \), one has \( \bar \partial u
+= dg \). Therefore \( d(u - 2\Re g) = (\bar\partial u - dg) + (\partial u - d\bar g) = 0
+\), hence on chooses \( f=2g +C \) on each connected component.
+#+END_proof
 
 
 
@@ -360,7 +433,7 @@ A global result can be obtained using the [[https://en.wikipedia.org/wiki/Hartog
 R\} \) and an open set in other dimension \( \{ (z_1,z'):\ z'\in\omega \text{ open}\} \).
 and use the interpolation \( (z_1,z') \mapsto \int_{C_{R}} \frac{f(\zeta_1,z')}{\zeta_1-z_1}d\zeta_1
 \) to extend \( f \). The open set in \( z' \)-dimension is to show that the interpolation and \( f \)
-coincide on it. With one dimension \( z_1 \) to form the anulus an another dimension (says
+coincide on it. With one dimension \( z_1 \) to form the annulus an another dimension (says
 \( z_2 \) to form the open set, one can extend any holomorphic function to a submanifold
 of (complex) codimension at least 2.
 
@@ -371,3 +444,63 @@ of (complex) codimension at least 2.
 Let \( M \) be a complex manifold and \( N  \) a sub complex manifold of codimension \(
 \geq 2 \) then any holomorphic function on \( M\setminus N \) extends uniquely to \( M \).
 #+END_theorem
+
+** Generalities
+An approach to the extension problem on complex manifolds is through the notion of holomorphic hull and holomorphic convexity.
+
+#+BEGIN_definition
+1. Let \( K \) be a compact in a complex manifold \( M \). Then the _holomorphic hull_ \(
+  \hat K_{\mathcal{O}(M)} \) is the set \( \{ z\in M:\ f(z) \leq \sup_K |f| \quad\forall
+  f\in \mathcal{O}(M) \} \).
+2. A complex manifold \( M \) is said to be _holomorphically convex_ if \( \hat
+   K_{\mathcal{O}(X)} \) is compact for all compact \( K\subset M \).
+#+END_definition
+
+
+#+ATTR_LATEX: :options [holomorphic hull]
+#+ATTR_HTML: :id prop:holo-hull :btit (holomorphic hull) 
+#+BEGIN_proposition
+#+LATEX: \label{prop:holo-hull}
+The following statements are obvious
+1. \( \hat K \) is a closed subset containing \( K \) and \( \hat{\hat K} = \hat K \).
+2. If \( f:\ M_1 \longrightarrow  M_2 \) is holomorphic then \( f(\hat K)\subset
+   \widehat{f(K)} \). /(Think inclusion)/
+3. *Hole filling.* In particular, if \( f:\ \bar B \longrightarrow X \) and \( f(\partial
+   B) \subset K \) then \( f(\bar B)\subset \hat K \).
+#+END_proposition
+
+#+ATTR_LATEX: :options [holomorphically convex]
+#+ATTR_HTML: :id prop:holo-convex :btit (holomorphically convex) 
+#+BEGIN_proposition
+#+LATEX: \label{prop:holo-convex}
+Let \( M \) be a holomorphically convex complex manifold then
+1. \( M \) admits a exhaustive sequence of compact \( K_\nu \), i.e. \( K_\nu \Subset
+   K_{\nu+1} \) and \( \widehat {K_\nu} = K_\nu \).
+2. \( M \) is _weakly pseudoconvex_, i.e. there exists \( \psi\in Psh(M)\cap C^\infty(M)
+   \) such that \( \{\psi<c\} \) are relatively compact, i.e. \( \lim_{K\to M}
+   \restr{\psi}{M\setminus K} = +\infty \)
+#+END_proposition
+
+** Case \( \Omega\subset \mathbb{C}^n \)
+#+BEGIN_definition
+Domain of holomorphy
+#+END_definition
+
+#+ATTR_LATEX: :options []
+#+ATTR_HTML: :id prop: :btit () 
+#+BEGIN_proposition
+#+LATEX: \label{prop:}
+Let \( \Omega\subset \mathbb{C}^n \) be a domain then:
+1. If \( \Omega \) is a domain of holomorphy then \( \hat K_{\mathcal{O}(\Omega)} \) is
+   compact and \( d(K, \partial \Omega) = d(\hat K,\partial\Omega) \).
+2. THe followings are equivalent:
+   1. \( \Omega \) is a domain of holomorphy.
+   2. \( \Omega \) is holomorphically convex.
+   3. Let \( \{z_k\} \) be a sequence in \( \Omega \) without accumulation in \( \Omega \)
+      and \( c_k\in \mathbb{C} \). There exists a function \( f\in \mathcal{O}(\Omega) \)
+      such that \( f(z_k)=c_k \).
+   4. There exists a function \( F\in \mathcal{O}(\Omega) \) that is unbounded locally in
+      any point on \( \partial\Omega \).
+#+END_proposition
+
+

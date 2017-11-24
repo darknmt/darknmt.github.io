@@ -237,22 +237,6 @@ Any two cohomology theory \( \mathcal{H}, \tilde{\mathcal{H}} \) has \( \#Func(\
 \tilde{\mathcal{H}}) =1 \), therefore the two are naturally isomorphic.
 #+END_theorem
 
-It is straight-forward to see that the computation of cohomology is much simplified if one
-can find a *fine resolution* \( \mathcal{C}_n \) of \( \mathcal{S} \), i.e. fine sheaves
-\( \mathcal{C}_n \) such that \( 0 \longrightarrow \mathcal{S}\longrightarrow
-\mathcal{C}_0 \longrightarrow \mathcal{C}_1 \longrightarrow \dots \)
-
-#+ATTR_LATEX: :options []
-#+ATTR_HTML: :id thm:fine-resolution :btit
-#+BEGIN_theorem
-#+LATEX: \label{thm:fine-resolution}
-If  \( 0 \longrightarrow \mathcal{S}\longrightarrow
-\mathcal{C}_0 \longrightarrow \mathcal{C}_1 \longrightarrow \dots \) is a fine resolution
-of \( \mathcal{S} \) then
-\[
-H^n(M, \mathcal{S}) = \Gamma(\mathcal{C}_n)
-\]
-#+END_theorem
 
 #+BEGIN_remark
 +A consequence of uniqueness of cohomology theory is the following.+ From the construction
@@ -267,6 +251,36 @@ By this reason, the base ring \( R \) is not expressed explicitly in the notatio
 H^*(M, \mathcal{S}) \).
 #+END_remark
 
+
+It is straight-forward to see that the computation of cohomology is much simplified if one
+can find a *fine resolution* \( \mathcal{C}_n \) of \( \mathcal{S} \), i.e. fine sheaves
+\( \mathcal{C}_n \) such that \( 0 \longrightarrow \mathcal{S}\longrightarrow
+\mathcal{C}_0 \longrightarrow \mathcal{C}_1 \longrightarrow \dots \)
+
+#+ATTR_LATEX: :options []
+#+ATTR_HTML: :id thm:fine-resolution :btit
+#+BEGIN_theorem
+#+LATEX: \label{thm:fine-resolution}
+If  \( 0 \longrightarrow \mathcal{S}\longrightarrow
+\mathcal{C}_0 \longrightarrow \mathcal{C}_1 \longrightarrow \dots \) is a fine resolution
+of \( \mathcal{S} \) then
+\[
+H^n(M, \mathcal{S}) = H^n(\Gamma(\mathcal{C}_*))
+\]
+#+END_theorem
+
+#+ATTR_LATEX: :options [Dolbeault theorem]
+#+ATTR_HTML: :btit (Dolbeault theorem) 
+#+BEGIN_exampl
+Let \( M \) be a complex manifold and \( \Omega^p \) be the sheaf of holomorphic \( p
+\)-forms, i.e. form that are locally \( \sum_{|I|=p} h_I(z)dz^I \) with \( h_I \)
+holomorphic. The Dolbeault-Grothendieck lemma gives us exactly the following resolution of
+\( \Omega^p \): \[ 0 \longrightarrow \Omega^p \longrightarrow \Omega^{p,0} \longrightarrow
+\Omega^{p,1} \longrightarrow \dots \] where \( \Omega^{p,q} \) are sheaves of \( C^\infty
+\) forms of type \( (p,q) \). Theorem ref:thm:fine-resolution gives \[ H^q(M,\Omega^p) =
+H^q(\Gamma(\Omega^{p,*})) =: H^{p,q}_{\bar \partial}(M), \] called _Dolbeault cohomology_ of
+\( M \)
+#+END_exampl
 
 ** Multiplicative structure
 
@@ -323,6 +337,22 @@ C_{n,\mathcal{U}} \) which depends on the refining map \( j \). Using Theorem
 ref:thm:prism-operator, one can prove that the induced map between cohomology is however
 independent of \( j \).
 #+END_remark
+
+To actually use Čech cohomology, one needs to get rid of the direct limit, very often with
+the following theorem, the [[https://math.stackexchange.com/questions/1897164/leray-theorem-for-acyclic-covering][proof]] of which uses the notion of flasque sheaf and 5-lemma.
+
+#+ATTR_LATEX: :options [Leray]
+#+ATTR_HTML: :id thm:leray :btit (Leray) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:leray}
+Let \( \mathcal{U} \) be a open cover on \( M \) and \( \mathcal{S} \) is a sheaf on \( M
+\) such that every intersection \(V =  U_{i_1}\cap \dots U_{i_k} \) has \( H^p(V,
+\restr{\mathcal{S}}{V})=0 \) then
+\[
+\check{H}^*(M, \mathcal{S}, \mathcal{U}) = \check{H}^*(M,\mathcal{S})
+\]
+#+END_theorem
+
 
 
 ** Example: Picard group

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-10-25 Wed 17:17 -->
+<!-- 2017-11-01 Wed 14:28 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Sheaves and Cohomology</title>
@@ -277,13 +277,13 @@ for the JavaScript code in this tag.
 <li><a href="#orgd6abe18">2. Cohomology of complexes</a>
 <ul>
 <li><a href="#org9e26d47">2.1. Construction and naturality</a></li>
-<li><a href="#org3ec0558">2.2. Multiplicative structure</a></li>
+<li><a href="#org5b8bdd7">2.2. Multiplicative structure</a></li>
 </ul>
 </li>
 <li><a href="#org4d346b5">3. Axiomatic cohomology theory</a>
 <ul>
 <li><a href="#org9664495">3.1. Existence and Uniqueness</a></li>
-<li><a href="#org818d045">3.2. Multiplicative structure</a></li>
+<li><a href="#org3c33347">3.2. Multiplicative structure</a></li>
 <li><a href="#org59b9c6c">3.3. Examples: de Rham cohomology</a></li>
 </ul>
 </li>
@@ -305,6 +305,14 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 </p>
 
 </div>
+\(
+\newcommand{\im}{\mathop{\rm Im}\nolimits}
+ \newcommand{\supp}{\mathop{\rm supp}\nolimits}
+\newcommand{\ord}{\mathop{\rm ord}\nolimits}
+\newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
+\newcommand{\vol}{\mathop{\rm vol}\nolimits}
+\newcommand\restr[2]{{\left.#1\right|_{#2}}}
+\)
 
 
 <div id="outline-container-org107e4eb" class="outline-2">
@@ -426,8 +434,8 @@ morphism from \( H^n(C_*)
 </div>
 </div>
 
-<div id="outline-container-org3ec0558" class="outline-3">
-<h3 id="org3ec0558"><span class="section-number-3">2.2</span> Multiplicative structure</h3>
+<div id="outline-container-org5b8bdd7" class="outline-3">
+<h3 id="org5b8bdd7"><span class="section-number-3">2.2</span> Multiplicative structure</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Given two complexes \( \{C_*\},\{D_*\} \), one can define their tensor product as \( E_* =
@@ -566,24 +574,6 @@ Any two cohomology theory \( \mathcal{H}, \tilde{\mathcal{H}} \) has \( \#Func(\
 
 </div>
 
-<p>
-It is straight-forward to see that the computation of cohomology is much simplified if one
-can find a <b>fine resolution</b> \( \mathcal{C}_n \) of \( \mathcal{S} \), i.e. fine sheaves
-\( \mathcal{C}_n \) such that \( 0 \longrightarrow \mathcal{S}\longrightarrow
-\mathcal{C}_0 \longrightarrow \mathcal{C}_1 \longrightarrow \dots \)
-</p>
-
-<div id="thm:fine-resolution" class="theorem">
-<p>
-If  \( 0 \longrightarrow \mathcal{S}\longrightarrow
-\mathcal{C}_0 \longrightarrow \mathcal{C}_1 \longrightarrow \dots \) is a fine resolution
-of \( \mathcal{S} \) then
-\[
-H^n(M, \mathcal{S}) = \Gamma(\mathcal{C}_n)
-\]
-</p>
-
-</div>
 
 <div class="remark">
 <p>
@@ -602,12 +592,45 @@ H^*(M, \mathcal{S}) \).
 </p>
 
 </div>
+
+
+<p>
+It is straight-forward to see that the computation of cohomology is much simplified if one
+can find a <b>fine resolution</b> \( \mathcal{C}_n \) of \( \mathcal{S} \), i.e. fine sheaves
+\( \mathcal{C}_n \) such that \( 0 \longrightarrow \mathcal{S}\longrightarrow
+\mathcal{C}_0 \longrightarrow \mathcal{C}_1 \longrightarrow \dots \)
+</p>
+
+<div id="thm:fine-resolution" class="theorem">
+<p>
+If  \( 0 \longrightarrow \mathcal{S}\longrightarrow
+\mathcal{C}_0 \longrightarrow \mathcal{C}_1 \longrightarrow \dots \) is a fine resolution
+of \( \mathcal{S} \) then
+\[
+H^n(M, \mathcal{S}) = H^n(\Gamma(\mathcal{C}_*))
+\]
+</p>
+
+</div>
+
+<div btit="(Dolbeault theorem)" class="exampl">
+<p>
+Let \( M \) be a complex manifold and \( \Omega^p \) be the sheaf of holomorphic \( p
+\)-forms, i.e. form that are locally \( \sum_{|I|=p} h_I(z)dz^I \) with \( h_I \)
+holomorphic. The Dolbeault-Grothendieck lemma gives us exactly the following resolution of
+\( \Omega^p \): \[ 0 \longrightarrow \Omega^p \longrightarrow \Omega^{p,0} \longrightarrow
+\Omega^{p,1} \longrightarrow \dots \] where \( \Omega^{p,q} \) are sheaves of \( C^\infty
+\) forms of type \( (p,q) \). Theorem <a href="#thm:fine-resolution">thm:fine-resolution</a> gives \[ H^q(M,\Omega^p) =
+H^q(\Gamma(\Omega^{p,*})) =: H^{p,q}_{\bar \partial}(M), \] called Dolbeault cohomology of
+\( M \)
+</p>
+
+</div>
 </div>
 </div>
 
-
-<div id="outline-container-org818d045" class="outline-3">
-<h3 id="org818d045"><span class="section-number-3">3.2</span> Multiplicative structure</h3>
+<div id="outline-container-org3c33347" class="outline-3">
+<h3 id="org3c33347"><span class="section-number-3">3.2</span> Multiplicative structure</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 If each stalk \( \mathcal{S}(x) \) is more than an \( R \)-module but an \( R
@@ -830,7 +853,7 @@ This shows clearly that the kernel of the above group morphism is the group of p
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-10-06 Fri 01:39. <br>
+Last updated 2017-11-01 Wed 14:27. <br>
 </div>
 </div>
 </body>

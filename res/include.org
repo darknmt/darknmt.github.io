@@ -5,20 +5,15 @@ The PDF version of this page can be downloaded by replacing ~html~ in the its ad
 For example ~/html/sheaf-cohomology.html~ should become ~/pdf/sheaf-cohomology.pdf~.
 #+END_info
 #+LATEX: \fi
-
 # MathJax Config
 #+BEGIN_EXPORT html
-
-
 \(
+\require{AMScd}
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
  \newcommand{\supp}{\mathop{\rm supp}\nolimits}
 \newcommand{\ord}{\mathop{\rm ord}\nolimits}
 \newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
 \newcommand{\vol}{\mathop{\rm vol}\nolimits}
-
 \newcommand\restr[2]{{\left.#1\right|_{#2}}}
 \)
-
-
 #+END_EXPORT

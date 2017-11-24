@@ -1,6 +1,167 @@
 #+SETUPFILE: ../res/mathsetup.org
 #+OPTIONS: toc:1 num:nil
 # [[file:../img/ly-ngu-vong-nguyet.jpg]]
+
+* Algebraic Geometry - Lecture 5: Changement de base <2017-11-07 Tue>
+
+** Changement de base
+\[
+X(A)\times Y(A) = (X\times_k Y)(A)
+\]
+pour tout \( k \)-schema \( A,X,Y \).
+** Fibre schématique
+   Soit \( X \) un schéma sur \( Y \).
+\[
+X_y := X\times_Y \Spec k(y)
+\]
+entant que espace topologique. D'où une structure de schéma sur \( X_y \).
+** Propriétés préservées par le changement de base
+
+
+#+ATTR_HTML: :id thm:prop-preserve-changement-base :btit
+#+BEGIN_theorem
+#+LATEX: \label{thm:prop-preserve-changement-base}
+Soit \( Y' \) un schéma sur \( Y \), alors les propriétés suivantes de \( f:\ X
+\longrightarrow Y \) sont préservées par le morphisme induit \( \tilde f:\ X\times_Y Y'
+\longrightarrow Y' \):
+1. immersion ouverte, immersion fermée,
+2. localement de type fini, de type fini,
+3. quasi-compact,
+4. fini,
+5. affine.
+#+END_theorem
+
+** Schémas intègres
+
+#+BEGIN_definition
+Intègre = irréductible + réduit
+#+END_definition
+
+*** TODO Existence de \( X^{red} \).
+
+#+ATTR_LATEX: :options [critère local]
+#+ATTR_HTML: :id prop:crit-local-integre :btit (critère local) 
+#+BEGIN_proposition
+#+LATEX: \label{prop:crit-local-integre}
+1. \( X \) réduit ssi \( \mathcal{O}_X(U) \) est réduit pour tout \( U\subset X \) ouvert.
+2. \( X \) est intègre ssi \( \mathcal{O}_X(U) \) est intègre pour tout \( U\subset X \) ouvert.
+#+END_proposition
+
+** Points génériques
+*** Cas schéma intègre
+#+ATTR_LATEX: :options [point générique d'un schéma irréductible]
+#+ATTR_HTML: :id thm:point-generique-irred :btit (point générique d'un schéma irreductible) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:point-generique-irred}
+Soit \( X \) un schéma irreductible.
+1. Il existe un unique point \( \eta \) de \( X \) tq \( \overline{\{\eta\}} = X \). On
+   dit que \( \eta \) est _le point générique_ de \( X \).
+2. Si \( X \) est intègre, alors \( \mathcal{O}_{X,\eta} \) est le corp \(
+   Frac(\mathcal{O}_X(U)) \) pour tout \( U\subset X \) ouvert affine contenant
+#+END_theorem
+
+morphisme dominant = qui envoie le point générique au point générique.
+
+*** Cas général
+
+#+BEGIN_definition
+En général, un point \( \mu \) de \( X \) est dit un _point générique_ si \( mu \) est le
+seul point \( \beta \) tq \( \overline{\{\beta\}} \ni \mu \)
+#+END_definition
+
+#+BEGIN_remark
+L'ensemble des points génériques est en bijection à celui des composants irreductibles de
+\( X \) par \( \mu \leftrightarrow \overline{\{\mu\}} \).
+#+END_remark
+** Morphismes séparés
+- \(f: X \longrightarrow Y \) séparé = \( \Delta_f : \ X \longrightarrow X\times_Y X \)
+  est une immersion fermée.
+- C'est une phénomène due au recollement. Si les morphismes entre schémas affines sont
+  toujours séparés.
+
+* Algebraic Geometry - Lecture 4: Quelques propriétés de schémas <2017-11-07 Tue>
+** Propriété locale
+#+BEGIN_definition
+Une propriété \( P \) est dite _locale_ si la définition de \( P \) a priori établit sur
+un recouvrement reste valable pour tout ouvert.
+
+Soit \( f: X \longrightarrow  Y \) un morphisme de schémas. Une propriété \( P \) de \( f
+\) est dite _locale sur la base_ si les suivants sont équivalents
+1. \( f \) vérifie \( P \).
+2. \( Y \) admet un recouvrement affine \( Y = \cup V_i \) tq \(\restr{f}{f^{-1}(V_i)}:\ f^{-1}(V_i) \longrightarrow V_i \) vérifie \( P \).
+#+END_definition
+
+
+#+ATTR_LATEX: :options [schéma localement notherien]
+#+ATTR_HTML: :id thm:loc-noetherian :btit (schéma localement notherien) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:loc-noetherian}
+Les énoncés suivants sont équivalents et définissent un schéma _localement noethérien_
+1. Il existe un recouvrement affine \( X = \cup_{i\in I} U_i \) avec \( U_i = \Spec(A_i) \) et \(
+   A_i \) sont noethériens.
+2. Pour tout ouvert affine \( \Spec A = U\subset X \), \( A \) est noethérien.
+Si \( I \) est fini, on dit que \( A \) est _noethérien_.
+#+END_theorem
+
+** Morphisme localement de type fini.
+Tous les propriétés introduites dans cette partie sont locales sur la base.
+
+*** Morphisme quasi-compact
+
+#+BEGIN_definition
+Un morphisme \( f:\ X \longrightarrow Y \) est dit _quasi-compact_ si pour tout ouvert
+affine \( V\subset Y \), \( f^{-1}(V) \) est quasi-compact.
+#+END_definition
+
+#+ATTR_LATEX: :options [morphisme quasi-compact]
+#+ATTR_HTML: :id thm:mor-quasi-compact :btit (morphisme quasi-compact) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:mor-quasi-compact}
+La quasi-compacité d'un morphisme est une propriété locale sur la base.
+#+END_theorem
+
+#+ATTR_LATEX: :options [localement de type fini]
+#+ATTR_HTML: :id thm:loc-type-fini :btit (localement de type fini) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:loc-type-fini}
+Soit \( f: X \longrightarrow Y \) un morphisme de schémas. Les suivants sont équivalents
+et rendent \( f \) un morphisme _localement de type fini_:
+1. Pour tout ouvert affine \( V\subset Y \) et tout ouvert affine \( U\subset f^{-1}(Y)
+   \), \( \mathcal{O}_X(U) \) est une \( \mathcal{O}_Y(V) \) algèbre de type fini.
+2. Il existe un recouvrement affine \( Y = \cup_i V_i \) tq \( f^{-1}(V_i) = \cup_j U_{ij}
+   \) où \( \mathcal{O}_X(V_{ij}) \) est un \( \mathcal{O}_Y(V_i) \) algèbre de type fini.
+Si de plus \( f \) est quasi-compact, on dit qu'il est _de type fini_.
+#+END_theorem
+
+#+BEGIN_proposition
+1. La composée de deux morphisme de type fini/quasi-compact/loc. de type fini est de type
+   fini/quasi-compact/loc. de type fini.
+2. Si \( f\circ g \) est localement de type fini, alors \( f \) et \( g \) sont localement
+   de type fini.
+#+END_proposition
+
+#+BEGIN_exampl
+Une immersion ouvert est localement de type fini. La raison est que \( A_f \) est une \( A
+\)-algẻbre de type fini.
+#+END_exampl
+
+#+BEGIN_definition
+1. Un morphisme \( f: \ X \longrightarrow Y \) est dit _affine_ si \( f^{-1}(V) \) est
+   affine \( \forall V\subset Y \) ouvert affine.
+2. \( f \) est dit _fini_ s'il est affine et \( \mathcal{O}_X(f^{-1}(V)) \) est une \(
+   \mathcal{O}_Y(V) \) algèbre de type fini.
+#+END_definition
+
+
+
+
+*** Morphisme quasi-compact, Morphisme de type fini
+
+
+
+** Morphisme affine, Morphisme fini
+
+
 * Algebraic Geometry - Lecture 3: <2017-10-23 Mon>
 
 Here are some subtle points in the Lecture 3.
