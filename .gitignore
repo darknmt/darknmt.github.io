@@ -22,7 +22,8 @@ _region_*
 *.tex~
 ltximg/
 unpublished/
-
+blog/*.pdf
+blog/*.tex
 
 ## Intermediate documents:
 *.dvi
