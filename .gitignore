@@ -19,7 +19,9 @@ _region_*
 ## Emacs
 *.html~
 *.org~
+*.tex~
 ltximg/
+unpublished/
 
 
 ## Intermediate documents:
