@@ -1,4 +1,4 @@
-% Created 2017-10-28 Sat 18:27
+% Created 2017-12-16 Sat 01:08
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -15,7 +15,7 @@
 \usepackage{capt-of}
 \usepackage{hyperref}
 \usepackage{amsthm}
-\usepackage{amsmath}
+\usepackage{amsmath,amscd}
 \usepackage{tikz-cd}
 \newtheorem{remark}{Remark}
 \newtheorem{theorem}{Theorem}
@@ -173,7 +173,7 @@ morphism from \(H^n(C_*)
 \end{figure}
 
 \subsection{Multiplicative structure}
-\label{sec:org35048ea}
+\label{sec:orgc26c0d5}
 Given two complexes \(\{C_*\},\{D_*\}\), one can define their tensor product as \(E_* =
 C_* \otimes D_*\) with
 \[
@@ -280,20 +280,6 @@ Any two cohomology theory \(\mathcal{H}, \tilde{\mathcal{H}}\) has \(\#Func(\mat
 \tilde{\mathcal{H}}) =1\), therefore the two are naturally isomorphic.
 \end{theorem}
 
-It is straight-forward to see that the computation of cohomology is much simplified if one
-can find a \textbf{fine resolution} \(\mathcal{C}_n\) of \(\mathcal{S}\), i.e. fine sheaves
-\(\mathcal{C}_n\) such that \(0 \longrightarrow \mathcal{S}\longrightarrow
-\mathcal{C}_0 \longrightarrow \mathcal{C}_1 \longrightarrow \dots\)
-
-\begin{theorem}[]
-\label{thm:fine-resolution}
-If  \(0 \longrightarrow \mathcal{S}\longrightarrow
-\mathcal{C}_0 \longrightarrow \mathcal{C}_1 \longrightarrow \dots\) is a fine resolution
-of \(\mathcal{S}\) then
-\[
-H^n(M, \mathcal{S}) = \Gamma(\mathcal{C}_n)
-\]
-\end{theorem}
 
 \begin{remark}
 \sout{A consequence of uniqueness of cohomology theory is the following.} From the construction
@@ -307,8 +293,32 @@ By this reason, the base ring \(R\) is not expressed explicitly in the notation 
 \end{remark}
 
 
+It is straight-forward to see that the computation of cohomology is much simplified if one
+can find a \textbf{fine resolution} \(\mathcal{C}_n\) of \(\mathcal{S}\), i.e. fine sheaves
+\(\mathcal{C}_n\) such that \(0 \longrightarrow \mathcal{S}\longrightarrow
+\mathcal{C}_0 \longrightarrow \mathcal{C}_1 \longrightarrow \dots\)
+
+\begin{theorem}[]
+\label{thm:fine-resolution}
+If  \(0 \longrightarrow \mathcal{S}\longrightarrow
+\mathcal{C}_0 \longrightarrow \mathcal{C}_1 \longrightarrow \dots\) is a fine resolution
+of \(\mathcal{S}\) then
+\[
+H^n(M, \mathcal{S}) = H^n(\Gamma(\mathcal{C}_*))
+\]
+\end{theorem}
+
+\begin{exampl}[Dolbeault theorem]
+Let \(M\) be a complex manifold and \(\Omega^p\) be the sheaf of holomorphic \(p\)-forms, i.e. form that are locally \(\sum_{|I|=p} h_I(z)dz^I\) with \(h_I\)
+holomorphic. The Dolbeault-Grothendieck lemma gives us exactly the following resolution of
+\(\Omega^p\): \[ 0 \longrightarrow \Omega^p \longrightarrow \Omega^{p,0} \longrightarrow
+\Omega^{p,1} \longrightarrow \dots \] where \(\Omega^{p,q}\) are sheaves of \(C^\infty\) forms of type \((p,q)\). Theorem \ref{thm:fine-resolution} gives \[ H^q(M,\Omega^p) =
+H^q(\Gamma(\Omega^{p,*})) =: H^{p,q}_{\bar \partial}(M), \] called \uline{Dolbeault cohomology} of
+\(M\)
+\end{exampl}
+
 \subsection{Multiplicative structure}
-\label{sec:org47e7da3}
+\label{sec:org6a55a77}
 
 If each stalk \(\mathcal{S}(x)\) is more than an \(R\)-module but an \(R\)-algebra, then one can endow \(H^n(M, \mathcal{S})\) with a multiplicative structure
 that it a graded algebra. This structure come from the tensor product of the complex \(\Gamma(\mathcal{C}_n\otimes S)\) with itself and from the natural inclusion
@@ -359,6 +369,19 @@ C_{n,\mathcal{U}}\) which depends on the refining map \(j\). Using Theorem
 \ref{thm:prism-operator}, one can prove that the induced map between cohomology is however
 independent of \(j\).
 \end{remark}
+
+To actually use Čech cohomology, one needs to get rid of the direct limit, very often with
+the following theorem, the \href{https://math.stackexchange.com/questions/1897164/leray-theorem-for-acyclic-covering}{proof} of which uses the notion of flasque sheaf and 5-lemma.
+
+\begin{theorem}[Leray]
+\label{thm:leray}
+Let \(\mathcal{U}\) be a open cover on \(M\) and \(\mathcal{S}\) is a sheaf on \(M\) such that every intersection \(V =  U_{i_1}\cap \dots U_{i_k}\) has \(H^p(V,
+\restr{\mathcal{S}}{V})=0\) then
+\[
+\check{H}^*(M, \mathcal{S}, \mathcal{U}) = \check{H}^*(M,\mathcal{S})
+\]
+\end{theorem}
+
 
 
 \subsection{Example: Picard group}

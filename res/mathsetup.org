@@ -4,7 +4,6 @@
 #+LATEX_HEADER: \usepackage{amsmath,amscd}
 #+LATEX_HEADER: \usepackage{tikz-cd}
 #+BEGIN_COMMENT
-#+LATEX_HEADER: \usepackage[all]{xy}
 #+LATEX_HEADER: \DeclareMathOperator{\im}{Im}
 #+LATEX_HEADER: \DeclareMathOperator{\supp}{supp}
 #+LATEX_HEADER: \DeclareMathOperator{\ord}{ord}

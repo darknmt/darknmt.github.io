@@ -1,4 +1,4 @@
-% Created 2017-08-31 Thu 02:25
+% Created 2017-12-10 Sun 12:03
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -15,7 +15,7 @@
 \usepackage{capt-of}
 \usepackage{hyperref}
 \usepackage{amsthm}
-\usepackage{amsmath}
+\usepackage{amsmath,amscd}
 \usepackage{tikz-cd}
 \newtheorem{remark}{Remark}
 \newtheorem{theorem}{Theorem}
@@ -30,6 +30,14 @@
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
 \newcommand{\supp}{\mathop{\rm supp}\nolimits}
 \newcommand{\ord}{\mathop{\rm ord}\nolimits}
+\newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
+\newcommand{\vol}{\mathop{\rm vol}\nolimits}
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+\left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+#1 % the function
+\vphantom{\big|} % pretend it's a little taller at normal size
+\right|_{#2} % this is the delimiter
+}}
 \author{darknmt}
 \date{\today}
 \title{De Rham decomposition}
@@ -38,7 +46,7 @@
  pdftitle={De Rham decomposition},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 25.2.1 (Org mode 9.0.5)}, 
+ pdfcreator={Emacs 25.3.1 (Org mode 9.0.5)}, 
  pdflang={English}}
 \begin{document}
 
@@ -52,6 +60,7 @@ The PDF version of this page can be downloaded by replacing \texttt{html} in the
 For example \texttt{/html/sheaf-cohomology.html} should become \texttt{/pdf/sheaf-cohomology.pdf}.
 \end{info}
 \fi
+
 \iffalse
 \begin{info}
 This post is a part of the \href{../res/Stage2017.pdf}{memoire of my M1 internship} at I2M. The memoire contains,
@@ -231,5 +240,5 @@ see that such structure \(J\) passes to every manifold \(M_i\) and the Euclidean
 remains parallel on these manifolds. We proved that \(M\) is decomposed to \(\mathbb{C}^{n/2}\times
 \prod M_i\) where \(M_i\) are Kähler manifold. The decomposition map is both a Riemannian isometry and
 a isomorphism between complex manifold (i.e. its preserves complex structure). 
-Emacs 25.2.1 (Org mode 9.0.5)
+Emacs 25.3.1 (Org mode 9.0.5)
 \end{document}

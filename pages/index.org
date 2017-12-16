@@ -14,6 +14,13 @@ The reasons that I write this blog instead of using Wordpress are
 * About me
 Here is my [[http://172.17.71.229/dokuwiki/doku.php][DokuWiki]].
 
+
+
 #+attr_html: :width 30%
 [[file:../img/KR_zzz.gif]]
  
+
+#+BEGIN_quote
+Có con dế mèn suốt trong đêm khuya\\
+hát xẩm không tiền nên nghèo xác xơ 
+#+END_quote

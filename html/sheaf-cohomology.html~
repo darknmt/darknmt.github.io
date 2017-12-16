@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-11-01 Wed 14:28 -->
+<!-- 2017-11-01 Wed 19:14 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Sheaves and Cohomology</title>
@@ -277,13 +277,13 @@ for the JavaScript code in this tag.
 <li><a href="#orgd6abe18">2. Cohomology of complexes</a>
 <ul>
 <li><a href="#org9e26d47">2.1. Construction and naturality</a></li>
-<li><a href="#org5b8bdd7">2.2. Multiplicative structure</a></li>
+<li><a href="#org3c33347">2.2. Multiplicative structure</a></li>
 </ul>
 </li>
 <li><a href="#org4d346b5">3. Axiomatic cohomology theory</a>
 <ul>
 <li><a href="#org9664495">3.1. Existence and Uniqueness</a></li>
-<li><a href="#org3c33347">3.2. Multiplicative structure</a></li>
+<li><a href="#org6ea492d">3.2. Multiplicative structure</a></li>
 <li><a href="#org59b9c6c">3.3. Examples: de Rham cohomology</a></li>
 </ul>
 </li>
@@ -306,6 +306,7 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 
 </div>
 \(
+\require{AMScd}
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
  \newcommand{\supp}{\mathop{\rm supp}\nolimits}
 \newcommand{\ord}{\mathop{\rm ord}\nolimits}
@@ -434,8 +435,8 @@ morphism from \( H^n(C_*)
 </div>
 </div>
 
-<div id="outline-container-org5b8bdd7" class="outline-3">
-<h3 id="org5b8bdd7"><span class="section-number-3">2.2</span> Multiplicative structure</h3>
+<div id="outline-container-org3c33347" class="outline-3">
+<h3 id="org3c33347"><span class="section-number-3">2.2</span> Multiplicative structure</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Given two complexes \( \{C_*\},\{D_*\} \), one can define their tensor product as \( E_* =
@@ -621,7 +622,7 @@ holomorphic. The Dolbeault-Grothendieck lemma gives us exactly the following res
 \( \Omega^p \): \[ 0 \longrightarrow \Omega^p \longrightarrow \Omega^{p,0} \longrightarrow
 \Omega^{p,1} \longrightarrow \dots \] where \( \Omega^{p,q} \) are sheaves of \( C^\infty
 \) forms of type \( (p,q) \). Theorem <a href="#thm:fine-resolution">thm:fine-resolution</a> gives \[ H^q(M,\Omega^p) =
-H^q(\Gamma(\Omega^{p,*})) =: H^{p,q}_{\bar \partial}(M), \] called Dolbeault cohomology of
+H^q(\Gamma(\Omega^{p,*})) =: H^{p,q}_{\bar \partial}(M), \] called <span class="underline">Dolbeault cohomology</span> of
 \( M \)
 </p>
 
@@ -629,8 +630,8 @@ H^q(\Gamma(\Omega^{p,*})) =: H^{p,q}_{\bar \partial}(M), \] called Dolbeault coh
 </div>
 </div>
 
-<div id="outline-container-org3c33347" class="outline-3">
-<h3 id="org3c33347"><span class="section-number-3">3.2</span> Multiplicative structure</h3>
+<div id="outline-container-org6ea492d" class="outline-3">
+<h3 id="org6ea492d"><span class="section-number-3">3.2</span> Multiplicative structure</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 If each stalk \( \mathcal{S}(x) \) is more than an \( R \)-module but an \( R
@@ -705,7 +706,25 @@ independent of \( j \).
 </p>
 
 </div>
+
+<p>
+To actually use Čech cohomology, one needs to get rid of the direct limit, very often with
+the following theorem, the <a href="https://math.stackexchange.com/questions/1897164/leray-theorem-for-acyclic-covering">proof</a> of which uses the notion of flasque sheaf and 5-lemma.
+</p>
+
+<div id="thm:leray" btit="(Leray)" class="theorem">
+<p>
+Let \( \mathcal{U} \) be a open cover on \( M \) and \( \mathcal{S} \) is a sheaf on \( M
+\) such that every intersection \(V =  U_{i_1}\cap \dots U_{i_k} \) has \( H^p(V,
+\restr{\mathcal{S}}{V})=0 \) then
+\[
+\check{H}^*(M, \mathcal{S}, \mathcal{U}) = \check{H}^*(M,\mathcal{S})
+\]
+</p>
+
 </div>
+</div>
+
 
 
 <div id="outline-container-org32db89b" class="outline-3">
@@ -853,7 +872,7 @@ This shows clearly that the kernel of the above group morphism is the group of p
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-11-01 Wed 14:27. <br>
+Last updated 2017-11-01 Wed 19:14. <br>
 </div>
 </div>
 </body>
