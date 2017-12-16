@@ -16,6 +16,12 @@ GitPush
 _region_*
 
 
+## Emacs
+*.html~
+*.org~
+ltximg/
+
+
 ## Intermediate documents:
 *.dvi
 *-converted-to.*
