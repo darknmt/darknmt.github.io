@@ -1,0 +1,3 @@
+#+TITLE: Harmonic maps of Riemannian manifolds
+#+SETUPFILE: ../res/mathsetup.org
+#+INCLUDE: ../res/include.org

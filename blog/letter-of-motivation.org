@@ -1,0 +1,86 @@
+#+TITLE: Letter of motivation
+#+SETUPFILE: ../res/mathsetup.org
+#+INCLUDE: ../res/include.org
+
+The goal of this short letter is to give you a picture of me and my research
+interests. Since it is not usual to be attached to a particular mathematical question at my level and
+since I tried during last two years to broaden my mathematical scope as much as possible,
+I would like to describe instead my taste and my mathematical identity, in the supposition
+that they are getting in form and will not depend much on the problem I approach in my
+thesis.
+
+* Scientific background
+I started my undergraduate study in a small department in the south of Vietnam which
+provides a curriculum narrowly focused in Analysis and PDE, with almost no Algebra or
+Geometry covered. I managed however to understand very basic ideas and notions of
+mathematics. I later moved to Ecole polytechnique for an engineer program where I enjoyed
+a very multidisciplinary program. I took courses primarily on Mathematics, Applied
+mathematics, Physics, and Mechanics. I did not take courses in Computer Science as I
+prefer to learn them through team projects. Being part of student projects at Ecole
+polytechnique was a good experience, hardly did I see elsewhere that Banach-Alaoglu
+theorem and weak* convergence of Dirac distribution can be employed to prove a result in
+graph theory [fn::An idea due to J.-P. Serre to prove a theorem of Alon and Boppana.] and
+later use that result to create an error-correcting code. [fn::I was supposed to be in the
+mathematical side, but then turned to help my friends write the majority of the code.]
+Mathematics courses however were good enough to convince me to pursue it as a
+career. During my specialized year (Master 1) in Mathematics, I also kept an eye on
+Physics courses (e.g. General Relativity, Classical Field Theory) to be familiar with some
+basic notions.
+
+
+* Mathematical interests
+
+I have always been interested in branches of geometry that araised and inspired from Field
+theory: I got introduced to Differential geometry by the excellent lectures at Ecole
+polytechnique then to Complex geometry during my internship in Marseille and I read a bit
+later in that summer about Symplectic geometry in a lecture note of Denis Auroux. I also
+love the joy of problem solving as well as the insight gained after proving by oneself a
+mathematical result. From a practical view, I may learn a theorem faster and remember a
+technical detail for longer if I put them in use or explain them in simpler, sometimes
+unrigorous term. I often write notes where I try to explain why a statement is true before
+proving it and they appear to be useful in many cases. It is also a reason that I would
+prefer to attack a concrete problem in my thesis.
+
+After the M1 internship and more advanced courses at Université Paris-Sud, I am however
+also convinced that structured and systematized approaches are also important in
+mathematics and can help significantly simplify a problem.
+
+Recently, through conversations with Sébastien Boucksom and Chinh Lu, I heard and read a
+few surveys on canonical metrics and I also find the subject interesting. I would be happy
+to work on a problem around it.
+
+* Brief description of my Master 1 project.
+The project, being part of my third year curriculum at Ecole polytechnique, was my first
+scientific internship and my first try of serious mathematical research. It was
+coordinated by S.Boucksom and supervised by J.Keller at Institut de Mathématiques de
+Marseille and the goal was for me to understand the proof of Bogomolov-Beauville
+decomposition of complex manifolds with vanishing Chern class and to pick up mathematical
+background on the way. There was hence no expect of original results coming from my side
+and that was also the case in reality.
+
+The decomposition is a simple, although not formally trivial, translation of a decomposition theorem in Riemannian
+geometry to the category of complex manifolds, using Calabi-Yau theorem. In retrospect,
+the results that I find to be the most interesting are in the geometric analysis side, including the
+decomposition by holonomy (de Rham's theorem) and the phenomena discovered by J.Cheeger and D.Gromoll on
+manifolds with non-negative Ricci curvature. It was later that I started to appreciate the
+proof of S.-T. Yau for Calabi conjecture. 
+
+There is as I said no original results coming from the project, but since I want to
+convince you that beside understanding books and articles or reorganizing lemmas and
+theorems into a memoir, I also did mathematics actively, I will refer to an easy
+linear algebraic lemma in which I shows that the existence part of de Rham decomposition
+theorem implies two things: its uniqueness and the fact that Kahler manifolds decompose
+into Kahler ones. More precisely, the lemma shows, using the existence part, that holonomy
+representations have a nice property: their irreducible factors are not only unique as
+representations (as in Schur lemma) but also as sub vector spaces. I do not think the
+result is completely obvious, as my reference textbook in Riemannian geometry (the one by
+Takashi Sakai) provides separate proofs for the two phenomena. I also pointed out in the
+memoir an inaccuracy in a recent generalized version of Bogomolov-Beauville decomposition
+and correct it.
+
+
+The project won the Research Internship Awards by Mathematics department, along with two others, one in PDE and one in Number Theory. 
+
+bibliographystyle:alpha
+bibliography:../res/Stage2017.bib
+

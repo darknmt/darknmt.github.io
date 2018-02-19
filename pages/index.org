@@ -1,8 +1,7 @@
 #+TITLE: Welcome to my homepage
 
 * About this site
-This website is written using [[https://en.wikipedia.org/wiki/Emacs][emacs]] [[http://orgmode.org/][org-mode]] with [[https://github.com/SteveLane/org-css][this CSS]] and a small [[https://github.com/darknmt/theorems-css][modification]] to display LaTeX
-structure. The blog is inspired from [[https://ogbe.net/blog/blogging_with_org.html][here]] and [[https://nicolas.petton.fr/blog/blogging-with-org-mode.html][here]].
+This website is written using [[https://en.wikipedia.org/wiki/Emacs][emacs]] [[http://orgmode.org/][org-mode]]. The blog is inspired from [[https://ogbe.net/blog/blogging_with_org.html][here]] and [[https://nicolas.petton.fr/blog/blogging-with-org-mode.html][here]].
 #+BEGIN_COMMENT
 The reasons that I write this blog instead of using Wordpress are 
 1. I am more convenient with editing in emacs using [[https://github.com/joaotavora/yasnippet][YASnippet]]. The fact that org-mode is both a MarkDown language
@@ -12,15 +11,10 @@ The reasons that I write this blog instead of using Wordpress are
 3. [[https://darknmt.github.io/html/Cheeger-Gromoll-splitting.html][Here]] is a webpage, [[https://raw.githubusercontent.com/darknmt/darknmt.github.io/master/blog/Cheeger-Gromoll-splitting.org][here]] is what I have to type, and here are the LaTeX exports in [[../res/Cheeger-Gromoll-splitting.tex][TEX]] and [[../res/Cheeger-Gromoll-splitting.pdf][PDF]].
 #+END_COMMENT
 * About me
-Here is my [[http://172.17.71.229/dokuwiki/doku.php][DokuWiki]].
+Here is my [[http://172.17.71.229/dokuwiki/doku.php][DokuWiki]] and personal [[http://172.17.71.229/nextcloud][nextcloud]].
 
 
 
 #+attr_html: :width 30%
 [[file:../img/KR_zzz.gif]]
  
-
-#+BEGIN_quote
-Có con dế mèn suốt trong đêm khuya\\
-hát xẩm không tiền nên nghèo xác xơ 
-#+END_quote

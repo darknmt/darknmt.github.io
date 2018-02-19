@@ -6,7 +6,7 @@
 <!-- 2018-02-19 Mon 00:42 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Some results in one complex variable</title>
+<title>Two theorems of Hartogs</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="darknmt" />
 <style type="text/css">
@@ -263,7 +263,21 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div id="content">
-<h1 class="title">Some results in one complex variable</h1>
+<h1 class="title">Two theorems of Hartogs</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org97d4bbc">1. Hartogs' theorem for subharmonic function</a></li>
+<li><a href="#orgdd0b02b">2. Hartogs theorem of separately holomorphicity</a>
+<ul>
+<li><a href="#org5d8ca24">2.1. Application of Baire theorem.</a></li>
+<li><a href="#org8b1d273">2.2. Analysis of series decomposition.</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 <div class="info">
 <p>
 The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
@@ -282,51 +296,209 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand\restr[2]{{\left.#1\right|_{#2}}}
 \)
 
-
-<div id="thm:runge" btit="(Runge)" class="theorem">
+<div id="outline-container-org97d4bbc" class="outline-2">
+<h2 id="org97d4bbc"><span class="section-number-2">1</span> Hartogs' theorem for subharmonic function</h2>
+<div class="outline-text-2" id="text-1">
 <p>
-Let \( \Omega \) be a domain of \( \mathbb{C} \) and \( K \) a compact in \( \Omega
-\). Then the followings are equivalent
+The first Hartogs theorem concerns the convergence of harmonic functions. It says that
+under certain conditions, the convergence, apriori pointwise, is actually uniform on every compacts.
+</p>
+<div id="thm:hartogs-subhar" btit="(Hartogs on subharmonic functions)" class="theorem">
+<p>
+Let \( \Omega \) be a domain and \( u_k \in SH(\Omega) \) a sequence of subharmonic
+function such that
 </p>
 <ol class="org-ol">
-<li>\( K \) <i>has no hole</i> in \( \Omega \), i.e. there is no connected component \( \mathcal{C}
-   \) of \( \Omega \setminus K \) with \( \bar{\mathcal{C}} \subset \Omega \).</li>
-<li>Every holomorphic function in \( K \) can be \( \|.\|_{K,\infty} \)-approached by
-holomorphic functions in \( \Omega \).</li>
-<li>For every \( x\in \Omega\setminus K \), there exists a holomorphic function \( f_x \in
-   \mathcal{O}_{\Omega}\) such that \( |f(x)| > \sup_K |f| \).</li>
+<li>Uniformly bounded on compacts: \( \restr{u_k}{K} < M_K \).</li>
+<li>Pointwise limit is continuous: \( \limsup_k u_k(x) = C \)</li>
 </ol>
-
-</div>
-
-
-<div id="thm:mittag-leffler" btit="(Mittag-Leffler)" class="theorem">
 <p>
-Let \( (a_i) \) be a discrete sequence of points in \( \Omega \) and \( f_i \) be
-meromorphic functions with pole only at \( a_i \). Then there exists a meromorphic
-function \( f \) with poles only at \( (a_i) \) such that \( f-f_i \) has removable
-singularity at \( a_i \).
+Then for every \( K\subset \Omega \) compact and \( \varepsilon >0 \), there exists \(
+N(K,\varepsilon) >0 \) such that \( u_k < C+ \varepsilon \) for all \( k > N(K,\varepsilon) \)
 </p>
 
 </div>
 
 <div class="proof">
 <p>
-Suppose that \( (f_i) \) are globally defined in \( \Omega \). Choose an exhaustive
-sequence \( (\hat K_j=K_j)_j \) that increases slower than \( (a_i) \), i.e. \( a_i \not
-\in K_{i} \). By <a href="#thm:runge">thm:runge</a> for \( K_i\subset \Omega \), there exist \( g_i\in
-\mathcal{O}(\Omega) \) with \( \|g_i - f_i\|_{K_i,\infty} < 2^{-i}\). Pose
+By covering \( \Omega \) with an increasing sequence of compact \( K_n \) that \( K_n
+\Subset Int(K_{n+1}) \), one can suppose that \( u_k<M \) on \( \Omega \). One can also
+suppose that \( M=0 \). Note that it
+suffices to prove that for any \( x\in \Omega \), there exists \( N(x,\varepsilon) \) such
+that \( u_k < C+\varepsilon \) on a neighborhood \( U_x \) of \( x \) for all \( k>N(x,\varepsilon) \), then the conclusion
+follows by compactness of \( K \).
+</p>
+
+<p>
+One has \( \lim_{k\to +\infty}\int_{B(x,R)}u_k = C|B(R)| \) by monotone convergence, so
+\( \int_{B(x,R)}u_k < (C + \varepsilon) |B(R)|\) for \( k> N_1(x,\varepsilon) \). For any
+\( r\ll R \) and \( y\in B(x,r) \) one has \( \int_{B(y, R+ r)}u_k \leq \int_{B(x,R)}u_k <
+(C+\varepsilon)|B(R)|\). Therefore
 \[
-f = \sum_i (f_i-g_i).
+u_k(y)\leq (C+\varepsilon)\frac{|B(R)|}{|B(R+r)|}\leq C+2\varepsilon\qquad \forall r \ll
+R, k>N_1(x,\varepsilon)
+\]
+which shows that \( u_k < C+2\varepsilon \) for in a small neighborhood \( B(x,r) \) of \( x \). 
+</p>
+
+</div>
+
+<div class="remark">
+<p>
+The Theorem <a href="#thm:hartogs-subhar">thm:hartogs-subhar</a> above can be easily generalized by replacing the
+constant \( C \) by a continuous function \( f \).
+</p>
+
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgdd0b02b" class="outline-2">
+<h2 id="orgdd0b02b"><span class="section-number-2">2</span> Hartogs theorem of separately holomorphicity</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+The second result of Hartogs that I want to present here is about the founding notion of
+holomorphicity for several complex variables.
+</p>
+
+<div id="thm:hartogs-separate-holo" btit="(Hartogs for separate holomorphicity)" class="theorem">
+<p>
+A function \( f \) separately holomorphic on each variable then \( f \) is smooth and
+hence is completely holomorphic
+</p>
+
+</div>
+
+<p>
+The strategy is to establish the following steps:
+</p>
+
+<ol class="org-ol">
+<li>\( f \) is locally bounded.</li>
+<li>\( f \) is continuous.</li>
+<li>\( f \) is smooth, hence is completely holomorphic.</li>
+</ol>
+
+<p>
+The second and third steps are not difficult. In fact when one knows that \( f \) is
+locally bounded, one can prove that \( f \) is continuous by Schwartz lemma on each
+variable with appropriate scaling.
+\[
+f(z_1,\dots, z_i,\dots \xi_n ) - f(z_1,\dots, \xi_i,\dots, \xi_n)
+\leq |1-\overline{f(\dots,z_i,\dots)}f(\dots, \xi_i, \dots)|\left| \frac{z_i - \xi_i}{1 -
+z_i\bar \xi_i} \right|\quad \forall |z_i|,|\xi|<1, |f|<1 
 \]
 </p>
 
+<p>
+When \( f \) is continuous, one may refind Cauchy integral formulae and differentiability
+follows by dominated convergence.
+</p>
+
+<p>
+So the remaining point is to prove that \( f \) is locally bounded, which can be done
+using Baire theorem and the first Hartogs result, Theorem <a href="#thm:hartogs-subhar">thm:hartogs-subhar</a>.
+</p>
+</div>
+
+<div id="outline-container-org5d8ca24" class="outline-3">
+<h3 id="org5d8ca24"><span class="section-number-3">2.1</span> Application of Baire theorem.</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+We will prove Theorem <a href="#thm:hartogs-separate-holo">thm:hartogs-separate-holo</a> by induction on the dimension \( n
+\). We can therefore suppose that with the last variable \( z_n \) fixed, the function is
+completely holomorphic on the \( n-1 \) first variables. Fix a closed \( n \)-polydisc
+\(\mathbb{D}^n\ni x=0 \), denote \[ W_L = \{ (z_1,\dots,z_{n-1})\in
+\mathbb{D}^{n-1}:\quad |f(z_1,\dots,z_n)|\leq L\quad \forall z_n\in \mathbb{D}^1\} \] then
+</p>
+<ol class="org-ol">
+<li>\( \bigcup_{L\in \mathbb{N}} W_L = \mathbb{D}^n \) since for fixed \( (z_1,\dots,z_{n-1})\in
+   \mathbb{D}^{n-1} \), the function \( f \) is continuous on \( z_{n-1} \).</li>
+<li>Each \( W_L \) is closed since for fixed \( z_n \), the function \( f \) is continuous
+on \( n-1 \) first variables.</li>
+</ol>
+<p>
+Therefore by Baire theorem, there exists \( L \) large enough such that \( W_L \) contains
+an open set of \( \mathbb{D}^{n-1} \). Therefore there exists a strip \( U_{n-1}\times
+\mathbb{D}\subset \mathbb{D}^n \) on which the function \( f \) is holomorphic.
+</p>
+
+<p>
+We will extend this strip using the following lemma
+</p>
+<div id="lem:ext-strip" class="lemma">
+<p>
+Let \( f \) be a separately holomorphic function defined on a neighborhood of \( \mathbb{D}^n \) such that
+</p>
+<ol class="org-ol">
+<li>\(f \) is continuous on a neighborhood of the strip \( \mathbb{D}_\rho\times\dots\times \mathbb{D}_\rho\times \mathbb{D} \),</li>
+<li>\( f \) is completely holomorphic on the first \( n-1 \) variables when the last one is fixed,</li>
+</ol>
+<p>
+then \( f \) is completely holomorphic on \( \mathbb{D}^n \)
+</p>
+
+</div>
+
+<p>
+This lemma can be proved using the series decomposition of \( f \). 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8b1d273" class="outline-3">
+<h3 id="org8b1d273"><span class="section-number-3">2.2</span> Analysis of series decomposition.</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Since \( f \) is completely holomorphic on the first \( n-1 \) variables when \( z_n
+\) is fixed, one has
+\[
+f(z_1, \dots, z_n) = \sum_\alpha a_\alpha(z_n)z^\alpha,\qquad a_\alpha(z_n)=
+\partial^{\alpha} f(0,z_n)/\alpha! \text{ is holomorphic in } z_n
+\]
+Then the fact that for fixed \( z_n \), the holomorphic function \( f(z', z_n) \) is
+well-defined on \( z'\in \mathbb{D}^{n-1} \) shows
+that
+</p>
+\begin{equation}
+\label{eq:1}
+ \limsup_{|\alpha| \to \infty}|a_\alpha(z_n)|^{1/|\alpha|} \leq 1.
+\end{equation}
+
+<p>
+Moreover, Cauchy integral on \( \mathbb{D}_\rho\times\dots\times \mathbb{D}_\rho\times
+\mathbb{D} \) shows that
+</p>
+\begin{equation}
+\label{eq:2}
+|a_\alpha(z_n)| = |\partial^{\alpha} f(0,z_n)|/\alpha! \leq \frac{1}{\rho^{|\alpha|}} M
+\end{equation}
+
+<p>
+where \( M \) is an upper bound of \( |f| \) on the strip.
+</p>
+
+<p>
+Let \( u_\alpha = \frac{1}{|\alpha|}\log|a_\alpha| \) be a subharmonic function of \( z_n\in \mathbb{D} \),
+\eqref{eq:1} and \eqref{eq:2} show that \( \limsup_{|\alpha|\to \infty} u_\alpha\leq 0 \) and
+\( u_\alpha \leq \frac{1}{|\alpha|}\log M -\log\rho \) hence uniformly bounded.
+</p>
+
+<p>
+By Theorem <a href="#thm:hartogs-subhar">thm:hartogs-subhar</a>, one has \(|a_\alpha(z_n)|^{1/|\alpha|} \leq
+1+\varepsilon \) for \( |\alpha| \) sufficient large. Letting \( \varepsilon \to 0 \), one
+sees that the series converge normally in the interieur of \( \mathbb{D}^{n-1} \), hence
+by Cauchy-Montel the limit \( f \) is holomorphic in the interieur of \( \mathbb{D}^n \).
+</p>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-10-24 Tue 01:02. <br>
+Last updated 2018-01-08 Mon 17:56. <br>
 </div>
 </div>
 </body>

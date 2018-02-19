@@ -1,7 +1,7 @@
 #+OPTIONS: tex:t H:4 num:t
 #+HTML_MATHJAX: path:"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"
 #+LATEX_HEADER: \usepackage{amsthm}
-#+LATEX_HEADER: \usepackage{amsmath,amscd}
+#+LATEX_HEADER: \usepackage{amsmath,amscd,amssymb}
 #+LATEX_HEADER: \usepackage{tikz-cd}
 #+BEGIN_COMMENT
 #+LATEX_HEADER: \DeclareMathOperator{\im}{Im}

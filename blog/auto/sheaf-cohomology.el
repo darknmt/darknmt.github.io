@@ -5,12 +5,12 @@
                      '(("article" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -30,34 +30,41 @@
     "capt-of"
     "hyperref"
     "amsthm"
+    "amscd"
     "tikz-cd")
    (TeX-add-symbols
+    '("restr" 2)
     "im"
     "supp"
-    "ord")
+    "ord"
+    "Spec"
+    "vol")
    (LaTeX-add-labels
-    "sec:orgb21ab35"
-    "sec:org3a8407f"
-    "sec:org1a74cb6"
+    "sec:org89ea00e"
+    "sec:org32c7c12"
+    "sec:org8c61468"
+    "sec:orgbad4845"
+    "sec:orgdb74180"
     "thm:cohomology-complex"
     "fig:morph-short-sequence"
     "thm:prism-operator"
     "fig:homotopy-operator"
-    "sec:orgc84cfe1"
+    "sec:org53f00af"
     "thm:Kunneth"
-    "sec:orgb3169b7"
-    "sec:orgb23aff9"
+    "sec:org62ef2d8"
+    "sec:org65911e0"
     "thm:existence-cohomology"
     "lem:exactness"
     "thm:uniqueness-cohomology"
     "thm:fine-resolution"
-    "sec:orga925396"
-    "sec:orgfec47f3"
+    "sec:orga5772aa"
+    "sec:orgbd2adbd"
     "thm:de-rham-singular"
-    "sec:org97a966e"
-    "sec:org97c2406"
-    "sec:org070ad7f"
-    "sec:orga94f1e5"
+    "sec:org91022b2"
+    "thm:leray"
+    "sec:org9316080"
+    "sec:orgd0b07bb"
+    "sec:org6924367"
     "thm:div-pic-rel")
    (LaTeX-add-amsthm-newtheorems
     "remark"

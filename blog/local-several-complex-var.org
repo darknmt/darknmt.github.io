@@ -504,3 +504,10 @@ Let \( \Omega\subset \mathbb{C}^n \) be a domain then:
 #+END_proposition
 
 
+
+#+END_theorem
+
+
+*** Different notion of pseudoconvexity
+
+*** Richberg approximation theorem

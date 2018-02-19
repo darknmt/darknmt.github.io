@@ -1,0 +1,33 @@
+(TeX-add-style-hook
+ "Stage2017"
+ (lambda ()
+   (LaTeX-add-bibitems
+    "sakai_riemannian_1996"
+    "berger_panoramic_2003"
+    "kobayashi_foundations_1963"
+    "huybrechts_complex_2005"
+    "joyce_compact_2000"
+    "besse_einstein_2007"
+    "beauville_riemannian_1999"
+    "beauville_varietes_1983"
+    "cheeger_splitting_1971"
+    "blocki_calabiyau_2012"
+    "griffiths_principles_1994"
+    "buser_geometric_1985"
+    "montgomery_topological_1955"
+    "greb_klt_2017"
+    "greb_singular_2011"
+    "campana_rationally_2012"
+    "cheeger_structure_1972"
+    "paulin_groupes_2014"
+    "petersen_riemannian_2006"
+    "bogomolov_kahler_1974"
+    "kollar_rational_1992"
+    "bourbaki_groupes_2006"
+    "beauville_variete_1985"
+    "warner_foundations_1983"
+    "gilbarg_elliptic_1983"
+    "szekelyhidi17:_kahler_einst"
+    "angella17:_kahler_einst"))
+ :bibtex)
+

@@ -1,16 +1,16 @@
 (TeX-add-style-hook
- "Berger-remark-complex"
+ "calabi-yau"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("article" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -40,21 +40,19 @@
     "Spec"
     "vol")
    (LaTeX-add-labels
-    "sec:org5f81b1f"
-    "sec:orgf28312a"
-    "thm:Berger"
-    "org5e12bbd"
-    "sec:org96f905f"
-    "sec:orgd598223"
-    "sec:org6a06657"
-    "sec:org0bc364a"
-    "sec:org5765369"
-    "sec:org992de83"
-    "lem:alg-exterior"
-    "orga3b6b70"
-    "fig:dz"
-    "fig:dzbar"
-    "sec:orgb502420")
+    "sec:org0cb0938"
+    "sec:orgec41f20"
+    "sec:orga12bb61"
+    "sec:org38fe6b4"
+    "sec:org77ef14c"
+    "sec:org32b43cf"
+    "eq:ddc-0"
+    "sec:org351f259"
+    "eq:omega-convex-t"
+    "eq:long-edp"
+    "lem:combinatoire"
+    "orgb89ce2a"
+    "sec:org58317ae")
    (LaTeX-add-amsthm-newtheorems
     "remark"
     "theorem"

@@ -6,7 +6,7 @@
 <!-- 2018-02-19 Mon 00:42 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Some results in one complex variable</title>
+<title>Letter of motivation</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="darknmt" />
 <style type="text/css">
@@ -227,28 +227,6 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
-</script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -263,7 +241,17 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div id="content">
-<h1 class="title">Some results in one complex variable</h1>
+<h1 class="title">Letter of motivation</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org16f4f36">1. Scientific background</a></li>
+<li><a href="#orgc654b8e">2. Mathematical interests</a></li>
+<li><a href="#org0a30fec">3. Brief description of my Master 1 project.</a></li>
+</ul>
+</div>
+</div>
 <div class="info">
 <p>
 The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
@@ -282,51 +270,133 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand\restr[2]{{\left.#1\right|_{#2}}}
 \)
 
-
-<div id="thm:runge" btit="(Runge)" class="theorem">
 <p>
-Let \( \Omega \) be a domain of \( \mathbb{C} \) and \( K \) a compact in \( \Omega
-\). Then the followings are equivalent
-</p>
-<ol class="org-ol">
-<li>\( K \) <i>has no hole</i> in \( \Omega \), i.e. there is no connected component \( \mathcal{C}
-   \) of \( \Omega \setminus K \) with \( \bar{\mathcal{C}} \subset \Omega \).</li>
-<li>Every holomorphic function in \( K \) can be \( \|.\|_{K,\infty} \)-approached by
-holomorphic functions in \( \Omega \).</li>
-<li>For every \( x\in \Omega\setminus K \), there exists a holomorphic function \( f_x \in
-   \mathcal{O}_{\Omega}\) such that \( |f(x)| > \sup_K |f| \).</li>
-</ol>
-
-</div>
-
-
-<div id="thm:mittag-leffler" btit="(Mittag-Leffler)" class="theorem">
-<p>
-Let \( (a_i) \) be a discrete sequence of points in \( \Omega \) and \( f_i \) be
-meromorphic functions with pole only at \( a_i \). Then there exists a meromorphic
-function \( f \) with poles only at \( (a_i) \) such that \( f-f_i \) has removable
-singularity at \( a_i \).
+The goal of this short letter is to give you a picture of me and my research
+interests. Since it is not usual to be attached to a particular mathematical question at my level and
+since I tried during last two years to broaden my mathematical scope as much as possible,
+I would like to describe instead my taste and my mathematical identity, in the supposition
+that they are getting in form and will not depend much on the problem I approach in my
+thesis.
 </p>
 
+<div id="outline-container-org16f4f36" class="outline-2">
+<h2 id="org16f4f36"><span class="section-number-2">1</span> Scientific background</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+I started my undergraduate study in a small department in the south of Vietnam which
+provides a curriculum narrowly focused in Analysis and PDE, with almost no Algebra or
+Geometry covered. I managed however to understand very basic ideas and notions of
+mathematics. I later moved to Ecole polytechnique for an engineer program where I enjoyed
+a very multidisciplinary program. I took courses primarily on Mathematics, Applied
+mathematics, Physics, and Mechanics. I did not take courses in Computer Science as I
+prefer to learn them through team projects. Being part of student projects at Ecole
+polytechnique was a good experience, hardly did I see elsewhere that Banach-Alaoglu
+theorem and weak* convergence of Dirac distribution can be employed to prove a result in
+graph theory <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> and
+later use that result to create an error-correcting code. <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>
+Mathematics courses however were good enough to convince me to pursue it as a
+career. During my specialized year (Master 1) in Mathematics, I also kept an eye on
+Physics courses (e.g. General Relativity, Classical Field Theory) to be familiar with some
+basic notions.
+</p>
+</div>
 </div>
 
-<div class="proof">
+
+<div id="outline-container-orgc654b8e" class="outline-2">
+<h2 id="orgc654b8e"><span class="section-number-2">2</span> Mathematical interests</h2>
+<div class="outline-text-2" id="text-2">
 <p>
-Suppose that \( (f_i) \) are globally defined in \( \Omega \). Choose an exhaustive
-sequence \( (\hat K_j=K_j)_j \) that increases slower than \( (a_i) \), i.e. \( a_i \not
-\in K_{i} \). By <a href="#thm:runge">thm:runge</a> for \( K_i\subset \Omega \), there exist \( g_i\in
-\mathcal{O}(\Omega) \) with \( \|g_i - f_i\|_{K_i,\infty} < 2^{-i}\). Pose
-\[
-f = \sum_i (f_i-g_i).
-\]
+I have always been interested in branches of geometry that araised and inspired from Field
+theory: I got introduced to Differential geometry by the excellent lectures at Ecole
+polytechnique then to Complex geometry during my internship in Marseille and I read a bit
+later in that summer about Symplectic geometry in a lecture note of Denis Auroux. I also
+love the joy of problem solving as well as the insight gained after proving by oneself a
+mathematical result. From a practical view, I may learn a theorem faster and remember a
+technical detail for longer if I put them in use or explain them in simpler, sometimes
+unrigorous term. I often write notes where I try to explain why a statement is true before
+proving it and they appear to be useful in many cases. It is also a reason that I would
+prefer to attack a concrete problem in my thesis.
 </p>
 
+<p>
+After the M1 internship and more advanced courses at Université Paris-Sud, I am however
+also convinced that structured and systematized approaches are also important in
+mathematics and can help significantly simplify a problem.
+</p>
+
+<p>
+Recently, through conversations with Sébastien Boucksom and Chinh Lu, I heard and read a
+few surveys on canonical metrics and I also find the subject interesting. I would be happy
+to work on a problem around it.
+</p>
 </div>
 </div>
+
+<div id="outline-container-org0a30fec" class="outline-2">
+<h2 id="org0a30fec"><span class="section-number-2">3</span> Brief description of my Master 1 project.</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+The project, being part of my third year curriculum at Ecole polytechnique, was my first
+scientific internship and my first try of serious mathematical research. It was
+coordinated by S.Boucksom and supervised by J.Keller at Institut de Mathématiques de
+Marseille and the goal was for me to understand the proof of Bogomolov-Beauville
+decomposition of complex manifolds with vanishing Chern class and to pick up mathematical
+background on the way. There was hence no expect of original results coming from my side
+and that was also the case in reality.
+</p>
+
+<p>
+The decomposition is a simple, although not formally trivial, translation of a decomposition theorem in Riemannian
+geometry to the category of complex manifolds, using Calabi-Yau theorem. In retrospect,
+the results that I find to be the most interesting are in the geometric analysis side, including the
+decomposition by holonomy (de Rham's theorem) and the phenomena discovered by J.Cheeger and D.Gromoll on
+manifolds with non-negative Ricci curvature. It was later that I started to appreciate the
+proof of S.-T. Yau for Calabi conjecture. 
+</p>
+
+<p>
+There is as I said no original results coming from the project, but since I want to
+convince you that beside understanding books and articles or reorganizing lemmas and
+theorems into a memoir, I also did mathematics actively, I will refer to an easy
+linear algebraic lemma in which I shows that the existence part of de Rham decomposition
+theorem implies two things: its uniqueness and the fact that Kahler manifolds decompose
+into Kahler ones. More precisely, the lemma shows, using the existence part, that holonomy
+representations have a nice property: their irreducible factors are not only unique as
+representations (as in Schur lemma) but also as sub vector spaces. I do not think the
+result is completely obvious, as my reference textbook in Riemannian geometry (the one by
+Takashi Sakai) provides separate proofs for the two phenomena. I also pointed out in the
+memoir an inaccuracy in a recent generalized version of Bogomolov-Beauville decomposition
+and correct it.
+</p>
+
+
+<p>
+The project won the Research Internship Awards by Mathematics department, along with two others, one in PDE and one in Number Theory. 
+</p>
+
+<p>
+
+<a href="../res/Stage2017.bib">../res/Stage2017.bib</a>
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara">An idea due to J.-P. Serre to prove a theorem of Alon and Boppana.</div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara">I was supposed to be in the
+mathematical side, but then turned to help my friends write the majority of the code.</div></div>
+
+
+</div>
+</div></div>
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-10-24 Tue 01:02. <br>
+Last updated 2018-01-20 Sat 19:00. <br>
 </div>
 </div>
 </body>

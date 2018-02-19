@@ -1,5 +1,5 @@
 (TeX-add-style-hook
- "Berger-remark-complex"
+ "letter-of-motivation"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("article" "11pt")))
@@ -40,21 +40,11 @@
     "Spec"
     "vol")
    (LaTeX-add-labels
-    "sec:org5f81b1f"
-    "sec:orgf28312a"
-    "thm:Berger"
-    "org5e12bbd"
-    "sec:org96f905f"
-    "sec:orgd598223"
-    "sec:org6a06657"
-    "sec:org0bc364a"
-    "sec:org5765369"
-    "sec:org992de83"
-    "lem:alg-exterior"
-    "orga3b6b70"
-    "fig:dz"
-    "fig:dzbar"
-    "sec:orgb502420")
+    "sec:org0506376"
+    "sec:orgd474ce7"
+    "sec:org0f333e3")
+   (LaTeX-add-bibliographies
+    "../res/Stage2017")
    (LaTeX-add-amsthm-newtheorems
     "remark"
     "theorem"
