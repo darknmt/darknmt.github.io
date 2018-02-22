@@ -1,5 +1,5 @@
 (TeX-add-style-hook
- "de-rham-decomposition"
+ "kodaira"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("article" "11pt")))
@@ -42,18 +42,24 @@
     "Spec"
     "vol")
    (LaTeX-add-labels
-    "sec:org6744296"
-    "orgc11e5b2"
-    "thm:Frobenius"
-    "org907de79"
-    "sec:org7171d65"
-    "prop:uniqueness"
-    "orgb056b03"
-    "lem:uniqueness-fiber"
-    "orgb7febfa"
-    "lem:unique-representation"
-    "orgf9bc81e"
-    "sec:org83afeb1")
+    "sec:org6ca8ed8"
+    "sec:org7268523"
+    "sec:org74a6f29"
+    "sec:org56d6d16"
+    "sec:org6356d3f"
+    "sec:org9481b42"
+    "sec:orgd6da54a"
+    "sec:org6aae0cb"
+    "sec:org1211c66"
+    "sec:org7396614"
+    "sec:org2932f18"
+    "prop:adjunction"
+    "sec:org6163414"
+    "thm:Kodaira-vanishing"
+    "sec:org67967d7"
+    "thm:Kodaira-embedding"
+    "fig:kodaira-blowup"
+    "sec:org6ac4566")
    (LaTeX-add-amsthm-newtheorems
     "remark"
     "theorem"

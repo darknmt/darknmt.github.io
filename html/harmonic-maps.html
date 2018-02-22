@@ -1,0 +1,956 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-02-22 Thu 20:05 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Harmonic maps of Riemannian manifolds</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Tien NGUYEN MANH" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' href='../res/blog.css' type='text/css'/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='./index.html'>Home</a></li>
+<li><a href='./blog.html'>Blog</a></li>
+<li><a href='./writings.html'>Writings</a></li>
+<li><a href='http://github.com/darknmt/'>GitHub</a></li>
+<li><a href='./contact.html'>Contact</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<h1 class="title">Harmonic maps of Riemannian manifolds</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orga716e8c">1. Harmonic maps</a>
+<ul>
+<li><a href="#org2b417a5">1.1. Variational approach: energy integral and tension field</a>
+<ul>
+<li>
+<ul>
+<li><a href="#orgaa87a18">1.1.0.1. Notation.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org26662a5">1.2. Formulation using connection on vector bundle</a>
+<ul>
+<li>
+<ul>
+<li><a href="#orge8b763e">1.2.0.1. Setup and notation.</a></li>
+<li><a href="#org5fb62b4">1.2.0.2. Covariant derivatives and exterior derivatives.</a></li>
+<li><a href="#org17d1b28">1.2.0.3. Laplacian operator and harmonic forms.</a></li>
+<li><a href="#orgb352094">1.2.0.4. Riemannian connected bundle.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org8806f6b">1.3. The case of \( E = f^* TM' \)</a>
+<ul>
+<li><a href="#orgeadf23c">1.3.1. Energy functional and tension field</a></li>
+<li><a href="#orgf595675">1.3.2. Fundamental form, some results in case of signed curvature</a>
+<ul>
+<li><a href="#orga0985e2">1.3.2.1. Notation.</a></li>
+</ul>
+</li>
+<li><a href="#orgd47a8bc">1.3.3. Example: Riemannian immersion</a></li>
+<li><a href="#orgb0c6866">1.3.4. Example: Riemannian submersion</a></li>
+</ul>
+</li>
+<li><a href="#orgcb2eb10">1.4. Composition of maps</a></li>
+</ul>
+</li>
+<li><a href="#orgd06b51c">2. Deformation of maps</a></li>
+</ul>
+</div>
+</div>
+<div class="info">
+<p>
+The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
+<code>pdf</code>. 
+For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
+</p>
+
+</div>
+\(
+\require{AMScd}
+\newcommand{\im}{\mathop{\rm Im}\nolimits}
+ \newcommand{\supp}{\mathop{\rm supp}\nolimits}
+\newcommand{\ord}{\mathop{\rm ord}\nolimits}
+\newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
+\newcommand{\vol}{\mathop{\rm vol}\nolimits}
+\newcommand\restr[2]{{\left.#1\right|_{#2}}}
+\newcommand{\transp}{\mathop{\rm \,^t}\nolimits}
+\)
+
+<p>
+This is my reading note for <a class='org-ref-reference' href="#eells_harmonic_1964">eells_harmonic_1964</a>.
+</p>
+
+<div id="outline-container-orga716e8c" class="outline-2">
+<h2 id="orga716e8c"><span class="section-number-2">1</span> Harmonic maps</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-org2b417a5" class="outline-3">
+<h3 id="org2b417a5"><span class="section-number-3">1.1</span> Variational approach: energy integral and tension field</h3>
+<div class="outline-text-3" id="text-1-1">
+</div><div id="outline-container-orgaa87a18" class="outline-5">
+<h5 id="orgaa87a18"><span class="section-number-5">1.1.0.1</span> Notation.</h5>
+<div class="outline-text-5" id="text-1-1-0-1">
+<p>
+Let \( M, M', M''\) be Riemannian manifolds of dimension \( n, n' \) and \( n', n''\)
+respectively. We will use \( i,j,k,\dots, \alpha,\beta,\gamma,\dots, a,b,c \) for local
+coordinates of \( M, M', M'' \).
+Let \( f: M \longrightarrow M', f': M' \longrightarrow M''\) be a smooth maps, one denotes
+\[
+f^\alpha_i = \frac{\partial f^\alpha}{\partial x^i},\quad f^\alpha_{ij} =
+\frac{\partial^2 f^\alpha}{\partial x^i \partial x^j} - \Gamma_{ij}^k f^{\alpha}_k \]
+so that \( \nabla g = g_i dx^i \) and \( \nabla (\nabla g) = g_{ij}dx^i\otimes dx^j \)
+</p>
+
+<div class="definition">
+<p>
+The <b>energy desity</b> of \( f \) at \( p\in m \) is defined by
+\[
+e(f)(p) = \frac{1}{2}\langle g(p), f^g(p) \rangle_p = \frac{1}{2}g^{ij}f^\alpha_i
+f^\beta_j g'_{\alpha\beta}
+\]
+and the <b>energy functional</b> of \( f \) is
+\[
+E(f) = \int_M e(f) dV = \frac{1}{2}\int_M g^{ij}f^\alpha_i
+f^\beta_j g'_{\alpha\beta} |\det (g_{ij})|^\frac{1}{2} dx^1\wedge \dots\wedge dx^n
+\]
+</p>
+
+</div>
+
+<p>
+We recall that the inner product is between 2 tensors of type \( (p,q) \) \( S =
+S^{i_1\dots i_p}_{j_1\dots j_q}, T = T^{k_1\dots k_p}_{l_1\dots l_q} \) is \( \prod_{m,n}
+g_{i_m k_m} g^{j_n l_m}S^{i_1\dots i_p}_{j_1\dots j_q} T^{k_1\dots k_p}_{l_1\dots l_q}  \)
+</p>
+
+<div class="remark">
+<p>
+Under any orthonormal basis of \( T_P M \) and \( T_{f(P)}N \), one can see that the
+energy density is non-negative at every point. Hence \( E(f) = 0 \) if and only if \(
+e(f)=0 \) at all points if and only if \( f \) is constant.
+</p>
+
+</div>
+
+<div class="definition">
+<p>
+Let \( \sigma \) be a symmetric function of \( n \) variables and \( \alpha \) be a
+symmetric (0,2) tensor field, one can define the <b>\(
+\sigma- \)energy desity</b> of \( \alpha \) at \( P\in M \) to be \( \sigma
+(\beta_1,\dots,\beta_n)(P) \) where \( \beta_i \) are eigenvalues of the linear operator
+\( (g^{ik}\alpha_{ij})_{k,j} \). The <b>\( \sigma \)-energy</b> of \( \alpha \) is \( I_\sigma(\alpha)
+:= \int_M  \sigma(\alpha) dV\)
+</p>
+
+<p>
+Take \( \alpha = f^*g' \), one calls \( \sigma(\alpha) \) the /\( \sigma \)-energy density
+of \( f \) and \( I_\sigma(\alpha) \) the \( \sigma \)-energy of \( f \).
+</p>
+
+</div>
+
+<div class="exampl">
+<p>
+For example, the energy functional \( E(f) \) is \( I_\frac{\sigma_1}{2}(f) \). \(
+V(f):=I_{\sigma^{1/2}_n}(f) \) is called the <b>volume</b> of \( f \).
+</p>
+
+</div>
+
+<div id="lem:var-energy" btit="(variation of the energy)" class="lemma">
+<p>
+Let \( f_t: M \longrightarrow M' \) be a smooth family of smooth maps between Riemannian
+manifolds for \( t\in (t_0,t_1) \). Then
+\[
+\frac{d}{dt}E(f_t) = -\int_M \left(\Delta f_t^\gamma +g^{ij}\Gamma'^{\gamma}_{\alpha\beta}
+f^{\alpha}_{t,i}f^{\beta}_{t,j}\right) g'_{\gamma\nu} \frac{\partial f_t^\nu}{\partial
+t}dV,\qquad \forall t\in (t_0,t_1)
+\]
+</p>
+
+</div>
+<div class="proof">
+<p>
+Direct computation.
+</p>
+
+</div>
+
+
+<div class="definition">
+<ol class="org-ol">
+<li>A <b>vector field along \( f: M \longrightarrow M' \)</b> is a smooth application \(v: M\longrightarrow TM'\) such that \( \pi\circ v = f \) where \( \pi: TM' \longrightarrow M'\) is the canonical projection. In other words, it is the association of each point \(P\in M \) a tangent vector at \( f(P) \)</li>
+<li>The <b>tension field</b> of \( f \) is the following vector field along \( f \) defined by
+\[
+   \tau(f)^\gamma:= \Delta f^\gamma +g^{ij}\Gamma'^{\gamma}_{\alpha\beta} f^{\alpha}_{i}f^{\beta}_{j}
+   \]
+By the Lemma <a href="#lem:var-energy">lem:var-energy</a>, \( \tau(f) \) is the unique vector field along \( f \)
+such that \( \frac{d }{dt}E(f_t) = -\int_M \langle \tau(f), \frac{df_t}{dt}\rangle \). In
+particular, if \( f_t \) is the variation of \( f \) along a vector field \( v \) along
+\( f \), i.e. \(f_t(P) = \exp_{f(P)}(tv(P))\) then \(\nabla_v E(f) = - \langle \tau(f), v
+   \rangle\) along \( f \).</li>
+<li>\( f: M \longrightarrow M' \) is called <b>harmonic</b> if \( \tau(f)=0 \), or equivalently
+\( f \) is a critical point of \( E \).</li>
+</ol>
+
+</div>
+
+<p>
+In normal coordinates of \( M \) at \( P \) and \( M' \) at \( f(P) \), the tension field
+of \( f \) is given by
+\[
+\tau^\gamma(f)(P) = \sum_i \frac{\partial^2 f^\gamma}{\partial (x^i)^2}(P)
+\]
+</p>
+
+<div class="remark">
+<ol class="org-ol">
+<li>If \( M' \) is flat, i.e. \( R'_{\alpha\beta\gamma\delta} = 0 \) then \( \tau(f)^\gamma
+   = \Delta f^\gamma\) is linear in \( f \).</li>
+<li>Since \( \tau(f) \) depends locally on \( f \), isometries and covering maps are
+harmonic.</li>
+</ol>
+
+</div>
+
+<div id="prop:holo-harmonic" btit="(holomorphicity implies harmonicity)" class="proposition">
+<p>
+Holomorphic maps between Kahler manifolds are harmonic.
+</p>
+
+</div>
+<div class="proof">
+<p>
+We recall that exponential functions \( \exp_P: T_PM \longrightarrow M' \) on a Kahler
+manifold \( M \) are holomorphic for any \( P\in M \). In fact, let \( v\in T_PM \) and \( \delta
+v \in T_v(T_P M) \) be a tangent vector  at \( v \) and denote abusively by \( J \) the complex
+structure of the complex vector space \( T_P M \) and that of \( M \), one needs to see that
+</p>
+\begin{equation}
+\label{eq:tangent-exp}
+D\exp_P(v).J\delta v = J(\exp_P(v)) D \exp_P(v).\delta v
+\end{equation}
+
+<p>
+In fact, let \( Y_1, Y_2 \) be Jacobi fields along \( U(t) =  \exp_P(tv) \) the
+geodesics of \( M \) starting at \( P \) in direction \( v \) with \( Y_1(0)=Y_2(0) = 0,
+\dot Y_1(0) = \delta v, \dot Y_2(0) = J\delta v \) then
+the LHS of \eqref{eq:tangent-exp} is \( Y_2(1) \), and the RHS is \( J(U(1)) Y_1(1) \). Then one can see
+that \( Y_2(t) - J(U(t)) Y_1(t) = 0\) for every \( t\in [0,1] \) since it is true at \( t=0
+\) and the derivative with respect to \( t \) vanishes as \( \nabla_{\dot U}J = 0 \).  
+</p>
+
+<p>
+Therefore, at a point \( P \) of a Kahler manifold \( M \), there exist holomorphic coordinates \( z^j = x^j + i y^j \) of \( M \) in a
+neighborhood of \( P \) such that \( \{ x_j,y_j: j=\overline{1,n/2} \} \) are normal
+coordinates centered in \( P \). Using such coordinates for \( P\in M \) and \( f(P)\in M'
+\), one has \( f^\gamma=0 \) since \( f^\gamma \) is holomorphic and \(
+\Gamma'^\gamma_{\alpha\beta}(P)=0 \) by normality, it follows that \( \tau(f)=0 \) at
+every point \( P\in M \).
+</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org26662a5" class="outline-3">
+<h3 id="org26662a5"><span class="section-number-3">1.2</span> Formulation using connection on vector bundle</h3>
+<div class="outline-text-3" id="text-1-2">
+</div><div id="outline-container-orge8b763e" class="outline-5">
+<h5 id="orge8b763e"><span class="section-number-5">1.2.0.1</span> Setup and notation.</h5>
+<div class="outline-text-5" id="text-1-2-0-1">
+<p>
+Let \( E \) be a metric vector bundle over a Riemannian manifold \( M \), i.e. each fiber
+of \( E \) is equiped with an inner product that we denote by \( (g'_{\alpha\beta}) \). The
+metric of \( M \) is denoted by \( (g_{ij}) \). Let \( n \) and \( m \) be the dimension
+of \( M \) of the fiber.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org5fb62b4" class="outline-5">
+<h5 id="org5fb62b4"><span class="section-number-5">1.2.0.2</span> Covariant derivatives and exterior derivatives.</h5>
+<div class="outline-text-5" id="text-1-2-0-2">
+<p>
+We recall that a <b>covariant derivative</b> or a <b>connection</b> \( \tilde\nabla \) of \( E \) is uniquely determined in a
+local coordinates by an \( m\times m \) matrix \( A \) of 1-form on \( M \), in other
+words an 1-form on \( M \) with value in \( Hom_M(E,E) \) which depends on the local frame
+of \( E \) (i.e. \( A \) is not a tensor with value in \( E \)). \( A \) is called the
+<b>connection form</b> of \( \tilde \nabla \). Locally
+\[
+ \tilde\nabla_X (s^\alpha \tilde e_\alpha) = (\nabla_X s^\alpha) \tilde e_\alpha +
+A^\alpha_\beta(X)s^\beta\tilde e_\alpha.
+\]
+</p>
+
+
+
+<p>
+When one prefers to work with forms other than tensors with value in \( E \), one uses an
+<b>exterior derivative</b>, a map \( D: A^p(M,E) \longrightarrow A^{p+1}(M,E) \) which turns an
+\( p \)-form with value in \( E \) to an \( p+1 \)-form with value in \( E \). Locally 
+\[
+ D (s^\alpha \tilde e_\alpha) = (d s^\alpha) \tilde e_\alpha +
+A^\alpha_\beta\wedge s^\beta\tilde e_\alpha.
+\]
+and 
+\[
+ D^2(s^\alpha \tilde e_\alpha = (dA + A\wedge A)\wedge s.
+\]
+One notes \( \Theta := dA + A\wedge A \), which is an \( m\times m \) matrix of 2-forms of
+\( M \). Unlike \( A \), \( \Theta \), seen as an 2-form with value in \( Hom_M(E,E) \)
+does not depend on the local frame of \( E \), i.e. \( \Theta \) transforms as a (0,2)
+tensor with value in \( E \), called the <b>curvature form</b>.
+</p>
+
+
+
+<p>
+The fibrewise metric structure of \( E \) and the metric tensor of \( M \) give rise to a pointwise inner product of
+\((p,q) \) tensors of \( M \) with value in \( E \), in particular a pointwise inner
+product \( (s, s')\mapsto s\cdot s' \) from \( A^p(M,E)\times A^p(M,E) \) to \( C^\infty(M) \). Integrated over \( M \), the pointwise inner product gives rise
+to a global inner product \( \langle  \cdot,\cdot \rangle  \), i.e. a true inner product of \( A^p(M,E) \). One denotes by
+\( \delta: A^{p+1}(M,E)\longrightarrow A^p(M,E) \) the adjoint operator of
+\( D: A^p(M,E) \longrightarrow A^{p+1}(M,E) \) with respect to this inner product, i.e.
+\( \langle Ds, s' \rangle_{A^{p+1}(M,E)} = \langle s, \delta s' \rangle_{A^{p}(M,E)}\) for
+all \( s\in A^{p}(M,E), s'\in A^{p+1}(M,E) \).
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org17d1b28" class="outline-5">
+<h5 id="org17d1b28"><span class="section-number-5">1.2.0.3</span> Laplacian operator and harmonic forms.</h5>
+<div class="outline-text-5" id="text-1-2-0-3">
+<p>
+The <b>Laplacian operator</b> is defined as a endomorphism of \( A^p(M,E) \) given by
+\[
+ \tilde \Delta = -(D\delta +\delta D)
+\]
+and a form \( s\in A^p(M,E) \) is called <b>harmonic</b> if \( \tilde\Delta s=0 \). Since the
+Laplacian operator represents the <i>Dirichlet integral</i>, i.e.
+\[
+ \langle Ds, Ds' \rangle + \langle \delta s, \delta s' \rangle = \langle -\tilde\Delta s, s' \rangle,
+\]
+one has \( \tilde\Delta s = 0 \) if and only if \( Ds = \delta s = 0 \).
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgb352094" class="outline-5">
+<h5 id="orgb352094"><span class="section-number-5">1.2.0.4</span> Riemannian connected bundle.</h5>
+<div class="outline-text-5" id="text-1-2-0-4">
+<p>
+The metric vector bundle \( E \) over \( M \) is called a <b>Riemannian-connected bundle</b> if
+it has a connection \( \tilde \nabla \) under which the metric \( g' \) of \( E \) is
+parallel, i.e. \( \tilde\nabla g' = 0 \), in other words, the matrix \( A \) in a
+orthonormal frame is anti-symmetric: \( A + \transp{A} = 0 \). Unless explicitly
+indicated, we always suppose that our metric vector bundle \( E \) is Riemannian-connected
+and the metric \( g' \) is parallel to the connection being used.
+</p>
+
+
+<div id="ex:pullback-tangent" class="exampl">
+<p>
+The case of our interest is when we have a smooth map \( f: M \longrightarrow M' \) and
+\(E = f^*TM' \) is a metric vector bundle over \( M \) under the metric \( g' \) induced
+from \( M' \). Taking the connection \( \tilde\nabla \) to be the Levi-Civita connection \( \nabla' \)
+on \( M' \), meaning
+\[
+ \tilde\nabla_X s = \nabla'_{f_*X}s,
+\]
+for any vector field \( s \) along \( f \), one can see that \( E \) is a
+Riemannian-connected bundle over \( M \).
+</p>
+
+</div>
+
+
+<div id="lem:calculs-general" class="lemma">
+<p>
+Let \( E \) be a Riemannian-connected bundle and \( s\in A^1(M,E) \), one has
+</p>
+<ol class="org-ol">
+<li>\( \delta s = (\delta s)^\alpha \tilde e_\alpha \in A^0(M,E) \) where
+\[
+    (\delta s)^\alpha = -g^{ij}\left(\nabla_i s^\alpha_j + A^\alpha_{\beta i} s^\beta_j \right),
+   \]</li>
+<li>\( \Delta s = (\Delta s)_i dx^i \) where \( (\Delta s)_i \) is an \( m\times m \)
+matrix given by
+\[
+    (\Delta s)_i = {\tilde\nabla}^k {\tilde\nabla}_k s_i - \transp{\left(\Theta_i^h - {\rm
+   Ric}_i^h\right)} s_h
+   \]
+where:
+<ul class="org-ul">
+<li>the indices \( i,h,k \) correspond to local coordinates of \( M \), <span class="underline">not</span> a frame of \( M' \),</li>
+<li>\( \Theta_i^h \) is the curvature form of \(\tilde\nabla \) with its
+indices raised by the metric \( g \) of \( M \),</li>
+<li>\( {\rm Ric}_i^h = {\rm Ric}_i^h I_m \) is the Ricci curvature tensor of \( (M,g) \) with indices
+raised by the metric \( g \), multiplied by the identity \( m\times m \) matrix,</li>
+<li>\( \tilde \nabla^k = g^{hk}\tilde\nabla_h \).</li>
+</ul></li>
+<li><p>
+With \( s\cdot s' \) denoting the pointwise inner product of \( A^1(M,E) \) and \(
+   \langle \cdot,\cdot \rangle \) denoting the metric \( g' \) of \( E \), one has
+</p>
+\begin{equation}
+\label{eq:laplace-Q}   
+ \frac{1}{2}\Delta(s\cdot s) = - s\cdot \Delta s - \langle\tilde\nabla_i s_k,\tilde\nabla^i s^k \rangle_E - \left\langle \transp{\left(\Theta_i^h - {\rm Ric}_i^h\right)}s_h, s^i\right\rangle_E
+\end{equation}</li>
+</ol>
+
+</div>
+<div class="proof">
+<p>
+Computational in nature.
+</p>
+
+</div>
+
+<div id="rem:calculs-general" class="remark">
+<ol class="org-ol">
+<li>We note by \( Q(s) \) the last term of \eqref{eq:laplace-Q}, then \( Q(s) \) is a (2,0)
+tensor on \( M \) with value in \( E^*\otimes E^* \) where \( E^* \) is the dualised
+bundle of \( E \). In practice, \( Q(s) \) is an \( mn\times mn \) matrix with
+coefficients \[ Q(s)_{\alpha\beta}^{hi} = g^{hk}h^{ij}\left[ \left(g'_{\alpha\gamma} \Theta_\beta^\gamma\right)_{kj} - g'_{\alpha\beta} {\rm Ric}_{kj} \right] \].</li>
+<li><p>
+Since \( \int_M \Delta(s\cdot s)dV=0 \), if \( s \) is harmonic, one has
+</p>
+\begin{equation}
+\label{eq:Q-negative}
+\begin{split}
+    \int_M Q(s) dV &= -\int_M \langle\tilde\nabla_i s_k,\tilde\nabla^i s^k \rangle_E dV\\
+                   &= -\int_M \| \nabla_i s^\alpha_k dx^i\otimes dx^k\otimes \tilde e_\alpha\|^2_{A^2(M,E)}dV\leq 0
+     \end{split}   
+\end{equation}</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8806f6b" class="outline-3">
+<h3 id="org8806f6b"><span class="section-number-3">1.3</span> The case of \( E = f^* TM' \)</h3>
+<div class="outline-text-3" id="text-1-3">
+</div><div id="outline-container-orgeadf23c" class="outline-4">
+<h4 id="orgeadf23c"><span class="section-number-4">1.3.1</span> Energy functional and tension field</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+Our interest will be the case of Example <a href="#ex:pullback-tangent">ex:pullback-tangent</a> where \( E =f^*TM'\) for
+some smooth map \( f: M \longrightarrow M' \) of Riemannian manifolds is a
+Riemmanian-connected bundle over \( M \) with the connection \( \tilde\nabla \) given by
+the Levi-Civita connection of \( M' \).
+</p>
+
+<p>
+The tangent map \( Tf: TM \longrightarrow TM' \) can be interpreted as a form \( f_* \) in
+\( A^1(M, E) \). The energy functional can be rewritten as
+\[
+ E(f) = \frac{1}{2}\int_M f^\alpha_i f^\beta_j g^{ij}g'_{\alpha\beta}dV =\frac{1}{2}\langle f_*, f_* \rangle_{A^1{M,E}}.
+\]
+</p>
+
+
+<div id="prop:calculs-pullback-tangent" class="proposition">
+<p>
+Let \( f: M \longrightarrow M' \) and \( E = f^* TM' \) be the Riemannian-connected bundle
+over \( M \). Then:
+</p>
+<ol class="org-ol">
+<li>\( A^\beta_\alpha = \Gamma'^{\beta}_{\gamma\alpha} f_i^\gamma dx^i \) where \( \Gamma'^{\beta}_{\gamma,\alpha}
+   \) are Christoffel symbols of \( (M',g') \).</li>
+<li>\( Df_* = 0 \) where \( f_* \) is considered as an element of \( A^1(M,E) \). Hence \(
+   \tilde\Delta f_*= -D\delta f_* \).</li>
+<li>The tension field of \( f \) is \( \tau f_* = -\delta f_*\).</li>
+</ol>
+
+</div>
+<div class="proof">
+<ol class="org-ol">
+<li>We will use the fact that \( \tilde\nabla g' = 0 \). Given two section \( s=s^\alpha
+   \tilde e_\alpha,t=t^\beta \tilde e_\beta \) of \( E \), expanding
+\( \nabla_i(s\cdot t) = (\tilde\nabla_i s)\cdot t +s\cdot \tilde\nabla_i t \), one has
+\[ 
+   s^\alpha t^\beta \frac{\partial g'_{\alpha\beta}}{\partial x^i} = s^\alpha t^\beta
+   \left( A^\gamma_{\alpha i} g'_{\gamma\beta} + A^\gamma_{\beta i} g'_{\alpha\gamma}\right)
+   \]
+Taking \( s,t \) to be of small support, \( \alpha=\beta \) and substituing \(
+   A^\gamma_{\alpha i} = \Gamma'^\nu_{\gamma\alpha}f^\gamma_i \), one obtains the first statement.</li>
+<li>By direct computation:
+\[
+    D f_* = \left(\frac{\partial^2 f^\alpha}{\partial x^i \partial x^j} +
+   \Gamma'^\alpha_{\gamma\beta} f^\gamma_i f^\beta_j \right)dx^j\wedge dx^i\otimes
+   \tilde e_\alpha, 
+   \]
+which is the product of a symmetric quantity in \( (i,j) \) and an anti-symmetric one,
+hence 0.</li>
+<li>Using the first part of Lemma <a href="#lem:calculs-general">lem:calculs-general</a> for \( s=f_* = f^\alpha_i dx^i\otimes
+   \tilde e_\alpha \), one has \( \delta f_* = -g^{ij}\left(\nabla_i\nabla_j f^\gamma +
+   \Gamma'^\gamma_{\alpha\beta} f^\alpha_i f^\beta_j\right)\tilde e_\gamma=-\tau(f) \)</li>
+</ol>
+
+</div>
+
+<p>
+It follows immediately that
+</p>
+<div id="cor:harmonic-map-form" class="corollary">
+<p id="cor:harmonic-map-form">
+\( f: M \longrightarrow M' \) is a harmonic map of Riemannian manifolds if and only if \(
+f_* \) is harmonic as form in \( A^1(M,f^* TM') \).
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf595675" class="outline-4">
+<h4 id="orgf595675"><span class="section-number-4">1.3.2</span> Fundamental form, some results in case of signed curvature</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<div class="definition">
+<p>
+The <b>fundamental form</b> of a map \( f: M \longrightarrow M' \) of Riemannian manifolds is
+the (0,2) symmetric tensor on \( M  \) with value in \( E=f^* TM' \) defined by
+\[
+ \beta(f):= \tilde \nabla f_* = \left(f^\gamma_{ij} + \Gamma'^\gamma_{\alpha\beta}
+f^\alpha_i f^\beta_j\right) dx^i\otimes dx^j\otimes \tilde e_\gamma.
+\]
+</p>
+
+<p>
+The function \( f \) is called <b>totally symmetric</b> if \( \beta(f) = 0 \) identically on \( M \).
+</p>
+
+</div>
+
+<div class="remark">
+<ol class="org-ol">
+<li>The tension field \( \tau(f) = g^{ij} (\beta(f))_{ij} \) is the trace of the
+fundamental form.</li>
+<li>If \( f \) is totally geodesic then it is harmonic.</li>
+</ol>
+
+</div>
+
+<p>
+When \( s = f_* \), Lemma <a href="#lem:calculs-general">lem:calculs-general</a> and Remark <a href="#rem:calculs-general">rem:calculs-general</a>
+become, with no more than direct computation. The appearance of the Riemann curvature
+tensor \( R' \) of \( (M',g') \) is due to the formula
+\[ R'^\rho{}_{\sigma\mu\nu} = \partial_\mu\Gamma'^\rho{}_{\nu\sigma} -
+\partial_\nu\Gamma'^\rho{}_{\mu\sigma} +
+\Gamma'^\rho{}_{\mu\lambda}\Gamma'^\lambda{}_{\nu\sigma} -
+\Gamma'^\rho{}_{\nu\lambda}\Gamma'^\lambda{}_{\mu\sigma}. \]
+</p>
+
+<div id="lem:calculs-Q-pullback" class="lemma">
+<ol class="org-ol">
+<li>\( Q(f_*) \) is given by
+\[
+   Q(f_*) = -R'_{\alpha\beta\gamma\delta} f^\alpha_i f^\beta_j f^\gamma_k f^\delta_l
+   g^{ik}g^{jl} - {\rm Ric}^{ij}f_i^\alpha f^\beta_j g'_{\alpha\beta}
+   \]
+and
+\[
+   Q(f_*)_{\alpha\beta}^{ij} = -R'_{\alpha\beta\gamma\delta}f^\gamma_k f^\delta_l g^{ik}g^{jl}
+   -{\rm Ric}^{ij}g'_{\alpha\beta}.
+   \]</li>
+<li>If \( f \) is harmonic then 
+\[
+    \Delta e(f) = |\beta(f)|^2 + Q(f_*)
+   \]
+ where \( |\beta(f)| \) is the pointwise norm of \( \beta(f) \).</li>
+</ol>
+
+</div>
+
+<p>
+The previous computation of \( Q(f_*) \) in term of Riemannian curvature of \( M' \) and
+Ricci curvature of \( M \) give the following result in the case where the curvature of \(
+M \) and \( M' \) are of definite sign.
+</p>
+</div>
+
+<div id="outline-container-orga0985e2" class="outline-5">
+<h5 id="orga0985e2"><span class="section-number-5">1.3.2.1</span> Notation.</h5>
+<div class="outline-text-5" id="text-1-3-2-1">
+<p>
+Given a Riemannian manifold \( M \), we will use the following notation:
+</p>
+<ol class="org-ol">
+<li>\( {\rm Ric} \geq 0 \) (resp. \( {\rm Ric} > 0 \)) if the Ricci curvature is positive
+semi-definite (resp. positive definite) as symmetric bilinear form.</li>
+<li>\( {\rm Ric} \leq 0 \) (resp. \( {\rm Ric} < 0 \)) if \( -{\rm Ric} \geq 0 \) (resp. \( -{\rm Ric} > 0 \)).</li>
+<li>\( {\rm Riem}\geq 0 \) (resp. \( {\rm Riem} > 0 \)) if the Riemann curvature tensor satisfies \( R_{ijhk} u^{ij}
+   u^{hk}\geq C(P)u_{ij}u^{ij}\) at \( P\in M \) for all anti-symmetric (0,2) tensor \( u
+   \) on \( M \), where \( C(P)\geq 0 \) (resp. \( C(P) >0 \))</li>
+<li>\( {\rm Riem} \leq 0 \) (resp. \( {\rm Riem} < 0 \)) if \( -{\rm Riem} \geq 0 \) (resp. \( -{\rm Riem} > 0 \)).</li>
+</ol>
+
+<div class="remark">
+<p>
+By symmetries of the curvature tensor, \({\rm Riem}\geq 0 \) if and only if \( R_{ijhk} u^{ij} u^{hk}\geq 0\)
+at \( P\in M \) for all (0,2) tensor \( u \) on \( M \), where \( C(P)\geq 0 \).
+</p>
+
+</div>
+
+<div id="question" class="info">
+<p>
+<b>QUESTION ABOUT TERMINOLOGY:</b> I am not sure about the definition of <span class="underline">strictly</span> positive
+Riemann curvature. The above definition of semi-positive Riemann curvature is taken from
+an article by Kobayashi OR Nomizu that I am currently unable to find again.
+</p>
+
+<p>
+But under this definition of strict positivity (that I made up), the Corollary
+<a href="#cor:signed-curvature">cor:signed-curvature</a> stands. 
+</p>
+
+</div>
+
+<div id="cor:signed-curvature" class="corollary">
+<p>
+Let \( f: M \longrightarrow M' \) be a map of Riemannian manifolds.
+</p>
+<ol class="org-ol">
+<li>If \( f \) is harmonic and \( Q(f_*) \geq 0 \) then \( f \) is totally geodesic and \(
+   e(f) \) is constant.</li>
+<li>If \( {\rm Ric}(M) \leq 0 \) and \( {\rm Riem}(M')\leq 0 \) then \( f \) is harmonic if
+and only if \( f \) is totally geodesic.</li>
+<li>Under the same condition as 2),
+<ul class="org-ul">
+<li>If \( {\rm Ric}(M) <0 \) at one point of \( M \) then all harmonic maps are constant.</li>
+<li>If \( {\rm Riem}(M') <0 \) everywhere in the image of \( f \) and \( f \) is
+harmonic, then \( f \) is either constant or maps \( M \) onto a closed geodesic of \( M' \).</li>
+</ul></li>
+</ol>
+
+</div>
+
+<div class="proof">
+<p>
+All the statements are consequence of 2) of Lemma <a href="#lem:calculs-Q-pullback">lem:calculs-Q-pullback</a> and the fact
+that \( \int_M \Delta e(f)dV = 0 \) noticing that
+</p>
+<ul class="org-ul">
+<li>\( -{\rm Ric}^{ij}f^\alpha_i f^\beta_j g'_{\alpha\beta} \) is \( -{\rm Ric}\otimes g' \)
+applied doubly to \( f_i^\alpha dx^i\otimes\tilde e_\alpha \).</li>
+<li>\( -R'_{\alpha\beta\gamma\delta}f^\gamma_k f^\delta_l g^{ik}g^{jl} \) is \( -\tilde
+  R'\otimes g\otimes g \) applied to \( f_i^\alpha f^\beta_j \tilde e_\alpha\otimes \tilde
+  e_\beta\otimes dx^i\otimes dx^j \) where \( \tilde R' \) is the bilinear form \( (u,v)
+  \mapsto R'_{\alpha\beta\gamma\delta} u^{\alpha\beta} v^{\gamma\delta} \).</li>
+</ul>
+
+<p>
+For 3), if \( {\rm Ric}(M)<0 \) at one point \( P\in M \) then at that point \( f^\alpha_i dx^i \tilde
+e_\alpha =0 \), meaning \( f_*=0 \), hence \( e(f) \) vanishes at \( P \). Since \( e(f)
+\) has to be constant, it vanishes identically, which implies that \( f \) is constant.
+</p>
+
+<p>
+If \( {\rm Riem}(M') <0 \), one has \(  f_i^\alpha f^\beta_j \tilde e_\alpha\otimes \tilde
+  e_\beta\) is symmetric, i.e. \( f^\alpha_i f^\beta_j = f^\alpha_j f^\beta_i \) for all
+  \( i,j,\alpha,\beta \), meaning that the ratio \( f^\alpha_i: f^\alpha_j \) is
+  independent of \( \alpha \), i.e. \( (\nabla f^\alpha)_{\alpha\in \overline{1,m}} \) are
+  colinear, i.e. the image of \( Tf \) is of one dimension, which leads to the conclusion,
+  as we will see later that a totally geodesic map transform geodesic to geodesic.
+</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgd47a8bc" class="outline-4">
+<h4 id="orgd47a8bc"><span class="section-number-4">1.3.3</span> Example: Riemannian immersion</h4>
+</div>
+<div id="outline-container-orgb0c6866" class="outline-4">
+<h4 id="orgb0c6866"><span class="section-number-4">1.3.4</span> Example: Riemannian submersion</h4>
+</div>
+</div>
+<div id="outline-container-orgcb2eb10" class="outline-3">
+<h3 id="orgcb2eb10"><span class="section-number-3">1.4</span> Composition of maps</h3>
+</div>
+</div>
+<div id="outline-container-orgd06b51c" class="outline-2">
+<h2 id="orgd06b51c"><span class="section-number-2">2</span> Deformation of maps</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+
+<h1 class='org-ref-bib-h1'>Bibliography</h1>
+<ul class='org-ref-bib'><li><a id="eells_harmonic_1964">[eells_harmonic_1964] Eells & Sampson, Harmonic Mappings of Riemannian Manifolds, <i>American Journal of Mathematics</i>, <b>86(1)</b>, 109-160 (1964). <a href="http://www.jstor.org/stable/2373037">link</a>. <a href="http://dx.doi.org/10.2307/2373037">doi</a>.</a></li>
+</ul>
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<div class='footer'>
+By Tien NGUYEN MANH.<br>
+Last updated 2018-02-21 Wed 19:22. <br>
+</div>
+</div>
+</body>
+</html>

@@ -1,5 +1,5 @@
 (TeX-add-style-hook
- "de-rham-decomposition"
+ "harmonic-maps"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("article" "11pt")))
@@ -42,18 +42,35 @@
     "Spec"
     "vol")
    (LaTeX-add-labels
-    "sec:org6744296"
-    "orgc11e5b2"
-    "thm:Frobenius"
-    "org907de79"
-    "sec:org7171d65"
-    "prop:uniqueness"
-    "orgb056b03"
-    "lem:uniqueness-fiber"
-    "orgb7febfa"
-    "lem:unique-representation"
-    "orgf9bc81e"
-    "sec:org83afeb1")
+    "sec:orga0770cb"
+    "sec:orgc583005"
+    "sec:org2fea42a"
+    "lem:var-energy"
+    "prop:holo-harmonic"
+    "eq:tangent-exp"
+    "sec:orgde542c5"
+    "sec:orga475ee1"
+    "sec:orgf77e3b3"
+    "sec:orge4db110"
+    "sec:org09d51c1"
+    "ex:pullback-tangent"
+    "lem:calculs-general"
+    "eq:laplace-Q"
+    "rem:calculs-general"
+    "eq:Q-negative"
+    "sec:orge32ae52"
+    "sec:orgce54bf2"
+    "prop:calculs-pullback-tangent"
+    "sec:org75bf29d"
+    "lem:calculs-Q-pullback"
+    "sec:org6bfbff7"
+    "cor:signed-curvature"
+    "sec:orgde0028d"
+    "sec:org80dc4ea"
+    "sec:org95f4faf"
+    "sec:orgcf5b6e5")
+   (LaTeX-add-bibliographies
+    "../res/Stage2018")
    (LaTeX-add-amsthm-newtheorems
     "remark"
     "theorem"

@@ -1,3 +1,459 @@
 #+TITLE: Harmonic maps of Riemannian manifolds
+#+AUTHOR: Tien NGUYEN MANH
+#+DATE: Feb 20, 2018
+# +STARTUP: indent
+# +STARTUP: showstars
+
+
 #+SETUPFILE: ../res/mathsetup.org
 #+INCLUDE: ../res/include.org
+
+This is my reading note for cite:eells_harmonic_1964.
+
+* Harmonic maps
+** Variational approach: energy integral and tension field
+**** Notation.
+Let \( M, M', M''\) be Riemannian manifolds of dimension \( n, n' \) and \( n', n''\)
+respectively. We will use \( i,j,k,\dots, \alpha,\beta,\gamma,\dots, a,b,c \) for local
+coordinates of \( M, M', M'' \).
+Let \( f: M \longrightarrow M', f': M' \longrightarrow M''\) be a smooth maps, one denotes
+\[
+f^\alpha_i = \frac{\partial f^\alpha}{\partial x^i},\quad f^\alpha_{ij} =
+\frac{\partial^2 f^\alpha}{\partial x^i \partial x^j} - \Gamma_{ij}^k f^{\alpha}_k \]
+so that \( \nabla g = g_i dx^i \) and \( \nabla (\nabla g) = g_{ij}dx^i\otimes dx^j \)
+
+#+BEGIN_definition
+The *energy desity* of \( f \) at \( p\in m \) is defined by
+\[
+e(f)(p) = \frac{1}{2}\langle g(p), f^g(p) \rangle_p = \frac{1}{2}g^{ij}f^\alpha_i
+f^\beta_j g'_{\alpha\beta}
+\]
+and the *energy functional* of \( f \) is
+\[
+E(f) = \int_M e(f) dV = \frac{1}{2}\int_M g^{ij}f^\alpha_i
+f^\beta_j g'_{\alpha\beta} |\det (g_{ij})|^\frac{1}{2} dx^1\wedge \dots\wedge dx^n
+\]
+#+END_definition
+
+We recall that the inner product is between 2 tensors of type \( (p,q) \) \( S =
+S^{i_1\dots i_p}_{j_1\dots j_q}, T = T^{k_1\dots k_p}_{l_1\dots l_q} \) is \( \prod_{m,n}
+g_{i_m k_m} g^{j_n l_m}S^{i_1\dots i_p}_{j_1\dots j_q} T^{k_1\dots k_p}_{l_1\dots l_q}  \)
+
+#+BEGIN_remark
+Under any orthonormal basis of \( T_P M \) and \( T_{f(P)}N \), one can see that the
+energy density is non-negative at every point. Hence \( E(f) = 0 \) if and only if \(
+e(f)=0 \) at all points if and only if \( f \) is constant.
+#+END_remark
+
+#+BEGIN_definition
+Let \( \sigma \) be a symmetric function of \( n \) variables and \( \alpha \) be a
+symmetric (0,2) tensor field, one can define the *\(
+\sigma- \)energy desity* of \( \alpha \) at \( P\in M \) to be \( \sigma
+(\beta_1,\dots,\beta_n)(P) \) where \( \beta_i \) are eigenvalues of the linear operator
+\( (g^{ik}\alpha_{ij})_{k,j} \). The *\( \sigma \)-energy* of \( \alpha \) is \( I_\sigma(\alpha)
+:= \int_M  \sigma(\alpha) dV\)
+
+Take \( \alpha = f^*g' \), one calls \( \sigma(\alpha) \) the /\( \sigma \)-energy density
+of \( f \) and \( I_\sigma(\alpha) \) the \( \sigma \)-energy of \( f \).
+#+END_definition
+
+#+BEGIN_exampl
+For example, the energy functional \( E(f) \) is \( I_\frac{\sigma_1}{2}(f) \). \(
+V(f):=I_{\sigma^{1/2}_n}(f) \) is called the *volume* of \( f \).
+#+END_exampl
+
+#+ATTR_LATEX: :options [variation of the energy]
+#+ATTR_HTML: :id lem:var-energy :btit (variation of the energy) 
+#+BEGIN_lemma
+#+LATEX: \label{lem:var-energy}
+Let \( f_t: M \longrightarrow M' \) be a smooth family of smooth maps between Riemannian
+manifolds for \( t\in (t_0,t_1) \). Then
+\[
+\frac{d}{dt}E(f_t) = -\int_M \left(\Delta f_t^\gamma +g^{ij}\Gamma'^{\gamma}_{\alpha\beta}
+f^{\alpha}_{t,i}f^{\beta}_{t,j}\right) g'_{\gamma\nu} \frac{\partial f_t^\nu}{\partial
+t}dV,\qquad \forall t\in (t_0,t_1)
+\]
+#+END_lemma
+#+BEGIN_proof
+Direct computation.
+#+END_proof
+
+
+#+BEGIN_definition
+1. A *vector field along \( f: M \longrightarrow M' \)* is a smooth application \(v: M\longrightarrow TM'\) such that \( \pi\circ v = f \) where \( \pi: TM' \longrightarrow M'\) is the canonical projection. In other words, it is the association of each point \(P\in M \) a tangent vector at \( f(P) \)
+2. The *tension field* of \( f \) is the following vector field along \( f \) defined by
+   \[
+   \tau(f)^\gamma:= \Delta f^\gamma +g^{ij}\Gamma'^{\gamma}_{\alpha\beta} f^{\alpha}_{i}f^{\beta}_{j}
+   \]
+   By the Lemma ref:lem:var-energy, \( \tau(f) \) is the unique vector field along \( f \)
+   such that \( \frac{d }{dt}E(f_t) = -\int_M \langle \tau(f), \frac{df_t}{dt}\rangle \). In
+   particular, if \( f_t \) is the variation of \( f \) along a vector field \( v \) along
+   \( f \), i.e. \(f_t(P) = \exp_{f(P)}(tv(P))\) then \(\nabla_v E(f) = - \langle \tau(f), v
+   \rangle\) along \( f \).
+3. \( f: M \longrightarrow M' \) is called *harmonic* if \( \tau(f)=0 \), or equivalently
+   \( f \) is a critical point of \( E \).
+#+END_definition
+
+In normal coordinates of \( M \) at \( P \) and \( M' \) at \( f(P) \), the tension field
+of \( f \) is given by
+\[
+\tau^\gamma(f)(P) = \sum_i \frac{\partial^2 f^\gamma}{\partial (x^i)^2}(P)
+\]
+
+#+BEGIN_remark
+1. If \( M' \) is flat, i.e. \( R'_{\alpha\beta\gamma\delta} = 0 \) then \( \tau(f)^\gamma
+   = \Delta f^\gamma\) is linear in \( f \).
+2. Since \( \tau(f) \) depends locally on \( f \), isometries and covering maps are
+   harmonic.
+#+END_remark
+
+#+ATTR_LATEX: :options [holomorphicity implies harmonicity]
+#+ATTR_HTML: :id prop:holo-harmonic :btit (holomorphicity implies harmonicity) 
+#+BEGIN_proposition
+#+LATEX: \label{prop:holo-harmonic}
+Holomorphic maps between Kahler manifolds are harmonic.
+#+END_proposition
+#+BEGIN_proof
+We recall that exponential functions \( \exp_P: T_PM \longrightarrow M' \) on a Kahler
+manifold \( M \) are holomorphic for any \( P\in M \). In fact, let \( v\in T_PM \) and \( \delta
+v \in T_v(T_P M) \) be a tangent vector  at \( v \) and denote abusively by \( J \) the complex
+structure of the complex vector space \( T_P M \) and that of \( M \), one needs to see that
+\begin{equation}
+\label{eq:tangent-exp}
+D\exp_P(v).J\delta v = J(\exp_P(v)) D \exp_P(v).\delta v
+\end{equation}
+
+In fact, let \( Y_1, Y_2 \) be Jacobi fields along \( U(t) =  \exp_P(tv) \) the
+geodesics of \( M \) starting at \( P \) in direction \( v \) with \( Y_1(0)=Y_2(0) = 0,
+\dot Y_1(0) = \delta v, \dot Y_2(0) = J\delta v \) then
+the LHS of eqref:eq:tangent-exp is \( Y_2(1) \), and the RHS is \( J(U(1)) Y_1(1) \). Then one can see
+that \( Y_2(t) - J(U(t)) Y_1(t) = 0\) for every \( t\in [0,1] \) since it is true at \( t=0
+\) and the derivative with respect to \( t \) vanishes as \( \nabla_{\dot U}J = 0 \).  
+
+Therefore, at a point \( P \) of a Kahler manifold \( M \), there exist holomorphic coordinates \( z^j = x^j + i y^j \) of \( M \) in a
+neighborhood of \( P \) such that \( \{ x_j,y_j: j=\overline{1,n/2} \} \) are normal
+coordinates centered in \( P \). Using such coordinates for \( P\in M \) and \( f(P)\in M'
+\), one has \( f^\gamma=0 \) since \( f^\gamma \) is holomorphic and \(
+\Gamma'^\gamma_{\alpha\beta}(P)=0 \) by normality, it follows that \( \tau(f)=0 \) at
+every point \( P\in M \).
+#+END_proof
+
+
+** Formulation using connection on vector bundle
+**** Setup and notation.
+Let \( E \) be a metric vector bundle over a Riemannian manifold \( M \), i.e. each fiber
+of \( E \) is equiped with an inner product that we denote by \( (g'_{\alpha\beta}) \). The
+metric of \( M \) is denoted by \( (g_{ij}) \). Let \( n \) and \( m \) be the dimension
+of \( M \) of the fiber.
+
+
+**** Covariant derivatives and exterior derivatives.
+We recall that a *covariant derivative* or a *connection* \( \tilde\nabla \) of \( E \) is uniquely determined in a
+local coordinates by an \( m\times m \) matrix \( A \) of 1-form on \( M \), in other
+words an 1-form on \( M \) with value in \( Hom_M(E,E) \) which depends on the local frame
+of \( E \) (i.e. \( A \) is not a tensor with value in \( E \)). \( A \) is called the
+*connection form* of \( \tilde \nabla \). Locally
+\[
+ \tilde\nabla_X (s^\alpha \tilde e_\alpha) = (\nabla_X s^\alpha) \tilde e_\alpha +
+A^\alpha_\beta(X)s^\beta\tilde e_\alpha.
+\]
+
+
+
+When one prefers to work with forms other than tensors with value in \( E \), one uses an
+*exterior derivative*, a map \( D: A^p(M,E) \longrightarrow A^{p+1}(M,E) \) which turns an
+\( p \)-form with value in \( E \) to an \( p+1 \)-form with value in \( E \). Locally 
+\[
+ D (s^\alpha \tilde e_\alpha) = (d s^\alpha) \tilde e_\alpha +
+A^\alpha_\beta\wedge s^\beta\tilde e_\alpha.
+\]
+and 
+\[
+ D^2(s^\alpha \tilde e_\alpha = (dA + A\wedge A)\wedge s.
+\]
+One notes \( \Theta := dA + A\wedge A \), which is an \( m\times m \) matrix of 2-forms of
+\( M \). Unlike \( A \), \( \Theta \), seen as an 2-form with value in \( Hom_M(E,E) \)
+does not depend on the local frame of \( E \), i.e. \( \Theta \) transforms as a (0,2)
+tensor with value in \( E \), called the *curvature form*.
+
+
+
+The fibrewise metric structure of \( E \) and the metric tensor of \( M \) give rise to a pointwise inner product of
+\((p,q) \) tensors of \( M \) with value in \( E \), in particular a pointwise inner
+product \( (s, s')\mapsto s\cdot s' \) from \( A^p(M,E)\times A^p(M,E) \) to \( C^\infty(M) \). Integrated over \( M \), the pointwise inner product gives rise
+to a global inner product \( \langle  \cdot,\cdot \rangle  \), i.e. a true inner product of \( A^p(M,E) \). One denotes by
+\( \delta: A^{p+1}(M,E)\longrightarrow A^p(M,E) \) the adjoint operator of
+\( D: A^p(M,E) \longrightarrow A^{p+1}(M,E) \) with respect to this inner product, i.e.
+\( \langle Ds, s' \rangle_{A^{p+1}(M,E)} = \langle s, \delta s' \rangle_{A^{p}(M,E)}\) for
+all \( s\in A^{p}(M,E), s'\in A^{p+1}(M,E) \).
+
+
+
+**** Laplacian operator and harmonic forms.
+The *Laplacian operator* is defined as a endomorphism of \( A^p(M,E) \) given by
+\[
+ \tilde \Delta = -(D\delta +\delta D)
+\]
+and a form \( s\in A^p(M,E) \) is called *harmonic* if \( \tilde\Delta s=0 \). Since the
+Laplacian operator represents the /Dirichlet integral/, i.e.
+\[
+ \langle Ds, Ds' \rangle + \langle \delta s, \delta s' \rangle = \langle -\tilde\Delta s, s' \rangle,
+\]
+one has \( \tilde\Delta s = 0 \) if and only if \( Ds = \delta s = 0 \).
+
+
+
+**** Riemannian connected bundle.
+The metric vector bundle \( E \) over \( M \) is called a *Riemannian-connected bundle* if
+it has a connection \( \tilde \nabla \) under which the metric \( g' \) of \( E \) is
+parallel, i.e. \( \tilde\nabla g' = 0 \), in other words, the matrix \( A \) in a
+orthonormal frame is anti-symmetric: \( A + \transp{A} = 0 \). Unless explicitly
+indicated, we always suppose that our metric vector bundle \( E \) is Riemannian-connected
+and the metric \( g' \) is parallel to the connection being used.
+
+
+#+ATTR_HTML: :id ex:pullback-tangent
+#+BEGIN_exampl
+#+LATEX: \label{ex:pullback-tangent}
+The case of our interest is when we have a smooth map \( f: M \longrightarrow M' \) and
+\(E = f^*TM' \) is a metric vector bundle over \( M \) under the metric \( g' \) induced
+from \( M' \). Taking the connection \( \tilde\nabla \) to be the Levi-Civita connection \( \nabla' \)
+on \( M' \), meaning
+\[
+ \tilde\nabla_X s = \nabla'_{f_*X}s,
+\]
+for any vector field \( s \) along \( f \), one can see that \( E \) is a
+Riemannian-connected bundle over \( M \).
+#+END_exampl
+
+
+#+ATTR_HTML: :id lem:calculs-general 
+#+BEGIN_lemma
+#+LATEX: \label{lem:calculs-general}
+Let \( E \) be a Riemannian-connected bundle and \( s\in A^1(M,E) \), one has
+1. \( \delta s = (\delta s)^\alpha \tilde e_\alpha \in A^0(M,E) \) where
+   \[
+    (\delta s)^\alpha = -g^{ij}\left(\nabla_i s^\alpha_j + A^\alpha_{\beta i} s^\beta_j \right),
+   \]
+2. \( \Delta s = (\Delta s)_i dx^i \) where \( (\Delta s)_i \) is an \( m\times m \)
+   matrix given by
+   \[
+    (\Delta s)_i = {\tilde\nabla}^k {\tilde\nabla}_k s_i - \transp{\left(\Theta_i^h - {\rm
+   Ric}_i^h\right)} s_h
+   \]
+   where:
+   - the indices \( i,h,k \) correspond to local coordinates of \( M \), _not_ a frame of \( M' \), 
+   - \( \Theta_i^h \) is the curvature form of \(\tilde\nabla \) with its
+     indices raised by the metric \( g \) of \( M \),
+   - \( {\rm Ric}_i^h = {\rm Ric}_i^h I_m \) is the Ricci curvature tensor of \( (M,g) \) with indices
+     raised by the metric \( g \), multiplied by the identity \( m\times m \) matrix,
+   - \( \tilde \nabla^k = g^{hk}\tilde\nabla_h \).
+3. With \( s\cdot s' \) denoting the pointwise inner product of \( A^1(M,E) \) and \(
+   \langle \cdot,\cdot \rangle \) denoting the metric \( g' \) of \( E \), one has
+   \begin{equation}
+   \label{eq:laplace-Q}   
+    \frac{1}{2}\Delta(s\cdot s) = - s\cdot \Delta s - \langle\tilde\nabla_i s_k,\tilde\nabla^i s^k \rangle_E - \left\langle \transp{\left(\Theta_i^h - {\rm Ric}_i^h\right)}s_h, s^i\right\rangle_E
+   \end{equation}
+#+END_lemma
+#+BEGIN_proof
+Computational in nature.
+#+END_proof
+
+#+ATTR_HTML: :id rem:calculs-general
+#+BEGIN_remark
+#+LATEX: \label{rem:calculs-general}
+1. We note by \( Q(s) \) the last term of eqref:eq:laplace-Q, then \( Q(s) \) is a (2,0)
+   tensor on \( M \) with value in \( E^*\otimes E^* \) where \( E^* \) is the dualised
+   bundle of \( E \). In practice, \( Q(s) \) is an \( mn\times mn \) matrix with
+   coefficients \[ Q(s)_{\alpha\beta}^{hi} = g^{hk}h^{ij}\left[ \left(g'_{\alpha\gamma} \Theta_\beta^\gamma\right)_{kj} - g'_{\alpha\beta} {\rm Ric}_{kj} \right] \].
+2. Since \( \int_M \Delta(s\cdot s)dV=0 \), if \( s \) is harmonic, one has
+   \begin{equation}
+   \label{eq:Q-negative}
+   \begin{split}
+       \int_M Q(s) dV &= -\int_M \langle\tilde\nabla_i s_k,\tilde\nabla^i s^k \rangle_E dV\\
+                      &= -\int_M \| \nabla_i s^\alpha_k dx^i\otimes dx^k\otimes \tilde e_\alpha\|^2_{A^2(M,E)}dV\leq 0
+	\end{split}   
+   \end{equation}
+#+END_remark
+
+** The case of \( E = f^* TM' \)
+*** Energy functional and tension field
+Our interest will be the case of Example ref:ex:pullback-tangent where \( E =f^*TM'\) for
+some smooth map \( f: M \longrightarrow M' \) of Riemannian manifolds is a
+Riemmanian-connected bundle over \( M \) with the connection \( \tilde\nabla \) given by
+the Levi-Civita connection of \( M' \).
+
+The tangent map \( Tf: TM \longrightarrow TM' \) can be interpreted as a form \( f_* \) in
+\( A^1(M, E) \). The energy functional can be rewritten as
+\[
+ E(f) = \frac{1}{2}\int_M f^\alpha_i f^\beta_j g^{ij}g'_{\alpha\beta}dV =\frac{1}{2}\langle f_*, f_* \rangle_{A^1{M,E}}.
+\]
+
+
+#+ATTR_HTML: :id prop:calculs-pullback-tangent 
+#+BEGIN_proposition
+#+LATEX: \label{prop:calculs-pullback-tangent}
+Let \( f: M \longrightarrow M' \) and \( E = f^* TM' \) be the Riemannian-connected bundle
+over \( M \). Then:
+1. \( A^\beta_\alpha = \Gamma'^{\beta}_{\gamma\alpha} f_i^\gamma dx^i \) where \( \Gamma'^{\beta}_{\gamma,\alpha}
+   \) are Christoffel symbols of \( (M',g') \).
+2. \( Df_* = 0 \) where \( f_* \) is considered as an element of \( A^1(M,E) \). Hence \(
+   \tilde\Delta f_*= -D\delta f_* \).
+3. The tension field of \( f \) is \( \tau f_* = -\delta f_*\).
+#+END_proposition
+#+BEGIN_proof
+1. We will use the fact that \( \tilde\nabla g' = 0 \). Given two section \( s=s^\alpha
+   \tilde e_\alpha,t=t^\beta \tilde e_\beta \) of \( E \), expanding
+   \( \nabla_i(s\cdot t) = (\tilde\nabla_i s)\cdot t +s\cdot \tilde\nabla_i t \), one has
+   \[ 
+   s^\alpha t^\beta \frac{\partial g'_{\alpha\beta}}{\partial x^i} = s^\alpha t^\beta
+   \left( A^\gamma_{\alpha i} g'_{\gamma\beta} + A^\gamma_{\beta i} g'_{\alpha\gamma}\right)
+   \]
+   Taking \( s,t \) to be of small support, \( \alpha=\beta \) and substituing \(
+   A^\gamma_{\alpha i} = \Gamma'^\nu_{\gamma\alpha}f^\gamma_i \), one obtains the first statement.
+2. By direct computation:
+   \[
+    D f_* = \left(\frac{\partial^2 f^\alpha}{\partial x^i \partial x^j} +
+   \Gamma'^\alpha_{\gamma\beta} f^\gamma_i f^\beta_j \right)dx^j\wedge dx^i\otimes
+   \tilde e_\alpha, 
+   \]
+   which is the product of a symmetric quantity in \( (i,j) \) and an anti-symmetric one,
+   hence 0.
+3. Using the first part of Lemma ref:lem:calculs-general for \( s=f_* = f^\alpha_i dx^i\otimes
+   \tilde e_\alpha \), one has \( \delta f_* = -g^{ij}\left(\nabla_i\nabla_j f^\gamma +
+   \Gamma'^\gamma_{\alpha\beta} f^\alpha_i f^\beta_j\right)\tilde e_\gamma=-\tau(f) \)
+#+END_proof
+
+It follows immediately that
+#+ATTR_HTML: :id cor:harmonic-map-form
+#+BEGIN_corollary
+#+ATTR_HTML: :id cor:harmonic-map-form
+\( f: M \longrightarrow M' \) is a harmonic map of Riemannian manifolds if and only if \(
+f_* \) is harmonic as form in \( A^1(M,f^* TM') \).
+#+END_corollary
+
+*** Fundamental form, some results in case of signed curvature
+
+#+BEGIN_definition
+The *fundamental form* of a map \( f: M \longrightarrow M' \) of Riemannian manifolds is
+the (0,2) symmetric tensor on \( M  \) with value in \( E=f^* TM' \) defined by
+\[
+ \beta(f):= \tilde \nabla f_* = \left(f^\gamma_{ij} + \Gamma'^\gamma_{\alpha\beta}
+f^\alpha_i f^\beta_j\right) dx^i\otimes dx^j\otimes \tilde e_\gamma.
+\]
+
+The function \( f \) is called *totally symmetric* if \( \beta(f) = 0 \) identically on \( M \).
+#+END_definition
+
+#+BEGIN_remark
+1. The tension field \( \tau(f) = g^{ij} (\beta(f))_{ij} \) is the trace of the
+   fundamental form.
+2. If \( f \) is totally geodesic then it is harmonic.
+#+END_remark
+
+When \( s = f_* \), Lemma ref:lem:calculs-general and Remark ref:rem:calculs-general
+become, with no more than direct computation. The appearance of the Riemann curvature
+tensor \( R' \) of \( (M',g') \) is due to the formula
+\[ R'^\rho{}_{\sigma\mu\nu} = \partial_\mu\Gamma'^\rho{}_{\nu\sigma} -
+\partial_\nu\Gamma'^\rho{}_{\mu\sigma} +
+\Gamma'^\rho{}_{\mu\lambda}\Gamma'^\lambda{}_{\nu\sigma} -
+\Gamma'^\rho{}_{\nu\lambda}\Gamma'^\lambda{}_{\mu\sigma}. \]
+
+#+ATTR_HTML: :id lem:calculs-Q-pullback
+#+BEGIN_lemma
+#+LATEX: \label{lem:calculs-Q-pullback}
+1. \( Q(f_*) \) is given by
+   \[
+   Q(f_*) = -R'_{\alpha\beta\gamma\delta} f^\alpha_i f^\beta_j f^\gamma_k f^\delta_l
+   g^{ik}g^{jl} - {\rm Ric}^{ij}f_i^\alpha f^\beta_j g'_{\alpha\beta}
+   \]
+   and
+   \[
+   Q(f_*)_{\alpha\beta}^{ij} = -R'_{\alpha\beta\gamma\delta}f^\gamma_k f^\delta_l g^{ik}g^{jl}
+   -{\rm Ric}^{ij}g'_{\alpha\beta}.
+   \]
+2. If \( f \) is harmonic then 
+   \[
+    \Delta e(f) = |\beta(f)|^2 + Q(f_*)
+   \]
+    where \( |\beta(f)| \) is the pointwise norm of \( \beta(f) \).
+#+END_lemma
+
+The previous computation of \( Q(f_*) \) in term of Riemannian curvature of \( M' \) and
+Ricci curvature of \( M \) give the following result in the case where the curvature of \(
+M \) and \( M' \) are of definite sign.
+
+**** Notation.
+Given a Riemannian manifold \( M \), we will use the following notation:
+1. \( {\rm Ric} \geq 0 \) (resp. \( {\rm Ric} > 0 \)) if the Ricci curvature is positive
+   semi-definite (resp. positive definite) as symmetric bilinear form.
+2. \( {\rm Ric} \leq 0 \) (resp. \( {\rm Ric} < 0 \)) if \( -{\rm Ric} \geq 0 \) (resp. \( -{\rm Ric} > 0 \)).
+3. \( {\rm Riem}\geq 0 \) (resp. \( {\rm Riem} > 0 \)) if the Riemann curvature tensor satisfies \( R_{ijhk} u^{ij}
+   u^{hk}\geq C(P)u_{ij}u^{ij}\) at \( P\in M \) for all anti-symmetric (0,2) tensor \( u
+   \) on \( M \), where \( C(P)\geq 0 \) (resp. \( C(P) >0 \))
+4. \( {\rm Riem} \leq 0 \) (resp. \( {\rm Riem} < 0 \)) if \( -{\rm Riem} \geq 0 \) (resp. \( -{\rm Riem} > 0 \)).
+
+#+BEGIN_remark
+By symmetries of the curvature tensor, \({\rm Riem}\geq 0 \) if and only if \( R_{ijhk} u^{ij} u^{hk}\geq 0\)
+at \( P\in M \) for all (0,2) tensor \( u \) on \( M \), where \( C(P)\geq 0 \).
+#+END_remark
+
+#+LATEX: \iffalse
+#+ATTR_HTML: :id question
+#+BEGIN_info
+*QUESTION ABOUT TERMINOLOGY:* I am not sure about the definition of _strictly_ positive
+Riemann curvature. The above definition of semi-positive Riemann curvature is taken from
+an article by Kobayashi OR Nomizu that I am currently unable to find again.
+ 
+But under this definition of strict positivity (that I made up), the Corollary
+ref:cor:signed-curvature stands. 
+#+END_info
+
+#+LATEX: \fi
+
+
+#+ATTR_HTML: :id cor:signed-curvature 
+#+BEGIN_corollary
+#+LATEX: \label{cor:signed-curvature}
+Let \( f: M \longrightarrow M' \) be a map of Riemannian manifolds.
+1. If \( f \) is harmonic and \( Q(f_*) \geq 0 \) then \( f \) is totally geodesic and \(
+   e(f) \) is constant.
+2. If \( {\rm Ric}(M) \leq 0 \) and \( {\rm Riem}(M')\leq 0 \) then \( f \) is harmonic if
+   and only if \( f \) is totally geodesic.
+3. Under the same condition as 2),
+   - If \( {\rm Ric}(M) <0 \) at one point of \( M \) then all harmonic maps are constant.
+   - If \( {\rm Riem}(M') <0 \) everywhere in the image of \( f \) and \( f \) is
+     harmonic, then \( f \) is either constant or maps \( M \) onto a closed geodesic of \( M' \).
+#+END_corollary
+
+#+BEGIN_proof
+All the statements are consequence of 2) of Lemma ref:lem:calculs-Q-pullback and the fact
+that \( \int_M \Delta e(f)dV = 0 \) noticing that
+- \( -{\rm Ric}^{ij}f^\alpha_i f^\beta_j g'_{\alpha\beta} \) is \( -{\rm Ric}\otimes g' \)
+  applied doubly to \( f_i^\alpha dx^i\otimes\tilde e_\alpha \).
+- \( -R'_{\alpha\beta\gamma\delta}f^\gamma_k f^\delta_l g^{ik}g^{jl} \) is \( -\tilde
+  R'\otimes g\otimes g \) applied to \( f_i^\alpha f^\beta_j \tilde e_\alpha\otimes \tilde
+  e_\beta\otimes dx^i\otimes dx^j \) where \( \tilde R' \) is the bilinear form \( (u,v)
+  \mapsto R'_{\alpha\beta\gamma\delta} u^{\alpha\beta} v^{\gamma\delta} \).
+
+For 3), if \( {\rm Ric}(M)<0 \) at one point \( P\in M \) then at that point \( f^\alpha_i dx^i \tilde
+e_\alpha =0 \), meaning \( f_*=0 \), hence \( e(f) \) vanishes at \( P \). Since \( e(f)
+\) has to be constant, it vanishes identically, which implies that \( f \) is constant.
+
+If \( {\rm Riem}(M') <0 \), one has \(  f_i^\alpha f^\beta_j \tilde e_\alpha\otimes \tilde
+  e_\beta\) is symmetric, i.e. \( f^\alpha_i f^\beta_j = f^\alpha_j f^\beta_i \) for all
+  \( i,j,\alpha,\beta \), meaning that the ratio \( f^\alpha_i: f^\alpha_j \) is
+  independent of \( \alpha \), i.e. \( (\nabla f^\alpha)_{\alpha\in \overline{1,m}} \) are
+  colinear, i.e. the image of \( Tf \) is of one dimension, which leads to the conclusion,
+  as we will see later that a totally geodesic map transform geodesic to geodesic.
+#+END_proof
+
+
+
+*** Example: Riemannian immersion
+*** Example: Riemannian submersion
+** Composition of maps
+* Deformation of maps
+
+bibliographystyle:alpha
+bibliography:../res/Stage2018.bib

@@ -2,15 +2,43 @@
 #+OPTIONS: toc:1 num:nil
 # [[file:../img/ly-ngu-vong-nguyet.jpg]]
 
+* LaTeX indentation in org-mode <2018-02-20 Tue>
+  I was told, in accordance with my experience, that we visually process text better if
+  each line in a paragraph is approximately below 80 characters. This fact is also
+  omnipresent on the internet, standardized tests, books, etc.. being among the
+  fundamentals of web design (except wikipedia, that's why I use Wikiwand).
+
+  In Emacs, the key binding ~M-q~ will execute the ~fill-paragraph~ function that
+  automatically shrinks text and insert "soft" newlines to shorten line below a certain
+  threshold. This function however does not respect the LaTeX structure, e.g. it inserts
+  line break inside inline equation and merge display equation.
+  format paragraph.
+
+#+BEGIN_SRC org
+  This is a long long long long long long long long long paragraph with equation \( 1+1 = 
+  2+0=3-1=4-2 \) with an equation in display \[ 1+ 1 = 2\].
+#+END_SRC
+
+The problem has been noticed around the Internet [[https://emacs.stackexchange.com/questions/29122/prevent-fill-paragraph-from-breaking-latex-displayed-equations-in-org-mode][here]] and [[https://emacs.stackexchange.com/questions/34938/is-there-a-fill-paragraph-function-which-tries-to-not-break-subordinate-parenthe?rq=1][there]].  
+
+Meanwhile AucTeX does not have this annoying problem. [[https://www.gnu.org/software/auctex/manual/auctex.html#index-LaTeX_002dfill_002dbreak_002dat_002dseparators][It turns out]] that AUCTeX maps the
+~M-q~ key to a different function, called ~LaTeX-fill-paragraph~. So the temporary fix is
+to load ~latex.el~ in org-mode and maps ~M-q~ to ~LaTeX-fill-paragraph~
+
+#+BEGIN_SRC org
+(load "latex.el")
+(global-set-key "\M-q" 'LaTeX-fill-paragraph)
+#+END_SRC
 
 * A (decent) map of mathematics <2017-10-17 Tue>
 
-I saw this [[https://www.flickr.com/photos/95869671@N08/32264483720][map of mathematics]] somewhere on YouTube and then again on the door of someone's
-office at the I2M. Although this map may help popularise mathematics, it should raise an
-eyebrow of a serious math student (or even an attentive highschool student, as for example
-1 was listed among prime numbers in an earlier version of this map).
+  I saw this [[https://www.flickr.com/photos/95869671@N08/32264483720][map of mathematics]] somewhere on YouTube and then again on the door of
+  someone's office at the I2M. Although this map may help popularise mathematics, it
+  should raise an eyebrow of a serious math student (or even an attentive highschool
+  student, as for example 1 was listed among prime numbers in an earlier version of this
+  map).
 
-For a decent map of Mathematics, made by a mathematician, see [[http://www.math.unm.edu/~buium/mapp.pdf][this]]. 
+  For a decent map of Mathematics, made by a mathematician, see [[http://www.math.unm.edu/~buium/mapp.pdf][this]].
 
 * My 2016-2017 internship <2017-07-31 Mon> 
 

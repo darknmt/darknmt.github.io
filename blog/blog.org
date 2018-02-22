@@ -3,13 +3,13 @@
 
 
 * Stage 2018
-***** TODO [[file:harmonic-maps.org][Harmonic maps of Riemannian manifolds]], <2018-02-20 Tue>
+***** TODO [#A] [[file:harmonic-maps.org][Harmonic maps of Riemannian manifolds]], <2018-02-20 Tue>
 
 * Orsay 2017-2018
 ***** [[file:two-Hartogs.org][Two theorems of Hartogs]], <2018-01-08 Mon>
 ***** [[file:local-several-complex-var.org][Local results of several complex variables]], <2017-12-22 Fri>
 ***** [[file:kodaira.org][Divisors, Picard group and Kodaira embedding theorem]], <2017-12-13 Wed>
-***** TODO [[file:one-complex-variable.org][Some results in one complex variable]]
+***** TODO [#C] [[file:one-complex-variable.org][Some results in one complex variable]]
 ***** [[file:sheaf-cohomology.org][Sheaves and Cohomology]], <2017-11-01 Wed>
 
 * Summer 2017
@@ -24,3 +24,4 @@
 ***** [[file:Berger-remark-complex.org][Berger classification and remarks on parallel structures]], <2017-08-31 Thu>
 ***** [[file:symmetric-space.org][Symmetric spaces and Lie groups]], <2017-08-31 Thu>
 ***** [[file:de-rham-decomposition.org][De Rham decomposition]], <2017-08-31 Thu>
+

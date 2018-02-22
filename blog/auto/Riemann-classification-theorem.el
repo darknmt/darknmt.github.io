@@ -31,8 +31,10 @@
     "hyperref"
     "amsthm"
     "amscd"
+    "mathtools"
     "tikz-cd")
    (TeX-add-symbols
+    '("transp" ["argument"] 1)
     '("restr" 2)
     "im"
     "supp"

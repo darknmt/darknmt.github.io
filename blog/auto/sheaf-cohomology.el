@@ -31,8 +31,10 @@
     "hyperref"
     "amsthm"
     "amscd"
+    "mathtools"
     "tikz-cd")
    (TeX-add-symbols
+    '("transp" ["argument"] 1)
     '("restr" 2)
     "im"
     "supp"
@@ -49,7 +51,7 @@
     "fig:morph-short-sequence"
     "thm:prism-operator"
     "fig:homotopy-operator"
-    "sec:org53f00af"
+    "sec:orgbe48b40"
     "thm:Kunneth"
     "sec:org62ef2d8"
     "sec:org65911e0"
@@ -57,7 +59,7 @@
     "lem:exactness"
     "thm:uniqueness-cohomology"
     "thm:fine-resolution"
-    "sec:orga5772aa"
+    "sec:org48f95db"
     "sec:orgbd2adbd"
     "thm:de-rham-singular"
     "sec:org91022b2"

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-19 Mon 00:43 -->
+<!-- 2018-02-20 Tue 17:30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -245,25 +245,68 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
+<li><a href="#org8752665">LaTeX indentation in org-mode <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-02-20 Tue&gt;</span></span></a></li>
 <li><a href="#org9ba4fd2">A (decent) map of mathematics <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-10-17 Tue&gt;</span></span></a></li>
 <li><a href="#org5aa26c3">My 2016-2017 internship <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-07-31 Mon&gt;</span></span></a></li>
 </ul>
 </div>
 </div>
 
+<div id="outline-container-org8752665" class="outline-2">
+<h2 id="org8752665">LaTeX indentation in org-mode <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-02-20 Tue&gt;</span></span></h2>
+<div class="outline-text-2" id="text-org8752665">
+<p>
+I was told, in accordance with my experience, that we visually process text better if
+each line in a paragraph is approximately below 80 characters. This fact is also
+omnipresent on the internet, standardized tests, books, etc.. being among the
+fundamentals of web design (except wikipedia, that's why I use Wikiwand).
+</p>
+
+<p>
+In Emacs, the key binding <code>M-q</code> will execute the <code>fill-paragraph</code> function that
+automatically shrinks text and insert "soft" newlines to shorten line below a certain
+threshold. This function however does not respect the LaTeX structure, e.g. it inserts
+line break inside inline equation and merge display equation.
+format paragraph.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org">This is a long long long long long long long long long paragraph with equation \( 1+1 = 
+2+0=3-1=4-2 \) with an equation in display \[ 1+ 1 = 2\].
+</pre>
+</div>
+
+<p>
+The problem has been noticed around the Internet <a href="https://emacs.stackexchange.com/questions/29122/prevent-fill-paragraph-from-breaking-latex-displayed-equations-in-org-mode">here</a> and <a href="https://emacs.stackexchange.com/questions/34938/is-there-a-fill-paragraph-function-which-tries-to-not-break-subordinate-parenthe?rq=1">there</a>.  
+</p>
+
+<p>
+Meanwhile AucTeX does not have this annoying problem. <a href="https://www.gnu.org/software/auctex/manual/auctex.html#index-LaTeX_002dfill_002dbreak_002dat_002dseparators">It turns out</a> that AUCTeX maps the
+<code>M-q</code> key to a different function, called <code>LaTeX-fill-paragraph</code>. So the temporary fix is
+to load <code>latex.el</code> in org-mode and maps <code>M-q</code> to <code>LaTeX-fill-paragraph</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org">(load "latex.el")
+(global-set-key "\M-q" 'LaTeX-fill-paragraph)
+</pre>
+</div>
+</div>
+</div>
 
 <div id="outline-container-org9ba4fd2" class="outline-2">
 <h2 id="org9ba4fd2">A (decent) map of mathematics <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-10-17 Tue&gt;</span></span></h2>
 <div class="outline-text-2" id="text-org9ba4fd2">
 <p>
-I saw this <a href="https://www.flickr.com/photos/95869671@N08/32264483720">map of mathematics</a> somewhere on YouTube and then again on the door of someone's
-office at the I2M. Although this map may help popularise mathematics, it should raise an
-eyebrow of a serious math student (or even an attentive highschool student, as for example
-1 was listed among prime numbers in an earlier version of this map).
+I saw this <a href="https://www.flickr.com/photos/95869671@N08/32264483720">map of mathematics</a> somewhere on YouTube and then again on the door of
+someone's office at the I2M. Although this map may help popularise mathematics, it
+should raise an eyebrow of a serious math student (or even an attentive highschool
+student, as for example 1 was listed among prime numbers in an earlier version of this
+map).
 </p>
 
 <p>
-For a decent map of Mathematics, made by a mathematician, see <a href="http://www.math.unm.edu/~buium/mapp.pdf">this</a>. 
+For a decent map of Mathematics, made by a mathematician, see <a href="http://www.math.unm.edu/~buium/mapp.pdf">this</a>.
 </p>
 </div>
 </div>
@@ -281,7 +324,7 @@ also in this period that I start this blog. The memoire can be founded here [<a 
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2018-02-18 Sun 22:47. <br>
+Last updated 2018-02-20 Tue 17:30. <br>
 </div>
 </div>
 </body>
