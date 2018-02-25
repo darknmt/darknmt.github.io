@@ -28,6 +28,7 @@
 #+LATEX_HEADER:    \newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
 #+LATEX_HEADER:    \newcommand{\vol}{\mathop{\rm vol}\nolimits}
 #+LATEX_HEADER:    \newcommand*{\transp}[2][-3mu]{\ensuremath{\mskip1mu\prescript{\smash{\mathrm t\mkern#1}}{}{\mathstrut#2}}}
+#+LATEX_HEADER:    \newcommand{\sff}{\mathop{\rm I\*I}\nolimits}
 
 #+LATEX_HEADER: \newcommand\restr[2]{{% we make the whole thing an ordinary symbol
 #+LATEX_HEADER:  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right

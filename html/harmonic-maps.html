@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-22 Thu 20:05 -->
+<!-- 2018-02-25 Sun 20:41 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Harmonic maps of Riemannian manifolds</title>
@@ -274,7 +274,7 @@ for the JavaScript code in this tag.
 <ul>
 <li>
 <ul>
-<li><a href="#orgaa87a18">1.1.0.1. Notation.</a></li>
+<li><a href="#org2613875">1.1.0.1. Notation.</a></li>
 </ul>
 </li>
 </ul>
@@ -296,17 +296,27 @@ for the JavaScript code in this tag.
 <li><a href="#orgeadf23c">1.3.1. Energy functional and tension field</a></li>
 <li><a href="#orgf595675">1.3.2. Fundamental form, some results in case of signed curvature</a>
 <ul>
-<li><a href="#orga0985e2">1.3.2.1. Notation.</a></li>
+<li><a href="#orge3f818e">1.3.2.1. Notation.</a></li>
 </ul>
 </li>
-<li><a href="#orgd47a8bc">1.3.3. Example: Riemannian immersion</a></li>
-<li><a href="#orgb0c6866">1.3.4. Example: Riemannian submersion</a></li>
 </ul>
 </li>
-<li><a href="#orgcb2eb10">1.4. Composition of maps</a></li>
+<li><a href="#orgd47a8bc">1.4. Example: Riemannian immersion</a>
+<ul>
+<li><a href="#org0016185">1.4.1. Second fundamental form.</a></li>
+<li><a href="#orgb6a0bfe">1.4.2. The case of signed curvature.</a></li>
 </ul>
 </li>
-<li><a href="#orgd06b51c">2. Deformation of maps</a></li>
+<li><a href="#orga763902">1.5. Example: Riemannian submersion</a>
+<ul>
+<li><a href="#orgc3b7a78">1.5.1. Results of Ehresmann and Hermann.</a></li>
+<li><a href="#org0ac83eb">1.5.2. Tension fields and harmonic fibrations.</a></li>
+</ul>
+</li>
+<li><a href="#org3505d05">1.6. Composition of maps</a></li>
+</ul>
+</li>
+<li><a href="#org34e14f3">2. Deformation of maps</a></li>
 </ul>
 </div>
 </div>
@@ -327,6 +337,8 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\vol}{\mathop{\rm vol}\nolimits}
 \newcommand\restr[2]{{\left.#1\right|_{#2}}}
 \newcommand{\transp}{\mathop{\rm \,^t}\nolimits}
+\newcommand{\sff}{\mathop{\rm I\*I}\nolimits}
+
 \)
 
 <p>
@@ -339,8 +351,8 @@ This is my reading note for <a class='org-ref-reference' href="#eells_harmonic_1
 </div><div id="outline-container-org2b417a5" class="outline-3">
 <h3 id="org2b417a5"><span class="section-number-3">1.1</span> Variational approach: energy integral and tension field</h3>
 <div class="outline-text-3" id="text-1-1">
-</div><div id="outline-container-orgaa87a18" class="outline-5">
-<h5 id="orgaa87a18"><span class="section-number-5">1.1.0.1</span> Notation.</h5>
+</div><div id="outline-container-org2613875" class="outline-5">
+<h5 id="org2613875"><span class="section-number-5">1.1.0.1</span> Notation.</h5>
 <div class="outline-text-5" id="text-1-1-0-1">
 <p>
 Let \( M, M', M''\) be Riemannian manifolds of dimension \( n, n' \) and \( n', n''\)
@@ -692,7 +704,11 @@ Since \( \int_M \Delta(s\cdot s)dV=0 \), if \( s \) is harmonic, one has
 <div id="outline-container-org8806f6b" class="outline-3">
 <h3 id="org8806f6b"><span class="section-number-3">1.3</span> The case of \( E = f^* TM' \)</h3>
 <div class="outline-text-3" id="text-1-3">
-</div><div id="outline-container-orgeadf23c" class="outline-4">
+<p>
+<div id="sec:general-calcul">
+</p>
+</div>
+<div id="outline-container-orgeadf23c" class="outline-4">
 <h4 id="orgeadf23c"><span class="section-number-4">1.3.1</span> Energy functional and tension field</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <p>
@@ -830,8 +846,8 @@ M \) and \( M' \) are of definite sign.
 </p>
 </div>
 
-<div id="outline-container-orga0985e2" class="outline-5">
-<h5 id="orga0985e2"><span class="section-number-5">1.3.2.1</span> Notation.</h5>
+<div id="outline-container-orge3f818e" class="outline-5">
+<h5 id="orge3f818e"><span class="section-number-5">1.3.2.1</span> Notation.</h5>
 <div class="outline-text-5" id="text-1-3-2-1">
 <p>
 Given a Riemannian manifold \( M \), we will use the following notation:
@@ -856,7 +872,7 @@ at \( P\in M \) for all (0,2) tensor \( u \) on \( M \), where \( C(P)\geq 0 \).
 
 <div id="question" class="info">
 <p>
-<b>QUESTION ABOUT TERMINOLOGY:</b> I am not sure about the definition of <span class="underline">strictly</span> positive
+<b>TERMINOLOGICAL QUESTION:</b> I am not sure about the definition of <span class="underline">strictly</span> positive
 Riemann curvature. The above definition of semi-positive Riemann curvature is taken from
 an article by Kobayashi OR Nomizu that I am currently unable to find again.
 </p>
@@ -920,27 +936,561 @@ If \( {\rm Riem}(M') <0 \), one has \(  f_i^\alpha f^\beta_j \tilde e_\alpha\oti
 </div>
 </div>
 </div>
+</div>
 
 
 
-<div id="outline-container-orgd47a8bc" class="outline-4">
-<h4 id="orgd47a8bc"><span class="section-number-4">1.3.3</span> Example: Riemannian immersion</h4>
+<div id="outline-container-orgd47a8bc" class="outline-3">
+<h3 id="orgd47a8bc"><span class="section-number-3">1.4</span> Example: Riemannian immersion</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Let \( f: M \longrightarrow M' \) be a Riemannian immersion, i.e. \( Tf \) is injective and \( f^*g' = g \). We will
+see that the fundamental form \( \beta(f) \) that we defined earlier is the same as how it
+is often defined in courses of Riemannian geometry.
+</p>
 </div>
-<div id="outline-container-orgb0c6866" class="outline-4">
-<h4 id="orgb0c6866"><span class="section-number-4">1.3.4</span> Example: Riemannian submersion</h4>
+<div id="outline-container-org0016185" class="outline-4">
+<h4 id="org0016185"><span class="section-number-4">1.4.1</span> Second fundamental form.</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<p>
+One defines the symmetric (0,2)-tensor \( \sff \) as the unique tangent vector of \( M' \) such that
+\[
+\langle \sff_{ij},\xi_\sigma \rangle= -\langle \tilde\nabla_i\xi_\sigma, f_* e_j\rangle
+\]
+for every vector field \( \xi_\sigma \) of \( M' \) orthogonal to \( M \).
+</p>
+
+<div id="lem:second-fund-form" btit="(Second fundamental form)" class="lemma">
+<p>
+If \( f \) is a Riemannian immersion then \( \beta(f)_{ij} = \sff_{ij}  \) and they are orthogonal
+to \( M \).
+In particular, if \( f \) is totally geodesic than it maps geodesics of \( M \) to
+geodesics of \( M' \)
+</p>
+
+</div>
+<div class="proof">
+<p>
+One has
+</p>
+\begin{equation}
+\label{eq:second-fund-form}
+\begin{split}
+\langle \tilde\nabla_i\xi_\sigma, f_* e_j)\rangle &= \langle\xi_\sigma, \tilde\nabla_i (f_* e_j)\rangle
+				      		  = \langle \xi_\sigma,\tilde\nabla_i(f^\gamma_l dx^l\otimes \tilde e_\gamma) e_j + f_* \nabla_i e_j \rangle\\
+						  &= \langle \xi_\sigma, (f^\gamma_{il} dx^l\tilde e_\gamma + f^\gamma_l dx^l \tilde\nabla_i\tilde e_\gamma) e_j \rangle\\
+						  &= \langle \xi_\sigma, f^\gamma_{ij} \tilde e_\gamma + f^\gamma_j A^\alpha_{\gamma_i}\tilde e_\alpha \rangle
+						   = \left\langle \xi_\sigma,  \left(f^\gamma_{ij} + \Gamma'^\gamma_{\alpha\beta} f^\alpha_i f^\beta_j \right)\tilde e_\gamma \right\rangle = \langle\xi_\sigma\tilde\nabla_i(f_*).e_j \rangle
+\end{split}   
+\end{equation}
+<p>
+where we used \( \xi_\sigma \perp f_* e_j \) in the first reduction and \( \xi_\sigma
+\perp f_*([e_i, e_j] \) in the second one. Hence \( \sff_{ij} \equiv \beta(f)_{ij} \) modulo an element in \( TM \). In fact one has
+\( \beta(f)_{ij}\perp M \) and therefore \( \sff = \beta(f) \), since \( \beta(f)_{ij} =
+\tilde \nabla_i (f_*). e_j \) and
+</p>
+\begin{equation}
+\begin{split}
+\langle \beta(f)_{ij}, f_* e_k \rangle &= \langle\tilde \nabla_i (f_*). e_j, f_* e_k
+\rangle = \tilde\nabla_i \langle f_* e_j, f_* e_k \rangle - \langle  \nabla_i e_j, e_k \rangle -
+\langle  f_*e_j, \tilde\nabla_i(f_* e_k) \rangle  \\
+&=-\langle \beta(f)_{ik}, f_* e_j \rangle + \nabla_i \langle e_j,e_k \rangle - \langle
+\nabla_i e_j, e_k \rangle - \langle e_j, \nabla_i e_k \rangle\\ &= -\langle \beta(f)_{ik}, f_* e_j \rangle
+\end{split}   
+\end{equation}
+<p>
+Then using the symmetric of \( \beta(f)_{ij} \), one has \( \langle \beta(f)_{ij}, f_* e_k
+\rangle=0 \).
+</p>
+
+<p>
+Finally, if \( \beta(f)=0 \) and \( X \) is a geodesic vector field of \( M \), one needs
+to prove that \( f_*X \) is a geodesic vector field of \( M' \). In fact
+\[
+ \tilde\nabla_{X}(f_* X) = (\tilde\nabla_X f_*) X + f_*\nabla_X X = \beta(f)(X,X) = 0.
+\]
+Hence \( f_* X \) is a geodesic field of \( M' \). 
+</p>
+
+</div>
+
+<div class="exampl">
+<p>
+The inclusion \( x \mapsto (x,y_0) \) of a Riemannian manifold \( M \) to the Riemannian
+product \( M\times N \) is totally geodesic.
+</p>
+
+</div>
+
+<div class="definition">
+<p>
+Given an orthonormal frame \( (\xi_\sigma)_{1\leq\sigma\leq n'-n} \), the <b>mean normal
+curvature field</b> of \( M \) in \( M' \) at \( P\in M \) is defined as
+\[
+\xi(P):= \sum_{\sigma=1}^{n'-n} g^{ij}\sff_{ij} \xi_\sigma = \sum_{\sigma=1}^{n'-n}\langle
+\tau(f),\xi_\sigma \rangle \xi_\sigma.
+\]
+The immersion \( f \) is said to be <b>minimal</b> if \( \xi \) vanishes identically on \( M
+\).
+</p>
+
+</div>
+
+<div class="remark">
+<ol class="org-ol">
+<li>Since \( (\xi_\sigma)_{1\leq\sigma\leq n'-n} \) is an orthonormal frame, one also has
+\[
+    \xi(P) = -g^{ij}\langle \tilde\nabla_i\xi_\sigma, f_* e_j \rangle \xi_\sigma(P)= - \sum_{\sigma=1}^{n'-n}  {\rm div\ }(\xi_\sigma(P))\ \xi_\sigma(P)
+   \]</li>
+<li>The mean normal curvature field is the tension field of \( f \), i.e. \( \xi = \tau(f) \). Minimal immersions are exactly harmonic immersion.</li>
+</ol>
+
 </div>
 </div>
-<div id="outline-container-orgcb2eb10" class="outline-3">
-<h3 id="orgcb2eb10"><span class="section-number-3">1.4</span> Composition of maps</h3>
+</div>
+
+<div id="outline-container-orgb6a0bfe" class="outline-4">
+<h4 id="orgb6a0bfe"><span class="section-number-4">1.4.2</span> The case of signed curvature.</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<p>
+Noticing that if \( f: M \longrightarrow M' \) is a Riemannian immersion then the Ricci
+term of <a href="#lem:calculs-Q-pullback">lem:calculs-Q-pullback</a> is actually the scalar curvature of \( M \), one has
+</p>
+
+<div id="prop:harm-imm-curvature" class="proposition">
+<p>
+Let \( f: M \longrightarrow M' \) be a Riemannian immersion. Suppose that \( {\rm
+Riem}(M')\leq 0 \) and \( r=g^{ij} {\rm Ric}_{ij} <0 \) at one point of \( M \). If \( f
+\) is harmonic then it is constant.
+</p>
+
 </div>
 </div>
-<div id="outline-container-orgd06b51c" class="outline-2">
-<h2 id="orgd06b51c"><span class="section-number-2">2</span> Deformation of maps</h2>
+</div>
+</div>
+
+
+<div id="outline-container-orga763902" class="outline-3">
+<h3 id="orga763902"><span class="section-number-3">1.5</span> Example: Riemannian submersion</h3>
+<div class="outline-text-3" id="text-1-5">
+</div><div id="outline-container-orgc3b7a78" class="outline-4">
+<h4 id="orgc3b7a78"><span class="section-number-4">1.5.1</span> Results of Ehresmann and Hermann.</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<p>
+In this section, the function \( f: M \longrightarrow M' \) will be a Riemannian submersion \( pi: M \longrightarrow B \), i.e. \( T\pi \) is subjective and \( \pi^*g' = g \). We will
+regard \( \pi \) as a fibration and calculate its tension field. We start with two theorem
+of Hermann with <a class='org-ref-reference' href="#besse_einstein_2007">besse_einstein_2007</a> as reference. A tangent vector of \( M \) lying
+in \( \ker T_P\pi \) is said to be <b>vertical</b>. Since \( \pi^* g' = g \), the plane \(
+\mathcal{H}_P = \ker T_P\pi \) is isometric to \( T_{\pi(P)}B \) and is said to be
+<b>horizontal</b>, such \( \mathcal{H}_P \) form a distribution of planes as \( P \) varies in
+\( M \).
+</p>
+
+<div class="definition">
+<p>
+The plane distribution \( \mathcal{H} \) is called <b>complete</b> if every curve \( \gamma \) in \( B \)
+lifts horizontally on \( M \) at each point \( P \) in \( M_{\gamma(0)} \), i.e. there exists a curve \( \hat \gamma \) in \( M \)
+such that \( \pi\circ\hat\gamma = \gamma \) and \( \hat\gamma(0)=P\in M \).
+</p>
+
+<p>
+A vector field \( X \) of \( M \) is said to be <b>projectable</b> if \( \pi_* X \) is
+well-defined, i.e. \( \pi_* X \) does not change on each fibre.  In that case, one says that \( X \) is <b>\(
+\pi \)-associated</b> to the vector field \( \pi_* X \) of \( B \).
+</p>
+
+<p>
+\( X \) is said to be <b>basic</b> if it is projectable and horizontal.  
+</p>
+
+</div>
+
+<div class="remark">
+<p>
+If a vector field \( X \) on \( M \) is \( \pi \)-associated with a vector field \(
+   \check X \) on \( B \), then
+</p>
+<ol class="org-ol">
+<li>their flows are related by \( \pi \): \( \pi(\Phi_X^t)
+   = \Phi_{\check X}^t \),</li>
+<li>the Lie bracket satisfies: \( [X,Y] \) is projectable and \( \pi \)-associated with \(
+   [\check X,\check Y] \).</li>
+</ol>
+
+</div>
+
+
+
+
+
+
+<div id="thm:Ehresmann-Hermann" btit="(Ehresmann-Hermann)" class="theorem">
+<ol class="org-ol">
+<li>If \( \mathcal{H} \) is complete then the fibration \( \pi: M \longrightarrow B \) is
+locally trivial.</li>
+<li>If \( M \) is complete then \( \mathcal{H} \) is a complete distribution and \( B \) is
+a complete manifold.</li>
+</ol>
+
+</div>
+
+
+<div class="remark">
+<ol class="org-ol">
+<li>The trivialising map \( \phi: U_M \longrightarrow U_B\times F\), where \( U_M, U_B \) are
+open set of \( M,B \), is only a diffeomorphism and not a isometry, each fibre is equipped
+with different metric when identified with \( F \).</li>
+<li><p>
+The metric of \( M \) is not a Riemannian product of a (vertical) metric on \( F \)
+and the (horizontal) metric on \( B \), but it is a product pointwise. To be precise,
+one has
+</p>
+\begin{equation}
+\label{eq:g-product}
+ g_{(b,f)}(v_h^1 + v_v^1, v_h^2 + v_v^2) = g'_b(v^1_h, v^2_h)\times \hat{g}_{(b,f)}(v_v^1, v_v^2)   
+\end{equation}
+<p>
+where \( v^i = v_h^i + v_v^i \) is the decomposition of vector \( v^i \) to horizontal and vertical components.
+\( g' \) is the horizontal metric (the metric on \( M \)) and \( \hat g_{(b,f)} \) is
+the restriction of \( g \) on the fibre \( M_b \). However, when the fibration is of
+totally geodesic fibres, \( g \) is a Riemannian product \( g_{(b,f)} = g'_b\times \hat
+   g_f\), see Theorem <a href="#thm-Hermann">thm-Hermann</a>.
+</p></li>
+</ol>
+
+</div>
+
+<div class="proof">
+<p>
+The first part is due to Ehresmann, take a small geodesic ball center at \( P \), and connect every point
+\( Q \) to \( P \) by a curve \( \gamma \). Map every point \(\hat \gamma(0)\in M_P \)
+to the point \( \hat\gamma(1)\in M_Q \) where \( \hat\gamma \) is the lift of
+\( \gamma \) starting from \( \hat\gamma(0) \). One has a diffeomorphism \(
+\theta_\gamma: M_{\gamma(0)} \longrightarrow M_{\gamma(1)} \).
+</p>
+
+<p>
+The second part, due to Hermann, can be established in 2 steps:
+</p>
+
+<p>
+First, by direct computation, one proves that if any geodesic field \( X \) on \( B \) lift to a horizontal
+vector field \( \hat X \) then \( \hat X \) is a geodesic vector field. In fact, denote by
+\( \nabla \) and \( \tilde\nabla \) the Levi-Civita connection on \( M \) and \( B \)
+respectively and \( \mathcal{V}, \mathcal{H} \) the vertical and horizontal projection of
+tangent vectors of \( M \). Then \(\nabla_{\hat X}\hat X = \mathcal{V}\nabla_{\hat X}\hat X + \mathcal{H}\nabla_{\hat
+X}\hat X\) in which \( \mathcal{H}\nabla_{\hat X}\hat X \) is actually the horizontal
+lift of \( \tilde\nabla_X X \) therefore vanishes. We claim that \( \mathcal{V}\nabla_{Y}Y = \frac{1}{2}\mathcal{V}[Y,Y]\) hence also vanishes for every basic vector field \( Y \). In fact let \( U \) be any
+vertical vector field then
+\[
+\langle U, \mathcal{V}\nabla_{Y}Y \rangle = \langle U,\nabla_Y Y \rangle = - \langle
+\nabla_X U, X \rangle= \langle \nabla_U X, X \rangle = \frac{1}{2}\nabla_U \langle X,X \rangle=0
+\]
+where we used the fact that \(  \)\( \nabla_X U -\nabla_U X = [X,U] = \widehat{[\pi_*
+X,\pi_* U]} = 0 \) and \( \langle X, X \rangle \) is constant on each fibre (being \(\langle
+\pi_* X,\pi_* X \rangle \)), hence in
+every vertical direction \( U \) (Remark: this corresponds to the fact that \( g' \) only depend
+on \( b \)).
+</p>
+
+<p>
+Now if \( M \) is complete then for every geodesic curve \( \gamma \)
+in \( B \), let \( X \) be the velocity field of \( \gamma \) and \( \hat X \) be the
+horizontal lift of \( X \), which is now a horizontal,geodesic field of \( M \), whose
+integral curves are lifts of \(\gamma \). Therefore \( B \) is complete and every geodesic curve of \( B \) lifts horizontally to \( M \).
+</p>
+
+<p>
+For the general curve \( \gamma \) of \( M \), the idea will be to approximate it by
+geodesics and lift part by part.
+</p>
+
+</div>
+
+
+
+<div class="figure">
+<p><object type="image/svg+xml" data="../res/RiemannFibration.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object>
+</p>
+<p><span class="figure-number">Figure 1: </span>The trivialising map is only a diffeomorphism and not an isometry <div id="trivalising-map"></p>
+</div>
+
+
+
+
+
+<div id="thm:Hermann" btit="(Hermann)" class="theorem">
+<p>
+If the fibration \( \pi: M \longrightarrow B \) is
+of totally geodesic fibres then the diffeomorphisms \( \hat\gamma(0) \longrightarrow
+\hat\gamma(1) \) are in fact isometries between fibres and \( M \) is then locally a
+Riemannian product of \( B \) and the fibre, now equipped with its unique
+metric induced by \( M \).
+</p>
+
+</div>
+
+<div class="proof">
+<p>
+We need to prove that the metric on fibres \( \hat g_{(b,f)} \) does not depend on the point
+\( f \) of the fibre, i.e. for every basic vecotr field \( X \), one has \(
+\mathcal{L}_X\hat g=0 \), where by \( \hat g \), we mean the (0,2) symmetric tensor \( (Y_1, Y_2)\mapsto \langle
+\mathcal{V}Y_1, \mathcal{V}Y_2 \rangle \). Let \( U,V \) be vertical vector fields of \( M \) then
+</p>
+\begin{equation*}
+\label{eq:calcul-Hermann}
+\begin{split}
+X(\hat g(U,V)) &= (\mathcal{L}_X \hat g)(U,V) + \hat g([X,U],V) + \hat g(U, [X,V])\\
+       	       &=  \langle \nabla_X U, V \rangle - \langle \nabla_U X, V \rangle + \langle U, \nabla_X V \rangle - \langle U, \nabla_V X \rangle + (\mathcal{L}_X\hat g)(U,V)
+\end{split}   
+\end{equation*}
+<p>
+Hence \( (\mathcal{L}_X \hat g)(U,V) = \langle \nabla_U X, V\rangle + \langle U, \nabla_V
+X \rangle = -2 \langle \sff(U,V), X \rangle = 0\). Since the map \(
+\hat\gamma(0) \mapsto \hat\gamma(1) \) is in the one-parameter group of differomorphism
+associate to a basic vector field \( X \), it preserves \( \hat g \).
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0ac83eb" class="outline-4">
+<h4 id="org0ac83eb"><span class="section-number-4">1.5.2</span> Tension fields and harmonic fibrations.</h4>
+<div class="outline-text-4" id="text-1-5-2">
+<p>
+We will now calculate the tension field of a fibration map \( \pi: M \longrightarrow B \).
+</p>
+
+<div id="prop:tension-fibration" btit="()" class="proposition">
+<p>
+Let \( \pi: M^n \longrightarrow B^{n'} \) be a complete Riemannian fibration then
+</p>
+<ol class="org-ol">
+<li>\( e(\pi) = n/2 \).</li>
+<li>Let \( M_b \) be a fibre of \( \pi \) and \( \iota_{M_b}: M_b \hookrightarrow M \) be
+the inclusion. Then \( \tau(\pi) = -\pi_*\tau(\iota_{M_b}) \) on \( M_b \).</li>
+</ol>
+<p>
+In particular, \( \pi \) is harmonic if and only if its fibres are minimal submanifolds of
+\( M \), i.e. the inclusions \( \iota_{M_b} \) are harmonic.
+</p>
+
+</div>
+<div class="proof">
+<ol class="org-ol">
+<li>is obvious. For 2), note that</li>
+</ol>
+<p>
+\[
+\tau(\iota_{M_b}) = -\sum_{\sigma = 1}^{n'}{\rm div\ }(e_\sigma(P))e_\sigma(P)
+\]
+for any orthonormal frame \( e_\sigma(P) \) of normal vectors of \( M_{\pi(P)} \).
+Take \( e_\sigma \) to be \(e_\sigma = {\rm grad\ } \pi^\sigma \) where \( \pi^\sigma \)
+is the \( \sigma \)-th component of \( \pi \) in a normal coordinate of \( V \) around \(
+\pi(P) \). Note that \( e_\sigma \) are actually the horizontal lift of the basis vectors \(
+\tilde e_\sigma \) of the frame at \(\pi( P) \), and therefore are normal vectors of \(
+M_P \). 
+</p>
+
+<p>
+Meanwhile, one has \( \tau(\pi) = \Delta \pi^\sigma \tilde e_{\sigma} \) at \( \pi(P) \)
+since the Christoffel symbols vanish at \( P \). Comparing the two vector fields, one has
+\( \tau(\pi) = -\pi_*\tau(\iota_{M_b})\) at \( P \).
+</p>
+
+</div>
+
+<div class="exampl">
+<p>
+A complete Riemannian fibration \( \pi: M \longrightarrow B \) with totally geodesic fibres are harmonic.
+</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3505d05" class="outline-3">
+<h3 id="org3505d05"><span class="section-number-3">1.6</span> Composition of maps</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+The following results come from direct computation of the second fundamental form and
+tension field of composition of maps between Riemannian manifolds. Again, we use indices
+\( i,j,k,\dots \) for \( M \), \( \alpha,\beta,\gamma,\dots \) for \( M' \) and \( a,b,c
+\) for \( M'' \).
+</p>
+
+<div id="prop:composition-general" class="proposition">
+<p>
+Let \( f: M \longrightarrow M' \) and \( f': M' \longrightarrow M'' \) be smooth maps of
+Riemannian manifolds, then
+</p>
+\begin{equation}
+\label{eq:sff-composition}
+\beta(f'\circ f)^a_{ij} = \beta(f)_{ij}^\gamma f'^a_\gamma + \beta(f')_{\alpha\beta}^a f^\alpha_i f^\beta_j
+\end{equation}
+<p>
+and
+</p>
+\begin{equation}
+\label{eq:tension-field-composition}
+\tau(f'\circ f)^a = \tau(f)^\gamma f'^a_\gamma + g^{ij}\beta(f')^a_{\alpha\beta} f^\alpha_i f^\beta_j 
+\end{equation}
+<p>
+Therefore,
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">If \(f'\) is</th>
+<th scope="col" class="org-left">and \(f\)  is</th>
+<th scope="col" class="org-left">then \(f'\circ f\) is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">totally geodesic</td>
+<td class="org-left">totally geodesic</td>
+<td class="org-left">totally geodesic</td>
+</tr>
+
+<tr>
+<td class="org-left">totally geodesic</td>
+<td class="org-left">harmonic</td>
+<td class="org-left">harmonic</td>
+</tr>
+</tbody>
+</table>
+<p>
+and the inverse of a totally geodesic map is geodesic.
+</p>
+
+</div>
+<div class="proof">
+<p>
+Direct computation.
+</p>
+
+</div>
+
+<div class="remark">
+<p>
+It is not true in general that the composition of harmonic functions are harmonic.
+</p>
+
+</div>
+
+<div id="prop:compo-immersion" btit="(composition with immersion)" class="proposition">
+<p>
+If \( f': M' \longrightarrow M'' \) is a Riemannian immersion and \( f: M \longrightarrow
+M' \) then 
+</p>
+<ol class="org-ol">
+<li>Energy functionals: \( E(f) = E(f'\circ f) \).</li>
+<li>Tension fields: \( \tau(f) \) is the projection of \( \tau(f'\circ f \) to \( M' \).</li>
+</ol>
+
+</div>
+<div class="proof">
+<ol class="org-ol">
+<li>One has \( e(f) = \frac{1}{2}\langle g, f^* g' \rangle  = \frac{1}{2}\langle g,
+   (f'\circ f)^* g'' \rangle = e(f'\circ f)\).</li>
+<li>One has \( \tau(f'\circ f)^a  = \tau(f)^a +
+   g^{ij}\beta(f')^a_{\alpha\beta} f^\alpha_i f^\beta_j\) by
+\eqref{eq:tension-field-composition}. The second term being the restriction of the
+tension field of \( M' \) to the image of M, the conclusion follows.</li>
+</ol>
+
+</div>
+
+<p>
+The following immediate corollary of Proposition <a href="#prop:compo-immersion">prop:compo-immersion</a> is a generalization of the fact that a curve is geodesic if and only if it
+is perpendicular to its tension field.
+</p>
+
+<div class="corollary">
+<p>
+A map \( f: M \longrightarrow M' \) is harmonic if and only if \( \tau(f'\circ f) \perp M' \)
+</p>
+
+</div>
+
+
+
+
+<div id="prop:compo-submersion" btit="(composition with submersion)" class="proposition">
+<p>
+Let \( f': M' \longrightarrow M'' \) be a Riemannian fibration with locally geodesic
+fibres and \( f: M \longrightarrow M' \) then 
+\[
+\tau(f'\circ f) = f'_*(\tau(f))  
+\]
+</p>
+
+</div>
+
+<div class="proof">
+<p>
+One can suppose that \( M' \) is a Riemannian product of \( M'' \) and its fibre, and
+\( f' \) is the projection to \( M'' \), since this is true locally and the proposition is
+local. Then the conclusion is that the tension field of the projection is the projection
+of the tension field, or equivalently the tension field of \( f= f_1\times f_2: M \longrightarrow
+M''\times F \) is \( \tau(f) = (\tau f_1,\tau f_2) \). This follows from the explicite
+formula of \( \tau(f) \), noting that the Christoffel symbols \(
+\Gamma^\alpha_{\beta\gamma} \) vanish except when the indice \( \alpha,\beta,\gamma \)
+belong to the same tangent space (of \( M'' \) or \( F \)).
+</p>
+
+</div>
+
+<div class="exampl">
+<ol class="org-ol">
+<li>A map \( f: M \longrightarrow M'\times M'' \) is harmonic if \( f=(f^1, f^2) \) with \(
+   f^1, f^2 \) being harmonic.</li>
+<li>Take \( M''=M \) in <a href="#prop:compo-submersion">prop:compo-submersion</a> and \( f=s: M \longrightarrow M' \) a
+section of the fibration \( f' \), one sees that the tension field \( \tau(s) \) is
+always vertical.</li>
+</ol>
+
+</div>
+
+<p>
+The following corollary is immediate.
+</p>
+<div id="cor:compo-with-submersion" class="corollary">
+<p>
+Let \( f': M' \longrightarrow M'' \) be a proper Riemannian embedding and \( N \) is a
+normal turbular neighborhood of \( M' \) which can be seen as a smooth fiber bundle over
+\( M' \). Denote by \( \pi: N \longrightarrow M' \) the projection. Then for all map \( f:
+M \longrightarrow N\), \( \pi\circ f \) is harmonic if and only if \( \tau(f) \) is vertical. 
+</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org34e14f3" class="outline-2">
+<h2 id="org34e14f3"><span class="section-number-2">2</span> Deformation of maps</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 
 <h1 class='org-ref-bib-h1'>Bibliography</h1>
 <ul class='org-ref-bib'><li><a id="eells_harmonic_1964">[eells_harmonic_1964] Eells & Sampson, Harmonic Mappings of Riemannian Manifolds, <i>American Journal of Mathematics</i>, <b>86(1)</b>, 109-160 (1964). <a href="http://www.jstor.org/stable/2373037">link</a>. <a href="http://dx.doi.org/10.2307/2373037">doi</a>.</a></li>
+<li><a id="besse_einstein_2007">[besse_einstein_2007] Besse, Einstein Manifolds, Springer Berlin Heidelberg (2007).</a></li>
 </ul>
 </p>
 </div>
@@ -949,7 +1499,7 @@ If \( {\rm Riem}(M') <0 \), one has \(  f_i^\alpha f^\beta_j \tilde e_\alpha\oti
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-02-21 Wed 19:22. <br>
+Last updated 2018-02-25 Sun 20:41. <br>
 </div>
 </div>
 </body>

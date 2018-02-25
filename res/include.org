@@ -16,5 +16,7 @@ For example ~/html/sheaf-cohomology.html~ should become ~/pdf/sheaf-cohomology.p
 \newcommand{\vol}{\mathop{\rm vol}\nolimits}
 \newcommand\restr[2]{{\left.#1\right|_{#2}}}
 \newcommand{\transp}{\mathop{\rm \,^t}\nolimits}
+\newcommand{\sff}{\mathop{\rm I\*I}\nolimits}
+
 \)
 #+END_EXPORT
