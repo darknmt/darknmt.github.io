@@ -5,12 +5,12 @@
                      '(("article" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -45,7 +45,7 @@
    (LaTeX-add-labels
     "sec:orga0770cb"
     "sec:orgc583005"
-    "sec:org4738e74"
+    "sec:org273e9db"
     "lem:var-energy"
     "prop:holo-harmonic"
     "eq:tangent-exp"
@@ -65,7 +65,7 @@
     "prop:calculs-pullback-tangent"
     "sec:org75bf29d"
     "lem:calculs-Q-pullback"
-    "sec:org273e9db"
+    "sec:orgc5c3f31"
     "cor:signed-curvature"
     "sec:orgde0028d"
     "sec:org46dcaf2"

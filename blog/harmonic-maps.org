@@ -390,7 +390,7 @@ Given a Riemannian manifold \( M \), we will use the following notation:
    semi-definite (resp. positive definite) as symmetric bilinear form.
 2. \( {\rm Ric} \leq 0 \) (resp. \( {\rm Ric} < 0 \)) if \( -{\rm Ric} \geq 0 \) (resp. \( -{\rm Ric} > 0 \)).
 3. \( {\rm Riem}\geq 0 \) (resp. \( {\rm Riem} > 0 \)) if the Riemann curvature tensor satisfies \( R_{ijhk} u^{ij}
-   u^{hk}\geq C(P)u_{ij}u^{ij}\) at \( P\in M \) for all anti-symmetric (0,2) tensor \( u
+   u^{hk}\geq C(P)u_{ij}u^{ij}\) at \( P\in M \) for all anti-symmetric (2,0) tensor \( u
    \) on \( M \), where \( C(P)\geq 0 \) (resp. \( C(P) >0 \))
 4. \( {\rm Riem} \leq 0 \) (resp. \( {\rm Riem} < 0 \)) if \( -{\rm Riem} \geq 0 \) (resp. \( -{\rm Riem} > 0 \)).
 
