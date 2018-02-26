@@ -6,8 +6,7 @@
 
 
 #+SETUPFILE: ../res/mathsetup.org
-#+INCLUDE:
- ../res/include.org
+#+INCLUDE: ../res/include.org
 
 This is my reading note for cite:eells_harmonic_1964.
 

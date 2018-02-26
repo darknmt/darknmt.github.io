@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-25 Sun 20:50 -->
+<!-- 2018-02-26 Mon 09:38 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Harmonic maps of Riemannian manifolds</title>
@@ -274,7 +274,7 @@ for the JavaScript code in this tag.
 <ul>
 <li>
 <ul>
-<li><a href="#orge3f818e">1.1.0.1. Notation.</a></li>
+<li><a href="#org5f73255">1.1.0.1. Notation.</a></li>
 </ul>
 </li>
 </ul>
@@ -296,7 +296,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgeadf23c">1.3.1. Energy functional and tension field</a></li>
 <li><a href="#orgf595675">1.3.2. Fundamental form, some results in case of signed curvature</a>
 <ul>
-<li><a href="#org5f73255">1.3.2.1. Notation.</a></li>
+<li><a href="#org8972ab6">1.3.2.1. Notation.</a></li>
 </ul>
 </li>
 </ul>
@@ -320,9 +320,26 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
+<div class="info">
 <p>
-../res/include.org
+The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
+<code>pdf</code>. 
+For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
 </p>
+
+</div>
+\(
+\require{AMScd}
+\newcommand{\im}{\mathop{\rm Im}\nolimits}
+ \newcommand{\supp}{\mathop{\rm supp}\nolimits}
+\newcommand{\ord}{\mathop{\rm ord}\nolimits}
+\newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
+\newcommand{\vol}{\mathop{\rm vol}\nolimits}
+\newcommand\restr[2]{{\left.#1\right|_{#2}}}
+\newcommand{\transp}{\mathop{\rm \,^t}\nolimits}
+\newcommand{\sff}{\mathop{\rm I\*I}\nolimits}
+
+\)
 
 <p>
 This is my reading note for <a class='org-ref-reference' href="#eells_harmonic_1964">eells_harmonic_1964</a>.
@@ -334,8 +351,8 @@ This is my reading note for <a class='org-ref-reference' href="#eells_harmonic_1
 </div><div id="outline-container-org2b417a5" class="outline-3">
 <h3 id="org2b417a5"><span class="section-number-3">1.1</span> Variational approach: energy integral and tension field</h3>
 <div class="outline-text-3" id="text-1-1">
-</div><div id="outline-container-orge3f818e" class="outline-5">
-<h5 id="orge3f818e"><span class="section-number-5">1.1.0.1</span> Notation.</h5>
+</div><div id="outline-container-org5f73255" class="outline-5">
+<h5 id="org5f73255"><span class="section-number-5">1.1.0.1</span> Notation.</h5>
 <div class="outline-text-5" id="text-1-1-0-1">
 <p>
 Let \( M, M', M''\) be Riemannian manifolds of dimension \( n, n' \) and \( n', n''\)
@@ -829,8 +846,8 @@ M \) and \( M' \) are of definite sign.
 </p>
 </div>
 
-<div id="outline-container-org5f73255" class="outline-5">
-<h5 id="org5f73255"><span class="section-number-5">1.3.2.1</span> Notation.</h5>
+<div id="outline-container-org8972ab6" class="outline-5">
+<h5 id="org8972ab6"><span class="section-number-5">1.3.2.1</span> Notation.</h5>
 <div class="outline-text-5" id="text-1-3-2-1">
 <p>
 Given a Riemannian manifold \( M \), we will use the following notation:
@@ -1193,8 +1210,7 @@ geodesics and lift part by part.
 
 
 <div class="figure">
-<p><object type="image/svg+xml" data="../img/RiemannFibration.svg" class="org-svg">
-Sorry, your browser does not support SVG.</object>
+<p><img src="../img/RiemannFibration.png" alt="RiemannFibration.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>The trivialising map is only a diffeomorphism and not an isometry <div id="trivalising-map"></p>
 </div>
@@ -1482,7 +1498,7 @@ M \longrightarrow N\), \( \pi\circ f \) is harmonic if and only if \( \tau(f) \)
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-02-25 Sun 20:49. <br>
+Last updated 2018-02-26 Mon 09:37. <br>
 </div>
 </div>
 </body>
