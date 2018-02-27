@@ -390,9 +390,9 @@ Given a Riemannian manifold \( M \), we will use the following notation:
 1. \( {\rm Ric} \geq 0 \) (resp. \( {\rm Ric} > 0 \)) if the Ricci curvature is positive
    semi-definite (resp. positive definite) as symmetric bilinear form.
 2. \( {\rm Ric} \leq 0 \) (resp. \( {\rm Ric} < 0 \)) if \( -{\rm Ric} \geq 0 \) (resp. \( -{\rm Ric} > 0 \)).
-3. \( {\rm Riem}\geq 0 \) (resp. \( {\rm Riem} > 0 \)) if the symmetric bilinear form
-   \(\tilde R: ((u_1,v_1),(u_2,v_2)) \mapsto R_{ijhk} u_1^i v_1^j
-   u_2^h v_2^k\) is positive (resp. semi-positive) at \( P\in M \).
+3. \( {\rm Riem}\geq 0 \) (resp. \( {\rm Riem} > 0 \)) if all sectional curvature is
+   positive, i.e. \(R_{ijhk} u_1^i v_1^j
+   u_2^h v_2^k\) is positive for non-colinear vectors \( u,v \).
 4. \( {\rm Riem} \leq 0 \) (resp. \( {\rm Riem} < 0 \)) if \( -{\rm Riem} \geq 0 \) (resp. \( -{\rm Riem} > 0 \)).
 
 # +BEGIN_remark
@@ -419,8 +419,10 @@ All the statements are consequence of 2) of Lemma ref:lem:calculs-Q-pullback and
 that \( \int_M \Delta e(f)dV = 0 \) noticing that
 - \( -{\rm Ric}^{ij}f^\alpha_i f^\beta_j g'_{\alpha\beta} \) is \( -{\rm Ric}\otimes g' \)
   applied doubly to \( f_i^\alpha dx^i\otimes\tilde e_\alpha \).
-- \( R'_{\alpha\beta\gamma\delta}f^\gamma_k f^\delta_l g^{ik}g^{jl} \) is \( \tilde
-  R'\otimes g\otimes g \) applied to \( (f_i^\alpha \tilde e_\alpha\otimes dx^i,f_i^\alpha \tilde e_\alpha\otimes dx^i) \) where \( \tilde R' \) is the bilinear form \(\tilde R': ((u_1,v_1),(u_2,v_2)) \mapsto R'_{ijhk} u_1^i v_1^j
+- \( R'_{\alpha\beta\gamma\delta} f^\alpha_i f^\beta_j f^\gamma_k f^\delta_l
+   g^{ik}g^{jl} \) is \( \tilde
+  R'\otimes g\otimes g \) applied to \( (f_i^\alpha \tilde e_\alpha\otimes dx^i,f_i^\alpha
+  \tilde e_\alpha\otimes dx^i) \) where \( \tilde R' \) is defined by \(\tilde R': ((u_1,v_1),(u_2,v_2)) \mapsto R'_{ijhk} u_1^i v_1^j
    u_2^h v_2^k\).
 
 For 3), if \( {\rm Ric}(M)<0 \) at one point \( P\in M \) then at that point \( f^\alpha_i dx^i \tilde

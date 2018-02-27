@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-27 Tue 03:34 -->
+<!-- 2018-02-27 Tue 10:20 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Harmonic maps of Riemannian manifolds</title>
@@ -274,7 +274,7 @@ for the JavaScript code in this tag.
 <ul>
 <li>
 <ul>
-<li><a href="#orge8a097e">1.1.0.1. Notation.</a></li>
+<li><a href="#org637ee5d">1.1.0.1. Notation.</a></li>
 </ul>
 </li>
 </ul>
@@ -296,7 +296,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgeadf23c">1.3.1. Energy functional and tension field</a></li>
 <li><a href="#orgf595675">1.3.2. Fundamental form, some results in case of signed curvature</a>
 <ul>
-<li><a href="#org637ee5d">1.3.2.1. Notation.</a></li>
+<li><a href="#orgab68899">1.3.2.1. Notation.</a></li>
 </ul>
 </li>
 </ul>
@@ -351,8 +351,8 @@ This is my reading note for <a class='org-ref-reference' href="#eells_harmonic_1
 </div><div id="outline-container-org2b417a5" class="outline-3">
 <h3 id="org2b417a5"><span class="section-number-3">1.1</span> Variational approach: energy integral and tension field</h3>
 <div class="outline-text-3" id="text-1-1">
-</div><div id="outline-container-orge8a097e" class="outline-5">
-<h5 id="orge8a097e"><span class="section-number-5">1.1.0.1</span> Notation.</h5>
+</div><div id="outline-container-org637ee5d" class="outline-5">
+<h5 id="org637ee5d"><span class="section-number-5">1.1.0.1</span> Notation.</h5>
 <div class="outline-text-5" id="text-1-1-0-1">
 <p>
 Let \( M, M', M''\) be Riemannian manifolds of dimension \( n, n' \) and \( n', n''\)
@@ -847,8 +847,8 @@ M \) and \( M' \) are of definite sign.
 </p>
 </div>
 
-<div id="outline-container-org637ee5d" class="outline-5">
-<h5 id="org637ee5d"><span class="section-number-5">1.3.2.1</span> Notation.</h5>
+<div id="outline-container-orgab68899" class="outline-5">
+<h5 id="orgab68899"><span class="section-number-5">1.3.2.1</span> Notation.</h5>
 <div class="outline-text-5" id="text-1-3-2-1">
 <p>
 Given a Riemannian manifold \( M \), we will use the following notation:
@@ -857,9 +857,9 @@ Given a Riemannian manifold \( M \), we will use the following notation:
 <li>\( {\rm Ric} \geq 0 \) (resp. \( {\rm Ric} > 0 \)) if the Ricci curvature is positive
 semi-definite (resp. positive definite) as symmetric bilinear form.</li>
 <li>\( {\rm Ric} \leq 0 \) (resp. \( {\rm Ric} < 0 \)) if \( -{\rm Ric} \geq 0 \) (resp. \( -{\rm Ric} > 0 \)).</li>
-<li>\( {\rm Riem}\geq 0 \) (resp. \( {\rm Riem} > 0 \)) if the symmetric bilinear form
-\(\tilde R: ((u_1,v_1),(u_2,v_2)) \mapsto R_{ijhk} u_1^i v_1^j
-   u_2^h v_2^k\) is positive (resp. semi-positive) at \( P\in M \).</li>
+<li>\( {\rm Riem}\geq 0 \) (resp. \( {\rm Riem} > 0 \)) if all sectional curvature is
+positive, i.e. \(R_{ijhk} u_1^i v_1^j
+   u_2^h v_2^k\) is positive for non-colinear vectors \( u,v \).</li>
 <li>\( {\rm Riem} \leq 0 \) (resp. \( {\rm Riem} < 0 \)) if \( -{\rm Riem} \geq 0 \) (resp. \( -{\rm Riem} > 0 \)).</li>
 </ol>
 
@@ -890,8 +890,10 @@ that \( \int_M \Delta e(f)dV = 0 \) noticing that
 <ul class="org-ul">
 <li>\( -{\rm Ric}^{ij}f^\alpha_i f^\beta_j g'_{\alpha\beta} \) is \( -{\rm Ric}\otimes g' \)
 applied doubly to \( f_i^\alpha dx^i\otimes\tilde e_\alpha \).</li>
-<li>\( R'_{\alpha\beta\gamma\delta}f^\gamma_k f^\delta_l g^{ik}g^{jl} \) is \( \tilde
-  R'\otimes g\otimes g \) applied to \( (f_i^\alpha \tilde e_\alpha\otimes dx^i,f_i^\alpha \tilde e_\alpha\otimes dx^i) \) where \( \tilde R' \) is the bilinear form \(\tilde R': ((u_1,v_1),(u_2,v_2)) \mapsto R'_{ijhk} u_1^i v_1^j
+<li>\( R'_{\alpha\beta\gamma\delta} f^\alpha_i f^\beta_j f^\gamma_k f^\delta_l
+   g^{ik}g^{jl} \) is \( \tilde
+  R'\otimes g\otimes g \) applied to \( (f_i^\alpha \tilde e_\alpha\otimes dx^i,f_i^\alpha
+  \tilde e_\alpha\otimes dx^i) \) where \( \tilde R' \) is defined by \(\tilde R': ((u_1,v_1),(u_2,v_2)) \mapsto R'_{ijhk} u_1^i v_1^j
    u_2^h v_2^k\).</li>
 </ul>
 
@@ -1476,7 +1478,7 @@ M \longrightarrow N\), \( \pi\circ f \) is harmonic if and only if \( \tau(f) \)
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-02-27 Tue 03:34. <br>
+Last updated 2018-02-27 Tue 10:20. <br>
 </div>
 </div>
 </body>
