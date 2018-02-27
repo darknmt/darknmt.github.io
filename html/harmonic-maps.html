@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-27 Tue 10:23 -->
+<!-- 2018-02-27 Tue 15:18 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Harmonic maps of Riemannian manifolds</title>
@@ -274,7 +274,7 @@ for the JavaScript code in this tag.
 <ul>
 <li>
 <ul>
-<li><a href="#orgab68899">1.1.0.1. Notation.</a></li>
+<li><a href="#org8cf7064">1.1.0.1. Notation.</a></li>
 </ul>
 </li>
 </ul>
@@ -296,7 +296,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgeadf23c">1.3.1. Energy functional and tension field</a></li>
 <li><a href="#orgf595675">1.3.2. Fundamental form, some results in case of signed curvature</a>
 <ul>
-<li><a href="#org37a6ff3">1.3.2.1. Notation.</a></li>
+<li><a href="#org0064f84">1.3.2.1. Notation.</a></li>
 </ul>
 </li>
 </ul>
@@ -351,8 +351,8 @@ This is my reading note for <a class='org-ref-reference' href="#eells_harmonic_1
 </div><div id="outline-container-org2b417a5" class="outline-3">
 <h3 id="org2b417a5"><span class="section-number-3">1.1</span> Variational approach: energy integral and tension field</h3>
 <div class="outline-text-3" id="text-1-1">
-</div><div id="outline-container-orgab68899" class="outline-5">
-<h5 id="orgab68899"><span class="section-number-5">1.1.0.1</span> Notation.</h5>
+</div><div id="outline-container-org8cf7064" class="outline-5">
+<h5 id="org8cf7064"><span class="section-number-5">1.1.0.1</span> Notation.</h5>
 <div class="outline-text-5" id="text-1-1-0-1">
 <p>
 Let \( M, M', M''\) be Riemannian manifolds of dimension \( n, n' \) and \( n', n''\)
@@ -680,9 +680,9 @@ Computational in nature.
 
 <div id="rem:calculs-general" class="remark">
 <ol class="org-ol">
-<li>We note by \( Q(s) \) the last term of \eqref{eq:laplace-Q}, then \( Q(s) \) is a (2,0)
+<li>We note by \( Q(s) \) the last term of \eqref{eq:laplace-Q}, then \( Q \) is a (2,0)
 tensor on \( M \) with value in \( E^*\otimes E^* \) where \( E^* \) is the dualised
-bundle of \( E \). In practice, \( Q(s) \) is an \( mn\times mn \) matrix with
+bundle of \( E \). In practice, \( Q \) is an \( mn\times mn \) matrix with
 coefficients \[ Q(s)_{\alpha\beta}^{hi} = g^{hk}h^{ij}\left[ \left(g'_{\alpha\gamma} \Theta_\beta^\gamma\right)_{kj} - g'_{\alpha\beta} {\rm Ric}_{kj} \right] \].</li>
 <li><p>
 Since \( \int_M \Delta(s\cdot s)dV=0 \), if \( s \) is harmonic, one has
@@ -832,7 +832,7 @@ and
    \]</li>
 <li>If \( f \) is harmonic then 
 \[
-    \Delta e(f) = |\beta(f)|^2 + Q(f_*)
+    \Delta e(f) = |\beta(f)|^2 - Q(f_*)
    \]
  where \( |\beta(f)| \) is the pointwise norm of \( \beta(f) \).</li>
 </ol>
@@ -847,8 +847,8 @@ M \) and \( M' \) are of definite sign.
 </p>
 </div>
 
-<div id="outline-container-org37a6ff3" class="outline-5">
-<h5 id="org37a6ff3"><span class="section-number-5">1.3.2.1</span> Notation.</h5>
+<div id="outline-container-org0064f84" class="outline-5">
+<h5 id="org0064f84"><span class="section-number-5">1.3.2.1</span> Notation.</h5>
 <div class="outline-text-5" id="text-1-3-2-1">
 <p>
 Given a Riemannian manifold \( M \), we will use the following notation:
@@ -856,10 +856,10 @@ Given a Riemannian manifold \( M \), we will use the following notation:
 <ol class="org-ol">
 <li>\( {\rm Ric} \geq 0 \) (resp. \( {\rm Ric} > 0 \)) if the Ricci curvature is positive
 semi-definite (resp. positive definite) as symmetric bilinear form.</li>
-<li>\( {\rm Ric} \leq 0 \) (resp. \( {\rm Ric} < 0 \)) if \( -{\rm Ric} \geq 0 \) (resp. \( -{\rm Ric} > 0 \)).</li>
-<li>\( {\rm Riem}\geq 0 \) (resp. \( {\rm Riem} > 0 \)) if all sectional curvature is
-positive (resp. strictly positive), i.e. \(R_{ijhk} u_1^i v_1^j
-   u_2^h v_2^k\) is positive for non-colinear vectors \( u,v \).</li>
+<li>\( {\rm Riem} \leq 0 \) (resp. \( {\rm Riem} < 0 \)) if all sectional curvatures are
+negative (resp. strictly negative), i.e. \(R_{ijhk} u^i v^j
+   u^h v^k \leq 0\) (resp. \(R_{ijhk} u^i v^j
+   u^h v^k < 0\)) for non-colinear vectors \( u,v \).</li>
 </ol>
 
 <div id="cor:signed-curvature" class="corollary">
@@ -867,14 +867,14 @@ positive (resp. strictly positive), i.e. \(R_{ijhk} u_1^i v_1^j
 Let \( f: M \longrightarrow M' \) be a map of Riemannian manifolds.
 </p>
 <ol class="org-ol">
-<li>If \( f \) is harmonic and \( Q(f_*) \geq 0 \) then \( f \) is totally geodesic and \(
+<li>If \( f \) is harmonic and \( Q(f_*) \leq 0 \) then \( f \) is totally geodesic and \(
    e(f) \) is constant.</li>
-<li>If \( {\rm Ric}(M) \leq 0 \) and \( {\rm Riem}(M')\geq 0 \) then \( f \) is harmonic if
+<li>If \( {\rm Ric}(M) \geq 0 \) and \( {\rm Riem}(M')\leq 0 \) then \( f \) is harmonic if
 and only if \( f \) is totally geodesic.</li>
 <li>Under the same condition as 2),
 <ul class="org-ul">
-<li>If \( {\rm Ric}(M) <0 \) at one point of \( M \) then all harmonic maps are constant.</li>
-<li>If \( {\rm Riem}(M') >0 \) everywhere in the image of \( f \) and \( f \) is
+<li>If \( {\rm Ric}(M) >0 \) at one point of \( M \) then all harmonic maps are constant.</li>
+<li>If \( {\rm Riem}(M') <0 \) everywhere in the image of \( f \) and \( f \) is
 harmonic, then \( f \) is either constant or maps \( M \) onto a closed geodesic of \( M' \).</li>
 </ul></li>
 </ol>
@@ -887,13 +887,12 @@ All the statements are consequence of 2) of Lemma <a href="#lem:calculs-Q-pullba
 that \( \int_M \Delta e(f)dV = 0 \) noticing that
 </p>
 <ul class="org-ul">
-<li>\( -{\rm Ric}^{ij}f^\alpha_i f^\beta_j g'_{\alpha\beta} \) is \( -{\rm Ric}\otimes g' \)
+<li>\( {\rm Ric}^{ij}f^\alpha_i f^\beta_j g'_{\alpha\beta} \) is \( {\rm Ric}\otimes g' \)
 applied doubly to \( f_i^\alpha dx^i\otimes\tilde e_\alpha \).</li>
 <li>\( R'_{\alpha\beta\gamma\delta} f^\alpha_i f^\beta_j f^\gamma_k f^\delta_l
-   g^{ik}g^{jl} \) is \( \tilde
-  R'\otimes g\otimes g \) applied to \( (f_i^\alpha \tilde e_\alpha\otimes dx^i,f_i^\alpha
-  \tilde e_\alpha\otimes dx^i) \) where \( \tilde R' \) is defined by \(\tilde R': ((u_1,v_1),(u_2,v_2)) \mapsto R'_{ijhk} u_1^i v_1^j
-   u_2^h v_2^k\).</li>
+   g^{ik}g^{jl} \) is \( (f^* R')_{ijhk}g^{ik}h^{jl} \). In a normal coordinate at \( P \)
+where \( g^{ik}=\delta_{ik}, g^{jl}=\delta_{jl} \), it is the sum of sectional curvatures of tangent
+planes formed by \( f_*e_i, f_*e_j \), and therefore negative.</li>
 </ul>
 
 <p>
@@ -903,11 +902,7 @@ e_\alpha =0 \), meaning \( f_*=0 \), hence \( e(f) \) vanishes at \( P \). Since
 </p>
 
 <p>
-If \( {\rm Riem}(M') >0 \), one has \(  f_i^\alpha f^\beta_j \tilde e_\alpha\otimes \tilde
-  e_\beta\) is symmetric, i.e. \( f^\alpha_i f^\beta_j = f^\alpha_j f^\beta_i \) for all
-  \( i,j,\alpha,\beta \), meaning that the ratio \( f^\alpha_i: f^\alpha_j \) is
-  independent of \( \alpha \), i.e. \( (\nabla f^\alpha)_{\alpha\in \overline{1,m}} \) are
-  colinear, i.e. the image of \( Tf \) is of one dimension, which leads to the conclusion,
+If \( {\rm Riem}(M') < 0 \), one sees that all \( f_* e_i, f_* e_j\) are colinearmmetric, i.e. the image of \( Tf \) is of one dimension, which leads to the conclusion,
   as we will see later that a totally geodesic map transform geodesic to geodesic.
 </p>
 
@@ -1436,7 +1431,7 @@ belong to the same tangent space (of \( M'' \) or \( F \)).
 <ol class="org-ol">
 <li>A map \( f: M \longrightarrow M'\times M'' \) is harmonic if \( f=(f^1, f^2) \) with \(
    f^1, f^2 \) being harmonic.</li>
-<li>Take \( M''=M \) in <a href="#prop:compo-submersion">prop:compo-submersion</a> and \( f=s: M \longrightarrow M' \) a
+<li>Take \( M''=M \) in Proposition <a href="#prop:compo-submersion">prop:compo-submersion</a> and \( f=s: M \longrightarrow M' \) a
 section of the fibration \( f' \), one sees that the tension field \( \tau(s) \) is
 always vertical.</li>
 </ol>
@@ -1477,7 +1472,7 @@ M \longrightarrow N\), \( \pi\circ f \) is harmonic if and only if \( \tau(f) \)
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-02-27 Tue 10:23. <br>
+Last updated 2018-02-27 Tue 15:18. <br>
 </div>
 </div>
 </body>

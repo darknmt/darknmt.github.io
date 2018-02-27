@@ -4,7 +4,7 @@
 # +STARTUP: indent
 # +STARTUP: showstars
 
-
+.
 #+SETUPFILE: ../res/mathsetup.org
 #+INCLUDE: ../res/include.org
 
@@ -427,7 +427,7 @@ For 3), if \( {\rm Ric}(M)<0 \) at one point \( P\in M \) then at that point \( 
 e_\alpha =0 \), meaning \( f_*=0 \), hence \( e(f) \) vanishes at \( P \). Since \( e(f)
 \) has to be constant, it vanishes identically, which implies that \( f \) is constant.
 
-If \( {\rm Riem}(M') >0 \), one sees that all \( f_* e_i, f_* e_j\) are colinearmmetric, i.e. the image of \( Tf \) is of one dimension, which leads to the conclusion,
+If \( {\rm Riem}(M') < 0 \), one sees that all \( f_* e_i, f_* e_j\) are colinearmmetric, i.e. the image of \( Tf \) is of one dimension, which leads to the conclusion,
   as we will see later that a totally geodesic map transform geodesic to geodesic.
 #+END_proof
 
