@@ -391,9 +391,8 @@ Given a Riemannian manifold \( M \), we will use the following notation:
    semi-definite (resp. positive definite) as symmetric bilinear form.
 2. \( {\rm Ric} \leq 0 \) (resp. \( {\rm Ric} < 0 \)) if \( -{\rm Ric} \geq 0 \) (resp. \( -{\rm Ric} > 0 \)).
 3. \( {\rm Riem}\geq 0 \) (resp. \( {\rm Riem} > 0 \)) if all sectional curvature is
-   positive, i.e. \(R_{ijhk} u_1^i v_1^j
+   positive (resp. strictly positive), i.e. \(R_{ijhk} u_1^i v_1^j
    u_2^h v_2^k\) is positive for non-colinear vectors \( u,v \).
-4. \( {\rm Riem} \leq 0 \) (resp. \( {\rm Riem} < 0 \)) if \( -{\rm Riem} \geq 0 \) (resp. \( -{\rm Riem} > 0 \)).
 
 # +BEGIN_remark
 # By symmetries of the curvature tensor, \({\rm Riem}\geq 0 \) if and only if \( R_{ijhk} u^{ij} u^{hk}\geq 0\)
