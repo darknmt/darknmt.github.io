@@ -365,12 +365,12 @@ tensor \( R' \) of \( (M',g') \) is due to the formula
 #+LATEX: \label{lem:calculs-Q-pullback}
 1. \( Q(f_*) \) is given by
    \[
-   Q(f_*) = -R'_{\alpha\beta\gamma\delta} f^\alpha_i f^\beta_j f^\gamma_k f^\delta_l
+   Q(f_*) = R'_{\alpha\beta\gamma\delta} f^\alpha_i f^\beta_j f^\gamma_k f^\delta_l
    g^{ik}g^{jl} - {\rm Ric}^{ij}f_i^\alpha f^\beta_j g'_{\alpha\beta}
    \]
    and
    \[
-   Q(f_*)_{\alpha\beta}^{ij} = -R'_{\alpha\beta\gamma\delta}f^\gamma_k f^\delta_l g^{ik}g^{jl}
+   Q(f_*)_{\alpha\beta}^{ij} = R'_{\alpha\beta\gamma\delta}f^\gamma_k f^\delta_l g^{ik}g^{jl}
    -{\rm Ric}^{ij}g'_{\alpha\beta}.
    \]
 2. If \( f \) is harmonic then 
@@ -379,6 +379,7 @@ tensor \( R' \) of \( (M',g') \) is due to the formula
    \]
     where \( |\beta(f)| \) is the pointwise norm of \( \beta(f) \).
 #+END_lemma
+
 
 The previous computation of \( Q(f_*) \) in term of Riemannian curvature of \( M' \) and
 Ricci curvature of \( M \) give the following result in the case where the curvature of \(
@@ -389,29 +390,15 @@ Given a Riemannian manifold \( M \), we will use the following notation:
 1. \( {\rm Ric} \geq 0 \) (resp. \( {\rm Ric} > 0 \)) if the Ricci curvature is positive
    semi-definite (resp. positive definite) as symmetric bilinear form.
 2. \( {\rm Ric} \leq 0 \) (resp. \( {\rm Ric} < 0 \)) if \( -{\rm Ric} \geq 0 \) (resp. \( -{\rm Ric} > 0 \)).
-3. \( {\rm Riem}\geq 0 \) (resp. \( {\rm Riem} > 0 \)) if the Riemann curvature tensor satisfies \( R_{ijhk} u^{ij}
-   u^{hk}\geq C(P)u_{ij}u^{ij}\) at \( P\in M \) for all anti-symmetric (2,0) tensor \( u
-   \) on \( M \), where \( C(P)\geq 0 \) (resp. \( C(P) >0 \))
+3. \( {\rm Riem}\geq 0 \) (resp. \( {\rm Riem} > 0 \)) if the symmetric bilinear form
+   \(\tilde R: ((u_1,v_1),(u_2,v_2)) \mapsto R_{ijhk} u_1^i v_1^j
+   u_2^h v_2^k\) is positive (resp. semi-positive) at \( P\in M \).
 4. \( {\rm Riem} \leq 0 \) (resp. \( {\rm Riem} < 0 \)) if \( -{\rm Riem} \geq 0 \) (resp. \( -{\rm Riem} > 0 \)).
 
-#+BEGIN_remark
-By symmetries of the curvature tensor, \({\rm Riem}\geq 0 \) if and only if \( R_{ijhk} u^{ij} u^{hk}\geq 0\)
-at \( P\in M \) for all (0,2) tensor \( u \) on \( M \), where \( C(P)\geq 0 \).
-#+END_remark
-
-#+LATEX: \iffalse
-#+ATTR_HTML: :id question
-#+BEGIN_info
-*TERMINOLOGICAL QUESTION:* I am not sure about the definition of _strictly_ positive
-Riemann curvature. The above definition of semi-positive Riemann curvature is taken from
-an article by Kobayashi OR Nomizu that I am currently unable to find again.
- 
-But under this definition of strict positivity (that I made up), the Corollary
-ref:cor:signed-curvature stands. 
-#+END_info
-
-#+LATEX: \fi
-
+# +BEGIN_remark
+# By symmetries of the curvature tensor, \({\rm Riem}\geq 0 \) if and only if \( R_{ijhk} u^{ij} u^{hk}\geq 0\)
+# at \( P\in M \) for all (0,2) tensor \( u \) on \( M \), where \( C(P)\geq 0 \).
+# +END_remark
 
 #+ATTR_HTML: :id cor:signed-curvature 
 #+BEGIN_corollary
@@ -419,11 +406,11 @@ ref:cor:signed-curvature stands.
 Let \( f: M \longrightarrow M' \) be a map of Riemannian manifolds.
 1. If \( f \) is harmonic and \( Q(f_*) \geq 0 \) then \( f \) is totally geodesic and \(
    e(f) \) is constant.
-2. If \( {\rm Ric}(M) \leq 0 \) and \( {\rm Riem}(M')\leq 0 \) then \( f \) is harmonic if
+2. If \( {\rm Ric}(M) \leq 0 \) and \( {\rm Riem}(M')\geq 0 \) then \( f \) is harmonic if
    and only if \( f \) is totally geodesic.
 3. Under the same condition as 2),
    - If \( {\rm Ric}(M) <0 \) at one point of \( M \) then all harmonic maps are constant.
-   - If \( {\rm Riem}(M') <0 \) everywhere in the image of \( f \) and \( f \) is
+   - If \( {\rm Riem}(M') >0 \) everywhere in the image of \( f \) and \( f \) is
      harmonic, then \( f \) is either constant or maps \( M \) onto a closed geodesic of \( M' \).
 #+END_corollary
 
@@ -432,16 +419,15 @@ All the statements are consequence of 2) of Lemma ref:lem:calculs-Q-pullback and
 that \( \int_M \Delta e(f)dV = 0 \) noticing that
 - \( -{\rm Ric}^{ij}f^\alpha_i f^\beta_j g'_{\alpha\beta} \) is \( -{\rm Ric}\otimes g' \)
   applied doubly to \( f_i^\alpha dx^i\otimes\tilde e_\alpha \).
-- \( -R'_{\alpha\beta\gamma\delta}f^\gamma_k f^\delta_l g^{ik}g^{jl} \) is \( -\tilde
-  R'\otimes g\otimes g \) applied to \( f_i^\alpha f^\beta_j \tilde e_\alpha\otimes \tilde
-  e_\beta\otimes dx^i\otimes dx^j \) where \( \tilde R' \) is the bilinear form \( (u,v)
-  \mapsto R'_{\alpha\beta\gamma\delta} u^{\alpha\beta} v^{\gamma\delta} \).
+- \( R'_{\alpha\beta\gamma\delta}f^\gamma_k f^\delta_l g^{ik}g^{jl} \) is \( \tilde
+  R'\otimes g\otimes g \) applied to \( (f_i^\alpha \tilde e_\alpha\otimes dx^i,f_i^\alpha \tilde e_\alpha\otimes dx^i) \) where \( \tilde R' \) is the bilinear form \(\tilde R': ((u_1,v_1),(u_2,v_2)) \mapsto R'_{ijhk} u_1^i v_1^j
+   u_2^h v_2^k\).
 
 For 3), if \( {\rm Ric}(M)<0 \) at one point \( P\in M \) then at that point \( f^\alpha_i dx^i \tilde
 e_\alpha =0 \), meaning \( f_*=0 \), hence \( e(f) \) vanishes at \( P \). Since \( e(f)
 \) has to be constant, it vanishes identically, which implies that \( f \) is constant.
 
-If \( {\rm Riem}(M') <0 \), one has \(  f_i^\alpha f^\beta_j \tilde e_\alpha\otimes \tilde
+If \( {\rm Riem}(M') >0 \), one has \(  f_i^\alpha f^\beta_j \tilde e_\alpha\otimes \tilde
   e_\beta\) is symmetric, i.e. \( f^\alpha_i f^\beta_j = f^\alpha_j f^\beta_i \) for all
   \( i,j,\alpha,\beta \), meaning that the ratio \( f^\alpha_i: f^\alpha_j \) is
   independent of \( \alpha \), i.e. \( (\nabla f^\alpha)_{\alpha\in \overline{1,m}} \) are

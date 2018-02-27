@@ -45,7 +45,7 @@
    (LaTeX-add-labels
     "sec:orga0770cb"
     "sec:orgc583005"
-    "sec:org273e9db"
+    "sec:orgf1ed638"
     "lem:var-energy"
     "prop:holo-harmonic"
     "eq:tangent-exp"
@@ -65,7 +65,7 @@
     "prop:calculs-pullback-tangent"
     "sec:org75bf29d"
     "lem:calculs-Q-pullback"
-    "sec:orgc5c3f31"
+    "sec:org42170e6"
     "cor:signed-curvature"
     "sec:orgde0028d"
     "sec:org46dcaf2"
