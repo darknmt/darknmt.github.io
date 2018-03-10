@@ -4,7 +4,6 @@
 # +STARTUP: indent
 # +STARTUP: showstars
 
-.
 #+SETUPFILE: ../res/mathsetup.org
 #+INCLUDE: ../res/include.org
 

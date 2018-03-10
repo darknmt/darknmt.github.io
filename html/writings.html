@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-20 Tue 17:30 -->
+<!-- 2018-03-10 Sat 20:15 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -227,6 +227,28 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -234,7 +256,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href='./index.html'>Home</a></li>
 <li><a href='./blog.html'>Blog</a></li>
-<li><a href='./writings.html'>Writings</a></li>
+<li><a href='./writings.html'>Miscellany</a></li>
 <li><a href='http://github.com/darknmt/'>GitHub</a></li>
 <li><a href='./contact.html'>Contact</a></li>
 </ul>
@@ -245,10 +267,129 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
+<li><a href="#org5c8db4d">A suspicious formula</a></li>
 <li><a href="#org8752665">LaTeX indentation in org-mode <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-02-20 Tue&gt;</span></span></a></li>
 <li><a href="#org9ba4fd2">A (decent) map of mathematics <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-10-17 Tue&gt;</span></span></a></li>
 <li><a href="#org5aa26c3">My 2016-2017 internship <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-07-31 Mon&gt;</span></span></a></li>
 </ul>
+</div>
+</div>
+
+<div id="outline-container-org5c8db4d" class="outline-2">
+<h2 id="org5c8db4d">A suspicious formula</h2>
+<div class="outline-text-2" id="text-org5c8db4d">
+<p>
+I believe the second lemma in Section 7B of <a class='org-ref-reference' href="#eells_harmonic_1964">eells_harmonic_1964</a> is incorrect. To
+recall the setting and notation, the goal of the 3 pages 138-140 is to translate the
+deformation equation \(df_t/dt = \tau(f_t)\) , where \(f_t\) is a deformation of a function
+\(f: M \to M'\) and \(\tau\) is the torsion field, to a global equation by embedding \(M'\) into a
+Euclidean space \( R^q \). The tricky detail, (which, in my oppinion, is a bit oversimplified in
+<a class='org-ref-reference' href="#eells_two_1995">eells_two_1995</a>), involves using at the same time 2 metric structres on a same space:
+</p>
+<ul class="org-ul">
+<li>First equip a tubular neighborhood \( N \) of \(M'\) in \(R^q\) a new metric \(g''\) (the Lemma on page
+138), which is, to reformulate, the product metric of \(N \cong M' \times B\) (the
+diffeomorphism is by exponential map) where B is a ball of dimension = codimension of \(M'\)
+in \( R^q \), equipped with the Euclidean metric.</li>
+<li>For \(Q\) in N, &pi;(Q)&isin; M\) denotes the (geodesic) projection of Q on M and
+\(\rho(Q)\in \mathcal{N}_{M'/ \mathbb{R}^q}\) is the normal vector of \( M \) at \(\pi(Q)\) such that
+\(exp_{\pi(Q)}(\rho(Q)) = Q\). Interpreting \( \pi(Q) \) and \( \rho(Q) \) as vector in
+\( \mathbb{R}^q \), one can write \(p(Q) = Q - \pi(Q)\).</li>
+<li>Denote by \( w^a, w^b,w^c,\dots \) the coordinate in Euclidean fram of \( \mathbb{R}^q
+  \) and by \( y^\alpha, y^\beta, y^\gamma,\dots \) the local coordinate of \( M' \). Then \(
+  \pi^c_a + \rho^c_a = \delta^c_a \) and the covariant differential w.r.t \( g'' \) is
+\[
+   \pi^c_{ab} = \frac{\partial^2 \pi^c}{\partial w^a \partial w^b} - \Gamma''^d_{ab}\pi^c_d
+  \]
+where \( \Gamma'' \) are Christoffel symbols of \( g''\). Also, \( \rho^c_{ab} + \pi^c_{ab}+\Gamma''^c_{ab} = 0 \).</li>
+</ul>
+
+<p>
+Now <a class='org-ref-reference' href="#eells_harmonic_1964">eells_harmonic_1964</a> claims that on \( M' \):
+</p>
+\begin{equation}
+\label{eq:double}
+ -\rho^c_{ab}w^a_\alpha w^b_\beta = \frac{\partial^2 \pi^c}{\partial w^a \partial w^b}w^a_\alpha w^b_\beta =
+\rho^c_b \frac{\partial^2\pi^b}{\partial y^\alpha \partial y^\beta}
+\end{equation}
+<p>
+therefore
+</p>
+<div id="lem:suspicious" class="lemma">
+<p>
+For any vector \( u,v\in T_Q M' \) the vector \(\rho^c_{ab}u^a u^b \) is perpendicular to \(T_{Q}M'\)
+</p>
+
+</div>
+
+<p>
+I believe that the first half of \eqref{eq:double} (hence also the Lemma) is incorrect. 
+</p>
+
+<div class="remark">
+<p>
+In fact, all applications of the Lemma and \eqref{eq:double} in the section 7 of
+<a class='org-ref-reference' href="#eells_harmonic_1964">eells_harmonic_1964</a> concern the second half, in order to claim that any vector
+\( \frac{\partial^2\pi^c}{\partial w^a \partial w^b}U^b  V^a \tilde e_c \) is perpendicular to \( TM'
+\), if the vectors \( U,V \) tangent to \( M \).
+</p>
+
+</div>
+
+
+
+<p>
+For the detail, since
+\[
+ -\rho^c_{ab} = \pi^c_{ab} + \Gamma''^c_{ab} = \frac{\partial^2 \pi^c}{\partial w^a
+\partial w^b} - \Gamma''^d_{ab}\pi^c_d +\Gamma''^c_{ab}
+\]
+the claim is equivalent to
+\( \Gamma''^d_{ab}\pi^c_d w^a_\alpha w^b_\beta = \Gamma''^c_{ab}w^a_\alpha w^b_\beta \),
+in other words
+\( pr_{TM'}(\Gamma''^c_{ab}\tilde e_c w^a_\alpha w^b_\beta =
+pr_{TM'}(\Gamma''^c_{ab}\tilde e_c w^a_\alpha w^b_\beta) \), meaning that
+\(
+ (\nabla''_{e_\alpha}\tilde e_b)w^b_\beta \in TM'
+\)
+Note that
+\[
+ (\nabla''_{e_\alpha}\tilde e_b)w^b_\beta = \nabla''_{e_\alpha} e_\beta - {e_\alpha}
+(w^b_\beta) \tilde e_b = \nabla''_{e_\alpha} e_\beta - \nabla_{e_\alpha}(w^b_\beta \tilde
+e_b) = \nabla''_{e_\alpha} e_\beta - \nabla_{e_\alpha}e_\beta
+\]
+where \( \nabla \) is Levi-Civita connection corresponding to Euclidean metric, and \(
+\tilde e_b \) is the \( b^th \) vector field corresponding to the canonical coordinate of
+\( \mathbb{R}^q \), therefore \( \nabla \tilde e_b = 0 \).
+</p>
+
+<p>
+Now already \( \nabla''_{e_\alpha} e_\beta \in TM' \) since \( e_\alpha, e_\beta\in TM' \) and \( \nabla'' \) is the
+Levi-Civita of the induced metric on \( M' \). The problem is the term \(
+\nabla_{e_\alpha}e_\beta \), which is not only different from \(\nabla''_{e_\alpha} e_\beta\)
+even when the metric \( g'' \) and the Euclidean metric coincide on \( M' \) containing
+the flow of \( e_\alpha \), but also not necessarily lies in \( TM' \).
+</p>
+
+<p>
+A counter example is \( M= \mathbb{S}^1\subset \mathbb{R}^2 \) with \( e_\alpha=e_\beta \)
+defined by \( (\cos t, \sin t) \mapsto \sin t\ dx - \cos t\ dy  \) (the geodesic field on \(
+M' \)) then \( \nabla_{e_\alpha}e_\beta = \cos t\ dx + \sin t\ dy \) is perpendicular to \( TM' \). 
+</p>
+
+<p>
+In fact, it is always true that \( \nabla_{U} V \) is perpendicular to \( TM'
+\) for \( U, V\in T_QM' \), since \( \nabla_{U}V = \nabla_{U}\nabla_{V} \pi \perp T_QM'\)
+by the second half of \eqref{eq:double}.
+</p>
+
+
+<p>
+ <h1 class='org-ref-bib-h1'>Bibliography</h1>
+<ul class='org-ref-bib'><li><a id="eells_harmonic_1964">[eells_harmonic_1964] Eells & Sampson, Harmonic Mappings of Riemannian Manifolds, <i>American Journal of Mathematics</i>, <b>86(1)</b>, 109-160 (1964). <a href="http://www.jstor.org/stable/2373037">link</a>. <a href="http://dx.doi.org/10.2307/2373037">doi</a>.</a></li>
+<li><a id="eells_two_1995">[eells_two_1995] Eells & Lemaire, Two Reports on Harmonic Maps, WORLD SCIENTIFIC (1995).</a></li>
+</ul>
+</p>
 </div>
 </div>
 
@@ -324,7 +465,7 @@ also in this period that I start this blog. The memoire can be founded here [<a 
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2018-02-20 Tue 17:30. <br>
+Last updated 2018-03-10 Sat 20:15. <br>
 </div>
 </div>
 </body>
