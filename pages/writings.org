@@ -45,7 +45,7 @@ I believe that the first half of eqref:eq:double (hence also the Lemma) is incor
 In fact, all applications of the Lemma in the section 7 of
 cite:eells_harmonic_1964 concern the second half of eqref:eq:double, in order to claim that any vector
 \( \frac{\partial^2\pi^c}{\partial w^a \partial w^b}U^b  V^a \tilde e_c \) is perpendicular to \( TM'
-\), if the vectors \( U,V \) tangent to \( M \).
+\), if the vectors \( U,V \) are tangent to \( M \).
 #+END_remark
 
 
@@ -79,7 +79,7 @@ Levi-Civita of the induced metric on \( M' \). The problem is the term \(
 even when the metric \( g'' \) and the Euclidean metric coincide on \( M' \) containing
 the flow of \( e_\alpha \), but also not necessarily lies in \( TM' \).
 
-A counter example is \( M= \mathbb{S}^1\subset \mathbb{R}^2 \) with \( e_\alpha=e_\beta \)
+A counter example is \( M'= \mathbb{S}^1\subset \mathbb{R}^2 \) with \( e_\alpha=e_\beta \)
 defined by \( (\cos t, \sin t) \mapsto \sin t\ dx - \cos t\ dy  \) (the geodesic field on \(
 M' \)) then \( \nabla_{e_\alpha}e_\beta = \cos t\ dx + \sin t\ dy \) is perpendicular to \( TM' \). 
 
