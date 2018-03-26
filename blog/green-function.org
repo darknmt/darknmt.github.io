@@ -1,0 +1,452 @@
+#+TITLE: Parametrix and Green's function of Laplacian operator on Riemannian manifolds
+#+AUTHOR: Tien NGUYEN MANH
+#+DATE: Mar 22, 2018
+# +STARTUP: indent
+# +STARTUP: showstars
+
+#+SETUPFILE: ../res/mathsetup.org
+#+INCLUDE: ../res/include.org
+
+This post is the second part of my reading note for cite:aubin_nonlinear_1998. The first
+part is [[file:sobolev-riemannian.org][here]].
+
+
+Recall that in the Euclidean space \( \mathbb{R}^n \), one obtains a representation of the
+solution \( u \) of equation \( \Delta u = f\) by
+ - first solving for an explicit radial solution of \( \Delta G = \delta_0 \). In
+   particular, \( G = [(n-2)\omega_{n-1}]^{-1}r^{2-n} \) if \( n>2 \) and \( G=
+   -(2\pi)^{-1}\log(r) \) if \( n=2 \)
+ - then tensoring \( G  \) by \( f \), one has the solution \( u=G* f \) of \( \Delta u = f \)
+
+To generalise this argument for Riemannian manifolds, there are two points that have to be
+modified:
+1. Since it does not make sense to add/substract points of a manifold, one will need to
+   find different fundamental solutions for different points, so instead of fundamental
+   solution, we will find the Green's function \( G=G(p,q)  (p,q\in M) \). The convolution will be replace by the following operation on functions \(
+   X, Y \) defined on \( (M\times M)\setminus \Delta_M \) where \( \Delta_M \) denotes the diagonal:
+   \[
+    (X * Y) (p,q)= \int_M X(p,r) Y(r,q) dV(r)
+   \].
+2. The distance function \( q \mapsto d(p,q) \) is only smooth near \( p \), outside of
+   the cut-locus, the best one can says is that the function is Lipschitz. Since cut-loci
+   are almost impossible to calculate or visualise (the cut-locus of an ellipsoid is still
+   a conjecture, according to cite:berger_panoramic_2003), one will cut-off the Euclidean
+   solution, try to solve the equation near \( p \) and later add a correcting term. This
+   inspires the definition of parametrix.
+
+Another reason that we have to approximate the exact solution by parametrix, that also
+explain the iteration in Theorem ref:thm:existence-green, is that the expression of
+Laplacian, even in the geodesic polar coordinate and even near the origin, involves the
+metric, hence the Euclidean fundamental solution is not yet a solution even near the
+origin.
+
+#+ATTR_HTML: :id rem:green-riem-surf
+#+BEGIN_remark
+#+LATEX: \label{rem:green-riem-surf}
+To give a simplified analogy of what we will be doing, let us prove the existence of
+"Green's function" on Riemann surfaces (with boundary, so that we do not have to deal with
+the volume). The "Laplace equation" is
+\begin{equation}
+\label{eq:lap-complex}
+-2i \partial \bar \partial g = \delta_0
+\end{equation}
+where the LHS is a 2-form and the RHS is a generalised 2-form in the sense of
+current. Contrary to the previous point 3, one knows the exact local solution of
+eqref:eq:lap-complex, namely \( z\mapsto -(2\pi)^{-1}\log(|z|) \). Therefore, the argument
+will be simplified as:
+ - Given a holomorphic chart of a point \( 0\in M \), pose \( h(z):= -(2\pi)^{-1}\log(|z|)\chi(|z|) \) where \( \chi \) is a cut-off function that
+   is \( 1 \) on a neighborhood of \( 0 \)
+ - The 2-form \( \alpha=-2i \partial \bar \partial h \) is well-defined everywhere except \(
+   0 \), and vanishes on a neighborhood of \( 0 \). Denote by \( \alpha^{\rm naiv} \) its
+   extension to \( M \).
+ - Recall the fact that every smooth 2-form on a compact, connected, Riemann surface with
+   boundary can be writen as \(\alpha^{\rm naiv} = -2i \partial \bar \partial \varphi \),
+   pose \( g = h-\varphi \).  
+
+For Riemann surface without boundary, the equation is
+\( -2i \partial \bar \partial g = \delta_0 -2i\int_M \partial \bar \partial g \) and the
+fact to evoke is that any smooth 2-form \( \alpha \) with \( \int_M \alpha = 0 \) is of
+form \( \alpha = -2i \partial \bar \partial \varphi \) 
+#+END_remark
+ 
+We will suppose that \( M^n \) is a Riemannian manifold with injectivity radius \( \delta_0
+>0\), and of bounded curvature. Compact manifolds, for example, fall in this category.
+
+* Parametrix and the Green's formula
+
+#+BEGIN_definition
+A *Green's function* \( G(p,q)\) of a compact Riemannian manifold is a function defined on
+\( (M\times M)\setminus \Delta_M\) such that
+1. \( \Delta_q^{\rm dist}G(p,q) = \delta_p(q) \) if \( M \) has boundary.
+2. \( \Delta_q^{\rm dist}G(p,q) = \delta_p(q) - V^{-1} \)
+where \( \Delta_q^{\rm dist} \) concerns the distribution derivatives and \( V \) is the
+volume of \( M \).
+
+Let \( p,q\in M \) be distinct points, the *parametrix* \( H \) is defined by
+\[
+ H(p,q) = \begin{cases}
+ [(n-2)\omega_{n-1}]^{-1} r^{2-n}\chi(r),  & \text{if $n>2$} \\
+ -(2\pi)^{-1} \chi(r)\log r, & \text{if $n=2$}
+\end{cases}
+\]
+where \( r=d(p,q) \), \( \chi: \mathbb{R}_{\geq 0} \longrightarrow \mathbb{R} \) is smooth, \( \chi=1 \)
+in a neighborhood of \( 0 \) and \( \chi(t)=0 \) if \( t >\delta_0 \).
+#+END_definition
+
+
+Recall that in the geodesic polar coordinates, i.e. the polar coordinates on the tangent \(
+T_pM \) at \( p\in  M\), identified with a neighborhood of \( p\in M \), the metric \( g
+\) is given by
+\[
+g: ds^2 = dr^2 + r^2 g_{\theta_i\theta_j}(r,\theta) d\theta^i d\theta^j
+\]
+and one denotes \(| g_\theta |:= \det (g_{\theta_i \theta_j}) \), therefore
+\( |g|=\det(g_{ij}) = r^{2(n-1)}|g_\theta| \)
+
+#+ATTR_HTML: :id lem:lap-radial
+#+BEGIN_lemma
+#+LATEX: \label{lem:lap-radial}
+If a function \( \varphi \in C^2 \) defined locally around \( p\in M \) and \( \varphi \)
+is radial, i.e. \( \varphi = f(r) \) in a small geodesic ball \( B(p, \delta) \) then
+\[
+-\Delta \varphi = f'' + \frac{n-1}{r} f' + f' \partial_r \log \sqrt{|g_\theta|}
+\]
+#+END_lemma
+#+BEGIN_proof
+One has
+\begin{equation*}
+\begin{split}
+\Delta \varphi &= - \tr\left(\nabla_i(g^{kj} \partial_j \varphi\ e_k)\right)_{i,k} = -\partial_i (g^{ij} \partial_j\varphi) - g^{kj} \partial_j \varphi \Gamma^i_{ik}\\
+       	       &= -|g|^{-1/2} \partial_i (g^{ij} |g|^{1/2} \partial_j \varphi)
+\end{split}   
+\end{equation*}
+since \( \Gamma^{i}_{ik} = \partial_k \log \sqrt{|g|} = \frac{\partial_i |g|}{2|g|}
+\). One concludes by substituting \( |g| = r^{2n-2}|g_\theta| \) and noticing that \(
+g^{r\theta_i} = g^{\theta_i\theta_j} = 0\ (i\ne j) \).
+#+END_proof
+
+#+ATTR_HTML: :id rem:lap-rad
+#+BEGIN_remark
+#+LATEX: \label{rem:lap-rad}
+1. The Laplacian of the metric \( g \), viewed in polar geodesic coordinates centered at \( p \), i.e. in the
+   tangent space \( T_pM \) is not the Euclidean Laplacian of \( T_pM \), however the
+   difference if \( O(r) \) since \( \partial_r \log\sqrt{|g_\theta|} \leq Ar \) where the bound
+   \( A \) is given by Ricci curvature, see the [[file:sobolev-riemannian.org][Volume comparison theorem]].
+2. Applied the formula for \( q \mapsto H(p,q) \), one has
+   \begin{equation}
+   \label{eq:lap-Hpq}
+    \Delta_q^{\rm naiv} H(p,q) = [(n-2)\omega_{n-1}]^{-1}r^{1-n}\left( (n-3)\chi' - r \chi'' + ((n-2)\chi - r\chi') \partial_r \log\sqrt{|g_\theta|} \right)
+    \end{equation}
+    therefore \( \Delta_q^{\rm naiv} H(p,q) \leq B r^{2-n} \) where \( B \) does not depend on \( p \).
+3. Unlike the case of Remark ref:rem:green-riem-surf where we know the exact fundamental
+   solution and the form \( \alpha^{\rm naiv} \) has no singularity, there is no reason
+   for that this holds true for \( \Delta_q^{\rm naiv} H(p,q) \). However, we proved that
+   the order of singularity at \( q=p \) can be controlled.
+#+END_remark
+
+
+#+ATTR_LATEX: :options [Green's formula]
+#+ATTR_HTML: :id prop:green-formula :btit (Green's formula) 
+#+BEGIN_proposition
+#+LATEX: \label{prop:green-formula}
+For any function \( \psi\in C^2(M) \), one has
+\begin{equation}
+\label{eq:green-formula}
+ \psi(p) = \int_M H(p,q)\Delta\psi(q) dV(q) - \int_M \Delta_q^{\rm naiv} H(p,q) \psi(q) dV(q)
+\end{equation}
+where \( \Delta_q^{\rm naiv} H(p,q) \) denotes the pointwise derivative of \( H(p,q) \), _not_
+the distribution derivative.
+#+END_proposition
+
+#+ATTR_HTML: :id rem:transposition 
+#+BEGIN_remark
+#+LATEX: \label{rem:transposition}
+1. In other words, the theorem says that \( \Delta_q^{\rm dist} H(p,q) = \Delta_q^{\rm naiv}H(p,q) + \delta_p(q) \) where \( \Delta_q^{\rm dist} \) is the distribution
+   derivative. In particular, if there is no concern about regularity of the distance
+   function \( d(p,q) \) (as in the Euclidean case), allowing us to take the cut-off
+   function \( \chi=1 \) in the definition of parametrix, then
+   \( \Delta_q^{\rm naiv}H(p,q) = 0 \) and \( \Delta_q^{\rm dist}H(p,q) = \delta_p(q) \)
+   which is not a surprise since \( H(p,q) \) is also the Green's function.
+2. Taking \( \psi=1 \), one has
+   \[
+    \int_M \Delta_q^{\rm naiv}H(p,q) = -1
+   \]
+3. Multiplying eqref:eq:green-formula by \( \phi(p) \) and integrate over \( M \), one has
+   \[
+   \int_M \phi(q) \psi(q) dV(q) = \int_M \left(\int_M H(p,q) \phi(p) dV(p)\right)\Delta\psi(q)
+   dV(q) - \int_M\left(\int_M \Delta_q^{\rm naiv} H(p,q)\phi(p)\right) \psi(q) dV(q)
+   \]
+   hence in distribution sense
+   \begin{equation}
+   \label{eq:transposition-parametrix}
+   \phi(q) = \Delta_q \int_M H(p,q)\phi(p) dV(p) - \int_M \Delta_q^{\rm naiv} H(p,q)\phi(p)
+   \end{equation}
+   The equation eqref:eq:transposition-parametrix is called the _transposition_ of
+   equation eqref:eq:green-formula and what we have just done is a rigourous proof of the
+   following heuristic justification of eqref:eq:transposition-parametrix: Taking the
+   derivative \( \Delta_q \) inside the integral, then use \( \int_M \delta_p(q)\phi(p)
+   dV(p) \text{ "=" } \phi(q) \).
+#+END_remark
+
+
+
+#+BEGIN_proof
+The intuition is clear:
+ - since one only modifies the fundamental solution at points \( q \) far from \( p \), one
+   only needs to recompense by \( \Delta_q^{\rm naiv}H(p,q) \)
+ - there may be trouble near \( p \) caused by the difference between the Euclidean Laplacian
+   and the metric Laplacian, however as explained by Remark ref:rem:lap-rad, this difference is
+   \( O(r) \) as \( r\to 0 \).
+For a rigorous proof, one calculates \( \int_M H(p,q)\Delta \psi(q) dV(q) \) by
+decomposing \( M \) to \( B(p,\epsilon) \) and \( M\setminus B(p,\epsilon) \) with \(
+0<\epsilon<\delta_0 \) tending to \( 0 \) eventually, then
+\begin{equation*}
+\begin{split}
+\int_{M\setminus B(p,\epsilon)} H(p,q)\Delta\psi(q)dV(q) &= \int_{M\setminus B(p,\epsilon)} \left(\Delta_q^{\rm naiv}H(p,q)\psi(q) + d(\psi\wedge *dH - H\wedge *d\psi)\right) dV(q)\\
+		 &= \int_{M\setminus B(p,\epsilon)} \Delta_q^{\rm naiv}H(p,q)\psi(q) dV(q) +\int_{\partial B(p,\epsilon)} (\psi\wedge *dH - H\wedge *d\psi) dV(q)
+\end{split}   
+\end{equation*}
+by Stokes' theorem, where \( * \) denotes the Hodge star. Therefore
+\[ \int_M H(p,q)\Delta\psi(q) dV(q) = \int_M\Delta_q^{\rm naiv} H(p,q) \psi(q) dV(q) + I_1 +
+I_2\]
+where \( I_1 = \lim_{\epsilon\to 0} \int_{\partial B(p,\epsilon)}(\psi\wedge *dH
+-H\wedge * d\psi) \) and \( I_2 = \lim_{\epsilon\to 0} \int_{B(p,\epsilon)}
+H(p,q)\Delta\psi(q) dV(q) \).
+
+Now \( I_2 = \psi(p) \) since \( (\frac{\sin (b\epsilon)}{b\epsilon})^{n-1} \leq dV/dE \leq
+(\frac{\sin (\alpha \epsilon)}{\alpha\epsilon})^{n-1} \) in \( B(p,\epsilon) \) by [[file:sobolev-riemannian.org][Volume comparison theorem]]
+where \( b^2 \) is an upper bound of sectional curvature and \((n-1)\alpha^2\) is a lower
+bound of Ricci curvature (\(\alpha\in \mathbb{C}\)), and since \( \Delta\psi(q)
+-\Delta_E\psi(q) = O(\varepsilon) \) in \( B(p,\epsilon) \) where \( \Delta_E \) is the
+Euclidean Laplacian.
+
+For \( I_1 \), with \( \epsilon \) small enough such that \( \chi=1 \), one has
+\( |H\wedge * d\psi| \leq \const \epsilon^{2-n} (* d\psi)\). By straightforward
+computation:
+\begin{equation*}
+\begin{split}
+dH &= -\omega_{n-1}^{-1} r^{1-n}dr,\quad dV = r^{n-1}\sqrt{|g_\theta|} dr\wedge d\theta^1\wedge\dots\wedge d\theta^{n-1}\\
+*dH &= -\omega_{n-1}r^{2n-2}\sqrt{|g_\theta|} d\theta^1\wedge\dots\wedge d\theta^{n-1}
+\end{split}   
+\end{equation*}
+hence \( \int_{\partial B(p,\epsilon)} H\wedge * d\psi = O(\epsilon) \) and \(
+\int_{\partial B(p,\epsilon)} \psi\wedge *dH = O(\epsilon^{2n-2}) \). Therefore \( I_1=0
+\) and the conclusion follows.
+#+END_proof
+
+* Existence of Green's function on compact Riemannian manifolds
+
+Our goal is to prove the following theorem
+#+ATTR_LATEX: :options [Existence of Green's function]
+#+ATTR_HTML: :id thm:existence-green :btit (Existence of Green's function) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:existence-green}
+Let \( M^n \) be a compact Riemannian manifold without boundary, there exists a Green's
+function \( G(p,q) \) of the Laplacian such that
+1. /Green's function/. For all \( \varphi\in C^2(M) \), 
+   \begin{equation}
+   \label{eq:green-int}
+      \varphi(p) = V^{-1}\int_M\varphi(q)dV(q) + \int_M G(p,q)\Delta\varphi(q) dV(q)   
+   \end{equation}
+2. /Smooth/. \( G\in C^\infty((M\times M)\setminus\Delta_M) \).
+3. /Radial estimates/. There exists a constant \( k \) such that
+   \begin{equation}
+   \label{eq:G-bound}
+    \left| G(p,q)\right| \leq \begin{cases}
+    k(1 +|\log r|)	 ,  & \text{if $n=2$} \\
+    kr^{2-n}	 , & \text{if $n>2$}
+    \end{cases}   
+   \end{equation}
+   for \( r=d(p,q) \). Moreover, one has the derivative estimates:
+   \begin{equation}
+   \label{eq:derivative-bound} 
+   \left|\nabla_q G(p,q) \right| \leq kr^{1-n},\qquad \left|\nabla^2_q G(p,q) \right| \leq kr^{-n},
+   \end{equation}  
+4. \( G \) is bounded below. Since \( G \) is defined upto a constant, one can choose the constant so that \( G>0 \).	
+5. /Constant integral/. The integral \( \int_M G(p,q) dV(p) \) is constant in \( q
+   \). Since \( G \) is defined upto a constant, one can choose the constant so that \(
+   \int_M G(p,q) dV(p)=0 \).	
+6. /Symmetric/. \( G(p,q) = G(q,p) \) for \( p\ne q \) in \( M \).
+#+END_theorem
+
+For a better notation, let us replace \( \Delta_p U(p,q) \) by \( \Delta_2 U(p,q)
+\). Recall that we already know how to solve the equation \( \Delta u = f \) for \( f\in
+L^2(M) \), this means we can solve \( \Delta_2 U(p,q) = f_p(q) \) for double-integrable functions
+\( f_p \), or briefly we can /solve/ \( L^2 \) functions. Now, define
+\[
+ (X* Y)(p,q):= \int_M X(p,r) Y(r,q) dV(r)
+\]
+if the integration is possible and if it commutes with derivation, one has
+\[
+ \Delta_2(F_1 * H) = F_1 *\Delta_2^{\rm dist}H = F_1 + F_1 *\Delta_2^{\rm naiv} H
+\]
+So if one can /solve/ \( F_1*\Delta^{\rm naiv}H \), then one can /solve/ \( F_1 \),
+i.e. if \( \Delta_2 E_2 = F_1 * \Delta_2^{\rm naiv}H \) then take \( E_1:= F_1*H- E_2 \),
+one has \( \Delta_2 E_1 = F_1 \).
+
+Now in order to prove that \( \delta_\Delta - V^{-1} \) can be solved, it remains to check that
+\begin{equation}
+\label{eq:convo-k}
+ \delta_\Delta * (\Delta_2^{\rm naiv} H)^{*k} \in L^2(M)\quad \text{for \( k \gg 1 \)}.
+\end{equation}
+This is the content of the following lemma.
+
+#+ATTR_HTML: :id lem:reg-conv 
+#+BEGIN_lemma
+#+LATEX: \label{lem:reg-conv}
+Let \( \Omega\subset \mathbb{R}^n \) be a bounded open set,
+\( X,Y:\ (\Omega\times\Omega)\setminus\Delta_\Omega \longrightarrow \mathbb{R} \) be
+continuous functions such that
+\[ 
+\left| X(p,q) \right| \leq \const d(p,q)^{\alpha-n},\qquad \left| Y(p,q) \right|\leq
+\const d(p,q)^{\beta-n}, \qquad  \alpha,\beta \in (0,n) 
+\]
+then
+\[
+ Z(p,q):=\int_\Omega X(p,r)Y(r,q) dV(r)
+\]
+is continuous in \( (\Omega\times\Omega)\setminus\Delta_\Omega \) and
+\[
+\left| Z(p,q) \right| \leq \begin{cases}
+\const d(p,q)^{\alpha +\beta -n}   ,  & \text{if \(\alpha +\beta < n\)} \\
+\const (1 + |\log d(p,q) |)	   , & \text{if \(\alpha +\beta = n\)} \\
+\const	   , & \text{if \(\alpha +\beta > n\)}
+\end{cases}
+\]
+In the case \( \alpha +\beta >n \), \( Z \) admits a continuous extension to \(
+\Omega\times\Omega \).
+The result also holds for compact Riemannian manifolds.
+#+END_lemma
+
+#+BEGIN_proof
+It suffices to consider \( p,q \) closed to each other. Let \( d(p,q) = 2\rho
+\). Decompose \( \Omega = (\Omega\cap B(p, \rho))\cup (\omega \setminus B(q, 3\rho)) \cup
+\Omega\cap (B(q, 3\rho)\setminus B(p,\rho)) \), then
+\begin{equation*}
+\begin{split}
+\left| \int_{\Omega\cap B(p,\rho)}X(p,r)Y(r,q) dV(r) \right| &\leq C\rho^{\alpha + \beta -n}\\
+\left| \int_{\Omega\cap B(q,3\rho)\setminus B(p, \rho)} X(p,r)Y(r,q) dV(r) \right| &\leq C\rho^{\alpha + \beta -n}\\
+\left| \int_{\Omega\setminus B(q,3\rho)}X(p,r)Y(r,q) dV(r) \right| &\leq C\int_\rho^D \frac{dr}{r^{n-\alpha -\beta - 1}}\\
+\end{split}   
+\end{equation*}
+where \( D \) is the diameter of \( \Omega \). For compact Riemannian manifold, take \(
+\rho \ll \delta_0 \), the injectivity radius and use Comparison theorem, one has the same estimates.
+#+END_proof
+
+Back to the proof of Theorem ref:thm:existence-green, one can see that it suffices to
+choose \( k > \frac{n}{2} \) in eqref:eq:convo-k. The rigorous proof is given below.
+
+#+ATTR_LATEX: :options [Proof of Theorem ref:thm:existence-green]
+#+BEGIN_proof
+Carefully do the algebraic part of the above argument, one poses
+\[
+ G(p,q) = H(p,q) + \sum_{i=1}^{k-1} (-\Delta_2^{\rm naiv}H)^{*i} * H + F_k(p,q)
+\]
+where \( F_k(p,q) \) satisfies
+\[
+ \Delta_2 F_k(p,q) = (-\Delta_2^{\rm naiv}H)^{*k} - V^{-1}
+\]
+This is possible if one chooses \( k>n/2 \) since by repeated application of Lemma
+ref:lem:reg-conv, \( (-\Delta_2^{\rm naiv}H)^{*k}\) is continuous. By regularity result of
+equation \( \Delta u = f \), the function \( q \mapsto F_k(p,q) \) is in
+\( C^2(M\setminus \{ p\}) \). Each function \( F_k(p,\cdot) \) is uniquely defined up to a
+constant, choose the constant such that \( \int_M G(p,q) dV(q)=0 \), then the function \(
+p \mapsto \int_M F_k(p,q) dV(q) \) is continuous. The condition 1) of the Theorem can be
+verified without difficulty.
+Moreover, since \( \Delta_2 G(p,q)=0 \) if \( q\ne p \), the function \( q \mapsto G(p,q) \) is \( C^\infty \).
+
+We will prove such \( G(p,q) \) satisfies the statements 2-6, starting from a weaker form 2-)
+of 2), that is we will prove that \( p\mapsto G(p,q) \) is continuous, then using this, we
+will prove 3-6, and eventually come back to prove 2 completely.
+
+For 2-) we will use the following fact:
+
+*Fact.* If \( \Delta u = f \) and \( f\in C^0(M) \) (hence \( u\in C^2(M) \) and
+\( \int_M u = 0\), then one has \( \sup |u| \leq C \sup |f| \) where \( C>0 \) is a constant.
+
+Denote \( \Gamma_i:= (-\Delta_2^{\rm naiv} H)^{*i} \) and apply the result for
+\( u= F(p,\cdot) - V^{-1}\int_M F(p,q) dV(q) \) and \( f=\Gamma_k(p,\cdot) \), one has
+\[
+ \sup \left|F(p,\cdot) - F(r,\cdot) - V^{-1}\int_M \left(F(p,\cdot)-F(r,\cdot)\right)\right| \leq C \sup_q |\Gamma_k(p,q)-\Gamma_k(r,q)|
+\]
+Then the continuity of \( p\mapsto F(p,\cdot) \) under \( C^0 \) topology is given by
+ - \( p\mapsto \int_M F(p,\cdot) \) is continuous by the previous choice of constant.
+ - The uniform continuity of \( \Gamma_k \) on \( M\times M \), which is the result of its
+   continuity and the compactness of \( M\times M \).
+Hence \( p\mapsto G(p,q) \) is continuous on \( M\setminus \{ q\} \) for all \( q\in M \).
+
+For 3), fix \( p\in M \) and let \( r=d(p,q) \) be small, then \( H(p,q) = O(r^{2-n} \),
+\( (\Gamma_i*H)(p,q) = O(r^{2i+2-n}) \) by Lemma ref:lem:reg-conv and \( F(p,q)=O(1) \) if
+\( n>2 \). Hence \( G(p,q)=O(r^{2-n}) \), where here the constant in \( O(r^{2-n}) \), if
+checked carefully, does not depend on \( p \). The case \( n=2 \) can be treated
+similarly.
+For the derivative estimates, note that \( \nabla_q G(p,q) = \nabla_q H(p,q) +
+\sum_{i=1}^{k-1}(\Gamma_i * \nabla_2 H)(p,q) + \nabla_q F(p,q) \) and \( \nabla_q^2 G(p,q) = \nabla_q^2 H(p,q) +
+\sum_{i=1}^{k-1}(\Gamma_i * \nabla_2^2 H)(p,q) + \nabla_q^2 F(p,q) \)
+where the commutative of derivation and integration can be justified by Lebesgue's
+Dominated convergence. In both case, the dominant terms as \( q\to p \) are \( \nabla_q
+H(p,q) \) and \( \nabla^2_q H(p,q) \) respectively, which is \( O(r^{1-n}) \) and \(
+O(r^{-n}) \) where the constants in big-O do not depend on \( p \).
+
+For 4), note that \( H(p,q) \) is the dominant term of \( G(p,q) \) as \( q\to p \) and \(
+H(p,q)>0 \), one see that \( G(p,q) >0 \) in a neighborhood of \( \Delta_M \). By the
+compactness of \( M \) and the continuity of \( G \) outside of \( \Delta_M \), one sees
+that \( G \) is bounded below.
+
+To prove 5), take to transposition of eqref:eq:green-int, i.e. multiply by \(\psi(p)\) and
+integrate, as in Remark ref:rem:transposition, one obtains
+\begin{equation}
+\label{eq:transp-green-int}
+\Delta_q\int_M G(p,q)\psi(p) dV(p) = \psi(q) -V^{-1}\int_M \psi(p) dV(p)
+\end{equation}
+Substitute \( \psi=1 \), one sees that \( q\mapsto \int_M G(p,q) dV(p) \) is harmonic on
+\( M \), hence is constant by compactness of \( M \).
+
+We will now prove 6). It follows from eqref:eq:green-int that
+\begin{equation}
+\label{eq:3}
+ \Delta_q\int_M G(p,q)\psi(q) dV(q) = \Delta_q \psi(q)
+\end{equation}
+Also, from the transposition eqref:eq:transp-green-int, replace \( \psi \) by \(
+\Delta\psi \), one has
+\[
+ \Delta_q\int_M G(p,q)\Delta\psi(p) dV(p) = \Delta_q \psi(q)
+\]
+Swap \( p \) and \( q \) and subtract to eqref:eq:3, one has
+\[
+ \Delta_p\int_M\left(G(p,q) - G(q,p) \right)\Delta\psi(q) dV(q) = 0
+\]
+Hence \(  \int_M\left(G(p,q) - G(q,p) \right)\Delta\psi(q) = C \const \). Integrate by \(
+p\in M \) and use the fact that we chose \(\int_M G(q,p) dV(p) = 0\), one has \( C=0 \),
+meaning that \( \Delta_q \left(G(p,q) - G(q,p) \right) = C(p) \), being independent of \(
+q \). By swapping \( p,q \), one has \( C(p) = -C(q) \) for all \( p\ne q \). Since \( M
+\) contains more than 3 points, these constants are 0. Hence \( G(p,q) = G(q,p) \).
+
+Now coming back to 2), since \( G(p,q) = G(q,p) \), we see that \( p\mapsto G(p,q) \) is
+\( C^\infty \) for all \( q\in M \). It remains to prove that \( p\mapsto \nabla_q^h
+G(p,q) \) is continuous on \( M\setminus \{q\} \), then Schwarz's lemma applies. For that,
+one may try the following argument:
+\[
+ \Delta_p \nabla_q^hG(p,q) = \nabla_q^h\Delta_pG(p,q) = 0,\quad p\in M\setminus[q\}
+\]
+hence \( p\mapsto \nabla_q^h G(p,q) \) is \( C^\infty \). It is however difficult to
+justify the commutativity of derivations, which is equivalent to
+\begin{equation}
+\label{eq:4}
+\int_M \nabla_q^h G(p,q)\Delta \varphi(p) dV(p) = \nabla_q^h\int_M G(p,q) \Delta\varphi(p) dV(p),
+\end{equation}
+that is the ability to derive in the integral sign. A justification for this can be done
+in the case \( h\leq 2 \) using estimates of 3). 
+
+A simpler way is to note that it suffices to prove the continuity of \(p\mapsto
+\nabla_q^hG(p,q)  \)  for \( p \) in a small open set \( V \) with \( \bar V \) not containing \( q \). Then
+claim that \( \Delta_p \nabla_q^h G(p,q) = \nabla_q\Delta_p G(p,q)=0 \) as distributions
+on \( V \), which is equivalent to eqref:eq:4 for all test functions \( \varphi \) with \(
+\supp\varphi\in V \). Then Dominated convergence applies since
+\( |\nabla_q^{h+1}G(p,q)|\leq Cd(q,\bar V)^{1-n-h} \) hence is bounded.
+#+END_proof
+
+
+
+bibliographystyle:alpha
+bibliography:../res/Stage2018.bib

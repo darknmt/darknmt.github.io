@@ -17,6 +17,7 @@ For example ~/html/sheaf-cohomology.html~ should become ~/pdf/sheaf-cohomology.p
 \newcommand\restr[2]{{\left.#1\right|_{#2}}}
 \newcommand{\transp}{\mathop{\rm \,^t}\nolimits}
 \newcommand{\sff}{\mathop{\rm I\*I}\nolimits}
-
+\newcommand{\tr}{\mathop{\rm Tr}\nolimits}
+\newcommand{\const}{\mathop{\rm const }\nolimits}
 \)
 #+END_EXPORT

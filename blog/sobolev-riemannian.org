@@ -1,0 +1,45 @@
+#+TITLE: A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds
+#+AUTHOR: Tien NGUYEN MANH
+#+DATE: Mar 22, 2018
+# +STARTUP: indent
+# +STARTUP: showstars
+
+#+SETUPFILE: ../res/mathsetup.org
+#+INCLUDE: ../res/include.org
+
+
+
+
+This post is the first part of my reading note for cite:aubin_nonlinear_1998. The second
+part is [[file:green-function.org][here]].
+
+In this part, we will first establish the Sobolev imbeddings theorem and the Kondrachov
+theorem for Riemannian manifolds from the Euclidean version of these theorems. This
+includes 2 tasks:
+1. Compare the volume form of the Riemannian metric \( g \) near a point and
+   that of the Euclidean metric on the tangent space at that point. Theorem
+   ref:thm:vol-comparison gives an equivalent between the integral under \( g \) and the integral
+   under Euclidean metric via the exponential map.
+2. Reasonably use partition of unity to establish global results from local results (the
+   Euclidean case). We will need a covering lemma (Calabi's lemma), which essentially reduces to a
+   combinatorial result (Vitali's covering lemma).  
+
+Finally, we will apply imbedding theorems to solve the equation \( -\Delta u = f \) on a
+Riemannian manifold when \( f \) is square-integrable.
+
+* Local comparison with Euclidean space
+#+ATTR_LATEX: :options [comparison of volume forms]
+#+ATTR_HTML: :id thm:vol-comparison :btit (comparison of volume forms) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:vol-comparison}
+
+#+END_theorem
+
+* Some covering lemmas
+* Sobolev imbeddings for Riemannian manifolds
+* Kondrachov theorem for compact Riemannian manifolds
+* Solving \( \Delta u = f \) on a Riemannian manifold.
+
+
+bibliographystyle:alpha
+bibliography:../res/Stage2018.bib

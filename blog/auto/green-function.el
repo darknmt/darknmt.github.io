@@ -1,5 +1,5 @@
 (TeX-add-style-hook
- "symmetric-space"
+ "green-function"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("article" "11pt")))
@@ -45,14 +45,28 @@
     "tr"
     "const")
    (LaTeX-add-labels
-    "sec:orgf40c825"
-    "eq:sxreverse"
-    "org5e40a8d"
-    "sec:org7980132"
-    "orgec3332a"
-    "sec:orga93046c"
-    "orgef9ee0b"
-    "orgd361322")
+    "rem:green-riem-surf"
+    "eq:lap-complex"
+    "sec:org5cade25"
+    "lem:lap-radial"
+    "rem:lap-rad"
+    "eq:lap-Hpq"
+    "prop:green-formula"
+    "eq:green-formula"
+    "rem:transposition"
+    "eq:transposition-parametrix"
+    "sec:org5aec0dd"
+    "thm:existence-green"
+    "eq:green-int"
+    "eq:G-bound"
+    "eq:derivative-bound"
+    "eq:convo-k"
+    "lem:reg-conv"
+    "eq:transp-green-int"
+    "eq:3"
+    "eq:4")
+   (LaTeX-add-bibliographies
+    "../res/Stage2018")
    (LaTeX-add-amsthm-newtheorems
     "remark"
     "theorem"

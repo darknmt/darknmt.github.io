@@ -1,17 +1,10 @@
 (TeX-add-style-hook
- "symmetric-space"
+ "sobolev-riemannian"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("article" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
-   (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
     "article"
@@ -45,15 +38,13 @@
     "tr"
     "const")
    (LaTeX-add-labels
-    "sec:orgf40c825"
-    "eq:sxreverse"
-    "org5e40a8d"
-    "sec:org7980132"
-    "orgec3332a"
-    "sec:orga93046c"
-    "orgef9ee0b"
-    "orgd361322")
-   (LaTeX-add-amsthm-newtheorems
+    "sec:orgb6d71b5"
+    "thm:vol-comparison"
+    "sec:org5678b4c"
+    "sec:org988defc"
+    "sec:org8b2f574"
+    "sec:org8cc1a23")
+   (LaTeX-add-environments
     "remark"
     "theorem"
     "lemma"
@@ -63,6 +54,8 @@
     "problem"
     "exampl"
     "definition"
-    "propdef"))
+    "propdef")
+   (LaTeX-add-bibliographies
+    "../res/Stage2018"))
  :latex)
 
