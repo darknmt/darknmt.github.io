@@ -238,7 +238,7 @@ In particular \( I(Y) = \langle \dot Y(r), Y(r) \rangle \leq I(Z) \). The equali
 if and only if \( W\equiv 0 \), i.e. \( Z\equiv Y \).
 #+END_proof
 
-* Local comparison with Euclidean space
+* Local comparison with space forms
 
 Our goal in this section is to prove the following Comparison Theorem. Before going to the
 precise statement, let us explain the notation.
