@@ -18,7 +18,7 @@ solution \( u \) of equation \( \Delta u = f\) by
    -(2\pi)^{-1}\log(r) \) if \( n=2 \)
  - then tensoring \( G  \) by \( f \), one has the solution \( u=G* f \) of \( \Delta u = f \)
 
-To generalise this argument for Riemannian manifolds, there are two points that have to be
+To generalise this argument for Riemannian manifolds, there are a few points that have to be
 modified:
 1. Since it does not make sense to add/substract points of a manifold, one will need to
    find different fundamental solutions for different points, so instead of fundamental
@@ -33,12 +33,11 @@ modified:
    a conjecture, according to cite:berger_panoramic_2003), one will cut-off the Euclidean
    solution, try to solve the equation near \( p \) and later add a correcting term. This
    inspires the definition of parametrix.
-
-Another reason that we have to approximate the exact solution by parametrix, that also
-explain the iteration in Theorem ref:thm:existence-green, is that the expression of
-Laplacian, even in the geodesic polar coordinate and even near the origin, involves the
-metric, hence the Euclidean fundamental solution is not yet a solution even near the
-origin.
+3. Another reason that we have to approximate the exact solution by parametrix, that also
+   explain the iteration in Theorem ref:thm:existence-green, is that the expression of
+   Laplacian, even in the geodesic polar coordinate and even near the origin, involves the
+   metric, hence the Euclidean fundamental solution is not yet a solution even near the
+   origin.
 
 #+ATTR_HTML: :id rem:green-riem-surf
 #+BEGIN_remark
@@ -183,9 +182,9 @@ the distribution derivative.
    \end{equation}
    The equation eqref:eq:transposition-parametrix is called the _transposition_ of
    equation eqref:eq:green-formula and what we have just done is a rigourous proof of the
-   following heuristic justification of eqref:eq:transposition-parametrix: Taking the
+   following heuristic justification of eqref:eq:transposition-parametrix: "Take the
    derivative \( \Delta_q \) inside the integral, then use \( \int_M \delta_p(q)\phi(p)
-   dV(p) \text{ "=" } \phi(q) \).
+   dV(p) \text{ "=" } \phi(q) \)".
 #+END_remark
 
 

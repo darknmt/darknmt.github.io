@@ -1,6 +1,17 @@
 body
 {
 }
+.figure-ref {
+    display: block;
+    float:right;
+    margin:10px
+    font-style: italic;
+    text-align: center;
+    color: #F78536;
+    font-weight: 600;
+    border-bottom: 1px solid;
+    border-bottom-style: dashed;
+    }
 .info {
     display: block;
     margin: 50px 70px 50px 70px;

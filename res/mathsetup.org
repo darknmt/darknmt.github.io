@@ -3,6 +3,7 @@
 #+LATEX_HEADER: \usepackage{amsthm}
 #+LATEX_HEADER: \usepackage{amsmath,amscd,amssymb,mathtools}
 #+LATEX_HEADER: \usepackage{tikz-cd}
+#+LATEX_HEADER: \usepackage{svg}
 
 #+BEGIN_COMMENT
 #+LATEX_HEADER: \DeclareMathOperator{\im}{Im}

@@ -5,12 +5,12 @@
                      '(("article" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -32,7 +32,8 @@
     "amsthm"
     "amscd"
     "mathtools"
-    "tikz-cd")
+    "tikz-cd"
+    "svg")
    (TeX-add-symbols
     '("transp" ["argument"] 1)
     '("restr" 2)
@@ -54,7 +55,7 @@
     "fig:morph-short-sequence"
     "thm:prism-operator"
     "fig:homotopy-operator"
-    "sec:org35cae01"
+    "sec:org165adfa"
     "thm:Kunneth"
     "sec:org62ef2d8"
     "sec:org65911e0"
@@ -62,7 +63,7 @@
     "lem:exactness"
     "thm:uniqueness-cohomology"
     "thm:fine-resolution"
-    "sec:org165adfa"
+    "sec:org5af0502"
     "sec:orgbd2adbd"
     "thm:de-rham-singular"
     "sec:org91022b2"

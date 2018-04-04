@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-03-10 Sat 21:26 -->
+<!-- 2018-04-04 Wed 17:38 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -267,11 +267,51 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
+<li><a href="#orgf1b129f">LaTeX in Inkscape: Incompatibility between <code>ghostscript</code> and <code>pstoedit</code> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-03-30 Fri&gt;</span></span></a></li>
 <li><a href="#org5c8db4d">A suspicious formula</a></li>
 <li><a href="#org8752665">LaTeX indentation in org-mode <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-02-20 Tue&gt;</span></span></a></li>
 <li><a href="#org9ba4fd2">A (decent) map of mathematics <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-10-17 Tue&gt;</span></span></a></li>
 <li><a href="#org5aa26c3">My 2016-2017 internship <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-07-31 Mon&gt;</span></span></a></li>
 </ul>
+</div>
+</div>
+
+<div id="outline-container-orgf1b129f" class="outline-2">
+<h2 id="orgf1b129f">LaTeX in Inkscape: Incompatibility between <code>ghostscript</code> and <code>pstoedit</code> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-03-30 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-orgf1b129f">
+<p>
+Since Ghostscript 9.22, certain flags (e.g. <code>dREALLYDEALYBIND</code>) are deprecated and <code>pstoedit</code>,
+a piece of software that Inkscape uses to render LaTeX, remains unchanged since 2005. This
+makes Inkscape users unable use LaTeX. Textext developers claims that they will switch to
+<code>pdf2svg</code> frontend in their version 0.8 to avoid this trouble with <code>pstoedit</code>. Meanwhile,
+the only solution seems to be downgrade ghostscript to 9.21 each time one uses Inkscape.
+In ArchLinux, one can downgrade a package using <code>pacman</code>: 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">ls /var/cache/pacman/pkg/ | grep ghostscript
+pacman -U /var/cache/pacman/pkg/package-old_version.pkg.tar.xz
+</pre>
+</div>
+
+<p>
+or a AUR package called <code>downgrade</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">downgrade ghostscript
+</pre>
+</div>
+
+<p>
+I had good experience with both of them (<code>pacman</code> to downgrade <code>php</code> to be compatible
+with <code>nextcloud</code>, and <code>downgrade</code> for ghostscript)
+</p>
+
+
+<p>
+The problem is well documented <a href="https://bbs.archlinux.org/viewtopic.php?id=224340">here</a> and <a href="https://bitbucket.org/pitgarbe/textext/issues/48/ghostscript-still-bug-under-linux">here</a>.
+</p>
 </div>
 </div>
 
@@ -459,7 +499,7 @@ also in this period that I start this blog. The memoire can be founded here [<a 
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2018-03-10 Sat 21:26. <br>
+Last updated 2018-03-30 Fri 10:23. <br>
 </div>
 </div>
 </body>

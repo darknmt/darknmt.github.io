@@ -2,6 +2,31 @@
 #+OPTIONS: toc:1 num:nil
 # [[file:../img/ly-ngu-vong-nguyet.jpg]]
 
+* LaTeX in Inkscape: Incompatibility between ~ghostscript~ and ~pstoedit~ <2018-03-30 Fri>
+Since Ghostscript 9.22, certain flags (e.g. ~dREALLYDEALYBIND~) are deprecated and ~pstoedit~,
+a piece of software that Inkscape uses to render LaTeX, remains unchanged since 2005. This
+makes Inkscape users unable use LaTeX. Textext developers claims that they will switch to
+~pdf2svg~ frontend in their version 0.8 to avoid this trouble with ~pstoedit~. Meanwhile,
+the only solution seems to be downgrade ghostscript to 9.21 each time one uses Inkscape.
+In ArchLinux, one can downgrade a package using ~pacman~: 
+
+#+BEGIN_SRC bash
+ls /var/cache/pacman/pkg/ | grep ghostscript
+pacman -U /var/cache/pacman/pkg/package-old_version.pkg.tar.xz
+#+END_SRC
+
+or a AUR package called ~downgrade~
+
+#+BEGIN_SRC bash
+downgrade ghostscript
+#+END_SRC
+
+I had good experience with both of them (~pacman~ to downgrade ~php~ to be compatible
+with ~nextcloud~, and ~downgrade~ for ghostscript)
+
+
+The problem is well documented [[https://bbs.archlinux.org/viewtopic.php?id=224340][here]] and [[https://bitbucket.org/pitgarbe/textext/issues/48/ghostscript-still-bug-under-linux][here]].
+
 * A suspicious formula
 
   I believe the second lemma in Section 7B of cite:eells_harmonic_1964 is incorrect. To
