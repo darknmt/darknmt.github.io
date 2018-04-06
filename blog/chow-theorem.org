@@ -1,0 +1,263 @@
+#+TITLE: Algebraisation theorems I: Chow's theorem
+#+AUTHOR: Tien NGUYEN MANH
+#+DATE: Apr 5, 2018
+# +STARTUP: indent
+# +STARTUP: showstars
+
+#+SETUPFILE: ../res/mathsetup.org
+#+INCLUDE: ../res/include.org
+
+We will prove in is this post a algebraisation result of Chow. The arguments follow the
+course given by Jean-Benoît Bost at Institut de Mathématiques d'Orsay. 
+
+#+ATTR_LATEX: :options [Chow]
+#+ATTR_HTML: :id thm:chow :btit (Chow) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:chow}
+Every analytic compact subvariety \( V \) of \( \mathbb{P}^N(\mathbb{C}) \) is
+algebraic, i.e. \( V \) is the complex points of a subscheme of  \( \mathbb{P}^N_{\mathbb{C}} \).
+#+END_theorem
+
+To fix the notation, \( X(\mathbb{C}) \) denotes the analytic space formed by
+\( \mathbb{C} \)-points of the scheme \(X \) over \( \mathbb{C} \). \( X(\mathbb{C}) \) is
+equipped with the analytic topology, while \( X \) is equipped with the Zariski
+topology. If \( L \) is an algebraic line bundle (i.e. invertible sheaf) over \( X \),
+\( L^{\rm an} \) denotes the natural analytification of \( L \), that is the holomorphic
+line bundle over \( X(\mathbb{C}) \) given by \( L \) and the fact that polynomials are
+holomorphic. \( \Gamma(X,L) \) denotes the space of global algebraic sections of \( L \)
+and \( \Gamma^{\rm an}(X(\mathbb{C}),L^{\rm an}) \) denotes the space of global analytic
+(holomorphic) sections of \( L^{\rm an} \). Again, since polynomials are holomorphic
+functions, there is a natural map \( \Gamma(X, L) \longrightarrow \Gamma^{\rm
+an}(X(\mathbb{C},L^{\rm an}) \) converting an algebraic section \( s \) to an analytic
+section \( s^{\rm an} \).
+
+The first proof of Chow's theorem that I learned is from this [[https://webusers.imj-prg.fr/~claire.voisin/Articlesweb/cours.pdf][lecture note]]. It starts with
+a remark that the Theorem is easy in codimension 1. In fact, varieties of codimension 1 are
+divisors and classes of divisors are elements of Picard group, i.e. line bundles of
+\( \mathbb{P}^N_{\mathbb{C}}\) and \(\mathbb{P}^N(\mathbb{C}) \), and each divisor in a
+class \( L \) corresponds to a zero set of a (analytic or algebraic) of the line bundle \(
+L \). Therefore the case of codimension 1 follows from the computational miracles:
+1. All analytic line bundle of \( \mathbb{P}^N(\mathbb{C}) \) are of the form \(
+   \mathcal{O}(d) \) hence are algebraic.
+2. All holomorphic global sections of \( \mathcal{O}(d) \) are polynomial, hence algebraic.
+In the higher codimension, one passes to the Grassmannians.
+
+The proof that we will present is also done by counting global sections of line bundles,
+but with argument on dimension rather than divisors.
+
+
+* Algebraic foreplay
+The strategy is to, given a projective analytic variety \( V \), consider the Zariski
+closure \( Z = \overline V^{\rm Zar} \) of \( V \), and prove that the (algebraic)
+dimension of \( Z \) equals the (analytic) dimension of \( V \) then conclude that \( V=Z
+\). 
+
+Reasonably, the direction \( \dim Z
+\geq \dim V \) is easier and it suffices to show that there is a point which is both
+algebraically regular and analytically regular. The other direction \( \dim Z \leq \dim V
+\) is less obvious and will be proved using Proposition ref:prop:alg and Proposition
+ref:prop:ana which together say that the dimension can be calculated as the order
+of the number of global sections of \( L^{\otimes \eta} \) when \( \eta \to \infty \),
+where \( L \) is a line bundle.
+
+The correct statement of the Propositions and the proof of Theorem ref:thm:chow are given
+below. 
+
+#+ATTR_LATEX: :options [Algebraic sections]
+#+ATTR_HTML: :id prop:alg :btit (Algebraic sections) 
+#+BEGIN_proposition
+#+LATEX: \label{prop:alg}
+For all closed irreducible algebraic set \( Z\ne \emptyset \) of \(
+\mathbb{P}^N(\mathbb{C}) \), abusively viewed as reduced \(
+\mathbb{C} \)-scheme, there exists a line bundle \( L \) over \( Z \)  and \( c\in \mathbb{R}_{>0} \) such that 
+\[
+\forall \eta \in \mathbb{N}, \quad \dim_{\mathbb{C}}\Gamma(Z, L^{\otimes \eta}) \geq
+c\eta^{\dim Z}
+\]
+where \( \dim Z \) is the dimension of the scheme \( Z \).  
+#+END_proposition
+
+#+ATTR_LATEX: :options [Analytic sections]
+#+ATTR_HTML: :id prop:ana :btit (Analytic sections) 
+#+BEGIN_proposition
+#+LATEX: \label{prop:ana}
+Let \( M \) be a compact analytic variety of \( \mathbb{P}^N(\mathbb{C}) \) and \( L \) be
+an analytic line bundle over \( M \). Then there exists \( C\in \mathbb{R}_{>0} \) such
+that
+\[
+\forall \eta\in \mathbb{N},\quad \dim_{\mathbb{C}}\Gamma^{\rm an}(M, L^{\otimes \eta})\leq
+C\eta^{\dim M}
+\]
+#+END_proposition
+
+The first one is easy: Take \( L:= \restr{\mathcal{O}(1)}{Z} \) then \(
+\Gamma(Z,L^{\otimes \eta} = \Gamma(Z, \mathcal{O}(\eta)) = \mathbb{C}[X_0,\dots, X_N]_\eta
+/I(Z)_{\eta}\), which is of dimension \( \frac{1}{d!}\deg Z. \eta^d + O(\eta^{d-1}) \)
+where \( d=\dim Z \). This is usually taken to be the definition of \( \dim Z \) and \(
+\deg Z \) (definition by Hilbert's polynomial). 
+
+Proposition ref:prop:alg also has an
+elementary proof as follow. By Noether's normalisation, there exists a linear projection
+\(\pi: \mathbb{P}^N_{\mathbb{C}} \longrightarrow \mathbb{P}^N_{\mathbb{C}} \) whose
+restriction to \( Z \) is a finite morphism. Take \( L := \pi^*
+\mathcal{O}(1)_{\mathbb{P}^d} \). Since the pullback \(
+\Gamma(\mathbb{P}^d_{\mathbb{C}},\mathcal{O}(\eta)) \longrightarrow \Gamma(Z, L^{\otimes
+\eta}) \) is injective (by surjectivity of \( \restr{\pi}{Z} \)), the space of global sections of \(
+L^{\otimes \eta } \) is of dimension at least \(
+\dim_{\mathbb{C}}\Gamma(\mathbb{P}^d,\mathcal{O}(\eta)) = \binom{\eta + d}{d} =
+\frac{1}{d!}\eta^d + O(\eta^{d-1}) \)
+
+The proof of Proposition ref:prop:ana is deeper and will be proved later in the next
+section.
+
+We now give a detailed proof of Chow's Theorem ref:thm:chow from the 2 Propositions.
+
+#+BEGIN_proof
+With the definition of \( V \) and \( Z \) as above, we see that if \( V \) is connected
+then \( Z \) is irreducible. In fact, if \( W \hookrightarrow  \mathbb{A}^N(\mathbb{C}) \)
+is a connected analytic affine variety then \( \overline W^{\rm Zar} \) is irreducible, as \(
+\Gamma(W,\mathcal{O}^{\rm an}_W) \) is an integral domain (this is where we use the
+connectivity) and
+\[
+ I(\overline W^{\rm Zar}) = \ker \left(\mathbb{C}[X_1,\dots X_N] \longrightarrow \Gamma(W,
+\mathcal{O}^{\rm an}_W)\right)
+\]
+therefore is a prime ideal. Apply the result with \( W \) being the cone of \( Z \) in \(
+\mathbb{A}^{N+1}(\mathbb{C}) \), one sees that \( Z \) is irreducible.
+
+
+We will prove that \( \dim Z = \dim V \) where the LHS concerns the algebraic dimension of
+a scheme and the RHS concerns the analytic dimension, starting with the difficult
+direction \( \dim Z \leq \dim V \). Denote by \( \iota : V \hookrightarrow Z \) the
+inclusion. From the definition of \( Z:=\overline V^{\rm Zar} \), the map
+\[
+ \Gamma(Z, L^{\otimes \eta}) \longrightarrow  \Gamma^{\rm an}(V,\iota^* L^{\rm an})
+\]
+sending an algebraic section of on \( Z \) to the analytification of its restriction over
+\( V \), is injective. Therefore \( \dim_{\mathbb{C}}\Gamma(Z,L^{\otimes \eta}) \leq
+\dim_{\mathbb{C}}\Gamma(V,{L^{\rm an}}^{\otimes\eta}) \), take \( L =
+\restr{\mathcal{O}(1)}{Z} \) the inequality follows from two Propositions. 
+
+
+To see that \( \dim V\leq \dim Z \), it suffices to prove that there exists a point in \(
+V \) which is also a regular point of \( Z \) since the 2 notions of dimension coincide at
+regular points. Recall that one can always write
+\[
+ Z = Z_{\rm reg} \sqcup Z_{\rm sing}
+\]
+where \( Z_{\rm reg} \) is Zariski-open and \( Z_{\rm sing} \) is Zariski-closed and \(
+Z_{\rm reg}(\mathbb{C}) \) is a smooth analytic variety of dimension \( \dim Z \). If \(
+V\cap Z_{\rm reg} = \emptyset \) then \( V\subset Z_{\rm sing}(\mathbb{C}) \), taking
+Zariski closure, one see that \( Z = Z_{\rm sing} \), which is contradictory. Hence \(
+V\cap Z_{\rm reg}(\mathbb{C})\ne \emptyset \) and one has \( \dim V \leq\dim Z \). Hence \(
+\dim V = \dim Z \).
+
+
+To conclude, one needs the following two additional facts, the second of which is not easy
+to prove. Let \( X \) be a reduced quasi-projective scheme over \( \mathbb{C} \). \( X \)
+is equipped with the Zariski topology and \( X(\mathbb{C}) \) is equipped with the
+analytic topology, then
+
+#+ATTR_HTML: :id prop:fact-1
+#+BEGIN_proposition
+#+LATEX: \label{prop:fact-1}
+For all Zariski open, dense subset \( U\subset X \), \( U(\mathbb{C}) \) is dense in \(
+X(\mathbb{C}) \) in the analytic topology.
+#+END_proposition
+
+#+ATTR_HTML: :id prop:fact-2
+#+BEGIN_proposition
+#+LATEX: \label{prop:fact-2}
+If \( X \) is connected in Zariski topology (for example, if \( X \) is irreducible) then \(
+X(\mathbb{C}) \) is connected in analytic topology
+#+END_proposition
+
+By Proposition ref:prop:fact-2, \( Z_{\rm reg}(\mathbb{C}) \) is connected in analytic
+topology. Moreover, in analytic topology of \( Z_{\rm reg}(\mathbb{C}) \),  \( V\cap
+Z_{\rm reg}(\mathbb{C}) \) is obviously closed and is also open by equality of
+dimension. One therefore has \( Z_{\rm reg}(\mathbb{C})\subset V \). By Proposition
+ref:prop:fact-1, \( Z_{\rm reg}(\mathbb{C}) \) is dense in \( Z(\mathbb{C}) \), one has \( V=Z(\mathbb{C}) \).
+#+END_proof
+
+
+* Proof of the analytic result
+We suppose that \( M \) is connected and of dimension \( n \). By compactness, one covers \( M  \) by finitely many
+charts \( \varphi_\alpha: U_\alpha\subset M \xrightarrow{\sim} \mathbb{B}^n(1) \), \(
+\alpha\in \overline{1,N} \), over
+which \( L \) is trivialised. Note by \( p_\alpha:=\varphi_\alpha^{-1}(0) \) the centers
+of these balls and by \( s_{\alpha} \) the "unit" section (i.e. everywhere \( \ne 0 \)) of
+\( \restr{L}{U_\alpha} \). Then Proposition ref:prop:ana is straightforward consequence of
+the following
+
+#+ATTR_HTML: :id prop:mult 
+#+BEGIN_proposition
+#+LATEX: \label{prop:mult}
+There exists \( c\in \mathbb{R}_{>0} \) such that for all \( \eta\in \mathbb{Z}_{>0} \),
+\( s\in \Gamma(M,L^{\otimes \eta} \), 
+\[
+ {\rm mult}_{p_\alpha} s > c\eta \quad \forall \alpha\in \overline{1,N} \implies s\equiv 0
+\]
+#+END_proposition
+
+As claimed, proof that Proposition ref:prop:mult implies Proposition ref:prop:ana is not
+difficult.
+
+#+ATTR_LATEX: :options [Proof that Proposition \ref{prop:mult} imples Proposition \ref{prop:ana}]
+#+BEGIN_proof
+By Proposition ref:prop:mult, a section \( s \) of \( L^{\otimes \eta} \) is uniquely
+defined by the first \(d:= \lfloor c\eta \rfloor \) terms of its series development at \(
+p_\alpha \) (viewed in charts \( \varphi_{\alpha} \)), hence the (complex) dimension of \( \Gamma(M, L^{\otimes\eta}) \) is at most 
+\[
+ N. \left(1 + \binom{n}{1} + \dots \binom{n+d}{d} \right) \leq C \eta^n
+\]
+#+END_proof
+
+#+BEGIN_remark
+Note that we adapt the /relative point of view/ for analytic sections, that is we consider
+these sections locally as holomorphic functions, and not as meromorphic functions as often
+in algebraic geometry.
+#+END_remark
+
+Proposition ref:prop:mult is proved using Schwarz's Lemma:
+
+#+ATTR_LATEX: :options [Proof of Proposition \ref{prop:ana}]
+#+BEGIN_proof
+Fix a \( C^\infty \) metric \( \|\cdot\| \) on \( L \), which induces a metric, still
+noted by \( \|\cdot\| \), on the tensor product
+\( L^{\otimes\eta} \). Since \( s_\alpha^\eta \) are still invertible sections of
+\( \restr{L^{\otimes \eta}}{U_{\alpha}} \) there exists holomorphic function
+\( f_\alpha\in \mathcal{O}^{\rm an}(\mathbb{B}^n(1)) \) such that
+\( \restr{s}{U_\alpha} = f_\alpha \circ \varphi_\alpha \ s_\alpha^{\otimes \eta} \).
+
+We will need the following version of Schwarz's lemma
+
+#+ATTR_LATEX: :options [Schwarz]
+#+ATTR_HTML: :id lem:schwarz :btit (Schwarz) 
+#+BEGIN_lemma
+#+LATEX: \label{lem:schwarz}
+Let \( R\in \mathbb{R}_{>0} \) and \( i\in \mathbb{N} \). For any holomorphic function \(
+f\in \mathcal{O}^{\rm an}(\mathbb{B}^n(R)) \) such that \( {\rm mult}_0\ f\geq i \), one
+has
+\[
+\left|f(x)\right| \leq \left(\frac{|z|}{R}\right)^i \sup_{\mathbb{B}^n(R)}|f|
+\]
+#+END_lemma
+
+
+By compactness of \( M \), there exists \( r<1 \) such that
+\( M=\bigcup_\alpha \varphi_\alpha^{-1}(\mathbb{B}_i^n(r)) \). Choose a \( R\in (r,1) \),
+one has
+\begin{equation*}
+\begin{split}
+\|s\|_{\infty} &=\sup_M \|s\| = \max_\alpha \sup_{r \mathbb{B}^n_\alpha}\|s\|\\
+	       &= \max_\alpha \sup_{r \mathbb{B}^n_\alpha}\|s_\alpha\|^\eta \sup_{r \mathbb{B}^n_\alpha}|f_\alpha|\\
+ (\text{By Schwarz})\qquad	       &\leq \max_\alpha \sup_{r \mathbb{B}^n_\alpha}\|s_\alpha\|^\eta \left(\frac{r}{R}\right)^{c\eta} \sup_{R\mathbb{B}^n_\alpha}|f_\alpha|\\
+ 	   	&\leq  \left(\frac{r}{R}\right)^{c\eta} \max_\alpha \left(\sup_{r \mathbb{B}^n_\alpha}\|s_\alpha\|^\eta\sup_{R\mathbb{B}^n_\alpha} (\|s_\alpha^{\otimes\eta}\|^{-1}) \sup_{R\mathbb{B}^n_\alpha}  \|s\|\right)\\
+		&\leq C^\eta \left(\frac{r}{R}\right)^{c\eta}\|s\|_{\infty}
+\end{split}   
+\end{equation*}
+where \( C = \max_\alpha \left[\sup_{r
+\mathbb{B}^n_\alpha}\|s_\alpha\|\sup_{R\mathbb{B}^n_\alpha} (\|s_\alpha\|^{-1})
+\right]\). Now it suffices to take \( c > \log C /\log (R/r) \).
+#+END_proof
+
