@@ -214,7 +214,7 @@ p_\alpha \) (viewed in charts \( \varphi_{\alpha} \)), hence the (complex) dimen
 
 #+BEGIN_remark
 Note that we adapt the /relative point of view/ for analytic sections, that is we consider
-these sections locally as holomorphic functions, and not as meromorphic functions as often
+these sections locally as holomorphic functions, and not as meromorphic functions as usual
 in algebraic geometry.
 #+END_remark
 
@@ -256,8 +256,9 @@ one has
 		&\leq C^\eta \left(\frac{r}{R}\right)^{c\eta}\|s\|_{\infty}
 \end{split}   
 \end{equation*}
-where \( C = \max_\alpha \left[\sup_{r
+where
+\( C = \max_\alpha \left[\sup_{r
 \mathbb{B}^n_\alpha}\|s_\alpha\|\sup_{R\mathbb{B}^n_\alpha} (\|s_\alpha\|^{-1})
-\right]\). Now it suffices to take \( c > \log C /\log (R/r) \).
+\right]\). Now it suffices to take \( c > \log C /\log (R/r) \).  
 #+END_proof
 
