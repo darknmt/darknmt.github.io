@@ -15,6 +15,6 @@ Here is my [[http://172.17.71.229/dokuwiki/doku.php][DokuWiki]] and personal [[h
 
 
 
-#+attr_html: :width 30%
-[[file:../img/KR_zzz.gif]]
+#+ATTR_HTML: :width 60%
+file:../img/simple-portrait.png
  

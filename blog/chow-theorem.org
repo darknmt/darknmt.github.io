@@ -7,7 +7,7 @@
 #+SETUPFILE: ../res/mathsetup.org
 #+INCLUDE: ../res/include.org
 
-We will prove in is this post a algebraisation result of Chow. The arguments follow the
+We will prove in this post an algebraisation result of Chow. The arguments follow the
 course given by Jean-Benoît Bost at Institut de Mathématiques d'Orsay. 
 
 #+ATTR_LATEX: :options [Chow]
@@ -35,9 +35,9 @@ The first proof of Chow's theorem that I learned is from this [[https://webusers
 a remark that the Theorem is easy in codimension 1. In fact, varieties of codimension 1 are
 divisors and classes of divisors are elements of Picard group, i.e. line bundles of
 \( \mathbb{P}^N_{\mathbb{C}}\) and \(\mathbb{P}^N(\mathbb{C}) \), and each divisor in a
-class \( L \) corresponds to a zero set of a (analytic or algebraic) of the line bundle \(
+class \( L \) corresponds to a zero set of an (analytic or algebraic) of the line bundle \(
 L \). Therefore the case of codimension 1 follows from the computational miracles:
-1. All analytic line bundle of \( \mathbb{P}^N(\mathbb{C}) \) are of the form \(
+1. All analytic line bundles of \( \mathbb{P}^N(\mathbb{C}) \) are of the form \(
    \mathcal{O}(d) \) hence are algebraic.
 2. All holomorphic global sections of \( \mathcal{O}(d) \) are polynomial, hence algebraic.
 In the higher codimension, one passes to the Grassmannians.
@@ -112,7 +112,9 @@ section.
 
 We now give a detailed proof of Chow's Theorem ref:thm:chow from the 2 Propositions.
 
+#+ATTR_LATEX: :options [Proof of Theorem \label{thm:chow}]
 #+BEGIN_proof
+#+HTML_export: Proof of Theorem ref:thm:chow
 With the definition of \( V \) and \( Z \) as above, we see that if \( V \) is connected
 then \( Z \) is irreducible. In fact, if \( W \hookrightarrow  \mathbb{A}^N(\mathbb{C}) \)
 is a connected analytic affine variety then \( \overline W^{\rm Zar} \) is irreducible, as \(
@@ -193,7 +195,7 @@ the following
 #+BEGIN_proposition
 #+LATEX: \label{prop:mult}
 There exists \( c\in \mathbb{R}_{>0} \) such that for all \( \eta\in \mathbb{Z}_{>0} \),
-\( s\in \Gamma(M,L^{\otimes \eta} \), 
+\( s\in \Gamma(M,L^{\otimes \eta}) \), 
 \[
  {\rm mult}_{p_\alpha} s > c\eta \quad \forall \alpha\in \overline{1,N} \implies s\equiv 0
 \]

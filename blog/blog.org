@@ -3,8 +3,11 @@
 
 
 * Stage 2018
-***** TODO [#A] [[file:green-function.org][Parametrix and Green's function of Laplacian operator on Riemannian manifolds]] <2018-03-22 Thu>
-***** TODO [#A] [[file:sobolev-riemannian.org][A comparison theorem, Sobolev imbeddings and Konrachov tzheorem for Riemannian manifolds]] <2018-03-22 Thu>
+***** TODO [#A] [[file:harmonic-map-existence.org][Existence of harmonic maps between Riemannian manifolds]] <2018-05-06 Sun>
+***** TODO [#A] [[file:elliptic-parabolic.org][Elliptic and parabolic equations on compact manifolds]] <2018-04-30 Mon>
+***** TODO [#A] [[file:interpolation-sobolev.org][Interpolation theory and Sobolev spaces on compact manifolds]] <2018-04-30 Mon>
+***** [#A] [[file:green-function.org][Parametrix and Green's function of Laplacian operator on Riemannian manifolds]] <2018-03-22 Thu>
+***** [#A] [[file:sobolev-riemannian.org][A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds]] <2018-03-22 Thu>
 ***** TODO [#A] [[file:harmonic-maps.org][Harmonic maps of Riemannian manifolds]] <2018-02-20 Tue>
 
 * Orsay 2017-2018

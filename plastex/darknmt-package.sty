@@ -1,0 +1,31 @@
+\ProvidesPackage{darknmt-package}
+\RequirePackage{amsthm}
+
+\newtheorem{remark}{Remark}  
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{conjecture}[theorem]{Conjecture} 
+\newtheorem{proposition}{Proposition}[theorem]
+\newtheorem{problem}{Problem} 
+\newtheorem{exampl}{Example} 
+\newtheorem{definition}{Definition} 
+\newtheorem{propdef}[definition]{Proposition-Definition}
+
+\newcommand{\im}{\mathop{\rm Im}\nolimits}
+\newcommand{\supp}{\mathop{\rm supp}\nolimits}
+\newcommand{\ord}{\mathop{\rm ord}\nolimits}
+\newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
+\newcommand{\vol}{\mathop{\rm vol}\nolimits}
+\newcommand*{\transp}[2][-3mu]{\ensuremath{\mskip1mu\prescript{\smash{\mathrm t\mkern#1}}{}{\mathstrut#2}}}
+\newcommand{\sff}{\mathop{\rm I\*I}\nolimits}
+\newcommand{\tr}{\mathop{\rm Tr}\nolimits}
+\newcommand{\const}{\mathop{\rm const }\nolimits}
+
+
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+\left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+#1 % the function
+\vphantom{\big|} % pretend it's a little taller at normal size
+\right|_{#2} % this is the delimiter
+}}

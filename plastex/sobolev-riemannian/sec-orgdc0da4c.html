@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [ ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds: Local comparison with space forms</title>
+<link rel="next" href="sec-org5678b4c.html" title="Some covering lemmas" />
+<link rel="prev" href="sec-org0d6bfe8.html" title="Quick recall of Jacobi fields, Index inequality" />
+<link rel="up" href="index.html" title="A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds" />
+<link rel="stylesheet" href="styles/theme-green.css" />
+</head>
+
+<body>
+<nav class="toc">
+<svg  class="icon icon-cross close-toc"><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sec-org0d6bfe8.html"><span class="toc_ref">1</span> <span class="toc_entry">Quick recall of Jacobi fields, Index inequality</span></a>
+ </li>
+<li class=" active current">
+  <a href="sec-orgdc0da4c.html"><span class="toc_ref">2</span> <span class="toc_entry">Local comparison with space forms</span></a>
+ </li>
+<li class="">
+  <a href="sec-org5678b4c.html"><span class="toc_ref">3</span> <span class="toc_entry">Some covering lemmas</span></a>
+ </li>
+<li class="">
+  <a href="sec-org988defc.html"><span class="toc_ref">4</span> <span class="toc_entry">Sobolev imbeddings for Riemannian manifolds</span></a>
+ </li>
+<li class="">
+  <a href="sec-orgb2a0b0a.html"><span class="toc_ref">5</span> <span class="toc_entry">Kondrachov’s theorem</span></a>
+ </li>
+<li class="">
+  <a href="sec-org8cc1a23.html"><span class="toc_ref">6</span> <span class="toc_entry">Solving $\Delta u = f$ on a Riemannian manifold.</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">7</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+</ul>
+</nav>
+
+<div class="wrapper with-toc">
+<header>
+<h1 id="doc_title">A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds</h1>
+</header>
+
+<ul class="breadcrumbs">
+<li class="crumb"><a href="index.html" class="crumb">A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds</a></li>
+  <li class="last_crumb">Local comparison with space forms</li>
+</ul>
+
+<div class="content">
+<h1 id="sec:orgdc0da4c">2 Local comparison with space forms</h1>
+<p>  </p>
+<p>Our goal in this section is to prove the following Comparison Theorem. Before going to the precise statement, let us explain the notation. </p>
+<h4 id="sec:org4abfd0a">Notation.</h4>
+<p>  Given $M^ n$ a Riemannian manifold and $B(p,r_0)$ be the geodesic ball centered in $p\in M$, of radius $r_0<\delta _ p$ the injectivity radius at $p$, equipped with the pullback metric of $g$ via exponential map $\exp _ p$, which can be expressed in polar geodesic coordinates as </p>
+<div class="displaymath" id="a0000000044">
+  \[  (ds)^2 = (dr)^2 + r^2 g_{\theta ^ i\theta ^ j}(r,\theta ) d\theta ^ i d\theta ^ j  \]
+</div>
+<p> where $\frac{\partial }{\partial \theta ^1},\dots ,\frac{\partial }{\partial \theta ^{n-1}}$ is an Euclidean orthonormal frame of the sphere $r\mathbb {S}^{n-1}$. We note $|g_\theta | = \det (g_{\theta ^ i\theta ^ j})_{ij}$ and $g_{\theta \theta }$ be any component $g_{\theta ^ i\theta ^ i}$ for $i=1,\dots ,n-1$. </p>
+<p>Abusively, we say that $\frac{\sin \alpha r}{\alpha } = r$ if $\alpha = 0$ and $\sin \alpha r = \frac{1}{i}\sinh i\alpha r$ and $\cos \alpha r = \cosh i\alpha r$ if $\alpha \in i \mathbb {R}$. </p>
+<p><b class="bfseries">Remark&#160;4. </b><i class="itshape"> Note that the frame $\{  \frac{\partial }{\partial \theta ^ i}\} _ i$ may not be global, for example when $n$ is odd (Hairy ball theorem). However the quantity $|g_\theta |$ is globally defined (except at $p$), in fact $|g_\theta | = r^{-2n+2}|g|$. </i></p>
+
+<p><b class="bfseries">Theorem&#160;4 (comparison of volume forms). </b><i class="itshape">  Let $M^ n$ be a Riemannian manifold with <ul class="itemize">
+  <li><p>sectional curvature $-a^2 \leq K\leq b^2$ </p>
+</li>
+  <li><p>Ricci curvature ${\rm Ric} \geq a’ = (n-1)\alpha ^2$ where $\alpha $ can be real or purely imaginary. </p>
+</li>
+</ul> Then with the notation of the last paragraph, for all $r \in (0, r_0)$, <ol class="enumerate">
+  <li><p>If $r<\frac{\pi }{b}$ then </p>
+<div class="equation" id="eq:comp-1">
+<p>
+  <span class="equation_label">8</span>
+  <div class="equation_content">
+    \begin{equation}  \label{eq:comp-1} \begin{split}  \frac{\partial }{\partial r}\log \sqrt{g_{\theta \theta }} & \geq \frac{\partial }{\partial r}\log \frac{\sin br}{r}\\ g_{\theta \theta } & \geq \left(\frac{\sin br}{br}\right)^2 \end{split} \end{equation}
+  </div>
+</p>
+</div>
+</li>
+  <li><p>One has </p>
+<div class="equation" id="eq:comp-2">
+<p>
+  <span class="equation_label">11</span>
+  <div class="equation_content">
+    \begin{equation}  \label{eq:comp-2} \begin{split}  \frac{\partial }{\partial r}\log \sqrt{g_{\theta \theta }} & \leq \frac{\partial }{\partial r}\log \frac{\sinh ar}{r}\\ g_{\theta \theta } & \leq \left(\frac{\sinh ar}{ar}\right)^2 \end{split} \end{equation}
+  </div>
+</p>
+</div>
+</li>
+  <li><p>One has </p>
+<div class="equation" id="eq:comp-3">
+<p>
+  <span class="equation_label">14</span>
+  <div class="equation_content">
+    \begin{equation}  \label{eq:comp-3} \begin{split}  \frac{\partial }{\partial r}\log \sqrt{g_{\theta }} & \leq (n-1) \frac{\partial }{\partial r}\log \frac{\sin \alpha r}{r} \leq -a’ \frac{r}{3}\\ \sqrt{|g_{\theta }|} & \leq \left(\frac{\sin \alpha r}{\alpha r}\right)^{n-1} \end{split} \end{equation}
+  </div>
+</p>
+</div>
+</li>
+  <li><p>If $r<\frac{\pi }{b}$ then </p>
+<div class="equation" id="eq:comp-4">
+<p>
+  <span class="equation_label">17</span>
+  <div class="equation_content">
+    \begin{equation}  \label{eq:comp-4} \begin{split}  \frac{\partial }{\partial r}\log \sqrt{g_{\theta }} & \geq (n-1) \frac{\partial }{\partial r}\log \frac{\sin b r}{r}\\ \sqrt{|g_{\theta }|} & \geq \left(\frac{\sin br}{br}\right)^{n-1} \end{split} \end{equation}
+  </div>
+</p>
+</div>
+</li>
+</ol> </i></p>
+
+<p><b class="bfseries">Remark&#160;5. </b><i class="itshape"> <ol class="enumerate">
+  <li><p>The moral of the estimates is that if $r\ll 1$ then the volume form of $g$, viewed in the tangent space at $p$, is equivalent to the Euclidean volume form of $T_ pM$. </p>
+</li>
+  <li><p>One can always choose $\alpha \in i \mathbb {R}$ even when the Ricci curvature is positive, and RHS of eq:comp-3 will be a hyperbolic function and the estimate is not as sharp as if one choose $\alpha \in \mathbb {R}$, but it works to prove that the two volume forms are equivalent when $r \ll 1$ . </p>
+</li>
+</ol> </i></p>
+
+<p><b class="bfseries">Remark&#160;6. </b><i class="itshape"> A few consequences of Theorem <a href="sec-orgdc0da4c.html#thm:vol-comparison">4</a>: <ol class="enumerate">
+  <li><p>For $\delta $ small, the metric volume form $dV$ is <em>equivalent</em> to the Euclidean volume form of tangent space: there exists $C(\delta )>0$ converging to $1$ as $\delta \to 0$ such that $C(\delta )^{-1}dE \leq dV \leq C(\delta ) dE$. </p>
+</li>
+  <li><p>Let $f$ be a smooth function defined on $B(p,\delta )$ then the gradient of $f$ w.r.t the metric $g$ is closed to the Euclidean gradient of $f$ viewed in the chart (namely $f\circ \exp _ p$): </p>
+<div class="displaymath" id="a0000000045">
+  \begin{equation*} \begin{split}  \| \nabla f\| _ g & = \left|\frac{\partial f}{\partial r}\right|^2 + \sum _\theta \left|\frac{\partial f}{\partial \theta }(r,\theta )\right|^2 g_{\theta \theta }\\ \| \nabla (f\circ \exp _ p)\| _ E & = \left|\frac{\partial f}{\partial r}\right|^2 + \sum _\theta \left|\frac{\partial f}{\partial \theta }(r,\theta )\right|^2 \end{split}\end{equation*}
+</div>
+</li>
+  <li><p>Combining the last 2 points, one can see that if $f$ is supported in a small geodesic ball $B(p,\delta )$, then the $L^ p$-norm of $\nabla f$ is closed to the Euclidean $L^ p$ norm of $\nabla (f\circ \exp _ p)$ if $\delta $ is sufficiently small. </p>
+</li>
+</ol> </i></p>
+
+<p>The ideal to prove Theorem <a href="sec-orgdc0da4c.html#thm:vol-comparison">4</a> comes from Proposition <a href="sec-org0d6bfe8.html#prop:jacobi-exp">2.1</a> and Figure <a href="sec-org0d6bfe8.html#fig:jacobi-exp">4</a>. Given a point $q\in M$ of distance $r< r_0$ from $p$, then denote by $Y$ the Jacobi field along the unique geodesic connecting $p$ and $q$ such that $Y$ vanishes at $p$ and $Y(r) = \frac{\partial }{\partial \theta }$ at $q$, then with $\psi =\exp _ p$ as in Figure <a href="sec-org0d6bfe8.html#fig:jacobi-exp">4</a>, </p>
+<div class="equation" id="eq:comp-norm">
+<p>
+  <span class="equation_label">22</span>
+  <div class="equation_content">
+    \begin{equation}  \label{eq:comp-norm} \begin{split}  \|  Y(r)\| ^2 & = \|  \psi _{X_0}^* Y(r) \| ^2 = \|  \psi _0^* \dot Y(0)\| ^2_{X_0}\\ & = r^2 g_{\theta \theta } \| \psi _0^*\dot Y(0)\| _0^2 = r^2 g_{\theta \theta } \| \dot Y(0)\| ^2 \end{split} \end{equation}
+  </div>
+</p>
+</div>
+<p> where we used the fact that </p>
+<div class="displaymath" id="a0000000046">
+  \[  g\left({\left.\kern -\nulldelimiterspace0.0pt\vphantom {\big |} \right|_{r \mathbb {S}^{n-1}} },{\left.\kern -\nulldelimiterspace0.0pt\vphantom {\big |} \right|_{r \mathbb {S}^{n-1}} }\right) = r^2 g\left({\left.\kern -\nulldelimiterspace0.0pt\vphantom {\big |} \right|_{\mathbb {S}^{n-1}} },{\left.\kern -\nulldelimiterspace0.0pt\vphantom {\big |} \right|_{\mathbb {S}^{n-1}} }\right) = r^2 g_{\theta _ i\theta _ j}  \]
+</div>
+<p>. </p>
+<p>Take logarithm and derive eq:comp-norm w.r.t $r$, using the fact that $\| Y(r)\|  = 1$, one obtains </p>
+<div class="equation" id="eq:comp-norm-ap">
+<p>
+  <span class="equation_label">25</span>
+  <div class="equation_content">
+    \begin{equation}  \label{eq:comp-norm-ap} \langle \dot Y(r), Y(r) \rangle = \frac{1}{r} + \frac{\partial }{\partial r}\log g_{\theta \theta } \end{equation}
+  </div>
+</p>
+</div>
+<p> It comes to estimate $\langle \dot Y(r), Y(r) \rangle $, which is in fact the Index form of $Y$. The following lemma give an estimate of the Index form in case of bounded sectional curvature, by comparing the it with the Index form under a metric with constant sectional curvature. </p>
+<p><b class="bfseries">Lemma&#160;5. </b><i class="itshape"> Suppose that the sectional curvature $K \leq b^2$, then for every Jacobi field $Y$ defined a long a geodesic $\gamma : [0,r] \longrightarrow M$ with $r< \frac{\pi }{2b}$ such that $Y(0)=0, Y\perp \dot\gamma $. Then <div class="displaymath" id="a0000000047">
+  \[  I(Y) \geq I_ b(Y):=\int _0^ r \|  \dot Y\| ^2 - b \| Y\| ^2 \geq b\cot br \| Y(r)\| ^2  \]
+</div> </i></p>
+
+<p><div class="proof_wrapper" id="a0000000048">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
+
+  </div>
+  <div class="proof_content">
+  <p>By the curvature bound, $I(T) \geq \int _0^ r \|  \dot Y\| ^2 -b^2 \| Y\| ^2=:I_ b(Y)$. The quantity $I_ b(Y)$ is exactly the Index form of $Y$ along $\gamma $ if the sectional curvature in constantly $b$. To be precise, we equip the tubular neighborhood of $\gamma $ a metric $g’$ of constant sectional curvature $K=b^2$ such that normal vectors of $\gamma $ w.r.t the metric $g$ remain normal under $g’$. Such $g’$ is in fact easy to find since: </p>
+<ol class="enumerate">
+  <li><p>The tubular neighborhood is diffeomorphic to $[0,r]\times \mathbb {B}^{n-1}$ where the diffeomorphism (says $\iota _1$) is actually isometry at points of $\gamma $, which are mapped to $[0,r]\times \{ 0\} $; </p>
+</li>
+  <li><p>Also, there exists a diffeomorphism $\iota _2$ mapping $[0,r]\times \mathbb {B}^{n-1}$ to a tubular neighborhood of an arc $\tilde\gamma $ of length $r$ on the grand circle of $\mathbb {S}^ n_{1/b}$ which is isometry on every point of $[0,r]\times \{ 0\} $. This is because $r < \frac{\pi }{2b} < 2\pi \frac{1}{b}$ the length of the grand circle. </p>
+</li>
+  <li><p>One now can identify a tubular neighborhood of $\gamma $ in $M$ and that of $\tilde\gamma $ in $\mathbb {S}^ n_{1/b}$ by $\iota = \iota _2\circ \iota _1$. Take $g’$ to be the pullback of the Eucidean metric on $\mathbb {S}^ n_{1/b}$, which is of sectional curvature $b^2$. </p>
+</li>
+</ol>
+<p>Now under the metric $g’$, $Y$ is no longer a Jacobi field, but it is still orthogonal to $\gamma $, denote by $\tilde Y$ the Jacobi field (under $g’$) on $\gamma $ that vanishes at $\gamma (0)$ and has the same value as $Y$ at $\gamma (r)$. By Theorem <a href="sec-org0d6bfe8.html#thm:index-ineq">3</a> (Index inequality), one has $I_ b(Y) \geq I_ b(\tilde Y)$. The latter can be computed directly, as the field $\iota _*\tilde Y$ is given by </p>
+<div class="displaymath" id="a0000000049">
+  \[  s\mapsto (s,\beta ^1\sin bs, \dots , \beta ^{n-1}\sin bs), \quad s\in [0,r]  \]
+</div>
+<p> where $(\beta ^1,\dots ,\beta ^{n-1})$ is the coordinates of ${\iota _1}_* Y(r)$ in $[0,r]\times \mathbb {B}^{n-1}$, hence in this coordinates (also called <em>Fermi coordinates</em>), $\tilde Y(s) = \left(s,\frac{\sin bs}{\sin br}Y(r)\right)$ . Hence $I_ b(\tilde Y) = b\cot br \| Y(r) \| ^2$. </p>
+
+  </div>
+</div> </p>
+<p>Now the remaining part of the proof of Theorem <a href="sec-orgdc0da4c.html#thm:vol-comparison">4</a> is straightforward. </p>
+<p><div class="proof_wrapper" id="a0000000050">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof of Theorem <a href="sec-orgdc0da4c.html#thm:vol-comparison">4</a>
+    </span>
+    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
+
+  </div>
+  <div class="proof_content">
+  <p> From eq:comp-norm-ap and Lemma <a href="sec-orgdc0da4c.html#lem:compare-const-sec-curv">5</a>, one has </p>
+<div class="displaymath" id="a0000000051">
+  \[  \frac{\partial }{\partial r} \log \sqrt{g_{\theta \theta }} = I(Y) - \frac{1}{r} \geq b\cot br -\frac{1}{r}  \]
+</div>
+<p> This gives the estimates in eq:comp-1. </p>
+<p>For eq:comp-2, the sign situation fits Theorem <a href="sec-org0d6bfe8.html#thm:index-ineq">3</a> better, and one does not need to explicitly evoke the space forms (as Lemma <a href="sec-orgdc0da4c.html#lem:compare-const-sec-curv">5</a>). It suffices to see that </p>
+<div class="displaymath" id="a0000000052">
+  \begin{equation*} \begin{split}  \langle \dot Y(r), Y(r) \rangle & =I(Y) \leq I\left(\frac{\sinh at}{\sinh ar}Y(r)\right)\\ & \leq a^2\left(\int _0^ r \left(\frac{\cosh at}{\sinh ar}\right)^2 + \int _0^ r \left(\frac{\sinh at}{\sinh ar}\right)^2 dt \right)\| Y(r)\| ^2\\ & = a\coth ar \| Y(r)\| ^2 \end{split}\end{equation*}
+</div>
+<p>The estimates in eq:comp-3 comes from the comparison between $Y$ and the field $t\mapsto \frac{\sin \alpha t}{\sin \alpha r}Y(r)$. Note that the field is well-defined even when $\alpha \in \mathbb {R}_{>0}$ (the hyperbolic case ($\alpha \in i \mathbb {R}_{>0}$ being obvious). This in fact comes from the following fact: </p>
+<p><b class="bfseries">Theorem&#160;6 (Myers). </b><i class="itshape">  Let $M^ n$ be a connected, complete manifold with ${\rm Ric}\geq (n-1)\alpha ^2 >0$ then <ol class="enumerate">
+  <li><p>$M$ is compact. </p>
+</li>
+  <li><p>The diameter of $M$ is at most $\pi /\alpha $. </p>
+</li>
+</ol> </i></p>
+
+<p>Taking sum of inequalities $I(Y_{i}) \leq I(\frac{\sin \alpha t}{\alpha r}Y_ i(r)$ where $Y_ i$ are Jacobi fields vanishing at $\gamma (0)$ and whose values at $\gamma (r)$ are $\frac{\partial }{\partial \theta ^ i}$ respectively, one has </p>
+<div class="displaymath" id="a0000000053">
+  \begin{equation*} \begin{split}  \sum _{i=1}^{n-1} \langle \dot Y_ i(r), Y_ i(r) \rangle & \leq (n-1)\alpha ^2 \int _0^ r\left( \frac{\cos \alpha t}{\sin \alpha r}\right)^2 dt -\sum _{i=1}^{n-1}\int _0^ r R_{r\theta ^ ir\theta ^ i}\left(\frac{\sin \alpha t}{\sin \alpha r}\right)^2 dt\\ & \leq (n-1)\alpha \cot \alpha r \end{split}\end{equation*}
+</div>
+<p> where for the second line, we used the fact that $\sum _ i R_{r\theta ^ i r\theta ^ i}={\rm Ric}_{rr}\geq (n-1)\alpha ^2$. Hence </p>
+<div class="displaymath" id="a0000000054">
+  \begin{equation*} \begin{split}  \frac{\partial }{\partial r}\log \sqrt{|g_\theta |}& = \frac{\partial }{\partial r}\sum _ i\log \sqrt{|g_{\theta ^ i\theta ^ i}|} = \sum _ i \langle \dot Y_{\theta ^ i},Y_{\theta ^ i}\rangle - \frac{n-1}{r}\\ & \leq (n-1)\left(\alpha \cot \alpha r - \frac{1}{r}\right) = (n-1) \frac{\partial }{\partial r}\log \left( \frac{\sin \alpha r}{r}\right) \end{split}\end{equation*}
+</div>
+<p>The proof of eq:comp-4 is essentially the same as eq:comp-3 where one uses eq:comp-1 for a lower bound of $I(Y_ i) = \langle \dot Y_ i(r), Y_ i(r) \rangle $. </p>
+
+  </div>
+</div> </p>
+<p>As a side note, Lemma <a href="sec-orgdc0da4c.html#lem:compare-const-sec-curv">5</a> can also be used to prove that a small geodeosic ball is geodesically convex. </p>
+<p><b class="bfseries">Proposition&#160;6.1. </b><i class="itshape"> Let $M^ n$ be a Riemannian manifold with sectional curvature $K\leq b^2$ and injectivity radius $\delta >0$. Then for every $r<\min \{ \frac{\delta }{2}, \frac{\pi }{4b}\} $, any geodesic ball $B(p,r)$ is geodesically convex, i.e. any two points is connected by a geodesic curve inside the ball. </i></p>
+
+<p><div class="proof_wrapper" id="a0000000055">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
+
+  </div>
+  <div class="proof_content">
+  <p>We first claim that </p>
+<p><b class="bfseries">Lemma&#160;7. </b><i class="itshape">Given two point $p,q$ of distance $d(p,q) = r < \frac{\pi }{2b}$ and $\Gamma _{p,q}$ the geodesic connecting the them. Let $\gamma $ be a geodesic staring from $q$ with a velocity vector perpendicular to $\Gamma _{p,q}$, then there exists a neighborhood of $q$ inside of which the $\gamma $ intersects $\Gamma _{p,q}$ only at $q$. </i></p>
+
+<p>First, let us prove that the Lemme implies Proposition <a href="sec-orgdc0da4c.html#prop:geodesic-convex">6.1</a>. If $r$ small as in the Proposition and $q_1, q_2\in B(p,r)$ then </p>
+<ol class="enumerate">
+  <li><p>There exists a minimal geodesic $\Gamma _{q_1,q_2}$ connecting $q_1, q_2$. </p>
+</li>
+  <li><p>By triangle inequality, $\Gamma _{q_1, q_2}\subset B(p,2r)$: every point $q\in \Gamma _{q_1,q_2}$ has to be $d(q_1,q_2)/2$-closed to one $q_ i$, hence $d(p,q)\leq d(p,q_ i) + d(q_ i,q) \leq r + \frac{2r}{2} = 2r$. </p>
+</li>
+</ol>
+<p> Let $T \in \Gamma _{q_1, q_2}$ be the point minimising the distance to $p$. It suffices to show that $T$ is one of the $q_ i$. For the sake of contradiction, if $T$ is strictly in the interior of $\Gamma _{q_1,q_2}$ then </p>
+<ol class="enumerate">
+  <li><p>The geodesic $\Gamma _{p,T}$ connecting $p$ and $T$ is orthogonal to $\Gamma _{q_1,q_2}$ at $T$. It is not difficult to prove that if the two are not orthogonal then there exist $T’\in \Gamma _{q_1,q_2}$ and $S\in \Gamma _{p,T}$, both being near to $T$, such that $d(p,T) > d(p, S) + d(S,T’) \geq d(p,T’)$. </p>
+</li>
+  <li><p>The ball $B(p,d(p,T))\cap \Gamma _{q_1,q_2} \supset \Gamma _{q_1,q_2}$. </p>
+</li>
+</ol>
+<p>These contradict the Lemma and prove that $T$ does not lie in the interior. </p>
+<p>It remains to prove the Lemma. Let $Y$ be the Jacobi field which vanishes at $p$ and whose value at $q$ is $\dot\gamma $, then by Index inequality (Theorem <a href="sec-org0d6bfe8.html#thm:index-ineq">3</a>), it suffices to prove that $I(Y)>0$, because any variation of $\Gamma _{p,q}$ by orthogonal vector field $Z$ along $\gamma $ has $I(Z) >0$ hence only increases the length, according to Proposition <a href="sec-org0d6bfe8.html#prop:index-form-variation">2.2</a>. But by Lemma <a href="sec-orgdc0da4c.html#lem:compare-const-sec-curv">5</a> gives </p>
+<div class="displaymath" id="a0000000056">
+  \[  I(Y) \geq I_ b(Y) \geq b\cot br \|  Y(q) \| ^2 >0 \text { if } r < \frac{\pi }{2b}.  \]
+</div>
+
+  </div>
+</div> </p>
+
+</div>
+
+<nav class="prev_up_next">
+  <a href="sec-org0d6bfe8.html" title="Quick recall of Jacobi fields, Index inequality"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sec-org5678b4c.html" title="Some covering lemmas"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</div>
+</body>
+</html>

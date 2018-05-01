@@ -8,9 +8,8 @@ For example ~/html/sheaf-cohomology.html~ should become ~/pdf/sheaf-cohomology.p
 # MathJax Config
 #+BEGIN_EXPORT html
 \(
-\require{AMScd}
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
- \newcommand{\supp}{\mathop{\rm supp}\nolimits}
+\newcommand{\supp}{\mathop{\rm supp}\nolimits}
 \newcommand{\ord}{\mathop{\rm ord}\nolimits}
 \newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
 \newcommand{\vol}{\mathop{\rm vol}\nolimits}
@@ -19,5 +18,7 @@ For example ~/html/sheaf-cohomology.html~ should become ~/pdf/sheaf-cohomology.p
 \newcommand{\sff}{\mathop{\rm I\*I}\nolimits}
 \newcommand{\tr}{\mathop{\rm Tr}\nolimits}
 \newcommand{\const}{\mathop{\rm const }\nolimits}
+\newcommand{\lcm}{\mathop{\rm lcm}\nolimits}
+\newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
 \)
 #+END_EXPORT

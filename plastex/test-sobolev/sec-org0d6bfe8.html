@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [ ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds: Quick recall of Jacobi fields, Index inequality</title>
+<link rel="next" href="sec-orgdc0da4c.html" title="Local comparison with space forms" />
+<link rel="prev" href="index.html" title="A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds" />
+<link rel="up" href="index.html" title="A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds" />
+<link rel="stylesheet" href="styles/theme-green.css" />
+</head>
+
+<body>
+<nav class="toc">
+<svg  class="icon icon-cross close-toc"><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+
+<ul class="sub-toc-0">
+<li class=" active current">
+  <a href="sec-org0d6bfe8.html"><span class="toc_ref">1</span> <span class="toc_entry">Quick recall of Jacobi fields, Index inequality</span></a>
+ </li>
+<li class="">
+  <a href="sec-orgdc0da4c.html"><span class="toc_ref">2</span> <span class="toc_entry">Local comparison with space forms</span></a>
+ </li>
+<li class="">
+  <a href="sec-org5678b4c.html"><span class="toc_ref">3</span> <span class="toc_entry">Some covering lemmas</span></a>
+ </li>
+<li class="">
+  <a href="sec-org988defc.html"><span class="toc_ref">4</span> <span class="toc_entry">Sobolev imbeddings for Riemannian manifolds</span></a>
+ </li>
+<li class="">
+  <a href="sec-orgb2a0b0a.html"><span class="toc_ref">5</span> <span class="toc_entry">Kondrachov’s theorem</span></a>
+ </li>
+<li class="">
+  <a href="sec-org8cc1a23.html"><span class="toc_ref">6</span> <span class="toc_entry">Solving $\Delta u = f$ on a Riemannian manifold.</span></a>
+ </li>
+</ul>
+</nav>
+
+<div class="wrapper with-toc">
+<header>
+<h1 id="doc_title">A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds</h1>
+</header>
+
+<ul class="breadcrumbs">
+<li class="crumb"><a href="index.html" class="crumb">A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds</a></li>
+  <li class="last_crumb">Quick recall of Jacobi fields, Index inequality</li>
+</ul>
+
+<div class="content">
+<h1 id="sec:org0d6bfe8">1 Quick recall of Jacobi fields, Index inequality</h1>
+<p>  </p>
+<p><b class="bfseries">Definition&#160;1. </b><i class="itshape">A <b class="bfseries">Jacobi</b> field is a field $Y$ defined along a geodesic $\gamma (t)$ such that <div class="equation" id="eq:jacobi-field">
+<p>
+  <span class="equation_label">1</span>
+  <div class="equation_content">
+    \begin{equation}  \label{eq:jacobi-field} \frac{D^2}{dt^2}Y(t) + R(Y(t),\dot\gamma (t))\dot\gamma (t) = 0 \end{equation}
+  </div>
+</p>
+</div> where $R$ denotes the Riemann curvature tensor. </i></p>
+
+<p><b class="bfseries">Remark&#160;1. </b><i class="itshape"> <ol class="enumerate">
+  <li><p>Since eq:jacobi-field is linear, a Jacobi field is uniquely defined given $Y(t_0)$ and $\dot Y(t_0)$. </p>
+</li>
+  <li><p>If $Y(0) \perp \dot\gamma (0)$ and $\dot Y(0) \perp \dot\gamma (0)$ then $\dot Y(t) \perp \dot\gamma (t)$ for all $t$. </p>
+</li>
+  <li><p>If $Y,Z$ are Jacobi fields along $\gamma $ then </p>
+<div class="displaymath" id="a0000000037">
+  \[  \langle Y, \dot Z \rangle - \langle \dot Y, Z \rangle = \mathop {\rm const }\nolimits  \]
+</div>
+<p> In particular, if $Y,Z$ vanish at a same point $p_0$ in $\gamma $ then $\langle Y,\dot Z \rangle = \langle \dot Y, Z \rangle $ on $\gamma $. </p>
+</li>
+</ol> </i></p>
+
+<p>There are two ways to interpret Jacobi fields: </p>
+<ol class="enumerate">
+  <li><p>Jacobi fields are derivative of exponential maps </p>
+</li>
+  <li><p>Jacobi fields are minimisers of Index form, i.e. the variation of second other of length. </p>
+</li>
+</ol>
+<p>The first interpretation is the content of the following Proposition. </p>
+<p><b class="bfseries">Proposition&#160;2.1. </b><i class="itshape"> Let $Y(t) = D \exp _ p(tu). t\xi $ be a vector field defined on a geodesic $\gamma (t) = \exp _ p tu$. Then $Y$ satisfies <div class="equation" id="eq:jacobi-exp">
+<p>
+  <span class="equation_label">2</span>
+  <div class="equation_content">
+    \begin{equation}  \label{eq:jacobi-exp} \begin{cases}  Y(0) = 0, \dot Y(0) = \xi , \\ \ddot Y + R(Y,\dot\gamma )\dot\gamma = 0, \end{cases} \end{equation}
+  </div>
+</p>
+</div> hence a Jacobi field. </i></p>
+
+<p>In concrete term, denote by $\psi $ the exponential function at $p\in M$ and $q=\gamma (r) = \exp _ p r\dot\gamma (0)$, then Proposition <a href="sec-org0d6bfe8.html#prop:jacobi-exp">2.1</a> says that if the Jacobi field $Y$ vanishes at $p =\gamma (0)$, i.e. $Y(0) = 0$ then $Y(r)$ at $\gamma (r)$ is defined as follow: pull-back $\dot Y (0)$ by $\psi $, transport parallelly, w.r.t to the Euclidean metric of $T_ pM$, $\psi ^*\dot Y(0)$ from $0$ to $X_0 = \psi ^{-1} (q)$, then push-forward by $\psi $, one obtains $Y(r)$. See Figure <a href="sec-org0d6bfe8.html#fig:jacobi-exp">4</a>. </p>
+<p> </p>
+<figure id="a0000000038">
+  <div class="centered"><figcaption>
+  <span class="caption_title">Figure</span> 
+  <span class="caption_ref">1</span> 
+  <span class="caption_text">Jacobi fields and exponential maps.</span> 
+</figcaption> </div>
+
+</figure>
+<p>Since Jacobi fields are derivatives of exponential maps, one can rephrase the phenomenon of cut-locus by Jacobi fields. Historically, a point $q$ on a Riemannian manifold is said to be a <b class="bfseries">conjugate</b> point of $p$ if there exists, along a geodesic connecting them, a Jacobi field vanishing on both $p$ and $q$. This means that the exponential map with origin in $p$ degenerates at a preimage of $q$. One can also prove that if $q$ is in the cut-locus of $p$ then at least one of the following situation occurs </p>
+<ol class="enumerate">
+  <li><p>$q$ is a conjugate point of $p$. </p>
+</li>
+  <li><p>There exists 2 minimising geodesic from $p$ to $q$. </p>
+</li>
+</ol>
+<p>For another interpretation of Jacobi fields, note that given a geodesic $\gamma $ and a vector field $Z$ defined along $\gamma $, then the first variation of length when one varies $\gamma $ by $Z$ is 0 and the second variation can also be calculated without difficulty. </p>
+<p><b class="bfseries">Proposition&#160;2.2 (Second variation of length). </b><i class="itshape">  Let $\gamma :[0,r] \longrightarrow M$ be a geodesic and $Z$ be a vector field along $\gamma $ that is orthogonal to $\dot\gamma $ at every point. Denote by $L_\lambda $ length of the curve $t\mapsto \exp _{\gamma (t)}\lambda Z$ for $\lambda \ll 1$, then one has <div class="equation" id="eq:second-var">
+<p>
+  <span class="equation_label">5</span>
+  <div class="equation_content">
+    \begin{equation}  \label{eq:second-var} {\left.\kern -\nulldelimiterspace0.0ptL_\lambda  \vphantom {\big |} \right|_{\lambda = 0} } = I(Z):= \int _0^ r \left( \| Z(t)\| ^2 + \langle R(\dot\gamma (t), Z(t))\dot\gamma (t), Z(t) \rangle \right) dt \end{equation}
+  </div>
+</p>
+</div> </i></p>
+
+<p><b class="bfseries">Definition&#160;2. </b><i class="itshape">Let $\gamma :[0,r] \longrightarrow M$ be a geodesic and $Z$ be a orthogonal vector field along $\gamma $. The <b class="bfseries">Index form</b> $I(Z)$ of $Z$ is defined by the RHS of eq:second-var. </i></p>
+
+<p><b class="bfseries">Remark&#160;2. </b><i class="itshape">The curvature term in eq:second-var is $K(\dot\gamma ,Z)\| Z\| ^2$ where $K$ denotes the sectional curvature of $M$. </i></p>
+
+<p>Jacobi fields can be seen as the unique minimiser of the Index form among vector fields defined on a geodesic $\gamma :[0,r] \longrightarrow M$ with the same value at $\gamma (0)$ and $\gamma (r)$. </p>
+<p><b class="bfseries">Theorem&#160;3 (Index inequality). </b><i class="itshape">  Let $\gamma : [0,r] \longrightarrow M^ n$ be a geodesic, $p=\gamma (0)$ and $q=\gamma (r)$ such that $p$ has no conjugate point along $\gamma $, or equivalently the exponential map in direction $\dot\gamma (0)$ does not degenerate. <ul class="itemize">
+  <li><p>Let $Z$ be a (piecewise smooth) vector field along $\gamma $, orthogonal to $\dot\gamma $ with $Z(p)=0$. </p>
+</li>
+  <li><p>Let $Y$ be the Jacobi field along $\gamma $ with $Y(0) = 0, Y(r) = Z(r)$ and $Y$ is orthogonal to $\dot\gamma $. </p>
+</li>
+</ul> Then $I(Y) \leq I(Z)$ and equality occurs if and only if $Y\equiv Z$. </i></p>
+
+<p><b class="bfseries">Remark&#160;3. </b><i class="itshape"><p> Note that such Jacobi field $Y$ exists and is unique. Firstly, by the second point of Remark <a href="sec-org0d6bfe8.html#rem:obvious-jacobi">1</a>, one only need $Y(p) =0$ and $\dot Y(0) \perp \gamma (0)$. The Jacobi fields satisfying these conditions form a vector space of dimension $n-1$ (by Cauchy problem, $\dot Y(0)$ is to be chosen in the orthogonal space of $\gamma (0)$). Since the exponential map does not degenerate on the preimage of $\gamma $, each $\dot Y(0)$ corresponds one-to-one with an $Y(r)$ by Proposition <a href="sec-org0d6bfe8.html#prop:jacobi-exp">2.1</a>. The correspondence is linear, with source and target spaces of same dimension ($n-1$), it follows that each $Z(r)\perp \gamma (r)$ gives uniquely a Jacobi field $Y$. </p>
+<p>More concretely, let $\dot V_ i(0)$ be a basis of $\dot\gamma (0)$ in $T_ pM$ and $V_ i$ be the corresponding Jacobi fields with $V_ i(0)=0$, then </p>
+<ol class="enumerate">
+  <li><p>$\{ V_ i(t)\} _{i=\overline{1,n-2}}$ is a basis of $\dot\gamma (t)$ in $T_{\gamma (t)}M$, where the orthogonal part follows from Remark <a href="sec-org0d6bfe8.html#rem:obvious-jacobi">1</a> and the linear independence is by the non-degeneration of since $\exp _ p$. </p>
+</li>
+  <li><p>If $Z(t) = \sum f_ i(t)V_ i(t)$, where $f_ i$ are functions on $[0,r]$, then $Y(t) = \sum _ i f_ i(r)V_ i(t)$. </p>
+</li>
+</ol>
+</i></p>
+
+<p><div class="proof_wrapper" id="a0000000039">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <svg  class="icon icon-plus expand-proof"><use xlink:href="symbol-defs.svg#icon-plus"></use></svg>
+
+  </div>
+  <div class="proof_content">
+  As Remark <a href="sec-org0d6bfe8.html#rem:jacobi-existence">3</a>, let $Z = \sum _ i f_ i V_ i$ and denote $W = \sum _ i \dot f_ i V_ i$ then <div class="displaymath" id="a0000000040">
+  \[  I(Z) = \int _0^ r\left( \| W\| ^2 + 2 \sum _ i f_ i \langle \dot V_ i, W \rangle + \langle \sum _ i f_ i\dot V_ i,\sum _ j f_ j\dot V_ j \rangle + \langle R(\dot\gamma ,\sum f_ i V_ i)\dot\gamma ,\sum f_ j V_ j \rangle \right)dt  \]
+</div> By definition of Jacobi field, $R(\dot\gamma , V_ i)\dot\gamma = \ddot V_ i$, hence the curvature term is <div class="displaymath" id="a0000000041">
+  \begin{equation*} \begin{split}  \int _0^ r \left\langle R(\dot\gamma ,\sum f_ i V_ i)\dot\gamma ,\sum f_ j V_ j \right\rangle & =\sum _{i,j}\int _0^ r f_ i f_ j \langle \ddot V_ i, V_ j \rangle dt =\sum _{i,j}\int _0^ r f_ if_ j \left(\frac{d }{dt} \langle \dot V_ i, V_ j \rangle - \langle \dot V_ i,\dot V_ j \rangle \right)dt\\ & = -\int _0^ r \left\langle \sum _ i f_ i \dot V_ i,\sum _ j f_ j \dot V_ j \right\rangle dt + \langle \dot Y(r), Y(r) \rangle - 2\sum _{i,j}\int _0^ r f_ i\dot f_ j \langle \dot V_ i,V_ j \rangle dt \end{split}\end{equation*}
+</div> where for the second line, we integrated by part and used the fact that $\langle \dot V_ i, V_ j \rangle = \langle V_ i, \dot V_ j \rangle $ (point 3 of Remark <a href="sec-org0d6bfe8.html#rem:obvious-jacobi">1</a>). Therefore, one has <div class="displaymath" id="a0000000042">
+  \[  I(Z) = \int _0^ r \| W\| ^2dt + \langle \dot Y(r), Y(r) \rangle .  \]
+</div> In particular $I(Y) = \langle \dot Y(r), Y(r) \rangle \leq I(Z)$. The equality occurs if and only if $W\equiv 0$, i.e. $Z\equiv Y$. 
+  </div>
+</div> </p>
+
+</div>
+
+<nav class="prev_up_next">
+  <a href="index.html" title="A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sec-orgdc0da4c.html" title="Local comparison with space forms"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</div>
+</body>
+</html>

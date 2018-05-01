@@ -1,0 +1,578 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX">
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<title></title>
+
+<link href="thm-kondrachov.html" title="Kondrachov’s theorem" rel="next">
+<link href="lem-calabi.html" title="Some covering lemmas" rel="prev">
+<link href="index.html" title="A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds" rel="up">
+<link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="lem-calabi.html"><img border="0" src="icons/previous.gif" width="32" height="32"></a></td>
+
+<td><a href="index.html"><img border="0" src="icons/up.gif" width="32" height="32"></a></td>
+
+<td><a href="thm-kondrachov.html"><img border="0" src="icons/next.gif" width="32" height="32"></a></td>
+
+<td class="navtitle" align="center">A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32"></a></td>
+
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32"></td>
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32"></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html">A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Sobolev imbeddings for Riemannian manifolds</b>
+</span>
+</span>
+<hr>
+</div>
+
+<div><h1 id="rem:sobolev-def">4 Sobolev imbeddings for Riemannian manifolds</h1>
+<p>  </p><p>The goal of this section is to prove that Sobolev imbeddings are also available for complete Riemannian manifold with bounded curvature and strictly positive injectivity radius, that is, the following results. </p><p>[Sobolev imbeddings]  Theorem <a></a> holds when one replaces <img src="images/img-0279.png" alt="$\mathbb {R}^{n}$" style="vertical-align:&amp;images/img-0279.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0279.png-width;&amp;px;; 
+                                     height:&amp;images/img-0279.png-height;&amp;px;" class="math gen"> by a complete Riemannian manifold of dimension <img src="images/img-0012.png" alt="$n$" style="vertical-align:&amp;images/img-0012.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0012.png-width;&amp;px;; 
+                                     height:&amp;images/img-0012.png-height;&amp;px;" class="math gen"> with bounded curvature (sectional and Ricci) and injectivity radius <img src="images/img-0233.png" alt="$\delta _0 &gt;0$" style="vertical-align:&amp;images/img-0233.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0233.png-width;&amp;px;; 
+                                     height:&amp;images/img-0233.png-height;&amp;px;" class="math gen">.  </p><p>The definition of Sobolev spaces as completion of spaces of smooth functions, w.r.t the Sobolev norms generalises on Riemannian manifolds, namely, we denote by <img src="images/img-0280.png" alt="$W_0^{k,p}(M)$" style="vertical-align:&amp;images/img-0280.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0280.png-width;&amp;px;; 
+                                     height:&amp;images/img-0280.png-height;&amp;px;" class="math gen"> the completion of <img src="images/img-0281.png" alt="$C_ c^\infty (M)$" style="vertical-align:&amp;images/img-0281.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0281.png-width;&amp;px;; 
+                                     height:&amp;images/img-0281.png-height;&amp;px;" class="math gen"> w.r.t the norm <img src="images/img-0282.png" alt="$\| \varphi \| _{W^{k,p}} = \| \varphi \| _{L^ p} + \| \nabla \varphi \| _{L^ p} + \dots + \| \nabla ^ k \varphi \| _{L^ p}$" style="vertical-align:&amp;images/img-0282.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0282.png-width;&amp;px;; 
+                                     height:&amp;images/img-0282.png-height;&amp;px;" class="math gen"> where <img src="images/img-0283.png" alt="$\| \nabla ^ l\varphi \| _{L^ p}$" style="vertical-align:&amp;images/img-0283.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0283.png-width;&amp;px;; 
+                                     height:&amp;images/img-0283.png-height;&amp;px;" class="math gen"> are computed as follow: the metric <img src="images/img-0034.png" alt="$g$" style="vertical-align:&amp;images/img-0034.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0034.png-width;&amp;px;; 
+                                     height:&amp;images/img-0034.png-height;&amp;px;" class="math gen"> induces a fiberwise norm for <img src="images/img-0284.png" alt="$l$" style="vertical-align:&amp;images/img-0284.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0284.png-width;&amp;px;; 
+                                     height:&amp;images/img-0284.png-height;&amp;px;" class="math gen">-covariant tensors, integrate that of <img src="images/img-0285.png" alt="$\nabla ^ l \varphi $" style="vertical-align:&amp;images/img-0285.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0285.png-width;&amp;px;; 
+                                     height:&amp;images/img-0285.png-height;&amp;px;" class="math gen">, one obtains <img src="images/img-0283.png" alt="$\| \nabla ^ l\varphi \| _{L^ p}$" style="vertical-align:&amp;images/img-0283.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0283.png-width;&amp;px;; 
+                                     height:&amp;images/img-0283.png-height;&amp;px;" class="math gen">. </p><p>Similarly, the space <img src="images/img-0286.png" alt="$W^{1,p}(M)$" style="vertical-align:&amp;images/img-0286.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0286.png-width;&amp;px;; 
+                                     height:&amp;images/img-0286.png-height;&amp;px;" class="math gen"> is defined as the completion of <img src="images/img-0287.png" alt="$C^\infty (M)$" style="vertical-align:&amp;images/img-0287.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0287.png-width;&amp;px;; 
+                                     height:&amp;images/img-0287.png-height;&amp;px;" class="math gen"> w.r.t <img src="images/img-0288.png" alt="$\| \cdot \| _{W^{1,p}}$" style="vertical-align:&amp;images/img-0288.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0288.png-width;&amp;px;; 
+                                     height:&amp;images/img-0288.png-height;&amp;px;" class="math gen">. </p><p>  </p><ol class="enumerate">
+<li value="1"><p>Unlike the Euclidean case, one does not define the derivatives term, e.g. <img src="images/img-0289.png" alt="$\nabla _ v f$" style="vertical-align:&amp;images/img-0289.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0289.png-width;&amp;px;; 
+                                     height:&amp;images/img-0289.png-height;&amp;px;" class="math gen"> for <img src="images/img-0290.png" alt="$f\in W^{1,p}(M)$" style="vertical-align:&amp;images/img-0290.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0290.png-width;&amp;px;; 
+                                     height:&amp;images/img-0290.png-height;&amp;px;" class="math gen"> using integration by part and Riesz representation, that is, one does not expect a formular such as <img src="images/img-0291.png" alt="$\int _ M (\nabla _ v f)\varphi dV = -\int _ M f\nabla _ v \varphi dV$" style="vertical-align:&amp;images/img-0291.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0291.png-width;&amp;px;; 
+                                     height:&amp;images/img-0291.png-height;&amp;px;" class="math gen"> since the "boundary term" <img src="images/img-0292.png" alt="$\int _{M}\nabla _ v(f\varphi ) dV$" style="vertical-align:&amp;images/img-0292.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0292.png-width;&amp;px;; 
+                                     height:&amp;images/img-0292.png-height;&amp;px;" class="math gen"> does not vanish, even if <img src="images/img-0293.png" alt="$f\varphi \in C_ c^\infty (M)$" style="vertical-align:&amp;images/img-0293.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0293.png-width;&amp;px;; 
+                                     height:&amp;images/img-0293.png-height;&amp;px;" class="math gen">. </p></li><li value="2"><p>The exterior derivative <img src="images/img-0294.png" alt="$df$" style="vertical-align:&amp;images/img-0294.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0294.png-width;&amp;px;; 
+                                     height:&amp;images/img-0294.png-height;&amp;px;" class="math gen"> can be defined, which is in fact equivalent to de Rham’s notion of current. </p></li><li value="3"><p>The term <img src="images/img-0295.png" alt="$\nabla ^ l f$" style="vertical-align:&amp;images/img-0295.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0295.png-width;&amp;px;; 
+                                     height:&amp;images/img-0295.png-height;&amp;px;" class="math gen"> for <img src="images/img-0296.png" alt="$f\in W^{k,p}(M)$" style="vertical-align:&amp;images/img-0296.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0296.png-width;&amp;px;; 
+                                     height:&amp;images/img-0296.png-height;&amp;px;" class="math gen">, when needed, can be defined as a <img src="images/img-0153.png" alt="$L^ p$" style="vertical-align:&amp;images/img-0153.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0153.png-width;&amp;px;; 
+                                     height:&amp;images/img-0153.png-height;&amp;px;" class="math gen"> section of <img src="images/img-0297.png" alt="$(TM^*)^{\otimes l}$" style="vertical-align:&amp;images/img-0297.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0297.png-width;&amp;px;; 
+                                     height:&amp;images/img-0297.png-height;&amp;px;" class="math gen"> giving by the <img src="images/img-0153.png" alt="$L^ p$" style="vertical-align:&amp;images/img-0153.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0153.png-width;&amp;px;; 
+                                     height:&amp;images/img-0153.png-height;&amp;px;" class="math gen"> limit of smooth sections <img src="images/img-0298.png" alt="$\nabla ^ l\varphi _ i$" style="vertical-align:&amp;images/img-0298.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0298.png-width;&amp;px;; 
+                                     height:&amp;images/img-0298.png-height;&amp;px;" class="math gen"> for an equivalent class of Cauchy sequence <img src="images/img-0299.png" alt="$\varphi _ i$" style="vertical-align:&amp;images/img-0299.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0299.png-width;&amp;px;; 
+                                     height:&amp;images/img-0299.png-height;&amp;px;" class="math gen"> representing <img src="images/img-0036.png" alt="$f$" style="vertical-align:&amp;images/img-0036.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0036.png-width;&amp;px;; 
+                                     height:&amp;images/img-0036.png-height;&amp;px;" class="math gen">. The completeness of the space of <img src="images/img-0153.png" alt="$L^ p$" style="vertical-align:&amp;images/img-0153.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0153.png-width;&amp;px;; 
+                                     height:&amp;images/img-0153.png-height;&amp;px;" class="math gen"> sections of a vector bundle follows from the result in each trivialising chart and the fact that restriction maps commute with the limit. </p></li>
+</ol><p>  </p><p>[<img src="images/img-0300.png" alt="$ W^{1,p} = W_0^{1,p} $" style="vertical-align:&amp;images/img-0300.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0300.png-width;&amp;px;; 
+                                     height:&amp;images/img-0300.png-height;&amp;px;" class="math gen">]  If <img src="images/img-0079.png" alt="$M$" style="vertical-align:&amp;images/img-0079.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0079.png-width;&amp;px;; 
+                                     height:&amp;images/img-0079.png-height;&amp;px;" class="math gen"> is complete then <img src="images/img-0281.png" alt="$C_ c^\infty (M)$" style="vertical-align:&amp;images/img-0281.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0281.png-width;&amp;px;; 
+                                     height:&amp;images/img-0281.png-height;&amp;px;" class="math gen"> is dense in <img src="images/img-0286.png" alt="$W^{1,p}(M)$" style="vertical-align:&amp;images/img-0286.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0286.png-width;&amp;px;; 
+                                     height:&amp;images/img-0286.png-height;&amp;px;" class="math gen">, equivalently <img src="images/img-0301.png" alt="$W^{1,p}(M) = W^{1,p}_0(M)$" style="vertical-align:&amp;images/img-0301.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0301.png-width;&amp;px;; 
+                                     height:&amp;images/img-0301.png-height;&amp;px;" class="math gen">.  <p>It suffices to prove that given a function <img src="images/img-0302.png" alt="$\varphi \in C^\infty (M)$" style="vertical-align:&amp;images/img-0302.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0302.png-width;&amp;px;; 
+                                     height:&amp;images/img-0302.png-height;&amp;px;" class="math gen">, one can approximate <img src="images/img-0303.png" alt="$\varphi $" style="vertical-align:&amp;images/img-0303.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0303.png-width;&amp;px;; 
+                                     height:&amp;images/img-0303.png-height;&amp;px;" class="math gen"> under the norm <img src="images/img-0288.png" alt="$\| \cdot \| _{W^{1,p}}$" style="vertical-align:&amp;images/img-0288.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0288.png-width;&amp;px;; 
+                                     height:&amp;images/img-0288.png-height;&amp;px;" class="math gen"> by functions in <img src="images/img-0304.png" alt="$C^\infty _ c(M)$" style="vertical-align:&amp;images/img-0304.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0304.png-width;&amp;px;; 
+                                     height:&amp;images/img-0304.png-height;&amp;px;" class="math gen">. Fix <img src="images/img-0305.png" alt="$P\in M$" style="vertical-align:&amp;images/img-0305.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0305.png-width;&amp;px;; 
+                                     height:&amp;images/img-0305.png-height;&amp;px;" class="math gen">, one uses a cut-off function <img src="images/img-0306.png" alt="$\chi _ j$" style="vertical-align:&amp;images/img-0306.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0306.png-width;&amp;px;; 
+                                     height:&amp;images/img-0306.png-height;&amp;px;" class="math gen"> which is <img src="images/img-0147.png" alt="$1$" style="vertical-align:&amp;images/img-0147.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0147.png-width;&amp;px;; 
+                                     height:&amp;images/img-0147.png-height;&amp;px;" class="math gen"> on <img src="images/img-0307.png" alt="$[0,j]$" style="vertical-align:&amp;images/img-0307.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0307.png-width;&amp;px;; 
+                                     height:&amp;images/img-0307.png-height;&amp;px;" class="math gen">, <img src="images/img-0065.png" alt="$0$" style="vertical-align:&amp;images/img-0065.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0065.png-width;&amp;px;; 
+                                     height:&amp;images/img-0065.png-height;&amp;px;" class="math gen"> on <img src="images/img-0308.png" alt="$[j,\infty ]$" style="vertical-align:&amp;images/img-0308.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0308.png-width;&amp;px;; 
+                                     height:&amp;images/img-0308.png-height;&amp;px;" class="math gen"> and linear inside and defines <img src="images/img-0309.png" alt="$\varphi _ j (Q) = \varphi (Q) \chi _ j(d(Q,P))$" style="vertical-align:&amp;images/img-0309.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0309.png-width;&amp;px;; 
+                                     height:&amp;images/img-0309.png-height;&amp;px;" class="math gen">. Note that the distance function is only Lipschitz and not necessarily smooth (so we did not mind taking a linear cut-off). However, since <img src="images/img-0310.png" alt="$\varphi _ j$" style="vertical-align:&amp;images/img-0310.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0310.png-width;&amp;px;; 
+                                     height:&amp;images/img-0310.png-height;&amp;px;" class="math gen"> is compactly support and Lipschitz and we can approximate each <img src="images/img-0310.png" alt="$\varphi _ j$" style="vertical-align:&amp;images/img-0310.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0310.png-width;&amp;px;; 
+                                     height:&amp;images/img-0310.png-height;&amp;px;" class="math gen"> by a sequence in <img src="images/img-0281.png" alt="$C_ c^\infty (M)$" style="vertical-align:&amp;images/img-0281.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0281.png-width;&amp;px;; 
+                                     height:&amp;images/img-0281.png-height;&amp;px;" class="math gen">: Let <img src="images/img-0311.png" alt="$K_ j$" style="vertical-align:&amp;images/img-0311.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0311.png-width;&amp;px;; 
+                                     height:&amp;images/img-0311.png-height;&amp;px;" class="math gen"> be the support of <img src="images/img-0310.png" alt="$\varphi _ j$" style="vertical-align:&amp;images/img-0310.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0310.png-width;&amp;px;; 
+                                     height:&amp;images/img-0310.png-height;&amp;px;" class="math gen"> and <img src="images/img-0312.png" alt="$\{ \alpha _ i\} _ i$" style="vertical-align:&amp;images/img-0312.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0312.png-width;&amp;px;; 
+                                     height:&amp;images/img-0312.png-height;&amp;px;" class="math gen"> be a finite partition of unity subordinating to an open coordinated cover of <img src="images/img-0078.png" alt="$K$" style="vertical-align:&amp;images/img-0078.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0078.png-width;&amp;px;; 
+                                     height:&amp;images/img-0078.png-height;&amp;px;" class="math gen">. Since <img src="images/img-0313.png" alt="$\alpha _ i\varphi _ j$" style="vertical-align:&amp;images/img-0313.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0313.png-width;&amp;px;; 
+                                     height:&amp;images/img-0313.png-height;&amp;px;" class="math gen"> is Lipschitz, viewed in a chart, it can be <img src="images/img-0314.png" alt="$W^{1,\infty }$" style="vertical-align:&amp;images/img-0314.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0314.png-width;&amp;px;; 
+                                     height:&amp;images/img-0314.png-height;&amp;px;" class="math gen">-approximated by smooth functions, due to the following fact. </p><p><b class="bfseries">Fact.</b> If <img src="images/img-0020.png" alt="$\Omega \subset \mathbb {R}^ n$" style="vertical-align:&amp;images/img-0020.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0020.png-width;&amp;px;; 
+                                     height:&amp;images/img-0020.png-height;&amp;px;" class="math gen"> be a bounded domain with <img src="images/img-0315.png" alt="$\delta \Omega $" style="vertical-align:&amp;images/img-0315.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0315.png-width;&amp;px;; 
+                                     height:&amp;images/img-0315.png-height;&amp;px;" class="math gen"> regular, then <img src="images/img-0316.png" alt="${\rm Lip}(\Omega ) = W^{1,\infty }(\Omega )$" style="vertical-align:&amp;images/img-0316.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0316.png-width;&amp;px;; 
+                                     height:&amp;images/img-0316.png-height;&amp;px;" class="math gen">. </p><p>The approximation scheme looks like <img src="images/img-0317.png" alt="$\varphi \approx \varphi _ j \approx \sum _ i \alpha _{i,K_ j}\varphi _ j \approx \sum _ i \psi _{i,j}$" style="vertical-align:&amp;images/img-0317.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0317.png-width;&amp;px;; 
+                                     height:&amp;images/img-0317.png-height;&amp;px;" class="math gen"> where <img src="images/img-0318.png" alt="$\psi _{i,j}$" style="vertical-align:&amp;images/img-0318.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0318.png-width;&amp;px;; 
+                                     height:&amp;images/img-0318.png-height;&amp;px;" class="math gen"> are smooth and compactly support. </p> </p><p> The similar results for higher orders are complicated, for example, one can prove that <img src="images/img-0319.png" alt="$W^{2,p}_0 = W^{2,p}$" style="vertical-align:&amp;images/img-0319.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0319.png-width;&amp;px;; 
+                                     height:&amp;images/img-0319.png-height;&amp;px;" class="math gen"> under the hypothesis of bounded curvature and strictly positive injectivity radius. The third order requires extra conditions.  </p><p>The second part of the Theorem <a href="rem-sobolev-def.html">4</a> is local in nature, and therefore easier. We will prove this second part by accepting the first one, which we will come back and prove eventually. </p><p>For the imbedding into <img src="images/img-0320.png" alt="$C^ r_ B(M)$" style="vertical-align:&amp;images/img-0320.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0320.png-width;&amp;px;; 
+                                     height:&amp;images/img-0320.png-height;&amp;px;" class="math gen">, it suffices to establish the case <img src="images/img-0321.png" alt="$W^{1,q} \hookrightarrow C^0_ B$" style="vertical-align:&amp;images/img-0321.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0321.png-width;&amp;px;; 
+                                     height:&amp;images/img-0321.png-height;&amp;px;" class="math gen">, the higher order case then follows: If <img src="images/img-0322.png" alt="$\varphi \in W^{k,q}$" style="vertical-align:&amp;images/img-0322.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0322.png-width;&amp;px;; 
+                                     height:&amp;images/img-0322.png-height;&amp;px;" class="math gen"> then <img src="images/img-0323.png" alt="$\nabla ^ r\varphi \in W^{k-r,q} \hookrightarrow W^{k-r,q} \hookrightarrow W^{1,\tilde q} \hookrightarrow C^0_ B$" style="vertical-align:&amp;images/img-0323.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0323.png-width;&amp;px;; 
+                                     height:&amp;images/img-0323.png-height;&amp;px;" class="math gen"> where <img src="images/img-0324.png" alt="$\frac{1}{n} \geq \frac{1}{\tilde q}\geq \frac{1}{q}-\frac{k-r-1}{n}$" style="vertical-align:&amp;images/img-0324.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0324.png-width;&amp;px;; 
+                                     height:&amp;images/img-0324.png-height;&amp;px;" class="math gen">. </p><p>Similarly, for the imbedding into <img src="images/img-0325.png" alt="$C^{r,\alpha (M)}$" style="vertical-align:&amp;images/img-0325.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0325.png-width;&amp;px;; 
+                                     height:&amp;images/img-0325.png-height;&amp;px;" class="math gen">, it suffices to establish the case <img src="images/img-0326.png" alt="$W^{1,q} \hookrightarrow C^{0,\alpha }$" style="vertical-align:&amp;images/img-0326.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0326.png-width;&amp;px;; 
+                                     height:&amp;images/img-0326.png-height;&amp;px;" class="math gen"> for <img src="images/img-0327.png" alt="$\frac{1-\alpha }{n}\geq \frac{1}{q}$" style="vertical-align:&amp;images/img-0327.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0327.png-width;&amp;px;; 
+                                     height:&amp;images/img-0327.png-height;&amp;px;" class="math gen">. </p><p>Since <img src="images/img-0301.png" alt="$W^{1,p}(M) = W^{1,p}_0(M)$" style="vertical-align:&amp;images/img-0301.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0301.png-width;&amp;px;; 
+                                     height:&amp;images/img-0301.png-height;&amp;px;" class="math gen">, it suffices to prove the following Lemma <a href="rem-sobolev-def.html#lem:sobolev-case">3</a> and Lemma <a href="rem-sobolev-def.html#fig:sobolev-holder">40</a>. </p><p>[<img src="images/img-0328.png" alt="$ W^{1,q} \hookrightarrow C^0_ B $" style="vertical-align:&amp;images/img-0328.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0328.png-width;&amp;px;; 
+                                     height:&amp;images/img-0328.png-height;&amp;px;" class="math gen">]  Let <img src="images/img-0115.png" alt="$M^ n$" style="vertical-align:&amp;images/img-0115.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0115.png-width;&amp;px;; 
+                                     height:&amp;images/img-0115.png-height;&amp;px;" class="math gen"> be a complete Riemannian manifold with injectivity radius <img src="images/img-0232.png" alt="$\delta _0&gt;0$" style="vertical-align:&amp;images/img-0232.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0232.png-width;&amp;px;; 
+                                     height:&amp;images/img-0232.png-height;&amp;px;" class="math gen"> and sectional curvature <img src="images/img-0207.png" alt="$K\leq b^2$" style="vertical-align:&amp;images/img-0207.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0207.png-width;&amp;px;; 
+                                     height:&amp;images/img-0207.png-height;&amp;px;" class="math gen">, then for all <img src="images/img-0329.png" alt="$\varphi \in C_ c^\infty (M)$" style="vertical-align:&amp;images/img-0329.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0329.png-width;&amp;px;; 
+                                     height:&amp;images/img-0329.png-height;&amp;px;" class="math gen">, one has </p><table id="a0000000027" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%"></td>
+    <td><img src="images/img-0330.png" alt="\[  \sup _ M |\varphi | \leq C(q) \| \varphi \| _{W^{1,q}},\quad \forall q&gt;n  \]" style="width:&amp;images/img-0330.png-width;&amp;px;; 
+                            height:&amp;images/img-0330.png-height;&amp;px;" class="math gen"></td>
+    
+    <td style="width:40%"></td>
+    <td class="eqnnum" style="width:20%"></td>
+</tr>
+</table><p>  <p>Take <img src="images/img-0331.png" alt="$\delta &lt;\min \{ \delta _0, \frac{\pi }{2b}\} $" style="vertical-align:&amp;images/img-0331.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0331.png-width;&amp;px;; 
+                                     height:&amp;images/img-0331.png-height;&amp;px;" class="math gen"> and let <img src="images/img-0332.png" alt="$(r,\theta )$" style="vertical-align:&amp;images/img-0332.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0332.png-width;&amp;px;; 
+                                     height:&amp;images/img-0332.png-height;&amp;px;" class="math gen"> be the geodesic polar coordinate centered at <img src="images/img-0305.png" alt="$P\in M$" style="vertical-align:&amp;images/img-0305.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0305.png-width;&amp;px;; 
+                                     height:&amp;images/img-0305.png-height;&amp;px;" class="math gen">, then by Theorem <a href="sec-orgdc0da4c.html#thm:vol-comparison"></a>, the ratio of the metric volume form <img src="images/img-0333.png" alt="$dV:= |g|dE$" style="vertical-align:&amp;images/img-0333.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0333.png-width;&amp;px;; 
+                                     height:&amp;images/img-0333.png-height;&amp;px;" class="math gen"> and the Euclidean volume form <img src="images/img-0334.png" alt="$dE$" style="vertical-align:&amp;images/img-0334.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0334.png-width;&amp;px;; 
+                                     height:&amp;images/img-0334.png-height;&amp;px;" class="math gen"> of <img src="images/img-0335.png" alt="$T_ P M$" style="vertical-align:&amp;images/img-0335.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0335.png-width;&amp;px;; 
+                                     height:&amp;images/img-0335.png-height;&amp;px;" class="math gen"> is <img src="images/img-0336.png" alt="$\sqrt{|g_\theta |}\geq \left(\frac{\sin br}{br}\right)^{n-1}\geq (\frac{2}{\pi })^{n-1}$" style="vertical-align:&amp;images/img-0336.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0336.png-width;&amp;px;; 
+                                     height:&amp;images/img-0336.png-height;&amp;px;" class="math gen">. </p><p>let <img src="images/img-0337.png" alt="$\chi : \mathbb {R}_{\geq 0} \longrightarrow \mathbb {R}$" style="vertical-align:&amp;images/img-0337.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0337.png-width;&amp;px;; 
+                                     height:&amp;images/img-0337.png-height;&amp;px;" class="math gen"> be a cut-off function which is constantly <img src="images/img-0147.png" alt="$1$" style="vertical-align:&amp;images/img-0147.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0147.png-width;&amp;px;; 
+                                     height:&amp;images/img-0147.png-height;&amp;px;" class="math gen"> near <img src="images/img-0065.png" alt="$0$" style="vertical-align:&amp;images/img-0065.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0065.png-width;&amp;px;; 
+                                     height:&amp;images/img-0065.png-height;&amp;px;" class="math gen"> and supported in <img src="images/img-0338.png" alt="$[0,\delta )$" style="vertical-align:&amp;images/img-0338.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0338.png-width;&amp;px;; 
+                                     height:&amp;images/img-0338.png-height;&amp;px;" class="math gen">. Then </p><table id="a0000000028" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%"></td>
+    <td><img src="images/img-0339.png" alt="\[  \varphi (P) = -\int _0^\delta \partial _ r\left(\varphi (r,\theta )\chi (r)\right)dr,\quad \forall \theta \in \mathbb {S}^{n-1}  \]" style="width:&amp;images/img-0339.png-width;&amp;px;; 
+                            height:&amp;images/img-0339.png-height;&amp;px;" class="math gen"></td>
+    
+    <td style="width:40%"></td>
+    <td class="eqnnum" style="width:20%"></td>
+</tr>
+</table><p> Integrate w.r.t <img src="images/img-0340.png" alt="$\theta \in \mathbb {S}^{n-1}$" style="vertical-align:&amp;images/img-0340.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0340.png-width;&amp;px;; 
+                                     height:&amp;images/img-0340.png-height;&amp;px;" class="math gen">, recall that <img src="images/img-0341.png" alt="$\omega _ n$" style="vertical-align:&amp;images/img-0341.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0341.png-width;&amp;px;; 
+                                     height:&amp;images/img-0341.png-height;&amp;px;" class="math gen"> denotes the volume of <img src="images/img-0342.png" alt="$\mathbb {S}^{n-1}$" style="vertical-align:&amp;images/img-0342.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0342.png-width;&amp;px;; 
+                                     height:&amp;images/img-0342.png-height;&amp;px;" class="math gen">: </p><table id="a0000000029" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%"></td>
+    <td><img src="images/img-0343.png" alt="\begin{equation*} \begin{split}  \left|\varphi (p)\right| &amp; \leq (\omega _{n-1})^{-1} \int _ B \left| \nabla (\varphi (r,\theta )\chi (r)) \right| r^{1-n}r^{n-1}drd\theta \\ &amp; \leq (\omega _{n-1})^{-1} \left(\int _ B \left| \nabla (\varphi (r,\theta )\chi (r)) \right|^ q dE\right)^{1/q}\left(\omega _{n-1}\int _0^\delta r^{(n-1)(1-q)}dr\right)^{1/q&#x27;}\\ &amp; \leq (\frac{\pi }{2})^{n-1} (\omega _{n-1})^{-1/q} \left(\| \nabla \varphi \| _{L^ q} + \sup _{[0,\delta ]}|\chi ’|\| \varphi \| _{L^ q} \right) \left(\frac{q-1}{q-n}\delta ^{\frac{q-n}{q-1}}\right)^{1/q&#x27;} \end{split}\end{equation*}" style="width:&amp;images/img-0343.png-width;&amp;px;; 
+                            height:&amp;images/img-0343.png-height;&amp;px;" class="math gen"></td>
+    
+    <td style="width:40%"></td>
+    <td class="eqnnum" style="width:20%"></td>
+</tr>
+</table><p> where <img src="images/img-0344.png" alt="$q’$" style="vertical-align:&amp;images/img-0344.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0344.png-width;&amp;px;; 
+                                     height:&amp;images/img-0344.png-height;&amp;px;" class="math gen"> denotes the Hölder conjugate of <img src="images/img-0067.png" alt="$q$" style="vertical-align:&amp;images/img-0067.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0067.png-width;&amp;px;; 
+                                     height:&amp;images/img-0067.png-height;&amp;px;" class="math gen"> and for we used Hölder inequality w.r.t <img src="images/img-0334.png" alt="$dE$" style="vertical-align:&amp;images/img-0334.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0334.png-width;&amp;px;; 
+                                     height:&amp;images/img-0334.png-height;&amp;px;" class="math gen"> for the second inequality and the comparison <img src="images/img-0345.png" alt="$dE \leq (\frac{\pi }{2})^{n-1}dV$" style="vertical-align:&amp;images/img-0345.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0345.png-width;&amp;px;; 
+                                     height:&amp;images/img-0345.png-height;&amp;px;" class="math gen"> for the third. The conclusion follows. </p> </p><p>[<img src="images/img-0346.png" alt="$ W^{1,q} \hookrightarrow C^{0,\alpha } $" style="vertical-align:&amp;images/img-0346.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0346.png-width;&amp;px;; 
+                                     height:&amp;images/img-0346.png-height;&amp;px;" class="math gen">]  Let <img src="images/img-0115.png" alt="$M^ n$" style="vertical-align:&amp;images/img-0115.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0115.png-width;&amp;px;; 
+                                     height:&amp;images/img-0115.png-height;&amp;px;" class="math gen"> be a complete Riemannian manifold with injectivity radius <img src="images/img-0232.png" alt="$\delta _0&gt;0$" style="vertical-align:&amp;images/img-0232.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0232.png-width;&amp;px;; 
+                                     height:&amp;images/img-0232.png-height;&amp;px;" class="math gen"> and bounded curvature, then for all <img src="images/img-0329.png" alt="$\varphi \in C_ c^\infty (M)$" style="vertical-align:&amp;images/img-0329.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0329.png-width;&amp;px;; 
+                                     height:&amp;images/img-0329.png-height;&amp;px;" class="math gen">, one has </p><table id="a0000000030" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%"></td>
+    <td><img src="images/img-0347.png" alt="\[  \sup _ M |\varphi | + \sup _{P\ne Q} |\varphi (P) -\varphi (Q)|\  d(P,Q)^{-\alpha } \leq C(\alpha ,q) \| \varphi \| _{W^{1,q}},\quad \text { for all } \frac{1-\alpha }{n}\geq \frac{1}{q}  \]" style="width:&amp;images/img-0347.png-width;&amp;px;; 
+                            height:&amp;images/img-0347.png-height;&amp;px;" class="math gen"></td>
+    
+    <td style="width:40%"></td>
+    <td class="eqnnum" style="width:20%"></td>
+</tr>
+</table><p>  <p>By Lemma <a href="rem-sobolev-def.html#lem:sobolev-case">3</a>, one can discard the term <img src="images/img-0348.png" alt="$\sup _ M |\varphi |$" style="vertical-align:&amp;images/img-0348.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0348.png-width;&amp;px;; 
+                                     height:&amp;images/img-0348.png-height;&amp;px;" class="math gen"> and only need to treat the second term of LHS. Let <img src="images/img-0349.png" alt="$\delta \leq \min \{ \delta _0, \frac{\pi }{2b}\} $" style="vertical-align:&amp;images/img-0349.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0349.png-width;&amp;px;; 
+                                     height:&amp;images/img-0349.png-height;&amp;px;" class="math gen"> as in the proof of Lemma <a href="rem-sobolev-def.html#lem:sobolev-case">3</a> (<img src="images/img-0184.png" alt="$b^2$" style="vertical-align:&amp;images/img-0184.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0184.png-width;&amp;px;; 
+                                     height:&amp;images/img-0184.png-height;&amp;px;" class="math gen"> being the upper bound of the sectional curvature). One only need to consider the case where <img src="images/img-0350.png" alt="$d=d(P,Q) &lt;\delta /2$" style="vertical-align:&amp;images/img-0350.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0350.png-width;&amp;px;; 
+                                     height:&amp;images/img-0350.png-height;&amp;px;" class="math gen"> because otherwise <img src="images/img-0351.png" alt="$|\varphi (P)-\varphi (Q)| \leq 2\| \varphi \| _{L^\infty }(\frac{\delta }{2})^{-\alpha }d(P,Q)^\alpha $" style="vertical-align:&amp;images/img-0351.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0351.png-width;&amp;px;; 
+                                     height:&amp;images/img-0351.png-height;&amp;px;" class="math gen">. </p><p>Let <img src="images/img-0352.png" alt="$O$" style="vertical-align:&amp;images/img-0352.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0352.png-width;&amp;px;; 
+                                     height:&amp;images/img-0352.png-height;&amp;px;" class="math gen"> be the midpoint of <img src="images/img-0353.png" alt="$P,Q$" style="vertical-align:&amp;images/img-0353.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0353.png-width;&amp;px;; 
+                                     height:&amp;images/img-0353.png-height;&amp;px;" class="math gen">, and denote by <img src="images/img-0354.png" alt="$h:=\varphi \circ \exp _ O$" style="vertical-align:&amp;images/img-0354.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0354.png-width;&amp;px;; 
+                                     height:&amp;images/img-0354.png-height;&amp;px;" class="math gen"> defined on the Euclidean ball <img src="images/img-0355.png" alt="$B(0,2d)\supset B_ O:=B(0,d/2)$" style="vertical-align:&amp;images/img-0355.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0355.png-width;&amp;px;; 
+                                     height:&amp;images/img-0355.png-height;&amp;px;" class="math gen">. We also denote by <img src="images/img-0353.png" alt="$P,Q$" style="vertical-align:&amp;images/img-0353.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0353.png-width;&amp;px;; 
+                                     height:&amp;images/img-0353.png-height;&amp;px;" class="math gen"> the preimages of these points in <img src="images/img-0356.png" alt="$B_ O$" style="vertical-align:&amp;images/img-0356.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0356.png-width;&amp;px;; 
+                                     height:&amp;images/img-0356.png-height;&amp;px;" class="math gen">. See Figure <a href="rem-sobolev-def.html#fig:sobolev-holder">40</a>. </p><p> </p><div id="a0000000031" class="figure"><center>[width=.9../img/svg/sobolev-holder <div class="caption"><b>Figure 2</b>: <span>Left: the picture viewed in normal polar coordinates at <img src="images/img-0352.png" alt="$O$" style="vertical-align:&amp;images/img-0352.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0352.png-width;&amp;px;; 
+                                     height:&amp;images/img-0352.png-height;&amp;px;" class="math gen">. Right: the picture viewed in normal polar coordinates at <img src="images/img-0357.png" alt="$Q$" style="vertical-align:&amp;images/img-0357.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0357.png-width;&amp;px;; 
+                                     height:&amp;images/img-0357.png-height;&amp;px;" class="math gen">.</span></div> </center></div><p>Now place <img src="images/img-0356.png" alt="$B_ O$" style="vertical-align:&amp;images/img-0356.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0356.png-width;&amp;px;; 
+                                     height:&amp;images/img-0356.png-height;&amp;px;" class="math gen"> in polar coordinate centered at <img src="images/img-0357.png" alt="$Q$" style="vertical-align:&amp;images/img-0357.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0357.png-width;&amp;px;; 
+                                     height:&amp;images/img-0357.png-height;&amp;px;" class="math gen">: </p><table id="a0000000032" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%"></td>
+    <td><img src="images/img-0358.png" alt="\[  h(x) - h(Q) = \int _0^ r \frac{\partial }{\partial r}h(r,\theta ) dr = r\int _0^1 \frac{\partial }{\partial \rho }h(rt,\theta ) dt  \]" style="width:&amp;images/img-0358.png-width;&amp;px;; 
+                            height:&amp;images/img-0358.png-height;&amp;px;" class="math gen"></td>
+    
+    <td style="width:40%"></td>
+    <td class="eqnnum" style="width:20%"></td>
+</tr>
+</table><p> Integrate on <img src="images/img-0359.png" alt="$B_ O\ni x$" style="vertical-align:&amp;images/img-0359.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0359.png-width;&amp;px;; 
+                                     height:&amp;images/img-0359.png-height;&amp;px;" class="math gen"> w.r.t to the measure <img src="images/img-0360.png" alt="$dE_ Q$" style="vertical-align:&amp;images/img-0360.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0360.png-width;&amp;px;; 
+                                     height:&amp;images/img-0360.png-height;&amp;px;" class="math gen"> given by the normal polar coordinates at <img src="images/img-0357.png" alt="$Q$" style="vertical-align:&amp;images/img-0357.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0357.png-width;&amp;px;; 
+                                     height:&amp;images/img-0357.png-height;&amp;px;" class="math gen">: </p><table id="eq:lem:sobolev-case-holder" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%"></td>
+    <td><img src="images/img-0361.png" alt="\begin{equation}  \label{eq:lem:sobolev-case-holder} \begin{split}  \int _{B_ O} |h(x) - \varphi (Q)| dE_ Q &amp; \leq \int _{\theta \in \mathbb {S}^{n-1}} \int _{r=0}^{\rho (\theta )} r^{n-1}r \int _0^1|\frac{\partial }{\partial \rho }h(rt,\theta )|dtdrd\theta \\ ( u:= rt, \rho (\theta )\leq d)\qquad &amp; \leq \int _{\theta \in \mathbb {S}^{n-1}}\int _{t=0}^1\int _{u=0}^{td}t^{-n-1}u^ n \left|\frac{\partial }{\partial \rho }h(u,\theta )\right|dtdud\theta \\ &amp; = \int _{t=0}^1 t^{-n-1}\left( \int _{u=0}^{td}\int _{\theta \in \mathbb {S}^{n-1}}\left| \frac{\partial }{\partial \rho }h(u,\theta ) \right|u. dE_ Q \right)dt \\ (\text {Holder w.r.t } dE_ Q)\qquad &amp; \leq \int _{t=0}^1 t^{-n-1} \left( \int _{u=0}^{td} \int _{\theta \in \mathbb {S}^{n-1}} \left| \frac{\partial }{\partial \rho }h(u,\theta ) \right|^ q dE_ Q \right)^{1/q} \left( \int _0^{td}\omega _{n-1} u^{q&#x27;}u^{n-1} du \right)^{1/q&#x27;}dt\\ (t\leq 1)\qquad &amp; \leq \int _{t=0}^{1} t^{-n-1} \left(\frac{1}{q&#x27;+n}(td)^{q&#x27;+n}\right)^{1/q&#x27;} \left( \int _{u=0}^ d\int _{\theta \in \mathbb {S}^{n-1}} |\nabla \varphi |^ q dE_ Q \right)^{1/q}dt\\ &amp; = C_1(q,n)d^{1 + \frac{n}{q&#x27;}} \left(\int _{B(Q,d)}|\nabla \varphi |^ q dE_ Q \right)^{1/q} \end{split} \end{equation}" style="width:&amp;images/img-0361.png-width;&amp;px;; 
+                            height:&amp;images/img-0361.png-height;&amp;px;" class="math gen"></td>
+    
+    <td style="width:40%"></td>
+    <td class="eqnnum" style="width:20%"><span>(<span>41</span>)</span></td>
+</tr>
+</table><p>Now using the fact that <img src="images/img-0362.png" alt="$\frac{1}{A} dV \leq dE_ Q\leq A dV$" style="vertical-align:&amp;images/img-0362.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0362.png-width;&amp;px;; 
+                                     height:&amp;images/img-0362.png-height;&amp;px;" class="math gen"> since the curvature is bounded, one has </p><table id="a0000000033" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%"></td>
+    <td><img src="images/img-0363.png" alt="\[  \int _{B(O,d/2)}|\varphi (x) -\varphi (Q)|dV \leq C_2(q,n)d^{1 + \frac{n}{q&#x27;}} \|  \nabla \varphi \| _{L^ q}  \]" style="width:&amp;images/img-0363.png-width;&amp;px;; 
+                            height:&amp;images/img-0363.png-height;&amp;px;" class="math gen"></td>
+    
+    <td style="width:40%"></td>
+    <td class="eqnnum" style="width:20%"></td>
+</tr>
+</table><p>Taking sum with the same computation for <img src="images/img-0364.png" alt="$P$" style="vertical-align:&amp;images/img-0364.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0364.png-width;&amp;px;; 
+                                     height:&amp;images/img-0364.png-height;&amp;px;" class="math gen">, one has </p><table id="a0000000034" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%"></td>
+    <td><img src="images/img-0365.png" alt="\[  \left| \varphi (P)-\varphi (Q)\right|\vol _ g(B(O,d/2)) \leq 2C_2(q,n) d^{1 + \frac{n}{q&#x27;}} \|  \nabla \varphi \| _{L^ q}  \]" style="width:&amp;images/img-0365.png-width;&amp;px;; 
+                            height:&amp;images/img-0365.png-height;&amp;px;" class="math gen"></td>
+    
+    <td style="width:40%"></td>
+    <td class="eqnnum" style="width:20%"></td>
+</tr>
+</table><p> since <img src="images/img-0366.png" alt="$\vol _ g(B(O,d/2)) \geq A^{-1}\omega _{n-1}d^ n$" style="vertical-align:&amp;images/img-0366.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0366.png-width;&amp;px;; 
+                                     height:&amp;images/img-0366.png-height;&amp;px;" class="math gen">, one has </p><table id="a0000000035" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%"></td>
+    <td><img src="images/img-0367.png" alt="\[  \left| \varphi (P)-\varphi (Q)\right| \leq C_3(q,n) \| \nabla \varphi \| _{L^ q} d^{1-n/q}  \]" style="width:&amp;images/img-0367.png-width;&amp;px;; 
+                            height:&amp;images/img-0367.png-height;&amp;px;" class="math gen"></td>
+    
+    <td style="width:40%"></td>
+    <td class="eqnnum" style="width:20%"></td>
+</tr>
+</table><p> The conclusion follows since <img src="images/img-0368.png" alt="$1-\frac{n}{q}\geq \alpha $" style="vertical-align:&amp;images/img-0368.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0368.png-width;&amp;px;; 
+                                     height:&amp;images/img-0368.png-height;&amp;px;" class="math gen">. </p> </p><p>For the first part of Theorem <a href="rem-sobolev-def.html">4</a>, it suffices to prove the case <img src="images/img-0369.png" alt="$k=l+1$" style="vertical-align:&amp;images/img-0369.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0369.png-width;&amp;px;; 
+                                     height:&amp;images/img-0369.png-height;&amp;px;" class="math gen">, that is, there exists a constant <img src="images/img-0370.png" alt="$C_1, C_2&gt;0$" style="vertical-align:&amp;images/img-0370.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0370.png-width;&amp;px;; 
+                                     height:&amp;images/img-0370.png-height;&amp;px;" class="math gen"> such that <img src="images/img-0371.png" alt="$\| u\| _{L^ p} \leq C_1\| \nabla u\| _{L^ q} + C_2\|  u\| _{L^ q}$" style="vertical-align:&amp;images/img-0371.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0371.png-width;&amp;px;; 
+                                     height:&amp;images/img-0371.png-height;&amp;px;" class="math gen"> for <img src="images/img-0372.png" alt="$u\in W^{1,q}(M)$" style="vertical-align:&amp;images/img-0372.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0372.png-width;&amp;px;; 
+                                     height:&amp;images/img-0372.png-height;&amp;px;" class="math gen"> and <img src="images/img-0373.png" alt="$\frac{1}{p} = \frac{1}{q}-\frac{1}{n}$" style="vertical-align:&amp;images/img-0373.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0373.png-width;&amp;px;; 
+                                     height:&amp;images/img-0373.png-height;&amp;px;" class="math gen">. </p><p>The proof by <span class="cite">[</span> tries to optimise the constant <img src="images/img-0374.png" alt="$C_1$" style="vertical-align:&amp;images/img-0374.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0374.png-width;&amp;px;; 
+                                     height:&amp;images/img-0374.png-height;&amp;px;" class="math gen">, in an attempt to find the best inequality <span class="cite">[</span>. We will follow their arguments, as the extra effort is not much. We will prove that </p><p>  Given <img src="images/img-0022.png" alt="$p,q\in \mathbb {R}_{&gt;0}$" style="vertical-align:&amp;images/img-0022.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0022.png-width;&amp;px;; 
+                                     height:&amp;images/img-0022.png-height;&amp;px;" class="math gen"> such that <img src="images/img-0375.png" alt="$\frac{1}{p}=\frac{1}{q} - \frac{1}{n}&gt;0$" style="vertical-align:&amp;images/img-0375.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0375.png-width;&amp;px;; 
+                                     height:&amp;images/img-0375.png-height;&amp;px;" class="math gen">, for any <img src="images/img-0376.png" alt="$\epsilon &gt;0$" style="vertical-align:&amp;images/img-0376.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0376.png-width;&amp;px;; 
+                                     height:&amp;images/img-0376.png-height;&amp;px;" class="math gen">, there exists <img src="images/img-0377.png" alt="$A_ q(\epsilon )$" style="vertical-align:&amp;images/img-0377.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0377.png-width;&amp;px;; 
+                                     height:&amp;images/img-0377.png-height;&amp;px;" class="math gen"> such that </p><table id="a0000000036" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%"></td>
+    <td><img src="images/img-0378.png" alt="\[  \| u\| _ p \leq (K(n,q) + \epsilon ) \| \nabla u\| _{L^ q} + A_ q(\epsilon ) \|  u\| _{L^ q}  \]" style="width:&amp;images/img-0378.png-width;&amp;px;; 
+                            height:&amp;images/img-0378.png-height;&amp;px;" class="math gen"></td>
+    
+    <td style="width:40%"></td>
+    <td class="eqnnum" style="width:20%"></td>
+</tr>
+</table><p>  The appearance of the constant <img src="images/img-0379.png" alt="$K(n,q)$" style="vertical-align:&amp;images/img-0379.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0379.png-width;&amp;px;; 
+                                     height:&amp;images/img-0379.png-height;&amp;px;" class="math gen">, given by </p><table id="a0000000037" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%"></td>
+    <td><img src="images/img-0380.png" alt="\[  K(n,q):=\begin{cases}  \frac{q-1}{n(q-1)}\left[\frac{n-q}{n(q-1)}\right]^{1/q}\left[\frac{\Gamma (n+1)}{\Gamma (n/q)\Gamma (n+1-n/q)\omega _{n-1}}\right]^{1/n}, &amp;  \text {if $q&gt;1$} \\ \frac{1}{n}\left(\frac{n}{\omega _{n-1}}\right)^{1/n}, &amp;  \text {if $q=1$} \end{cases}  \]" style="width:&amp;images/img-0380.png-width;&amp;px;; 
+                            height:&amp;images/img-0380.png-height;&amp;px;" class="math gen"></td>
+    
+    <td style="width:40%"></td>
+    <td class="eqnnum" style="width:20%"></td>
+</tr>
+</table><p> is due to the following local result. [Aubin]  Given <img src="images/img-0381.png" alt="$1\leq q &lt; n$" style="vertical-align:&amp;images/img-0381.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0381.png-width;&amp;px;; 
+                                     height:&amp;images/img-0381.png-height;&amp;px;" class="math gen"> and <img src="images/img-0382.png" alt="$u\in W^{1,q}(\mathbb {R}^ n)$" style="vertical-align:&amp;images/img-0382.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0382.png-width;&amp;px;; 
+                                     height:&amp;images/img-0382.png-height;&amp;px;" class="math gen">, with <img src="images/img-0383.png" alt="$\frac{1}{p}=\frac{1}{q}-\frac{1}{n}$" style="vertical-align:&amp;images/img-0383.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0383.png-width;&amp;px;; 
+                                     height:&amp;images/img-0383.png-height;&amp;px;" class="math gen">, one has </p><table id="a0000000038" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%"></td>
+    <td><img src="images/img-0384.png" alt="\[  \| u\| _{L^ p} \leq K(n,q) \| \nabla u\| _{L^ q}.  \]" style="width:&amp;images/img-0384.png-width;&amp;px;; 
+                            height:&amp;images/img-0384.png-height;&amp;px;" class="math gen"></td>
+    
+    <td style="width:40%"></td>
+    <td class="eqnnum" style="width:20%"></td>
+</tr>
+</table><p> In fact, <img src="images/img-0379.png" alt="$K(n,q)$" style="vertical-align:&amp;images/img-0379.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0379.png-width;&amp;px;; 
+                                     height:&amp;images/img-0379.png-height;&amp;px;" class="math gen"> this the norm of the imbedding <img src="images/img-0385.png" alt="$W^{1,q}(\mathbb {R}^ n) \hookrightarrow L^ p(\mathbb {R}^ n)$" style="vertical-align:&amp;images/img-0385.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0385.png-width;&amp;px;; 
+                                     height:&amp;images/img-0385.png-height;&amp;px;" class="math gen">.  </p><p>We will accept the local result and use the Covering Lemma <a href="lem-calabi.html#lem:uni-loc-finite-cover">37</a> to prove Proposition <a href="rem-sobolev-def.html#prop:sobolev-imbedding-1">47</a>, which implies Theorem <a href="rem-sobolev-def.html">4</a>. </p><p><p> Note that given any smooth function <img src="images/img-0036.png" alt="$f$" style="vertical-align:&amp;images/img-0036.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0036.png-width;&amp;px;; 
+                                     height:&amp;images/img-0036.png-height;&amp;px;" class="math gen"> supported in a small geodesic ball <img src="images/img-0266.png" alt="$B(q,\delta )$" style="vertical-align:&amp;images/img-0266.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0266.png-width;&amp;px;; 
+                                     height:&amp;images/img-0266.png-height;&amp;px;" class="math gen">, by applying theorem <a href="rem-sobolev-def.html#thm:aubin-loc">49</a> to the <img src="images/img-0036.png" alt="$f$" style="vertical-align:&amp;images/img-0036.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0036.png-width;&amp;px;; 
+                                     height:&amp;images/img-0036.png-height;&amp;px;" class="math gen">, viewed in the chart (that is, <img src="images/img-0386.png" alt="$f\circ \exp _ q$" style="vertical-align:&amp;images/img-0386.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0386.png-width;&amp;px;; 
+                                     height:&amp;images/img-0386.png-height;&amp;px;" class="math gen">) and use the fact that <img src="images/img-0387.png" alt="$C(\delta )^{-1} \| \nabla (f\circ \exp _ q)\| _{L^ q(dE)} \leq \| \nabla f\| _{L^ q(dV)} \leq C(\delta ) \| \nabla (f\circ \exp _ q)\| _{L^ q(dE)}$" style="vertical-align:&amp;images/img-0387.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0387.png-width;&amp;px;; 
+                                     height:&amp;images/img-0387.png-height;&amp;px;" class="math gen"> (see remark <a href="sec-orgdc0da4c.html#rem:cor-vol-comp">2</a>), one has </p><table id="a0000000039" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%"></td>
+    <td><img src="images/img-0388.png" alt="\[  \| f\| _{L^ p} \leq K_\delta (n,q) \| \nabla f \| _{L^ q}  \]" style="width:&amp;images/img-0388.png-width;&amp;px;; 
+                            height:&amp;images/img-0388.png-height;&amp;px;" class="math gen"></td>
+    
+    <td style="width:40%"></td>
+    <td class="eqnnum" style="width:20%"></td>
+</tr>
+</table><p> where <img src="images/img-0389.png" alt="$K_\delta (n,q)$" style="vertical-align:&amp;images/img-0389.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0389.png-width;&amp;px;; 
+                                     height:&amp;images/img-0389.png-height;&amp;px;" class="math gen"> converges to <img src="images/img-0379.png" alt="$K(n,q)$" style="vertical-align:&amp;images/img-0379.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0379.png-width;&amp;px;; 
+                                     height:&amp;images/img-0379.png-height;&amp;px;" class="math gen"> as <img src="images/img-0148.png" alt="$\delta \to 0$" style="vertical-align:&amp;images/img-0148.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0148.png-width;&amp;px;; 
+                                     height:&amp;images/img-0148.png-height;&amp;px;" class="math gen">. </p><p>It suffice to cover <img src="images/img-0079.png" alt="$M$" style="vertical-align:&amp;images/img-0079.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0079.png-width;&amp;px;; 
+                                     height:&amp;images/img-0079.png-height;&amp;px;" class="math gen"> by geodesic ball <img src="images/img-0390.png" alt="$B(Q_ i,\delta )$" style="vertical-align:&amp;images/img-0390.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0390.png-width;&amp;px;; 
+                                     height:&amp;images/img-0390.png-height;&amp;px;" class="math gen"> such that there exists a partition of unity subordinated to <img src="images/img-0390.png" alt="$B(Q_ i,\delta )$" style="vertical-align:&amp;images/img-0390.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0390.png-width;&amp;px;; 
+                                     height:&amp;images/img-0390.png-height;&amp;px;" class="math gen"> such that <img src="images/img-0391.png" alt="$\| \nabla (h_ i^{1/q})\|  \leq H=\const $" style="vertical-align:&amp;images/img-0391.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0391.png-width;&amp;px;; 
+                                     height:&amp;images/img-0391.png-height;&amp;px;" class="math gen">. In fact for <img src="images/img-0392.png" alt="$\varphi \in W^{1,q}(M)$" style="vertical-align:&amp;images/img-0392.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0392.png-width;&amp;px;; 
+                                     height:&amp;images/img-0392.png-height;&amp;px;" class="math gen">, one has </p><table id="a0000000040" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%"></td>
+    <td><img src="images/img-0393.png" alt="\begin{equation*} \begin{split}  \| \varphi \| _ p^ q &amp; = \left(\int _ M |\varphi |^ p\right)^{q/p}=\left(\int _ M \left(\sum _ i |\varphi |^ q h_ i\right)^{p/q} \right)^{q/p}\\ (\text {since } p\geq q)\qquad &amp; \leq \sum _ i\left(\int _ M \left(|\varphi |^ q h_ i\right)^{p/q} \right)^{q/p} = \sum _ i \left\|  \varphi h_ i^{1/q} \right\| _ p^ q\\ &amp; \leq K^ q_\delta (n,q) \sum _ i \left\|  h_ i^{1/q}\nabla \varphi + \varphi \nabla h_ i^{1/q}\right\| _ q^ q \end{split}\end{equation*}" style="width:&amp;images/img-0393.png-width;&amp;px;; 
+                            height:&amp;images/img-0393.png-height;&amp;px;" class="math gen"></td>
+    
+    <td style="width:40%"></td>
+    <td class="eqnnum" style="width:20%"></td>
+</tr>
+</table><p> Using the fact that there are at most <img src="images/img-0261.png" alt="$k(\delta )$" style="vertical-align:&amp;images/img-0261.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0261.png-width;&amp;px;; 
+                                     height:&amp;images/img-0261.png-height;&amp;px;" class="math gen"> balls overlapping at a point and that <img src="images/img-0394.png" alt="$(a+b)^ q = a^ q \left(1+ \frac{b}{a}\right)^ q \leq a^ q(1 + 2^ q \frac{b}{a} + 2^ q (\frac{b}{a})^{q})\leq a^ q + 2^ q ba^{q-1} + 2^{q}b^ q$" style="vertical-align:&amp;images/img-0394.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0394.png-width;&amp;px;; 
+                                     height:&amp;images/img-0394.png-height;&amp;px;" class="math gen">, one has </p><table id="a0000000041" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%"></td>
+    <td><img src="images/img-0395.png" alt="\begin{equation*} \begin{split}  \| \varphi \| _{p}^ q &amp; \leq K^ q_\delta (n,q)\left(\| \nabla \varphi \| _ q^ q + 2^ q k(\delta ) H^{q-1}\int _ M |\varphi |^{q-1}|\nabla \varphi | + 2^ q k(\delta ) H^ q \|  \varphi \| _ q^ q \right) \\ &amp; \leq K^ q_\delta (n,q)\left[\| \nabla \varphi \| _ q^ q + 2^ q k(\delta ) H^{q-1}\| \nabla \varphi \| _ q\| \varphi \| _ q^{q-1} + 2^ q k(\delta ) H^ q \|  \varphi \| _ q^ q \right]\\ \end{split}\end{equation*}" style="width:&amp;images/img-0395.png-width;&amp;px;; 
+                            height:&amp;images/img-0395.png-height;&amp;px;" class="math gen"></td>
+    
+    <td style="width:40%"></td>
+    <td class="eqnnum" style="width:20%"></td>
+</tr>
+</table><p> It is elementary to see that this implies <img src="images/img-0396.png" alt="$\| \varphi \| _{p}^ q \leq (1+\epsilon )^ qK^ q(n,q)\left[(1+\epsilon )\| \nabla \varphi \| _ q^ q + A(\epsilon ) \|  \varphi \| _ q^ q \right]$" style="vertical-align:&amp;images/img-0396.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0396.png-width;&amp;px;; 
+                                     height:&amp;images/img-0396.png-height;&amp;px;" class="math gen">, from which the conclusion follows. </p><p>For the existence of such <img src="images/img-0397.png" alt="$h_ i$" style="vertical-align:&amp;images/img-0397.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0397.png-width;&amp;px;; 
+                                     height:&amp;images/img-0397.png-height;&amp;px;" class="math gen">, one cover <img src="images/img-0079.png" alt="$M$" style="vertical-align:&amp;images/img-0079.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0079.png-width;&amp;px;; 
+                                     height:&amp;images/img-0079.png-height;&amp;px;" class="math gen"> by balls <img src="images/img-0390.png" alt="$B(Q_ i,\delta )$" style="vertical-align:&amp;images/img-0390.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0390.png-width;&amp;px;; 
+                                     height:&amp;images/img-0390.png-height;&amp;px;" class="math gen"> using Lemma <a href="lem-calabi.html#lem:uni-loc-finite-cover">37</a>. Denote by <img src="images/img-0398.png" alt="$\varphi _ i:B(Q_ i,\delta ) \longrightarrow B(0,\delta )$" style="vertical-align:&amp;images/img-0398.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0398.png-width;&amp;px;; 
+                                     height:&amp;images/img-0398.png-height;&amp;px;" class="math gen"> the inverse of exponential maps and let <img src="images/img-0399.png" alt="$u: \mathbb {R}^ n \longrightarrow \mathbb {R}$" style="vertical-align:&amp;images/img-0399.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0399.png-width;&amp;px;; 
+                                     height:&amp;images/img-0399.png-height;&amp;px;" class="math gen"> be the smooth function, choose <img src="images/img-0400.png" alt="$u$" style="vertical-align:&amp;images/img-0400.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0400.png-width;&amp;px;; 
+                                     height:&amp;images/img-0400.png-height;&amp;px;" class="math gen"> to be a bell curve with maximal value <img src="images/img-0147.png" alt="$1$" style="vertical-align:&amp;images/img-0147.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0147.png-width;&amp;px;; 
+                                     height:&amp;images/img-0147.png-height;&amp;px;" class="math gen"> at <img src="images/img-0065.png" alt="$0$" style="vertical-align:&amp;images/img-0065.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0065.png-width;&amp;px;; 
+                                     height:&amp;images/img-0065.png-height;&amp;px;" class="math gen">, supported in <img src="images/img-0401.png" alt="$B(0,\delta )$" style="vertical-align:&amp;images/img-0401.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0401.png-width;&amp;px;; 
+                                     height:&amp;images/img-0401.png-height;&amp;px;" class="math gen"> and <img src="images/img-0402.png" alt="$u\leq \frac{1}{2}$" style="vertical-align:&amp;images/img-0402.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0402.png-width;&amp;px;; 
+                                     height:&amp;images/img-0402.png-height;&amp;px;" class="math gen"> in <img src="images/img-0403.png" alt="$B(0,\delta /2)$" style="vertical-align:&amp;images/img-0403.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0403.png-width;&amp;px;; 
+                                     height:&amp;images/img-0403.png-height;&amp;px;" class="math gen"> and pose <img src="images/img-0404.png" alt="$u_ i = u\circ \varphi _ i$" style="vertical-align:&amp;images/img-0404.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0404.png-width;&amp;px;; 
+                                     height:&amp;images/img-0404.png-height;&amp;px;" class="math gen">. Then </p><table id="a0000000042" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%"></td>
+    <td><img src="images/img-0405.png" alt="\[  \| \nabla u_ i\| _{g_ M} \leq C_1(g_ M,\delta ) \| \nabla u\| _ E = C_2(g_ M,\delta )  \]" style="width:&amp;images/img-0405.png-width;&amp;px;; 
+                            height:&amp;images/img-0405.png-height;&amp;px;" class="math gen"></td>
+    
+    <td style="width:40%"></td>
+    <td class="eqnnum" style="width:20%"></td>
+</tr>
+</table><p> Pose <img src="images/img-0406.png" alt="$h_ i = \frac{u_ i^ m}{\sum u_ j^ m}$" style="vertical-align:&amp;images/img-0406.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0406.png-width;&amp;px;; 
+                                     height:&amp;images/img-0406.png-height;&amp;px;" class="math gen"> with <img src="images/img-0407.png" alt="$m&gt;q$" style="vertical-align:&amp;images/img-0407.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0407.png-width;&amp;px;; 
+                                     height:&amp;images/img-0407.png-height;&amp;px;" class="math gen"> then </p><table id="a0000000043" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%"></td>
+    <td><img src="images/img-0408.png" alt="\begin{equation*} \begin{split}  \left|\nabla (h_ i^{1/q})\right| &amp; = \left|\frac{m}{q}\frac{u_ i^{\frac{m}{q} - 1}\nabla u_ i}{(\sum u_ j^ m)^{1/q}} + u_ i^{m/q}\left(\frac{-1}{q}\right)\frac{\sum \nabla (u_ j^ m)}{(\sum u_ j^ m)^{1+ \frac{1}{q}}}\right|\\ &amp; \leq \frac{m}{q.2^{-m/q}}|\nabla u_ i| + \frac{1}{q}\sum m \frac{|\nabla u_ j|}{(2^{-m})^{1+\frac{1}{q}}}\\ &amp; \leq \left( \frac{m}{q}2^{m/q} + \frac{m}{q}2^{m(1+\frac{1}{q})}k(\delta )\right)C_2(g_ M,\delta )=\const \end{split}\end{equation*}" style="width:&amp;images/img-0408.png-width;&amp;px;; 
+                            height:&amp;images/img-0408.png-height;&amp;px;" class="math gen"></td>
+    
+    <td style="width:40%"></td>
+    <td class="eqnnum" style="width:20%"></td>
+</tr>
+</table><p> where <img src="images/img-0261.png" alt="$k(\delta )$" style="vertical-align:&amp;images/img-0261.png-depth;&amp;px;; 
+                                     width:&amp;images/img-0261.png-width;&amp;px;; 
+                                     height:&amp;images/img-0261.png-height;&amp;px;" class="math gen">, as in Lemma <a href="lem-calabi.html#lem:uni-loc-finite-cover">37</a>, is the upper bound of number of balls overlapping at the point in question. </p> </p></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="lem-calabi.html"><img border="0" src="icons/previous.gif" width="32" height="32"></a></td>
+
+<td><a href="index.html"><img border="0" src="icons/up.gif" width="32" height="32"></a></td>
+
+<td><a href="thm-kondrachov.html"><img border="0" src="icons/next.gif" width="32" height="32"></a></td>
+
+<td class="navtitle" align="center">A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32"></a></td>
+
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32"></td>
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32"></td>
+</tr>
+</table>
+</div>
+
+</body>
+</html>

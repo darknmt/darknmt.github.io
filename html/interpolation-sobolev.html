@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-05-01 Tue 15:29 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Interpolation theory and Sobolev spaces on compact manifolds</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Tien NGUYEN MANH" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' href='../res/blog.css' type='text/css'/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+
+<script type='text/x-mathjax-config'>  MathJax.Hub.Config({    extensions: ['tex2jax.js'],    jax: ['input/TeX','output/HTML-CSS'],    TeX: {extensions: ['../res/xypic.js', 'AMSmath.js', 'AMSsymbols.js'], TagSide: 'left'},    tex2jax: {inlineMath: [['$','$'] ['\(','\)']]},    'HTML-CSS': { scale: 85 }  });</script><script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js'></script>
+
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='./index.html'>Home</a></li>
+<li><a href='./blog.html'>Blog</a></li>
+<li><a href='./writings.html'>Miscellany</a></li>
+<li><a href='http://github.com/darknmt/'>GitHub</a></li>
+<li><a href='./contact.html'>Contact</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<h1 class="title">Interpolation theory and Sobolev spaces on compact manifolds</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgbd83145">1. Motivation</a></li>
+<li><a href="#org44d446e">2. Preparatory material</a>
+<ul>
+<li><a href="#org8ccc5a7">2.1. Stein's multiplier</a></li>
+<li><a href="#org889a976">2.2. Holomorphic interpolation of Banach spaces</a></li>
+</ul>
+</li>
+<li><a href="#orgad78d3d">3. Sobolev spaces on compact manifold without boundary</a></li>
+<li><a href="#orgf89aa60">4. Sobolev spaces on compact manifold with boundary</a>
+<ul>
+<li><a href="#orge43f887">4.1. Sobolev spaces on half-plan</a></li>
+<li><a href="#orgbaff8b2">4.2. Trace theorems</a></li>
+<li><a href="#org1f59796">4.3. Generalisation to manifold</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="info">
+<p>
+The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
+<code>pdf</code>. 
+For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
+</p>
+
+</div>
+\(
+\newcommand{\im}{\mathop{\rm Im}\nolimits}
+\newcommand{\supp}{\mathop{\rm supp}\nolimits}
+\newcommand{\ord}{\mathop{\rm ord}\nolimits}
+\newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
+\newcommand{\vol}{\mathop{\rm vol}\nolimits}
+\newcommand\restr[2]{{\left.#1\right|_{#2}}}
+\newcommand{\transp}{\mathop{\rm \,^t}\nolimits}
+\newcommand{\sff}{\mathop{\rm I\*I}\nolimits}
+\newcommand{\tr}{\mathop{\rm Tr}\nolimits}
+\newcommand{\const}{\mathop{\rm const }\nolimits}
+\newcommand{\lcm}{\mathop{\rm lcm}\nolimits}
+\newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
+\)
+
+<div id="outline-container-orgbd83145" class="outline-2">
+<h2 id="orgbd83145"><span class="section-number-2">1</span> Motivation</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+We will define a more general notion of Sobolev spaces on compact manifold than those in
+<a class='org-ref-reference' href="#aubin_nonlinear_1998">aubin_nonlinear_1998</a> and <a class='org-ref-reference' href="#jost_riemannian_2008">jost_riemannian_2008</a>, where Sobolev spaces on a
+(Riemannian) manifold \( W^{k,p}(M) \) of dimension \( n \) are defined for
+\( k\in \mathbb{Z}_{\geq 0} \) and for <i>uniform weight</i>, i.e. a function \( f\in W^{k,p}(M)
+\) is supposed to be weakly differentiable up to order \( k \) in every variables \(
+x_1,\dots, x_n \) in each smooth coordinates. The space \( W^{k,p}(M) \) in this case can
+be defined by density with respect to a certain norm involving derivatives \(
+\frac{\partial f}{\partial x^\alpha} \).
+</p>
+
+<p>
+Meanwhile, the suitable function spaces to
+solve parabolic equations are those whose regularity in time is half of that in space,
+i.e. we will solve parabolic equations on the Sobolev spaces \( W^{k,p}(M\times T) \) of functions
+\( k \) times regular in \( M \) and \( k/2 \) times regular in \( T \). We cannot always,
+(for example when \( k \) is odd) find a simple norm involving derivatives of \( f \) in
+order to define \( W^{k,p} \) by density. This generalisation will be done using Stein's
+multipliers.
+</p>
+
+<p>
+Another generalisation will be made is to allow the manifold to have boundary. Even when
+we only want to solve parabolic equation on manifold \( M \) without boundary, the
+underlying space is \( M\times [0, T] \) which has boundary. Moreover, we will have to
+discuss the notion of trace in order to use the initial condition at \( t=0 \). 
+</p>
+
+<p>
+All manifolds will be compact, with no given metric. This is not really a
+generalisation since on compact manifolds, Sobolev spaces \( W^{k,p}(M) \), as defined in
+<a class='org-ref-reference' href="#aubin_nonlinear_1998">aubin_nonlinear_1998</a> and <a class='org-ref-reference' href="#jost_riemannian_2008">jost_riemannian_2008</a> set theoretically do not depend on
+the metric and (the equivalent class of) their norms also independent of the metric.
+</p>
+
+<p>
+We will mainly follow the discussion in <a class='org-ref-reference' href="#hamilton_harmonic_1975">hamilton_harmonic_1975</a>, where the author also
+works on manifold with <i>corner</i>, i.e. irregular boundary. The corners, modeled by \(
+\mathbb{R}^{n-k}\times \mathbb{R}_{\geq 0}^k \), appear naturally,
+for example at the boundary \( \partial M \) in \( t=0 \). The extra effort to cover the
+case of corners is not much (see <a class='org-ref-reference' href="#hamilton_harmonic_1975">hamilton_harmonic_1975</a>) and essentially algebraic.
+</p>
+
+<p>
+The advantage of this approach (Stein's multipliers and interpolation theory) over the
+definition by density is that it is based on an algebraic framework compatible with
+compact operators and capable of formulating analytic result economically. For example,
+3 classical results of elliptic equations (existence and approximate solution, regularity,
+Garding's inequality) can be nicely encoded in a commutative diagram and can be proved at
+the same time (and the proof is essentially algebraic), see this <a href="./elliptic-parabolic.html">post</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org44d446e" class="outline-2">
+<h2 id="org44d446e"><span class="section-number-2">2</span> Preparatory material</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+We will recall here basic elements of Fourier transform on the space of tempered
+distributions and then we will have a quick review of interpolation theory.
+</p>
+</div>
+
+<div id="outline-container-org8ccc5a7" class="outline-3">
+<h3 id="org8ccc5a7"><span class="section-number-3">2.1</span> Stein's multiplier</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Let \( X = \mathbb{R}^n \) be the Euclidean space, coordinated by \( x_1,\dots, x_n \) and
+\( \mathcal{E}= \mathbb{R}^n \), coordinated by \( \xi_1,\dots,\xi_n \) be the frequency
+domain of \( X \). Recall that Fourier transform is an isomorphism in the following three levels
+</p>
+<ol class="org-ol">
+<li>The Schwartz space of rapidly decreasing smooth functions \( \mathcal{S}(X) \) whose elements
+are smooth and decrease more rapidly then any rational function. The Schwartz space are
+topologized by the family of semi-norms \( |f|_{\alpha,\beta}= \sup_X |x^{\alpha} D^b_x f(x)| \).</li>
+<li>The space \( L^2(X) \) of doubly-integrable functions.</li>
+<li>The space of tempered distributions, i.e. the dual space \(\mathcal{S}^*(X) \) of \(
+   \mathcal{S}(X) \) under the weak-* topology given by \( \mathcal{S}(X) \).</li>
+</ol>
+
+<p>
+To simplify the notation, we use \( D^\alpha_x = \left(\frac{1}{i}\frac{\partial}{\partial
+x_1}\right)^{\alpha_1} \dots  \left(\frac{1}{i}\frac{\partial}{\partial
+x_n}\right)^{\alpha_n}\) and \( P(D) = \sum_\alpha c_\alpha D^\alpha \) for any polynomial
+\( P \). 
+</p>
+
+<p>
+Recall that for any \( u\in \mathcal{S}(X) \)
+and for any polynomial \( P \), one has  \( \widehat{P(D)u} = P(\xi)\hat u(\xi) \). This
+can be extended to non-polynomial function of \( M(D) \) of \( D \) by
+\[
+ \widehat{M(D)u} := M(\xi)\hat u(\xi)
+\]
+where \( M \) is a slowly growing function, i.e. \( D^\alpha M(\xi) \) grows slower than
+certain polynomial as \( |\xi|\to \infty \).
+</p>
+
+<p>
+The following theorem give a criteria of the function \( M \) such that \( M(D):
+\mathcal{S}(X) \longrightarrow \mathcal{S}(X) \) extend to \( L^p(X) \longrightarrow
+L^p(X) \).
+</p>
+
+<div id="thm:stein-crit" btit="(Stein)" class="theorem">
+<p>
+If for any <i>primitive</i> index \( \alpha=(\alpha_1,\dots,\alpha_n) \), i.e. each \( \alpha_i
+\) being \( 0 \) or \( 1 \) (there are exactly \( 2^n \) primitive indices), one has
+\[
+ \left| \xi^\alpha D^\alpha M(\xi)\right| \leq C_\alpha
+\]
+then \( M(D) \) extend to a bounded linear operator on \( L^p(X) \).
+</p>
+
+</div>
+
+<div class="definition">
+<ol class="org-ol">
+<li>A slowly growing function \( W \) on \( \mathcal{E} \) with \( W(\xi)>0 \) is called a
+<b>weight</b> if for all primitive index \( \alpha \), one has
+\[
+   \left|\xi^\alpha D^\alpha W(\xi)\right|\leq C_\alpha W(\xi).
+   \]</li>
+<li>The <b>Sobolev space</b> \( W^{k,p}(X,W) \) with respect to weight \( W \), \( k\in
+   \mathbb{R}, 1<p<\infty \) is the vector space
+\[
+    W^{k,p}(X,W) = \left\{ u\in \mathcal{S}^*(X):\ W(D)^k u \in L^p(X)\right\}
+   \]
+normed by \( \|u\|_{W^{k,p}} = \| W(D)^k u\|_{L^p} \).</li>
+</ol>
+
+</div>
+
+<div btit="(Weight given by \( \Sigma=(\sigma_1,\dots, \sigma_n) \))" class="exampl">
+<p>
+Note by \( \sigma:= \lcm(\sigma_1,\dots,\sigma_n) \) then \( W_\Sigma(\xi) = \left( 1 +
+\xi_1^{2\sigma_1} + \dots + \xi_n^{2\sigma_n} \right)^{1/2\sigma} \) is a weight. We will
+only use weights of this type in our discussion. The index \( \Sigma =
+(\sigma_1,\dots,\sigma_n) \) is chosen according to the differential operator in the
+elliptic/parabolic equation. In particular, for Laplace equation, one choose \(
+\Sigma=(1,\dots, 1) \) and for heat equation \( \Sigma = (1,2,\dots, 2) \) where \( 1 \)
+is in the time component.
+</p>
+
+</div>
+
+<div id="rem:weight" class="remark">
+<ol class="org-ol">
+<li>If \( W_1,W_2 \) are weights then \( W_1 + s W_2, W_1 W_2, W_1^s (s>0)\) are also weights.</li>
+<li>The operator \( W(D):\ W^{k+r},p(X,W) \longrightarrow W^{k,p}(X) \) is bounded.</li>
+<li>Given another weight \( V(\xi) \leq C W(\xi) \), by Stein's criteria (Theorem
+<a href="#thm:stein-crit">thm:stein-crit</a>) one has a bounded embedding \( W^{k,p}(X,W) \hookrightarrow  W^{k,p}(X,V) \).</li>
+</ol>
+
+</div>
+
+<p>
+The Sobolev space \( W^{k,p}(X,W_\Sigma \) has a simple definition by density when \( \sigma \mid
+k \). Given an index \( \alpha = (\alpha_1,\dots,\alpha_n) \), note by
+\(
+ \|\alpha\| := \sum_{i=1}^n \alpha_i \frac{\sigma}{\sigma_i}.
+\)
+</p>
+
+<div id="thm:equiv-norm-Sobolev" btit="(Equivalent norm when \( \sigma \mid k \))" class="theorem">
+<p>
+If \( k>0 \) and \( \sigma \mid k \) and \( 1<p<\infty \), then given \( u\in
+\mathcal{S}^*(X) \), one has
+</p>
+<ol class="org-ol">
+<li>\(u\in W^{k,p}(X)\) if and only if \( D^\alpha u\in L^p(X) \) for all \( \|\alpha\|\leq k
+   \) and the norm \( \sum_{\| \alpha \leq k\|} \|D^\alpha u\|_{L^p} \) is equivalent to \( \|u\|_{W^{k,p}} \).</li>
+<li>\( u\in W^{-k,p} \) if and only if there exists \( g_\alpha\in L^p \) such that \( u =
+   \sum_{\|\alpha\|\leq k} D^\alpha g_\alpha \) and \( \|u\|_{W^{-k,p}} \) is equivalent
+to
+\[
+    \inf \left\{ \sum_{\|\alpha\| \leq k} \|g_\alpha\|_{L^p}:\ u = \sum_{\|\alpha\|\leq k}
+   D^\alpha g_\alpha \right\}
+   \]</li>
+</ol>
+
+</div>
+
+<div class="exampl">
+<ol class="org-ol">
+<li>When \( \sigma_1=\dots=\sigma_n=1 \), one has the familiar Sobolev spaces.</li>
+<li>For (the weight of) heat equation, \( W^{2,p} \) cam be defined by density using the
+norm
+\[
+    \|u(t,x)\| = \left\|\frac{\partial u}{\partial t}\right\|_{L^p} +
+   \left\|Du \right\|_{L^p} + \left\|D u\right\|_{L^p}
+   \]
+where \( L^p \) stands for \( L^p(X\times [0,T]) \).</li>
+</ol>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org889a976" class="outline-3">
+<h3 id="org889a976"><span class="section-number-3">2.2</span> Holomorphic interpolation of Banach spaces</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+The Interpolation theory is based on the following Three-lines theorem whose proof follows
+from the classic <a href="https://en.wikipedia.org/wiki/Hadamard_three-lines_theorem">Hadamard's three-lines theorem</a> (the case \( A=\mathbb{C} \) and how we
+define complex Banach spaces and holomorphic functions taking value there.
+</p>
+
+<div id="thm:3-line" btit="(Three-line)" class="theorem">
+<p>
+Let \( A \) be a complex Banach space and \( h:\ S=\left0\leq \Re z\leq 1\{\right\}\subset
+\mathbb{C} \longrightarrow  A  \) be a holomorphic function, i.e. continuous and
+holomorphic in the interior such that \( h \) is bounded at infinity, i.e. \( h(x+iy)
+\to 0 \) as \( y \to \infty \). Let \( M(x):=\sup_y \|h(x+iy)\| \) then one has
+\[
+ M(x)\leq M(1)^x M(0)^{1-x}
+\]
+</p>
+
+</div>
+
+<p>
+Let \( A_0, A_1 \) be complex Banach spaces such that 
+</p>
+<ol class="org-ol">
+<li>\( A_0, A_1 \) can be continuously embedded into a Hausdorff topological complex vector
+space \( E \) such that the complex structures are compatible with each others,
+i.e. the linear embeddings preserve complex structures.</li>
+<li>The intersection \( A_0\cap A_1 \) in \( E \) is dense in \( (A_i,\|\|_{A_i}) \) for \( i=0,1 \).</li>
+</ol>
+<p>
+such \( (A_0,A_1) \) is called an <b>interpolatable</b> pair.
+</p>
+
+<p>
+\[
+\xymatrix{
+R^m \otimes_R (\prod_{\alpha} Q_{\alpha}) \ar[r] \ar[d]^{\cong} & R^m
+\otimes_R (\prod_{\alpha} Q_{\alpha}) \ar[r] \ar[d]^{\cong} & M \otimes_R
+(\prod_{\alpha} Q_{\alpha}) \ar[r] \ar[d] & 0 \\
+\prod_{\alpha} (R^m \otimes_R Q_{\alpha}) \ar[r] & \prod_{\alpha} (R^n
+\otimes_R Q_{\alpha}) \ar[r] & \prod_{\alpha} (M \otimes_R Q_{\alpha})
+\ar[r] & 0.
+}
+\]
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgad78d3d" class="outline-2">
+<h2 id="orgad78d3d"><span class="section-number-2">3</span> Sobolev spaces on compact manifold without boundary</h2>
+</div>
+<div id="outline-container-orgf89aa60" class="outline-2">
+<h2 id="orgf89aa60"><span class="section-number-2">4</span> Sobolev spaces on compact manifold with boundary</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-orge43f887" class="outline-3">
+<h3 id="orge43f887"><span class="section-number-3">4.1</span> Sobolev spaces on half-plan</h3>
+</div>
+<div id="outline-container-orgbaff8b2" class="outline-3">
+<h3 id="orgbaff8b2"><span class="section-number-3">4.2</span> Trace theorems</h3>
+</div>
+<div id="outline-container-org1f59796" class="outline-3">
+<h3 id="org1f59796"><span class="section-number-3">4.3</span> Generalisation to manifold</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+
+<h1 class='org-ref-bib-h1'>Bibliography</h1>
+<ul class='org-ref-bib'><li><a id="aubin_nonlinear_1998">[aubin_nonlinear_1998] Aubin, Some Nonlinear Problems in Riemannian Geometry, Springer-Verlag (1998).</a></li>
+<li><a id="jost_riemannian_2008">[jost_riemannian_2008] Jost, Riemannian Geometry and Geometric Analysis, Springer-Verlag (2008).</a></li>
+<li><a id="hamilton_harmonic_1975">[hamilton_harmonic_1975] Hamilton, Harmonic Maps of Manifolds with Boundary, Springer-Verlag (1975).</a></li>
+</ul>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<div class='footer'>
+By Tien NGUYEN MANH.<br>
+Last updated 2018-05-01 Tue 14:54. <br>
+</div>
+</div>
+</body>
+</html>
