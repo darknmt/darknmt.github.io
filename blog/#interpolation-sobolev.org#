@@ -201,7 +201,11 @@ R^m \otimes_R (\prod_{\alpha} Q_{\alpha}) \ar[r] \ar[d]^{\cong} & R^m
 \]
 
 
-\[
+#+HEADER: :imagemagick yes :iminoptions -density 300 -resize 1000 :buffer no :fit yes
+#+HEADER: :results raw  :file ../img/2018-05-01-diagram.png
+#+HEADER: :packages '(("" "tikz-cd"))
+#+HEADER: :exports (if (eq org-export-current-backend 'html) "none" "code")
+#+BEGIN_SRC latex 
 \begin{tikzcd}
  & A \arrow[rd, bend right] & A_0 \arrow[d, bend right] &  &  \\
 0 & U & A_0\oplus A_1 \arrow[u, bend right] & V & 0 \\
@@ -209,7 +213,17 @@ R^m \otimes_R (\prod_{\alpha} Q_{\alpha}) \ar[r] \ar[d]^{\cong} & R^m
  &  &  &  &  \\
 0 \arrow[r] & A_0\cap A_1 \arrow[r] & A_0\oplus A_1 \arrow[r] & A_0+A_1 \arrow[r] & 0
 \end{tikzcd}
-\]
+%\caption{This is a diagram}
+\label{fig:diagram}
+#+END_SRC
+
+#+RESULTS:
+[[file:../img/2018-05-01-diagram.png]]
+
+#+CAPTION: This is a diagram [fig:diagram]
+#+ATTR_HTML: :width 50%
+#+ATTR_LATEX: :width 0.50\textwidth
+
 
 * Sobolev spaces on compact manifold without boundary
 * Sobolev spaces on compact manifold with boundary

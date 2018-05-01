@@ -5,12 +5,12 @@
                      '(("article" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem") ("xy" "all")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -49,19 +49,19 @@
     "lcm"
     "gcd")
    (LaTeX-add-labels
-    "sec:org32fc463"
-    "sec:org17cc2a5"
-    "sec:orgcab5668"
+    "sec:org28263f8"
+    "sec:org0d1f172"
+    "sec:orga2b27eb"
     "thm:stein-crit"
     "rem:weight"
     "thm:equiv-norm-Sobolev"
-    "sec:orgb1b15e9"
+    "sec:orgfab0d45"
     "thm:3-line"
-    "sec:orgb56d90a"
-    "sec:orge14e370"
-    "sec:org75fa745"
-    "sec:org7f5d9c3"
-    "sec:orgd9196f8")
+    "sec:org803e301"
+    "sec:orge26c85f"
+    "sec:orgf5c6ec5"
+    "sec:org52f78bd"
+    "sec:orgb31ea7f")
    (LaTeX-add-bibliographies
     "../res/Stage2018")
    (LaTeX-add-amsthm-newtheorems

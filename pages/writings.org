@@ -2,6 +2,12 @@
 #+OPTIONS: toc:1 num:nil
 # [[file:../img/ly-ngu-vong-nguyet.jpg]]
 
+* Commutative diagram revisited
+** xypic
+** Tikzcd
+There is a GUI editor for Tikzcd written by [[https://tikzcd.yichuanshen.de][Yichuan Shen]]. I host a copy [[http://darknmt.github.io/res/tikzcd-editor][here]].
+
+
 * LaTeX in Inkscape: Incompatibility between ~ghostscript~ and ~pstoedit~ <2018-03-30 Fri>
 Since Ghostscript 9.22, certain flags (e.g. ~dREALLYDEALYBIND~) are deprecated and ~pstoedit~,
 a piece of software that Inkscape uses to render LaTeX, remains unchanged since 2005. This
