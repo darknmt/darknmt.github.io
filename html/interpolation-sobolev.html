@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-01 Tue 15:29 -->
+<!-- 2018-05-01 Tue 17:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Interpolation theory and Sobolev spaces on compact manifolds</title>
@@ -227,8 +227,6 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
-
-
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -238,11 +236,11 @@ for the JavaScript code in this tag.
     },
     tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
     TeX: {extensions: ["xypic.js", "AMSmath.js","AMSsymbols.js"]}
+    //                  ^^^^^^^^load xypic.js
   });
 </script>
-
-</script><script type='text/javascript' src='../res/MathJax/MathJax.js'></script>
-
+<script type="text/javascript"
+        src="https://darknmt.github.io/res/MathJax/MathJax.js"></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -516,7 +514,7 @@ define complex Banach spaces and holomorphic functions taking value there.
 
 <div id="thm:3-line" btit="(Three-line)" class="theorem">
 <p>
-Let \( A \) be a complex Banach space and \( h:\ S=\left0\leq \Re z\leq 1\{\right\}\subset
+Let \( A \) be a complex Banach space and \( h:\ S=\left \{0\leq {\rm Re} z\leq 1\right\}\subset
 \mathbb{C} \longrightarrow  A  \) be a holomorphic function, i.e. continuous and
 holomorphic in the interior such that \( h \) is bounded at infinity, i.e. \( h(x+iy)
 \to 0 \) as \( y \to \infty \). Let \( M(x):=\sup_y \|h(x+iy)\| \) then one has
@@ -585,7 +583,7 @@ R^m \otimes_R (\prod_{\alpha} Q_{\alpha}) \ar[r] \ar[d]^{\cong} & R^m
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-05-01 Tue 14:54. <br>
+Last updated 2018-05-01 Tue 17:17. <br>
 </div>
 </div>
 </body>
