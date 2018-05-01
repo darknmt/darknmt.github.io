@@ -7,9 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <script type="text/x-mathjax-config">
-  MathJax.Ajax.config.path["my-ext"] = "https://darknmt.github.io/res/XyJax/extensions/TeX";
   MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
+    extensions: ["tex2jax.js", "[Contrib]/xypic.js"],
     jax: ["input/TeX","output/HTML-CSS"],
     "HTML-CSS": {
       styles: {".MathJax_Preview": {visibility: "hidden"}}
@@ -18,7 +17,7 @@
       styles: {".MathJax_Preview": {visibility: "hidden"}}
     },
     tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
-    TeX: {extensions: ["[my-ext]/xypic.js", "AMSmath.js","AMSsymbols.js"]}
+    TeX: {extensions: ["AMSmath.js","AMSsymbols.js"]}
   });
 </script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>

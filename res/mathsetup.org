@@ -1,5 +1,5 @@
 #+OPTIONS: tex:t H:4 num:t
-#+HTML_MATHJAX: path:"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" 
+#+HTML_MATHJAX: path:"https://darknmt.github.io/res/MathJax/MathJax.js" 
 
 #+LATEX_HEADER: \usepackage{amsthm}
 #+LATEX_HEADER: \usepackage{amsmath,amscd,amssymb,mathtools}

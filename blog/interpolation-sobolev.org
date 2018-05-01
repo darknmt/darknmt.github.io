@@ -173,7 +173,7 @@ define complex Banach spaces and holomorphic functions taking value there.
 #+ATTR_HTML: :id thm:3-line :btit (Three-line) 
 #+BEGIN_theorem
 #+LATEX: \label{thm:3-line}
-Let \( A \) be a complex Banach space and \( h:\ S=\left0\leq \Re z\leq 1\{\right\}\subset
+Let \( A \) be a complex Banach space and \( h:\ S=\left \{0\leq {\rm Re} z\leq 1\right\}\subset
 \mathbb{C} \longrightarrow  A  \) be a holomorphic function, i.e. continuous and
 holomorphic in the interior such that \( h \) is bounded at infinity, i.e. \( h(x+iy)
 \to 0 \) as \( y \to \infty \). Let \( M(x):=\sup_y \|h(x+iy)\| \) then one has
