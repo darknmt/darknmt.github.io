@@ -24,6 +24,7 @@
 #+LATEX_HEADER: \newtheorem{definition}{Definition} 
 #+LATEX_HEADER: \newtheorem{propdef}[definition]{Proposition-Definition}
 
+#+LATEX_HEADER:    \newcommand{\re}{\mathop{\rm Re}\nolimits}
 #+LATEX_HEADER:    \newcommand{\im}{\mathop{\rm Im}\nolimits}
 #+LATEX_HEADER:    \newcommand{\supp}{\mathop{\rm supp}\nolimits}
 #+LATEX_HEADER:    \newcommand{\ord}{\mathop{\rm ord}\nolimits}

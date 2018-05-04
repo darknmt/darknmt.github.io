@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-01 Tue 17:30 -->
+<!-- 2018-05-02 Wed 21:40 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Interpolation theory and Sobolev spaces on compact manifolds</title>
@@ -267,12 +267,12 @@ for the JavaScript code in this tag.
 <li><a href="#org889a976">2.2. Holomorphic interpolation of Banach spaces</a></li>
 </ul>
 </li>
-<li><a href="#orgad78d3d">3. Sobolev spaces on compact manifold without boundary</a></li>
-<li><a href="#orgf89aa60">4. Sobolev spaces on compact manifold with boundary</a>
+<li><a href="#org5678a20">3. Sobolev spaces on compact manifold without boundary</a></li>
+<li><a href="#orgdc0458a">4. Sobolev spaces on compact manifold with boundary</a>
 <ul>
-<li><a href="#orge43f887">4.1. Sobolev spaces on half-plan</a></li>
-<li><a href="#orgbaff8b2">4.2. Trace theorems</a></li>
-<li><a href="#org1f59796">4.3. Generalisation to manifold</a></li>
+<li><a href="#orge160586">4.1. Sobolev spaces on half-plan</a></li>
+<li><a href="#org806b308">4.2. Trace theorems</a></li>
+<li><a href="#orgc08f56a">4.3. Generalisation to manifold</a></li>
 </ul>
 </li>
 </ul>
@@ -287,6 +287,7 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 
 </div>
 \(
+\newcommand{\re}{\mathop{\rm Re}\nolimits}
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
 \newcommand{\supp}{\mathop{\rm supp}\nolimits}
 \newcommand{\ord}{\mathop{\rm ord}\nolimits}
@@ -508,13 +509,13 @@ where \( L^p \) stands for \( L^p(X\times [0,T]) \).</li>
 <div class="outline-text-3" id="text-2-2">
 <p>
 The Interpolation theory is based on the following Three-lines theorem whose proof follows
-from the classic <a href="https://en.wikipedia.org/wiki/Hadamard_three-lines_theorem">Hadamard's three-lines theorem</a> (the case \( A=\mathbb{C} \) and how we
+from the classic <a href="https://en.wikipedia.org/wiki/Hadamard_three-lines_theorem">Hadamard's three-lines theorem</a> (the case \( A=\mathbb{C} \)) and how we
 define complex Banach spaces and holomorphic functions taking value there.
 </p>
 
 <div id="thm:3-line" btit="(Three-line)" class="theorem">
 <p>
-Let \( A \) be a complex Banach space and \( h:\ S=\left \{0\leq {\rm Re} z\leq 1\right\}\subset
+Let \( A \) be a complex Banach space and \( h:\ S=\left \{0\leq \re z\leq 1\right\}\subset
 \mathbb{C} \longrightarrow  A  \) be a holomorphic function, i.e. continuous and
 holomorphic in the interior such that \( h \) is bounded at infinity, i.e. \( h(x+iy)
 \to 0 \) as \( y \to \infty \). Let \( M(x):=\sup_y \|h(x+iy)\| \) then one has
@@ -539,34 +540,488 @@ such \( (A_0,A_1) \) is called an <b>interpolatable</b> pair.
 </p>
 
 <p>
-\[
-\xymatrix{
-R^m \otimes_R (\prod_{\alpha} Q_{\alpha}) \ar[r] \ar[d]^{\cong} & R^m
-\otimes_R (\prod_{\alpha} Q_{\alpha}) \ar[r] \ar[d]^{\cong} & M \otimes_R
-(\prod_{\alpha} Q_{\alpha}) \ar[r] \ar[d] & 0 \\
-\prod_{\alpha} (R^m \otimes_R Q_{\alpha}) \ar[r] & \prod_{\alpha} (R^n
-\otimes_R Q_{\alpha}) \ar[r] & \prod_{\alpha} (M \otimes_R Q_{\alpha})
-\ar[r] & 0.
-}
-\]
+The norms of \( A_0\cap A_1 \) and \( A_0 + A_1 \) are defined such that the these spaces
+are Banach and the diagram in Figure <a href="#fig:interpol-pair">fig:interpol-pair</a> commutes and the arrows are
+continuous. By Open mapping theorem, this means that the norm on \( A_0\cap A_1 \) is
+equivalent to \( \|x\|_{A_0\cap A_1} = \|x\|_{A_0} + \|x\|_{A_1} \) and the norm on \(
+A_0+A_1 \) is equivalent to \( \|x\|_{A_0+ A_1} = \inf_{x=x_0 + x_1, x_i\in A_i} \left\{\|x_0\|_{A_0} + \|x\|_{A_1}\right\} \).
+</p>
+
+<div id=fig:interpol-pair class="figure-ref">#REF: fig:interpol-pair</div>
+
+<div class="figure">
+<p><img src="../img/2018-05-01-interpol-pair.png" alt="2018-05-01-interpol-pair.png" width="50%" />
 </p>
 </div>
+
+<div id="rem:interp-pair" class="remark">
+<p>
+A pair \( (A_0, A_1) \) of Banach spaces may give different interpolatable pairs depending
+how they are embedded into a common space \( E \). It is not difficult to see that the data of <i>interpolatable pair</i> is
+uniquely determined by 2 complex Banach spaces \( U,V \) (which are eventually \( A\cap B
+\) and \( A+B \)) and the diagram in Figure
+<a href="#fig:unique-interpol-pair">fig:unique-interpol-pair</a> in which 
+</p>
+<ol class="org-ol">
+<li>All arrows are continuous and compatible with complex structures. The vertical sequence
+is exact, the horizontal sequence is exact and canonical.</li>
+<li>The diagonal arrows from \( U \) to \( A_0, A_1 \) are injective and of dense image in
+\( A_0, A_1 \).</li>
+<li>The maps composed by the diagonal arrows \( U \to A_i \to V \) are injective for \(
+   i=0,1 \). Since the two maps are additive inverse, it suffices to have injectivity for
+one of them.</li>
+</ol>
+
+</div>
+
+
+<div id=fig:unique-interpol-pair class="figure-ref">#REF: fig:unique-interpol-pair</div>
+
+<div class="figure">
+<p><img src="../img/2018-05-01-unique-interpol-pair.png" alt="2018-05-01-unique-interpol-pair.png" width="50%" />
+</p>
+<p><span class="figure-number">Figure 2: </span>The data of interpolatable pair is uniquely defined by this diagram.</p>
+</div>
+
+<p>
+The following construction will give a family of complex subspace \( A_\theta \) of \(
+A_0+A_1 \) containing \( A_0\cap A_1 \) for \( 0\leq \theta\leq 1 \) that interpolates \(
+A_0 \) and \( A_1 \) that satisfies the following properties, called interpolation
+inequalities
+</p>
+
+<div id="thm:interp-ineq-ele" btit="(Interpolation inequality for common elements)" class="theorem">
+<p>
+Let \( a\in A_0\cap A_1 \) then \( a\in A_\theta \) and
+\[
+ \|a\|_{A_\theta}\leq 2 \|a\|_{A_1}^\theta \|a\|_{A_0}^{1-\theta}
+\]
+</p>
+
+</div>
+
+<p>
+and 
+</p>
+<div id="thm:interp-ineq-op" btit="(Interpolation inequality for operators)" class="theorem">
+<p>
+Given interpolatable pairs \( (A_0,A_1) \) and \( B_0, B_1) \), and \( T \) a
+bounded linear operator \( T: A_0 \longrightarrow B_0 \) and
+\( T: A_1 \longrightarrow B_1 \) such that \( T \) is well-defined on \( A_0\cap A_1
+\). Then \( T \) extends linearly and continuously to \( T:\ A_0+A_1 \longrightarrow B_0+
+B_1  \), that is
+</p>
+
+
+<div class="figure">
+<p><img src="../img/2018-05-02-asd.png" alt="2018-05-02-asd.png" width="50%" />
+</p>
+</div>
+
+<p>
+Also, \( T \) defines a bounded operator \( T:\ A_\theta \longrightarrow  B_\theta \) and
+\[
+ \|T\|_{L(A_\theta,B_\theta)}\leq 2 \|E\|_{L(A_1,B_1)}^\theta \|E\|_{L(A_0,B_0)}^{1-\theta}
+\]
+</p>
+
+</div>
+
+<p>
+To define \( A_\theta \), let 
+\[
+ \mathcal{H}(A_0,A_1):= \left\{ h: S \longrightarrow A_0+ A_1:\ h \text{ is holomorphic
+and } h(z) \to 0 \text{ as } |y| \to\infty, h(iy)\in A_0,\ h(1+iy)\in A_1 \right\}
+\]
+where, as above, \( S \) denotes the strip \( 0\leq \re z\leq 1 \). Then \(
+\mathcal{H}(A_0, A_1) \) is a Banach space with the norm
+\[
+ \|h\|_{\mathcal{H}(A_0, A_1)}:= \sup_y \|h(iy)\|_{A_0} + \sup_y \| h(1+iy)\|_{A_1}
+\]
+</p>
+
+<p>
+The space \( A_\theta \) is defined set-theoretically as the space of all value in \( A_0+
+A_1\) that a function \( h\in \mathcal{H}(A_0, A_1) \) can take at \( \theta\in [0,1]\in S
+\). Therefore, set-theoretically \( A_\theta \) coincides with \( A_0 \) and \( A_1 \)
+when \( \theta=0 \) and \( \theta=1 \). To define the norm on \(A_\theta \), let
+\[
+ \mathcal{K}_\theta(A_0, A_1):= \left\{h\in \mathcal{H}(A_0, A_1):\ h(\theta)=0 \right\}
+\]
+then \( \mathcal{K}_\theta(A_0,A_1) \) is a closed complex subspace of the Banach space \(
+\mathcal{H}(A_0, A_1) \). Then \( A_\theta:= \mathcal{H}(A_0, A_1)/
+\mathcal{K}_\theta(A_0, A_1) \) has the natural quotient norm inherited from \(
+\mathcal{H}(A_0, A_1) \) and is still a Banach space.
+</p>
+
+<p>
+It is not difficult to see that the norm on \( A_\theta \) coincides with the norm \(
+\|\cdot\|_{A_0} , \|\cdot\|_{A_1}\) when \( \theta=0 \) or \( \theta=1 \)
+</p>
+
+<p>
+Theorem <a href="#thm:interp-ineq-ele">thm:interp-ineq-ele</a> follows from the this lemma when one takes \( h \) to be a
+constant, and is in \( A_0\cap A_1 \).
+</p>
+
+<div id="lem:interp-ineq" class="lemma">
+<p>
+If \( h\in \mathcal{H}(A_0, A_1) \) then \( \| h(\theta)\|_{A_\theta}\leq 2 M_1^{\theta}  M_0^{1-\theta}   \)
+where
+\[
+ M_0:= \sup_y \|h(iy)\|_{A_0} ,\quad M_1:=\sup_y \| h(1+iy)\|_{A_1}
+\]
+</p>
+
+</div>
+<div class="proof">
+<p>
+The \( A_\theta \)-norm of \( h(\theta) \) only depends on the value of \( h\) at \(\theta
+\), one can therefore replace \( h \) by a function of form \( h_{c,\epsilon}(z) = \exp
+(c(z-\theta) + \epsilon z^2) h(z) \), then let \( \epsilon\to 0 \) and choose the optimal
+\( c \), which is \( e^c=M_0/M_1 \).
+</p>
+
+</div>
+
+<p>
+Theorem <a href="#thm:interp-ineq-op">thm:interp-ineq-op</a> follows from Theorem <a href="#thm:interp-ineq-ele">thm:interp-ineq-ele</a> and the very
+definition of quotient norm.
+</p>
+
+<div class="remark">
+<p>
+The optimal constant, as given by the proofs, is \(\theta^{-\theta}(1-\theta)^{\theta-1} < 2 \)
+</p>
+
+</div>
+
+<p>
+The interest of holomorphic interpolation theory comes from the fact that interpolation of
+Sobolev spaces are still Sobolev spaces, which, together with Theorem
+<a href="#thm:interp-ineq-op">thm:interp-ineq-op</a> and Theorem <a href="#thm:interp-ineq-ele">thm:interp-ineq-ele</a>, gives a class of useful
+inequalities generally called interpolation inequalities.
+</p>
+
+<div id="thm:interp-sobolev" btit="(Interpolation of Sobolev spaces)" class="theorem">
+<p>
+Let \( p,q\in (1,+\infty) \) and \( k,l\in \mathbb{R} \) and \( X=\mathbb{R}^n \). Take 
+\[
+ A_0:= W^{k,p}(X),\quad A_1:=W^{l,q}(X)
+\]
+then \( A_\theta=W^{s,r}(X) \) where
+\[
+ \theta l + (1-\theta)k = s,\qquad \theta \frac{1}{q} + (1-\theta) \frac{1}{p} = \frac{1}{r}
+\]
+</p>
+
+</div>
+
+<p>
+The holomorphic interpolation behaves predictably with direct sum and compact operators
+</p>
+
+<div id="thm:dir-sum-interp" class="theorem">
+<p>
+Let \( (A_0,A_1), (B_0, B_1) \) be interpolatable pairs and denotes by \( (A\oplus
+B)_\theta \) be the interpolation of \( A_0 \oplus B_0 \) and \( A_1 \oplus B_1 \) then
+one has \( (A\oplus B)_\theta \cong A_\theta \oplus B_\theta \) by a canonical isomorphism.
+</p>
+
+</div>
+<div class="proof">
+<p>
+The set-theoretical bijection is easy to see: note that there is a natural inclusion
+\( (A\oplus B)_\theta \hookrightarrow A_\theta\oplus B_\theta \), which is also a
+bijection because  \( \mathcal{H}(A_0\oplus B_0, A_1 \oplus B_1) = \mathcal{H}(A_0, A_1)
+\oplus \mathcal{H}(B_0,B_1) \).
+</p>
+
+<p>
+The most difficult part is to know what we mean by <i>isomorphism</i>. In fact the two norms
+(the interpolation norm and the direct-sum norm) do not coincide, but they are
+equivalent. One can prove, with basic sup-inf analysis that 
+\[
+ \frac{1}{2}\|\cdot \|_{A_\theta\oplus B_\theta} \leq \|\cdot \|_{(A\oplus B)_\theta} \leq
+\|\cdot\|_{A_\theta \oplus B_\theta}
+\]
+</p>
+
+</div>
+
+<p>
+Theorem <a href="#thm:dir-sum-interp">thm:dir-sum-interp</a> can be generalised to the following result.
+</p>
+
+<div id="thm:interp-closed-emb" btit="(*)" class="theorem">
+<p>
+Let \( (X_0, X_1) \) and \( (Y_0, Y_1) \) be interpolatable pairs. Suppose that there are
+inclusion
+\(X_0 \hookrightarrow  Y_0\) and \( X_1 \hookrightarrow  Y_1\)
+with closed images in \( Y_0 \) and \( Y_1 \) respectively and the inclusions agree on \(
+X_0 \cap X_1 \) as mappings from \( X_0\cap X_1 \) to \( Y_0 + Y_1 \). Then there is a
+natural inclusion \( X_\theta \hookrightarrow Y_\theta \) with closed image in \( Y_\theta \)
+</p>
+
+</div>
+<div class="remark">
+<ol class="org-ol">
+<li>Open mapping theorem guarantees that for any continuous inclusions of Banach spaces 
+\( X \hookrightarrow Y \) 
+with closed image, the inherent norm of the \( X \) is equivalent to the induced
+norm from \( Y \).</li>
+<li><p>
+If one has two exact sequences
+</p>
+\begin{equation}
+\label{eq:ses-interp}
+0 \longrightarrow X_i \longrightarrow Y_i \longrightarrow Z_i \longrightarrow
+0,\quad i=0,1
+\end{equation}
+<p>
+whose arrows commute with ones from the intersection and ambient spaces of
+interpolatable pairs \( (X_0,X_1), (Y_0, Y_1), (Z_0, Z_1) \) then, since the images of
+\( X_i \longrightarrow Y_i \) being kernel of \( Y_i \longrightarrow Z_i \) are
+closed, one has the inclusion for interpolation spaces, also of closed image:
+\[
+    0 \longrightarrow X_\theta \longrightarrow Y_\theta,\quad 0\leq\theta\leq 1
+   \]
+ I am not sure if this exact sequence can be extended to \( Z_\theta \) in general.
+</p></li>
+<li>In particular, if the sequences in <a href="#eq:ses-interp">eq:ses-interp</a> split, meaning that one can find
+a retraction \( 0 \longrightarrow Z_i \longrightarrow  Y_i \), then by applying the
+theorem for the retractions, one sees that the interpolation sequence extend to \(
+   Z_\theta \), i.e.
+\[
+    0 \longrightarrow X_\theta \longrightarrow Y_\theta \longrightarrow Z_\theta \longrightarrow 0
+   \]
+and also splits, meaning \( Y_\theta \cong X_\theta \oplus Z_\theta \). Applying this
+results to the split-exact sequences \[ 0 \longrightarrow A_i \longrightarrow A_i\oplus
+   B_i \longrightarrow B_i \longrightarrow 0\] one then obtains Theorem <a href="#thm:dir-sum-interp">thm:dir-sum-interp</a>.</li>
+</ol>
+
+</div>
+
+<div class="proof">
+<p>
+The inclusion \( X_\theta \hookrightarrow Y_\theta \) is natural and due to the fact that
+\( \mathcal{H}(X_0, X_1) \subset \mathcal{H}(Y_0, Y_1) \). The equivalence of the
+interpolation norm \( X_\theta \) and the norm inherited from \(
+Y_\theta \) on \( X_\theta \) requires more than a simple sup-inf analysis as in the proof
+of Theorem <a href="#thm:dir-sum-interp">thm:dir-sum-interp</a> since \( \mathcal{H}(X_0, X_1) \) is strictly included
+in \( \mathcal{H}(Y_0, Y_1) \). What we can say is that the interpolation norm \( X_\theta
+\) dominates the interpolation norm of \( Y_\theta \), since it involves the infimum on
+the smaller set. In other words, it means that the inclusion \( X_\theta \hookrightarrow
+Y_\theta \) is continuous. Therefore, to establish the equivalence of norms, it remains,
+by Open mapping theorem, to check that the image of \( X_\theta \hookrightarrow Y_\theta
+\) is closed.
+</p>
+
+<p>
+Since
+</p>
+
+
+<div class="figure">
+<p><img src="../img/2018-05-02-interp-closed-emb.png" alt="2018-05-02-interp-closed-emb.png" width="50%" />
+</p>
+</div>
+<p>
+it suffices to show that the image \( \mathcal{H}(X_0,X_1) \hookrightarrow
+\mathcal{H}(Y_0,Y_1) \) is closed, meaning if \(\mathcal{H}(X_0,X_1)\ni h_n \to h \) in \(
+\mathcal{H}(Y_0,Y_1) \), then \( h \) must take value in \( X_0 + X_1 \). By the
+equivalence of the norm on \( X_i \) and the restricted norm from \( Y_i \), \( i=0,1 \),
+one sees that \( h(iy)\in A_0 \) and \( h(1+iy)\in A_1 \).
+</p>
+
+<p>
+It suffices to show that \( X_0+X_1 \) is
+closed in \( Y_0+Y_1 \), then any holomorphic map \(  \mathcal{H}(Y_0,Y_1)\ni f: S
+\longrightarrow Y_0+Y_1 \) passes holomorphically to the quotient \( S \longrightarrow (Y_0
++Y_1) /(X_0+X_1)\). The fact that \( h \) takes value in \( X_0 + X_1 \) follows from
+Maximum modulus principle for holomorphic functions.
+</p>
+
+<p>
+The closedness of \( X_0+X_1 \) in \( Y_0+Y_1 \) follows from the diagram:
+</p>
+
+
+<div class="figure">
+<p><img src="../img/2018-05-02-closed-sum.png" alt="2018-05-02-closed-sum.png" width="50%" />
+</p>
+</div>
+<p>
+where the inclusion \( X_0 \oplus X_1 \hookrightarrow Y_0 \oplus Y_1 \) is of closed image.
+</p>
+
+</div>
+
+
+<div id="thm:compact-interp" btit="(Interpolation of compact embedding)" class="theorem">
+<p>
+If \( A_1 \hookrightarrow A_0 \) is a compact embedding, then \( A_1 \cong A_0\cap A_1
+\hookrightarrow A_0  \) is a compact embedding where the first \( \cong \) denotes the
+same space with equivalent norms.
+</p>
+
+</div>
+<div class="proof">
+<p>
+It follows from Theorem <a href="#thm:interp-ineq-ele">thm:interp-ineq-ele</a>:
+\[
+ \|x_m - x_n\|_{A_\theta}\leq 2 \|x_m-x_n\|^{1-\theta}_{A_0} \|x_m-x_n\|_{A_1}^\theta
+\]
+Hence if \( \{x_n\} \) is a bounded sequence in \( A_1 \), it converges in \( A_0 \) and
+therefore \( A_\theta \).
+</p>
+
+</div>
+
+<p>
+The previous Theorem <a href="#thm:interp-ineq-ele">thm:interp-ineq-ele</a>, together with Theorem <a href="#thm:interp-sobolev">thm:interp-sobolev</a>
+also gives a proof of Kondrachov's Theorem, that is the embedding \( W^{k,p}(X)
+\hookrightarrow  W^{l,p}(X) \) is compact if \( k>h>\geq 0 \). This follows from the
+following 2 remarks
+</p>
+<ol class="org-ol">
+<li>The case \( l=0 \) and \( k\gg 1 \) follows from the embedding \( W^{k,p}
+   \hookrightarrow C^1 \) and Ascoli's theorem. Hence by Theorem <a href="#thm:interp-ineq-ele">thm:interp-ineq-ele</a>,
+one has the compactness embedding if \( k \gg 1 \) and \( l<k \).</li>
+<li><p>
+For the case of small \( k \), note that 
+\[ 
+   W^{k+r,p}(X) \twoheadrightarrow W^{k,p}(X):\ v \mapsto W(D)^r u 
+   \]
+is surjective and any \( u\in W^{k,p}(X) \) can be lifted to an element \( \tilde u\in
+   W^{k+r,p}(X) \) of the same norm. In fact, if \( W(\xi)^k \hat u \in L^p \) then choose
+\( \tilde u \) such that \( \widehat{\tilde u} = W(\xi)^{-r} \hat u \). Kondrachov's
+theorem follows from the diagram:
+</p>
+
+
+<div class="figure">
+<p><img src="../img/2018-05-02-kondrachov-diag.png" alt="2018-05-02-kondrachov-diag.png" width="30%" />
+</p>
+</div></li>
+</ol>
+
+<div class="remark">
+<p>
+The advantage of this proof is that it is valid for weighted Sobolev spaces over manifolds.
+</p>
+
 </div>
 </div>
-<div id="outline-container-orgad78d3d" class="outline-2">
-<h2 id="orgad78d3d"><span class="section-number-2">3</span> Sobolev spaces on compact manifold without boundary</h2>
 </div>
-<div id="outline-container-orgf89aa60" class="outline-2">
-<h2 id="orgf89aa60"><span class="section-number-2">4</span> Sobolev spaces on compact manifold with boundary</h2>
+</div>
+
+<div id="outline-container-org5678a20" class="outline-2">
+<h2 id="org5678a20"><span class="section-number-2">3</span> Sobolev spaces on compact manifold without boundary</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Let \( M \) be a compact manifold without boundary. We fix a finite atlas of \( M \) by
+chart \(  \varphi_i:\ M\supset U_i \longrightarrow V_i \subset \mathbb{R}^n \) such that
+the transitions \( \varphi_{ij}=\varphi_i \circ \varphi_j^{-1}: V_j \longrightarrow V_i \)
+are of strictly positive and bounded derivatives, i.e. \( C(\alpha)^{-1}\geq D^\alpha
+\varphi_{ij}\leq C(\alpha) \) for all indices \( \alpha \). We will called such atlas a
+good atlas. 
+One can always obtain such atlas by shrinking a bit each chart of a given atlas of \( M \). Let \( \psi_i \) be a
+partition of unity subordinated to \( \{U_i\} \)
+</p>
+
+<div class="definition">
+<ol class="org-ol">
+<li>The <b>Sobolev spaces</b> \( W^{k,p}(M) \) is defined as
+\[
+   W^{k,p}(M):=\left\{ f\in \mathcal{S}(M)^*:\ \psi_i f\in W^{k,p}(\mathbb{R}^n)\right\}
+   \]
+with the norm
+\[
+    \|f\|_{W^{k,p}}= \sum_i \|(\psi_i f)\circ \varphi_i^{-1}\|_{W^{k,p}(\mathbb{R}^n)}
+   \]</li>
+<li>Weighted Sobolev spaces can be defined when \( M \) has a foliation structure, i.e. \(M \) is locally modeled by
+\( 0\subsetneq F_1\subsetneq \dots \subset F_k \subsetneq \mathbb{R}^n \) where
+\( F_i \) are vector subspace of \( \mathbb{R^n} \) of dimension
+\( 0<n_1 <\dots < n_k< n \) respectively and \( F_k \) are preserved by the transition
+maps \( \varphi_{ij} \), for example when \( M \) is a product of manifolds of lower
+dimension. Then the above definition extends to weighted Sobolev spaces with weight
+\( \sigma_1= \dots = \sigma_{n_1}\), \(\sigma_{n_1+1} =\dots = \sigma_{n_2},\dots \)
+\( \sigma_{n_k+1}=\dots = \sigma_{n}} \).</li>
+</ol>
+
+</div>
+
+<div class="remark">
+<ol class="org-ol">
+<li>One can define \( \mathcal{S}(M)^* \) as the dual space of
+\( \mathcal{S}(M) = C^\infty(M) \) under Schwartz topology with respect to any metric,
+since by compactness any two metrics on \( M \) are comparable. The distributions 
+\(\psi_i f\) are tempered because they are compactly supported.</li>
+<li>One can identify \( C^\infty(M) \) with a subspace of \( \mathcal{S}^*(M) \) that is
+contained in any Sobolev space \( W^{k,p}(M) \) by fixing a Riemannian metric \( g \)
+on \( M \). The map \( C^\infty(M) \hookrightarrow \mathcal{S}^*(M) \) may depend on
+the \( g \), but its image does not. Similarly, one can also identify an element of \(
+   \mathbb{W}^{k,p}(\mathbb{R}^n) \) supported in \( V_i \) with an element in \( W^{k,p}(M) \).</li>
+<li>If one uses another good atlas \( U'_i \) or a different partition of unity, one
+obtains the same set \( W^{k,p}(M) \) and an equivalent norm. To see this, let us call
+two good atlas <i>compatible</i> if their union is also a good atlas, then the statement
+holds for two compatible atlas by comparing their union. Moreover, for any two
+arbitrary good atlas \( \{U_i\},\{U'_j\} \), one can find a good atlas compatible to
+both of them by shrinking their union.</li>
+</ol>
+
+</div>
+
+<p>
+By definition, one has an inclusion \(i:\ W^{k,p}(M) \hookrightarrow \bigoplus_i
+W^{k,p}(\mathbb{R}^n) \). Also \( i \) is of closed image because one can find a
+projection \( j:\ \bigoplus W^{k,p}(\mathbb{R}^n) \longrightarrow W^{k,p}(M) \) with \(
+j\circ i = {\rm Id} \). In fact, let \( \tilde \psi_i \) be functions supported in \( U_i
+\) that equal \( 1 \) in the support of \( \psi_i \), then 
+\[ 
+j:\ g\mapsto \sum \tilde \psi_i. (g\circ \varphi_i) 
+\]
+works. The continuity of \( j \) follows from straight-forward calculations.
+</p>
+
+<p>
+The closedness of image of \( i \) is equivalent to the fact that \( W^{k,p}(M) \) is complete.
+</p>
+
+<div id="rem:hamilton-typo" class="remark">
+<p>
+Although \( i \) preserves the norm of \( W^{k,p}(M) \) and has a right-inverse, it is far
+from being an isomorphism (it is not surjective). Each component of an element in the
+image of \( i \) tends to 0 on the boundary of \( V_i \) (take \( k \gg 1 \) then everyone
+is continuous by Sobolev embedding, there is no subtlety in what we mean by "tends to
+0"). <a class='org-ref-reference' href="#hamilton_harmonic_1975">hamilton_harmonic_1975</a> seems to claim that \( i \) is an
+isomorphism and apply Theorem <a href="#thm:dir-sum-interp">thm:dir-sum-interp</a>
+repeatedly to deduce Theorem <a href="#thm:interp-sobolev">thm:interp-sobolev</a> for Sobolev spaces on manifold,
+then the Sobolev embedding \( W^{k,p} \hookrightarrow C^{l}(M) \) and Kondrachov's
+theorem.
+</p>
+
+<p>
+The above results are true and the correction is not difficult (use Theorem <a href="#thm:interp-closed-emb">thm:interp-closed-emb</a>).
+</p>
+
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgdc0458a" class="outline-2">
+<h2 id="orgdc0458a"><span class="section-number-2">4</span> Sobolev spaces on compact manifold with boundary</h2>
 <div class="outline-text-2" id="text-4">
-</div><div id="outline-container-orge43f887" class="outline-3">
-<h3 id="orge43f887"><span class="section-number-3">4.1</span> Sobolev spaces on half-plan</h3>
+</div><div id="outline-container-orge160586" class="outline-3">
+<h3 id="orge160586"><span class="section-number-3">4.1</span> Sobolev spaces on half-plan</h3>
 </div>
-<div id="outline-container-orgbaff8b2" class="outline-3">
-<h3 id="orgbaff8b2"><span class="section-number-3">4.2</span> Trace theorems</h3>
+<div id="outline-container-org806b308" class="outline-3">
+<h3 id="org806b308"><span class="section-number-3">4.2</span> Trace theorems</h3>
 </div>
-<div id="outline-container-org1f59796" class="outline-3">
-<h3 id="org1f59796"><span class="section-number-3">4.3</span> Generalisation to manifold</h3>
+<div id="outline-container-orgc08f56a" class="outline-3">
+<h3 id="orgc08f56a"><span class="section-number-3">4.3</span> Generalisation to manifold</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 
@@ -583,7 +1038,7 @@ R^m \otimes_R (\prod_{\alpha} Q_{\alpha}) \ar[r] \ar[d]^{\cong} & R^m
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-05-01 Tue 17:30. <br>
+Last updated 2018-05-02 Wed 21:40. <br>
 </div>
 </div>
 </body>

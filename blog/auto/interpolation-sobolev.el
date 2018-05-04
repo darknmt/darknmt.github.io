@@ -5,12 +5,12 @@
                      '(("article" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem") ("xy" "all")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -38,6 +38,7 @@
    (TeX-add-symbols
     '("transp" ["argument"] 1)
     '("restr" 2)
+    "re"
     "im"
     "supp"
     "ord"
@@ -49,19 +50,32 @@
     "lcm"
     "gcd")
    (LaTeX-add-labels
-    "sec:org28263f8"
-    "sec:org0d1f172"
-    "sec:orga2b27eb"
+    "sec:orgf9e7e84"
+    "sec:org10af480"
+    "sec:org16e7c38"
     "thm:stein-crit"
     "rem:weight"
     "thm:equiv-norm-Sobolev"
-    "sec:orgfab0d45"
+    "sec:org1c4b014"
     "thm:3-line"
-    "sec:org803e301"
-    "sec:orge26c85f"
-    "sec:orgf5c6ec5"
-    "sec:org52f78bd"
-    "sec:orgb31ea7f")
+    "fig:interpol-pair"
+    "rem:interp-pair"
+    "fig:unique-interpol-pair"
+    "thm:interp-ineq-ele"
+    "thm:interp-ineq-op"
+    "lem:interp-ineq"
+    "thm:interp-sobolev"
+    "thm:dir-sum-interp"
+    "thm:interp-closed-emb"
+    "eq:ses-interp"
+    "thm:compact-interp"
+    "fig:kondrachov-diag"
+    "sec:orgf342d0f"
+    "rem:hamilton-typo"
+    "sec:org0d76d49"
+    "sec:org7eeed8e"
+    "sec:org49ffd0c"
+    "sec:orgbfd3fdc")
    (LaTeX-add-bibliographies
     "../res/Stage2018")
    (LaTeX-add-amsthm-newtheorems

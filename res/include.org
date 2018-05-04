@@ -8,6 +8,7 @@ For example ~/html/sheaf-cohomology.html~ should become ~/pdf/sheaf-cohomology.p
 # MathJax Config
 #+BEGIN_EXPORT html
 \(
+\newcommand{\re}{\mathop{\rm Re}\nolimits}
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
 \newcommand{\supp}{\mathop{\rm supp}\nolimits}
 \newcommand{\ord}{\mathop{\rm ord}\nolimits}

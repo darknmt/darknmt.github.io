@@ -16,5 +16,4 @@ Here is my [[http://172.17.71.229/dokuwiki/doku.php][DokuWiki]] and personal [[h
 
 
 #+ATTR_HTML: :width 60%
-file:../img/simple-portrait.png
- 
+[[https://darknmt.github.io/res/xypic-editor][file:../img/simple-portrait.png]] 
