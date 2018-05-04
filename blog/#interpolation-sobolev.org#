@@ -549,6 +549,13 @@ following 2 remarks
    [[file:../img/2018-05-02-kondrachov-diag.png]]
    #+LATEX:\fi
    
+   \[
+    \xymatrix{
+    W^{k+r,p}(X) \ar@{->>}[r] \ar@{^{(}->}[d]_{\rm compact} & W^{k,p}(X) \ar@{^{(}->}[d] \\
+    W^{h+r,p}(X) \ar@{->>}[r] & W^{h,p}(X)
+    }
+   \]
+   
 #+BEGIN_remark
 The advantage of this proof is that it is valid for weighted Sobolev spaces over manifolds.
 #+END_remark
@@ -631,24 +638,7 @@ The above results are true and the correction is not difficult (use Theorem ref:
 
 * Sobolev spaces on compact manifold with boundary
 
-\[
-\xymatrix{
-{} \ar@{->@/^{}/}[r] & {}
-}
-\]
 
-\xymatrix{
-{} \ar@/^/@{->}[r] & {}
-}
-\[
-\xymatrix{
-{} \ar@/_1pc/@{->}[r] & {}
-}
-\]
-
-\xymatrix{
-{} \arnull@{->}[r] & {}
-}
 ** Sobolev spaces on half-plan
 ** Trace theorems
 ** Generalisation to manifold

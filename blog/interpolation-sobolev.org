@@ -631,11 +631,6 @@ The above results are true and the correction is not difficult (use Theorem ref:
 
 * Sobolev spaces on compact manifold with boundary
 
-\[
-\xymatrix{
-A \ar@{^{(}-->>}[r]_g & B
-\}
-\]
 
 ** Sobolev spaces on half-plan
 ** Trace theorems
