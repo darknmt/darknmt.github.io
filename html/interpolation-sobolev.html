@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-02 Wed 21:40 -->
+<!-- 2018-05-05 Sat 02:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Interpolation theory and Sobolev spaces on compact manifolds</title>
@@ -541,26 +541,40 @@ such \( (A_0,A_1) \) is called an <b>interpolatable</b> pair.
 
 <p>
 The norms of \( A_0\cap A_1 \) and \( A_0 + A_1 \) are defined such that the these spaces
-are Banach and the diagram in Figure <a href="#fig:interpol-pair">fig:interpol-pair</a> commutes and the arrows are
+are Banach and the diagram
+</p>
+\begin{equation}
+\label{fig:interpol-pair}
+\xymatrix{
+0 \ar@{->}[r] & A\cap B \ar@{->}[r] & A\oplus B \ar@{->}[r] & A+B \ar@{->}[r] & 0
+}
+\end{equation}
+<p>
+commutes and the arrows are
 continuous. By Open mapping theorem, this means that the norm on \( A_0\cap A_1 \) is
 equivalent to \( \|x\|_{A_0\cap A_1} = \|x\|_{A_0} + \|x\|_{A_1} \) and the norm on \(
 A_0+A_1 \) is equivalent to \( \|x\|_{A_0+ A_1} = \inf_{x=x_0 + x_1, x_i\in A_i} \left\{\|x_0\|_{A_0} + \|x\|_{A_1}\right\} \).
 </p>
-
-<div id=fig:interpol-pair class="figure-ref">#REF: fig:interpol-pair</div>
-
-<div class="figure">
-<p><img src="../img/2018-05-01-interpol-pair.png" alt="2018-05-01-interpol-pair.png" width="50%" />
-</p>
-</div>
 
 <div id="rem:interp-pair" class="remark">
 <p>
 A pair \( (A_0, A_1) \) of Banach spaces may give different interpolatable pairs depending
 how they are embedded into a common space \( E \). It is not difficult to see that the data of <i>interpolatable pair</i> is
 uniquely determined by 2 complex Banach spaces \( U,V \) (which are eventually \( A\cap B
-\) and \( A+B \)) and the diagram in Figure
-<a href="#fig:unique-interpol-pair">fig:unique-interpol-pair</a> in which 
+\) and \( A+B \)) and the diagram
+</p>
+\begin{equation}
+\label{fig:unique-interpol-pair}
+\xymatrix{
+ &  & 0 \ar@/_/@{->}[d] &  &  \\
+ &  & A_0 \ar@{->}[rd] \ar@/_/@{->}[d] \ar@/_/@{->}[u] &  &  \\
+0 \ar@{->}[r] & U \ar@{->}[r] \ar@{->}[ru] \ar@{->}[rd] & A_0\oplus A_1 \ar@{->}[r] \ar@/_/@{->}[d] \ar@/_/@{->}[u] & V \ar@{->}[r] & 0 \\
+ &  & A_1 \ar@{->}[ru] \ar@/_/@{->}[d] \ar@/_/@{->}[u] &  &  \\
+ &  & 0 \ar@/_/@{->}[u] &  & 
+}
+\end{equation}
+<p>
+in which 
 </p>
 <ol class="org-ol">
 <li>All arrows are continuous and compatible with complex structures. The vertical sequence
@@ -572,15 +586,6 @@ is exact, the horizontal sequence is exact and canonical.</li>
 one of them.</li>
 </ol>
 
-</div>
-
-
-<div id=fig:unique-interpol-pair class="figure-ref">#REF: fig:unique-interpol-pair</div>
-
-<div class="figure">
-<p><img src="../img/2018-05-01-unique-interpol-pair.png" alt="2018-05-01-unique-interpol-pair.png" width="50%" />
-</p>
-<p><span class="figure-number">Figure 2: </span>The data of interpolatable pair is uniquely defined by this diagram.</p>
 </div>
 
 <p>
@@ -612,11 +617,12 @@ bounded linear operator \( T: A_0 \longrightarrow B_0 \) and
 B_1  \), that is
 </p>
 
-
-<div class="figure">
-<p><img src="../img/2018-05-02-asd.png" alt="2018-05-02-asd.png" width="50%" />
-</p>
-</div>
+\begin{equation}
+\xymatrix{
+0 \ar@{->}[r] & A_0\cap A_1 \ar@{->}[r] \ar@{->}[d]^{T} & A_0\oplus A_1 \ar@{->}[r] \ar@{->}[d]^{T\oplus T} & A_0+A_1 \ar@{->}[r] \ar@{->}[d]^{T} & 0 \\
+0 \ar@{->}[r] & B_0\cap B_1 \ar@{->}[r] & B_0\oplus B_1 \ar@{->}[r] & B_0+B_1 \ar@{->}[r] & 0
+}
+\end{equation}
 
 <p>
 Also, \( T \) defines a bounded operator \( T:\ A_\theta \longrightarrow  B_\theta \) and
@@ -775,8 +781,7 @@ If one has two exact sequences
 </p>
 \begin{equation}
 \label{eq:ses-interp}
-0 \longrightarrow X_i \longrightarrow Y_i \longrightarrow Z_i \longrightarrow
-0,\quad i=0,1
+0 \longrightarrow X_i \longrightarrow Y_i \longrightarrow Z_i \longrightarrow 0,\quad i=0,1
 \end{equation}
 <p>
 whose arrows commute with ones from the intersection and ambient spaces of
@@ -788,7 +793,7 @@ closed, one has the inclusion for interpolation spaces, also of closed image:
    \]
  I am not sure if this exact sequence can be extended to \( Z_\theta \) in general.
 </p></li>
-<li>In particular, if the sequences in <a href="#eq:ses-interp">eq:ses-interp</a> split, meaning that one can find
+<li>In particular, if the sequences in \eqref{eq:ses-interp} split, meaning that one can find
 a retraction \( 0 \longrightarrow Z_i \longrightarrow  Y_i \), then by applying the
 theorem for the retractions, one sees that the interpolation sequence extend to \(
    Z_\theta \), i.e.
@@ -819,14 +824,13 @@ by Open mapping theorem, to check that the image of \( X_\theta \hookrightarrow 
 
 <p>
 Since
-</p>
-
-
-<div class="figure">
-<p><img src="../img/2018-05-02-interp-closed-emb.png" alt="2018-05-02-interp-closed-emb.png" width="50%" />
-</p>
-</div>
-<p>
+\[
+ \xymatrix{
+X_\theta \ar@{->}[r] & Y_\theta \\
+\mathcal{H}(X_0, X_1)/\mathcal{K}_\theta(X_0, X_1) \ar@{=}[u] & \mathcal{H}(Y_0,Y_1)/\mathcal{K}_\theta(Y_0, Y_1) \ar@{=}[u] \\
+\mathcal{H}(X_0, X_1) \ar@{->}[r] \ar@{->>}[u] & \mathcal{H}(Y_0, Y_1) \ar@{->>}[u]
+}
+\]
 it suffices to show that the image \( \mathcal{H}(X_0,X_1) \hookrightarrow
 \mathcal{H}(Y_0,Y_1) \) is closed, meaning if \(\mathcal{H}(X_0,X_1)\ni h_n \to h \) in \(
 \mathcal{H}(Y_0,Y_1) \), then \( h \) must take value in \( X_0 + X_1 \). By the
@@ -844,13 +848,14 @@ Maximum modulus principle for holomorphic functions.
 
 <p>
 The closedness of \( X_0+X_1 \) in \( Y_0+Y_1 \) follows from the diagram:
+\[
+\xymatrix{
+0 \ar@{->}[r] & X_0\cap X_1 \ar@{->}[r] \ar@{->}[d] & X_0\oplus X_1 \ar@{->}[r] \ar@{->}[d] & X_0 + X_1 \ar@{->}[r] \ar@{->}[d] & 0 \\
+0 \ar@{->}[r] & Y_0\cap Y_1 \ar@{->}[r] & Y_0\oplus Y_1 \ar@{->}[r] & Y_0 + Y_1 \ar@{->}[r] & 0
+}
+\]
 </p>
 
-
-<div class="figure">
-<p><img src="../img/2018-05-02-closed-sum.png" alt="2018-05-02-closed-sum.png" width="50%" />
-</p>
-</div>
 <p>
 where the inclusion \( X_0 \oplus X_1 \hookrightarrow Y_0 \oplus Y_1 \) is of closed image.
 </p>
@@ -888,8 +893,7 @@ following 2 remarks
 <li>The case \( l=0 \) and \( k\gg 1 \) follows from the embedding \( W^{k,p}
    \hookrightarrow C^1 \) and Ascoli's theorem. Hence by Theorem <a href="#thm:interp-ineq-ele">thm:interp-ineq-ele</a>,
 one has the compactness embedding if \( k \gg 1 \) and \( l<k \).</li>
-<li><p>
-For the case of small \( k \), note that 
+<li>For the case of small \( k \), note that 
 \[ 
    W^{k+r,p}(X) \twoheadrightarrow W^{k,p}(X):\ v \mapsto W(D)^r u 
    \]
@@ -897,13 +901,12 @@ is surjective and any \( u\in W^{k,p}(X) \) can be lifted to an element \( \tild
    W^{k+r,p}(X) \) of the same norm. In fact, if \( W(\xi)^k \hat u \in L^p \) then choose
 \( \tilde u \) such that \( \widehat{\tilde u} = W(\xi)^{-r} \hat u \). Kondrachov's
 theorem follows from the diagram:
-</p>
-
-
-<div class="figure">
-<p><img src="../img/2018-05-02-kondrachov-diag.png" alt="2018-05-02-kondrachov-diag.png" width="30%" />
-</p>
-</div></li>
+\[
+    \xymatrix{
+    W^{k+r,p}(X) \ar@{->>}[r] \ar@{^{(}->}[d]_{\rm compact} & W^{k,p}(X) \ar@{^{(}->}[d] \\
+    W^{h+r,p}(X) \ar@{->>}[r] & W^{h,p}(X)
+    }
+   \]</li>
 </ol>
 
 <div class="remark">
@@ -1038,7 +1041,7 @@ The above results are true and the correction is not difficult (use Theorem <a h
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-05-02 Wed 21:40. <br>
+Last updated 2018-05-05 Sat 02:07. <br>
 </div>
 </div>
 </body>
