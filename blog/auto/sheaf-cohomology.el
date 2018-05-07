@@ -4,13 +4,13 @@
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("article" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+                     '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem") ("xy" "all")))
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -33,10 +33,12 @@
     "amscd"
     "mathtools"
     "tikz-cd"
-    "svg")
+    "svg"
+    "xy")
    (TeX-add-symbols
     '("transp" ["argument"] 1)
     '("restr" 2)
+    "re"
     "im"
     "supp"
     "ord"
@@ -44,7 +46,9 @@
     "vol"
     "sff"
     "tr"
-    "const")
+    "const"
+    "lcm"
+    "gcd")
    (LaTeX-add-labels
     "sec:org89ea00e"
     "sec:org32c7c12"
@@ -55,7 +59,7 @@
     "fig:morph-short-sequence"
     "thm:prism-operator"
     "fig:homotopy-operator"
-    "sec:orgf876012"
+    "sec:org53be2e5"
     "thm:Kunneth"
     "sec:org62ef2d8"
     "sec:org65911e0"
@@ -63,7 +67,7 @@
     "lem:exactness"
     "thm:uniqueness-cohomology"
     "thm:fine-resolution"
-    "sec:org53be2e5"
+    "sec:orgcb7c347"
     "sec:orgbd2adbd"
     "thm:de-rham-singular"
     "sec:org91022b2"

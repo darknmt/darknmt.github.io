@@ -504,10 +504,13 @@ good atlas.
 One can always obtain such atlas by shrinking a bit each chart of a given atlas of \( M \). Let \( \psi_i \) be a
 partition of unity subordinated to \( \{U_i\} \)
 
+
+#+ATTR_HTML: :id def:sobolev-space 
 #+BEGIN_definition
+#+LATEX: \label{def:sobolev-space}
 1. The *Sobolev spaces* \( W^{k,p}(M) \) is defined as
    \[
-   W^{k,p}(M):=\left\{ f\in \mathcal{S}(M)^*:\ \psi_i f\in W^{k,p}(\mathbb{R}^n)\right\}
+   W^{k,p}(M):=\left\{ f\in \mathcal{S}(M)^*:\ (\psi_i f)\circ\varphi_i^{-1}\in W^{k,p}(\mathbb{R}^n)\right\}
    \]
    with the norm
    \[
@@ -569,13 +572,197 @@ theorem.
 The above results are true and the correction is not difficult (use Theorem ref:thm:interp-closed-emb).
 #+END_remark
 
+From the remark, one has
+#+ATTR_LATEX: :options [Interpolation of Sobolev spaces on manifold]
+#+ATTR_HTML: :id thm:interp-sobolev-M :btit (Interpolation of Sobolev spaces on manifold) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:interp-sobolev-M}
+Theorem ref:thm:interp-sobolev holds for Sobolev spaces \( W^{k,p}(M) \) on compact
+manifold \( M \).
+#+END_theorem
+
 
 * Sobolev spaces on compact manifold with boundary
 
+In this part, we will define the Sobolev spaces \( W^{k,p}(M/ \mathcal{A}) \) where \(
+k\in \mathbb{R}, 1<p<\infty \) and \( M \)
+is manifolds with boundary and \( \mathcal{A} \) is union of connected components of \( \partial M
+\) the boundary of \( M \). These spaces contain \( W^{k,p}(M) \) "functions" who vanish
+on \( A \). The appearance of the parameter \( \mathcal{A} \) is because we will later
+take \( M = M'\times [0,T] \) where \( M' \) is a manifold without boundary where we want
+to solve heat equation, and the natural \( \mathcal{A} \) would be \( \partial M \times
+\{0\} \). We also want that when the new definition coincides with the case of no boundary
+when \( \mathcal{A} = \emptyset \)
+
+
+Suppose that we already define the Sobolev spaces on \( X\times Y^+ \) where
+\( X = \mathbb{R}^n \) and \( Y^+ = \mathbb{R}_{\geq 0} \), that is the space \(
+W^{k,p}(X\times Y^+) = W^{k,p}(X\times Y^+/\emptyset) \) and \( W^{k,p}(X\times Y^+, X\times \{0\}) \). Then then we define the space
+\( W^{k,p}(M/ \mathcal{A}) \) in analog of Definition ref:def:sobolev-space as follows
+
+#+ATTR_HTML: :id def:sobolev-space-b 
+#+BEGIN_definition
+#+LATEX: \label{def:sobolev-space-b}
+1. The *Sobolev spaces* \( W^{k,p}(M/ \mathcal{A}) \) where \( A \) is a connected
+   component of \( \partial M \) is defined as
+   \[
+   W^{k,p}(M/ \mathcal{A}):=\left\{ f\in \mathcal{S}(M)^*:\ (\psi_i f)\circ
+   \varphi_i^{-1}\in W^{k,p}(R_i/\mathcal{A}_i)\right\}
+   \]
+   where \( \mathcal{A}_i = \varphi_i(U_i \cap \mathcal{A}) \) and \( R_i \) is the
+   Euclidean space containing \( U_i \), that is either \( \mathbb{R}^{n+1} \) when \( \mathcal{A}_i=\emptyset \) or \(
+   \mathbb{R}^{n}\times \mathbb{R}_{\geq 0} \) when \( \mathcal{A}_i\subset
+   \mathbb{R}^n\times \{0\} \). The norm is given by
+   \[
+    \|f\|_{W^{k,p}}= \sum_i \|(\psi_i f)\circ \varphi_i^{-1}\|_{W^{k,p}(R_i/\mathcal{A}_i)}
+   \] 
+2. As before, weighted Sobolev spaces can be defined when \( M \) has a foliation
+   structure compatible with its boundary.
+#+END_definition
+
+The fact that different good atlas and different partition of unity defines the same space
+\( W^{k,p}(M/\mathcal{A}) \) (as a subset of \( \mathcal{S}^*(M) \)) with equivalents norm
+comes from the following lemma, which is just a formulation of arguments in the case of no
+boundary. Its proof follows from 2 remarks: On reduces the lemma, by interpolation
+inequality, to the case \( k \) is a multiple of \( \sigma \) and use the criteria in
+Theorem ref:thm:equiv-norm-Sobolev. Then in this case, use the boundedness of derivative
+of the transition map.
+
+#+ATTR_HTML: :id lem:equiv-norm-sobolev
+#+BEGIN_lemma
+#+LATEX: \label{lem:equiv-norm-sobolev}
+Let \( (U,\mathcal{A}_U)\) and \( (V,\mathcal{A}_V) \) be subsets of \( (X\times Y^+,
+X\times \{0\}) \) and \( \varphi_{VU}:\ (U, \mathcal{A}_U) \longrightarrow (V, \mathcal{A}_V) \)
+being a diffeomorphism mapping \( \mathcal{A}_U\subset \partial U \) to \( \mathcal{A}_V \subset \partial V \)
+bijectively and of bounded derivatives. Let \( 0\leq \psi \leq 1 \) be a smooth function compactly supported in \( U
+\). Then the linear mapping \( T: \mathcal{S}^*(X\times Y^+/X\times \{0\}) \longrightarrow
+\mathcal{S}^*(X\times Y^+/X\times\{0\}):\ f \longrightarrow \psi. (f\circ
+\varphi^{-1}_{VU}) \) extends to a bounded operator from \( W^{k,p}(U/\mathcal{A}_U)
+\longrightarrow W^{k,p}(V, \mathcal{A}_V) \).
+#+END_lemma
+
+The Sobolev spaces on half-plan \( X\times Y^+ \) therefore has to have the following
+properties: they have to be Banach spaces, satisfying Interpolation theorem
+ref:thm:interp-sobolev and having \( \mathcal{S}(M) \) as a dense subspace. We will sketch
+rapidly the (well known) ideas to define Sobolev spaces on half-plan and the trace
+operator in the next sections.
 
 ** Sobolev spaces on half-plan
+Let \( \mathcal{S}(X\times Y^+) \) denote the space of
+smooth, rapidly decreasing functions (and all of their derivatives) on \( X\times Y^+ \)
+and  \( \mathcal{S}(X\times/0) \) denotes the subspace of functions vanish, together with
+all their derivatives, at \( X\times \{0\} \). Idem for \( \mathcal{S}(X\times Y^- \) and
+\( \mathcal{S})(X\times Y^-/0) \). The following exact sequence is obvious and the arrows are continuous under Schwartz topology.
+\begin{equation}
+\label{eq:ses-S}
+ \xymatrix{
+0 \ar@{->}[r] & \mathcal{S}(X\times Y^-/0) \ar@{->}[r]^{Z_-} & \mathcal{S}(X\times Y) \ar@{->}[r]^{C_+} & \mathcal{S}(X\times Y^+) \ar@{->}[r] & 0
+}
+\end{equation}
+
+where \( Z_- \) be the extension by \( 0 \) and \( C_+ \) be the cut-off operator. 
+
+It is however not obvious that the sequence in eqref:eq:ses-S splits. Algebraically this
+is equivalent to the fact that \( C_+ \) admits a retraction, noted \( E_+ \) since it is
+in fact an extension to the negative half-plan, which is continuous
+under Schwartz topology. The construction of \( E_+ \) is as follows
+\begin{align*}
+  E_+: \mathcal{S}(X\times Y^+) &\longrightarrow \mathcal{S}(X\times Y) \\
+  	f 		     	  &\longmapsto	  \left( (x,y) \longmapsto \begin{cases}
+								       f(x,y),  & \text{if $y\geq 0$} \\
+								       \int_0^\infty \varphi(\lambda) f(x,-\lambda y) d\lambda, & \text{if $y<0$}
+								       \end{cases} \right)
+\end{align*}
+This pushes the difficult part to the construction of \( \varphi \), which is resolved by
+the following lemma.
+
+#+ATTR_HTML: :id lem:construction-varphi
+#+BEGIN_lemma
+#+LATEX: \label{lem:construction-varphi}
+There exists a smooth function \( \varphi:\ \mathbb{R}_{\geq 0} \longrightarrow
+\mathbb{R} \) such that
+\(
+ \int_0^{+\infty} x^n |\varphi(x)|dx <\infty \quad\forall n\in \mathbb{Z}
+\)
+and 
+\[
+  \int_0^{+\infty} x^n \varphi(x)dx = (-1)^n \quad\forall n\in \mathbb{Z}
+\]
+Moreover, \(\varphi(\frac{1}{x}) = -x \varphi(x)  \) for all \( x>0 \).
+#+END_lemma
+
+In fact, the function
+\[
+ \varphi(x) = \frac{e^4}{\pi}.\frac{e^{-(x^{1/4} + x^{-1/4})} \sin(x^{1/4} - x^{-1/4})}{1+x}
+\]
+works. The continuity of operator \( E_+ \) comes from these properties of \( \varphi \)
+and basic justification of Lebesgue's Dominated convergence. The projection \( R_- \) of
+\( Z_- \) in the sequence eqref:eq:ses-S is constructed algebraically:
+\begin{align*}
+  R_-\ \mathcal{S}(X\times Y) &\longrightarrow \mathcal{S}(X\times Y^-/0)\\
+       f &\longmapsto f- E_+C_+ f
+\end{align*}
+which is also continuous in Schwartz topology. To resume, one has the split exact sequence
+\begin{equation}
+\label{eq:ses-S-split}
+\xymatrix{
+0 \ar@{->}[r] & \mathcal{S}(X\times Y^-/0) \ar@/^/@{->}[r]^{Z_-} & \mathcal{S}(X\times Y) \ar@/^/@{->}[r]^{C_+} \ar@/^/@{->}[l]^{R_-} & \mathcal{S}(X\times Y^+) \ar@{->}[r] \ar@/^/@{->}[l]^{E_+} & 0
+}
+\end{equation}
+idem for \( \mathcal{S}(X\times Y^+/0 \) and \( \mathcal{S}(X\times Y^-) \) and the
+operators \( Z_+, C_-, E_-\) and \( R_+ \).
+
+
+Also, note that
+\begin{equation}
+\label{eq:Eplus-Rplus}
+\langle E_+ f, g \rangle = \langle f, R_+ g \rangle
+\end{equation}
+where the first coupling is on \( \mathcal{S}(X\times Y) \times \mathcal{S}(X\times Y) \)
+and the second is on \( \mathcal{S}(X\times Y^+)\times \mathcal{S}(X\times Y^+/0) \).
+
+#+ATTR_HTML: :id rem:coupling-S
+#+BEGIN_remark
+#+LATEX: \label{rem:coupling-S}
+1. The two couplings satisfy \( \langle D^\alpha u, v \rangle = (-1)^{|\alpha|} \langle u,
+   D^\alpha v \rangle \).
+2. The second coupling give two natural identifications
+   \[
+    \mathcal{S}(X\times Y^+/0) \hookrightarrow \mathcal{S}^*(X\times Y^+),\quad
+   \mathcal{S}(X\times Y^+) \hookrightarrow \mathcal{S}^*(X\times Y^+/0)
+   \]
+   while the first one gives \( \mathcal{S}(X\times Y) \hookrightarrow
+   \mathcal{S}^*(X\times Y)\).
+3. eqref:eq:Eplus-Rplus shows that \( E_+ \) and \( R_+ \) are adjoint, strictly speaking
+   \( E_+ \) is the restriction of \( R_+^* \), that is
+   \[
+    \xymatrix{
+    \mathcal{S}(X\times Y^+) \ar@{^{(}->}[d] \ar@{->}[r]^{E_+} & \mathcal{S}(X\times Y) \ar@{^{(}->}[d] \\
+    \mathcal{S}^*(X\times Y^+/0) \ar@{->}[r]^{R_+^*} & \mathcal{S}^*(X\times Y)
+    }
+   \]
+#+END_remark
+Also, one has \( \langle C_- f, g \rangle = \langle f, Z_- g \rangle \), hence similarly,
+one has
+\[
+     \xymatrix{
+    \mathcal{S}(X\times Y^-/0) \ar@{^{(}->}[d] \ar@{->}[r]^{Z_-} & \mathcal{S}(X\times Y) \ar@{^{(}->}[d] \\
+    \mathcal{S}^*(X\times Y^-) \ar@{->}[r]^{C_-^*} & \mathcal{S}^*(X\times Y)
+    }
+\]
+
+To resume, one can extend the sequence in eqref:eq:ses-S to the following diagram
+\[
+\xymatrix{
+0 \ar@{->}[r] & \mathcal{S}(X\times Y^-/0) \ar@{^{(}->}[d] \ar@/^/@{->}[r]^{Z_-} & \mathcal{S}(X\times Y) \ar@{^{(}->}[d] \ar@/^/@{->}[r]^{C_+} \ar@/^/@{->}[l]^{R_-} & \mathcal{S}(X\times Y^+) \ar@{^{(}->}[d] \ar@{->}[r] \ar@/^/@{->}[l]^{E_+} & 0 \\
+0 \ar@{->}[r] & \mathcal{S}^*(X\times Y^-) \ar@/^/@{->}[r]^{C_-^*} & \mathcal{S}^*(X\times Y) \ar@/^/@{->}[r]^{Z_+^*} \ar@/^/@{->}[l]^{E_-^*} & \mathcal{S}^*(X\times Y^+/0) \ar@{->}[r] \ar@/^/@{->}[l]^{R_+^*} & 0
+}
+\]
+
+
+
 ** Trace theorems
-** Generalisation to manifold
+
 
 
 
@@ -583,5 +770,6 @@ The above results are true and the correction is not difficult (use Theorem ref:
 
 bibliographystyle:alpha
 bibliography:../res/Stage2018.bib
+
 
 

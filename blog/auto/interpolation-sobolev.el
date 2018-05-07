@@ -50,13 +50,13 @@
     "lcm"
     "gcd")
    (LaTeX-add-labels
-    "sec:orga28b2c5"
-    "sec:org18276e6"
-    "sec:org2710fa6"
+    "sec:org5df152b"
+    "sec:org3d4c328"
+    "sec:org3306c8e"
     "thm:stein-crit"
     "rem:weight"
     "thm:equiv-norm-Sobolev"
-    "sec:orgd447120"
+    "sec:orgfa3f064"
     "thm:3-line"
     "fig:interpol-pair"
     "rem:interp-pair"
@@ -69,12 +69,20 @@
     "thm:interp-closed-emb"
     "eq:ses-interp"
     "thm:compact-interp"
-    "sec:orgaf9c0c5"
+    "sec:org14f8fa3"
+    "def:sobolev-space"
     "rem:hamilton-typo"
-    "sec:org1896bd5"
-    "sec:orgf58620c"
-    "sec:orgbb17028"
-    "sec:org55a9755")
+    "thm:interp-sobolev-M"
+    "sec:orgc7c4154"
+    "def:sobolev-space-b"
+    "lem:equiv-norm-sobolev"
+    "sec:orgc85fe52"
+    "eq:ses-S"
+    "lem:construction-varphi"
+    "eq:ses-S-split"
+    "eq:Eplus-Rplus"
+    "rem:coupling-S"
+    "sec:org2f73f59")
    (LaTeX-add-bibliographies
     "../res/Stage2018")
    (LaTeX-add-amsthm-newtheorems

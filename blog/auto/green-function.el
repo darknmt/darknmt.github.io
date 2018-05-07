@@ -4,13 +4,13 @@
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("article" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+                     '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem") ("xy" "all")))
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -33,10 +33,12 @@
     "amscd"
     "mathtools"
     "tikz-cd"
-    "svg")
+    "svg"
+    "xy")
    (TeX-add-symbols
     '("transp" ["argument"] 1)
     '("restr" 2)
+    "re"
     "im"
     "supp"
     "ord"
@@ -44,11 +46,13 @@
     "vol"
     "sff"
     "tr"
-    "const")
+    "const"
+    "lcm"
+    "gcd")
    (LaTeX-add-labels
     "rem:green-riem-surf"
     "eq:lap-complex"
-    "sec:org1af17c8"
+    "sec:org5cade25"
     "lem:lap-radial"
     "rem:lap-rad"
     "eq:lap-Hpq"
@@ -56,7 +60,7 @@
     "eq:green-formula"
     "rem:transposition"
     "eq:transposition-parametrix"
-    "sec:orga5b8bed"
+    "sec:org5aec0dd"
     "thm:existence-green"
     "eq:green-int"
     "eq:G-bound"

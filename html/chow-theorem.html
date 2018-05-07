@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-04-08 Sun 00:46 -->
+<!-- 2018-05-07 Mon 09:20 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Algebraisation theorems I: Chow's theorem</title>
@@ -228,27 +228,19 @@ for the JavaScript code in this tag.
 /*]]>*///-->
 </script>
 <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
+    MathJax.Ajax.config.path["Extra"] = "https://darknmt.github.io/res/XyJax/extensions/TeX";MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    "HTML-CSS": {
+      styles: {".MathJax_Preview": {visibility: "hidden"}}
+    },
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+    TeX: {extensions: ["[Extra]/xypic.js", "AMSmath.js","AMSsymbols.js"]}
+    //                  ^^^^^^^^load xypic.js
+  });
 </script>
 <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js"></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -282,9 +274,9 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 
 </div>
 \(
-\require{AMScd}
+\newcommand{\re}{\mathop{\rm Re}\nolimits}
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
- \newcommand{\supp}{\mathop{\rm supp}\nolimits}
+\newcommand{\supp}{\mathop{\rm supp}\nolimits}
 \newcommand{\ord}{\mathop{\rm ord}\nolimits}
 \newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
 \newcommand{\vol}{\mathop{\rm vol}\nolimits}
@@ -293,6 +285,8 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\sff}{\mathop{\rm I\*I}\nolimits}
 \newcommand{\tr}{\mathop{\rm Tr}\nolimits}
 \newcommand{\const}{\mathop{\rm const }\nolimits}
+\newcommand{\lcm}{\mathop{\rm lcm}\nolimits}
+\newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
 \)
 
 <p>
@@ -429,7 +423,6 @@ We now give a detailed proof of Chow's Theorem <a href="#thm:chow">thm:chow</a> 
 </p>
 
 <div class="proof">
-Proof of Theorem ref:thm:chow
 <p>
 With the definition of \( V \) and \( Z \) as above, we see that if \( V \) is connected
 then \( Z \) is irreducible. In fact, if \( W \hookrightarrow  \mathbb{A}^N(\mathbb{C}) \)
@@ -621,7 +614,7 @@ where
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-04-08 Sun 00:46. <br>
+Last updated 2018-04-08 Sun 20:07. <br>
 </div>
 </div>
 </body>

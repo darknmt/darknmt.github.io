@@ -6,7 +6,7 @@
 <!-- 2018-05-07 Mon 09:20 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Some results in one complex variable</title>
+<title></title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="darknmt" />
 <style type="text/css">
@@ -227,20 +227,6 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
-<script type="text/x-mathjax-config">
-    MathJax.Ajax.config.path["Extra"] = "https://darknmt.github.io/res/XyJax/extensions/TeX";MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX","output/HTML-CSS"],
-    "HTML-CSS": {
-      styles: {".MathJax_Preview": {visibility: "hidden"}}
-    },
-    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
-    TeX: {extensions: ["[Extra]/xypic.js", "AMSmath.js","AMSsymbols.js"]}
-    //                  ^^^^^^^^load xypic.js
-  });
-</script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js"></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -255,76 +241,11 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div id="content">
-<h1 class="title">Some results in one complex variable</h1>
-<div class="info">
-<p>
-The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
-<code>pdf</code>. 
-For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
-</p>
-
-</div>
-\(
-\newcommand{\re}{\mathop{\rm Re}\nolimits}
-\newcommand{\im}{\mathop{\rm Im}\nolimits}
-\newcommand{\supp}{\mathop{\rm supp}\nolimits}
-\newcommand{\ord}{\mathop{\rm ord}\nolimits}
-\newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
-\newcommand{\vol}{\mathop{\rm vol}\nolimits}
-\newcommand\restr[2]{{\left.#1\right|_{#2}}}
-\newcommand{\transp}{\mathop{\rm \,^t}\nolimits}
-\newcommand{\sff}{\mathop{\rm I\*I}\nolimits}
-\newcommand{\tr}{\mathop{\rm Tr}\nolimits}
-\newcommand{\const}{\mathop{\rm const }\nolimits}
-\newcommand{\lcm}{\mathop{\rm lcm}\nolimits}
-\newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
-\)
-
-
-<div id="thm:runge" btit="(Runge)" class="theorem">
-<p>
-Let \( \Omega \) be a domain of \( \mathbb{C} \) and \( K \) a compact in \( \Omega
-\). Then the followings are equivalent
-</p>
-<ol class="org-ol">
-<li>\( K \) <i>has no hole</i> in \( \Omega \), i.e. there is no connected component \( \mathcal{C}
-   \) of \( \Omega \setminus K \) with \( \bar{\mathcal{C}} \subset \Omega \).</li>
-<li>Every holomorphic function in \( K \) can be \( \|.\|_{K,\infty} \)-approached by
-holomorphic functions in \( \Omega \).</li>
-<li>For every \( x\in \Omega\setminus K \), there exists a holomorphic function \( f_x \in
-   \mathcal{O}_{\Omega}\) such that \( |f(x)| > \sup_K |f| \).</li>
-</ol>
-
-</div>
-
-
-<div id="thm:mittag-leffler" btit="(Mittag-Leffler)" class="theorem">
-<p>
-Let \( (a_i) \) be a discrete sequence of points in \( \Omega \) and \( f_i \) be
-meromorphic functions with pole only at \( a_i \). Then there exists a meromorphic
-function \( f \) with poles only at \( (a_i) \) such that \( f-f_i \) has removable
-singularity at \( a_i \).
-</p>
-
-</div>
-
-<div class="proof">
-<p>
-Suppose that \( (f_i) \) are globally defined in \( \Omega \). Choose an exhaustive
-sequence \( (\hat K_j=K_j)_j \) that increases slower than \( (a_i) \), i.e. \( a_i \not
-\in K_{i} \). By <a href="#thm:runge">thm:runge</a> for \( K_i\subset \Omega \), there exist \( g_i\in
-\mathcal{O}(\Omega) \) with \( \|g_i - f_i\|_{K_i,\infty} < 2^{-i}\). Pose
-\[
-f = \sum_i (f_i-g_i).
-\]
-</p>
-
-</div>
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2017-10-24 Tue 01:02. <br>
+Last updated 2018-05-01 Tue 01:16. <br>
 </div>
 </div>
 </body>

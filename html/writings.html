@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-04-04 Wed 17:38 -->
+<!-- 2018-05-07 Mon 09:21 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -228,27 +228,19 @@ for the JavaScript code in this tag.
 /*]]>*///-->
 </script>
 <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
+    MathJax.Ajax.config.path["Extra"] = "https://darknmt.github.io/res/XyJax/extensions/TeX";MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    "HTML-CSS": {
+      styles: {".MathJax_Preview": {visibility: "hidden"}}
+    },
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+    TeX: {extensions: ["[Extra]/xypic.js", "AMSmath.js","AMSsymbols.js"]}
+    //                  ^^^^^^^^load xypic.js
+  });
 </script>
 <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js"></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -267,6 +259,7 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
+<li><a href="#org3704448">Commutative diagram revisited</a></li>
 <li><a href="#orgf1b129f">LaTeX in Inkscape: Incompatibility between <code>ghostscript</code> and <code>pstoedit</code> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-03-30 Fri&gt;</span></span></a></li>
 <li><a href="#org5c8db4d">A suspicious formula</a></li>
 <li><a href="#org8752665">LaTeX indentation in org-mode <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-02-20 Tue&gt;</span></span></a></li>
@@ -275,6 +268,23 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
+
+<div id="outline-container-org3704448" class="outline-2">
+<h2 id="org3704448">Commutative diagram revisited</h2>
+<div class="outline-text-2" id="text-org3704448">
+</div><div id="outline-container-org2a21c24" class="outline-3">
+<h3 id="org2a21c24">xypic</h3>
+</div>
+<div id="outline-container-org8f5e704" class="outline-3">
+<h3 id="org8f5e704">Tikzcd</h3>
+<div class="outline-text-3" id="text-org8f5e704">
+<p>
+There is a GUI editor for Tikzcd written by <a href="https://tikzcd.yichuanshen.de">Yichuan Shen</a>. I host a copy <a href="http://darknmt.github.io/res/tikzcd-editor">here</a>.
+</p>
+</div>
+</div>
+</div>
+
 
 <div id="outline-container-orgf1b129f" class="outline-2">
 <h2 id="orgf1b129f">LaTeX in Inkscape: Incompatibility between <code>ghostscript</code> and <code>pstoedit</code> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-03-30 Fri&gt;</span></span></h2>
@@ -499,7 +509,7 @@ also in this period that I start this blog. The memoire can be founded here [<a 
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2018-03-30 Fri 10:23. <br>
+Last updated 2018-05-01 Tue 19:28. <br>
 </div>
 </div>
 </body>
