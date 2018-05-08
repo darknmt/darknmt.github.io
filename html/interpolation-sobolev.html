@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-07 Mon 09:20 -->
+<!-- 2018-05-08 Tue 20:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Interpolation theory and Sobolev spaces on compact manifolds</title>
@@ -270,7 +270,12 @@ for the JavaScript code in this tag.
 <li><a href="#org5678a20">3. Sobolev spaces on compact manifold without boundary</a></li>
 <li><a href="#orgdc0458a">4. Sobolev spaces on compact manifold with boundary</a>
 <ul>
-<li><a href="#orge160586">4.1. Sobolev spaces on half-plan</a></li>
+<li><a href="#orge160586">4.1. Sobolev spaces on half-plan</a>
+<ul>
+<li><a href="#org874fdf4">4.1.1. Smooth extensions</a></li>
+<li><a href="#orgcc0dd68">4.1.2. Functoriality of \( D_x \) and equivalent definitions</a></li>
+</ul>
+</li>
 <li><a href="#org806b308">4.2. Trace theorems</a></li>
 </ul>
 </li>
@@ -1029,8 +1034,8 @@ manifold \( M \).
 <h2 id="orgdc0458a"><span class="section-number-2">4</span> Sobolev spaces on compact manifold with boundary</h2>
 <div class="outline-text-2" id="text-4">
 <p>
-In this part, we will define the Sobolev spaces \( W^{k,p}(M/ \mathcal{A}) \) where \(
-k\in \mathbb{R}, 1<p<\infty \) and \( M \)
+In this part, we will define the Sobolev spaces \( W^{k,p}(M/ \mathcal{A}) \) where \(k\in
+\mathbb{R}, p\in(1, \infty) \) and \( M \)
 is manifolds with boundary and \( \mathcal{A} \) is union of connected components of \( \partial M
 \) the boundary of \( M \). These spaces contain \( W^{k,p}(M) \) "functions" who vanish
 on \( A \). The appearance of the parameter \( \mathcal{A} \) is because we will later
@@ -1106,10 +1111,18 @@ operator in the next sections.
 <h3 id="orge160586"><span class="section-number-3">4.1</span> Sobolev spaces on half-plan</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
+In this section, the Sobolev spaces on \( X\times Y \) or \( X\times Y^+ \) are defined
+with weight \( (\sigma_1,\dots,\sigma_n,\rho) \) and \( \sigma:= \lcm (\sigma_1,\dots,\sigma_n,\rho) \).
+</p>
+</div>
+<div id="outline-container-org874fdf4" class="outline-4">
+<h4 id="org874fdf4"><span class="section-number-4">4.1.1</span> Smooth extensions</h4>
+<div class="outline-text-4" id="text-4-1-1">
+<p>
 Let \( \mathcal{S}(X\times Y^+) \) denote the space of
 smooth, rapidly decreasing functions (and all of their derivatives) on \( X\times Y^+ \)
 and  \( \mathcal{S}(X\times/0) \) denotes the subspace of functions vanish, together with
-all their derivatives, at \( X\times \{0\} \). Idem for \( \mathcal{S}(X\times Y^- \) and
+all their derivatives, at \( X\times \{0\} \). Idem for \( \mathcal{S}(X\times Y^-) \) and
 \( \mathcal{S})(X\times Y^-/0) \). The following exact sequence is obvious and the arrows are continuous under Schwartz topology.
 </p>
 \begin{equation}
@@ -1232,13 +1245,249 @@ one has
 
 <p>
 To resume, one can extend the sequence in \eqref{eq:ses-S} to the following diagram
-\[
+</p>
+\begin{equation}
+\label{eq:ses-S-Sstar}
 \xymatrix{
 0 \ar@{->}[r] & \mathcal{S}(X\times Y^-/0) \ar@{^{(}->}[d] \ar@/^/@{->}[r]^{Z_-} & \mathcal{S}(X\times Y) \ar@{^{(}->}[d] \ar@/^/@{->}[r]^{C_+} \ar@/^/@{->}[l]^{R_-} & \mathcal{S}(X\times Y^+) \ar@{^{(}->}[d] \ar@{->}[r] \ar@/^/@{->}[l]^{E_+} & 0 \\
 0 \ar@{->}[r] & \mathcal{S}^*(X\times Y^-) \ar@/^/@{->}[r]^{C_-^*} & \mathcal{S}^*(X\times Y) \ar@/^/@{->}[r]^{Z_+^*} \ar@/^/@{->}[l]^{E_-^*} & \mathcal{S}^*(X\times Y^+/0) \ar@{->}[r] \ar@/^/@{->}[l]^{R_+^*} & 0
 }
-\]
+\end{equation}
+
+<p>
+We will define Sobolev spaces \( W^{k,p}(X\times Y^-/0) \) and \( W^{k,p}(X\times Y^+) \)
+so that the Sobolev spaces form an intermediate row in diagram, since the center cell \(
+\mathcal{S}(X\times Y)\subset W^{k,p}(X\times Y) \subset \mathcal{S}^*(X\times Y) \) is
+already defined, there is only one natural way to do this.
 </p>
+
+<div class="definition">
+<ol class="org-ol">
+<li>The <b>Sobolev space upper on half-plan</b> is \[ W^{k,p}(X\times Y^+) := \left\{ f\in
+   \mathcal{S}^*(X\times Y^+/0):\ \exists g\in W^{k,p}(X\times Y), f= Z_+^* g\right\}\] with norm
+\( \|f\|_{W^{k,p}(X\times Y^+)} = \inf_g \|g\|_{W^{k,p}(X\times Y)} \).</li>
+<li>The <b>Sobolev space on lower half-plan with vanishing trace</b> \[ W^{k,p}(X\times Y^-/0):=
+   \left\{f\in \mathcal{S}^*(X\times Y^-):\ C_-^* f\in W^{k,p}(X\times Y)\right\}\] with
+the induced norm \( \|f\|_{W^{k,p}(X\times Y^-/0)}:= \|C^*_- f\|_{W^{k,p}(X\times Y)}
+   \).</li>
+</ol>
+
+</div>
+
+<div class="remark">
+<ol class="org-ol">
+<li>In other words, \(
+   W^{k,p}(X\times Y^-/0) = {C^*_-}^{-1}(W^{k,p}(X\times Y)) \) and
+\( W^{k,p}(X\times Y^+) = Z^*_+ (W^{k,p}(X\times Y)) \) and they are given by the induced
+norm and the quotient norm of \( W^{k,p}(X\times Y) \) respectively. The operator
+\( C_-^* \) and \( Z_+^* \) are by definition bounded under Sobolev norm.</li>
+<li>The topology of \( W^{k,p}(X\times Y) \) being finer than the induced of weak-* topology from \(
+   \mathcal{S}^*(X\times Y) \), the restricted operator \( \restr{Z_+^*}{W^{k,p}}: W^{k,p}(X\times Y)
+   \longrightarrow \mathcal{S}^*(X\times Y^+/0) \) is continuous, hence \( \ker
+   \restr{Z_+^*}{W^{k,p}}\subset W^{k,p}(X\times Y) \), which is also the image by \( C_-^* \) of
+\(W^{k,p}(X\times Y^-/0) \), is a closed subspace of the Banach space \(
+   W^{k,p}(X\times Y) \). Therefore \( W^{k,p}(X\times Y^-/0) \) and \( W^{k,p}(X\times
+   Y^+) \) are Banach spaces.</li>
+<li>Idem for \( W^{k,p}(X\times Y^+/0) \) and \( W^{k,p}(X\times
+   Y^-) \).</li>
+</ol>
+
+</div>
+
+
+<div id="thm:sobolev-def-ses" class="theorem">
+<ol class="org-ol">
+<li><p>
+For all \( k\in \mathbb{R} \) and \( p\in (1,\infty) \), the three lines of the following diagram are split-exact and the arrows of the second
+lines are bounded operators under Sobolev norms.
+</p>
+\begin{equation}
+\label{eq:ses-S-W-Sstar}
+\xymatrix{
+0 \ar@{->}[r] & \mathcal{S}(X\times Y^-/0) \ar@/^/@{->}[r]^{Z_-} \ar@{^{(}->}[d] & \mathcal{S}(X\times Y) \ar@/^/@{->}[r]^{C_+} \ar@/^/@{->}[l]^{R_-} \ar@{^{(}->}[d] & \mathcal{S}(X\times Y^+) \ar@{->}[r] \ar@/^/@{->}[l]^{E_+} \ar@{^{(}->}[d] & 0 \\
+0 \ar@{->}[r] & W^{k,p}(X\times Y^-/0) \ar@{^{(}->}[d] \ar@/^/@{->}[r]^{C_-^*} & W^{k,p}(X\times Y) \ar@{^{(}->}[d] \ar@/^/@{->}[r]^{Z_+^*} \ar@/^/@{->}[l]^{E_-^*} & W^{k,p}(X\times Y^+) \ar@{->}[r] \ar@/^/@{->}[l]^{R_+^*} \ar@{^{(}->}[d] & 0 \\
+0 \ar@{->}[r] & \mathcal{S}^*(X\times Y^-) \ar@/^/@{->}[r]^{C_-^*} & \mathcal{S}^*(X\times Y) \ar@/^/@{->}[r]^{Z_+^*} \ar@/^/@{->}[l]^{E_-^*} & \mathcal{S}^*(X\times Y^+/0) \ar@{->}[r] \ar@/^/@{->}[l]^{R_+^*} & 0
+}
+\end{equation}</li>
+<li>The subspaces \( \mathcal{S}(X\times Y^-/0) \) and \( \mathcal{S}(X\times Y^+) \) are dense
+in \( W^{k,p}(X\times Y^0/0) \) and \( W^{k,p}(X\times Y^+) \) respectively.</li>
+<li>Interpolation theorem <a href="#thm:interp-sobolev">thm:interp-sobolev</a> holds for \( W^{k,p}(X\times Y^-/0) \) and
+\( W^{k,p}(X\times Y^+) \).</li>
+</ol>
+
+</div>
+<div class="proof">
+<p>
+The commutativity of the diagram is purely algebraic. The continuity of \( C^*_- \) and \(
+Z^*_+ \) in the \( W^{k,p} \)-row follows from the definition of norms in this row. The
+only non-trivial part is the continuity of \( E^*_- \) and \( R^*_+ \) in the \( W^{k,p}
+\)-row, and it suffices to prove that \( C^*_- E^*_- \) and \( R^*_+ Z^*_+ \) are bounded
+as automorphism of \( W^{k,p}(X\times Y) \). This follows from direct computation of these
+norm in the case \( \sigma \mid k\in \mathbb{R} \) and interpolation inequality (Theorem
+<a href="#thm:interp-ineq-op">thm:interp-ineq-op</a>) for intermediate \( k \).
+</p>
+
+<p>
+Once the continuity of \( E^*_- \) and \( R_+^* \) is established, the density of \(
+\mathcal{S}(X\times Y^-/0) \) follows straight-forwardly and we see that \(
+W^{k,p}(X\times Y^-/0) \) and \( W^{l,p}(X\times Y^-/0) \) are interpolatable (the two
+spaces share a dense subspace). Theorem <a href="#thm:interp-closed-emb">thm:interp-closed-emb</a> applies and shows that
+Theorem <a href="#thm:interp-sobolev">thm:interp-sobolev</a> holds for \( W^{k,p}(X\times Y^-/0) \). 
+</p>
+
+<p>
+Idem for the side of \(
+\mathcal{S}(X\times Y^+)\subset W^{k,p}(X\times Y^+) \).
+</p>
+
+</div>
+
+<div class="remark">
+<p>
+By dualizing the diagram \eqref{eq:ses-S-W-Sstar} and using the fact that the dual space of
+\( W^{k,p}(X\times Y) \) is \( W^{-k, p'}(X\times Y) \), one can prove that the dual space
+of \( W^{k,p}(X\times Y^+) \) is \( W^{-k, p'}(X\times Y^+/0) \). 
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcc0dd68" class="outline-4">
+<h4 id="orgcc0dd68"><span class="section-number-4">4.1.2</span> Functoriality of \( D_x \) and equivalent definitions</h4>
+<div class="outline-text-4" id="text-4-1-2">
+<p>
+The following discussion appeared as 4 lemmas in <a class='org-ref-reference' href="#hamilton_harmonic_1975">hamilton_harmonic_1975</a> in the proof of Vanishing trace theorem <a href="#thm:vanishing-trace">thm:vanishing-trace</a>. The reason of
+this paragraph is that I do not want to consider these results as technical details, and I
+think these ideas can be presented without much computation.
+</p>
+
+<p>
+Note that the weight \( W(\xi,\eta) = \left(1 +\xi_1^{2\sigma_1} +\dots +
+\xi_n^{2\sigma_n} +\eta^{2\rho} \right)^{1/2\sigma} \) is comparable to \( W(\xi) +
+W(\eta) \) where
+\[
+ W(\xi) = \left(1 +\xi_1^{2\sigma_1} +\dots +
+\xi_n^{2\sigma_n} \right)^{1/2\sigma},\quad W(\eta) = \left(1 +\eta^{2\rho} \right)^{1/2\sigma}
+\]
+and also \( W^k(\xi,\eta) \) is comparable to \( W(\xi)^k + W(\eta)^k \). Hence \(
+W(D_x)^l:\ W^{k,p}(X\times Y) \longrightarrow W^{k-l,p}(X\times Y) \) is a bounded
+operator.
+</p>
+
+<p>
+The vertical arrows in the following diagram are the vertical arrows of
+\eqref{eq:ses-S-W-Sstar}. The dashed horizontal arrow indicates that it is established only
+in the center cells \( W^{k,p}(X\times Y) \longrightarrow W^{k-l,p}(X\times Y) \).
+</p>
+\begin{equation}
+\label{eq:S-W-S-3d}
+\xymatrix{
+ & \mathcal{S}-{\rm row} \ar@{->}[ld] \ar@{->}[rd] &  \\
+W^{k,p}-{\rm row} \ar@{->}[rd] \ar@{-->}[rr]^{W(D_x)^l} &  & W^{k-l,p}-{\rm row} \ar@{->}[ld] \\
+ & \mathcal{S}^*-{\rm row} & 
+}
+\end{equation}
+
+<p>
+We will see that the dashed arrow can be extended to a full arrow, that is 3 arrows
+between the \( W^{k,p} \)-row and \( W^{k-l,p} \)-row that are compatible with the diagram
+\eqref{eq:ses-S-W-Sstar}.
+</p>
+
+<p>
+One can construct \( W(D_x)^l \) arrows from \( W^{k,p}(X\times Y^-/0)
+\longrightarrow W^{k-l,p}(X\times Y^-/0) \) and \( W^{k,p}(X\times Y^+)
+\longrightarrow W^{k-l,p}(X\times Y^+) \) as adjoint of \( W(D_x)^l \) on
+\mathcal{S}(X&times; Y^+) and \( \mathcal{S}(X\times Y^+/0) \). They are by definition continuous on the
+weak-* topology. It is easy to see that if we can prove that these two \( W(D_x)^l \) arrows commute with \(
+C^*_-, E^*_- \) and \( Z^*_+, R^*_+ \) on \( W^{k,p} \)-row and \( W^{k-l,p} \)-row, then
+by the continuity of the \(W(D_x)^l \) arrow from \( W^{k,p}(X\times Y) \longrightarrow
+W^{k-l,p}(X\times Y) \), these \( W(D_x)^l \) arrows are bounded in \( W^{k,p} \) norm.
+</p>
+
+<p>
+The two new \( W(D_x)^l \) arrows commute with all "\( \longrightarrow  \)" arrows in the \(
+W^{k,p} \)-row of \eqref{eq:ses-S-W-Sstar}, i.e. \( C^*_- \) and \( Z^*_+ \), since for
+smooth functions, \( D_x \) commutes with \( Z_- \) (extension by 0) and \( C_+ \)
+(cut-off).
+</p>
+
+<p>
+The fact that \( W(D_x)^l \) commutes with the "\( \longleftarrow  \)" arrows,
+i.e. \(E^*_-\) and \( R^*_+ \) because the way we define extension operators \( E_+ \) and
+\( R_- \) for smooth functions that satisfy
+</p>
+
+<p>
+\(
+ \xymatrix{
+\mathcal{S}(X\times Y^+) \ar@{->}[d]^{W(D_x)^l} \ar@{->}[r]^{E_+} & \mathcal{S}(X\times Y) \ar@{->}[d]^{W(D_x)^l} \\
+\mathcal{S}(X\times Y^+) \ar@{->}[r]^{E_+} & \mathcal{S}(X\times Y)
+}
+\)
+and
+\(
+\xymatrix{
+\mathcal{S}(X\times Y) \ar@{->}[d]^{W(D_x)^l} \ar@{->}[r]^{R_-} & \mathcal{S}(X\times Y^-/0) \ar@{->}[d]^{W(D_x)^l} \\
+\mathcal{S}(X\times Y) \ar@{->}[r]^{R_-} & \mathcal{S}(X\times Y^-/0)
+}
+\)
+</p>
+
+<div id="rem:funct-Dy" class="remark">
+<p>
+There is no functoriality of \( D_y \) since for \( y<0 \)
+\[
+ D_y^l E_+ f(x,y) = \int_0^\infty (-\lambda)^l \varphi(\lambda)D_y^l f(x,-\lambda
+y)d\lambda \ne E_+ D_y^l f(x,y)
+\]
+meaning that the \( D_y \) does not commute with \( E_+ \).
+</p>
+
+<p>
+However \( D_y^l E_+ f\in L^p(X\times Y) \) if and only if \( E_+ D^l_y f\in L^p(X\times
+Y) \) if and only if \( D^l_y f  \in L^p(X\times Y^+) \). Moreover the 3 \( L^p \) norms
+are equivalent.
+</p>
+
+</div>
+
+
+<p>
+The density of \( \mathcal{S}(X\times Y^-/0) \) and \( \mathcal{S}(X\times Y^+) \) in the
+corresponding \( W^{k,p} \) shows that the new \( W^{k,p} \) spaces can also be defined by
+density using the \( W^{k,p} \)-norm of the extension (\( Z_- \) and \(
+E_+ \) respectively) from half-plan to the whole plan. By the continuity of \( R_+^* \) in the second row of \eqref{eq:ses-S-W-Sstar} when \( k=0 \), one see that
+the \( L^p \)-norms of the extensions by \( Z_-\) and \(E_+ \) are equivalent to the \( L^p
+\) norm on the half-plan. Therefore, one has the following analog of Theorem <a href="#thm:equiv-norm-Sobolev">thm:equiv-norm-Sobolev</a>.
+</p>
+
+<div id="thm:descrpt-sobolev" class="theorem">
+<p>
+Given \( k>0 \) and \( \sigma \mid k \),
+</p>
+<ol class="org-ol">
+<li>If \( f\in \mathcal{S}^*(X\times Y^+/0) \) then 
+<ol class="org-ol">
+<li>\( f\in W^{k,p}(X\times Y^+) \) if and only if \( D^\alpha_x D^\beta_y f\in
+      L^p(X\times Y^+)\) for \( \|(\alpha,\beta)\|\leq k \).</li>
+<li>\( f\in W^{-k,p}(X\times Y^+) \) if and only if there exists \( g_{\alpha\beta}\in
+      L^p(X\times Y^+) \) such that \( f = \sum_{\|(\alpha,\beta)\|\leq k} D^\alpha_x
+      D^\beta_y g_{\alpha\beta} \).</li>
+</ol></li>
+<li>If \( f\in \mathcal{S}^*(X\times Y^+) \) then
+<ol class="org-ol">
+<li>\( f\in W^{k,p}(X\times Y^+/0) \) if and only if \( D^\alpha_x D^\beta_y f\in
+      L^p(X\times Y^+)\) for \( \|(\alpha,\beta)\|\leq k \).</li>
+<li>\( f\in W^{-k,p}(X\times Y^+/0) \) if and only if there exists \( g_{\alpha\beta}\in
+      L^p(X\times Y^+) \) such that \( f = \sum_{\|(\alpha,\beta)\|\leq k} D^\alpha_x
+      D^\beta_y g_{\alpha\beta} \).</li>
+</ol></li>
+</ol>
+
+</div>
+</div>
 </div>
 </div>
 
@@ -1247,6 +1496,274 @@ To resume, one can extend the sequence in \eqref{eq:ses-S} to the following diag
 <div id="outline-container-org806b308" class="outline-3">
 <h3 id="org806b308"><span class="section-number-3">4.2</span> Trace theorems</h3>
 <div class="outline-text-3" id="text-4-2">
+<p>
+To make the notation more intuitive, we abusively denote the horizontal arrows in the \(
+W^{k,p} \)-row and the \( \mathcal{S}^* \)-row by their corresponding arrows in the \(
+\mathcal{S} \)-row (i.e. their restriction on the space of smooth functions), that is we will use \( Z_-, C_+, R_-, E_+ \) instead of \( C_-^*,
+Z_+^*, E_-^*, R_+^* \).
+</p>
+
+<p>
+The goal of this section is to define the restriction of a function \( f\in
+W^{k,p}(X\times Y^+) \) on \( X\times \{0\} \). The pointwise restriction of \( f \) does
+not make sense because \( f \) is only defined up to a negligible set (i.e. of Lebesgue
+measure 0). The strategy is to take a sequence \( f_n\in \mathcal{S}(X\times Y^+) \)
+\( W^{k,p} \)-converging to \( f \) and to see if \( \{\restr{f_n}{X\times \{0\}}\} \)
+converges in \( L^p(X\times \{0\}) \). If it does one calls the limit trace of \( f \) on
+\( X\times \{0\} \). Theorem <a href="#thm:vanishing-trace">thm:vanishing-trace</a>, Example <a href="#ex:vanishing-trace">ex:vanishing-trace</a> and
+Theorem <a href="#thm:def-trace">thm:def-trace</a> show that one should expect 
+</p>
+<ul class="org-ul">
+<li>high regularity of \( f \), i.e. \( k \) large enough, so that the limit exists,</li>
+<li>a drop of regularity of the restriction.</li>
+</ul>
+
+<p>
+From diagram \eqref{eq:ses-S-W-Sstar} and its opposite version (with all \( + \) sign
+replaced by \( - \) and vice versa), there is a natural inclusion \(\iota:\ W^{k,p}(X\times
+Y^+/0) \) to \( W^{k,p}(X\times Y^+) \), by, for smooth functions, first extending by zero, then cut-off
+\[
+ \xymatrix{
+W^{k,p}(X\times Y^+/0) \ar@{^{(}->}[rr]^{\iota} \ar@{->}[rd]^{Z_+} &  & W^{k,p}(X\times Y^+) \\
+ & W^{k,p}(X\times Y) \ar@{->}[ru]^{C_+} & 
+}
+\]
+</p>
+
+<div id="thm:vanishing-trace" btit="(Vanishing trace)" class="theorem">
+<p>
+If \( p\in (1,+\infty) \) and \( -1+ \frac{1}{p} < \rho \frac{k}{\sigma} < \frac{1}{p} \)
+then \( \iota \) is an isomorphic
+</p>
+
+</div>
+
+
+
+<div class="proof">
+<p>
+Define
+</p>
+\begin{align*}
+  M_+(\lambda):\ \mathcal{S}(X\times Y^+) &\longrightarrow \mathcal{S}(X\times Y^+) \\
+  		 f(x,y) &\longmapsto f(x, \lambda y)
+\end{align*}
+<p>
+Since \( \langle M_+(\lambda)f, g \rangle = \langle f , N_+(\lambda) g \rangle\) for all
+\( f\in \mathcal{S}(X\times Y^+), g\in \mathcal{S}(X\times Y^+/0) \) and \( \lambda >0 \) where \( N_+(\lambda)g(x,y):=
+\lambda^{-1}g(x, \lambda^{-1}y) \), one sees that \( M_+(\lambda) \) extends to \(
+\mathcal{S}^*(X\times Y^+/0) \longrightarrow \mathcal{S}^*(X\times Y^+/0) \) and that one
+extension of it is \( N^*_+(\lambda) \) the adjoint of \( N_+(\lambda) \):
+\[
+ \xymatrix{
+\mathcal{S}(X\times Y^+) \ar@{^{(}->}[d] \ar@{->}[r]^{M_+(\lambda)} & \mathcal{S}(X\times Y^+) \ar@{^{(}->}[d] \\
+\mathcal{S}^*(X\times Y^+/0) \ar@{->}[r]^{N_+^*(\lambda)} & \mathcal{S}^*(X\times Y^+/0)
+}
+\]
+We abusively call \( N_+^*(\lambda) \) by \( M_+(\lambda) \). We will let \( \lambda \to
++\infty \), the operator \( M_+(\lambda) \) intuitively "shrinks" to the boundary \(
+X\times \{0\}\).
+</p>
+
+<div id="lem:Nplus" class="lemma">
+<p>
+For \( k\geq 0, \lambda \geq 1 \), \( M_+(\lambda): W^{k,p}(X\times Y^+) \longrightarrow
+W^{k,p}(X\times Y^+) \) is bounded and
+\[
+\| M_+(\lambda) f\|_{W^{k,p}(X\times Y^+)} \leq C \lambda^{\frac{\rho
+k}{\sigma}-\frac{1}{p} } \|f\|_{W^{k,p}(X\times Y^+)}
+\]
+where \( C \) does not depend on \( \lambda \).
+</p>
+
+</div>
+
+<p>
+The proof of the Lemma <a href="#lem:Nplus">lem:Nplus</a> is straightforward: it suffices to prove the
+boundedness in the case \( \sigma \mid k \) an use interpolation inequality
+<a href="#thm:interp-ineq-op">thm:interp-ineq-op</a>, also one can suppose that \( f\in \mathcal{S}(X\times Y^+)
+\). Note that \( (\frac{\partial}{\partial y})^l M_+(\lambda) =\lambda^l
+M_+(\lambda)(\frac{\partial}{\partial y})^l \) while
+\( \frac{\partial}{\partial x} \) commutes with \( M_+(\lambda) \), hence in general \( |D_{(x,y)}^\alpha M_+(\lambda) f| \leq
+\lambda^{k\rho/\sigma}|D^\alpha_{(x,y)} f| \) for all \( \|\alpha\|\leq k, \lambda \geq 1
+\). The \( -\frac{1}{p} \) in the exponent of \( \lambda \) is due to: \(
+\|M_+(\lambda)g\|_{L^p} =\lambda^{-1/p} \| g\|_{L^p} \).
+</p>
+
+<p>
+Back to Theorem <a href="#thm:vanishing-trace">thm:vanishing-trace</a>, let \( f\in \mathcal{S}(X\times Y^+) \) and
+define \( \tilde M(\lambda) f \) to be \( f \) on \(X\times Y^+\) and
+\( M_-(\lambda) C_-E_+ f \) on \( X\times Y^- \), then
+\( \tilde M(\lambda)f\in W^{\sigma/\rho,p}(X\times Y) \). Note that
+\( D_y \tilde M(\lambda) f \) is not continuous at \( X\times \{0\} \) but is still in
+\( L^p(X\times Y) \) because \( f \) and \( M_-(\lambda) C_-E_+ f \) agrees on
+\( X\times \{0\} \). Suppose we can prove that as \( \lambda \to +\infty \) the sequence
+\( \tilde M(\lambda) f \) converges to \( \tilde M f \) in \( W^{k,p}(X\times Y) \) then
+\( C_- \tilde M f = \lim_{\lambda\to +\infty}M_-(\lambda)C_-E_+f=0 \). One obtains, by
+exactness of the second row of diagram \eqref{eq:ses-S-W-Sstar}, existence of a \( g\in
+W^{k,p}(X\times Y^+/0) \) such that \( \tilde M f = Z_+ g \). Moreover, since \( C_+
+\tilde M(\lambda) f = f \) for all \( \lambda > 0 \), one has \( C_+ \tilde M f = f \), hence \( \iota g = C_+Z_+ g = C_+
+\tilde M f = f \).
+</p>
+
+<p>
+It remains to prove the existence of such \( \tilde M f \). By Lemma <a href="#lem:Nplus">lem:Nplus</a> and the
+fact that all \( \tilde M(\lambda)f \) are the same on \( X\times Y^+ \), one has
+\[
+\| \tilde M(\lambda)f - \tilde M(2\lambda) f \|_{W^{k,p}(X\times Y)} \leq 2C \lambda^{\frac{\rho
+k}{\sigma}-\frac{1}{p} } \|f\|_{W^{k,p}(X\times Y^+)}
+\]
+Therefore if \( \frac{\rho k}{\sigma}< \frac{1}{p} \), the sequence \( \tilde M (2^n) f \)
+converge in \( W^{k,p}(X\times Y) \) to \( \tilde M f \).
+</p>
+
+</div>
+
+<div id="ex:vanishing-trace" class="remark">
+<p>
+If \( \rho=\sigma_i \) then \( \sigma=1 \), take \( k=0 \) then the Theorem
+<a href="#thm:vanishing-trace">thm:vanishing-trace</a> claims that \( \mathcal{S}(X\times Y^+/0) \) is dense in \(
+L^P(X\times Y^+) \supset \mathcal{S}(X\times Y^+) \), or equivalently any smooth function
+\( f\in \mathcal{S}(X\times Y^+) \) not necessarily vanishes on \( X\times \{0\} \) can be
+\( L^p \)-approximated by smooth functions with all derivative vanishes on \( X\times
+\{0\} \). This means that one cannot define any notion of trace on \( X\times \{0\} \)
+that varies continuously under the \( L^p \) norm.
+</p>
+
+</div>
+
+<p>
+In case of high regularity \( \frac{\rho k}{\sigma} > \frac{1}{p} \), one can define a
+meaningful notion of trace.
+</p>
+
+<div id="thm:def-trace" btit="(Well-defined trace)" class="theorem">
+<p>
+If  \( \frac{\rho k}{\sigma} > \frac{1}{p} \) then the restriction map
+</p>
+\begin{align*}
+  B: \mathcal{S}(X\times Y^+) &\longrightarrow \mathcal{S}(X)\\
+     		f(x,y)	      &\longmapsto     f(x,0)	
+\end{align*}
+<p>
+extends to a bounded operator, abusively noted by \( B:\ W^{k,p}(X\times Y^+) \longrightarrow L^p(X) \).
+</p>
+
+</div>
+
+<div class="definition">
+<p>
+We call \( \partial W^{k,p}(X\times Y^+):= W^{k,p}(X\times Y^+)/\ker B \) the <b>space of
+boundary value</b> of function in \( W^{k,p}(X\times Y^+) \).
+</p>
+
+</div>
+
+<p>
+Theorem <a href="#thm:def-trace">thm:def-trace</a> can be strengthen by remarking that if \( \sigma:=
+\lcm(\sigma_1,\dots,\sigma_n,\rho) = \lcm (\sigma_1,\dots,\sigma_n) \) and if \( W(\xi) \)
+denotes the weight \( (1+\xi_1^{2\sigma_1}+\dots+\xi_n^{2\sigma_n})^{1/2\sigma} \) then \(
+B \) and \( W(D_x) \) commute, i.e.
+\[
+ \xymatrix{
+W^{k,p}(X\times Y^+) \ar@{->}[d]_{W(D_x)^l} \ar@{->}[r]^{B} & L^p(X)\subset \mathcal{S}^*(X) \ar@{->}[d]^{W(D_x)^l} \\
+W^{k-l,p}(X\times Y^+) \ar@{->}[r]^{B} & L^p(X)
+}
+\]
+as long as \( \frac{\rho(k-l)}{\sigma} > \frac{1}{p} \). Therefore, one has
+</p>
+
+<div id="thm:trace-reg" btit="(Regularity of trace)" class="theorem">
+<p>
+If \( 0\leq l < k- \frac{\sigma}{\rho p} \) then the trace operator \( B \) in Theorem
+<a href="#thm:def-trace">thm:def-trace</a> actually of image in \( W^{l,p}(X) \) and the operator \[ B:\
+W^{k,p}(X\times Y^+) \longrightarrow W^{l,p}(X) \] is bounded.
+</p>
+
+</div>
+
+<div class="proof">
+<p>
+It suffices to prove that \( \|Bf\|_{L^p(X)} \leq C\|f\|_{W^{k,p}(X\times Y^+)} \) for all
+\( f\in \mathcal{S}(X\times Y^+) \) and \( 1 \geq \frac{\rho k}{\sigma} > \frac{1}{p} \)
+(for higher \( k \), embed in the \(W^{k,p}\) smaller \( k \)). Define
+</p>
+\begin{align*}
+  T_v:\ \mathcal{S}(X\times Y^+) &\longrightarrow \mathcal{S}(X\times Y^+)\\
+  	f		    	 &\longmapsto  \left((x,y) \longmapsto \frac{1}{v}\int_0^v f(x,y+w)dw\right)
+\end{align*}
+<p>
+for \( v>0 \). One can check that \( T_v \) extends to a bounded operator \(T_v:\
+W^{k,p}(X\times Y^+) \longrightarrow W^{k,p}(X\times Y^+) \) for all \( k\geq 0 \) and
+that
+</p>
+\begin{cases}
+\|D_y T_v f\|_{L^p(X\times Y^+)} \leq Cv^{-1} \|f\|_{L^p(X\times Y^+)},  \\
+\|D_y T_v f\|_{L^p(X\times Y^+)} \leq C\|f\|_{W^{\sigma/\rho,p}(X\times Y^+)}
+\end{cases}
+<p>
+hence by Interpolation inequality <a href="#thm:interp-ineq-op">thm:interp-ineq-op</a>, one obtains for all \( 0\leq
+k\leq \sigma/\rho \): \( \|D_y T_v f\|_{L^p(X\times Y^+)} \leq C v^{\rho k/\sigma -
+1}\|f\|_{W^{k,p}(X\times Y^+)} \) hence
+</p>
+\begin{equation}
+\label{eq:def-trace-1}
+\|D_y (T_{v/2}- T_v f)\|_{L^p(X\times Y^+)} \leq C v^{\rho k/\sigma - 1}\|f\|_{W^{k,p}(X\times Y^+)}
+\end{equation}
+
+<p>
+Similarly, one can prove that for all \( 0\leq
+k\leq \sigma/\rho \): \( \|({\rm Id} -  T_v) f\|_{L^p(X\times Y^+)} \leq C v^{\rho
+k/\sigma}\|f\|_{W^{k,p}(X\times Y^+)} \) therefore
+</p>
+\begin{equation}
+\label{eq:def-trace-2}
+\|(T_{v/2} -  T_v) f\|_{L^p(X\times Y^+)} \leq C v^{\rho k/\sigma}\|f\|_{W^{k,p}(X\times Y^+)}
+\end{equation}
+
+<p>
+Moreover, using Hölder inequality and Fundamental theorem of calculus, one has: if \( g\in
+\mathcal{S}(X\times Y^+)\) then
+</p>
+\begin{equation}
+\label{eq:def-trace-3}
+\|B g\|_{L^p(X)}\leq C\|g\|^{1/p'}_{L^p(X\times Y^+)}\|D_y g\|^{1/p}_{L^p(X\times Y^+)}
+\end{equation}
+
+<p>
+Substitute \( g \) by \( (T_{v/2}- T_v)f \) in \eqref{eq:def-trace-3} then use apply
+\eqref{eq:def-trace-1} and \eqref{eq:def-trace-2}, one has
+\[
+ \|B(T_{v/2}-T_v)\|_{L^p(X)}\leq C v^{\frac{\rho k}{\sigma} -
+\frac{1}{p}}\|f\|_{W^{k,p}(X\times Y^+)}
+\]
+Therefore if \( \frac{1}{p} < \frac{\rho k}{\sigma}\leq 1 \), the sequence \( B T_{2^-n}f
+\) converges in \( L^p(X) \) and the limit is of \( L^p \)-norm less than \(
+C\|f\|_{W^{k,p}(X\times Y^+)} \). Since \( f \) is continuous, the limit is \(
+\restr{f}{X\times \{0\}} \). The theorem follows.
+</p>
+
+</div>
+
+<p>
+In the proof of Theorem <a href="#thm:vanishing-trace">thm:vanishing-trace</a>, we glue a function \( f_+\in
+\mathcal{S}(X\times Y^+) \) with \( f_-\in \mathcal{S}(X\times Y^-) \) of the same value
+on \( X\times \{0\} \) and the result is a function in \( W^{\sigma/\rho,p}(X\times Y)
+\). This can be generalised as follow
+</p>
+
+<div id="thm:patching" btit="(Patching theorem)" class="theorem">
+<p>
+If \( p\in (1,+\infty) \) and \( \frac{1}{p} < \rho \frac{k}{\sigma} < 1+\frac{1}{p} \),
+then given \( f_+\in W^{k,p}(X\times Y^+) \) and \( f_-\in W^{k,p}(X\times Y^-) \) such
+that \( B f_+ = B f_- \) in \( L^p(X) \), one define \( f\in L^p(X\times Y) \) such that \(f=
+f_+ \) on \( X\times Y^+ \) and \(f= f_- \) on \( X\times Y^- \). Then actually \( f\in
+W^{k,p}(X\times Y) \).
+</p>
+
+</div>
+
+
 <p>
 
 <h1 class='org-ref-bib-h1'>Bibliography</h1>
@@ -1262,7 +1779,7 @@ To resume, one can extend the sequence in \eqref{eq:ses-S} to the following diag
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-05-07 Mon 03:41. <br>
+Last updated 2018-05-08 Tue 20:07. <br>
 </div>
 </div>
 </body>
