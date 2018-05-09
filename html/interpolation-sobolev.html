@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-08 Tue 20:07 -->
+<!-- 2018-05-09 Wed 10:51 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Interpolation theory and Sobolev spaces on compact manifolds</title>
@@ -235,7 +235,7 @@ for the JavaScript code in this tag.
       styles: {".MathJax_Preview": {visibility: "hidden"}}
     },
     tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
-    TeX: {extensions: ["[Extra]/xypic.js", "AMSmath.js","AMSsymbols.js"]}
+    TeX: {equationNumbers: {  autoNumber: "AMS"  }, extensions: ["[Extra]/xypic.js", "AMSmath.js","AMSsymbols.js"]}
     //                  ^^^^^^^^load xypic.js
   });
 </script>
@@ -277,6 +277,7 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#org806b308">4.2. Trace theorems</a></li>
+<li><a href="#org24efaaf">4.3. Trace operator on manifold</a></li>
 </ul>
 </li>
 </ul>
@@ -982,28 +983,28 @@ both of them by shrinking their union.</li>
 </div>
 
 <p>
-By definition, one has an inclusion \(i:\ W^{k,p}(M) \hookrightarrow \bigoplus_i
-W^{k,p}(\mathbb{R}^n) \). Also \( i \) is of closed image because one can find a
-projection \( j:\ \bigoplus W^{k,p}(\mathbb{R}^n) \longrightarrow W^{k,p}(M) \) with \(
-j\circ i = {\rm Id} \). In fact, let \( \tilde \psi_i \) be functions supported in \( U_i
+By definition, one has an inclusion \(\iota:\ W^{k,p}(M) \hookrightarrow \bigoplus_i
+W^{k,p}(\mathbb{R}^n) \). Also \( \iota \) is of closed image because one can find a
+projection \( \pi:\ \bigoplus W^{k,p}(\mathbb{R}^n) \longrightarrow W^{k,p}(M) \) with \(
+\pi\circ \iota = {\rm Id} \). In fact, let \( \tilde \psi_i \) be functions supported in \( U_i
 \) that equal \( 1 \) in the support of \( \psi_i \), then 
 \[ 
-j:\ g\mapsto \sum \tilde \psi_i. (g\circ \varphi_i) 
+\pi:\ g\mapsto \sum \tilde \psi_i. (g\circ \varphi_i) 
 \]
-works. The continuity of \( j \) follows from straight-forward calculations.
+works. The continuity of \( \pi \) follows from straight-forward calculations.
 </p>
 
 <p>
-The closedness of image of \( i \) is equivalent to the fact that \( W^{k,p}(M) \) is complete.
+The closedness of image of \( \iota \) is equivalent to the fact that \( W^{k,p}(M) \) is complete.
 </p>
 
 <div id="rem:hamilton-typo" class="remark">
 <p>
-Although \( i \) preserves the norm of \( W^{k,p}(M) \) and has a right-inverse, it is far
+Although \( \iota \) preserves the norm of \( W^{k,p}(M) \) and has a right-inverse, it is far
 from being an isomorphism (it is not surjective). Each component of an element in the
-image of \( i \) tends to 0 on the boundary of \( V_i \) (take \( k \gg 1 \) then everyone
+image of \( \iota \) tends to 0 on the boundary of \( V_i \) (take \( k \gg 1 \) then everyone
 is continuous by Sobolev embedding, there is no subtlety in what we mean by "tends to
-0"). <a class='org-ref-reference' href="#hamilton_harmonic_1975">hamilton_harmonic_1975</a> seems to claim that \( i \) is an
+0"). <a class='org-ref-reference' href="#hamilton_harmonic_1975">hamilton_harmonic_1975</a> seems to claim that \( \iota \) is an
 isomorphism and apply Theorem <a href="#thm:dir-sum-interp">thm:dir-sum-interp</a>
 repeatedly to deduce Theorem <a href="#thm:interp-sobolev">thm:interp-sobolev</a> for Sobolev spaces on manifold,
 then the Sobolev embedding \( W^{k,p} \hookrightarrow C^{l}(M) \) and Kondrachov's
@@ -1696,12 +1697,14 @@ It suffices to prove that \( \|Bf\|_{L^p(X)} \leq C\|f\|_{W^{k,p}(X\times Y^+)} 
 for \( v>0 \). One can check that \( T_v \) extends to a bounded operator \(T_v:\
 W^{k,p}(X\times Y^+) \longrightarrow W^{k,p}(X\times Y^+) \) for all \( k\geq 0 \) and
 that
+\[
 </p>
 \begin{cases}
 \|D_y T_v f\|_{L^p(X\times Y^+)} \leq Cv^{-1} \|f\|_{L^p(X\times Y^+)},  \\
 \|D_y T_v f\|_{L^p(X\times Y^+)} \leq C\|f\|_{W^{\sigma/\rho,p}(X\times Y^+)}
 \end{cases}
 <p>
+\]
 hence by Interpolation inequality <a href="#thm:interp-ineq-op">thm:interp-ineq-op</a>, one obtains for all \( 0\leq
 k\leq \sigma/\rho \): \( \|D_y T_v f\|_{L^p(X\times Y^+)} \leq C v^{\rho k/\sigma -
 1}\|f\|_{W^{k,p}(X\times Y^+)} \) hence
@@ -1762,6 +1765,47 @@ W^{k,p}(X\times Y) \).
 </p>
 
 </div>
+</div>
+</div>
+
+<div id="outline-container-org24efaaf" class="outline-3">
+<h3 id="org24efaaf"><span class="section-number-3">4.3</span> Trace operator on manifold</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+The following paragraph does not appear in <a class='org-ref-reference' href="#hamilton_harmonic_1975">hamilton_harmonic_1975</a> because of Remark <a href="#rem:hamilton-typo">rem:hamilton-typo</a>.
+</p>
+
+<p>
+To resume, we have defined Sobolev spaces on manifold with boundary as the space of
+currents whose cut-off restrictions on each chart are in \( W^{k,p} \). Also we have defined
+trace operator of Sobolev spaces on half-plan in a vision to extend the notion to
+manifold.
+</p>
+
+<p>
+Let \( f\in W^{k,p}(M/\mathcal{A}) \) and \( \mathcal{B} \) be a
+connected component of \( \partial M \). With the same notation as Definition
+<a href="#def:sobolev-space-b">def:sobolev-space-b</a>, \( f \) gives the data of \( f_i = (\psi_i f)\circ
+   \varphi_i^{-1}\in W^{k,p}(R_i/\mathcal{A}_i) \) the cut-off restriction of \( f \) on
+each chart using a partition of unity \( \{\psi_i\}_i \) subordinated to a good atlas \(
+(U_i)_i \) of \( M \), where \( R_i \) is an Euclidean space of the same
+dimension as \( M \) (\( \mathcal{A}_i = \emptyset \)), or a half-plan (\(
+\mathcal{A}_i\subset \partial R_i \)). Note that \( U_i\cap \mathcal{B} \) is a good atlas
+of \( \mathcal{B} \) and \( \psi_i \) is still a partition of unity subordinated to this
+atlas, therefore take \( g_i\in W^{l,p}(\partial R_i) \) to be
+trace of \( f_i \) on the image of \( \mathcal{B} \) of each chart. It remains to check
+that the data \( g_i \) correspond to a unique element \( g\in W^{l,p}(\mathcal{B})
+\). Recall that we have the following diagram:
+\[
+\xymatrix{
+0 \ar@{->}[r] & W^{l,p}(\mathcal{B}) \ar@/^/@{->}[r]^{\iota} & \bigoplus_i W^{l,p}(\partial R_i) \ar@/^/@{->>}[l]^{\pi}
+}
+\]
+where \( \iota \) admits a projection \( \pi \) given by the cut-off functions \( \tilde
+\psi_i \) that we choose to be the same ones used for \( M \). Hence to see that \( (g_i)_i \) is in the image of \( \iota \), it suffices to
+check that \( \iota\circ\pi((g_i)_i) = (g_i)_i \) which should be straightforward, since
+\(\sum_i \tilde \psi_i \psi_i = 1 \).
+</p>
 
 
 <p>
@@ -1779,7 +1823,7 @@ W^{k,p}(X\times Y) \).
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-05-08 Tue 20:07. <br>
+Last updated 2018-05-09 Wed 10:51. <br>
 </div>
 </div>
 </body>

@@ -1,0 +1,22 @@
+#+TITLE: Elliptic and parabolic equation on compact manifolds
+#+AUTHOR: Tien NGUYEN MANH
+#+DATE: Apr 30, 2018
+# +STARTUP: indent
+# +STARTUP: showstars
+
+#+SETUPFILE: ../res/mathsetup.org
+#+INCLUDE: ../res/include.org
+# \tag{fig:unique-interpol-pair}
+
+\begin{equation}
+\label{fig:unique-interpol-pair}
+\xymatrix{
+ &  & 0 \ar@/_/@{->}[d] &  &  \\
+ &  & A_0 \ar@{->}[rd] \ar@/_/@{->}[d] \ar@/_/@{->}[u] &  &  \\
+0 \ar@{->}[r] & U \ar@{->}[r] \ar@{->}[ru] \ar@{->}[rd] & A_0\oplus A_1 \ar@{->}[r] \ar@/_/@{->}[d] \ar@/_/@{->}[u] & V \ar@{->}[r] & 0 \\
+ &  & A_1 \ar@{->}[ru] \ar@/_/@{->}[d] \ar@/_/@{->}[u] &  &  \\
+ &  & 0 \ar@/_/@{->}[u] &  & 
+}
+a+1=2
+\end{equation}
+ By eqref:fig:unique-interpol-pair 

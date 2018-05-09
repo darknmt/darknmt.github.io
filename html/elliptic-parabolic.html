@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-07 Mon 09:20 -->
+<!-- 2018-05-09 Wed 10:42 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title></title>
+<title>Elliptic and parabolic equation on compact manifolds</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="darknmt" />
+<meta name="author" content="Tien NGUYEN MANH" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -227,6 +227,20 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path["Extra"] = "https://darknmt.github.io/res/XyJax/extensions/TeX";MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    "HTML-CSS": {
+      styles: {".MathJax_Preview": {visibility: "hidden"}}
+    },
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+    TeX: {equationNumbers: {  autoNumber: "AMS"  }, extensions: ["[Extra]/xypic.js", "AMSmath.js","AMSsymbols.js"]}
+    //                  ^^^^^^^^load xypic.js
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js"></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -241,11 +255,50 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div id="content">
+<h1 class="title">Elliptic and parabolic equation on compact manifolds</h1>
+<div class="info">
+<p>
+The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
+<code>pdf</code>. 
+For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
+</p>
+
+</div>
+\(
+\newcommand{\re}{\mathop{\rm Re}\nolimits}
+\newcommand{\im}{\mathop{\rm Im}\nolimits}
+\newcommand{\supp}{\mathop{\rm supp}\nolimits}
+\newcommand{\ord}{\mathop{\rm ord}\nolimits}
+\newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
+\newcommand{\vol}{\mathop{\rm vol}\nolimits}
+\newcommand\restr[2]{{\left.#1\right|_{#2}}}
+\newcommand{\transp}{\mathop{\rm \,^t}\nolimits}
+\newcommand{\sff}{\mathop{\rm I\*I}\nolimits}
+\newcommand{\tr}{\mathop{\rm Tr}\nolimits}
+\newcommand{\const}{\mathop{\rm const }\nolimits}
+\newcommand{\lcm}{\mathop{\rm lcm}\nolimits}
+\newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
+\)
+
+\begin{equation}
+\label{fig:unique-interpol-pair}
+\xymatrix{
+ &  & 0 \ar@/_/@{->}[d] &  &  \\
+ &  & A_0 \ar@{->}[rd] \ar@/_/@{->}[d] \ar@/_/@{->}[u] &  &  \\
+0 \ar@{->}[r] & U \ar@{->}[r] \ar@{->}[ru] \ar@{->}[rd] & A_0\oplus A_1 \ar@{->}[r] \ar@/_/@{->}[d] \ar@/_/@{->}[u] & V \ar@{->}[r] & 0 \\
+ &  & A_1 \ar@{->}[ru] \ar@/_/@{->}[d] \ar@/_/@{->}[u] &  &  \\
+ &  & 0 \ar@/_/@{->}[u] &  & 
+}
+a+1=2
+\end{equation}
+<p>
+By \eqref{fig:unique-interpol-pair} 
+</p>
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
-By darknmt.<br>
-Last updated 2018-05-01 Tue 01:16. <br>
+By Tien NGUYEN MANH.<br>
+Last updated 2018-05-09 Wed 10:42. <br>
 </div>
 </div>
 </body>

@@ -3,7 +3,10 @@
 # [[file:../img/ly-ngu-vong-nguyet.jpg]]
 
 * Commutative diagram revisited
-** xypic
+** xypic and xyJax
+
+To config MathJax in org-mode, apropos ~org-html-mathjax-template~
+
 ** Tikzcd
 There is a GUI editor for Tikzcd written by [[https://tikzcd.yichuanshen.de][Yichuan Shen]]. I host a copy [[http://darknmt.github.io/res/tikzcd-editor][here]].
 
