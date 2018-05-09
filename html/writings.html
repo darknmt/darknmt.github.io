@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-07 Mon 09:21 -->
+<!-- 2018-05-09 Wed 11:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -235,7 +235,7 @@ for the JavaScript code in this tag.
       styles: {".MathJax_Preview": {visibility: "hidden"}}
     },
     tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
-    TeX: {extensions: ["[Extra]/xypic.js", "AMSmath.js","AMSsymbols.js"]}
+    TeX: {equationNumbers: {  autoNumber: "AMS"  }, extensions: ["[Extra]/xypic.js", "AMSmath.js","AMSsymbols.js"]}
     //                  ^^^^^^^^load xypic.js
   });
 </script>
@@ -272,19 +272,35 @@ for the JavaScript code in this tag.
 <div id="outline-container-org3704448" class="outline-2">
 <h2 id="org3704448">Commutative diagram revisited</h2>
 <div class="outline-text-2" id="text-org3704448">
-</div><div id="outline-container-org2a21c24" class="outline-3">
-<h3 id="org2a21c24">xypic</h3>
-</div>
-<div id="outline-container-org8f5e704" class="outline-3">
-<h3 id="org8f5e704">Tikzcd</h3>
-<div class="outline-text-3" id="text-org8f5e704">
+</div><div id="outline-container-org7f2b65b" class="outline-3">
+<h3 id="org7f2b65b">xypic and xyJax</h3>
+<div class="outline-text-3" id="text-org7f2b65b">
 <p>
-There is a GUI editor for Tikzcd written by <a href="https://tikzcd.yichuanshen.de">Yichuan Shen</a>. I host a copy <a href="http://darknmt.github.io/res/tikzcd-editor">here</a>.
+To my knowledge, the only way to type commutative diagram on the web is to use <code>xyJax</code>, a
+third-party extension of <code>MathJax</code> that render diagram using <code>xypic</code>. This is also how
+<a href="https://stacks.math.columbia.edu/">Stacks Project</a> was set up.
+</p>
+
+<p>
+The syntax of <code>xypic</code> is almost the same as <code>tikz-cd</code>, to a basic user the only difference
+is how arrows are typed. I learn <code>xypic</code> syntax by rewriting a GUI editor for <code>tikzcd</code> by
+<a href="https://tikzcd.yichuanshen.de">Yichuan Shen</a> to output <code>xypic</code> code. <a href="https://darknmt.github.io/res/xypic-editor/">Here</a> is the <code>xypic</code> version of the editor. I also
+host a copy of the <code>tikz-cd</code> editor <a href="http://darknmt.github.io/res/tikzcd-editor">here</a>.
+</p>
+
+<p>
+The configuration of <code>xyJax</code> or any third-party extension MathJax was not very easy for
+ me, since it seems that MathJax CDN no longer host third-party extensions. So I have to
+ host my own copy of <code>xyJax</code> and tell MathJax CDN to use it, as indicated in <a href="http://docs.mathjax.org/en/latest/options/ThirdParty.html">its
+ documentation</a>. Also, one also has to <a href="https://github.com/sonoisa/XyJax/blob/master/README.md">reconfig a path</a> in <code>xyJax</code>.
+</p>
+
+<p>
+To config MathJax in org-mode, apropos <code>org-html-mathjax-template</code>.
 </p>
 </div>
 </div>
 </div>
-
 
 <div id="outline-container-orgf1b129f" class="outline-2">
 <h2 id="orgf1b129f">LaTeX in Inkscape: Incompatibility between <code>ghostscript</code> and <code>pstoedit</code> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-03-30 Fri&gt;</span></span></h2>
@@ -509,7 +525,7 @@ also in this period that I start this blog. The memoire can be founded here [<a 
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2018-05-01 Tue 19:28. <br>
+Last updated 2018-05-09 Wed 11:08. <br>
 </div>
 </div>
 </body>

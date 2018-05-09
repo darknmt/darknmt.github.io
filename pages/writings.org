@@ -4,12 +4,21 @@
 
 * Commutative diagram revisited
 ** xypic and xyJax
+To my knowledge, the only way to type commutative diagram on the web is to use ~xyJax~, a
+third-party extension of ~MathJax~ that render diagram using ~xypic~. This is also how
+[[https://stacks.math.columbia.edu/][Stacks Project]] was set up.
 
-To config MathJax in org-mode, apropos ~org-html-mathjax-template~
+The syntax of ~xypic~ is almost the same as ~tikz-cd~, to a basic user the only difference
+is how arrows are typed. I learn ~xypic~ syntax by rewriting a GUI editor for ~tikzcd~ by
+[[https://tikzcd.yichuanshen.de][Yichuan Shen]] to output ~xypic~ code. [[https://darknmt.github.io/res/xypic-editor/][Here]] is the ~xypic~ version of the editor. I also
+host a copy of the ~tikz-cd~ editor [[http://darknmt.github.io/res/tikzcd-editor][here]].
 
-** Tikzcd
-There is a GUI editor for Tikzcd written by [[https://tikzcd.yichuanshen.de][Yichuan Shen]]. I host a copy [[http://darknmt.github.io/res/tikzcd-editor][here]].
+The configuration of ~xyJax~ or any third-party extension MathJax was not very easy for
+ me, since it seems that MathJax CDN no longer host third-party extensions. So I have to
+ host my own copy of ~xyJax~ and tell MathJax CDN to use it, as indicated in [[http://docs.mathjax.org/en/latest/options/ThirdParty.html][its
+ documentation]]. Also, one also has to [[https://github.com/sonoisa/XyJax/blob/master/README.md][reconfig a path]] in ~xyJax~.
 
+To config MathJax in org-mode, apropos ~org-html-mathjax-template~.
 
 * LaTeX in Inkscape: Incompatibility between ~ghostscript~ and ~pstoedit~ <2018-03-30 Fri>
 Since Ghostscript 9.22, certain flags (e.g. ~dREALLYDEALYBIND~) are deprecated and ~pstoedit~,
