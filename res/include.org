@@ -10,6 +10,7 @@ For example ~/html/sheaf-cohomology.html~ should become ~/pdf/sheaf-cohomology.p
 \(
 \newcommand{\re}{\mathop{\rm Re}\nolimits}
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
+\newcommand{\coker}{\mathop{\rm coker}\nolimits}
 \newcommand{\supp}{\mathop{\rm supp}\nolimits}
 \newcommand{\ord}{\mathop{\rm ord}\nolimits}
 \newcommand{\Spec}{\mathop{\rm Spec}\nolimits}

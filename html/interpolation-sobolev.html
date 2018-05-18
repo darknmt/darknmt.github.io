@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-09 Wed 10:51 -->
+<!-- 2018-05-18 Fri 10:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Interpolation theory and Sobolev spaces on compact manifolds</title>
@@ -294,6 +294,7 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \(
 \newcommand{\re}{\mathop{\rm Re}\nolimits}
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
+\newcommand{\coker}{\mathop{\rm coker}\nolimits}
 \newcommand{\supp}{\mathop{\rm supp}\nolimits}
 \newcommand{\ord}{\mathop{\rm ord}\nolimits}
 \newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
@@ -591,6 +592,18 @@ is exact, the horizontal sequence is exact and canonical.</li>
 one of them.</li>
 </ol>
 
+<p>
+In the language that we will use to solve <a href="./elliptic-parabolic.html">linear equation</a>, the diagram
+\eqref{fig:unique-interpol-pair} is equivalent to the square
+\[
+ \xymatrix{
+U \ar@{->}[r] \ar@{->}[d] & A_0 \ar@{->}[d] \\
+A_1 \ar@{->}[r] & V
+}
+\]
+being <i>exact</i>.
+</p>
+
 </div>
 
 <p>
@@ -770,17 +783,17 @@ Let \( (X_0, X_1) \) and \( (Y_0, Y_1) \) be interpolatable pairs. Suppose that 
 inclusion
 \(X_0 \hookrightarrow  Y_0\) and \( X_1 \hookrightarrow  Y_1\)
 with closed images in \( Y_0 \) and \( Y_1 \) respectively and the inclusions agree on \(
-X_0 \cap X_1 \) as mappings from \( X_0\cap X_1 \) to \( Y_0 + Y_1 \). Then there is a
+X_0 \cap X_1 \) as mappings from \( X_0\cap X_1 \) to \( Y_0 + Y_1 \). Moreover, suppose
+that the image of \( X_0+X_1 \) in \( Y_0+Y_1 \) is closed. Then there is a
 natural inclusion \( X_\theta \hookrightarrow Y_\theta \) with closed image in \( Y_\theta \)
 </p>
 
 </div>
 <div class="remark">
 <ol class="org-ol">
-<li>Open mapping theorem guarantees that for any continuous inclusions of Banach spaces 
-\( X \hookrightarrow Y \) 
-with closed image, the inherent norm of the \( X \) is equivalent to the induced
-norm from \( Y \).</li>
+<li>The condition \( X_0+X_1 \hookrightarrow Y_0+Y_1 \) being of closed image is redundant
+if \( X_1 \hookrightarrow X_0 \) and \( Y_1 \hookrightarrow Y_0 \), as in the case of
+interpolation of Sobolev spaces.</li>
 <li><p>
 If one has two exact sequences
 </p>
@@ -849,20 +862,6 @@ closed in \( Y_0+Y_1 \), then any holomorphic map \(  \mathcal{H}(Y_0,Y_1)\ni f:
 \longrightarrow Y_0+Y_1 \) passes holomorphically to the quotient \( S \longrightarrow (Y_0
 +Y_1) /(X_0+X_1)\). The fact that \( h \) takes value in \( X_0 + X_1 \) follows from
 Maximum modulus principle for holomorphic functions.
-</p>
-
-<p>
-The closedness of \( X_0+X_1 \) in \( Y_0+Y_1 \) follows from the diagram:
-\[
-\xymatrix{
-0 \ar@{->}[r] & X_0\cap X_1 \ar@{->}[r] \ar@{->}[d] & X_0\oplus X_1 \ar@{->}[r] \ar@{->}[d] & X_0 + X_1 \ar@{->}[r] \ar@{->}[d] & 0 \\
-0 \ar@{->}[r] & Y_0\cap Y_1 \ar@{->}[r] & Y_0\oplus Y_1 \ar@{->}[r] & Y_0 + Y_1 \ar@{->}[r] & 0
-}
-\]
-</p>
-
-<p>
-where the inclusion \( X_0 \oplus X_1 \hookrightarrow Y_0 \oplus Y_1 \) is of closed image.
 </p>
 
 </div>
@@ -1122,9 +1121,9 @@ with weight \( (\sigma_1,\dots,\sigma_n,\rho) \) and \( \sigma:= \lcm (\sigma_1,
 <p>
 Let \( \mathcal{S}(X\times Y^+) \) denote the space of
 smooth, rapidly decreasing functions (and all of their derivatives) on \( X\times Y^+ \)
-and  \( \mathcal{S}(X\times/0) \) denotes the subspace of functions vanish, together with
+and  \( \mathcal{S}(X\times Y^+/0) \) denotes the subspace of functions who vanish, together with
 all their derivatives, at \( X\times \{0\} \). Idem for \( \mathcal{S}(X\times Y^-) \) and
-\( \mathcal{S})(X\times Y^-/0) \). The following exact sequence is obvious and the arrows are continuous under Schwartz topology.
+\( \mathcal{S}(X\times Y^-/0) \). The following exact sequence is obvious and the arrows are continuous under Schwartz topology.
 </p>
 \begin{equation}
 \label{eq:ses-S}
@@ -1164,7 +1163,7 @@ There exists a smooth function \( \varphi:\ \mathbb{R}_{\geq 0} \longrightarrow
 \)
 and 
 \[
-  \int_0^{+\infty} x^n \varphi(x)dx = (-1)^n \quad\forall n\in \mathbb{Z}
+  \int_0^{+\infty} x^n \varphi(x)dx = (-1)^n \quad\forall n\in \mathbb{Z}\setminus\{0\}
 \]
 Moreover, \(\varphi(\frac{1}{x}) = -x \varphi(x)  \) for all \( x>0 \).
 </p>
@@ -1748,6 +1747,19 @@ C\|f\|_{W^{k,p}(X\times Y^+)} \). Since \( f \) is continuous, the limit is \(
 
 </div>
 
+<div class="remark">
+<p>
+The fact that the condition on \( l \) in Theorem <a href="#thm:trace-reg">thm:trace-reg</a> is an open condition
+explains why we topologize the space of boundary value  \( \partial W^{k,p}(X\times Y^+)
+\) by the quotient \( W^{k,p} \)-norm instead of any \( W^{l,p} \)-norm. On one hand, we have completeness for free. On the
+other hand, since \( B:\ W^{k,p}(X\times Y^+) \longrightarrow
+L^p(X) \) factorizes to any \( W^{l,p}(X) \), the quotient \( W^{k,p} \)-norm is stronger
+than any \( W^{l,p} \)-norm.
+</p>
+
+</div>
+
+
 <p>
 In the proof of Theorem <a href="#thm:vanishing-trace">thm:vanishing-trace</a>, we glue a function \( f_+\in
 \mathcal{S}(X\times Y^+) \) with \( f_-\in \mathcal{S}(X\times Y^-) \) of the same value
@@ -1807,6 +1819,17 @@ check that \( \iota\circ\pi((g_i)_i) = (g_i)_i \) which should be straightforwar
 \(\sum_i \tilde \psi_i \psi_i = 1 \).
 </p>
 
+<p>
+Now that we defined a trace operator \(B:\ W^{k,p}(M) \longrightarrow L^p( \partial M) \)
+that factor through \( W^{k,p}(M) \longrightarrow W^{l,p}(\partial M) \) for all \( 0\leq l < k -
+\frac{\sigma}{\rho p}\), we can define the space of boundary value of function in
+\(W^{k,p}(M)\) by 
+\[
+\partial W^{k,p}(M):= W^{k,p}(M) / \ker B
+\]
+which has a finer topology than its image in any \( W^{l,p}(\partial M) \) for \( 0\leq
+l< k- \frac{\sigma}{\rho p} \).
+</p>
 
 <p>
 
@@ -1823,7 +1846,7 @@ check that \( \iota\circ\pi((g_i)_i) = (g_i)_i \) which should be straightforwar
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-05-09 Wed 10:51. <br>
+Last updated 2018-05-15 Tue 00:10. <br>
 </div>
 </div>
 </body>

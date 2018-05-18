@@ -14,7 +14,7 @@ is how arrows are typed. I learn ~xypic~ syntax by rewriting a GUI editor for ~t
 host a copy of the ~tikz-cd~ editor [[http://darknmt.github.io/res/tikzcd-editor][here]].
 
 The configuration of ~xyJax~ or any third-party extension MathJax was not very easy for
- me, since it seems that MathJax CDN no longer host third-party extensions. So I have to
+ me, since it seems that MathJax CDN no longer hosts third-party extensions. So I have to
  host my own copy of ~xyJax~ and tell MathJax CDN to use it, as indicated in [[http://docs.mathjax.org/en/latest/options/ThirdParty.html][its
  documentation]]. Also, one also has to [[https://github.com/sonoisa/XyJax/blob/master/README.md][reconfig a path]] in ~xyJax~.
 

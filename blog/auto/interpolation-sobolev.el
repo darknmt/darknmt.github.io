@@ -5,12 +5,12 @@
                      '(("article" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem") ("xy" "all")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -34,12 +34,14 @@
     "mathtools"
     "tikz-cd"
     "svg"
-    "xy")
+    "xy"
+    "pgfplots")
    (TeX-add-symbols
     '("transp" ["argument"] 1)
     '("restr" 2)
     "re"
     "im"
+    "coker"
     "supp"
     "ord"
     "Spec"
@@ -50,13 +52,13 @@
     "lcm"
     "gcd")
    (LaTeX-add-labels
-    "sec:org04c5eef"
-    "sec:orgcd83658"
-    "sec:org79fed4a"
+    "sec:org5df152b"
+    "sec:org3d4c328"
+    "sec:org3306c8e"
     "thm:stein-crit"
     "rem:weight"
     "thm:equiv-norm-Sobolev"
-    "sec:org4bf5254"
+    "sec:orgfa3f064"
     "thm:3-line"
     "fig:interpol-pair"
     "rem:interp-pair"
@@ -69,15 +71,15 @@
     "thm:interp-closed-emb"
     "eq:ses-interp"
     "thm:compact-interp"
-    "sec:org4c11758"
+    "sec:org14f8fa3"
     "def:sobolev-space"
     "rem:hamilton-typo"
     "thm:interp-sobolev-M"
-    "sec:org8e2fd9c"
+    "sec:orgc7c4154"
     "def:sobolev-space-b"
     "lem:equiv-norm-sobolev"
-    "sec:org3175aa9"
-    "sec:org3659582"
+    "sec:orgc85fe52"
+    "sec:orga32a6e0"
     "eq:ses-S"
     "lem:construction-varphi"
     "eq:ses-S-split"
@@ -86,11 +88,11 @@
     "eq:ses-S-Sstar"
     "thm:sobolev-def-ses"
     "eq:ses-S-W-Sstar"
-    "sec:orgf9b776e"
+    "sec:orgd41e58a"
     "eq:S-W-S-3d"
     "rem:funct-Dy"
     "thm:descrpt-sobolev"
-    "sec:org8abda45"
+    "sec:org2f73f59"
     "thm:vanishing-trace"
     "lem:Nplus"
     "ex:vanishing-trace"
@@ -100,7 +102,7 @@
     "eq:def-trace-2"
     "eq:def-trace-3"
     "thm:patching"
-    "sec:org5016048")
+    "sec:orga2f6724")
    (LaTeX-add-bibliographies
     "../res/Stage2018")
    (LaTeX-add-amsthm-newtheorems

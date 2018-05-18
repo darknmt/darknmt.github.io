@@ -227,6 +227,16 @@ in which
 3. The maps composed by the diagonal arrows \( U \to A_i \to V \) are injective for \(
    i=0,1 \). Since the two maps are additive inverse, it suffices to have injectivity for
    one of them.
+
+In the language that we will use to solve [[./elliptic-parabolic.org][linear equation]], the diagram
+eqref:fig:unique-interpol-pair is equivalent to the square
+\[
+ \xymatrix{
+U \ar@{->}[r] \ar@{->}[d] & A_0 \ar@{->}[d] \\
+A_1 \ar@{->}[r] & V
+}
+\]
+being /exact/.
 #+END_remark
 
 The following construction will give a family of complex subspace \( A_\theta \) of \(
@@ -373,14 +383,14 @@ Let \( (X_0, X_1) \) and \( (Y_0, Y_1) \) be interpolatable pairs. Suppose that 
 inclusion
 \(X_0 \hookrightarrow  Y_0\) and \( X_1 \hookrightarrow  Y_1\)
 with closed images in \( Y_0 \) and \( Y_1 \) respectively and the inclusions agree on \(
-X_0 \cap X_1 \) as mappings from \( X_0\cap X_1 \) to \( Y_0 + Y_1 \). Then there is a
+X_0 \cap X_1 \) as mappings from \( X_0\cap X_1 \) to \( Y_0 + Y_1 \). Moreover, suppose
+that the image of \( X_0+X_1 \) in \( Y_0+Y_1 \) is closed. Then there is a
 natural inclusion \( X_\theta \hookrightarrow Y_\theta \) with closed image in \( Y_\theta \)
 #+END_theorem
 #+BEGIN_remark
-1. Open mapping theorem guarantees that for any continuous inclusions of Banach spaces 
-   \( X \hookrightarrow Y \) 
-   with closed image, the inherent norm of the \( X \) is equivalent to the induced
-   norm from \( Y \).
+1. The condition \( X_0+X_1 \hookrightarrow Y_0+Y_1 \) being of closed image is redundant
+   if \( X_1 \hookrightarrow X_0 \) and \( Y_1 \hookrightarrow Y_0 \), as in the case of
+   interpolation of Sobolev spaces.
 2. If one has two exact sequences
    \begin{equation}
    \label{eq:ses-interp}
@@ -438,16 +448,6 @@ closed in \( Y_0+Y_1 \), then any holomorphic map \(  \mathcal{H}(Y_0,Y_1)\ni f:
 \longrightarrow Y_0+Y_1 \) passes holomorphically to the quotient \( S \longrightarrow (Y_0
 +Y_1) /(X_0+X_1)\). The fact that \( h \) takes value in \( X_0 + X_1 \) follows from
 Maximum modulus principle for holomorphic functions.
-
-The closedness of \( X_0+X_1 \) in \( Y_0+Y_1 \) follows from the diagram:
-\[
-\xymatrix{
-0 \ar@{->}[r] & X_0\cap X_1 \ar@{->}[r] \ar@{->}[d] & X_0\oplus X_1 \ar@{->}[r] \ar@{->}[d] & X_0 + X_1 \ar@{->}[r] \ar@{->}[d] & 0 \\
-0 \ar@{->}[r] & Y_0\cap Y_1 \ar@{->}[r] & Y_0\oplus Y_1 \ar@{->}[r] & Y_0 + Y_1 \ar@{->}[r] & 0
-}
-\]
-
-where the inclusion \( X_0 \oplus X_1 \hookrightarrow Y_0 \oplus Y_1 \) is of closed image.
 #+END_proof
 
 
@@ -653,9 +653,9 @@ with weight \( (\sigma_1,\dots,\sigma_n,\rho) \) and \( \sigma:= \lcm (\sigma_1,
 *** Smooth extensions
 Let \( \mathcal{S}(X\times Y^+) \) denote the space of
 smooth, rapidly decreasing functions (and all of their derivatives) on \( X\times Y^+ \)
-and  \( \mathcal{S}(X\times/0) \) denotes the subspace of functions vanish, together with
+and  \( \mathcal{S}(X\times Y^+/0) \) denotes the subspace of functions who vanish, together with
 all their derivatives, at \( X\times \{0\} \). Idem for \( \mathcal{S}(X\times Y^-) \) and
-\( \mathcal{S})(X\times Y^-/0) \). The following exact sequence is obvious and the arrows are continuous under Schwartz topology.
+\( \mathcal{S}(X\times Y^-/0) \). The following exact sequence is obvious and the arrows are continuous under Schwartz topology.
 \begin{equation}
 \label{eq:ses-S}
  \xymatrix{
@@ -689,7 +689,7 @@ There exists a smooth function \( \varphi:\ \mathbb{R}_{\geq 0} \longrightarrow
 \)
 and 
 \[
-  \int_0^{+\infty} x^n \varphi(x)dx = (-1)^n \quad\forall n\in \mathbb{Z}
+  \int_0^{+\infty} x^n \varphi(x)dx = (-1)^n \quad\forall n\in \mathbb{Z}\setminus\{0\}
 \]
 Moreover, \(\varphi(\frac{1}{x}) = -x \varphi(x)  \) for all \( x>0 \).
 #+END_lemma
@@ -1157,6 +1157,16 @@ C\|f\|_{W^{k,p}(X\times Y^+)} \). Since \( f \) is continuous, the limit is \(
 \restr{f}{X\times \{0\}} \). The theorem follows.
 #+END_proof
 
+#+BEGIN_remark
+The fact that the condition on \( l \) in Theorem ref:thm:trace-reg is an open condition
+explains why we topologize the space of boundary value  \( \partial W^{k,p}(X\times Y^+)
+\) by the quotient \( W^{k,p} \)-norm instead of any \( W^{l,p} \)-norm. On one hand, we have completeness for free. On the
+other hand, since \( B:\ W^{k,p}(X\times Y^+) \longrightarrow
+L^p(X) \) factorizes to any \( W^{l,p}(X) \), the quotient \( W^{k,p} \)-norm is stronger
+than any \( W^{l,p} \)-norm.
+#+END_remark
+
+
 In the proof of Theorem ref:thm:vanishing-trace, we glue a function \( f_+\in
 \mathcal{S}(X\times Y^+) \) with \( f_-\in \mathcal{S}(X\times Y^-) \) of the same value
 on \( X\times \{0\} \) and the result is a function in \( W^{\sigma/\rho,p}(X\times Y)
@@ -1205,6 +1215,15 @@ where \( \iota \) admits a projection \( \pi \) given by the cut-off functions \
 check that \( \iota\circ\pi((g_i)_i) = (g_i)_i \) which should be straightforward, since
 \(\sum_i \tilde \psi_i \psi_i = 1 \).
 
+Now that we defined a trace operator \(B:\ W^{k,p}(M) \longrightarrow L^p( \partial M) \)
+that factor through \( W^{k,p}(M) \longrightarrow W^{l,p}(\partial M) \) for all \( 0\leq l < k -
+\frac{\sigma}{\rho p}\), we can define the space of boundary value of function in
+\(W^{k,p}(M)\) by 
+\[
+\partial W^{k,p}(M):= W^{k,p}(M) / \ker B
+\]
+which has a finer topology than its image in any \( W^{l,p}(\partial M) \) for \( 0\leq
+l< k- \frac{\sigma}{\rho p} \).
 
 bibliographystyle:alpha
 bibliography:~/Dropbox/LaTeX/org/website/res/Stage2018.bib

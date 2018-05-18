@@ -5,12 +5,12 @@
                      '(("article" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem") ("xy" "all")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -34,12 +34,14 @@
     "mathtools"
     "tikz-cd"
     "svg"
-    "xy")
+    "xy"
+    "pgfplots")
    (TeX-add-symbols
     '("transp" ["argument"] 1)
     '("restr" 2)
     "re"
     "im"
+    "coker"
     "supp"
     "ord"
     "Spec"
@@ -52,7 +54,7 @@
    (LaTeX-add-labels
     "sec:orga0770cb"
     "sec:orgc583005"
-    "sec:org15cf352"
+    "sec:org13ed947"
     "lem:var-energy"
     "prop:holo-harmonic"
     "eq:tangent-exp"
@@ -72,7 +74,7 @@
     "prop:calculs-pullback-tangent"
     "sec:org75bf29d"
     "lem:calculs-Q-pullback"
-    "sec:org13ed947"
+    "sec:orga4436cb"
     "cor:signed-curvature"
     "sec:orgde0028d"
     "sec:org46dcaf2"
