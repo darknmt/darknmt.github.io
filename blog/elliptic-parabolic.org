@@ -19,6 +19,7 @@ _heterogeneous_, of _constant coefficient_ and of weight \( r \), i.e.
 \frac{\partial}{\partial x}\right)^\alpha
 \]
 
+
 The *symbol* of \( A \) is \( A(\xi):= \sum_{\|\alpha\| = r} \xi^\alpha \) and \( A \) is
 called *semi-elliptic* if \( A(\xi) \ne 0 \) for all \( \xi\in \mathbb{R}^n\setminus 0 \)
 
@@ -513,7 +514,7 @@ for all \( k>l> \frac{\sigma}{\rho p} + \max_j r_j \).
 #+END_theorem
 
 
-* Local-global passage.
+* From local to global.
 ** Pertubation of exact squares and consequences.
 We will extend the result of Theorem ref:thm:elliptic-const (exactness of heterogeneous elliptic
 operator with constant coefficient on Euclidean plan) in 2 levels: (1) for general
@@ -771,7 +772,7 @@ It remains to check that the component-wise operation of \( {A} \) maps an eleme
 in the image
 on \( W^{k,p}(M/\mathcal{A}) \) to an element in the image of \( W^{l,p}(M/\mathcal{A})
 \). This can be done using the projection as we did when defining trace operator on
-manifold, but the situation is much simpler here since we can deferentiate directly an element
+manifold, but the situation is much simpler here since we can differentiate directly an element
 in \( \mathcal{S}^*(M) \).
 
 
@@ -909,14 +910,17 @@ a_{\alpha\beta}\xi^\alpha\theta^\beta\) has no zero when \( \xi\in \mathbb{R} \)
 #+BEGIN_exampl
 Take \( A= \partial_t - \partial_x^2 - \partial_y^2 - \partial_z^2 = iD_t + D_x^2 +
 D_y^2 + D_z^2 \), the symbol is \( i\theta + \sum \xi_i^2 \) has no zero \( \xi\in
-\mathbb{R}^3,\im\theta \leq 0 \) except \(0 \).
+\mathbb{R}^3,\im\theta \leq 0 \) except \(0 \). In generally, the operator \(
+\partial_t + A(D_{x^i}) \) is parabolic if \( A \) is an elliptic operator with the symbol
+\( A(\xi)\geq 0 \) for all \( \xi\in \mathbb{R} \) with equality only at \( \xi=0 \).
 #+END_exampl
 
 #+BEGIN_remark
-If \( \sigma = \lcm (\sigma_1,\dots,\sigma_n) \) is the \( \lcm \) of weights of variable
-\( x_i \) and \( \tau \) is the weight of \( t \), then parabolicity implies \( 2\tau \mid
-\sigma\). Therefore if the weights of \( x_i \) are uniform, one can suppose that \( \tau
-= 1 \).
+1. If \( \sigma = \lcm (\sigma_1,\dots,\sigma_n) \) is the \( \lcm \) of weights of variable
+   \( x_i \) and \( \tau \) is the weight of \( t \), then parabolicity implies \( 2\tau \mid
+   \sigma\). Therefore if the weights of \( x_i \) are uniform, one can suppose that \( \tau
+   = 1 \).
+2. Parabolicity implies ellipticity.
 #+END_remark
 
 Similarly to the elliptic case, we attempt to define an approximate inverse \( G \) of \(
@@ -963,7 +967,7 @@ W^{l,p}(X\times Y^+\times T^+/0) \ar@{->}[r]^<<<<<{(A,B^j)} & W^{l-r,p}(X\times 
 \]
 
 
-** Global results and causality.
+** Global results and causality. label:sec:global-result-para
 
 We will use the following setup. Let \( M \) be a compact manifold (possibly with boundary), of the form \( N\times
 [\alpha,\omega]\ni (x,t)\). The global product gives a foliation that allows us to set the
@@ -1047,14 +1051,14 @@ This 3 statements suffice to finish the proof in the case where boundary conditi
 only depend on the difference \( \gamma -\beta \), up to a translation in time of the solutions.
 
 In case \( B^j \) are of variable coefficients, the idea of making translation in time can
-be formulated using Index theorey for Fredhom maps:
+be formulated using Index theory for Fredhom maps:
 
 We recall that Fredhom maps between Banach spaces \( E, F \) are those in \( L(E,F) \) with
 closed image and finite dimensional kernel and cokernel. It is a classical result that
 1. The set \( \mathcal{F} \) of Fredhom maps are open in \( L(E,F) \).
 2. The index \( i(l):= \dim \ker l - \dim \coker l \) is continuous in \( \mathcal{F} \).
 
-The difference \( \dim \ker (\beta,\gamma) -\dim\coker (\beta,\gamma) \) therefore can be
+The difference \( \dim \ker (\beta,\gamma) -\dim\coker (\beta,\gamma) \) can be
 regarded as the index of a continuous family \( \mathcal{C}_{(\beta,\gamma)} \) of
 operators on the same space \( N\times [0,1] \) using the diffeomorphism
 \[
@@ -1066,9 +1070,188 @@ that \( \dim \ker (\beta,\gamma) \) is both increasing and one-sided semi-contin
 \) is continuous in \( \gamma \). Other continuities follows similarly.  
 #+END_proof
 
+#+ATTR_HTML: :id rem:init-cond-para
+#+BEGIN_remark
+#+LATEX: \label{rem:init-cond-para}
+To take into account the initial condition \( \restr{f}{\alpha} = f_\alpha \) smooth, one looks
+for solution of the form \( f = f_b + f_\# \) where \( f_b \) satisfies the initial
+condition and \( f_\#\in W^{k,p}(N\times[\alpha,\omega]/\alpha) \) satisfying a parabolic
+equation \( (A f_\#, B^j f) = (g,h) \) where \( g,h \) and the coefficients of \( A \) and
+\( B^j \) depend smoothly on \( f_b \), and therefore still \( C^\infty \) in \( (x,t) \).
+#+END_remark
+
+
+
+** Regularisation effect and Gårding inequality.
+
+With the same technique used for elliptic equation, one can also prove regularity result
+for parabolic equation. There are 2 different points, in comparison with the elliptic
+case:
+1. There is a regularisation effect of parabolic equation: An arbitrarily weak estimate in
+   the past gives an arbitrarily strong estimate in the future. We will see that this is
+   in fact a consequence of the causality of parabolic equation (Theorem ref:thm:para-causality) and Kondrachov's theorem.
+2. The temporal boundary condition is thicken: We will look at the norm on \( N\times [\alpha,\pi] \) rather
+   than the restriction to \( \partial_\alpha M \).
+
+#+ATTR_LATEX: :options [Regularity and Garding inequality]
+#+ATTR_HTML: :id thm:reg-parabolic :btit (Regularity and Garding inequality) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:reg-parabolic}
+Under the same setup and notation as Section ref:sec:global-result-para, let \( p\in
+(1,+\infty) \) and \( k>l> \frac{1}{p}+\max r_j \). We denote by \(
+W^{k,p}([\beta,\gamma]) \) the Sobolev space \( W^{k,p}(N\times[\beta,\gamma]) \). Suppose that
+\[
+ f\in W^{l,p}([\alpha,\omega]),\quad Af\in W^{k-r,p}( [\alpha,\omega]),\quad
+B^j f \in \partial W^{k-r_j,p}( [\alpha,\omega])
+\]
+then \( f\in W^{k,p}([\pi,\omega]) \) for all \( \pi \in (\alpha,\omega)
+\). Also, for all  \( l' > -\infty \), there exists a constant \( C>0 \) such that
+\[
+ \|f\|_{W^{k,p}([\pi,\omega])} \leq C \left( \|Af\|_{W^{k-r,p}([\alpha,\omega])} + \|B^j
+f\|_{\partial W^{k-r_j,p}([\alpha,\omega])} + \| f \|_{W^{l',p}([\alpha,\pi])}  \right).
+\]
+In particular, for homogeneous equation, i.e. \( Af = 0, B^j f = 0 \), the solution is \(
+C^\infty \) and an arbitrarily weak estimate in the past gives an arbitrarily strong
+estimate in the future.
+#+END_theorem
+
+#+BEGIN_proof
+Let us explain why the theorem is true in the case of no spatial boundary \(\partial N
+=\emptyset \). In this case, there is no distinction between \( l \) and \( l' \). Consider \( A \) as an elliptic operator on \( N\times [\pi,\omega] \) with
+the no boundary operator, one has the following exact diagram:
+\[
+\xymatrix{
+W^{k,p}([\pi,\omega]) \ar@{^{(}->}[d] \ar@{->}[r]^<<<<<{{A}} & W^{k-r,p}([\pi,\omega])   \ar@{^{(}->}[d] \\
+W^{l,p}([\pi,\omega]) \ar@{->}[r]^<<<<<{{A}} & W^{l-r,p}([\pi,\omega])
+}
+\]
+Therefore the if \( f\in W^{l,p}([\alpha,\omega]) \) and \( Af \in W^{k-r,p}([\alpha,\omega])
+\)then \( f \in W^{k,p}([\pi,\omega])  \) and 
+\begin{align}
+\|f\|_{W^{k,p}([\pi,\omega])} &\leq C \left( \|Af\|_{W^{k-r,p}([\alpha,\omega])} + \| f \|_{W^{l,p}([\alpha,\omega])}  \right) \\ 
+			      &\leq C \left( \|Af\|_{W^{k-r,p}([\alpha,\omega])} + \| f \|_{W^{l,p}([\alpha,\pi])} + \| f \|_{W^{l,p}([\pi,\omega])} \right) \label{eq:reg-para}
+\end{align}
+It remains to check that we can get rid of the \( \| f \|_{W^{l,p}([\pi,\omega])} \) 
+term on the right hand side. Suppose not, then there exists a sequence \( \{f_i\} \subset
+W^{l,p}([\alpha,\omega]) \) such that \( Af_i \to 0 \) in \(W^{k-r,p}([\alpha,\omega])\) and
+\( f_i \to 0\) in \( W^{l,p}([\alpha,\pi]) \) but \( \| f_i\|_{W^{l,p}([\pi,\omega])} =
+1\). Then by eqref:eq:reg-para, \( \{f_i\} \) is a bounded sequence in \( W^{k,p}([\pi,\omega]) \) and, by
+Kondrachov's theorem, can be supposed to converge in \( W^{l,p}([\pi,\omega]) \) to a
+function \( \tilde f \) which has \(  \| \tilde f \|_{W^{l,p}([\pi,\omega])} =
+1  \) and \( A\tilde f = 0 \) because \( A \) commutes with the restriction. Moreover, since \(
+\|f_i\|_{W^{l,p}([\alpha,\pi])} \to 0 \), one has \( \tilde f\in W^{l,p}([\pi,\omega]/\pi)
+\) and the fact that \( \tilde f\ne 0 \) contradicts Theorem ref:thm:para-causality).
+#+END_proof
+
+#+BEGIN_remark
+The proof of Theorem ref:thm:reg-parabolic in the general case, with spatial boundary
+taken into account requires the notion of bigraded Sobolev spaces on half-plan, see
+[[cite:hamilton_harmonic_1975][page 97-100]]. This is also how the regularity result for
+cokernel of elliptic operator, Theorem ref:thm:reg-coker, is proved.
+#+END_remark
 
 
 * Example: Linear heat equation.
+
+We use the same setup of \( M,N,\alpha,\omega \) as Section
+ref:sec:global-result-para. Let \( \Delta \) be the (geometer's)
+Laplacian
+\[ 
+-\Delta f:= g^{ij}(x) \left( \frac{\partial^2 f}{\partial x^i \partial x^j} - \Gamma_{ij}^k(x)
+\frac{\partial f}{\partial x^k}\right) 
+\]
+It is easy to check that \( \Delta \) is an elliptic operator with symbol \( \Delta \geq
+0\) (there is a factor \( i \) when passing from \( \frac{\partial}{\partial x^i} \) to \(
+D_{x^i} \)). Hence on \( M = N\times [\alpha,\omega] \) the operator \(
+\frac{\partial}{\partial t}+ \Delta \) is parabolic.
+
+** Maximum principle.
+
+With the same proof as for open set in \( \mathbb{R}^n \), one has the maximum principle
+for parabolic equation on manifolds. The constant \( C \) in the following Theorem
+ref:thm:max-princ-para can depend on the point \( x\in M \), but will be most of the time
+globally constant, since the manifold \( M \) is compact.
+
+#+ATTR_LATEX: :options [Maximum principle]
+#+ATTR_HTML: :id thm:max-princ-para :btit (Maximum principle) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:max-princ-para}
+Let \( f: M \longrightarrow \mathbb{R} \) be a continuous function on \( M = N\times
+[\alpha,\omega] \) with \( \restr{f}{\partial_\alpha M} \leq 0 \) and \( \restr{f}{
+\partial_S M} \leq 0 \). Suppose that whenever \( f>0 \), \( f \) is smooth satisfies
+\[
+ \frac{\partial f}{\partial t} \leq -\Delta f + Cf
+\]
+Then in fact \( f \leq 0 \).
+#+END_theorem
+
+** Linear system.
+We will look at the linear parabolic system of equations for \( F = (f^1,\dots, f^n): M
+\longrightarrow \mathbb{R}^n \):
+\begin{equation}
+\label{eq:para-system}
+\frac{\partial F}{\partial t} + \Delta F + a \nabla F + bF = G
+\end{equation}
+where in local coordinates \( (a \nabla F)^\alpha = a^{\alpha i}_\beta \frac{\partial f^\beta}{\partial x^i} \)
+and \( (bF)^\alpha = b^\alpha_\beta f^\beta \) and \( (\Delta F)^\alpha = \Delta
+f^\alpha\) and the coefficients \( a^{\alpha i}_\beta \) and \( b^\alpha_\beta \) are
+smooth.
+
+We will say that a function \( F=(f^1,\dots, f^n): M \longrightarrow \mathbb{R}^n \) of class
+\( W^{k,p} \) if it is \( W^{k,p} \) component-wise. We also denote abusively by \(
+W^{k,p}(M) \) the direct sum \( W^{k,p}(M)^{\oplus n} \) where \( F \) belongs to.
+
+#+ATTR_LATEX: :options [Linear heat equation]
+#+ATTR_HTML: :id thm:lin-heat :btit (Linear heat equation) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:lin-heat}
+Let \( p > \dim M+1 = \dim N+2 \) and \( k\geq 0 \), then for all \( G\in
+W^{k,p}(N\times[\alpha,\omega]/\alpha) \), there exists a unique \( F\in
+W^{k+2,p}(N\times [\alpha,\omega]/\alpha) \) that solves
+eqref:eq:para-system. Moreover, the operator 
+\[ 
+F\longmapsto \frac{\partial F}{\partial t} + \Delta F +
+a\nabla F + b F
+\]
+is an isomorphism between Banach spaces \( W^{k+2,p}(N\times[\alpha,\omega]/\alpha) \longrightarrow
+W^{k,p}(N\times[\alpha,\omega]/\alpha) \).
+#+END_theorem
+#+BEGIN_proof
+Note that
+\begin{align*}
+H:\  W^{k+2,p}(N\times[\alpha,\omega]/\alpha) &\longrightarrow W^{k,p}(N\times[\alpha,\omega]/\alpha)\\
+     F					      &\longmapsto      \frac{\partial F}{\partial t} + \Delta F
+\end{align*}
+is a direct sum of parabolic operators in each component, and hence an isomorphism, and 
+\begin{align*}
+K:\  W^{k+2,p}(N\times[\alpha,\omega]/\alpha) &\longrightarrow W^{k,p}(N\times[\alpha,\omega]/\alpha)\\
+     F					      &\longmapsto      a\nabla F + bF
+\end{align*}
+is a compact operator because it factors through \( W^{k+1}(N\times
+[\alpha,\omega]/\alpha) \). Therefore \( H+K \) is a Fredhom map with the same index as \(
+H \), which is \( 0 \). It is sufficient to check that the kernel of \( H+K \) is
+trivial.
+
+Suppose that \( F = (f^1,\dots, d^n)\in \ker (H+K) \) then \( f^\alpha\in W^{2,p}(N\times
+[\alpha,\omega]/\alpha) \), so \( f^\alpha \) and \( \frac{\partial f^\alpha}{\partial
+x^i} \) are continuous function on \( N\times[\alpha,\omega] \). Since
+\[
+ \frac{\partial f^\alpha}{\partial t} + \Delta f^\alpha = -a^{\alpha i}_\beta
+\frac{\partial f^\beta}{\partial x^i} - b^\alpha_\beta f^\beta,
+\]
+by repeated use of Theorem ref:thm:reg-parabolic the \( f^\alpha \) are smooth for \(
+t>\alpha \).
+
+Let \( e:= \frac{1}{2}|F|^2 := \frac{1}{2}\sum_\alpha |f_\alpha|^2 \), then \( e \) is
+continuous on \( N\times [\alpha,\omega] \), vanishes on \( N\times \{\alpha\} \) and one has
+\begin{align*}
+ \frac{d e}{dt} &= -\Delta e - |\nabla F|^2 - a^{\alpha i}_\beta f^\alpha \frac{\partial f^\beta}{\partial x^i} - b^\alpha_\beta f^\alpha f^\beta  \\
+ 	 	&\leq -\Delta e + \frac{1}{2} C |F|^2 = -\Delta e + Ce
+\end{align*}
+where we used the inequality \( -u^2 - 2uv \leq v^2 \) to bound the second and third
+terms. We conclude that \( F=0 \) since \( e= 0 \) by Maximum principle. 
+#+END_proof
+
 
 bibliographystyle:alpha
 bibliography:../res/Stage2018.bib

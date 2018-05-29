@@ -5,12 +5,12 @@
                      '(("article" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem") ("xy" "all")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -52,53 +52,66 @@
     "lcm"
     "gcd")
    (LaTeX-add-labels
-    "sec:orga0770cb"
-    "sec:orgc583005"
-    "sec:org13ed947"
+    "sec:orgb2b8fc5"
+    "sec:org3a32bb7"
+    "sec:org5d8b4be"
     "lem:var-energy"
     "prop:holo-harmonic"
     "eq:tangent-exp"
-    "sec:orgde542c5"
-    "sec:orga475ee1"
-    "sec:orgf77e3b3"
-    "sec:orge4db110"
-    "sec:org09d51c1"
+    "sec:org562e6c9"
+    "sec:org7b30a2d"
+    "sec:org5c035e0"
+    "sec:org25624e1"
+    "sec:orgef11969"
     "ex:pullback-tangent"
     "lem:calculs-general"
     "eq:laplace-Q"
     "rem:calculs-general"
     "eq:Q-negative"
-    "sec:orge32ae52"
+    "sec:org8cba122"
     "sec:general-calcul"
-    "sec:orgce54bf2"
+    "sec:orgfbbf7a0"
     "prop:calculs-pullback-tangent"
-    "sec:org75bf29d"
+    "sec:org42cacba"
     "lem:calculs-Q-pullback"
-    "sec:orga4436cb"
+    "sec:org726b9c7"
     "cor:signed-curvature"
-    "sec:orgde0028d"
-    "sec:org46dcaf2"
+    "sec:org3f73858"
+    "sec:orgfe7593c"
     "lem:second-fund-form"
     "eq:second-fund-form"
-    "sec:org9b63041"
+    "sec:org221723f"
     "prop:harm-imm-curvature"
-    "sec:org80dc4ea"
-    "sec:orgc15dcd7"
+    "sec:orgc6c84be"
+    "sec:org83f306b"
     "thm:Ehresmann-Hermann"
     "eq:g-product"
     "trivalising-map"
     "thm:Hermann"
     "eq:calcul-Hermann"
-    "sec:org4589654"
+    "sec:org04130fa"
     "prop:tension-fibration"
-    "sec:org95f4faf"
+    "sec:org1f696cb"
     "prop:composition-general"
     "eq:sff-composition"
     "eq:tension-field-composition"
     "prop:compo-immersion"
     "prop:compo-submersion"
     "cor:compo-with-submersion"
-    "sec:orgcf5b6e5")
+    "sec:orgf459a97"
+    "sec:org5ec4516"
+    "eq:loc-heat-flow"
+    "thm:eells-sampson"
+    "thm:hamilton-bndry-Dirichlet"
+    "sec:orgf68ba1e"
+    "sec:orgcc38f33"
+    "thm:global-eq"
+    "eq:global-heat"
+    "thm:unique-nonlinear-heat"
+    "eq:dev-sig-unique"
+    "eq:sym-red-beta"
+    "eq:first-order-w"
+    "rem:hamilton-alg-rig")
    (LaTeX-add-bibliographies
     "../res/Stage2018")
    (LaTeX-add-amsthm-newtheorems

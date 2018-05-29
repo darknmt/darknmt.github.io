@@ -390,7 +390,10 @@ natural inclusion \( X_\theta \hookrightarrow Y_\theta \) with closed image in \
 #+BEGIN_remark
 1. The condition \( X_0+X_1 \hookrightarrow Y_0+Y_1 \) being of closed image is redundant
    if \( X_1 \hookrightarrow X_0 \) and \( Y_1 \hookrightarrow Y_0 \), as in the case of
-   interpolation of Sobolev spaces.
+   interpolation of /certain/ Sobolev spaces on manifolds. In general context, one can also check that this condition holds for the
+   maps \( \iota_{k,p} \) and \( \iota_{l,q} \) in Definition ref:def:sobolev-space of
+   Sobolev spaces using the fact that the \( \iota \) admit left-inverse given by \(
+   \{\tilde \psi_i\} \). See Remark ref:rem:hamilton-typo.
 2. If one has two exact sequences
    \begin{equation}
    \label{eq:ses-interp}
@@ -443,8 +446,8 @@ it suffices to show that the image \( \mathcal{H}(X_0,X_1) \hookrightarrow
 equivalence of the norm on \( X_i \) and the restricted norm from \( Y_i \), \( i=0,1 \),
 one sees that \( h(iy)\in A_0 \) and \( h(1+iy)\in A_1 \).
 
-It suffices to show that \( X_0+X_1 \) is
-closed in \( Y_0+Y_1 \), then any holomorphic map \(  \mathcal{H}(Y_0,Y_1)\ni f: S
+Since \( X_0+X_1 \) is
+closed in \( Y_0+Y_1 \), any holomorphic map \(  \mathcal{H}(Y_0,Y_1)\ni f: S
 \longrightarrow Y_0+Y_1 \) passes holomorphically to the quotient \( S \longrightarrow (Y_0
 +Y_1) /(X_0+X_1)\). The fact that \( h \) takes value in \( X_0 + X_1 \) follows from
 Maximum modulus principle for holomorphic functions.

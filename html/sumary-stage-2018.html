@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-28 Mon 01:57 -->
+<!-- 2018-05-27 Sun 03:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Welcome to my blog</title>
+<title>Summary of my stage in Summer 2018</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="darknmt" />
+<meta name="author" content="Tien NGUYEN MANH" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -241,66 +241,137 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div id="content">
-<h1 class="title">Welcome to my blog</h1>
+<h1 class="title">Summary of my stage in Summer 2018</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org236da55">Stage 2018</a></li>
-<li><a href="#org121162f">Orsay 2017-2018</a></li>
-<li><a href="#org8d90228">Summer 2017</a></li>
-<li><a href="#org759e67c">Stage 2017</a></li>
+<li><a href="#org767fc1b">1. Harmonic maps: examples and the reduction to a local PDE</a></li>
+<li><a href="#org37b0329">2. Finding the global equation</a>
+<ul>
+<li><a href="#orgb693c66">2.1. Uniqueness of the solution</a></li>
+</ul>
+</li>
+<li><a href="#org66084c0">3. Short-time existence and regularity result</a>
+<ul>
+<li><a href="#org7119228">3.1. Polynomial differential operator</a></li>
+<li><a href="#org251731b">3.2. Besov spaces</a></li>
+<li><a href="#orga6ac4de">3.3. Regularity result</a></li>
+<li><a href="#orgbd18922">3.4. Short-time existence</a></li>
+</ul>
+</li>
+<li><a href="#org59a5ee2">4. Energy estimates and global existence.</a></li>
+<li><a href="#org9123d06">5. Appendices: Linear PDE on manifolds.</a>
+<ul>
+<li><a href="#org88700f4">5.1. The global approach</a>
+<ul>
+<li><a href="#org5129ba3">5.1.1. Comparison theorem and Sobolev spaces on manifold</a></li>
+<li><a href="#org420079d">5.1.2. Green function</a></li>
+</ul>
+</li>
+<li><a href="#org701ba5b">5.2. The local approach</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
+<div class="info">
+<p>
+The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
+<code>pdf</code>. 
+For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
+</p>
 
+</div>
+\(
+\newcommand{\re}{\mathop{\rm Re}\nolimits}
+\newcommand{\im}{\mathop{\rm Im}\nolimits}
+\newcommand{\coker}{\mathop{\rm coker}\nolimits}
+\newcommand{\supp}{\mathop{\rm supp}\nolimits}
+\newcommand{\ord}{\mathop{\rm ord}\nolimits}
+\newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
+\newcommand{\vol}{\mathop{\rm vol}\nolimits}
+\newcommand\restr[2]{{\left.#1\right|_{#2}}}
+\newcommand{\transp}{\mathop{\rm \,^t}\nolimits}
+\newcommand{\sff}{\mathop{\rm I\!I}\nolimits}
+\newcommand{\tr}{\mathop{\rm Tr}\nolimits}
+\newcommand{\const}{\mathop{\rm const }\nolimits}
+\newcommand{\lcm}{\mathop{\rm lcm}\nolimits}
+\newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
+\)
 
-<div id="outline-container-org236da55" class="outline-2">
-<h2 id="org236da55">Stage 2018</h2>
-<div class="outline-text-2" id="text-org236da55">
-</div><ul class="org-ul"><li><a id="org3e2dd7b"></a><span class="todo TODO">TODO</span> <a href="sumary-stage-2018.html">Sumary and the report</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-05-29 Tue&gt;</span></span><br /></li>
-<li><a id="org34c1874"></a><span class="todo TODO">TODO</span> <a href="harmonic-map-existence.html">Existence of harmonic maps between Riemannian manifolds</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-05-06 Sun&gt;</span></span><br /></li>
-<li><a id="org96b3db5"></a><span class="todo TODO">TODO</span> <a href="polynomial-besov.html">Short-time existence and regularity for nonlinear heat equation: Polynomial differential operators and Besov spaces</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-05-27 Sun&gt;</span></span><br /></li>
-<li><a id="orgebd04da"></a><a href="elliptic-parabolic.html">Elliptic and parabolic equations on compact manifolds</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-04-30 Mon&gt;</span></span><br /></li>
-<li><a id="orgbac2d67"></a><a href="interpolation-sobolev.html">Interpolation theory and Sobolev spaces on compact manifolds</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-04-30 Mon&gt;</span></span><br /></li>
-<li><a id="org4a751c2"></a><a href="green-function.html">Parametrix and Green's function of Laplacian operator on Riemannian manifolds</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-03-22 Thu&gt;</span></span><br /></li>
-<li><a id="org08a4f67"></a><a href="sobolev-riemannian.html">A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-03-22 Thu&gt;</span></span><br /></li>
-<li><a id="org62f816c"></a><a href="harmonic-maps.html">Harmonic maps of Riemannian manifolds</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-02-20 Tue&gt;</span></span><br /></li></ul>
+<div id="outline-container-org767fc1b" class="outline-2">
+<h2 id="org767fc1b"><span class="section-number-2">1</span> Harmonic maps: examples and the reduction to a local PDE</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+See <a href="harmonic-maps.html">harmonic-maps.html</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org37b0329" class="outline-2">
+<h2 id="org37b0329"><span class="section-number-2">2</span> Finding the global equation</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-orgb693c66" class="outline-3">
+<h3 id="orgb693c66"><span class="section-number-3">2.1</span> Uniqueness of the solution</h3>
+</div>
+</div>
+<div id="outline-container-org66084c0" class="outline-2">
+<h2 id="org66084c0"><span class="section-number-2">3</span> Short-time existence and regularity result</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-org7119228" class="outline-3">
+<h3 id="org7119228"><span class="section-number-3">3.1</span> Polynomial differential operator</h3>
+</div>
+<div id="outline-container-org251731b" class="outline-3">
+<h3 id="org251731b"><span class="section-number-3">3.2</span> Besov spaces</h3>
+</div>
+<div id="outline-container-orga6ac4de" class="outline-3">
+<h3 id="orga6ac4de"><span class="section-number-3">3.3</span> Regularity result</h3>
+</div>
+<div id="outline-container-orgbd18922" class="outline-3">
+<h3 id="orgbd18922"><span class="section-number-3">3.4</span> Short-time existence</h3>
+</div>
+</div>
+<div id="outline-container-org59a5ee2" class="outline-2">
+<h2 id="org59a5ee2"><span class="section-number-2">4</span> Energy estimates and global existence.</h2>
 </div>
 
-<div id="outline-container-org121162f" class="outline-2">
-<h2 id="org121162f">Orsay 2017-2018</h2>
-<div class="outline-text-2" id="text-org121162f">
-</div><ul class="org-ul"><li><a id="orgbf0249e"></a><a href="chow-theorem.html">Algebraisation theorems I: Chow's theorem</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-04-05 Thu&gt;</span></span><br /></li>
-<li><a id="orgadca904"></a><a href="two-Hartogs.html">Two theorems of Hartogs</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-01-08 Mon&gt;</span></span><br /></li>
-<li><a id="orgc9533fb"></a><a href="local-several-complex-var.html">Local results of several complex variables</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-12-22 Fri&gt;</span></span><br /></li>
-<li><a id="org5138b2c"></a><a href="kodaira.html">Divisors, Picard group and Kodaira embedding theorem</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-12-13 Wed&gt;</span></span><br /></li>
-<li><a id="orgbe40718"></a><a href="sheaf-cohomology.html">Sheaves and Cohomology</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-11-01 Wed&gt;</span></span><br /><div class="outline-text-6" id="text-orgbe40718">
-</div></li></ul>
+<div id="outline-container-org9123d06" class="outline-2">
+<h2 id="org9123d06"><span class="section-number-2">5</span> Appendices: Linear PDE on manifolds.</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-org88700f4" class="outline-3">
+<h3 id="org88700f4"><span class="section-number-3">5.1</span> The global approach</h3>
+<div class="outline-text-3" id="text-5-1">
+</div><div id="outline-container-org5129ba3" class="outline-4">
+<h4 id="org5129ba3"><span class="section-number-4">5.1.1</span> Comparison theorem and Sobolev spaces on manifold</h4>
+<div class="outline-text-4" id="text-5-1-1">
+<p>
+See <a href="sobolev-riemannian.html">sobolev-riemannian.html</a>
+</p>
 </div>
-<div id="outline-container-org8d90228" class="outline-2">
-<h2 id="org8d90228">Summer 2017</h2>
-<div class="outline-text-2" id="text-org8d90228">
-</div><ul class="org-ul"><li><a id="org289fdbe"></a><a href="isotopy-method-darboux-theorem.html">Moser's Isotopy method and Darboux theorem</a>, <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-08-31 Thu&gt;</span></span><br /></li>
-<li><a id="org5082171"></a><a href="hodge-decomp-kodaira.html">Hodge decomposition and Kodaira embedding theorem</a>,  <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-08-31 Thu&gt;</span></span><br /></li></ul>
 </div>
-
-
-<div id="outline-container-org759e67c" class="outline-2">
-<h2 id="org759e67c">Stage 2017</h2>
-<div class="outline-text-2" id="text-org759e67c">
-</div><ul class="org-ul"><li><a id="org63a7886"></a><a href="bogomolov-beauville.html">Bogomolov-Beauville classification</a>, <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-08-31 Thu&gt;</span></span><br /></li>
-<li><a id="org70bae05"></a><a href="calabi-yau.html">Calabi-Yau theorem</a>, <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-08-31 Thu&gt;</span></span><br /></li>
-<li><a id="org1b80bd4"></a><a href="Cheeger-Gromoll-splitting.html">From Busemann function to Cheeger-Gromoll splitting</a>, <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-08-31 Thu&gt;</span></span><br /></li>
-<li><a id="org6440b01"></a><a href="Berger-remark-complex.html">Berger classification and remarks on parallel structures</a>, <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-08-31 Thu&gt;</span></span><br /></li>
-<li><a id="org20de19c"></a><a href="symmetric-space.html">Symmetric spaces and Lie groups</a>, <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-08-31 Thu&gt;</span></span><br /></li>
-<li><a id="org8108a61"></a><a href="de-rham-decomposition.html">De Rham decomposition</a>, <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-08-31 Thu&gt;</span></span><br /></li></ul>
+<div id="outline-container-org420079d" class="outline-4">
+<h4 id="org420079d"><span class="section-number-4">5.1.2</span> Green function</h4>
+<div class="outline-text-4" id="text-5-1-2">
+<p>
+See <a href="green-function.html">green-function.html</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org701ba5b" class="outline-3">
+<h3 id="org701ba5b"><span class="section-number-3">5.2</span> The local approach</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+Hamilton
+</p>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
-By darknmt.<br>
-Last updated 2018-05-27 Sun 15:18. <br>
+By Tien NGUYEN MANH.<br>
+Last updated 2018-05-27 Sun 03:07. <br>
 </div>
 </div>
 </body>

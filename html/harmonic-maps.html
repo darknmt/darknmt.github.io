@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-18 Fri 10:35 -->
+<!-- 2018-05-27 Sun 15:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Harmonic maps of Riemannian manifolds</title>
@@ -266,7 +266,7 @@ for the JavaScript code in this tag.
 <ul>
 <li>
 <ul>
-<li><a href="#orgbe6eb00">1.1.0.1. Notation.</a></li>
+<li><a href="#orgcef4f21">1.1.0.1. Notation.</a></li>
 </ul>
 </li>
 </ul>
@@ -288,7 +288,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgeadf23c">1.3.1. Energy functional and tension field</a></li>
 <li><a href="#orgf595675">1.3.2. Fundamental form, some results in case of signed curvature</a>
 <ul>
-<li><a href="#orgc4cc5b6">1.3.2.1. Notation.</a></li>
+<li><a href="#orgb4b7ce0">1.3.2.1. Notation.</a></li>
 </ul>
 </li>
 </ul>
@@ -308,7 +308,13 @@ for the JavaScript code in this tag.
 <li><a href="#org3505d05">1.6. Composition of maps</a></li>
 </ul>
 </li>
-<li><a href="#org34e14f3">2. Deformation of maps</a></li>
+<li><a href="#org3b55faf">2. Nonlinear heat flow: Global equation and existence of harmonic maps.</a>
+<ul>
+<li><a href="#orge56f960">2.1. Statement of the main results.</a></li>
+<li><a href="#orgd94674e">2.2. Strategy of the proof.</a></li>
+<li><a href="#orgcdd778c">2.3. Global equation and Uniqueness of nonlinear heat equation.</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -330,7 +336,7 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\vol}{\mathop{\rm vol}\nolimits}
 \newcommand\restr[2]{{\left.#1\right|_{#2}}}
 \newcommand{\transp}{\mathop{\rm \,^t}\nolimits}
-\newcommand{\sff}{\mathop{\rm I\*I}\nolimits}
+\newcommand{\sff}{\mathop{\rm I\!I}\nolimits}
 \newcommand{\tr}{\mathop{\rm Tr}\nolimits}
 \newcommand{\const}{\mathop{\rm const }\nolimits}
 \newcommand{\lcm}{\mathop{\rm lcm}\nolimits}
@@ -347,8 +353,8 @@ This is my reading note for <a class='org-ref-reference' href="#eells_harmonic_1
 </div><div id="outline-container-org2b417a5" class="outline-3">
 <h3 id="org2b417a5"><span class="section-number-3">1.1</span> Variational approach: energy integral and tension field</h3>
 <div class="outline-text-3" id="text-1-1">
-</div><div id="outline-container-orgbe6eb00" class="outline-5">
-<h5 id="orgbe6eb00"><span class="section-number-5">1.1.0.1</span> Notation.</h5>
+</div><div id="outline-container-orgcef4f21" class="outline-5">
+<h5 id="orgcef4f21"><span class="section-number-5">1.1.0.1</span> Notation.</h5>
 <div class="outline-text-5" id="text-1-1-0-1">
 <p>
 Let \( M, M', M''\) be Riemannian manifolds of dimension \( n, n' \) and \( n', n''\)
@@ -358,8 +364,10 @@ Let \( f: M \longrightarrow M', f': M' \longrightarrow M''\) be a smooth maps, o
 \[
 f^\alpha_i = \frac{\partial f^\alpha}{\partial x^i},\quad f^\alpha_{ij} =
 \frac{\partial^2 f^\alpha}{\partial x^i \partial x^j} - \Gamma_{ij}^k f^{\alpha}_k \]
-so that \( \nabla g = g_i dx^i \) and \( \nabla (\nabla g) = g_{ij}dx^i\otimes dx^j \)
+so that \( \nabla h = h_i dx^i \) and \( \nabla (\nabla h) = h_{ij}dx^i\otimes dx^j \) and
+\( -\Delta h = \tr \nabla (\nabla h) = g^{ij}h_{ij} \) for any smooth function \( h \).
 </p>
+
 
 <div class="definition">
 <p>
@@ -422,7 +430,7 @@ V(f):=I_{\sigma^{1/2}_n}(f) \) is called the <b>volume</b> of \( f \).
 Let \( f_t: M \longrightarrow M' \) be a smooth family of smooth maps between Riemannian
 manifolds for \( t\in (t_0,t_1) \). Then
 \[
-\frac{d}{dt}E(f_t) = -\int_M \left(\Delta f_t^\gamma +g^{ij}\Gamma'^{\gamma}_{\alpha\beta}
+\frac{d}{dt}E(f_t) = -\int_M \left(-\Delta f_t^\gamma +g^{ij}\Gamma'^{\gamma}_{\alpha\beta}
 f^{\alpha}_{t,i}f^{\beta}_{t,j}\right) g'_{\gamma\nu} \frac{\partial f_t^\nu}{\partial
 t}dV,\qquad \forall t\in (t_0,t_1)
 \]
@@ -431,18 +439,40 @@ t}dV,\qquad \forall t\in (t_0,t_1)
 </div>
 <div class="proof">
 <p>
-Direct computation.
+One has 
+</p>
+\begin{align*}
+   \frac{dE}{dt}(f_t) &= \frac{1}{2}\int \left[ 2g^{ij}  f^\alpha_i \frac{\partial^2 f_t^\beta}{\partial x^j
+\partial t} g'_{\alpha\beta}   + g^{ij}f^\alpha_i f^\beta_j \frac{\partial g'_{\alpha\beta}}{\partial y^\nu} \frac{d f^\nu_t}{d t}  \right] dV(g) \\
+	 &=\frac{1}{2}\int \left[ -\left(2g^{ij}  f^\alpha_i g'_{\alpha\beta}\right)_j \frac{d f_t^\beta}{
+d t}   + g^{ij}f^\alpha_i f^\beta_j \frac{\partial g'_{\alpha\beta}}{\partial y^\nu} \frac{d f^\nu_t}{d t} \right] dV(g)
+\end{align*}
+<p>
+The first term is
+</p>
+\begin{align*}
+   -\left(2g^{ij}  f^\alpha_i g'_{\alpha\beta}\right)_j &= -2 g^{ij}f^\alpha_{ij}
+\frac{d f^\beta}{d t}g'_{\alpha\beta} - 2 g^{ij}f^\alpha_i
+\frac{d f^\beta}{d t}\frac{\partial g'_{\alpha\beta}}{\partial y^\nu} f^\nu_j\\
+&= 2\Delta f^\alpha g'_{\alpha\beta} \frac{d f_t^\beta}{d t} - 2 g^{ij}f^\alpha_i f^\beta_j \frac{\partial g'_{\alpha\nu}}{\partial y^\beta} \frac{d f_t^\nu}{dt}
+\end{align*}
+<p>
+It remains to check that 
+\[
+-2\frac{\partial g'_{\alpha\nu}}{\partial y^\beta} + \frac{\partial
+g'_{\alpha\beta}}{\partial y^\nu} = -2 \Gamma'^\gamma_{\alpha\beta}g'_{\gamma\nu}
+\]
+when we are allowed to permute \( \alpha,\beta \), which is routine.
 </p>
 
 </div>
-
 
 <div class="definition">
 <ol class="org-ol">
 <li>A <b>vector field along \( f: M \longrightarrow M' \)</b> is a smooth application \(v: M\longrightarrow TM'\) such that \( \pi\circ v = f \) where \( \pi: TM' \longrightarrow M'\) is the canonical projection. In other words, it is the association of each point \(P\in M \) a tangent vector at \( f(P) \)</li>
 <li>The <b>tension field</b> of \( f \) is the following vector field along \( f \) defined by
 \[
-   \tau(f)^\gamma:= \Delta f^\gamma +g^{ij}\Gamma'^{\gamma}_{\alpha\beta} f^{\alpha}_{i}f^{\beta}_{j}
+   \tau(f)^\gamma:= -\Delta f^\gamma +g^{ij}\Gamma'^{\gamma}_{\alpha\beta} f^{\alpha}_{i}f^{\beta}_{j}
    \]
 By the Lemma <a href="#lem:var-energy">lem:var-energy</a>, \( \tau(f) \) is the unique vector field along \( f \)
 such that \( \frac{d }{dt}E(f_t) = -\int_M \langle \tau(f), \frac{df_t}{dt}\rangle \). In
@@ -466,7 +496,7 @@ of \( f \) is given by
 <div class="remark">
 <ol class="org-ol">
 <li>If \( M' \) is flat, i.e. \( R'_{\alpha\beta\gamma\delta} = 0 \) then \( \tau(f)^\gamma
-   = \Delta f^\gamma\) is linear in \( f \).</li>
+   = -\Delta f^\gamma\) is linear in \( f \).</li>
 <li>Since \( \tau(f) \) depends locally on \( f \), isometries and covering maps are
 harmonic.</li>
 </ol>
@@ -587,14 +617,14 @@ all \( s\in A^{p}(M,E), s'\in A^{p+1}(M,E) \).
 <h5 id="org17d1b28"><span class="section-number-5">1.2.0.3</span> Laplacian operator and harmonic forms.</h5>
 <div class="outline-text-5" id="text-1-2-0-3">
 <p>
-The <b>Laplacian operator</b> is defined as a endomorphism of \( A^p(M,E) \) given by
+The <b>connection Laplacian</b> is defined as a endomorphism of \( A^p(M,E) \) given by
 \[
- \tilde \Delta = -(D\delta +\delta D)
+ \tilde \Delta = D\delta +\delta D
 \]
 and a form \( s\in A^p(M,E) \) is called <b>harmonic</b> if \( \tilde\Delta s=0 \). Since the
 Laplacian operator represents the <i>Dirichlet integral</i>, i.e.
 \[
- \langle Ds, Ds' \rangle + \langle \delta s, \delta s' \rangle = \langle -\tilde\Delta s, s' \rangle,
+ \langle Ds, Ds' \rangle + \langle \delta s, \delta s' \rangle = \langle \tilde\Delta s, s' \rangle,
 \]
 one has \( \tilde\Delta s = 0 \) if and only if \( Ds = \delta s = 0 \).
 </p>
@@ -644,7 +674,7 @@ Let \( E \) be a Riemannian-connected bundle and \( s\in A^1(M,E) \), one has
 <li>\( \Delta s = (\Delta s)_i dx^i \) where \( (\Delta s)_i \) is an \( m\times m \)
 matrix given by
 \[
-    (\Delta s)_i = {\tilde\nabla}^k {\tilde\nabla}_k s_i - \transp{\left(\Theta_i^h - {\rm
+    (\Delta s)_i = -{\tilde\nabla}^k {\tilde\nabla}_k s_i + \transp{\left(\Theta_i^h - {\rm
    Ric}_i^h\right)} s_h
    \]
 where:
@@ -662,7 +692,7 @@ With \( s\cdot s' \) denoting the pointwise inner product of \( A^1(M,E) \) and 
 </p>
 \begin{equation}
 \label{eq:laplace-Q}   
- \frac{1}{2}\Delta(s\cdot s) = - s\cdot \Delta s - \langle\tilde\nabla_i s_k,\tilde\nabla^i s^k \rangle_E - \left\langle \transp{\left(\Theta_i^h - {\rm Ric}_i^h\right)}s_h, s^i\right\rangle_E
+ -\frac{1}{2}\Delta(s\cdot s) =  s\cdot \Delta s - \langle\tilde\nabla_i s_k,\tilde\nabla^i s^k \rangle_E - \left\langle \transp{\left(\Theta_i^h - {\rm Ric}_i^h\right)}s_h, s^i\right\rangle_E
 \end{equation}</li>
 </ol>
 
@@ -732,7 +762,7 @@ over \( M \). Then:
 <li>\( A^\beta_\alpha = \Gamma'^{\beta}_{\gamma\alpha} f_i^\gamma dx^i \) where \( \Gamma'^{\beta}_{\gamma,\alpha}
    \) are Christoffel symbols of \( (M',g') \).</li>
 <li>\( Df_* = 0 \) where \( f_* \) is considered as an element of \( A^1(M,E) \). Hence \(
-   \tilde\Delta f_*= -D\delta f_* \).</li>
+   \tilde\Delta f_*= D\delta f_* \).</li>
 <li>The tension field of \( f \) is \( \tau f_* = -\delta f_*\).</li>
 </ol>
 
@@ -828,7 +858,7 @@ and
    \]</li>
 <li>If \( f \) is harmonic then 
 \[
-    \Delta e(f) = |\beta(f)|^2 - Q(f_*)
+    -\Delta e(f) = |\beta(f)|^2 - Q(f_*)
    \]
  where \( |\beta(f)| \) is the pointwise norm of \( \beta(f) \).</li>
 </ol>
@@ -843,8 +873,8 @@ M \) and \( M' \) are of definite sign.
 </p>
 </div>
 
-<div id="outline-container-orgc4cc5b6" class="outline-5">
-<h5 id="orgc4cc5b6"><span class="section-number-5">1.3.2.1</span> Notation.</h5>
+<div id="outline-container-orgb4b7ce0" class="outline-5">
+<h5 id="orgb4b7ce0"><span class="section-number-5">1.3.2.1</span> Notation.</h5>
 <div class="outline-text-5" id="text-1-3-2-1">
 <p>
 Given a Riemannian manifold \( M \), we will use the following notation:
@@ -1124,7 +1154,7 @@ where \( v^i = v_h^i + v_v^i \) is the decomposition of vector \( v^i \) to hori
 \( g' \) is the horizontal metric (the metric on \( M \)) and \( \hat g_{(b,f)} \) is
 the restriction of \( g \) on the fibre \( M_b \). However, when the fibration is of
 totally geodesic fibres, \( g \) is a Riemannian product \( g_{(b,f)} = g'_b\times \hat
-   g_f\), see Theorem <a href="#thm-Hermann">thm-Hermann</a>.
+   g_f\), see Theorem <a href="#thm:Hermann">thm:Hermann</a>.
 </p></li>
 </ol>
 
@@ -1264,7 +1294,7 @@ M_P \).
 </p>
 
 <p>
-Meanwhile, one has \( \tau(\pi) = \Delta \pi^\sigma \tilde e_{\sigma} \) at \( \pi(P) \)
+Meanwhile, one has \( \tau(\pi) = -\Delta \pi^\sigma \tilde e_{\sigma} \) at \( \pi(P) \)
 since the Christoffel symbols vanish at \( P \). Comparing the two vector fields, one has
 \( \tau(\pi) = -\pi_*\tau(\iota_{M_b})\) at \( P \).
 </p>
@@ -1452,23 +1482,304 @@ M \longrightarrow N\), \( \pi\circ f \) is harmonic if and only if \( \tau(f) \)
 
 
 
-<div id="outline-container-org34e14f3" class="outline-2">
-<h2 id="org34e14f3"><span class="section-number-2">2</span> Deformation of maps</h2>
+<div id="outline-container-org3b55faf" class="outline-2">
+<h2 id="org3b55faf"><span class="section-number-2">2</span> Nonlinear heat flow: Global equation and existence of harmonic maps.</h2>
 <div class="outline-text-2" id="text-2">
+</div><div id="outline-container-orge56f960" class="outline-3">
+<h3 id="orge56f960"><span class="section-number-3">2.1</span> Statement of the main results.</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+We want to prove in the next part the existence of harmonic map between manifolds \( M \)
+and \( M' \) by deforming any map \( f: M
+\longrightarrow M' \) using the heat flow, meaning solving the PDE:
+</p>
+\begin{equation}
+\label{eq:loc-heat-flow}
+\begin{cases}
+\frac{d f_t}{d t} = \tau f_t,  & t\in [\alpha,\beta] \\
+f_\alpha = f, & 
+\end{cases}
+\end{equation}
+<p>
+The equation makes sense because both \( \frac{d f_t}{d t} \) and \( \tau f_t \) are
+vector fields along \( f_t \). Since this is the gradient-descent equation for \( E \),
+clearly the energy of \( f_t \) decreases and we hope, under conditions, to obtain
+convergence of \( \{f_t\} \) to a critical point \( f \) of \( E \), this will prove
+that any homotopy class of \( C^\infty(M,M') \) has at least harmonic function.
+</p>
+
+<p>
+It is proved by Eells and Sampson <a class='org-ref-reference' href="#eells_harmonic_1964">eells_harmonic_1964</a> that
+</p>
+<div id="thm:eells-sampson" btit="(Eells-Sampson)" class="theorem">
+<p>
+Let \( M \) and \( M' \) be compact Riemannian manifolds with \( {\rm Riem } (M') \leq 0 \) then there exists a harmonic map \( f: M \longrightarrow M'
+\) in each homotopy class.
+</p>
+
+</div>
+
+<p>
+Several boundary conditions, of Dirichlet, Neumann or mixed type, are also taken into account by Hamilton
+<a class='org-ref-reference' href="#hamilton_harmonic_1975">hamilton_harmonic_1975</a>, as an example, we will state the Dirichlet problem:
+</p>
+
+<div id="thm:hamilton-bndry-Dirichlet" btit="(Hamilton)" class="theorem">
+<p>
+Let \( M \) and \( M' \) be compact Riemannian manifolds possibly with boundary. Suppose
+that \( M' \) has \( {\rm Riem } (M')\leq 0 \) and \( \partial M' \) is convex, then any
+relative homotopy class of \( C^\infty(M,M') \) has a harmonic element. 
+</p>
+
+</div>
+
+<p>
+About the terminology, <b>relative homotopy class</b> means that we only deform \( f \) among
+maps with the same value on \( \partial M \). The <b>convexity of \( \partial M' \)</b> means
+that the geodesic at any point in \( \partial M' \) with initial tangent vector paralell
+to the boundary does not enter the interior of \( M' \) in short time. This condition can be expressed
+using  the Christoffel symbols of \( M' \) at the point in question.
+</p>
+
+<p>
+It is easy to see that the convexity of \( \partial M' \) is a necessary condition, as
+harmonic maps from \( \mathbb{R} \) are geodesics: Suppose the condition does not hold at
+\( x\in \partial M' \), meaning that upto time \( t \) the geodesic flow of \( M' \) initially tangent to
+\( \partial M' \) remains in the interior. The geodesic of \( \partial M' \) of length
+less than \( t \) with the same initial tangent therefore cannot be deformed into a
+geodesic of \( M' \) in relative homotopy class. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd94674e" class="outline-3">
+<h3 id="orgd94674e"><span class="section-number-3">2.2</span> Strategy of the proof.</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+In order to have a global frame, we will embed \( M' \) into an Euclidean space \( V \),
+but we will not use the Euclidean metric of \( V \). In fact, let \( T \) be a tubular
+neighborhood of \( M' \) in \( V \) then \( T \) is diffeomorphic to \( M'\times D \)
+where \( D \) is a sufficiently small of dimension being the codimension of \( M' \) in \(
+V \), and we will equip \( T \) with the product metric of \( M'\times D \). 
+</p>
+
+<p>
+Since \( M' \equiv M'\times \{0\}  \) is totally geodesic in \( T \), one has for every smooth
+function \( f: M \longrightarrow M' \):
+\[
+ \tau_V (f) = \tau_T(f) = \tau_{M'} (f)
+\]
+</p>
+
+<p>
+The crucial property we expect for a global equation of \eqref{eq:loc-heat-flow}, is that if
+the solution initially is in \( M'\subset V \) then it remains in \( M' \) for all
+relevant time \( t>\alpha \). Eells-Sampson <a class='org-ref-reference' href="#eells_harmonic_1964">eells_harmonic_1964</a> did this by using at
+the same time 2 different metrics on \( T \), namely the product metric as tubular
+neighborhood and the Euclidean metric. I choose to present here the formulation of
+Hamilton, which is conceptually simpler with the only drawback being that we need to
+establish the uniqueness of solution of \eqref{eq:loc-heat-flow} first.
+</p>
+
+<p>
+After having the global equation, we will prove the short time existence of solution by
+linearising the equation and using Implicit function theorem. The global formulation and the
+proof of short-time existence is independent of the negative curvature hypothesis, which
+will only be used later to establish energy estimates and assure the convergence of
+long-time solution and the vanishing of its tension field.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgcdd778c" class="outline-3">
+<h3 id="orgcdd778c"><span class="section-number-3">2.3</span> Global equation and Uniqueness of nonlinear heat equation.</h3>
+<div class="outline-text-3" id="text-2-3">
+<div id="thm:global-eq" btit="(Global equation)" class="theorem">
+<p>
+If the smooth function \( F_t:\ M\times [\alpha,\beta] \longrightarrow V \) satisfies
+</p>
+\begin{equation}
+\label{eq:global-heat}
+\frac{d F_t}{dt} = \tau_V(F_t)
+\end{equation}
+<p>
+and \( F_t(M\times \{\alpha\}) \subset M'\) then \( F_t(M\times[\alpha,\omega])\subset M' \)
+</p>
+
+</div>
+<div class="proof">
+<p>
+Let \( \iota \) be the isometry of \( T \) given by \( (y,d)\mapsto (y,-d) \) for \(
+(y,d)\in M'\times D \equiv T \) 
+and pose \( G_t= \iota F_t \) then \( G_t \) and \( F_t \) coincide initially since \( M' \) is
+fixed by \( \iota \). Moreover
+\[
+\frac{d G_t}{d t} = d\iota . \frac{d F_t}{d t} = d\iota (\tau_V(F_t)) = \tau_V(\iota F_t)=\tau_V(G_t)
+\]
+We conclude that \( F_t = G_t = \iota F_t \), hence \( F_t \) remains in \( M' \) for all
+relevant \( t \), using the following uniqueness of nonlinear heat equation.
+</p>
+
+</div>
+
+<div id="thm:unique-nonlinear-heat" btit="(Uniqueness of solution of nonlinear hear equation)" class="theorem">
+<p>
+Let \( f_1,f_2: M\times [\alpha,\omega] \longrightarrow M' \) be \( C^2 \)
+functions satisfying the non-linear heat equation
+\(
+ \frac{d f_i}{d t} = \tau_{M'}(f_i) 
+\), i.e.
+\[
+ \frac{d f_i}{d t} =-\Delta f^\gamma +g^{ij}\Gamma'^{\gamma}_{\alpha\beta} f^{\alpha}_{i}f^{\beta}_{j}
+\]
+where \( \Gamma'^\gamma_{\alpha\beta} \) are Christoffel symbols of \( M' \). Suppose that
+\( f_1 \) and \( f_2 \) coincide on \( M\times \{\alpha\} \). Then \( f_1=f_2 \) on \( M\times[\alpha,\omega] \).
+</p>
+
+</div>
+
+<div class="proof">
+<p>
+It is sufficient to prove the theorem for \( \omega \) very close to \( \alpha \),
+therefore by compactness of \( M \), we can suppose that there exists a finite atlas \( M
+= \bigcup_i U_i \) with \( f_1 (U_i\times [\alpha,\omega]) \) and \( f_2
+(U_i,[\alpha,\omega]) \) being in the same chart \( V_i \) of \( M' \). We consider the
+distance function \( \sigma(a,b) = \frac{1}{2}d_{M'}(a,b)^2 \) for \( a,b\in M' \) to
+measure the difference between \( f_1 \) and \( f_2 \) by 
+\[
+ \rho(x,t) = \sigma(f_1(x,t), f_2(x,t))
+\]
+The strategy is to prove that there exists \( C>0 \) such that \( \frac{d \rho}{d t} \leq
+-\Delta + C\rho \), then by <a href="elliptic-parabolic.html">Maximum principle</a>, one has \( \rho = 0 \).
+</p>
+
+<p>
+Fix a chart \( U_i \) of \( M \) and the corresponding \( V_i \) of \( M' \), one has by
+straightforward calculation:
+</p>
+\begin{align*}
+ \frac{d\rho}{d t} &= -\Delta \rho -g^{ij}\left( \frac{\partial^2 \sigma}{\partial
+ f_1^\beta \partial f_1^\gamma} - \frac{\partial \sigma}{\partial f_1^\alpha} {\Gamma'}
+^{\alpha}_{\beta\gamma}(f_1) \right) {f_1}^\beta_i {f_1}^\gamma_j\\
+	        &- g^{ij}\left( \frac{\partial^2 \sigma}{\partial
+ f_2^\beta \partial f_2^\gamma} - \frac{\partial \sigma}{\partial f_2^\alpha} {\Gamma'}
+^{\alpha}_{\beta\gamma}(f_2) \right) {f_2}^\beta_i {f_2}^\gamma_j - 2g^{ij}\frac{\partial^2 \sigma}{\partial f_1^\beta \partial f_2^\gamma} {f_1}^\beta_i {f_2}^\gamma_j  \\
+\end{align*}
+<p>
+where \( g^{ij} \) is the metric on \( M \) and \( {\Gamma'}^\alpha_{\beta\gamma} \) are
+Christoffel symbols of \( M' \). 
+</p>
+
+
+<p>
+Let \( c \) be a point in the chart \( V_i \) and choose the normal coordinates of \( M'
+\) at \( c \). Then for \( a,b\in M' \) near \( c \), one has, since \( \sigma(a,b) =
+\sigma(b,a) \) and \( \sigma(a,b)=0 \) if \( b^\gamma = k a^\gamma \) (the Euclidean
+straight line from \( a \) to \( b \) viewed on \( M' \) is a geodesic):
+\[
+ \sigma(a,b) = \frac{1}{2}d_{M'}(a,b)^2 = \frac{1}{2}d_E(a,b)^2 +
+\lambda_{\beta\gamma,\delta}(a^\beta a^\gamma b^\delta + b^\beta b^\gamma a^\delta)
+\]
+where \( d_E \) is the Euclidean distance, with \( \lambda_{\beta\gamma,\delta} =
+\lambda_{\gamma\beta,\delta} \) and \( \lambda_{\beta\gamma,\delta}
++\lambda_{\gamma\delta,\beta} + \lambda_{\beta\delta,\gamma}= 0 \). We then have the
+series development of \( \sigma \) at \( (0,0) \):
+</p>
+\begin{equation}
+\label{eq:dev-sig-unique}
+\sigma(a,b) = \frac{1}{2}\delta_{\beta\gamma} (a^\beta - b^\beta)(a^\gamma - b^\gamma) +
+\lambda_{\beta\gamma,\delta} (a^\beta a^\gamma b^\delta + b^\beta b^\gamma a^\delta) + O(|a|+|b|)^4
+\end{equation}
+<p>
+and the development of its derivatives
+</p>
+\begin{align*}
+  \frac{\partial^2 \sigma}{\partial a^\beta \partial b^\gamma}(a,b) &= -\delta_{\beta\gamma} + \lambda_{\beta\delta,\gamma}a^\delta + \lambda_{\gamma\delta,\beta}b^\delta + O(|a|+|b|)^2\\
+  \frac{\partial^2 \sigma}{\partial a^\beta \partial a^\gamma}(a,b) &= \delta_{\beta\gamma} + \lambda_{\beta\gamma,\delta}b^\delta + O(|a|+|b|)^2\\
+  \frac{\partial^2 \sigma}{\partial b^\beta \partial b^\gamma}(a,b) &= \delta_{\beta\gamma} + \lambda_{\beta\gamma,\delta}a^\delta + O(|a|+|b|)^2\\
+   \frac{\partial\sigma}{\partial a^\alpha}(a,b) &= O(|a|+|b|),\quad {\Gamma'}^\alpha_{\beta\gamma}(a) = O(|a|)
+\end{align*}
+<p>
+So choose \( c \) to be the midpoint of \( f_1(x,t) \) and \( f_2(x,t) \) and \( (f_1(x,t),
+f_2(x,t)) = (w,-w)\) in the chart, one has:
+</p>
+\begin{align}
+ \frac{d\rho}{d t} &= -\Delta\rho - \left( \delta_{\beta\gamma} -\lambda_{\beta\gamma,\delta}w^\delta + O(|w|^2)  \right) {f_1}^\beta_i {f_1}^\gamma_j g^{ij}   - \left( \delta_{\beta\gamma} + \lambda_{\beta\gamma,\delta} w^\delta + O(|w|^2)\right) {f_2}^\beta_i {f_2}^\gamma_j g^{ij}\\
+		   & - 2\left( -\delta_{\beta\gamma} + \lambda_{\beta\delta,\gamma}w^\delta - \lambda_{\gamma\delta,\beta} w^\delta + O(|w|^2)  \right) {f_1}^\beta_i {f_2}^\gamma_j g^{ij} \label{eq:sym-red-beta}\\
+		   & = -\Delta \rho - |df_1 -df_2|^2 - w^\delta \lambda_{\beta\gamma,\delta}g^{ij}\left(  {f_2}^\beta_i {f_2}^\gamma_j - {f_1}^\beta_i {f_1}^\gamma_j  \right) \label{eq:first-order-w}
+\end{align}
+<p>
+where we made a reduction of the term \eqref{eq:sym-red-beta} by permuting \( \beta \) and
+\( \gamma \) to cancel the first order term \( w^\delta \). The last term of the
+RHS of \eqref{eq:first-order-w} can be bounded as follows:
+</p>
+\begin{align*}
+    \left | w^\delta \lambda_{\beta\gamma,\delta}\left({f_2}^\beta_i {f_2}^\gamma_j -
+{f_1}^\beta_i {f_1}^\gamma_j\right) g^{ij} \right| &=   \left | w^\delta \lambda_{\beta\gamma,\delta}\left({f_2}^\beta_i ({f_2}^\gamma_j - {f_1}^\gamma_j) + {f_1}^\gamma_j({f_2}^\beta_i -
+{f_1}^\beta_i) \right) g^{ij} \right| \\
+	       &\leq 2 |w^\delta \lambda_{\beta\gamma,\delta}| |df_2 -df_1| (|df_1| + |df_2|)\\
+	       &\leq |df_1 - df_2|^2 + O(|w|^2)
+\end{align*}
+<p>
+where for the last inequality, we use \( 2uv \leq u^2 + v^2 \) and the fact that \( |df_1|
+\) and \( |df_2| \) are bounded on \( M \). The estimate \eqref{eq:first-order-w} can be
+continued:
+\[
+ \frac{d \rho}{d t}\leq -\Delta\rho + C(x,t) |w|^2 \leq -\Delta \rho + C \rho
+\]
+where \( C >0 \) is a constant chosen to dominate all \( C(x,t) \) for \( x\in M \) in all
+charts and \( t\in [\alpha,\omega] \).
+</p>
+
+</div>
+
+<div id="rem:hamilton-alg-rig" class="remark">
+<p>
+The last proof was modified from <a class='org-ref-reference' href="#hamilton_harmonic_1975">hamilton_harmonic_1975</a>. The original proof
+made the reduction of the first order of \( w \) in \eqref{eq:sym-red-beta} using
+the following development of \( \sigma \):
+\[
+ \sigma = \frac{1}{2}\delta_{\beta\gamma} (a^\beta - b^\beta)(a^\gamma - b^\gamma) +
+\lambda_{\beta\gamma,\delta} (a^\beta - b^\beta)(a^\gamma -b^\gamma)(a^\delta + b^\delta) + O(|a|+|b|)^4
+\]
+which was justified by \( \sigma(a,b) = \sigma(b,a) \) and \( \sigma(a,a)=0
+\). Algebraically these symmetries of \( \sigma \) are not sufficient to justify the
+development, and one can also proved, using \( \sigma(a,ka)=0 \), that if such development
+was valid then all \( \lambda_{\beta\gamma,\delta} \) would be zero, hence there is no
+third-order term. We made this reduction using the symmetry of \( \frac{\partial^2
+\sigma}{\partial f_1^\beta \partial f_2^\gamma} {f_1}^\beta_i {f_2}^\gamma_j  \) in \(
+(\beta,\gamma) \) and not just \( \frac{\partial^2
+\sigma}{\partial f_1^\beta \partial f_2^\gamma} \) alone.
+</p>
+
+<p>
+As a side note, if \( a,b,c \) are on \( \mathbb{S}^2 \) with \( d(a,c) = d(b,c) = x \ll 1\)
+and the lines from \( a \) and \( b \) to \( c \) are orthogonal at \( c \), then the
+geodesic distance \( d(a,b) = \arccos(\cos^2(x)) = x\sqrt{2} - \frac{1}{6\sqrt{2}}x^3 +
+O(x^4)  \). So \( \sigma(a,b) = \frac{1}{2}d(a,b)^2 \) has no third-order term.
+</p>
+
+</div>
+
+
+
 <p>
 
 <h1 class='org-ref-bib-h1'>Bibliography</h1>
 <ul class='org-ref-bib'><li><a id="eells_harmonic_1964">[eells_harmonic_1964] Eells & Sampson, Harmonic Mappings of Riemannian Manifolds, <i>American Journal of Mathematics</i>, <b>86(1)</b>, 109-160 (1964). <a href="http://www.jstor.org/stable/2373037">link</a>. <a href="http://dx.doi.org/10.2307/2373037">doi</a>.</a></li>
 <li><a id="besse_einstein_2007">[besse_einstein_2007] Besse, Einstein Manifolds, Springer Berlin Heidelberg (2007).</a></li>
+<li><a id="hamilton_harmonic_1975">[hamilton_harmonic_1975] Hamilton, Harmonic Maps of Manifolds with Boundary, Springer-Verlag (1975).</a></li>
 </ul>
 </p>
+</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-03-10 Sat 12:23. <br>
+Last updated 2018-05-27 Sun 15:09. <br>
 </div>
 </div>
 </body>

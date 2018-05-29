@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-18 Fri 10:34 -->
+<!-- 2018-05-24 Thu 11:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Elliptic and parabolic equation on compact manifolds</title>
@@ -277,7 +277,7 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#org859b57a">3. Local-global passage.</a>
+<li><a href="#org2617295">3. From local to global.</a>
 <ul>
 <li><a href="#org8893314">3.1. Pertubation of exact squares and consequences.</a></li>
 <li><a href="#org0548911">3.2. Consequences of Theorem .</a></li>
@@ -286,10 +286,16 @@ for the JavaScript code in this tag.
 <li><a href="#org7f902e6">4. Parabolic equation on manifold.</a>
 <ul>
 <li><a href="#orgd5e75c7">4.1. Parabolicity and local results.</a></li>
-<li><a href="#orged1f24a">4.2. Global results and causality.</a></li>
+<li><a href="#org8515017">4.2. Global results and causality. </a></li>
+<li><a href="#org7ef7e1a">4.3. Regularisation effect and Gårding inequality.</a></li>
 </ul>
 </li>
-<li><a href="#org9702aa6">5. Example: Linear heat equation.</a></li>
+<li><a href="#org9702aa6">5. Example: Linear heat equation.</a>
+<ul>
+<li><a href="#org41c1f9c">5.1. Maximum principle.</a></li>
+<li><a href="#orgf37d21d">5.2. Linear system.</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -311,7 +317,7 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\vol}{\mathop{\rm vol}\nolimits}
 \newcommand\restr[2]{{\left.#1\right|_{#2}}}
 \newcommand{\transp}{\mathop{\rm \,^t}\nolimits}
-\newcommand{\sff}{\mathop{\rm I\*I}\nolimits}
+\newcommand{\sff}{\mathop{\rm I\!I}\nolimits}
 \newcommand{\tr}{\mathop{\rm Tr}\nolimits}
 \newcommand{\const}{\mathop{\rm const }\nolimits}
 \newcommand{\lcm}{\mathop{\rm lcm}\nolimits}
@@ -335,6 +341,7 @@ We will consider in this section a partial differential operator \( A \) that is
 \frac{\partial}{\partial x}\right)^\alpha
 \]
 </p>
+
 
 <p>
 The <b>symbol</b> of \( A \) is \( A(\xi):= \sum_{\|\alpha\| = r} \xi^\alpha \) and \( A \) is
@@ -962,8 +969,8 @@ for all \( k>l> \frac{\sigma}{\rho p} + \max_j r_j \).
 </div>
 
 
-<div id="outline-container-org859b57a" class="outline-2">
-<h2 id="org859b57a"><span class="section-number-2">3</span> Local-global passage.</h2>
+<div id="outline-container-org2617295" class="outline-2">
+<h2 id="org2617295"><span class="section-number-2">3</span> From local to global.</h2>
 <div class="outline-text-2" id="text-3">
 </div><div id="outline-container-org8893314" class="outline-3">
 <h3 id="org8893314"><span class="section-number-3">3.1</span> Pertubation of exact squares and consequences.</h3>
@@ -1442,18 +1449,21 @@ a_{\alpha\beta}\xi^\alpha\theta^\beta\) has no zero when \( \xi\in \mathbb{R} \)
 <p>
 Take \( A= \partial_t - \partial_x^2 - \partial_y^2 - \partial_z^2 = iD_t + D_x^2 +
 D_y^2 + D_z^2 \), the symbol is \( i\theta + \sum \xi_i^2 \) has no zero \( \xi\in
-\mathbb{R}^3,\im\theta \leq 0 \) except \(0 \).
+\mathbb{R}^3,\im\theta \leq 0 \) except \(0 \). In generally, the operator \(
+\partial_t + A(D_{x^i}) \) is parabolic if \( A \) is an elliptic operator with the symbol
+\( A(\xi)\geq 0 \) for all \( \xi\in \mathbb{R} \) with equality only at \( \xi=0 \).
 </p>
 
 </div>
 
 <div class="remark">
-<p>
-If \( \sigma = \lcm (\sigma_1,\dots,\sigma_n) \) is the \( \lcm \) of weights of variable
+<ol class="org-ol">
+<li>If \( \sigma = \lcm (\sigma_1,\dots,\sigma_n) \) is the \( \lcm \) of weights of variable
 \( x_i \) and \( \tau \) is the weight of \( t \), then parabolicity implies \( 2\tau \mid
-\sigma\). Therefore if the weights of \( x_i \) are uniform, one can suppose that \( \tau
-= 1 \).
-</p>
+   \sigma\). Therefore if the weights of \( x_i \) are uniform, one can suppose that \( \tau
+   = 1 \).</li>
+<li>Parabolicity implies ellipticity.</li>
+</ol>
 
 </div>
 
@@ -1509,8 +1519,8 @@ W^{l,p}(X\times Y^+\times T^+/0) \ar@{->}[r]^<<<<<{(A,B^j)} & W^{l-r,p}(X\times 
 </div>
 
 
-<div id="outline-container-orged1f24a" class="outline-3">
-<h3 id="orged1f24a"><span class="section-number-3">4.2</span> Global results and causality.</h3>
+<div id="outline-container-org8515017" class="outline-3">
+<h3 id="org8515017"><span class="section-number-3">4.2</span> Global results and causality. <div id="sec:global-result-para"></h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 We will use the following setup. Let \( M \) be a compact manifold (possibly with boundary), of the form \( N\times
@@ -1611,7 +1621,7 @@ only depend on the difference \( \gamma -\beta \), up to a translation in time o
 
 <p>
 In case \( B^j \) are of variable coefficients, the idea of making translation in time can
-be formulated using Index theorey for Fredhom maps:
+be formulated using Index theory for Fredhom maps:
 </p>
 
 <p>
@@ -1624,7 +1634,7 @@ closed image and finite dimensional kernel and cokernel. It is a classical resul
 </ol>
 
 <p>
-The difference \( \dim \ker (\beta,\gamma) -\dim\coker (\beta,\gamma) \) therefore can be
+The difference \( \dim \ker (\beta,\gamma) -\dim\coker (\beta,\gamma) \) can be
 regarded as the index of a continuous family \( \mathcal{C}_{(\beta,\gamma)} \) of
 operators on the same space \( N\times [0,1] \) using the diffeomorphism
 \[
@@ -1637,15 +1647,239 @@ that \( \dim \ker (\beta,\gamma) \) is both increasing and one-sided semi-contin
 </p>
 
 </div>
+
+<div id="rem:init-cond-para" class="remark">
+<p>
+To take into account the initial condition \( \restr{f}{\alpha} = f_\alpha \) smooth, one looks
+for solution of the form \( f = f_b + f_\# \) where \( f_b \) satisfies the initial
+condition and \( f_\#\in W^{k,p}(N\times[\alpha,\omega]/\alpha) \) satisfying a parabolic
+equation \( (A f_\#, B^j f) = (g,h) \) where \( g,h \) and the coefficients of \( A \) and
+\( B^j \) depend smoothly on \( f_b \), and therefore still \( C^\infty \) in \( (x,t) \).
+</p>
+
 </div>
 </div>
 </div>
 
+
+
+<div id="outline-container-org7ef7e1a" class="outline-3">
+<h3 id="org7ef7e1a"><span class="section-number-3">4.3</span> Regularisation effect and Gårding inequality.</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+With the same technique used for elliptic equation, one can also prove regularity result
+for parabolic equation. There are 2 different points, in comparison with the elliptic
+case:
+</p>
+<ol class="org-ol">
+<li>There is a regularisation effect of parabolic equation: An arbitrarily weak estimate in
+the past gives an arbitrarily strong estimate in the future. We will see that this is
+in fact a consequence of the causality of parabolic equation (Theorem <a href="#thm:para-causality">thm:para-causality</a>) and Kondrachov's theorem.</li>
+<li>The temporal boundary condition is thicken: We will look at the norm on \( N\times [\alpha,\pi] \) rather
+than the restriction to \( \partial_\alpha M \).</li>
+</ol>
+
+<div id="thm:reg-parabolic" btit="(Regularity and Garding inequality)" class="theorem">
+<p>
+Under the same setup and notation as Section <a href="#sec:global-result-para">sec:global-result-para</a>, let \( p\in
+(1,+\infty) \) and \( k>l> \frac{1}{p}+\max r_j \). We denote by \(
+W^{k,p}([\beta,\gamma]) \) the Sobolev space \( W^{k,p}(N\times[\beta,\gamma]) \). Suppose that
+\[
+ f\in W^{l,p}([\alpha,\omega]),\quad Af\in W^{k-r,p}( [\alpha,\omega]),\quad
+B^j f \in \partial W^{k-r_j,p}( [\alpha,\omega])
+\]
+then \( f\in W^{k,p}([\pi,\omega]) \) for all \( \pi \in (\alpha,\omega)
+\). Also, for all  \( l' > -\infty \), there exists a constant \( C>0 \) such that
+\[
+ \|f\|_{W^{k,p}([\pi,\omega])} \leq C \left( \|Af\|_{W^{k-r,p}([\alpha,\omega])} + \|B^j
+f\|_{\partial W^{k-r_j,p}([\alpha,\omega])} + \| f \|_{W^{l',p}([\alpha,\pi])}  \right).
+\]
+In particular, for homogeneous equation, i.e. \( Af = 0, B^j f = 0 \), the solution is \(
+C^\infty \) and an arbitrarily weak estimate in the past gives an arbitrarily strong
+estimate in the future.
+</p>
+
+</div>
+
+<div class="proof">
+<p>
+Let us explain why the theorem is true in the case of no spatial boundary \(\partial N
+=\emptyset \). In this case, there is no distinction between \( l \) and \( l' \). Consider \( A \) as an elliptic operator on \( N\times [\pi,\omega] \) with
+the no boundary operator, one has the following exact diagram:
+\[
+\xymatrix{
+W^{k,p}([\pi,\omega]) \ar@{^{(}->}[d] \ar@{->}[r]^<<<<<{{A}} & W^{k-r,p}([\pi,\omega])   \ar@{^{(}->}[d] \\
+W^{l,p}([\pi,\omega]) \ar@{->}[r]^<<<<<{{A}} & W^{l-r,p}([\pi,\omega])
+}
+\]
+Therefore the if \( f\in W^{l,p}([\alpha,\omega]) \) and \( Af \in W^{k-r,p}([\alpha,\omega])
+\)then \( f \in W^{k,p}([\pi,\omega])  \) and 
+</p>
+\begin{align}
+\|f\|_{W^{k,p}([\pi,\omega])} &\leq C \left( \|Af\|_{W^{k-r,p}([\alpha,\omega])} + \| f \|_{W^{l,p}([\alpha,\omega])}  \right) \\ 
+			      &\leq C \left( \|Af\|_{W^{k-r,p}([\alpha,\omega])} + \| f \|_{W^{l,p}([\alpha,\pi])} + \| f \|_{W^{l,p}([\pi,\omega])} \right) \label{eq:reg-para}
+\end{align}
+<p>
+It remains to check that we can get rid of the \( \| f \|_{W^{l,p}([\pi,\omega])} \) 
+term on the right hand side. Suppose not, then there exists a sequence \( \{f_i\} \subset
+W^{l,p}([\alpha,\omega]) \) such that \( Af_i \to 0 \) in \(W^{k-r,p}([\alpha,\omega])\) and
+\( f_i \to 0\) in \( W^{l,p}([\alpha,\pi]) \) but \( \| f_i\|_{W^{l,p}([\pi,\omega])} =
+1\). Then by \eqref{eq:reg-para}, \( \{f_i\} \) is a bounded sequence in \( W^{k,p}([\pi,\omega]) \) and, by
+Kondrachov's theorem, can be supposed to converge in \( W^{l,p}([\pi,\omega]) \) to a
+function \( \tilde f \) which has \(  \| \tilde f \|_{W^{l,p}([\pi,\omega])} =
+1  \) and \( A\tilde f = 0 \) because \( A \) commutes with the restriction. Moreover, since \(
+\|f_i\|_{W^{l,p}([\alpha,\pi])} \to 0 \), one has \( \tilde f\in W^{l,p}([\pi,\omega]/\pi)
+\) and the fact that \( \tilde f\ne 0 \) contradicts Theorem <a href="#thm:para-causality">thm:para-causality</a>).
+</p>
+
+</div>
+
+<div class="remark">
+<p>
+The proof of Theorem <a href="#thm:reg-parabolic">thm:reg-parabolic</a> in the general case, with spatial boundary
+taken into account requires the notion of bigraded Sobolev spaces on half-plan, see
+<a class='org-ref-reference' href="#hamilton_harmonic_1975">hamilton_harmonic_1975</a>. This is also how the regularity result for
+cokernel of elliptic operator, Theorem <a href="#thm:reg-coker">thm:reg-coker</a>, is proved.
+</p>
+
+</div>
+</div>
+</div>
+</div>
 
 
 <div id="outline-container-org9702aa6" class="outline-2">
 <h2 id="org9702aa6"><span class="section-number-2">5</span> Example: Linear heat equation.</h2>
 <div class="outline-text-2" id="text-5">
+<p>
+We use the same setup of \( M,N,\alpha,\omega \) as Section
+<a href="#sec:global-result-para">sec:global-result-para</a>. Let \( \Delta \) be the (geometer's)
+Laplacian
+\[ 
+-\Delta f:= g^{ij}(x) \left( \frac{\partial^2 f}{\partial x^i \partial x^j} - \Gamma_{ij}^k(x)
+\frac{\partial f}{\partial x^k}\right) 
+\]
+It is easy to check that \( \Delta \) is an elliptic operator with symbol \( \Delta \geq
+0\) (there is a factor \( i \) when passing from \( \frac{\partial}{\partial x^i} \) to \(
+D_{x^i} \)). Hence on \( M = N\times [\alpha,\omega] \) the operator \(
+\frac{\partial}{\partial t}+ \Delta \) is parabolic.
+</p>
+</div>
+
+<div id="outline-container-org41c1f9c" class="outline-3">
+<h3 id="org41c1f9c"><span class="section-number-3">5.1</span> Maximum principle.</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+With the same proof as for open set in \( \mathbb{R}^n \), one has the maximum principle
+for parabolic equation on manifolds. The constant \( C \) in the following Theorem
+<a href="#thm:max-princ-para">thm:max-princ-para</a> can depend on the point \( x\in M \), but will be most of the time
+globally constant, since the manifold \( M \) is compact.
+</p>
+
+<div id="thm:max-princ-para" btit="(Maximum principle)" class="theorem">
+<p>
+Let \( f: M \longrightarrow \mathbb{R} \) be a continuous function on \( M = N\times
+[\alpha,\omega] \) with \( \restr{f}{\partial_\alpha M} \leq 0 \) and \( \restr{f}{
+\partial_S M} \leq 0 \). Suppose that whenever \( f>0 \), \( f \) is smooth satisfies
+\[
+ \frac{\partial f}{\partial t} \leq -\Delta f + Cf
+\]
+Then in fact \( f \leq 0 \).
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf37d21d" class="outline-3">
+<h3 id="orgf37d21d"><span class="section-number-3">5.2</span> Linear system.</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+We will look at the linear parabolic system of equations for \( F = (f^1,\dots, f^n): M
+\longrightarrow \mathbb{R}^n \):
+</p>
+\begin{equation}
+\label{eq:para-system}
+\frac{\partial F}{\partial t} + \Delta F + a \nabla F + bF = G
+\end{equation}
+<p>
+where in local coordinates \( (a \nabla F)^\alpha = a^{\alpha i}_\beta \frac{\partial f^\beta}{\partial x^i} \)
+and \( (bF)^\alpha = b^\alpha_\beta f^\beta \) and \( (\Delta F)^\alpha = \Delta
+f^\alpha\) and the coefficients \( a^{\alpha i}_\beta \) and \( b^\alpha_\beta \) are
+smooth.
+</p>
+
+<p>
+We will say that a function \( F=(f^1,\dots, f^n): M \longrightarrow \mathbb{R}^n \) of class
+\( W^{k,p} \) if it is \( W^{k,p} \) component-wise. We also denote abusively by \(
+W^{k,p}(M) \) the direct sum \( W^{k,p}(M)^{\oplus n} \) where \( F \) belongs to.
+</p>
+
+<div id="thm:lin-heat" btit="(Linear heat equation)" class="theorem">
+<p>
+Let \( p > \dim M+1 = \dim N+2 \) and \( k\geq 0 \), then for all \( G\in
+W^{k,p}(N\times[\alpha,\omega]/\alpha) \), there exists a unique \( F\in
+W^{k+2,p}(N\times [\alpha,\omega]/\alpha) \) such that solve
+\eqref{eq:para-system}. Moreover, the operator 
+\[ 
+F\longmapsto \frac{\partial F}{\partial t} + \Delta F +
+a\nabla F + b F
+\]
+is an isomorphism between Banach spaces \( W^{k+2,p}(N\times[\alpha,\omega]/\alpha) \longrightarrow
+W^{k,p}(N\times[\alpha,\omega]/\alpha) \).
+</p>
+
+</div>
+<div class="proof">
+<p>
+Note that
+</p>
+\begin{align*}
+H:\  W^{k+2,p}(N\times[\alpha,\omega]/\alpha) &\longrightarrow W^{k,p}(N\times[\alpha,\omega]/\alpha)\\
+     F					      &\longmapsto      \frac{\partial F}{\partial t} + \Delta F
+\end{align*}
+<p>
+is a direct sum of parabolic operators in each component, and hence an isomorphism, and 
+</p>
+\begin{align*}
+K:\  W^{k+2,p}(N\times[\alpha,\omega]/\alpha) &\longrightarrow W^{k,p}(N\times[\alpha,\omega]/\alpha)\\
+     F					      &\longmapsto      a\nabla F + bF
+\end{align*}
+<p>
+is a compact operator because it factors through \( W^{k+1}(N\times
+[\alpha,\omega]/\alpha) \). Therefore \( H+K \) is a Fredhom map with the same index as \(
+H \), which is \( 0 \). It is sufficient to check that the kernel of \( H+K \) is
+trivial.
+</p>
+
+<p>
+Suppose that \( F = (f^1,\dots, d^n)\in \ker (H+K) \) then \( f^\alpha\in W^{2,p}(N\times
+[\alpha,\omega]/\alpha) \), so \( f^\alpha \) and \( \frac{\partial f^\alpha}{\partial
+x^i} \) are continuous function on \( N\times[\alpha,\omega] \). Since
+\[
+ \frac{\partial f^\alpha}{\partial t} + \Delta f^\alpha = -a^{\alpha i}_\beta
+\frac{\partial f^\beta}{\partial x^i} - b^\alpha_\beta f^\beta,
+\]
+by repeated use of Theorem <a href="#thm:reg-parabolic">thm:reg-parabolic</a> the \( f^\alpha \) are smooth for \(
+t>\alpha \).
+</p>
+
+<p>
+Let \( e:= \frac{1}{2}|F|^2 := \frac{1}{2}\sum_\alpha |f_\alpha|^2 \), then \( e \) is
+continuous on \( N\times [\alpha,\omega] \), vanishes on \( N\times \{\alpha\} \) and one has
+</p>
+\begin{align*}
+ \frac{d e}{dt} &= -\Delta e - |\nabla F|^2 - a^{\alpha i}_\beta f^\alpha \frac{\partial f^\beta}{\partial x^i} - b^\alpha_\beta f^\alpha f^\beta  \\
+ 	 	&\leq -\Delta e + \frac{1}{2} C |F|^2 = -\Delta e + Ce
+\end{align*}
+<p>
+where we used the inequality \( -u^2 - 2uv \leq v^2 \) to bound the second and third
+terms. We conclude that \( F=0 \) since \( e= 0 \) by Maximum principle. 
+</p>
+
+</div>
+
+
 <p>
 
 <h1 class='org-ref-bib-h1'>Bibliography</h1>
@@ -1655,10 +1889,11 @@ that \( \dim \ker (\beta,\gamma) \) is both increasing and one-sided semi-contin
 </div>
 </div>
 </div>
+</div>
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-05-18 Fri 10:34. <br>
+Last updated 2018-05-24 Thu 11:47. <br>
 </div>
 </div>
 </body>

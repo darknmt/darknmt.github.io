@@ -1,0 +1,28 @@
+#+TITLE: Summary of my stage in Summer 2018
+#+AUTHOR: Tien NGUYEN MANH
+#+DATE: May 20, 2018
+# +STARTUP: indent
+# +STARTUP: showstars
+
+#+SETUPFILE: ../res/mathsetup.org
+#+INCLUDE: ../res/include.org
+
+* Harmonic maps: examples and the reduction to a local PDE
+See [[file:harmonic-maps.org]]
+* Finding the global equation
+** Uniqueness of the solution
+* Short-time existence and regularity result
+** Polynomial differential operator
+** Besov spaces
+** Regularity result
+** Short-time existence
+* Energy estimates and global existence.
+
+* Appendices: Linear PDE on manifolds.
+** The global approach
+*** Comparison theorem and Sobolev spaces on manifold
+See [[file:sobolev-riemannian.org]]
+*** Green function
+See [[file:green-function.org]]
+** The local approach
+Hamilton
