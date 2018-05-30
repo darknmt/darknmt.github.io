@@ -827,6 +827,7 @@ M \longrightarrow N\), \( \pi\circ f \) is harmonic if and only if \( \tau(f) \)
 
 
 
+
 * Nonlinear heat flow: Global equation and existence of harmonic maps.
 ** Statement of the main results.
 
@@ -836,7 +837,7 @@ and \( M' \) by deforming any map \( f: M
 \begin{equation}
 \label{eq:loc-heat-flow}
 \begin{cases}
-\frac{d f_t}{d t} = \tau f_t,  & t\in [\alpha,\beta] \\
+\frac{d f_t}{d t} = \tau f_t,  & t\in [\alpha,\omega] \\
 f_\alpha = f, & 
 \end{cases}
 \end{equation}
@@ -1054,3 +1055,68 @@ O(x^4)  \). So \( \sigma(a,b) = \frac{1}{2}d(a,b)^2 \) has no third-order term.
 
 bibliographystyle:alpha
 bibliography:../res/Stage2018.bib
+
+* Estimates of energies
+** Estimate of density energies
+We finish this part with a few straightforward computation concerning the *potential
+energy* \( e(f_t) = \frac{1}{2}|\nabla f_t|^2 \) and the *kinetic energy* \( k(f_t) =
+\frac{1}{2}|\frac{\partial f_t}{\partial t}| \) of a nonlinear heat flow \( f_t \)
+satisfying eqref:eq:loc-heat-flow.
+
+#+ATTR_LATEX: :options [Density of Potential energy]
+#+ATTR_HTML: :id thm:den-pot :btit (Density of Potential energy) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:den-pot}
+If \( f_t \) satisfies eqref:eq:loc-heat-flow then 
+\[
+ \frac{d e(f_t)}{dt}= -\Delta e(f_t) - |\beta(f_t)|^2 - \left\langle \Ric(M) \nabla_v
+f_t,\nabla_v f_t \rangle + \langle \Riem(M') (\nabla_v f_t,\nabla_w f_t)\nabla_v
+f_t,\nabla_w f_t \right\rangle
+\]
+where \( e(f_t) \) is the potential energy density and \( \beta(f_t) \) is the fundamental
+form.
+
+In particular, if  \( \Riem(M') \leq 0 \) and \(Ric(M)\geq -C \) then
+\begin{equation}
+\label{eq:den-pot-est}
+\frac{d e}{dt} \leq -\Delta e + Ce - |\beta(f_t)|^2
+\end{equation}
+#+END_theorem
+#+BEGIN_proof
+Apply Lemma ref:lem:calculs-general to \( s = d f_t \) and the Riemannian-connected
+bundle \( (F^* TM' \) over \( M\times [\alpha,\omega] \) where \( F(\cdot,t) = f_t \), the curvature terms cancel
+out and it remains to see that
+\(
+\frac{d e(f_t)}{dt}= - \langle df_t, \Delta df_t \rangle
+\), meaning that \( \tilde \nabla_{\partial t} df_t = -\Delta df_t \). This can be easily
+justified:
+\[
+\tilde \nabla_{\partial t} df_t = \tilde \nabla_{\partial t} \tilde\nabla^M F=  \tilde\nabla^M
+\tilde\nabla_{\partial t} F= \tilde\nabla^M\ \tau (f_t) = -D\delta (df_t) = -\Delta df_t
+\]
+where the last "=" is due to \(  D df_t = 0 \). Note that \( D \) and \( \delta \)
+are the exterior derivative and its adjoint of the bundle \( (f_t)^*TM' \) on \( M \),
+since \( t \) can be fixed after the third "=" sign.
+#+END_proof
+
+#+ATTR_LATEX: :options [Density of Kinetic energy]
+#+ATTR_HTML: :id thm:den-kin :btit (Density of Kinetic energy) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:den-kin}
+If \( f_t \) satisfies eqref:eq:loc-heat-flow then 
+\[
+ \frac{d k(f_t)}{dt}= -\Delta k(f_t) - \left|\nabla \frac{\partial f_t}{\partial t}\right|^2 +
+\left\langle \Riem(M') (\nabla_v f_t,\frac{\partial f_t}{\partial t})\nabla_v
+f_t,\frac{\partial f_t}{\partial t} \right\rangle
+\]
+where \( k(f_t) \) is the kinetic energy density,
+
+In particular, if  \( \Riem(M') \leq 0 \) then
+\begin{equation}
+\label{eq:den-kin-est}
+\frac{d k}{dt} \leq -\Delta k + - \left|\nabla \frac{\partial f_t}{\partial t}\right|^2
+\end{equation}
+#+END_theorem
+
+
+** Estimate of total energies

@@ -1165,26 +1165,6 @@ It is easy to check that \( \Delta \) is an elliptic operator with symbol \( \De
 D_{x^i} \)). Hence on \( M = N\times [\alpha,\omega] \) the operator \(
 \frac{\partial}{\partial t}+ \Delta \) is parabolic.
 
-** Maximum principle.
-
-With the same proof as for open set in \( \mathbb{R}^n \), one has the maximum principle
-for parabolic equation on manifolds. The constant \( C \) in the following Theorem
-ref:thm:max-princ-para can depend on the point \( x\in M \), but will be most of the time
-globally constant, since the manifold \( M \) is compact.
-
-#+ATTR_LATEX: :options [Maximum principle]
-#+ATTR_HTML: :id thm:max-princ-para :btit (Maximum principle) 
-#+BEGIN_theorem
-#+LATEX: \label{thm:max-princ-para}
-Let \( f: M \longrightarrow \mathbb{R} \) be a continuous function on \( M = N\times
-[\alpha,\omega] \) with \( \restr{f}{\partial_\alpha M} \leq 0 \) and \( \restr{f}{
-\partial_S M} \leq 0 \). Suppose that whenever \( f>0 \), \( f \) is smooth satisfies
-\[
- \frac{\partial f}{\partial t} \leq -\Delta f + Cf
-\]
-Then in fact \( f \leq 0 \).
-#+END_theorem
-
 ** Linear system.
 We will look at the linear parabolic system of equations for \( F = (f^1,\dots, f^n): M
 \longrightarrow \mathbb{R}^n \):
@@ -1249,9 +1229,141 @@ continuous on \( N\times [\alpha,\omega] \), vanishes on \( N\times \{\alpha\} \
  	 	&\leq -\Delta e + \frac{1}{2} C |F|^2 = -\Delta e + Ce
 \end{align*}
 where we used the inequality \( -u^2 - 2uv \leq v^2 \) to bound the second and third
-terms. We conclude that \( F=0 \) since \( e= 0 \) by Maximum principle. 
+terms. We conclude that \( F=0 \) since \( e= 0 \) by the following Maximum principle. 
 #+END_proof
 
+** Maximum principle and \( L^\infty \)-Comparison theorem.
+
+With the same proof as for open set in \( \mathbb{R}^n \), one has the maximum principle
+for parabolic equation on manifolds. The constant \( C \) in the following Theorem
+ref:thm:max-princ-para can depend on the point \( x\in M \), but will be most of the time
+globally constant, since the manifold \( M \) is compact. The following statement of
+Maximum principle will be sufficient for most of our application.
+
+#+ATTR_LATEX: :options [Maximum principle]
+#+ATTR_HTML: :id thm:max-princ-para :btit (Maximum principle) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:max-princ-para}
+Let \( f: M \longrightarrow \mathbb{R} \) be a continuous function on \( M = N\times
+[\alpha,\omega] \) with \( \restr{f}{\partial_\alpha M} \leq 0 \) and \( \restr{f}{
+\partial_S M} \leq 0 \). Suppose that whenever \( f>0 \), \( f \) is smooth satisfies
+\[
+ \frac{\partial f}{\partial t} \leq -\Delta f + Cf
+\]
+Then in fact \( f \leq 0 \).
+#+END_theorem
+
+With the same proof as Theorem ref:thm:max-princ-para, one can prove the following \(
+L^\infty \) Comparison theorem.
+
+#+ATTR_LATEX: :options [\( L^\infty \)-Comparison theorem]
+#+ATTR_HTML: :id thm:infty-comparison :btit (\( L^\infty \)-Comparison theorem) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:infty-comparison}
+Let \( f:\ M=N\times[\alpha,\omega] \longrightarrow \mathbb{R} \) be a continuous function
+on \( M \), smooth for time \( t>0 \) such that
+\begin{equation}
+\label{eq:infty-comparison}
+ \frac{d f}{dt} = -\Delta f + a\nabla f+ b f \text{ on } N\times (\alpha,\omega]
+\end{equation}
+where \( a \) is a smooth vector field and \( b \) is a smooth function on \( N \). Then there exists \( B=B(a,b) \) depending only on \( a \) and \( b \) such that
+\[
+ \|\restr{f}{\omega}\|_{L^\infty} \leq e^{B(\omega-\alpha)}
+\|\restr{f}{\alpha}\|_{L^\infty}
+\]
+#+END_theorem
+#+BEGIN_proof
+We can suppose \( b \leq -1 \) and prove that \(  \|f\|_{L^\infty(\partial_\omega M)} \leq
+\|f\|_{L^\infty(\partial_\alpha M)} \). Intuitively, this means that since heat spreads
+out, the largest density must be attained at time \( t=\alpha \).
+In fact, choose \( B = \max_M b + 1 \) and define \( \tilde f = f e^{-B(t-\alpha)} \) then
+\( \|\restr{\tilde f}{\alpha}\|_{L^\infty} = \| \restr{f}{\alpha} \|_{L^\infty} \) and \(
+\| \restr{\tilde f}{\omega}\|_{L^\infty} =
+e^{-B(\omega-\alpha)}\|\restr{f}{\omega}\|_{l^\infty} \). The function \( \tilde f \)
+satisfies the same heat equation eqref:eq:infty-comparison as \( f \), with \( b \) replaced by \( b-B \leq -1 \).
+
+Now let us prove that under this supposition, \( |f| \) attains it maximum at time \(
+t=\alpha \). Since we can replace the solution \( f \) of eqref:eq:infty-comparison by \(
+-f \), we can suppose, for sake of contradiction, that \( |f| \) attains it maximum on \( N\times[\alpha,\omega] \) at \(
+(x^*, t^*) \) with \( |f(x^*,t^*)| = f(x^*,t^*) > 0 \) and \( t^* >\alpha \). Then one has
+
+\begin{cases}
+\nabla f (x^*, t^*)= 0, \\
+\frac{d f}{dt}(x^*,t^*) \geq 0, \text{ (this is not true if \( t^*=\alpha \))}\\
+\Delta f(x^*, t^*) \geq 0, \\
+f(x^*, t^*)>0
+\end{cases}
+
+Plugging these in eqref:eq:infty-comparison, one has a contradiction.
+#+END_proof
+
+
+** Backwards heat equation and \( L^1 \)-Comparison theorem.
+We will use backwards heat equation, which is just heat equation with the reversed sense
+of time (so with the reversed sign for \( \Delta \) as well), in order to dualise the
+estimate of Theorem ref:thm:infty-comparison and obtain a \( L^1 \) estimate of \( f
+\) at time \( t=\omega \) in term of its \( L^1 \) norm at \( t=\alpha \). In particular,
+we prove the following theorem.
+
+#+ATTR_LATEX: :options [\( L^1 \)-comparison theorem]
+#+ATTR_HTML: :id thm:1-comparison :btit (\( L^1 \)-comparison theorem) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:1-comparison}
+Let \( a \) be a smooth, divergence-free vector field on a Riemannian manifold \( N\) and
+\( b \) be a smooth function on \( N \).Let \(f:\ N\times[\alpha,\omega] \longrightarrow
+\mathbb{R} \) be a continuous function on \( M \) such that
+\begin{equation}
+\label{eq:1-comparison}
+ \frac{d f}{dt} = -\Delta f + a\nabla f+ b f \text{ on } N\times (\alpha,\omega].
+\end{equation}
+Then there exists \( B=B(a,b) \) depending only on \( a \) and \( b \) such that
+\[
+ \|\restr{f}{\omega}\|_{L^1} \leq e^{B(\omega-\alpha)}
+\|\restr{f}{\alpha}\|_{L^1}
+\]
+#+END_theorem
+#+BEGIN_proof
+Since \( L^1 \) is the dual space of \( L^\infty \), it is sufficient to prove that for
+all \( h\in C^\infty(N) \), one has
+\[
+\int_{N\times \{\omega\}} fh \leq e^{B(\omega-\alpha)}
+\left\|\restr{f}{\alpha}\right\|_{L^1}. \|h\|_{L^\infty}.
+\]
+
+Consider the backwards heat equation
+\begin{cases}
+\frac{d g}{dt} = \Delta g - \tilde a\nabla g - \tilde b g,  & \text{on $ N\times{[\alpha,\omega]}$} \\
+\restr{g}{\omega} = h, 
+\end{cases}
+which is just a heat equation on \( N\times[\alpha,\omega] \) with initial condition at \(
+\alpha \) if we pose \( \tilde g (t) :=
+g(\omega+\alpha - t)\). The solution \( g \) exists and is smooth on \(
+N\times[\alpha,\omega] \). One has, at any time \( t \)
+\begin{align*}
+  \int_{N} g \Delta f &= \int_N g\left(-\frac{d f}{dt} + a\nabla f + bf\right)\\
+  \int_{N} f\Delta g &= \int_N f\left( \frac{d g}{dt} +\tilde a \nabla g + \tilde b g \right)
+\end{align*}
+Therefore
+\[
+ \int_N  f \frac{dg}{dt} + g \frac{df}{dt} = \int_N (a\nabla f)g - (\tilde a \nabla g)f +
+(b-\tilde b) fg
+\]
+Choose \( b=\tilde b \) and \( \tilde a = -a \) then the term \( (b-\tilde b)fg \)
+vanishes and the two first terms become
+\(
+ \int_N \nabla_a (fg) = - \int_N fg \text{ div } a = 0
+\)
+where \( \text{ div } a := \frac{\partial}{\partial x^i} a^i\) is the
+divergence. Therefore one has \(
+ \frac{d}{dt}\int_N fg = 0
+\), meaning that
+\[
+\int_{N} \restr{f}{\omega}. h = \int_{N\times{\omega}} fg = \int_{N\times{\alpha}} fg \leq
+\|\restr{f}{\alpha} \|_{L^1}. \| h \|_{L^\infty} \leq e^{B(\omega-\alpha)} \|\restr{f}{\alpha}\|_{L^1}. \|h\|_{L^\infty}
+\]
+where we applied Theorem ref:thm:infty-comparison to \( g \) (strictly speaking, to \( \tilde
+g \)) and  \( B \) only depends on \( \tilde a = -a \) and \( \tilde b = b \).
+#+END_proof
 
 bibliographystyle:alpha
 bibliography:../res/Stage2018.bib

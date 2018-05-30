@@ -39,6 +39,8 @@
 #+LATEX_HEADER:    \newcommand{\const}{\mathop{\rm const }\nolimits}
 #+LATEX_HEADER:    \newcommand{\lcm}{\mathop{\rm lcm}\nolimits}
 #+LATEX_HEADER:    \newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
+#+LATEX_HEADER:    \newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
+#+LATEX_HEADER:    \newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
 
 
 #+LATEX_HEADER: \newcommand\restr[2]{{% we make the whole thing an ordinary symbol

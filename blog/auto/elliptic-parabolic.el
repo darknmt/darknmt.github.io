@@ -5,12 +5,12 @@
                      '(("article" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem") ("xy" "all")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -50,9 +50,11 @@
     "tr"
     "const"
     "lcm"
-    "gcd")
+    "gcd"
+    "Ric"
+    "Riem")
    (LaTeX-add-labels
-    "sec:org495c68b"
+    "sec:org143e298"
     "diag:elliptic"
     "diag:D"
     "thm:elliptic-const"
@@ -60,19 +62,19 @@
     "thm:split-exact"
     "thm:compact-op-exact"
     "ell-half-plan"
-    "sec:orgd1711f0"
-    "sec:org8848364"
+    "sec:org27d3d1a"
+    "sec:org82f2cf5"
     "thm:approx-inv-B"
-    "sec:org82ddd74"
+    "sec:orgdb25748"
     "rem:hamilton-sign-issue"
-    "sec:org5fde825"
+    "sec:org5ebc369"
     "thm:approx-inv-A"
-    "sec:org2cca0f4"
+    "sec:org263a7ba"
     "thm:approx-inv-C"
     "thm:exact-half"
     "eq:elliptic-half"
-    "sec:org9acbd84"
-    "sec:org61a8cc0"
+    "sec:orgf79753c"
+    "sec:org07f6ca2"
     "thm:exact-open"
     "prop:interior-cube"
     "prop:boundary-cube"
@@ -80,24 +82,29 @@
     "lem:ell-loc-bndry"
     "thm:elliptic-general"
     "lem:compose-exact"
-    "sec:orgceb049f"
+    "sec:orgfee3976"
     "thm:ref-kernel"
     "thm:reg-coker"
-    "sec:org3fd7474"
-    "sec:orgc770b70"
+    "sec:org2a2daf7"
+    "sec:orgb076da7"
     "sec:global-result-para"
-    "sec:org07f15e4"
+    "sec:orgdf1c816"
     "thm:para-causality"
     "rem:init-cond-para"
-    "sec:org5e692a3"
+    "sec:orgabcfc97"
     "thm:reg-parabolic"
     "eq:reg-para"
-    "sec:orgb15db76"
-    "sec:org6b3c0b4"
-    "thm:max-princ-para"
-    "sec:orga02d3ee"
+    "sec:org9caca77"
+    "sec:orgee5996a"
     "eq:para-system"
-    "thm:lin-heat")
+    "thm:lin-heat"
+    "sec:org108421c"
+    "thm:max-princ-para"
+    "thm:infty-comparison"
+    "eq:infty-comparison"
+    "sec:orgcf0a2af"
+    "thm:1-comparison"
+    "eq:1-comparison")
    (LaTeX-add-bibliographies
     "../res/Stage2018")
    (LaTeX-add-amsthm-newtheorems

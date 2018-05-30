@@ -22,5 +22,7 @@ For example ~/html/sheaf-cohomology.html~ should become ~/pdf/sheaf-cohomology.p
 \newcommand{\const}{\mathop{\rm const }\nolimits}
 \newcommand{\lcm}{\mathop{\rm lcm}\nolimits}
 \newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
+\newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
+\newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
 \)
 #+END_EXPORT

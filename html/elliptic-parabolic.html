@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-24 Thu 11:48 -->
+<!-- 2018-05-30 Wed 11:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Elliptic and parabolic equation on compact manifolds</title>
@@ -292,8 +292,9 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org9702aa6">5. Example: Linear heat equation.</a>
 <ul>
-<li><a href="#org41c1f9c">5.1. Maximum principle.</a></li>
-<li><a href="#orgf37d21d">5.2. Linear system.</a></li>
+<li><a href="#orgf37d21d">5.1. Linear system.</a></li>
+<li><a href="#org30ad1a4">5.2. Maximum principle and \( L^\infty \)-Comparison theorem.</a></li>
+<li><a href="#org4dc2da8">5.3. Backwards heat equation and \( L^1 \)-Comparison theorem.</a></li>
 </ul>
 </li>
 </ul>
@@ -322,6 +323,8 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\const}{\mathop{\rm const }\nolimits}
 \newcommand{\lcm}{\mathop{\rm lcm}\nolimits}
 \newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
+\newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
+\newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
 \)
 
 <div id="outline-container-org39826d3" class="outline-2">
@@ -1281,7 +1284,7 @@ It remains to check that the component-wise operation of \( {A} \) maps an eleme
 in the image
 on \( W^{k,p}(M/\mathcal{A}) \) to an element in the image of \( W^{l,p}(M/\mathcal{A})
 \). This can be done using the projection as we did when defining trace operator on
-manifold, but the situation is much simpler here since we can deferentiate directly an element
+manifold, but the situation is much simpler here since we can differentiate directly an element
 in \( \mathcal{S}^*(M) \).
 </p>
 
@@ -1766,34 +1769,9 @@ D_{x^i} \)). Hence on \( M = N\times [\alpha,\omega] \) the operator \(
 </p>
 </div>
 
-<div id="outline-container-org41c1f9c" class="outline-3">
-<h3 id="org41c1f9c"><span class="section-number-3">5.1</span> Maximum principle.</h3>
-<div class="outline-text-3" id="text-5-1">
-<p>
-With the same proof as for open set in \( \mathbb{R}^n \), one has the maximum principle
-for parabolic equation on manifolds. The constant \( C \) in the following Theorem
-<a href="#thm:max-princ-para">thm:max-princ-para</a> can depend on the point \( x\in M \), but will be most of the time
-globally constant, since the manifold \( M \) is compact.
-</p>
-
-<div id="thm:max-princ-para" btit="(Maximum principle)" class="theorem">
-<p>
-Let \( f: M \longrightarrow \mathbb{R} \) be a continuous function on \( M = N\times
-[\alpha,\omega] \) with \( \restr{f}{\partial_\alpha M} \leq 0 \) and \( \restr{f}{
-\partial_S M} \leq 0 \). Suppose that whenever \( f>0 \), \( f \) is smooth satisfies
-\[
- \frac{\partial f}{\partial t} \leq -\Delta f + Cf
-\]
-Then in fact \( f \leq 0 \).
-</p>
-
-</div>
-</div>
-</div>
-
 <div id="outline-container-orgf37d21d" class="outline-3">
-<h3 id="orgf37d21d"><span class="section-number-3">5.2</span> Linear system.</h3>
-<div class="outline-text-3" id="text-5-2">
+<h3 id="orgf37d21d"><span class="section-number-3">5.1</span> Linear system.</h3>
+<div class="outline-text-3" id="text-5-1">
 <p>
 We will look at the linear parabolic system of equations for \( F = (f^1,\dots, f^n): M
 \longrightarrow \mathbb{R}^n \):
@@ -1819,7 +1797,7 @@ W^{k,p}(M) \) the direct sum \( W^{k,p}(M)^{\oplus n} \) where \( F \) belongs t
 <p>
 Let \( p > \dim M+1 = \dim N+2 \) and \( k\geq 0 \), then for all \( G\in
 W^{k,p}(N\times[\alpha,\omega]/\alpha) \), there exists a unique \( F\in
-W^{k+2,p}(N\times [\alpha,\omega]/\alpha) \) such that solve
+W^{k+2,p}(N\times [\alpha,\omega]/\alpha) \) that solves
 \eqref{eq:para-system}. Moreover, the operator 
 \[ 
 F\longmapsto \frac{\partial F}{\partial t} + \Delta F +
@@ -1874,11 +1852,176 @@ continuous on \( N\times [\alpha,\omega] \), vanishes on \( N\times \{\alpha\} \
 \end{align*}
 <p>
 where we used the inequality \( -u^2 - 2uv \leq v^2 \) to bound the second and third
-terms. We conclude that \( F=0 \) since \( e= 0 \) by Maximum principle. 
+terms. We conclude that \( F=0 \) since \( e= 0 \) by the following Maximum principle. 
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org30ad1a4" class="outline-3">
+<h3 id="org30ad1a4"><span class="section-number-3">5.2</span> Maximum principle and \( L^\infty \)-Comparison theorem.</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+With the same proof as for open set in \( \mathbb{R}^n \), one has the maximum principle
+for parabolic equation on manifolds. The constant \( C \) in the following Theorem
+<a href="#thm:max-princ-para">thm:max-princ-para</a> can depend on the point \( x\in M \), but will be most of the time
+globally constant, since the manifold \( M \) is compact. The following statement of
+Maximum principle will be sufficient for most of our application.
+</p>
+
+<div id="thm:max-princ-para" btit="(Maximum principle)" class="theorem">
+<p>
+Let \( f: M \longrightarrow \mathbb{R} \) be a continuous function on \( M = N\times
+[\alpha,\omega] \) with \( \restr{f}{\partial_\alpha M} \leq 0 \) and \( \restr{f}{
+\partial_S M} \leq 0 \). Suppose that whenever \( f>0 \), \( f \) is smooth satisfies
+\[
+ \frac{\partial f}{\partial t} \leq -\Delta f + Cf
+\]
+Then in fact \( f \leq 0 \).
 </p>
 
 </div>
 
+<p>
+With the same proof as Theorem <a href="#thm:max-princ-para">thm:max-princ-para</a>, one can prove the following \(
+L^\infty \) Comparison theorem.
+</p>
+
+<div id="thm:infty-comparison" btit="(\( L^\infty \)-Comparison theorem)" class="theorem">
+<p>
+Let \( f:\ M=N\times[\alpha,\omega] \longrightarrow \mathbb{R} \) be a continuous function
+on \( M \), smooth for time \( t>0 \) such that
+</p>
+\begin{equation}
+\label{eq:infty-comparison}
+ \frac{d f}{dt} = -\Delta f + a\nabla f+ b f \text{ on } N\times (\alpha,\omega]
+\end{equation}
+<p>
+where \( a \) is a smooth vector field and \( b \) is a smooth function on \( N \). Then there exists \( B=B(a,b) \) depending only on \( a \) and \( b \) such that
+\[
+ \|\restr{f}{\omega}\|_{L^\infty} \leq e^{B(\omega-\alpha)}
+\|\restr{f}{\alpha}\|_{L^\infty}
+\]
+</p>
+
+</div>
+<div class="proof">
+<p>
+We can suppose \( b \leq -1 \) and prove that \(  \|f\|_{L^\infty(\partial_\omega M)} \leq
+\|f\|_{L^\infty(\partial_\alpha M)} \). Intuitively, this means that since heat spreads
+out, the largest density must be attained at time \( t=\alpha \).
+In fact, choose \( B = \max_M b + 1 \) and define \( \tilde f = f e^{-B(t-\alpha)} \) then
+\( \|\restr{\tilde f}{\alpha}\|_{L^\infty} = \| \restr{f}{\alpha} \|_{L^\infty} \) and \(
+\| \restr{\tilde f}{\omega}\|_{L^\infty} =
+e^{-B(\omega-\alpha)}\|\restr{f}{\omega}\|_{l^\infty} \). The function \( \tilde f \)
+satisfies the same heat equation \eqref{eq:infty-comparison} as \( f \), with \( b \) replaced by \( b-B \leq -1 \).
+</p>
+
+<p>
+Now let us prove that under this supposition, \( |f| \) attains it maximum at time \(
+t=\alpha \). Since we can replace the solution \( f \) of \eqref{eq:infty-comparison} by \(
+-f \), we can suppose, for sake of contradiction, that \( |f| \) attains it maximum on \( N\times[\alpha,\omega] \) at \(
+(x^*, t^*) \) with \( |f(x^*,t^*)| = f(x^*,t^*) > 0 \) and \( t^* >\alpha \). Then one has
+</p>
+
+\begin{cases}
+\nabla f (x^*, t^*)= 0, \\
+\frac{d f}{dt}(x^*,t^*) \geq 0, \text{ (this is not true if \( t^*=\alpha \))}\\
+\Delta f(x^*, t^*) \geq 0, \\
+f(x^*, t^*)>0
+\end{cases}
+
+<p>
+Plugging these in \eqref{eq:infty-comparison}, one has a contradiction.
+</p>
+
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org4dc2da8" class="outline-3">
+<h3 id="org4dc2da8"><span class="section-number-3">5.3</span> Backwards heat equation and \( L^1 \)-Comparison theorem.</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+We will use backwards heat equation, which is just heat equation with the reversed sense
+of time (so with the reversed sign for \( \Delta \) as well), in order to dualise the
+estimate of Theorem <a href="#thm:infty-comparison">thm:infty-comparison</a> and obtain a \( L^1 \) estimate of \( f
+\) at time \( t=\omega \) in term of its \( L^1 \) norm at \( t=\alpha \). In particular,
+we prove the following theorem.
+</p>
+
+<div id="thm:1-comparison" btit="(\( L^1 \)-comparison theorem)" class="theorem">
+<p>
+Let \( a \) be a smooth, divergence-free vector field on a Riemannian manifold \( N\) and
+\( b \) be a smooth function on \( N \).Let \(f:\ N\times[\alpha,\omega] \longrightarrow
+\mathbb{R} \) be a continuous function on \( M \) such that
+</p>
+\begin{equation}
+\label{eq:1-comparison}
+ \frac{d f}{dt} = -\Delta f + a\nabla f+ b f \text{ on } N\times (\alpha,\omega].
+\end{equation}
+<p>
+Then there exists \( B=B(a,b) \) depending only on \( a \) and \( b \) such that
+\[
+ \|\restr{f}{\omega}\|_{L^1} \leq e^{B(\omega-\alpha)}
+\|\restr{f}{\alpha}\|_{L^1}
+\]
+</p>
+
+</div>
+<div class="proof">
+<p>
+Since \( L^1 \) is the dual space of \( L^\infty \), it is sufficient to prove that for
+all \( h\in C^\infty(N) \), one has
+\[
+\int_{N\times \{\omega\}} fh \leq e^{B(\omega-\alpha)}
+\left\|\restr{f}{\alpha}\right\|_{L^1}. \|h\|_{L^\infty}.
+\]
+</p>
+
+<p>
+Consider the backwards heat equation
+</p>
+\begin{cases}
+\frac{d g}{dt} = \Delta g - \tilde a\nabla g - \tilde b g,  & \text{on $ N\times{[\alpha,\omega]}$} \\
+\restr{g}{\omega} = h, 
+\end{cases}
+<p>
+which is just a heat equation on \( N\times[\alpha,\omega] \) with initial condition at \(
+\alpha \) if we pose \( \tilde g (t) :=
+g(\omega+\alpha - t)\). The solution \( g \) exists and is smooth on \(
+N\times[\alpha,\omega] \). One has, at any time \( t \)
+</p>
+\begin{align*}
+  \int_{N} g \Delta f &= \int_N g\left(-\frac{d f}{dt} + a\nabla f + bf\right)\\
+  \int_{N} f\Delta g &= \int_N f\left( \frac{d g}{dt} +\tilde a \nabla g + \tilde b g \right)
+\end{align*}
+<p>
+Therefore
+\[
+ \int_N  f \frac{dg}{dt} + g \frac{df}{dt} = \int_N (a\nabla f)g - (\tilde a \nabla g)f +
+(b-\tilde b) fg
+\]
+Choose \( b=\tilde b \) and \( \tilde a = -a \) then the term \( (b-\tilde b)fg \)
+vanishes and the two first terms become
+\(
+ \int_N \nabla_a (fg) = - \int_N fg \text{ div } a = 0
+\)
+where \( \text{ div } a := \frac{\partial}{\partial x^i} a^i\) is the
+divergence. Therefore one has \(
+ \frac{d}{dt}\int_N fg = 0
+\), meaning that
+\[
+\int_{N} \restr{f}{\omega}. h = \int_{N\times{\omega}} fg = \int_{N\times{\alpha}} fg \leq
+\|\restr{f}{\alpha} \|_{L^1}. \| h \|_{L^\infty} \leq e^{B(\omega-\alpha)} \|\restr{f}{\alpha}\|_{L^1}. \|h\|_{L^\infty}
+\]
+where we applied Theorem <a href="#thm:infty-comparison">thm:infty-comparison</a> to \( g \) (strictly speaking, to \( \tilde
+g \)) and  \( B \) only depends on \( \tilde a = -a \) and \( \tilde b = b \).
+</p>
+
+</div>
 
 <p>
 
@@ -1893,7 +2036,7 @@ terms. We conclude that \( F=0 \) since \( e= 0 \) by Maximum principle.
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-05-24 Thu 11:47. <br>
+Last updated 2018-05-29 Tue 17:47. <br>
 </div>
 </div>
 </body>

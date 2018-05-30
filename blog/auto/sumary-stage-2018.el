@@ -1,17 +1,10 @@
 (TeX-add-style-hook
- "Riemann-classification-theorem"
+ "sumary-stage-2018"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("article" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem") ("xy" "all")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
-   (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
     "article"
@@ -54,14 +47,21 @@
     "Ric"
     "Riem")
    (LaTeX-add-labels
-    "sec:org5b05145"
-    "sec:orga617747"
-    "sec:org271eb6a"
-    "sec:org53e8201"
-    "org0014987"
-    "sec:org4be41d5"
-    "orgdda46fb")
-   (LaTeX-add-amsthm-newtheorems
+    "sec:org275b5be"
+    "sec:orgeed0ad5"
+    "sec:org705603a"
+    "sec:orgdec8e01"
+    "sec:org6fb3259"
+    "sec:org10f8c57"
+    "sec:org36b22f1"
+    "sec:org17f143e"
+    "sec:org0c0b6db"
+    "sec:orga62ee04"
+    "sec:orgfe50ad8"
+    "sec:org7670468"
+    "sec:org7059029"
+    "sec:orgf2de142")
+   (LaTeX-add-environments
     "remark"
     "theorem"
     "lemma"

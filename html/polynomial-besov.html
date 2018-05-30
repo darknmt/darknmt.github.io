@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-29 Tue 03:59 -->
+<!-- 2018-05-30 Wed 11:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Short-time existence and regularity for nonlinear heat equation: Polynomial differential operators and Besov spaces</title>
@@ -295,6 +295,8 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\const}{\mathop{\rm const }\nolimits}
 \newcommand{\lcm}{\mathop{\rm lcm}\nolimits}
 \newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
+\newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
+\newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
 \)
 
 <p>
@@ -393,8 +395,9 @@ outside of a compact. Let \( B\subset \mathbb{R}^N \) be a large Euclidean ball 
 r,p,q,s\) as in \eqref{eq:cond:thm:reg-poly-diff}. Then for all compactly supported  \( F\in C (\mathbb{R}^{\dim X},B)
 \cap W^{s,q}(\mathbb{R}^{\dim X}) \), one has
 \[
- \|P F \|_{W^{r,p}} \leq C\left(1 + \|F\|_{W^{s,q}}\right)^{q/p}.
+ \|P F \|_{W^{r,p}} \leq C\left(1 + \|F\|_{W^{s,q}}\right)^{q/p}
 \]
+where the constant \( C \) depends only on \( B \) and the support of \( F \), and not on \( F \).
 </p>
 
 </div>
@@ -453,7 +456,7 @@ W^{s,p} \). In <a href="https://en.wikipedia.org/wiki/Besov_space">a more standa
 We define \( B^{s,p} \) as the completion of \( \mathcal{S}(X) \) under the norm
 \[
 \|f\|_{B^{s,p}} := \sum_{\|\gamma\| < s} \|D^\gamma\|_{L^p} +
-\sup_{v, s- \frac{\sigma}{\sigma_j} < \|\gamma\| < s} \frac{\|\Delta^v_j D^\gamma
+\sum_{ s- \frac{\sigma}{\sigma_j} < \|\gamma\| < s}\sup_{v} \frac{\|\Delta^v_j D^\gamma
 f\|_{L^p}}{|v|^{(s - \|\gamma\|) \sigma_j/\sigma}}
 \]
 </p>
@@ -666,7 +669,7 @@ C(B,V) \|f^\alpha\|_q \) if \( p\leq q \). Therefore,
    \leq \frac{n + \|\gamma\|}{qs} < \frac{n+r}{qs} \).</li>
 <li>For \eqref{eq:est-term-c}, it is sufficient to have
 \[
-    \frac{1}{p} \geq \frac{1}{\tilde p_0} \frac{1}{p_1}+\dots + \frac{1}{p_\mu} 
+    \frac{1}{p} \geq \frac{1}{\tilde p_0} + \frac{1}{p_1}+\dots + \frac{1}{p_\mu} 
    \]
  where the RHS is is a bit bigger than \( \frac{\theta}{s}\frac{1}{q}+ \frac{1}{qs}\sum \|\beta_i\|
    \leq \frac{n + \|\gamma\| + \theta}{qs} \).</li>
@@ -679,7 +682,7 @@ where the RHS is is a bit bigger than \( \frac{\theta}{s}\frac{1}{q}+ \frac{1}{q
 </ol>
 
 <p>
-It is sufficient then to take \( \theta = r- \|\gamma\|  \). Now the RHS of
+It is sufficient then to take \( \theta = r- \|\gamma\|  \). Now the estimates
 \eqref{eq:est-term-small}, \eqref{eq:est-term-c}, \eqref{eq:est-term-f} can be continued as
 </p>
 \begin{align}
@@ -691,7 +694,7 @@ It is sufficient then to take \( \theta = r- \|\gamma\|  \). Now the RHS of
 While \eqref{eq:fin-del-small} gives \( \|D^\gamma (PF)\|_p \leq C \|F\|_{W^{s,q}}^{q/p} \),
 the last two \eqref{eq:fin-del-c} and \eqref{eq:fin-del-f} give
 \[
- \frac{\|\Delta^v_j D^\gamma (PF) \|_p}{|v|^{(r-\|\gamma\|)\sigma_j/\sigma}} \leq C \left(
+ \sum_{ s- \frac{\sigma}{\sigma_j} < \|\gamma\| < s}\sup_{v} \frac{\|\Delta^v_j D^\gamma (PF) \|_p}{|v|^{(r-\|\gamma\|)\sigma_j/\sigma}} \leq C \left(
 1 + \|F\|^{(n+r)/s}_{W^{q,s}}\right)
 \]
 </p>
@@ -903,7 +906,7 @@ t\in[\alpha,\alpha+\epsilon] \). Theorem <a href="#thm:global-eq">thm:global-eq<
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-05-29 Tue 03:59. <br>
+Last updated 2018-05-29 Tue 04:13. <br>
 </div>
 </div>
 </body>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-27 Sun 15:09 -->
+<!-- 2018-05-30 Wed 11:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Harmonic maps of Riemannian manifolds</title>
@@ -266,7 +266,7 @@ for the JavaScript code in this tag.
 <ul>
 <li>
 <ul>
-<li><a href="#orgcef4f21">1.1.0.1. Notation.</a></li>
+<li><a href="#orgb4b7ce0">1.1.0.1. Notation.</a></li>
 </ul>
 </li>
 </ul>
@@ -288,7 +288,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgeadf23c">1.3.1. Energy functional and tension field</a></li>
 <li><a href="#orgf595675">1.3.2. Fundamental form, some results in case of signed curvature</a>
 <ul>
-<li><a href="#orgb4b7ce0">1.3.2.1. Notation.</a></li>
+<li><a href="#org3ed5e08">1.3.2.1. Notation.</a></li>
 </ul>
 </li>
 </ul>
@@ -313,6 +313,12 @@ for the JavaScript code in this tag.
 <li><a href="#orge56f960">2.1. Statement of the main results.</a></li>
 <li><a href="#orgd94674e">2.2. Strategy of the proof.</a></li>
 <li><a href="#orgcdd778c">2.3. Global equation and Uniqueness of nonlinear heat equation.</a></li>
+</ul>
+</li>
+<li><a href="#org408eab4">3. Estimates of energies</a>
+<ul>
+<li><a href="#org9f38118">3.1. Estimate of density energies</a></li>
+<li><a href="#org33ab1a3">3.2. Estimate of total energies</a></li>
 </ul>
 </li>
 </ul>
@@ -341,6 +347,8 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\const}{\mathop{\rm const }\nolimits}
 \newcommand{\lcm}{\mathop{\rm lcm}\nolimits}
 \newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
+\newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
+\newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
 \)
 
 <p>
@@ -353,8 +361,8 @@ This is my reading note for <a class='org-ref-reference' href="#eells_harmonic_1
 </div><div id="outline-container-org2b417a5" class="outline-3">
 <h3 id="org2b417a5"><span class="section-number-3">1.1</span> Variational approach: energy integral and tension field</h3>
 <div class="outline-text-3" id="text-1-1">
-</div><div id="outline-container-orgcef4f21" class="outline-5">
-<h5 id="orgcef4f21"><span class="section-number-5">1.1.0.1</span> Notation.</h5>
+</div><div id="outline-container-orgb4b7ce0" class="outline-5">
+<h5 id="orgb4b7ce0"><span class="section-number-5">1.1.0.1</span> Notation.</h5>
 <div class="outline-text-5" id="text-1-1-0-1">
 <p>
 Let \( M, M', M''\) be Riemannian manifolds of dimension \( n, n' \) and \( n', n''\)
@@ -873,8 +881,8 @@ M \) and \( M' \) are of definite sign.
 </p>
 </div>
 
-<div id="outline-container-orgb4b7ce0" class="outline-5">
-<h5 id="orgb4b7ce0"><span class="section-number-5">1.3.2.1</span> Notation.</h5>
+<div id="outline-container-org3ed5e08" class="outline-5">
+<h5 id="org3ed5e08"><span class="section-number-5">1.3.2.1</span> Notation.</h5>
 <div class="outline-text-5" id="text-1-3-2-1">
 <p>
 Given a Riemannian manifold \( M \), we will use the following notation:
@@ -1482,6 +1490,7 @@ M \longrightarrow N\), \( \pi\circ f \) is harmonic if and only if \( \tau(f) \)
 
 
 
+
 <div id="outline-container-org3b55faf" class="outline-2">
 <h2 id="org3b55faf"><span class="section-number-2">2</span> Nonlinear heat flow: Global equation and existence of harmonic maps.</h2>
 <div class="outline-text-2" id="text-2">
@@ -1496,7 +1505,7 @@ and \( M' \) by deforming any map \( f: M
 \begin{equation}
 \label{eq:loc-heat-flow}
 \begin{cases}
-\frac{d f_t}{d t} = \tau f_t,  & t\in [\alpha,\beta] \\
+\frac{d f_t}{d t} = \tau f_t,  & t\in [\alpha,\omega] \\
 f_\alpha = f, & 
 \end{cases}
 \end{equation}
@@ -1711,8 +1720,7 @@ f_2(x,t)) = (w,-w)\) in the chart, one has:
 \end{align}
 <p>
 where we made a reduction of the term \eqref{eq:sym-red-beta} by permuting \( \beta \) and
-\( \gamma \) to cancel the first order term \( w^\delta \). The last term of the
-RHS of \eqref{eq:first-order-w} can be bounded as follows:
+\( \gamma \) to cancel the first order term \( w^\delta \). The last term of \eqref{eq:first-order-w} can be bounded as follows:
 </p>
 \begin{align*}
     \left | w^\delta \lambda_{\beta\gamma,\delta}\left({f_2}^\beta_i {f_2}^\gamma_j -
@@ -1746,7 +1754,7 @@ the following development of \( \sigma \):
 which was justified by \( \sigma(a,b) = \sigma(b,a) \) and \( \sigma(a,a)=0
 \). Algebraically these symmetries of \( \sigma \) are not sufficient to justify the
 development, and one can also proved, using \( \sigma(a,ka)=0 \), that if such development
-was valid then all \( \lambda_{\beta\gamma,\delta} \) would be zero, hence there is no
+was valid then all \( \lambda_{\beta\gamma,\delta} \) would be zero, and there would be no
 third-order term. We made this reduction using the symmetry of \( \frac{\partial^2
 \sigma}{\partial f_1^\beta \partial f_2^\gamma} {f_1}^\beta_i {f_2}^\gamma_j  \) in \(
 (\beta,\gamma) \) and not just \( \frac{\partial^2
@@ -1775,11 +1783,94 @@ O(x^4)  \). So \( \sigma(a,b) = \frac{1}{2}d(a,b)^2 \) has no third-order term.
 </div>
 </div>
 </div>
+
+<div id="outline-container-org408eab4" class="outline-2">
+<h2 id="org408eab4"><span class="section-number-2">3</span> Estimates of energies</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-org9f38118" class="outline-3">
+<h3 id="org9f38118"><span class="section-number-3">3.1</span> Estimate of density energies</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+We finish this part with a few straightforward computation concerning the <b>potential
+energy</b> \( e(f_t) = \frac{1}{2}|\nabla f_t|^2 \) and the <b>kinetic energy</b> \( k(f_t) =
+\frac{1}{2}|\frac{\partial f_t}{\partial t}| \) of a nonlinear heat flow \( f_t \)
+satisfying \eqref{eq:loc-heat-flow}.
+</p>
+
+<div id="thm:den-pot" btit="(Density of Potential energy)" class="theorem">
+<p>
+If \( f_t \) satisfies \eqref{eq:loc-heat-flow} then 
+\[
+ \frac{d e(f_t)}{dt}= -\Delta e(f_t) - |\beta(f_t)|^2 - \left\langle \Ric(M) \nabla_v
+f_t,\nabla_v f_t \rangle + \langle \Riem(M') (\nabla_v f_t,\nabla_w f_t)\nabla_v
+f_t,\nabla_w f_t \right\rangle
+\]
+where \( e(f_t) \) is the potential energy density and \( \beta(f_t) \) is the fundamental
+form.
+</p>
+
+<p>
+In particular, if  \( \Riem(M') \leq 0 \) and \(Ric(M)\geq -C \) then
+</p>
+\begin{equation}
+\label{eq:den-pot-est}
+\frac{d e}{dt} \leq -\Delta e + Ce - |\beta(f_t)|^2
+\end{equation}
+
+</div>
+<div class="proof">
+<p>
+Apply Lemma <a href="#lem:calculs-general">lem:calculs-general</a> to \( s = d f_t \) and the Riemannian-connected
+bundle \( (F^* TM' \) over \( M\times [\alpha,\omega] \) where \( F(\cdot,t) = f_t \), the curvature terms cancel
+out and it remains to see that
+\(
+\frac{d e(f_t)}{dt}= - \langle df_t, \Delta df_t \rangle
+\), meaning that \( \tilde \nabla_{\partial t} df_t = -\Delta df_t \). This can be easily
+justified:
+\[
+\tilde \nabla_{\partial t} df_t = \tilde \nabla_{\partial t} \tilde\nabla^M F=  \tilde\nabla^M
+\tilde\nabla_{\partial t} F= \tilde\nabla^M\ \tau (f_t) = -D\delta (df_t) = -\Delta df_t
+\]
+where the last "=" is due to \(  D df_t = 0 \). Note that \( D \) and \( \delta \)
+are the exterior derivative and its adjoint of the bundle \( (f_t)^*TM' \) on \( M \),
+since \( t \) can be fixed after the third "=" sign.
+</p>
+
+</div>
+
+<div id="thm:den-kin" btit="(Density of Kinetic energy)" class="theorem">
+<p>
+If \( f_t \) satisfies \eqref{eq:loc-heat-flow} then 
+\[
+ \frac{d k(f_t)}{dt}= -\Delta k(f_t) - \left|\nabla \frac{\partial f_t}{\partial t}\right|^2 +
+\left\langle \Riem(M') (\nabla_v f_t,\frac{\partial f_t}{\partial t})\nabla_v
+f_t,\frac{\partial f_t}{\partial t} \right\rangle
+\]
+where \( k(f_t) \) is the kinetic energy density,
+</p>
+
+<p>
+In particular, if  \( \Riem(M') \leq 0 \) then
+</p>
+\begin{equation}
+\label{eq:den-kin-est}
+\frac{d k}{dt} \leq -\Delta k + - \left|\nabla \frac{\partial f_t}{\partial t}\right|^2
+\end{equation}
+
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org33ab1a3" class="outline-3">
+<h3 id="org33ab1a3"><span class="section-number-3">3.2</span> Estimate of total energies</h3>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-05-27 Sun 15:09. <br>
+Last updated 2018-05-30 Wed 11:39. <br>
 </div>
 </div>
 </body>
