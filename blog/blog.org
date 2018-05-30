@@ -3,8 +3,8 @@
 
 
 * Stage 2018
-***** TODO [[file:sumary-stage-2018.org][Sumary and the report]] <2018-05-29 Tue>
-***** TODO [#A] [[file:harmonic-map-existence.org][Existence of harmonic maps between Riemannian manifolds]] <2018-05-06 Sun>
+***** TODO [[file:summary-stage-2018.org][Summary and the report]] <2018-05-29 Tue>
+***** [#A] [[file:harmonic-map-existence.org][Energy estimates and Existence of harmonic maps between Riemannian manifolds]] <2018-05-06 Sun>
 ***** [#A] [[file:polynomial-besov.org][Short-time existence and regularity for nonlinear heat equation: Polynomial differential operators and Besov spaces]] <2018-05-27 Sun> 
 ***** [#A] [[file:elliptic-parabolic.org][Elliptic and parabolic equations on compact manifolds]] <2018-04-30 Mon>
 ***** [#A] [[file:interpolation-sobolev.org][Interpolation theory and Sobolev spaces on compact manifolds]] <2018-04-30 Mon>

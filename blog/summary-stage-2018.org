@@ -1,0 +1,79 @@
+#+TITLE: Summary of my stage in Summer 2018
+#+AUTHOR: Tien NGUYEN MANH
+#+DATE: May 20, 2018
+# +STARTUP: indent
+# +STARTUP: showstars
+
+#+SETUPFILE: ../res/mathsetup.org
+#+INCLUDE: ../res/include.org
+
+* Harmonic maps: examples and the reduction to a local PDE
+See [[file:harmonic-maps.org]].
+
+The goal of this part is to introduce the basic setting. In brief, we are interested in
+maps \( f: M \longrightarrow M' \) between Riemannian manifolds (that to simplify, are
+supposed to be compact) that are critical points of the energy functional
+\[
+ E(f) = \frac{1}{2}\int_M |\nabla f|^2 dV
+\]
+that is, by taking first order variation of \( E \), those whose *tension field* \(
+\tau(f) \) vanish. 
+
+We wish to prove that any smooth map \( f_0: M \longrightarrow M' \) can be deform to a
+harmonic map using the gradient descent equation, that is to show the equation
+\begin{cases}
+\label{eq:intro:1}
+\frac{df_t}{dt} = \tau(f_t)\\
+\restr{f}{t=0} = f_0
+\end{cases}
+
+We prove, in the rest of the memoire, that if \( M' \) is negatively curved then this PDE admits a globally defined smooth
+solution \( f_t \) and that \( f_{\infty}:=\lim_{t\to \infty} f_t \) in \( C^\infty \) is
+a harmonic map.
+
+The resolution of eqref:eq:intro:1 can be organised in 3 steps:
+1. Find the global equation. We will find a global frame of \( M' \) and express
+   \( f \) in this frame, so that in stead of solving for a map, we will have to solve for functions.
+2. Study linear PDEs on manifolds. The equation, expressed in local coordinates is a nonlinear heat equation, i.e. other
+   than a heat operator, it has a nonlinear differential operator of strictly lower
+   degree. Short-time existence and regularity for eqref:eq:intro:1 follows from /standard/ results of
+   parabolic equation.
+3. Prove long-time existence. This follows from several energy estimate. 
+
+Local form of eqref:eq:intro:1 can be found using calculus on Riemannian-connected vector
+bundle. The relevant vector bundle here is \( f^* TM' \) over \( M \) in case of a single
+map \( f: M \longrightarrow M' \), or \( F^* TM' \) over \( M\times[\alpha,\omega] \) for
+a deformation \( F_t:\ M\times [\alpha,\omega] \longrightarrow M' \).
+
+We will explain here how the step 1 is done. We will embed \( M' \) in a Euclidean space
+\( \mathbb{R}^N \), not necessarily isometric because we will not use the Euclidean metric
+on \( R^N \) anyway. We will equip a tubular neighborhood \( T \) of \( M' \), which is
+diffeomorphic to \( M'\times D \) where \( D \) is an open disc of dimension equal the
+codimension of \( M' \), with the product of the metric of \( M' \) and the Euclidean
+metric of \( D \).
+
+
+* Appendices: Linear PDE on manifolds.
+** The global approach
+*** Comparison theorem and Sobolev spaces on manifold
+See [[file:sobolev-riemannian.org]]
+*** Green function
+See [[file:green-function.org]]
+** The local approach
+See file:interpolation-sobolev.org
+
+
+* Short-time existence and regularity result
+See file:polynomial-besov.org
+
+** Polynomial differential operator
+** Besov spaces
+** Regularity result
+** Short-time existence
+* Energy estimates and global existence.
+See file:harmonic-map-existence.org.
+
+There is no conceptual difficulty in this part.
+
+bibliographystyle:alpha
+bibliography:../res/Stage2018.bib

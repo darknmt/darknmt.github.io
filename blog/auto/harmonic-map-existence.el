@@ -1,16 +1,16 @@
 (TeX-add-style-hook
- "sumary-stage-2018"
+ "harmonic-map-existence"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("article" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem") ("xy" "all")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -54,20 +54,16 @@
     "Ric"
     "Riem")
    (LaTeX-add-labels
-    "sec:org275b5be"
-    "sec:orgeed0ad5"
-    "sec:org705603a"
-    "sec:orgdec8e01"
-    "sec:org6fb3259"
-    "sec:org10f8c57"
-    "sec:org36b22f1"
-    "sec:org17f143e"
-    "sec:org0c0b6db"
-    "sec:orga62ee04"
-    "sec:orgfe50ad8"
-    "sec:org7670468"
-    "sec:org7059029"
-    "sec:orgf2de142")
+    "thm:bound-2-2"
+    "sec:orgba094e9"
+    "lem:bound-2-p"
+    "eq:lem:bound-2-p:2"
+    "eq:lem:bound-2-p:3"
+    "thm:bound-k-p"
+    "sec:orgecc6579"
+    "thm:global-heat-existence"
+    "eq:thm:global-heat"
+    "thm:final")
    (LaTeX-add-amsthm-newtheorems
     "remark"
     "theorem"

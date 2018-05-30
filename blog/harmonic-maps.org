@@ -1051,12 +1051,7 @@ geodesic distance \( d(a,b) = \arccos(\cos^2(x)) = x\sqrt{2} - \frac{1}{6\sqrt{2
 O(x^4)  \). So \( \sigma(a,b) = \frac{1}{2}d(a,b)^2 \) has no third-order term.
 #+END_remark
 
-
-
-bibliographystyle:alpha
-bibliography:../res/Stage2018.bib
-
-* Estimates of energies
+* A few energy estimates.
 ** Estimate of density energies
 We finish this part with a few straightforward computation concerning the *potential
 energy* \( e(f_t) = \frac{1}{2}|\nabla f_t|^2 \) and the *kinetic energy* \( k(f_t) =
@@ -1074,9 +1069,9 @@ f_t,\nabla_v f_t \rangle + \langle \Riem(M') (\nabla_v f_t,\nabla_w f_t)\nabla_v
 f_t,\nabla_w f_t \right\rangle
 \]
 where \( e(f_t) \) is the potential energy density and \( \beta(f_t) \) is the fundamental
-form.
+form and in the curvature terms, the vectors \( v \) and \( w \) are contracted.
 
-In particular, if  \( \Riem(M') \leq 0 \) and \(Ric(M)\geq -C \) then
+In particular, if  \( \Riem(M') \leq 0 \) and \(\Ric(M)\geq -C \) then
 \begin{equation}
 \label{eq:den-pot-est}
 \frac{d e}{dt} \leq -\Delta e + Ce - |\beta(f_t)|^2
@@ -1109,14 +1104,128 @@ If \( f_t \) satisfies eqref:eq:loc-heat-flow then
 \left\langle \Riem(M') (\nabla_v f_t,\frac{\partial f_t}{\partial t})\nabla_v
 f_t,\frac{\partial f_t}{\partial t} \right\rangle
 \]
-where \( k(f_t) \) is the kinetic energy density,
+where \( k(f_t) \) is the kinetic energy density and in the curvature terms, the vectors \( v \) is contracted,
 
 In particular, if  \( \Riem(M') \leq 0 \) then
 \begin{equation}
 \label{eq:den-kin-est}
-\frac{d k}{dt} \leq -\Delta k + - \left|\nabla \frac{\partial f_t}{\partial t}\right|^2
+\frac{d k}{dt} \leq -\Delta k  - \left|\nabla \frac{\partial f_t}{\partial t}\right|^2
 \end{equation}
 #+END_theorem
 
+#+BEGIN_proof
+Let \( F:\ I\times M \longrightarrow M' \) be the total function with \( F(t,\cdot)
+= f_t\) for \( t\in I =[\alpha,\omega] \) and \( E = F^* TM' \) is a Riemannian-connected bundle on \(
+I\times M \) with curvature form \( \Theta \), then
+\begin{equation}
+\label{eq:den-kin-1}
+\tilde \nabla_{\partial t} \tilde\nabla_v (dF.v) = \tilde\nabla_v \tilde\nabla_{\partial t} (dF.v) + \Theta(\partial t, v) dF.v
+\end{equation}
+where \( dF \) is the exterior derivative of \( f_t \) on \( M \). Note that \( \tilde \nabla_v \tilde \nabla_{\partial t} (dF.v) = \tilde \nabla_v (\tilde
+\nabla_{\partial t} dF).v = \tilde \nabla_v (\tilde\nabla^M \frac{\partial f_t}{\partial
+t}).v \) since \( \tilde\nabla^M \frac{\partial f_t}{\partial t}= \tilde\nabla_{\partial
+t}^{I\times M} dF = \tilde\nabla^{I}_{\partial_t}dF \) because
+\( \tilde \nabla \) is torsionless on \( M' \). Plugging this in eqref:eq:den-kin-1 and taking contraction
+in \( v \), one has
+\begin{equation}
+\label{eq:den-kin-2}
+ \tilde \nabla_{\partial t}\ \tau(f_t) = -\tilde \Delta \frac{\partial f_t}{\partial t} +
+\tr \left( v\mapsto \Theta (\partial t,v) dF.v\right)
+\end{equation}
+But \( \Theta^\beta_\alpha = R'^\beta_{\alpha\nu\mu} F^\mu_i F^\nu_j dx^i\otimes dx^j \)
+where \( R' \) denotes the Riemannian curvature of \( M' \) and the indices \( i,j \) can
+be \( 0 \), with \( x^0 \equiv t \). Hence 
+\[
+ \Theta (\partial t, v) dF.v = R'^\beta_{\alpha \nu \mu} \frac{\partial f^\mu_t}{\partial
+t}\frac{\partial f_t^\nu}{\partial v} \frac{\partial f_t^\alpha}{\partial v} \tilde
+e_\beta = \Riem(M')\left(\nabla_v f_t, \frac{\partial f_t}{\partial t}\right)\nabla_v f_t
+\]
+Plugging in eqref:eq:den-kin-2 and taking inner product with \( \frac{\partial
+f_t}{\partial t} \), one has
+\begin{align*}
+ \frac{\partial k(f_t)}{\partial t} &= \left\langle \tilde \nabla_{\partial t}\ \tau(f_t),
+\frac{\partial f_t}{\partial t} \right \rangle = - \left\langle \tilde \Delta \frac{\partial
+f_t}{\partial t}, \frac{\partial f_t}{\partial t} \right\rangle + \left \langle \Riem(M')
+(\nabla_v f_t, \frac{\partial f_t}{\partial t}) \nabla_v f_t, \frac{\partial f_t}{\partial
+t} \right \rangle  \\
+   &= - \Delta \left(\frac{1}{2} \left|\frac{\partial f_t}{\partial t}\right|^2\right) - \left| \tilde \nabla \frac{\partial f_t}{\partial t}\right|^2 + \left \langle \Riem(M')
+(\nabla_v f_t, \frac{\partial f_t}{\partial t}) \nabla_v f_t, \frac{\partial f_t}{\partial
+t} \right \rangle
+\end{align*}
+#+END_proof
 
 ** Estimate of total energies
+
+We will now work with the total energies, in particular the *total potential energy* \(
+E(f_t) := \int_M e(f_t) \) and *total kinetic energy* \( K(f_t) := \int_M k(f_t) \). Since
+tension field is the gradient of \( E \), one has:
+
+#+ATTR_HTML: :id thm:energy-cons
+#+BEGIN_theorem
+#+LATEX: \label{thm:energy-cons}
+If \( f_t: M \longrightarrow  M' \) satisfies eqref:eq:loc-heat-flow then
+\[
+ \frac{d E(f_t)}{dt} = -\int_M \left\langle \tau(f_t), \frac{\partial f_t}{\partial t}
+\right \rangle = -\int_M |\tau(f_t)|^2 = -2K(f_t)
+\]
+and
+\[
+\frac{d^2 E(f_t)}{dt} = -2\int_M \left \langle \nabla_{\partial t}\frac{\partial
+f_t}{\partial t},\tau(f_t)\right \rangle
+\]
+#+END_theorem
+
+Intergrating Theorem ref:thm:den-kin on \( M \), one obtains:
+
+#+ATTR_HTML: :id thm:int-den-kin 
+#+BEGIN_theorem
+#+LATEX: \label{thm:int-den-kin}
+If \( f_t \) satisfies eqref:eq:loc-heat-flow and \( \Riem(M')\leq 0 \) then \(\frac{d
+}{dt}K(f_t) \leq 0\). Together with Theorem ref:thm:energy-cons, one has
+1. The total potential energy \( E(f_t) \) is \( \geq 0 \), decreasing and convex.
+2. The total kinetic energy \( K(f_t) \) is \( \geq 0 \), decreasing and if \( \omega =
+   +\infty \) then \( \lim_{t\to\infty} K(f_t) = 0 \).
+In particular, \( \int_{M\times \{\tau\}} |\nabla f|^2 \) and \( \int_{M\times\{\tau\}} \left|
+\frac{\partial f_t}{\partial t} \right|^2 \) is bounded above by a constant \( C>0 \)
+independent of the time \( \tau \in[\alpha,\omega] \).
+#+END_theorem
+Note that we ruled out the case where \( K(f_t) \) decreases to a strictly positive number
+because \( E(f_t) \) is bounded below and \( \frac{d }{d t} E(f_t) = -2K(f_t) \).
+
+
+Integrating Theorem ref:thm:den-pot on \( M \) and use Theorem ref:thm:int-den-kin, one has:
+
+#+ATTR_HTML: :id thm:int-den-pot 
+#+BEGIN_theorem
+#+LATEX: \label{thm:int-den-pot}
+If \( f_t \) satisfies eqref:eq:loc-heat-flow and \( \Riem(M')\leq 0 \) and \( \Ric(M) \)
+is bounded below then 
+\[
+\int_M |\beta(f_t)|^2 \leq C
+\]
+for all time \( t \) where the constant \( C \) only depends on the curvature of \( M, M'
+\) and the initial total potential and kinetic energy, in particular, \( C \) does not depend on \( t \).
+#+END_theorem
+
+This means that \( \|f_t\|_{W^{2,2}(M)} \) is bounded by a constant \( C \) only depending
+on the curvatures and initial total energies.
+
+
+#+ATTR_LATEX: :options [Boundedness in \( W^{2,2}(M) \)]
+#+ATTR_HTML: :id cor:bound-2-2 :btit (Boundedness in \( W^{2,2}(M) \)) 
+#+BEGIN_corollary
+#+LATEX: \label{cor:bound-2-2}
+If \( F_t \) satisfies eqref:eq:global-heat and \( \Riem(M')\leq 0 \) and \( \Ric(M) \)
+is bounded below then
+\[
+\|F_t\|^2_{W^{2,2}(M)} := \int_M | \beta(F_t)|^2 + |\nabla F_t| +|F|^2 \leq C
+\]
+for all time \( t \) where the constant \( C \) only depends on the curvature of \( M, M'
+\) and the initial total potential and kinetic energy, in particular, \( C \) does not depend on \( t \).
+#+END_corollary
+
+Note that the term \( |F|^2 \) is trivially bounded since the image of \( F \) remains in
+an Euclidean ball \( B \).
+
+bibliographystyle:alpha
+bibliography:../res/Stage2018.bib

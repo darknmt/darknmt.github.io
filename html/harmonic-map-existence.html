@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-30 Wed 23:12 -->
+<!-- 2018-05-30 Wed 23:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>De Rham decomposition</title>
+<title>Global existence for nonlinear heat equation and harmonic maps between Riemannian manifolds</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="darknmt" />
+<meta name="author" content="Tien NGUYEN MANH" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -255,14 +255,13 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div id="content">
-<h1 class="title">De Rham decomposition</h1>
+<h1 class="title">Global existence for nonlinear heat equation and harmonic maps between Riemannian manifolds</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org2d58b77">1. Decomposition theorem of de Rham</a></li>
-<li><a href="#org0081cce">2. Uniqueness</a></li>
-<li><a href="#org2b8ccdf">3. Application of uniqueness lemma: decomposition for Kähler manifold</a></li>
+<li><a href="#org9b18ef3">1. Estimate of higher derivatives.</a></li>
+<li><a href="#org00b370e">2. Global existence for nonlinear heat equation.</a></li>
 </ul>
 </div>
 </div>
@@ -292,86 +291,190 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
 \newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
 \)
-<div class="info">
+
 <p>
-This post is a part of the <a href="../res/Stage2017.pdf">memoire of my M1 internship</a> at I2M. The memoire contains,
-needless to say, less errors than this page.
+Let \( M \) be a compact Riemannian manifold. We want to solve the following nonlinear
+heat equation where \( F: M \longrightarrow M'\subset
+B\subset V = \mathbb{R}^N  \):
+\[
+ \frac{d F_t}{d t} = -\Delta F_t + \Gamma(F_t) (\nabla F_t)^2
+\]
+We have proved that the solution <a href="polynomial-besov.html">exists in short-time and is
+smooth whenever it exists</a>. We will now establish long-time existence using continuity
+method, that is we will show that if the solution exists on \( [\alpha,\omega_n] \) where
+\( \omega_n \) is an increasing sequence to \( \omega \), then the solution exists on \(
+[\alpha,\omega]\). We then apply short-time existence to gain a small open interval where
+solution still exists. We then conclude that the solution exists globally on \(
+[\alpha,+\infty) \) since this interval is connected.
+</p>
+
+<p>
+The crucial step to prove that the solution can be extended on \( [\alpha,\omega] \) is to
+uniformly bound all of its derivatives in time of evolution \( [\alpha,\omega) \). These
+estimates will also be useful to justify that the solution \( F_t \) converges in \(
+C^\infty(M) \) to a smooth function \( F_\infty \) which will eventually be a harmonic map
+from \( M \) to \( M' \).
+</p>
+
+<p>
+Recall that we <a href="harmonic-maps.html">proved</a> in Corollary <a href="#cor:bound-2-2">cor:bound-2-2</a> the boundedness of \(
+\|F_t\|_{W^{2,2}(M)} \) by a constant \( C \) depending only on curvatures of \( M, M' \) and
+the initial total energies. Since \( \frac{dF_t}{dt } \) relates to spatial derivatives of
+\( F \) by the nonlinear heat equation, it is easy to see that \(
+\|F_t\|_{W^{2,2}(M\times[\tau,\tau +\delta])} \) is bounded by a constant independent of
+\( \tau \). Again, we will denote \( W^{k,p}(M\times [\beta,\gamma]) \) by \( W^{k,p}([\beta,\gamma]) \).
+</p>
+
+<div id="thm:bound-2-2" btit="(\(W^{2,2}\)-boundedness)" class="theorem">
+<p>
+There exist a constant \( C \) depending only on \( \delta \), the curvatures and initial
+total energies such that
+\[
+ \|F\|_{W^{2,2}(\tau,\tau+\delta)}\leq C\quad\text{for all } \alpha \leq \tau <\omega-\delta.
+\]
+</p>
+
+</div>
+<div class="proof">
+<p>
+Since 
+\[ \|F\|^2_{W^{2,2}([\tau,\tau+\delta])} \leq \int_\tau^{\tau+\delta}
+\|F_t\|^2_{W^{2,2}(M)} dt + 2\int_\tau^{\tau+\delta} \left\| \Delta F_t
+\right\|^2_{L^2}dt + 2\int_\tau^{\tau+\delta} \left\| \Gamma(F_t)(\nabla F_t)^2
+\right\|^2_{L^2}dt
+\]
+The first term and the second term are bounded by \( C^2\delta \), the third one, since \(
+\Gamma(F_t) \) is bounded by \( C^2\delta \) where \( C \) is a constant only depending on
+the metrics and initial total energies.
 </p>
 
 </div>
 
-<div id="outline-container-org2d58b77" class="outline-2">
-<h2 id="org2d58b77"><span class="section-number-2">1</span> Decomposition theorem of de Rham</h2>
+<p>
+The estimates of higher derivatives of \( F \) will be established in the following order: first in \(
+W^{2,p} \) for all \( p \) norm then in \( W^{k,p} \) for all \( k,p \), then in \( C^\infty \).
+</p>
+
+<div id="outline-container-org9b18ef3" class="outline-2">
+<h2 id="org9b18ef3"><span class="section-number-2">1</span> Estimate of higher derivatives.</h2>
 <div class="outline-text-2" id="text-1">
+<div id="lem:bound-2-p" btit="(\( W^{2,p} \)-boundedness)" class="lemma">
 <p>
-We observe that if a manifold \((M,g)\) is globally a product \((M_1,g_1)\times (M_2,g_2)\) then
-\(Hol_{g}(M) = Hol_{g_1}(M_1)\times Hol_{g_2}(M_2)\) and the holonomy representation of \(M\) is
-reducible. A result of de Rham says that one can decompose a Riemannian manifold as product of ones
-with irreducible holonomy representation.
-</p>
-
-
-<div class="theorem">
-<p>
-<a id="org9a3350a"></a>
-Given \((M,g)\) a simply-connected and complete Riemannian manifold, there exists a unique
-decomposition up to isometry and permutation of factors
+For all \( p \in (1,+\infty) \), there exists a constant \( C>0 \) depending only on \(
+\delta \), \( p \), the metrics and initial energies such that for all \(
+\alpha +\delta \leq \tau \leq \omega-\delta  \):
 \[
-(M,g) = \prod_{i=1}^n(M_i,g_i)
+\|F\|_{W^{2,p}([\tau,\tau+\delta])}\leq C
 \]
-where \((M_i,g_i)\) are complete, simply connected Riemannian irreducible manifolds. Moreover the
-holonomy representation of \(M\) over \(T_xM\) is the product of holonomy representations of \(M_i\) over
-\(T_{x_i}M_i\) where \(x = (x_1,\dots, x_n)\)
 </p>
 
 </div>
 
 <div class="proof">
 <p>
-The proof of this theorem contains two steps:
+Applying Gårding Inequality to the parabolic equation \( AF = \Gamma(F) (\nabla F)^2 \)
+where \( A:= \frac{\partial}{\partial t} + \Delta \) is the heat operator, one has
+\[
+ \|F\|_{W^{2,p}([\tau,\tau+\delta])} \leq C\left( \|\Gamma(F)(\nabla F)^2\|_{L^p([\tau
+ -\frac{\delta}{3},\tau +\delta ])} + \|F\|_{W^{2,2}([\tau-\frac{\delta}{3},\tau +\delta])}  \right)
+\]
+The second term of RHS is already bounded by applying Theorem <a href="#thm:bound-2-2">thm:bound-2-2</a> to \(
+\frac{\delta}{3} \). For the first term:
+\[
+\left\| \Gamma(F) (\nabla F)^2\right\|_{L^p([\tau-\frac{\delta}{3},\tau+\delta])} \leq
+C(M') \| |\nabla F|^2 \|_{L^p([\tau-\frac{\delta}{3}, \tau+\delta])} = C(M') \| e(F)
+\|_{L^p([\tau - \frac{\delta}{3},\tau+\delta])}.
+\]
 </p>
-<ol class="org-ol">
-<li>Remark that if the holonomy group is reducible then locally \(M\) is a product of Riemannian
-manifolds, i.e. for every \(x\in M\) there exists a neighborhood \(U\) containing \(x\) with
-\((U,g)=(M_1,g_1)\times (M_2,g_2)\).</li>
-<li>Obtain the global product structure from local one. This is where completeness is used.</li>
-</ol>
 
 
 <p>
-We now discuss the first point with a bit more details. Suppose that \(T_xM = U_x \bigoplus^\perp
-V_x\) where \(U_x, V_x\) are stable under action of holonomy group, then by transporting \(U_x, V_x\) to
-the tangent space of any point \(y\) (as they are stable by holonomy, the result is independent of the
-curve along which the transport is taken), we obtain then two sub bundles \(A\) and \(B\) of \(TM\) over
-\(M\) that are stable by parallel transport. Then for every vector field \(u_A\) in \(A\) and \(v\) in \(TM\),
-\(\nabla_v u_A \in A\). As the Levi-Civita connection is torsionless, one deduces \([u_A,v_A] =
-\nabla_{u_A}v_A - \nabla_{v_A}u_A\) remains in \(A\). By Frobenius theorem, locally at a point \(x\in
-M\), there exist manifolds \(M_1, M_2\) whose tangent spaces are \(A\) and \(B\).
+Recall that, by Theorem <a href="#thm:den-pot">thm:den-pot</a>, the <a href="harmonic-maps.html">potential density</a> satisfies \( \frac{de}{dt} +\Delta e -Ce \leq 0 \) for
+certain constant \( C \) depending only on the metric of \( M \), by <a href="elliptic-parabolic.html">Maximum principle</a>
+(Theorem <a href="#thm:max-princ-para">thm:max-princ-para</a>), one has \( e \leq \psi_\tau \) where \( \psi_\tau \) is
+the solution of
 </p>
-
-
-<div class="theorem">
+\begin{cases}
+\frac{d}{dt}\psi_\tau + \Delta\psi_\tau -C\psi_\tau = 0  \\
+\restr{\psi_\tau}{\tau - \frac{\delta}{2}} = \restr{e}{\tau - \frac{\delta}{2}}
+\end{cases}
 <p>
-<a id="org4a3dec8"></a>
-Given a distribution \(D\) which to each point \(x\) associates a \(k\) -dimensional hyperplane of \(T_xM\)
-such that:
+We apply Gårding Inequality again for \( \psi_\tau \) and obtain
 </p>
-<ol class="org-ol">
-<li>\(D\) varies smoothly by \(x\), i.e. for every \(x_0\),there exist \(k\) smooth vector fields locally
-defined near \(x_0\) that at each point \(x\) form a base of \(D(x)\).</li>
-<li>\(D\) is stable by Lie bracket, i.e. for every vector fields \(X,Y\) on \(M\) that take value in \(D\),
-\([X,Y]\) takes value in \(D\).</li>
-</ol>
+\begin{equation}
+\label{eq:lem:bound-2-p:2}
+ \| e(F) \|_{L^p([\tau - \frac{\delta}{3},\tau+\delta])} \leq \|\psi_\tau\|_{L^p([\tau-
+\frac{\delta}{3},\tau+\delta])} \leq C \|\psi_\tau\|_{L^1([\tau-
+\frac{\delta}{2},\tau+\delta])}.
+\end{equation}
+
+
 <p>
-Then at each point \(x\in M\), there exists a maximal \(k\) -dimensional sub-manifold \(N\) of \(M\) containing
-\(x\) such that \(D(y)\) is the tangent of \(N\) at \(y\). The maximality means that every sub-manifold of
-\(M\) that satisfies this condition is an open sub-manifold of \(N\).
+Now apply \( L^1 \)-<a href="elliptic-parabolic.html">Comparison Theorem</a> <a href="#thm:1-comparison">thm:1-comparison</a> to \( \psi_\tau
+\), one has
 </p>
-
-</div>
+\begin{equation}
+\label{eq:lem:bound-2-p:3}
+\|\psi_\tau\|_{L^1([\tau-
+\frac{\delta}{2},\tau+\delta])} \leq \frac{3\delta}{2} \left\| \restr{\psi_\tau}{\tau-\frac{\delta}{2}}\right\|_{L^1(M)} =  \frac{3\delta}{2} \left\| \restr{e}{\tau-\frac{\delta}{2}}\right\|_{L^1(M)}\leq C
+\end{equation}
 <p>
-For a complete proof that \(M\) is isometric to \(M_1\times M_2\), see Takashi Sakai, <i>Riemannian
-geometry</i> (Lemma 6.8- Theorem 6.11, chapter III).
+where the constant is the initial potential energy.
+</p>
+
+<p>
+The lemma follows from \eqref{eq:lem:bound-2-p:2} and \eqref{eq:lem:bound-2-p:3}.
+</p>
+
+</div>
+
+<p>
+We can now estimate higher order derivatives.
+</p>
+
+<div id="thm:bound-k-p" btit="(\( W^{k,p} \)-boundedness)" class="theorem">
+<p>
+For all \( p\in (1,+\infty) \) and \( k<+\infty \), there exists \( C \) depending only on
+\( k\), \(p\), the metrics and initial energies such that
+\[
+\|F\|_{W^{k,p}([\tau, \tau+\delta])} \leq C
+\]
+for all \( \alpha +\delta \leq\tau\leq\omega-\delta \).
+</p>
+
+</div>
+<div class="proof">
+<p>
+Applying Gårding Inequality to the equation \( \frac{dF}{dt} + \Delta F_t =
+\Gamma(F)(\nabla F)^2 \) then Regularity Theorem <a href="#thm:reg-poly-diff">thm:reg-poly-diff</a> for <a href="polynomial-besov.html">polynomial
+differential operator</a>, one has for \( \epsilon \ll \delta \):
+</p>
+\begin{align*}
+ \|F\|_{W^{k,p}([\tau,\tau+\delta])} &\leq C_\epsilon \left(
+\|F\|_{W^{2,p}([\tau-\delta,\tau+\delta])} + \|\Gamma(F)(\nabla F)^2\|_{W^{k-2,p}([\tau-\epsilon,\tau+\delta])}\right)  \\
+					   &\leq C_\epsilon\left(1 + C\left(1+\|F\|_{W^{s,q}([\tau-\epsilon,\tau+\delta])}\right)^{q/p}\right)
+\end{align*}
+<p>
+as long as \( k-1 < s \) and \( \frac{1}{p} > \frac{k}{s}.\frac{1}{q} \). Therefore if \(
+\|F\|_{W^{s,q}([\tau,\tau+\delta])}\leq C(\delta,s,q) \) for all \( \beta\leq
+\tau\leq\omega-\delta \) and \( q\in (1,+\infty) \), we just proved that
+\[
+ \|F\|_{W^{k,p}([\tau,\tau+\delta])} \leq C({\epsilon}, k,p)
+\]
+for all 
+</p>
+\begin{cases}
+\beta + \epsilon \leq \tau \leq \omega-\delta \\
+k < s+1, p \in(1,+\infty)
+\end{cases}
+<p>
+since \( \|F\|_{W^{s,q}([\tau-\epsilon,\tau+\delta])} \leq 2C(\delta,s,q) \).
+</p>
+
+<p>
+One can then conclude by induction on \( k \), with step \( \frac{1}{2} \), starting with
+\( k=2 \) and \( \epsilon=\frac{\delta}{2} \) and each time
+dividing \( \epsilon \) by 2.
 </p>
 
 </div>
@@ -379,167 +482,100 @@ geometry</i> (Lemma 6.8- Theorem 6.11, chapter III).
 </div>
 
 
-
-<div id="outline-container-org0081cce" class="outline-2">
-<h2 id="org0081cce"><span class="section-number-2">2</span> Uniqueness</h2>
+<div id="outline-container-org00b370e" class="outline-2">
+<h2 id="org00b370e"><span class="section-number-2">2</span> Global existence for nonlinear heat equation.</h2>
 <div class="outline-text-2" id="text-2">
+<div id="thm:global-heat-existence" btit="(Global existence)" class="theorem">
 <p>
-We note that the decomposition is unique in the following sense: 
+The solution of nonlinear heat equation
 </p>
-
-<div class="proposition">
+\begin{equation}
+\label{eq:thm:global-heat}
+ \frac{dF}{dt} = -\Delta F +\Gamma(F) (\nabla F)^2
+\end{equation}
 <p>
-<a id="org77cdb06"></a> If \(M\) is decomposed as \(p_1:\ M\longrightarrow E\times \prod M_i\) and \(p_2:\
-M\longrightarrow E'\times\prod M'_j\) where \(M_i, M'j\) are irreducible and \(E,E'\) are maximal
-Euclidean components (i.e. none of \(M_i, M'_j\) are isometric to \( \mathbb{R}\)). Then up to a
-rearrangement of indice \(j\) the composed map \(f=p_2\circ p_1^{-1}:\ E\times\prod M_i \longrightarrow
-E'\times \prod M'_i\) are product of the isometries \(f_E: E\longrightarrow E'\) and \(f_i:M_i
-\longrightarrow M'_i\).
-</p>
-
-</div>
-
-<p>
-We first explain the appearance of Euclidean components \(E,E'\). They come from the parallel
-transport of trivial representations appeared in the decomposition on each fiber. We call them
-Euclidean because they are, up to an isometry, \( \mathbb{R}^k\) with the usual metric. This follows
-from the fact that \( \mathbb{R}\) with any Riemannian metric is isometric to \( \mathbb{R}\) with
-Euclidean metric.
-</p>
-
-<p>
-We first note that the uniqueness stated in Proposition <a href="#org77cdb06">2</a> comes from the uniqueness of
-the decomposition of each tangent fiber, we have the following lemma.
-</p>
-
-<div class="lemma">
-<p>
-<a id="org299f821"></a>
-Let \(f: M\longrightarrow M'\) be an isometry that send \(x\in M\) to \(y\in M'\). Let 
-\[
-T_x M = E \oplus^\perp \bigoplus_i V_i,\quad T_yM' = E' \oplus^\perp \bigoplus_j V'_j
-\]
-be a decomposition of \(T_xM\) and \(T_yM'\) as direct sum of trivial subspaces \(E,E'\) and irreducible non-trivial
-subspaces \(V_i, V_j'\) under holonomy action. Then up to a rearrangement of \(j\), \(f_*\) send \(E\) to
-\(E'\) and \(V_i\) to \(V'_i\). 
-</p>
-
-</div>
-
-<div class="remark">
-<p>
-One may note that a similar result is <span class="underline">not true</span> for general representations: one can only prove the
-uniqueness of the irreducible factors up to isomorphism and their multiplicity. But the individual irreducible
-summands might not map to individual summands (However if one groups all irreducible summands of
-the same type, then each group maps to another).
-</p>
-
-</div>
-
-<p>
-The supplementary property of holonomy representation put into use here is the following:
-</p>
-
-<div class="remark">
-<p>
-The holonomy representation \(H\subset SO(V)\) on a fiber \(V=T_xM\) satisfies the <span class="underline">property (H)</span>: if \(V
-= V_1 \oplus^\perp V_2\) where \(V_i\) are stable by \(H\) then \(H = H_1\times H_2\) where \(H_i:= \{ h\in
-H: h|_{V_j} = Id, j\ne i\}\). It is obvious that \(H\supset H_1\times H_2\), the other inclusion is a
-consequence of de Rham decomposition along \(V_1, V_2\) and the fact that \(Hol(M_1\times M_2) =
-Hol(M_1)\times Hol(M_2)\).
-</p>
-
-</div>
-
-<p>
-An example of representation that does not satisfies this property (H) is the group \(G = \{\pm
-I_2\}\). Take \(V_i = \mathbb{R}e_i\), then \(G_1 = G_2 = \{I_2\}\) therefore \(G_1\times G_2\ne
-G\). This also illustrates the fact that not every groups (representations) are holonomy groups
-(representations).
-</p>
-
-<p>
-We prove the following lemma, which implies Lemma <a href="#org299f821">2</a>.
-</p>
-<div class="lemma">
-<p>
-<a id="orgc61316b"></a>
-Let \(G\subset SO(V)\) be an orthonormal representation on a finite dimensional vector space \(V\) with
-property (H), given any two orthogonal decompositions
-\[
-V = E \times \prod V_i = E' \times \prod V'_j
-\]
-where \(G\) acts trivially on \(E, E'\), \(V_i, V'_j\) are irreducible and of dimension larger than 2,
-one has \(E = E'\) and \(V_i = V'_i\) up to a rearrangement of index \(j\).
-</p>
-
-<p>
-Moreover, given \(J\in Hom_G(V,V)\cap SO(V)\) then \(J\) sends \(E\) and \(V_i\) to themselves.
+with smooth initial condition exists globally for all time \( t >\alpha \).
 </p>
 
 </div>
 
 <div class="proof">
 <p>
-Note that since action of \(G\) is special orthonormal, any one dimensional subspace of \(V\) stable by
-\(G\) are trivial under \(G\), that explains why we supposed \(V_i, V'_j\) are of dimension larger
-than 2. It suffices to see that every irreducible subspace \(N\) of \(V\) is either contained in \(E\) or equal to
-\(V_i\).
+Let \( F_n \) be a sequence of solution of \eqref{eq:thm:global-heat} on \(
+[\alpha,\omega_n] \) with \( \omega_n \) increasing to \( \omega \) then they coincide by
+uniqueness of solution the equation. As discussed in the beginning of this part, it is
+sufficient to prove that the solution extends to \( [\alpha,\omega] \). Let \( F \) be the
+solution on \( [\alpha,\omega) \) such that \( \restr{F}{[\alpha,\omega_n]} = F_n \), then
+by Theorem <a href="#thm:bound-k-p">thm:bound-k-p</a>, for all \( \tau \in [\alpha,\omega-\delta) \):
+\[
+ \| D^u_t D^v_x F \|_{L^\infty(M\times[\tau,\tau+\delta])} \leq C_{\rm Sobolev} \| D^u_t D^v_x F
+\|_{W^{k,p}(M\times[\tau,\tau+\delta])} \leq C_{\rm Sobolev} . C(k,p,\delta)
+\]
+where, if we choose \( k \) sufficiently large, \( C_{\rm Sobolev} \) is the constant off Sobolev imbedding \(
+W^{k,p}(M\times[0,\delta]) \hookrightarrow C(M\times[0,\delta]) \) and \( C(k,p,\delta) \)
+is the constant provided by Theorem <a href="#thm:bound-k-p">thm:bound-k-p</a>. 
 </p>
 
 <p>
-Let \(pr_i\) and \(pr_E\) be orthogonal projection of \(V\) to \(V_i\) and \(E\). As \(E\) and \(V_i\) are \(G\) -stable, these
-projections are \(G\) -invariant. Let \(N_i = pr_i(N)\), then \(N_i\) is a subspace of \(V_i\) stable
-by \(G\), hence either \(0\) or all \(V_i\). If all \(N_i=0\) then clearly \(N\) is perpendicular to \(\bigoplus_i
-V_i\), that is \(N\subset E\). If \(pr_E(N)\ne 0\) then \(Hom_G(N, E) \ne 0\) since it contains \(pr_E\). Since
-\(N\) is irreducible, \(N\) is \(G\) -isomorphic to a irreducible component of \(N\) by \(pr_E\), therefore
-\(N\) is \(G\) -trivial hence \(N\subset E\). Therefore one can suppose that at least one \(N_i = V_i\) and
-\(pr_E(N) = 0\), i.e. \(E\perp N\). Note that \(pr_i\) is bijective by Schur lemma.
-</p>
-
-<p>
-Let \(G_i = \{g\in G: g|_{V_j} = Id\ \forall j\ne i \}\) then \(Fix(\prod_{j\ne i} G_j)= E\oplus V_i\), in fact if \(v = e +\sum v_i\in Fix(\prod_{j\ne i}
-G_j)\) where \(e\in E, v_k\in V_k\), one has \(g_j v_j = v_j \forall g_j \in G_j\), hence \(g v_j = v_j
-\forall g\in G\), hence \(v_j = 0\). Now note that as \(pr_i\) commutes with \(G\) and \(N_i\) is fixed by
-\(\prod_{j\ne i}G_j\), \(N\) is also fixed by \(\prod_{j\ne i}G_j\). Therefore \(N\subset E \oplus^\perp
-V_i\), hence \(N = N_i=V_i\) as \(N\perp E\).
-</p>
-
-<p>
-For the last point, note that as \(J\) commutes with all elements of \(G\), \(J\) sends \(Fix(\prod_{j\in
-A} G_j)\) to itself. Therefore \(J|_E: E\longrightarrow E\) and \(J|_{E\oplus V_i}: E\oplus
-V_i\longrightarrow E\oplus V_i\), hence by orthogonality \(J\) sends \(E\) and \(V_i\) to themselves.
+So all partial derivatives of \( F
+\) is uniformly bounded on \( [\alpha +\delta,\omega) \). This proves that \( F \) extends
+to a solution on \( [\alpha,\omega] \). In fact \(\restr{F}{\tau}:=\restr{F}{M\times\{\tau\}} \) converges
+in \( C^\infty(M) \) as \( \tau\to \omega \), since \( \|D^\alpha \restr{F}{\tau} -
+D^\alpha\restr{F}{\tau'}\|_{L^\infty} \leq \max_{\|\beta\| = \|\alpha\|+1}\|D^{\beta}F\|_{L^\infty}|\tau-\tau'| \).
 </p>
 
 </div>
-</div>
-</div>
-
-
-<div id="outline-container-org2b8ccdf" class="outline-2">
-<h2 id="org2b8ccdf"><span class="section-number-2">3</span> Application of uniqueness lemma: decomposition for Kähler manifold</h2>
-<div class="outline-text-2" id="text-3">
-<p>
-Now let apply the de Rham decomposition to a complete Riemannian manifold \(M\) with holonomy \(U(n)
-\subset SO(2n)\) (called a <i>Kähler manifold</i>). There exists on a fixed fiber \(T_xM\) an automorphism
-\(J\) that preserves the Riemannian metric and satisfies \(J^2 = -1\). By transporting \(J\) to every other
-fibers of \(TM\) one obtains a <i>almost complex structure</i> on \(M\).
-</p>
 
 <p>
-Apply Lemma <a href="#orgc61316b">2</a> to \(J\) which obviously commutes with \(G\) and orthonormal, one
-see that such structure \(J\) passes to every manifold \(M_i\) and the Euclidean component \( \mathbb{R}^n\) and
-remains parallel on these manifolds. We proved that \(M\) is decomposed to \( \mathbb{C}^{n/2}\times
-\prod M_i\) where \(M_i\) are Kähler manifold. The decomposition map is both a Riemannian isometry and
-a isomorphism between complex manifold (i.e. its preserves complex structure). 
+We have just proved the first part of the following theorem. The second part is a
+reformulation of Theorem <a href="#thm:eells-sampson">thm:eells-sampson</a>
+of Eells and Sampson.
 </p>
+
+<div id="thm:final" class="theorem">
+<ol class="org-ol">
+<li><p>
+Let \( M, M' \) be compact Riemannian manifolds with \( \Riem(M') \leq 0 \). Then for
+every smooth map \( f_0:\ M \longrightarrow M'\subset B\subset \mathbb{R}^N \), the nonlinear heat equation
+</p>
+\begin{cases}
+\frac{df_t}{dt} = \tau(f_t),  & \text{for all $t\geq 0$} \\
+\restr{f}{t=0} = f_0,
+\end{cases}
+<p>
+admit a globally defined smooth solution \( f_t \). Moreover, all derivatives \( D^\alpha
+   f_t \) remains uniformly bounded as \( t\to +\infty \).
+</p></li>
+<li>For a suitable sequence \( t_n \) increasing to \( +\infty \) the sequence \( f_{t_n}
+   \) converges in \( C^\infty(M) \) to a function \( f_\infty \) with \( \tau(f_\infty)=0
+   \). Therefore any map \( f_0:\ M \longrightarrow M' \) is homotopic to a harmonic map.</li>
+</ol>
+
+</div>
+<div class="proof">
+<p>
+For any sequence \(t_n\), one can extract from \( \{f_{t_n}\} \), since their derivatives are
+uniformly bounded, a convergent subsequence \( \{f_{t_{n_i}}\} \) in \( C^k(M,
+\mathbb{R}^N) \). By a diagonalisation argument, one can extract from any sequence \(
+\{f_{t_n}\} \) a subsequence converging in \( C^\infty(M, \mathbb{R}^N) \) to \( f_\infty
+\). Abusively denote this subsequence by \( \{f_{t_n}\} \), by Theorem <a href="#thm:den-kin">thm:den-kin</a>
+\[
+ \lim_{n\to\infty} K(f_{t_n}) = \lim_{n\to\infty} \int_M |\tau(f_{t_n})|^2 = 0
+\]
+Therefore \( \tau(f_{t_n}) \to 0 \) in \( L^2(M)^{\oplus N} \). But also \( \tau(f_{t_n})
+\to \tau(f_\infty) \) in \( C^\infty(M, \mathbb{R}^N) \), one has \( \tau(f_\infty)=0
+\). The homotopic conlusion follows by rescaling the deformation time between \( f_{t_n}
+\) and \( f_{t_{n+1}} \) to \( \frac{1}{2^n} \).
+</p>
+
+</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
-By darknmt.<br>
-Last updated 2017-08-31 Thu 02:25. <br>
+By Tien NGUYEN MANH.<br>
+Last updated 2018-05-30 Wed 23:08. <br>
 </div>
 </div>
 </body>

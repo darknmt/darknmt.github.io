@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-30 Wed 11:39 -->
+<!-- 2018-05-30 Wed 15:06 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Harmonic maps of Riemannian manifolds</title>
@@ -266,7 +266,7 @@ for the JavaScript code in this tag.
 <ul>
 <li>
 <ul>
-<li><a href="#orgb4b7ce0">1.1.0.1. Notation.</a></li>
+<li><a href="#orgbf69892">1.1.0.1. Notation.</a></li>
 </ul>
 </li>
 </ul>
@@ -288,7 +288,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgeadf23c">1.3.1. Energy functional and tension field</a></li>
 <li><a href="#orgf595675">1.3.2. Fundamental form, some results in case of signed curvature</a>
 <ul>
-<li><a href="#org3ed5e08">1.3.2.1. Notation.</a></li>
+<li><a href="#org930a707">1.3.2.1. Notation.</a></li>
 </ul>
 </li>
 </ul>
@@ -315,7 +315,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgcdd778c">2.3. Global equation and Uniqueness of nonlinear heat equation.</a></li>
 </ul>
 </li>
-<li><a href="#org408eab4">3. Estimates of energies</a>
+<li><a href="#org957565f">3. A few energy estimates.</a>
 <ul>
 <li><a href="#org9f38118">3.1. Estimate of density energies</a></li>
 <li><a href="#org33ab1a3">3.2. Estimate of total energies</a></li>
@@ -361,8 +361,8 @@ This is my reading note for <a class='org-ref-reference' href="#eells_harmonic_1
 </div><div id="outline-container-org2b417a5" class="outline-3">
 <h3 id="org2b417a5"><span class="section-number-3">1.1</span> Variational approach: energy integral and tension field</h3>
 <div class="outline-text-3" id="text-1-1">
-</div><div id="outline-container-orgb4b7ce0" class="outline-5">
-<h5 id="orgb4b7ce0"><span class="section-number-5">1.1.0.1</span> Notation.</h5>
+</div><div id="outline-container-orgbf69892" class="outline-5">
+<h5 id="orgbf69892"><span class="section-number-5">1.1.0.1</span> Notation.</h5>
 <div class="outline-text-5" id="text-1-1-0-1">
 <p>
 Let \( M, M', M''\) be Riemannian manifolds of dimension \( n, n' \) and \( n', n''\)
@@ -881,8 +881,8 @@ M \) and \( M' \) are of definite sign.
 </p>
 </div>
 
-<div id="outline-container-org3ed5e08" class="outline-5">
-<h5 id="org3ed5e08"><span class="section-number-5">1.3.2.1</span> Notation.</h5>
+<div id="outline-container-org930a707" class="outline-5">
+<h5 id="org930a707"><span class="section-number-5">1.3.2.1</span> Notation.</h5>
 <div class="outline-text-5" id="text-1-3-2-1">
 <p>
 Given a Riemannian manifold \( M \), we will use the following notation:
@@ -1769,23 +1769,12 @@ O(x^4)  \). So \( \sigma(a,b) = \frac{1}{2}d(a,b)^2 \) has no third-order term.
 </p>
 
 </div>
-
-
-
-<p>
-
-<h1 class='org-ref-bib-h1'>Bibliography</h1>
-<ul class='org-ref-bib'><li><a id="eells_harmonic_1964">[eells_harmonic_1964] Eells & Sampson, Harmonic Mappings of Riemannian Manifolds, <i>American Journal of Mathematics</i>, <b>86(1)</b>, 109-160 (1964). <a href="http://www.jstor.org/stable/2373037">link</a>. <a href="http://dx.doi.org/10.2307/2373037">doi</a>.</a></li>
-<li><a id="besse_einstein_2007">[besse_einstein_2007] Besse, Einstein Manifolds, Springer Berlin Heidelberg (2007).</a></li>
-<li><a id="hamilton_harmonic_1975">[hamilton_harmonic_1975] Hamilton, Harmonic Maps of Manifolds with Boundary, Springer-Verlag (1975).</a></li>
-</ul>
-</p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org408eab4" class="outline-2">
-<h2 id="org408eab4"><span class="section-number-2">3</span> Estimates of energies</h2>
+<div id="outline-container-org957565f" class="outline-2">
+<h2 id="org957565f"><span class="section-number-2">3</span> A few energy estimates.</h2>
 <div class="outline-text-2" id="text-3">
 </div><div id="outline-container-org9f38118" class="outline-3">
 <h3 id="org9f38118"><span class="section-number-3">3.1</span> Estimate of density energies</h3>
@@ -1806,11 +1795,11 @@ f_t,\nabla_v f_t \rangle + \langle \Riem(M') (\nabla_v f_t,\nabla_w f_t)\nabla_v
 f_t,\nabla_w f_t \right\rangle
 \]
 where \( e(f_t) \) is the potential energy density and \( \beta(f_t) \) is the fundamental
-form.
+form and in the curvature terms, the vectors \( v \) and \( w \) are contracted.
 </p>
 
 <p>
-In particular, if  \( \Riem(M') \leq 0 \) and \(Ric(M)\geq -C \) then
+In particular, if  \( \Riem(M') \leq 0 \) and \(\Ric(M)\geq -C \) then
 </p>
 \begin{equation}
 \label{eq:den-pot-est}
@@ -1846,7 +1835,7 @@ If \( f_t \) satisfies \eqref{eq:loc-heat-flow} then
 \left\langle \Riem(M') (\nabla_v f_t,\frac{\partial f_t}{\partial t})\nabla_v
 f_t,\frac{\partial f_t}{\partial t} \right\rangle
 \]
-where \( k(f_t) \) is the kinetic energy density,
+where \( k(f_t) \) is the kinetic energy density and in the curvature terms, the vectors \( v \) is contracted,
 </p>
 
 <p>
@@ -1854,23 +1843,170 @@ In particular, if  \( \Riem(M') \leq 0 \) then
 </p>
 \begin{equation}
 \label{eq:den-kin-est}
-\frac{d k}{dt} \leq -\Delta k + - \left|\nabla \frac{\partial f_t}{\partial t}\right|^2
+\frac{d k}{dt} \leq -\Delta k  - \left|\nabla \frac{\partial f_t}{\partial t}\right|^2
 \end{equation}
 
 </div>
-</div>
-</div>
 
+<div class="proof">
+<p>
+Let \( F:\ I\times M \longrightarrow M' \) be the total function with \( F(t,\cdot)
+= f_t\) for \( t\in I =[\alpha,\omega] \) and \( E = F^* TM' \) is a Riemannian-connected bundle on \(
+I\times M \) with curvature form \( \Theta \), then
+</p>
+\begin{equation}
+\label{eq:den-kin-1}
+\tilde \nabla_{\partial t} \tilde\nabla_v (dF.v) = \tilde\nabla_v \tilde\nabla_{\partial t} (dF.v) + \Theta(\partial t, v) dF.v
+\end{equation}
+<p>
+where \( dF \) is the exterior derivative of \( f_t \) on \( M \). Note that \( \tilde \nabla_v \tilde \nabla_{\partial t} (dF.v) = \tilde \nabla_v (\tilde
+\nabla_{\partial t} dF).v = \tilde \nabla_v (\tilde\nabla^M \frac{\partial f_t}{\partial
+t}).v \) since \( \tilde\nabla^M \frac{\partial f_t}{\partial t}= \tilde\nabla_{\partial
+t}^{I\times M} dF = \tilde\nabla^{I}_{\partial_t}dF \) because
+\( \tilde \nabla \) is torsionless on \( M' \). Plugging this in \eqref{eq:den-kin-1} and taking contraction
+in \( v \), one has
+</p>
+\begin{equation}
+\label{eq:den-kin-2}
+ \tilde \nabla_{\partial t}\ \tau(f_t) = -\tilde \Delta \frac{\partial f_t}{\partial t} +
+\tr \left( v\mapsto \Theta (\partial t,v) dF.v\right)
+\end{equation}
+<p>
+But \( \Theta^\beta_\alpha = R'^\beta_{\alpha\nu\mu} F^\mu_i F^\nu_j dx^i\otimes dx^j \)
+where \( R' \) denotes the Riemannian curvature of \( M' \) and the indices \( i,j \) can
+be \( 0 \), with \( x^0 \equiv t \). Hence 
+\[
+ \Theta (\partial t, v) dF.v = R'^\beta_{\alpha \nu \mu} \frac{\partial f^\mu_t}{\partial
+t}\frac{\partial f_t^\nu}{\partial v} \frac{\partial f_t^\alpha}{\partial v} \tilde
+e_\beta = \Riem(M')\left(\nabla_v f_t, \frac{\partial f_t}{\partial t}\right)\nabla_v f_t
+\]
+Plugging in \eqref{eq:den-kin-2} and taking inner product with \( \frac{\partial
+f_t}{\partial t} \), one has
+</p>
+\begin{align*}
+ \frac{\partial k(f_t)}{\partial t} &= \left\langle \tilde \nabla_{\partial t}\ \tau(f_t),
+\frac{\partial f_t}{\partial t} \right \rangle = - \left\langle \tilde \Delta \frac{\partial
+f_t}{\partial t}, \frac{\partial f_t}{\partial t} \right\rangle + \left \langle \Riem(M')
+(\nabla_v f_t, \frac{\partial f_t}{\partial t}) \nabla_v f_t, \frac{\partial f_t}{\partial
+t} \right \rangle  \\
+   &= - \Delta \left(\frac{1}{2} \left|\frac{\partial f_t}{\partial t}\right|^2\right) - \left| \tilde \nabla \frac{\partial f_t}{\partial t}\right|^2 + \left \langle \Riem(M')
+(\nabla_v f_t, \frac{\partial f_t}{\partial t}) \nabla_v f_t, \frac{\partial f_t}{\partial
+t} \right \rangle
+\end{align*}
+
+</div>
+</div>
+</div>
 
 <div id="outline-container-org33ab1a3" class="outline-3">
 <h3 id="org33ab1a3"><span class="section-number-3">3.2</span> Estimate of total energies</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+We will now work with the total energies, in particular the <b>total potential energy</b> \(
+E(f_t) := \int_M e(f_t) \) and <b>total kinetic energy</b> \( K(f_t) := \int_M k(f_t) \). Since
+tension field is the gradient of \( E \), one has:
+</p>
+
+<div id="thm:energy-cons" class="theorem">
+<p>
+If \( f_t: M \longrightarrow  M' \) satisfies \eqref{eq:loc-heat-flow} then
+\[
+ \frac{d E(f_t)}{dt} = -\int_M \left\langle \tau(f_t), \frac{\partial f_t}{\partial t}
+\right \rangle = -\int_M |\tau(f_t)|^2 = -2K(f_t)
+\]
+and
+\[
+\frac{d^2 E(f_t)}{dt} = -2\int_M \left \langle \nabla_{\partial t}\frac{\partial
+f_t}{\partial t},\tau(f_t)\right \rangle
+\]
+</p>
+
+</div>
+
+<p>
+Intergrating Theorem <a href="#thm:den-kin">thm:den-kin</a> on \( M \), one obtains:
+</p>
+
+<div id="thm:int-den-kin" class="theorem">
+<p>
+If \( f_t \) satisfies \eqref{eq:loc-heat-flow} and \( \Riem(M')\leq 0 \) then \(\frac{d
+}{dt}K(f_t) \leq 0\). Together with Theorem <a href="#thm:energy-cons">thm:energy-cons</a>, one has
+</p>
+<ol class="org-ol">
+<li>The total potential energy \( E(f_t) \) is \( \geq 0 \), decreasing and convex.</li>
+<li>The total kinetic energy \( K(f_t) \) is \( \geq 0 \), decreasing and if \( \omega =
+   +\infty \) then \( \lim_{t\to\infty} K(f_t) = 0 \).</li>
+</ol>
+<p>
+In particular, \( \int_{M\times \{\tau\}} |\nabla f|^2 \) and \( \int_{M\times\{\tau\}} \left|
+\frac{\partial f_t}{\partial t} \right|^2 \) is bounded above by a constant \( C>0 \)
+independent of the time \( \tau \in[\alpha,\omega] \).
+</p>
+
+</div>
+<p>
+Note that we ruled out the case where \( K(f_t) \) decreases to a strictly positive number
+because \( E(f_t) \) is bounded below and \( \frac{d }{d t} E(f_t) = -2K(f_t) \).
+</p>
+
+
+<p>
+Integrating Theorem <a href="#thm:den-pot">thm:den-pot</a> on \( M \) and use Theorem <a href="#thm:int-den-kin">thm:int-den-kin</a>, one has:
+</p>
+
+<div id="thm:int-den-pot" class="theorem">
+<p>
+If \( f_t \) satisfies \eqref{eq:loc-heat-flow} and \( \Riem(M')\leq 0 \) and \( \Ric(M) \)
+is bounded below then 
+\[
+\int_M |\beta(f_t)|^2 \leq C
+\]
+for all time \( t \) where the constant \( C \) only depends on the curvature of \( M, M'
+\) and the initial total potential and kinetic energy, in particular, \( C \) does not depend on \( t \).
+</p>
+
+</div>
+
+<p>
+This means that \( \|f_t\|_{W^{2,2}(M)} \) is bounded by a constant \( C \) only depending
+on the curvatures and initial total energies.
+</p>
+
+
+<div id="cor:bound-2-2" btit="(Boundedness in \( W^{2,2}(M) \))" class="corollary">
+<p>
+If \( F_t \) satisfies \eqref{eq:global-heat} and \( \Riem(M')\leq 0 \) and \( \Ric(M) \)
+is bounded below then
+\[
+\|F_t\|^2_{W^{2,2}(M)} := \int_M | \beta(F_t)|^2 + |\nabla F_t| +|F|^2 \leq C
+\]
+for all time \( t \) where the constant \( C \) only depends on the curvature of \( M, M'
+\) and the initial total potential and kinetic energy, in particular, \( C \) does not depend on \( t \).
+</p>
+
+</div>
+
+<p>
+Note that the term \( |F|^2 \) is trivially bounded since the image of \( F \) remains in
+an Euclidean ball \( B \).
+</p>
+
+<p>
+
+<h1 class='org-ref-bib-h1'>Bibliography</h1>
+<ul class='org-ref-bib'><li><a id="eells_harmonic_1964">[eells_harmonic_1964] Eells & Sampson, Harmonic Mappings of Riemannian Manifolds, <i>American Journal of Mathematics</i>, <b>86(1)</b>, 109-160 (1964). <a href="http://www.jstor.org/stable/2373037">link</a>. <a href="http://dx.doi.org/10.2307/2373037">doi</a>.</a></li>
+<li><a id="besse_einstein_2007">[besse_einstein_2007] Besse, Einstein Manifolds, Springer Berlin Heidelberg (2007).</a></li>
+<li><a id="hamilton_harmonic_1975">[hamilton_harmonic_1975] Hamilton, Harmonic Maps of Manifolds with Boundary, Springer-Verlag (1975).</a></li>
+</ul>
+</p>
+</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-05-30 Wed 11:39. <br>
+Last updated 2018-05-30 Wed 15:06. <br>
 </div>
 </div>
 </body>

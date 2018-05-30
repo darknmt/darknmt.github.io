@@ -56,7 +56,7 @@
    (LaTeX-add-labels
     "sec:orga0770cb"
     "sec:orgc583005"
-    "sec:orga4436cb"
+    "sec:orgf12d16e"
     "lem:var-energy"
     "prop:holo-harmonic"
     "eq:tangent-exp"
@@ -76,7 +76,7 @@
     "prop:calculs-pullback-tangent"
     "sec:org75bf29d"
     "lem:calculs-Q-pullback"
-    "sec:orgf12d16e"
+    "sec:org46a453e"
     "cor:signed-curvature"
     "sec:orgde0028d"
     "sec:org46dcaf2"
@@ -114,13 +114,19 @@
     "eq:sym-red-beta"
     "eq:first-order-w"
     "rem:hamilton-alg-rig"
-    "sec:orgfee8dbb"
+    "sec:orge2b6d3a"
     "sec:org15ff97e"
     "thm:den-pot"
     "eq:den-pot-est"
     "thm:den-kin"
     "eq:den-kin-est"
-    "sec:org2321cb3")
+    "eq:den-kin-1"
+    "eq:den-kin-2"
+    "sec:org2321cb3"
+    "thm:energy-cons"
+    "thm:int-den-kin"
+    "thm:int-den-pot"
+    "cor:bound-2-2")
    (LaTeX-add-bibliographies
     "../res/Stage2018")
    (LaTeX-add-amsthm-newtheorems
