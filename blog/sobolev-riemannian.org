@@ -7,9 +7,10 @@
 #+SETUPFILE: ../res/mathsetup.org
 #+INCLUDE: ../res/include.org
 
-
+#+LATEX:\iffalse
 This post is the first part of my reading note for cite:aubin_nonlinear_1998. The second
 part is [[file:green-function.org][here]].
+#+LATEX:\fi
 
 In this part, we will first establish the Sobolev imbeddings theorem and the Kondrachov
 theorem for Riemannian manifolds from the Euclidean version of these theorems.

@@ -1,0 +1,926 @@
+In this part, we will first establish the Sobolev imbeddings theorem and the Kondrachov
+theorem for Riemannian manifolds from the Euclidean version of these theorems.
+
+\begin{theorem}[Sobolev Imbedding for \(\mathbb{R}^n\)]
+\label{thm:Sobolev-Rn}
+Given \(k,l\in \mathbb{Z},\ k>l \geq 0\) and \(p,q\in \mathbb{R},\ p>q\geq 1\). Then
+\begin{enumerate}
+\item If \(\frac{1}{p}= \frac{1}{q} - \frac{k-l}{n}\) then 
+\[
+    W^{k,q}(\mathbb{R}^n) \hookrightarrow W^{l,p}(\mathbb{R}^n)
+   \] is a continuous imbedding.
+\item If \(\frac{k-r}{n}> \frac{1}{q}\) then
+\[
+   W^{k,q}(\mathbb{R}^n) \hookrightarrow C^r_B(\mathbb{R}^n)
+   \]
+If \(\frac{k-r-\alpha}{n}\leq \frac{1}{q}\) then 
+\[ 
+   W^{k,q}(\mathbb{R}^n) \hookrightarrow C^{r,\alpha}(\mathbb{R}^n) 
+   \]
+\end{enumerate}
+where \(C^r_B(\mathbb{R^n})\) denotes the space of \(C^r\) functions with bounded
+derivatives up to order \(n\), equipped with the norm \(\| u \|_{C^r_B} = \max_{l\leq
+r}\sup|\nabla^l u|\), and \(C^{r,\alpha}\) is the subspace of \(C^r_B\) of functions
+whose \(r^{\rm th}\)-derivative is \(\alpha\)-Holder, equipped with the norm \(\|
+u\|_{C^r,\alpha} = \| u \|_{C^r_B} + \sup_{P\ne Q}\{ \frac{u(P) - u(Q)}{d(P,Q)^\alpha} \}\).
+\end{theorem}
+
+\begin{theorem}[Kondrachov for \( \Omega\subset \mathbb{R}^n \)]
+\label{thm:Kondrachov-Rn}
+Let \(\Omega\subset \mathbb{R}^n\) be a bounded open subset with regular boundary and
+let \(k\in \mathbb{Z}_{\geq 0}\) and \(p,q\in \mathbb{R}_{>0}\) be such that
+\(1\geq \frac{1}{p} > \frac{1}{q} - \frac{k}{n} > 0\) then
+\begin{enumerate}
+\item The imbedding \(W^{k,q}(\Omega) \hookrightarrow  L^p(\Omega)\) is compact.
+\item The imbedding \(W^{k,q}(\Omega) \hookrightarrow  C^\alpha(\bar\Omega)\) is compact if
+\(k-\alpha > \frac{n}{q}\) where \(0\leq \alpha < 1\).
+\item The imbeddings \(W_0^{k,q}(\Omega) \hookrightarrow  L^p(\Omega)\) and \(W_0^{k,q}(\Omega) \hookrightarrow C^\alpha(\bar\Omega)\) are compact, where \(W_0^{k,q}(\Omega)\) denotes the closure of \(C_c^\infty(\Omega)\) in \(W^{k,q}(\Omega)\), i.e. the subspace of functions whose trace vanishes on the boundary
+of \(\Omega\).
+\end{enumerate}
+\end{theorem}
+
+Theorem \ref{thm:Sobolev-Rn} will be generalised for complete manifolds with bounded curvature and
+injectivity radius, while Theorem \ref{thm:Kondrachov-Rn} holds for compact Riemannian manifolds.
+
+The generalisation will be done in 2 steps
+\begin{enumerate}
+\item Compare the volume form of the Riemannian metric \(g\) near a point and
+that of the Euclidean metric on the tangent space at that point. Theorem
+\ref{thm:vol-comparison} gives an equivalent between the integral under \(g\) and the integral
+under Euclidean metric via the exponential map.
+\item Reasonably use partition of unity to establish global results from local results (the
+Euclidean case). We will need a covering lemma (Calabi's lemma), which essentially reduces to a
+combinatorial result (Vitali's covering lemma).
+\end{enumerate}
+
+Finally, we will apply imbedding theorems to solve the equation \(-\Delta u = f\) on a
+Riemannian manifold when \(f\) is square-integrable.
+\section{Quick recall of Jacobi fields, Index inequality}
+\label{sec:orgc838712}
+\begin{definition}
+A \textbf{Jacobi} field is a field \(Y\) defined along a geodesic \(\gamma(t)\) such that
+\begin{equation}
+\label{eq:jacobi-field}
+ \frac{D^2}{dt^2}Y(t) + R(Y(t),\dot\gamma(t))\dot\gamma(t) = 0
+\end{equation}
+where \(R\) denotes the Riemann curvature tensor.
+\end{definition}
+
+\begin{remark}
+\label{rem:obvious-jacobi}
+\begin{enumerate}
+\item Since \eqref{eq:jacobi-field} is linear, a Jacobi field is uniquely defined given \(Y(t_0)\) and \(\dot Y(t_0)\).
+\item If \(Y(0) \perp \dot\gamma(0)\) and \(\dot Y(0) \perp \dot\gamma(0)\) then \(\dot Y(t)
+   \perp \dot\gamma(t)\) for all \(t\).
+\item If \(Y,Z\) are Jacobi fields along \(\gamma\) then 
+\[
+    \langle Y, \dot Z \rangle - \langle \dot Y, Z \rangle = \const
+   \]
+In particular, if \(Y,Z\) vanish at a same point \(p_0\) in \(\gamma\) then
+\(\langle Y,\dot Z \rangle = \langle \dot Y, Z \rangle\) on \(\gamma\).
+\end{enumerate}
+\end{remark}
+
+
+There are two ways to interpret Jacobi fields:
+\begin{enumerate}
+\item Jacobi fields are derivative of exponential maps
+\item Jacobi fields are minimisers of Index form, i.e. the variation of second other of
+length.
+\end{enumerate}
+
+The first interpretation is the content of the following Proposition.
+
+\begin{proposition}
+\label{prop:jacobi-exp}
+Let \(Y(t) = D \exp_p(tu). t\xi\) be a vector field defined on a geodesic \(\gamma(t) =
+\exp_p tu\). Then \(Y\) satisfies
+\begin{equation}
+\label{eq:jacobi-exp}
+\begin{cases}
+Y(0) = 0, \dot Y(0) = \xi,  \\
+\ddot Y + R(Y,\dot \gamma)\dot\gamma = 0,
+\end{cases}
+\end{equation}
+hence a Jacobi field.
+\end{proposition}
+
+In concrete term, denote by \(\psi\) the exponential function at \(p\in M\) and \(q=\gamma(r) = \exp_p r\dot\gamma(0)\), then
+Proposition \ref{prop:jacobi-exp} says that if the Jacobi field \(Y\) vanishes at
+\(p =\gamma(0)\), i.e. \(Y(0) = 0\) then \(Y(r)\) at \(\gamma(r)\) is defined as
+follow: pull-back \(\dot Y (0)\) by \(\psi\), transport parallelly, w.r.t to the Euclidean
+metric of \(T_pM\), \(\psi^*\dot Y(0)\)
+from \(0\) to \(X_0 = \psi^{-1} (q)\), then push-forward by \(\psi\), one obtains \(Y(r)\). See Figure \ref{fig:jacobi-exp}.
+
+\label{fig:jacobi-exp}
+\begin{figure}[htbp]
+\centering
+\includesvg[width=.9\linewidth]{../img/svg/jacobi-exp}
+\caption{Jacobi fields and exponential maps.}
+\end{figure} 
+
+
+
+Since Jacobi fields are derivatives of exponential maps, one can rephrase the phenomenon
+of cut-locus by Jacobi fields. Historically, a point \(q\) on a Riemannian manifold
+is said to be a \textbf{conjugate} point of \(p\) if there exists, along a geodesic connecting them, a Jacobi
+field vanishing on both \(p\) and \(q\). This means that the exponential map with
+origin in \(p\) degenerates at a preimage of \(q\). One can also prove that if \(q\)
+is in the cut-locus of \(p\) then at least one of the following situation occurs
+\begin{enumerate}
+\item \(q\) is a conjugate point of \(p\).
+\item There exists 2 minimising geodesic from \(p\) to \(q\).
+\end{enumerate}
+
+
+
+For another interpretation of Jacobi fields, note that given a geodesic \(\gamma\) and a
+vector field \(Z\) defined along \(\gamma\), then the first variation of length when
+one varies \(\gamma\) by \(Z\) is 0 and the second variation can also be calculated
+without difficulty.
+
+\begin{proposition}[Second variation of length]
+\label{prop:index-form-variation}
+Let \(\gamma:[0,r] \longrightarrow M\) be a geodesic and \(Z\) be a vector field along \(\gamma\) that is
+orthogonal to \(\dot\gamma\) at every point. Denote by \(L_\lambda\) length of the
+curve \(t\mapsto \exp_{\gamma(t)}\lambda Z\) for \(\lambda \ll 1\), then one has
+\begin{equation}
+\label{eq:second-var}
+ \restr{\frac{d^2}{d\lambda^2}L_\lambda}{\lambda = 0} = I(Z):=   \int_0^r \left( \|Z(t)\|^2 + \langle R(\dot\gamma(t), Z(t))\dot\gamma(t), Z(t) \rangle \right) dt
+\end{equation}
+\end{proposition}
+
+\begin{definition}
+Let \(\gamma:[0,r] \longrightarrow M\) be a geodesic and \(Z\) be a orthogonal vector
+field along \(\gamma\). The \textbf{Index form} \(I(Z)\) of \(Z\) is defined by the RHS of \eqref{eq:second-var}.
+\end{definition}
+
+\begin{remark}
+The curvature term in \eqref{eq:second-var} is \(K(\dot\gamma,Z)\|Z\|^2\) where \(K\) denotes the
+sectional curvature of \(M\).
+\end{remark}
+
+Jacobi fields can be seen as the unique minimiser of the Index form among vector fields
+defined on a geodesic \(\gamma:[0,r] \longrightarrow M\) with the same value at \(\gamma(0)\) and \(\gamma(r)\).
+
+\begin{theorem}[Index inequality]
+\label{thm:index-ineq}
+Let \(\gamma: [0,r] \longrightarrow M^n\) be a geodesic, \(p=\gamma(0)\) and \(q=\gamma(r)\) such that \(p\) has no conjugate point along \(\gamma\), or
+equivalently the exponential map in direction \(\dot\gamma(0)\) does not degenerate.
+\begin{itemize}
+\item Let \(Z\) be a (piecewise smooth) vector field along \(\gamma\), orthogonal to \(\dot\gamma\) with \(Z(p)=0\).
+\item Let \(Y\) be the Jacobi field along \(\gamma\) with \(Y(0) = 0, Y(r) = Z(r)\) and
+\(Y\) is orthogonal to \(\dot\gamma\).
+\end{itemize}
+Then \(I(Y) \leq I(Z)\) and equality occurs if and only if \(Y\equiv Z\).
+\end{theorem}
+
+\begin{remark}
+\label{rem:jacobi-existence}
+Note that such Jacobi field \(Y\) exists and is unique. Firstly, by the second point of Remark
+\ref{rem:obvious-jacobi}, one only need \(Y(p) =0\) and \(\dot Y(0) \perp\gamma(0)\). The Jacobi fields satisfying these conditions form a vector space of dimension \(n-1\) (by Cauchy problem, \(\dot Y(0)\) is to be chosen in the orthogonal
+space of \(\gamma(0)\)). Since the exponential map does not degenerate on the preimage
+of \(\gamma\), each \(\dot Y(0)\) corresponds one-to-one with an \(Y(r)\) by
+Proposition \ref{prop:jacobi-exp}. The correspondence is linear, with source and
+target spaces of same dimension (\(n-1\)), it follows that each \(Z(r)\perp \gamma(r)\) gives uniquely a Jacobi field \(Y\).
+
+More concretely, let \(\dot V_i(0)\) be a basis of \(\dot\gamma(0)\) in \(T_pM\) and
+\(V_i\) be the corresponding Jacobi fields with \(V_i(0)=0\), then
+\begin{enumerate}
+\item \(\{V_i(t)\}_{i=\overline{1,n-2}}\) is a basis of \(\dot\gamma(t)\) in \(T_{\gamma(t)}M\), where the orthogonal part follows from Remark \ref{rem:obvious-jacobi}
+and the linear independence is by the non-degeneration of since \(\exp_p\).
+\item If \(Z(t) = \sum f_i(t)V_i(t)\), where \(f_i\) are functions on \([0,r]\), then \(Y(t) = \sum_i f_i(r)V_i(t)\).
+\end{enumerate}
+\end{remark}
+
+\begin{proof}
+As Remark \ref{rem:jacobi-existence}, let \(Z = \sum_i f_i V_i\) and denote \(W = \sum_i
+\dot f_i V_i\) then
+\[
+ I(Z) = \int_0^r\left( \|W\|^2 + 2 \sum_i f_i \langle \dot V_i, W \rangle + \langle \sum_i
+f_i\dot V_i,\sum_j f_j\dot V_j \rangle + \langle R(\dot\gamma,\sum f_i V_i)\dot\gamma,\sum
+f_j V_j \rangle\right)dt
+\]
+By definition of Jacobi field, \(R(\dot\gamma, V_i)\dot\gamma = \ddot V_i\), hence the
+curvature term is
+\begin{equation*}
+\begin{split}
+\int_0^r \left\langle R(\dot\gamma,\sum f_i V_i)\dot\gamma,\sum f_j V_j \right\rangle &=\sum_{i,j}\int _0^r f_i f_j \langle \ddot V_i, V_j \rangle dt =\sum_{i,j}\int_0^r f_if_j \left(\frac{d }{dt} \langle \dot V_i, V_j \rangle - \langle \dot V_i,\dot V_j \rangle\right)dt\\
+			 	       &= -\int_0^r \left\langle \sum_i f_i \dot V_i,\sum_j f_j \dot V_j \right\rangle dt + \langle \dot Y(r), Y(r) \rangle - 2\sum_{i,j}\int_0^r f_i\dot f_j \langle \dot V_i,V_j \rangle dt
+\end{split}   
+\end{equation*}
+where for the second line, we integrated by part and used the fact that
+\(\langle \dot V_i, V_j \rangle = \langle V_i, \dot V_j \rangle\) (point 3 of Remark
+\ref{rem:obvious-jacobi}). Therefore, one has
+\[
+ I(Z) = \int_0^r \|W\|^2dt + \langle \dot Y(r), Y(r) \rangle.
+\]
+In particular \(I(Y) = \langle \dot Y(r), Y(r) \rangle \leq I(Z)\). The equality occurs
+if and only if \(W\equiv 0\), i.e. \(Z\equiv Y\).
+\end{proof}
+
+\section{Local comparison with space forms}
+\label{sec:orgb09549f}
+
+Our goal in this section is to prove the following Comparison Theorem. Before going to the
+precise statement, let us explain the notation.
+
+\paragraph{Notation.}
+\label{sec:orge13bced}
+Given \(M^n\) a Riemannian manifold and \(B(p,r_0)\) be the geodesic ball centered in
+\(p\in M\), of radius \(r_0<\delta_p\) the injectivity radius at \(p\), equipped
+with the pullback metric of \(g\) via exponential map \(\exp_p\), which can be expressed in polar geodesic coordinates
+as 
+\[
+(ds)^2 = (dr)^2 + r^2 g_{\theta^i\theta^j}(r,\theta) d\theta^i d\theta^j
+\]
+where \(\frac{\partial}{\partial\theta^1},\dots,\frac{\partial}{\partial\theta^{n-1}}\)
+is an Euclidean orthonormal frame of the sphere
+\(r\mathbb{S}^{n-1}\). We note \(|g_\theta| = \det(g_{\theta^i\theta^j})_{ij}\) and
+\(g_{\theta\theta}\) be any component \(g_{\theta^i\theta^i}\) for \(i=1,\dots,n-1\).
+
+Abusively, we say that \(\frac{\sin \alpha r}{\alpha} = r\) if \(\alpha = 0\) and \(\sin\alpha r =  \frac{1}{i}\sinh i\alpha r\) and \(\cos \alpha r = \cosh i\alpha r\) if \(\alpha\in i \mathbb{R}\).
+
+\begin{remark}
+\label{rem:hairy-ball}
+Note that the frame \(\{ \frac{\partial}{\partial\theta^i}\}_i\) may not be global, for
+example when \(n\) is odd (Hairy ball theorem). However the quantity \(|g_\theta|\) is
+globally defined (except at \(p\)), in fact \(|g_\theta| = r^{-2n+2}|g|\).
+\end{remark}
+
+\begin{theorem}[comparison of volume forms]
+\label{thm:vol-comparison}
+Let \(M^n\) be a Riemannian manifold with
+\begin{itemize}
+\item sectional curvature \(-a^2 \leq K\leq b^2\)
+\item Ricci curvature \({\rm Ric} \geq a' = (n-1)\alpha^2\) where \(\alpha\) can be real or
+purely imaginary.
+\end{itemize}
+Then with the notation of the last paragraph, for all \(r \in (0, r_0)\),
+\begin{enumerate}
+\item If \(r<\frac{\pi}{b}\) then
+\begin{equation}
+\label{eq:comp-1}
+\begin{split}
+ \frac{\partial}{\partial r}\log   \sqrt{g_{\theta\theta}} &\geq \frac{\partial}{\partial r}\log \frac{\sin br}{r}\\  
+  g_{\theta\theta} &\geq \left(\frac{\sin br}{br}\right)^2
+\end{split}   
+\end{equation}
+\item One has
+\begin{equation}
+\label{eq:comp-2}
+\begin{split}
+ \frac{\partial}{\partial r}\log   \sqrt{g_{\theta\theta}} &\leq \frac{\partial}{\partial r}\log \frac{\sinh ar}{r}\\  
+ g_{\theta\theta} &\leq \left(\frac{\sinh ar}{ar}\right)^2
+\end{split}   
+\end{equation}
+\item One has
+\begin{equation}
+\label{eq:comp-3}
+\begin{split}
+ \frac{\partial}{\partial r}\log   \sqrt{g_{\theta}} &\leq (n-1) \frac{\partial}{\partial r}\log \frac{\sin \alpha r}{r} \leq -a' \frac{r}{3}\\  
+  \sqrt{|g_{\theta}|} &\leq \left(\frac{\sin \alpha r}{\alpha r}\right)^{n-1}
+\end{split}   
+\end{equation}
+\item If \(r<\frac{\pi}{b}\) then
+\begin{equation}
+\label{eq:comp-4}
+\begin{split}
+ \frac{\partial}{\partial r}\log   \sqrt{g_{\theta}} &\geq (n-1) \frac{\partial}{\partial r}\log \frac{\sin b r}{r}\\  
+ \sqrt{|g_{\theta}|} &\geq \left(\frac{\sin br}{br}\right)^{n-1}       
+\end{split}   
+\end{equation}
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+\label{rem:on-vol-comp}
+\begin{enumerate}
+\item The moral of the estimates is that if \(r\ll 1\) then the volume form of \(g\),
+viewed in the tangent space at \(p\), is equivalent to the Euclidean volume form of \(T_pM\).
+\item One can always choose \(\alpha\in i \mathbb{R}\) even when the Ricci curvature is
+positive, and RHS of \eqref{eq:comp-3} will be a hyperbolic function and the estimate is
+not as sharp as if one choose \(\alpha\in \mathbb{R}\), but it works to prove that
+the two volume forms are equivalent when \(r \ll 1\) .
+\end{enumerate}
+\end{remark}
+
+\begin{remark}
+\label{rem:cor-vol-comp}
+A few consequences of Theorem \ref{thm:vol-comparison}:
+\begin{enumerate}
+\item For \(\delta\) small, the metric volume form \(dV\) is \emph{equivalent} to the
+Euclidean volume form of tangent space: there exists \(C(\delta)>0\) converging to \(1\) as \(\delta \to 0\) such that \(C(\delta)^{-1}dE \leq  dV \leq C(\delta) dE\).
+\item Let \(f\) be a smooth function defined on \(B(p,\delta)\) then the gradient of \(f\) w.r.t the metric \(g\) is closed to the Euclidean gradient of \(f\) viewed in
+the chart (namely \(f\circ \exp_p\)):
+\begin{equation*}
+\begin{split}
+\|\nabla f\|_g &= \left|\frac{\partial f}{\partial r}\right|^2 + \sum_\theta \left|\frac{\partial f}{\partial \theta}(r,\theta)\right|^2 g_{\theta\theta}\\ 
+\|\nabla (f\circ\exp_p)\|_E &= \left|\frac{\partial f}{\partial r}\right|^2 + \sum_\theta \left|\frac{\partial f}{\partial \theta}(r,\theta)\right|^2
+\end{split}   
+\end{equation*}
+\item Combining the last 2 points, one can see that if \(f\) is supported in a small
+geodesic ball \(B(p,\delta)\), then the \(L^p\)-norm of \(\nabla f\) is closed to
+the Euclidean \(L^p\) norm of \(\nabla (f\circ \exp_p)\) if \(\delta\) is
+sufficiently small.
+\end{enumerate}
+\end{remark}
+
+
+
+The ideal to prove Theorem \ref{thm:vol-comparison} comes from Proposition
+\ref{prop:jacobi-exp} and Figure \ref{fig:jacobi-exp}. Given a point \(q\in M\) of distance
+\(r< r_0\) from \(p\), then denote by \(Y\) the Jacobi field along the unique
+geodesic connecting \(p\) and \(q\) such that \(Y\) vanishes at \(p\) and 
+\(Y(r) = \frac{\partial}{\partial \theta}\) at \(q\), then with \(\psi =\exp_p\) as in Figure \ref{fig:jacobi-exp},
+\begin{equation}
+\label{eq:comp-norm}
+\begin{split}
+\| Y(r)\|^2  &= \| \psi_{X_0}^* Y(r) \|^2 = \| \psi_0^* \dot Y(0)\|^2_{X_0}\\
+     &= r^2 g_{\theta\theta} \|\psi_0^*\dot Y(0)\|_0^2 = r^2 g_{\theta\theta} \|\dot Y(0)\|^2
+\end{split}   
+\end{equation}
+where we used the fact that
+\[ g\left(\restr{\frac{\partial}{\partial \theta^i}}{r
+\mathbb{S}^{n-1}},\restr{\frac{\partial}{\partial \theta^j}}{r \mathbb{S}^{n-1}}\right) = r^2
+g\left(\restr{\frac{\partial}{\partial
+\theta^i}}{\mathbb{S}^{n-1}},\restr{\frac{\partial}{\partial \theta^j}}{\mathbb{S}^{n-1}}\right)
+= r^2 g_{\theta_i\theta_j} \].
+
+Take logarithm and derive \eqref{eq:comp-norm} w.r.t \(r\), using the fact that
+\(\|Y(r)\| = 1\), one obtains
+\begin{equation}
+\label{eq:comp-norm-ap}
+\langle \dot Y(r), Y(r) \rangle = \frac{1}{r} + \frac{\partial}{\partial r}\log g_{\theta\theta}
+\end{equation}
+It comes to estimate \(\langle \dot Y(r), Y(r) \rangle\), which is in fact the Index
+form of \(Y\). The following lemma give an estimate of the Index form in case of bounded
+sectional curvature, by comparing the it with the Index form under a metric with constant
+sectional curvature. 
+
+\begin{lemma}
+\label{lem:compare-const-sec-curv}
+Suppose that the sectional curvature \(K \leq b^2\), then for every Jacobi field \(Y\)
+defined a long a geodesic \(\gamma: [0,r] \longrightarrow M\) with \(r< \frac{\pi}{2b}\) such that \(Y(0)=0, Y\perp \dot\gamma\). Then
+\[
+ I(Y) \geq I_b(Y):=\int_0^r \| \dot Y\|^2 - b \|Y\|^2 \geq b\cot br \|Y(r)\|^2
+\]
+\end{lemma}
+
+\begin{proof}
+By the curvature bound, \(I(T) \geq \int_0^r \| \dot Y\|^2 -b^2 \|Y\|^2=:I_b(Y)\). The
+quantity \(I_b(Y)\) is exactly the Index form of \(Y\) along \(\gamma\) if the
+sectional curvature in constantly \(b\). To be precise, we equip the tubular
+neighborhood of \(\gamma\) a metric \(g'\) of constant sectional curvature \(K=b^2\)
+such that normal vectors of \(\gamma\) w.r.t the metric \(g\) remain normal under \(g'\). Such \(g'\) is in fact easy to find since: 
+\begin{enumerate}
+\item The tubular neighborhood is diffeomorphic to
+\([0,r]\times \mathbb{B}^{n-1}\) where the diffeomorphism (says \(\iota_1\)) is actually isometry at points
+of \(\gamma\), which are mapped to \([0,r]\times \{0\}\);
+\item Also, there exists a diffeomorphism \(\iota_2\) mapping \([0,r]\times\mathbb{B}^{n-1}\) to a tubular neighborhood of an arc \(\tilde\gamma\) of length \(r\) on the grand
+circle of \(\mathbb{S}^n_{1/b}\) which is isometry on every point of
+\([0,r]\times \{0\}\). This is because \(r < \frac{\pi}{2b} < 2\pi \frac{1}{b}\) the length
+of the grand circle.
+\item One now can identify a tubular neighborhood of \(\gamma\) in \(M\) and that of \(\tilde \gamma\) in \(\mathbb{S}^n_{1/b}\) by \(\iota = \iota_2\circ\iota_1\). Take
+\(g'\) to be the pullback of the Eucidean metric on \(\mathbb{S}^n_{1/b}\), which is of sectional curvature \(b^2\).
+\end{enumerate}
+
+Now under the metric \(g'\), \(Y\) is no longer a Jacobi field, but it is still
+orthogonal to \(\gamma\), denote by \(\tilde Y\) the Jacobi field (under \(g'\)) on
+\(\gamma\) that vanishes at \(\gamma(0)\) and has the same value as \(Y\) at \(\gamma(r)\). By Theorem \ref{thm:index-ineq} (Index inequality), one has \(I_b(Y)
+\geq I_b(\tilde Y)\). The latter can be computed directly, as the field \(\iota_*\tilde Y\) is given by
+\[
+ s\mapsto (s,\beta^1\sin bs, \dots, \beta^{n-1}\sin bs), \quad s\in [0,r]
+\]
+where \((\beta^1,\dots,\beta^{n-1})\) is the coordinates of \({\iota_1}_* Y(r)\) in
+\([0,r]\times \mathbb{B}^{n-1}\), hence in this coordinates (also called \emph{Fermi coordinates}), \(\tilde Y(s) = \left(s,\frac{\sin bs}{\sin br}Y(r)\right)\) . Hence
+\(I_b(\tilde Y) = b\cot br \|Y(r) \|^2\).
+\end{proof}
+
+Now the remaining part of the proof of Theorem \ref{thm:vol-comparison} is straightforward.
+
+\begin{proof}[Proof of Theorem \ref{thm:vol-comparison}]
+From \eqref{eq:comp-norm-ap} and Lemma \ref{lem:compare-const-sec-curv}, one has 
+\[
+ \frac{\partial}{\partial r} \log \sqrt{g_{\theta\theta}} = I(Y) - \frac{1}{r} \geq b\cot br -\frac{1}{r}
+\]
+This gives the estimates in \eqref{eq:comp-1}.
+
+For \eqref{eq:comp-2}, the sign situation fits Theorem \ref{thm:index-ineq} better, and one
+does not need to explicitly evoke the space forms (as Lemma
+\ref{lem:compare-const-sec-curv}). It suffices to see that
+\begin{equation*}
+\begin{split}
+ \langle \dot Y(r), Y(r) \rangle &=I(Y) \leq I\left(\frac{\sinh at}{\sinh ar}Y(r)\right)\\
+ 	      	    &\leq a^2\left(\int_0^r \left(\frac{\cosh at}{\sinh ar}\right)^2 + \int_0^r \left(\frac{\sinh at}{\sinh ar}\right)^2 dt  \right)\|Y(r)\|^2\\
+		    &= a\coth ar \|Y(r)\|^2
+\end{split}   
+\end{equation*}
+
+The estimates in  \eqref{eq:comp-3} comes from the comparison between \(Y\) and the
+field  \(t\mapsto \frac{\sin \alpha t}{\sin \alpha r}Y(r)\). Note that the field is
+well-defined even when \(\alpha \in \mathbb{R}_{>0}\) (the hyperbolic case (\(\alpha\in
+i \mathbb{R}_{>0}\) being obvious). This in fact comes from the following fact:
+\begin{theorem}[Myers]
+\label{thm:myers}
+Let \(M^n\) be a connected, complete manifold with \({\rm Ric}\geq (n-1)\alpha^2 >0\)
+then
+\begin{enumerate}
+\item \(M\) is compact.
+\item The diameter of \(M\) is at most \(\pi/\alpha\).
+\end{enumerate}
+\end{theorem}
+
+Taking sum of inequalities \(I(Y_{i}) \leq I(\frac{\sin \alpha t}{\alpha
+r}Y_i(r)\) where \(Y_i\) are Jacobi fields vanishing at \(\gamma(0)\) and
+whose values at \(\gamma(r)\) are \(\frac{\partial}{\partial \theta^i}\) respectively,
+one has
+\begin{equation*}
+\begin{split}
+\sum_{i=1}^{n-1} \langle \dot Y_i(r), Y_i(r) \rangle &\leq	(n-1)\alpha^2 \int_0^r\left( \frac{\cos \alpha t}{\sin \alpha r}\right)^2 dt -\sum_{i=1}^{n-1}\int_0^r R_{r\theta^ir\theta^i}\left(\frac{\sin \alpha t}{\sin \alpha r}\right)^2 dt\\
+		 	 &\leq (n-1)\alpha\cot \alpha r
+\end{split}   
+\end{equation*}
+where for the second line, we used the fact that \(\sum_i R_{r\theta^i r\theta^i}={\rm
+Ric}_{rr}\geq (n-1)\alpha^2\). Hence 
+\begin{equation*}
+\begin{split}
+\frac{\partial}{\partial r}\log\sqrt{|g_\theta|}&= \frac{\partial}{\partial
+r}\sum_i\log\sqrt{|g_{\theta^i\theta^i}|} = \sum_i \langle \dot
+Y_{\theta^i},Y_{\theta^i}\rangle - \frac{n-1}{r}\\
+ 				 &\leq (n-1)\left(\alpha\cot \alpha r - \frac{1}{r}\right) = (n-1) \frac{\partial}{\partial r}\log \left( \frac{\sin \alpha r}{r}\right)
+\end{split}   
+\end{equation*}
+
+The proof of \eqref{eq:comp-4} is essentially the same as \eqref{eq:comp-3} where one uses
+\eqref{eq:comp-1} for a lower bound of \(I(Y_i) = \langle \dot Y_i(r), Y_i(r) \rangle\).
+\end{proof}
+
+
+As a side note, Lemma \ref{lem:compare-const-sec-curv} can also be used to prove that a small geodeosic ball
+is geodesically convex.
+
+\begin{proposition}
+\label{prop:geodesic-convex}
+Let \(M^n\) be a Riemannian manifold with sectional curvature \(K\leq b^2\) and
+injectivity radius \(\delta >0\). Then for every \(r<\min\{\frac{\delta}{2},
+\frac{\pi}{4b}\}\), any geodesic ball \(B(p,r)\) is geodesically convex, i.e. any two
+points is connected by a geodesic curve inside the ball.
+\end{proposition}
+
+\begin{proof}
+We first claim that
+\begin{lemma}
+Given two point \(p,q\) of distance \(d(p,q) = r < \frac{\pi}{2b}\) and \(\Gamma_{p,q}\) the geodesic connecting the them. Let \(\gamma\) be a geodesic staring
+from \(q\) with a velocity vector perpendicular to \(\Gamma_{p,q}\), then there exists
+a neighborhood of \(q\) inside of which the \(\gamma\) intersects \(\Gamma_{p,q}\)
+only at \(q\).
+\end{lemma}
+
+First, let us prove that the Lemme implies Proposition \ref{prop:geodesic-convex}. If \(r\) small as in the Proposition and \(q_1, q_2\in B(p,r)\) then
+\begin{enumerate}
+\item There exists a minimal geodesic \(\Gamma_{q_1,q_2}\) connecting \(q_1, q_2\).
+\item By triangle inequality, \(\Gamma_{q_1, q_2}\subset B(p,2r)\): every point \(q\in
+   \Gamma_{q_1,q_2}\) has to be \(d(q_1,q_2)/2\)-closed to one \(q_i\), hence \(d(p,q)\leq d(p,q_i) + d(q_i,q) \leq r + \frac{2r}{2} = 2r\).
+\end{enumerate}
+Let \(T \in \Gamma_{q_1, q_2}\) be the point minimising the distance to \(p\). It
+suffices to show that \(T\) is one of the \(q_i\). For the sake of contradiction, if
+\(T\) is strictly in the interior of \(\Gamma_{q_1,q_2}\) then
+\begin{enumerate}
+\item The geodesic \(\Gamma_{p,T}\) connecting \(p\) and \(T\) is orthogonal to \(\Gamma_{q_1,q_2}\) at \(T\). It is not difficult to prove that if the two are not
+orthogonal then there exist \(T'\in \Gamma_{q_1,q_2}\) and \(S\in \Gamma_{p,T}\),
+both being near to \(T\), such that \(d(p,T) > d(p, S) + d(S,T') \geq d(p,T')\).
+\item The ball \(B(p,d(p,T))\cap \Gamma_{q_1,q_2} \supset \Gamma_{q_1,q_2}\).
+\end{enumerate}
+
+These contradict the Lemma and prove that \(T\) does not lie in the interior.
+
+It remains to prove the Lemma. Let \(Y\) be the Jacobi field which vanishes at \(p\)
+and whose value at \(q\) is \(\dot\gamma\), then by Index inequality (Theorem
+\ref{thm:index-ineq}), it suffices to prove that \(I(Y)>0\), because any variation of \(\Gamma_{p,q}\) by orthogonal vector field \(Z\) along \(\gamma\) has \(I(Z) >0\) hence only increases the length,
+according to Proposition \ref{prop:index-form-variation}. But by Lemma
+\ref{lem:compare-const-sec-curv} gives
+\[
+ I(Y) \geq I_b(Y) \geq b\cot br \| Y(q) \|^2 >0 \text{ if } r < \frac{\pi}{2b}.
+\]
+\end{proof}
+
+\section{Some covering lemmas}
+\label{sec:org716e3ab}
+The goal of this section is to prove a covering lemma for Riemannian manifolds with
+injectivity radius \(\delta_0>0\) and bounded curvature (Lemma
+\ref{lem:uni-loc-finite-cover}). We start with a covering lemma that not yet requires
+curvature bound.
+
+\begin{lemma}[Calabi]
+\label{lem:calabi}
+Let \(M^n\) be a Riemannian manifold with injectivity radius \(\delta_0 >0\), then for
+all \(\delta \in (0,\delta_0)\), there exists \(0 < \gamma < \beta \leq\delta\) and a
+partition of \(M = \bigsqcup_{i\in I}\Omega_i\) and \(p_i\in \Omega_i\) such that
+\[
+ B(p_i,\gamma) \subset \Omega_i \subset B(p_i,\beta)
+\]
+Moreover, one can choose \(\gamma = \beta/10\) and \(\beta=\delta\).
+\end{lemma}
+
+\begin{proof}
+Note that it is enough to have 
+\begin{equation}
+\label{eq:lem:calabi}
+\begin{cases}
+\bigcup_i B(p_i,\beta) = M,\quad  2\gamma < \beta \\
+B(p_i, 2\gamma) \text{ are disjoint}
+\end{cases}
+\end{equation}
+In fact, let \(\Omega'_i = B(p_i,\beta)\setminus \cup_{j\ne i}B(p_j,\gamma)\) then 
+\begin{cases}
+B(p_j,\gamma) \cap \Omega_i' = \emptyset, B(p_i,\gamma) \subset \Omega_i'\subset B(p_i,\beta) \\
+\bigcup_i \Omega_i' = M 
+\end{cases}
+(for \(\bigcup_i\Omega_i'=M\): If \(x\in M\) satisfies \(x\in B(p_j,\gamma)\subset
+B(p_i,\beta)\) then there is no other \(j'\ne j\) such that \(x\in B(p_{j'},\gamma)\), hence \(x\in \Omega_{j}\). Now choose 
+\[
+ \Omega_1 = \Omega_1', \Omega_2 = \Omega_2'\setminus\Omega_1,\dots,\Omega_n =
+\Omega_n'\setminus \cup_{i=1}^{n-1}\Omega_i,\dots
+\]
+
+For the existence of \eqref{eq:lem:calabi}, use the following Vitali covering lemma, whose
+proof is purely combinatorial in nature.
+
+\begin{lemma}[Vitali covering, Infinite version]
+\label{lem:vitali-cover}
+Let \(\{B_j: j\in J\}\) be a collection of balls in a metric space such that 
+\[
+ \sup \{ {\rm rad}(B_j): j\in J \} < +\infty
+\]
+where \({\rm rad}\) denotes the radius, then there exists a countable subfamily \(J'\subset J\) such that \(\{B_j: j\in J'\}\) are disjoint and 
+\[
+ \cup_{j\in J}B_j\subset \cup_{j\in J'}5 B_j. 
+\]
+\end{lemma}
+
+It remains to apply the lemma for the covering \(M= \cup_{x\in M}B(x,2\gamma)\), which
+also allows us to choose \(\gamma = \beta/10\) and \(\beta=\delta\).
+\end{proof}
+
+
+
+
+
+\begin{lemma}[Uniformly locally finite covering]
+\label{lem:uni-loc-finite-cover}
+Let \(M^n\) be a Riemannian manifold with injectivity radius \(\delta_0>0\) and
+bounded curvature, then for all \(\delta <\delta_0\) sufficiently small, there exists a \textbf{uniformly locally
+finite covering} of \(M\) by balls \(\{B(p_i,\delta)\}_{i\in I}\), i.e. there exists
+\(k(\delta)\in \mathbb{Z}_{>0}\) such that for all \(q\in M\), there exists a
+neighborhood of \(q\) that intersects at most \(k(\delta)\) balls. Moreover, one can
+also require that \(\{B(p_i,\delta/2)\}_{i\in I}\) is still a covering.  
+\end{lemma}
+
+\begin{proof}
+We will apply Lemma \ref{lem:calabi} with \(\beta = \delta/2\) and
+\(\gamma = \beta/10\), then for all \(\delta \ll \delta_0\), the covering
+\(\{B(p_i, 2\beta) \}\) satisfies. In fact, for every \(q\in M\), take
+\(B(q,\delta)\) as a neighborhood of \(q\) then
+\(B(p_i,2\beta)\cap B(q,\gamma)\ne \emptyset\) if and only if
+\(p_i\in B(q,2\beta + \gamma)\) Since the balls \(B(p_i,\gamma)\) are disjoint, the
+number of \(p_i\) in \(B(q,2\beta +\gamma)\) is bounded by
+\[
+k = \frac{\max \vol_g (B_{2\beta+2\gamma})}{\min\vol_g (B_\gamma)} \leq C(\delta)\left(\frac{2\beta+2\gamma}{\gamma}\right)^n
+\]
+where \(\max \vol_g (B_{2\beta+2\gamma})\) and \(\min\vol_g (B_\gamma)\) denote the
+maximum and minimum volume of balls of radius \(2\beta + 2\gamma\) and \(\gamma\),
+respectively. By Theorem \ref{thm:vol-comparison}, for \(\delta < \epsilon(a',b)\) depending on
+the bound \(a'\) and \(b\) of Ricci curvature and sectional curvature, the volume of
+these balls are equivalent to that of Euclidean balls of the same radius. The constant of
+equivalence was denoted by \(C(\delta)\).
+\end{proof}
+
+
+\section{Sobolev imbeddings for Riemannian manifolds}
+\label{sec:org78dcfd1}
+
+The goal of this section is to prove that Sobolev imbeddings are also available for complete Riemannian manifold
+with bounded curvature and strictly positive injectivity radius, that is, the following results.
+
+\begin{theorem}[Sobolev imbeddings]
+\label{thm:sobolev-imbedding}
+Theorem \ref{thm:Sobolev-Rn} holds when one replaces \mathbb{R}\(^{\text{n}}\) by a complete Riemannian
+manifold of dimension \(n\) with bounded curvature (sectional and Ricci) and injectivity radius \(\delta_0 >0\).
+\end{theorem}
+
+The definition of Sobolev spaces as completion of spaces of smooth functions, w.r.t the
+Sobolev norms generalises on Riemannian manifolds, namely, we denote by \(W_0^{k,p}(M)\)
+the completion of \(C_c^\infty(M)\) w.r.t the norm
+\(\|\varphi\|_{W^{k,p}} = \|\varphi\|_{L^p} + \|\nabla \varphi \|_{L^p} + \dots + \|\nabla^k \varphi \|_{L^p}\)
+where \(\|\nabla^l\varphi\|_{L^p}\) are computed as follow: the metric \(g\) induces a
+fiberwise norm for \(l\)-covariant tensors, integrate that of \(\nabla^l \varphi\), one
+obtains \(\|\nabla^l\varphi\|_{L^p}\).
+
+Similarly, the space \(W^{1,p}(M)\) is defined as the completion of \(C^\infty(M)\) w.r.t \(\|\cdot\|_{W^{1,p}}\). 
+
+\begin{remark}
+\label{rem:sobolev-def}
+\begin{enumerate}
+\item Unlike the Euclidean case, one does not define the derivatives term, e.g. \(\nabla_v f\) for \(f\in W^{1,p}(M)\) using integration by part and Riesz representation,
+that is, one does not expect a formular such as \(\int_M (\nabla_v f)\varphi dV = -\int_M
+   f\nabla_v \varphi dV\) since the "boundary term" \(\int_{M}\nabla_v(f\varphi) dV\) does not vanish, even if \(f\varphi \in C_c^\infty(M)\).
+\item The exterior derivative \(df\) can be defined, which is in fact equivalent to de
+Rham's notion of current.
+\item The term \(\nabla^l f\) for \(f\in W^{k,p}(M)\), when needed, can be defined as a \(L^p\) section of \((TM^*)^{\otimes l}\) giving by the \(L^p\) limit of smooth
+sections \(\nabla^l\varphi_i\) for an equivalent class of Cauchy sequence \(\varphi_i\) representing \(f\). The completeness of the space of \(L^p\) sections
+of a vector bundle follows from the result in each trivialising chart and the fact that restriction maps
+commute with the limit.
+\end{enumerate}
+\end{remark}
+
+
+\begin{proposition}[\( W^{1,p} = W_0^{1,p} \)]
+\label{prop:Cc-dense-W1p}
+If \(M\) is complete then \(C_c^\infty(M)\) is dense in \(W^{1,p}(M)\), equivalently \(W^{1,p}(M) = W^{1,p}_0(M)\).
+\end{proposition}
+\begin{proof}
+It suffices to prove that given a function \(\varphi\in C^\infty(M)\), one can
+approximate \(\varphi\) under the norm \(\|\cdot \|_{W^{1,p}}\) by functions in \(C^\infty_c(M)\). Fix \(P\in M\), one uses a cut-off function \(\chi_j\) which is \(1\) on \([0,j]\),
+\(0\) on \([j,\infty]\) and linear inside and defines \(\varphi_j (Q) = \varphi(Q)
+\chi_j(d(Q,P))\). Note that the distance function is only Lipschitz and not necessarily
+smooth (so we did not mind taking a linear cut-off). However, since \(\varphi_j\) is compactly
+support and Lipschitz and we can approximate each \(\varphi_j\) by a sequence in \(C_c^\infty(M)\): Let \(K_j\) be the support of \(\varphi_j\) and \(\{\alpha_i\}_i\) be
+a finite partition of unity subordinating to an open coordinated cover of \(K\). Since
+\(\alpha_i\varphi_j\) is Lipschitz, viewed in a chart, it can be \(W^{1,\infty}\)-approximated by smooth functions, due to the following fact.
+
+\textbf{Fact.} If \(\Omega\subset \mathbb{R}^n\) be a bounded domain with \(\delta \Omega\)
+regular, then \({\rm Lip}(\Omega) = W^{1,\infty}(\Omega)\).
+
+The approximation scheme looks like
+\(\varphi \approx \varphi_j \approx \sum_i \alpha_{i,K_j}\varphi_j \approx\sum_i \psi_{i,j}\)
+where \(\psi_{i,j}\) are smooth and compactly support.
+\end{proof}
+
+\begin{remark}
+The similar results for higher orders are complicated, for example, one can prove that \(W^{2,p}_0 = W^{2,p}\) under the hypothesis of bounded curvature and strictly positive
+injectivity radius. The third order requires extra conditions.
+\end{remark}
+
+The second part of the Theorem \ref{thm:sobolev-imbedding} is local in nature, and therefore easier. We will prove
+this second part by accepting the first one, which we will come back and prove eventually.
+
+For the imbedding
+into \(C^r_B(M)\), it suffices to establish the case \(W^{1,q} \hookrightarrow C^0_B\), the higher order case then follows: If \(\varphi\in W^{k,q}\) then \(\nabla^r\varphi\in W^{k-r,q} \hookrightarrow
+   W^{k-r,q} \hookrightarrow W^{1,\tilde q} \hookrightarrow C^0_B\)
+where \(\frac{1}{n} \geq \frac{1}{\tilde q}\geq \frac{1}{q}-\frac{k-r-1}{n}\). 
+
+Similarly, for the imbedding into \(C^{r,\alpha(M)}\), it suffices to establish the case
+\(W^{1,q} \hookrightarrow C^{0,\alpha}\) for \(\frac{1-\alpha}{n}\geq \frac{1}{q}\).
+
+
+Since \(W^{1,p}(M) = W^{1,p}_0(M)\), it suffices to prove the following Lemma
+\ref{lem:sobolev-case} and Lemma \ref{lem:sobolev-case-holder}.
+
+\begin{lemma}[\( W^{1,q} \hookrightarrow C^0_B \)]
+\label{lem:sobolev-case}
+Let \(M^n\) be a complete Riemannian manifold with injectivity radius \(\delta_0>0\)
+and sectional curvature \(K\leq b^2\), then for all \(\varphi\in C_c^\infty(M)\), one
+has
+\[
+\sup_M |\varphi| \leq C(q) \|\varphi\|_{W^{1,q}},\quad \forall q>n
+\]
+\end{lemma}
+\begin{proof}
+Take \(\delta <\min \{\delta_0, \frac{\pi}{2b}\}\) and let \((r,\theta)\) be the
+geodesic polar coordinate centered at \(P\in M\), then by Theorem
+\ref{thm:vol-comparison}, the ratio of the metric volume form \(dV:= |g|dE\) and the Euclidean
+volume form \(dE\) of \(T_P M\) is \(\sqrt{|g_\theta|}\geq \left(\frac{\sin
+br}{br}\right)^{n-1}\geq (\frac{2}{\pi})^{n-1}\). 
+
+let \(\chi: \mathbb{R}_{\geq 0} \longrightarrow \mathbb{R}\) be a cut-off function which
+is constantly \(1\) near \(0\) and supported in \([0,\delta)\). Then
+\[
+ \varphi(P) = -\int_0^\delta
+\partial_r\left(\varphi(r,\theta)\chi(r)\right)dr,\quad\forall \theta\in \mathbb{S}^{n-1}
+\]
+Integrate w.r.t \(\theta\in \mathbb{S}^{n-1}\), recall that \(\omega_n\) denotes the
+volume of \(\mathbb{S}^{n-1}\):
+\begin{equation*}
+\begin{split}
+ \left|\varphi(p)\right| &\leq (\omega_{n-1})^{-1} \int_B \left| \nabla(\varphi(r,\theta)\chi(r)) \right| r^{1-n}r^{n-1}drd\theta \\
+			&\leq (\omega_{n-1})^{-1} \left(\int_B \left| \nabla(\varphi(r,\theta)\chi(r)) \right|^q dE\right)^{1/q}\left(\omega_{n-1}\int_0^\delta r^{(n-1)(1-q)}dr\right)^{1/q'}\\
+			&\leq (\frac{\pi}{2})^{n-1} (\omega_{n-1})^{-1/q} \left(\|\nabla\varphi\|_{L^q} + \sup_{[0,\delta]}|\chi'|\|\varphi\|_{L^q} \right) \left(\frac{q-1}{q-n}\delta^{\frac{q-n}{q-1}}\right)^{1/q'}
+\end{split}   
+\end{equation*}
+where   \(q'\) denotes the Hölder conjugate of \(q\) and for we used Hölder inequality
+w.r.t \(dE\) for the second inequality and the comparison \(dE \leq
+(\frac{\pi}{2})^{n-1}dV\) for the third. The conclusion follows.
+\end{proof}
+
+\begin{lemma}[\( W^{1,q} \hookrightarrow C^{0,\alpha} \)]
+\label{lem:sobolev-case-holder}
+Let \(M^n\) be a complete Riemannian manifold with injectivity radius \(\delta_0>0\)
+and bounded curvature, then for all \(\varphi\in C_c^\infty(M)\), one
+has
+\[
+\sup_M |\varphi| + \sup_{P\ne Q} |\varphi(P) -\varphi(Q)|\ d(P,Q)^{-\alpha} \leq
+C(\alpha,q) \|\varphi\|_{W^{1,q}},\quad \text{ for all } \frac{1-\alpha}{n}\geq \frac{1}{q}
+\]
+\end{lemma}
+\begin{proof}
+By Lemma \ref{lem:sobolev-case}, one can discard the term \(\sup_M |\varphi|\) and only
+need to treat the second term of LHS. Let \(\delta \leq \min\{\delta_0, \frac{\pi}{2b}\}\) as in the proof of Lemma \ref{lem:sobolev-case} (\(b^2\) being the upper bound of the
+sectional curvature). One only need to consider the case where \(d=d(P,Q) <\delta/2\)
+because otherwise \(|\varphi(P)-\varphi(Q)| \leq 2\|\varphi \|_{L^\infty}(\frac{\delta}{2})^{-\alpha}d(P,Q)^\alpha\).
+
+Let \(O\) be the midpoint of \(P,Q\), and denote by \(h:=\varphi\circ\exp_O\)
+defined on the Euclidean ball \(B(0,2d)\supset B_O:=B(0,d/2)\). We also denote by \(P,Q\) the
+preimages of these points in \(B_O\). See Figure \ref{fig:sobolev-holder}.
+
+\label{fig:sobolev-holder}
+\begin{figure}[htbp]
+\centering
+\includesvg[width=.9\linewidth]{../img/svg/sobolev-holder}
+\caption{Left: the picture viewed in normal polar coordinates at \(O\). Right: the picture viewed in normal polar coordinates at \(Q\).}
+\end{figure}
+
+Now place \(B_O\) in polar coordinate centered at \(Q\):
+\[
+ h(x) - h(Q) = \int_0^r \frac{\partial}{\partial r}h(r,\theta) dr = r\int_0^1
+\frac{\partial}{\partial \rho}h(rt,\theta) dt
+\]
+Integrate on \(B_O\ni x\) w.r.t to the measure \(dE_Q\) given by the normal polar
+coordinates at \(Q\):
+\begin{equation}
+\label{eq:lem:sobolev-case-holder}
+\begin{split}
+\int_{B_O} |h(x) - \varphi(Q)| dE_Q &\leq \int_{\theta\in \mathbb{S}^{n-1}} \int_{r=0}^{\rho(\theta)} r^{n-1}r \int_0^1|\frac{\partial}{\partial \rho}h(rt,\theta)|dtdrd\theta \\
+( u:= rt, \rho(\theta)\leq d)\qquad &\leq \int_{\theta\in \mathbb{S}^{n-1}}\int_{t=0}^1\int_{u=0}^{td}t^{-n-1}u^n \left|\frac{\partial}{\partial \rho}h(u,\theta)\right|dtdud\theta\\
+      	  		   &= \int_{t=0}^1 t^{-n-1}\left( \int_{u=0}^{td}\int_{\theta\in \mathbb{S}^{n-1}}\left| \frac{\partial}{\partial \rho}h(u,\theta) \right|u. dE_Q  \right)dt \\
+(\text{Holder w.r.t } dE_Q)\qquad &\leq \int_{t=0}^1  t^{-n-1} \left( \int_{u=0}^{td} \int_{\theta\in \mathbb{S}^{n-1}} \left| \frac{\partial}{\partial \rho}h(u,\theta) \right|^q dE_Q \right)^{1/q} \left( \int_0^{td}\omega_{n-1} u^{q'}u^{n-1} du \right)^{1/q'}dt\\
+(t\leq 1)\qquad	      &\leq\int_{t=0}^{1} t^{-n-1} \left(\frac{1}{q'+n}(td)^{q'+n}\right)^{1/q'} \left( \int_{u=0}^d\int_{\theta\in \mathbb{S}^{n-1}} |\nabla\varphi|^q dE_Q   \right)^{1/q}dt\\
+       &= C_1(q,n)d^{1 + \frac{n}{q'}} \left(\int_{B(Q,d)}|\nabla\varphi|^q dE_Q   \right)^{1/q}
+\end{split}   
+\end{equation}
+
+Now using the fact that \(\frac{1}{A} dV \leq dE_Q\leq A dV\) since the curvature is bounded, one
+has
+\[
+ \int_{B(O,d/2)}|\varphi(x) -\varphi(Q)|dV \leq C_2(q,n)d^{1 + \frac{n}{q'}} \| \nabla\varphi\|_{L^q}
+\]
+
+Taking sum with the same computation for \(P\), one has
+\[
+\left| \varphi(P)-\varphi(Q)\right|\vol_g(B(O,d/2)) \leq 2C_2(q,n) d^{1 + \frac{n}{q'}}  \| \nabla\varphi\|_{L^q}
+\]
+since \(\vol_g(B(O,d/2)) \geq A^{-1}\omega_{n-1}d^n\), one has
+\[
+ \left| \varphi(P)-\varphi(Q)\right| \leq C_3(q,n) \|\nabla\varphi\|_{L^q} d^{1-n/q}
+\]
+The conclusion follows since \(1-\frac{n}{q}\geq \alpha\).
+\end{proof}
+
+For the first part of Theorem \ref{thm:sobolev-imbedding}, it suffices to prove the case
+\(k=l+1\), that is, there exists a constant \(C_1, C_2>0\) such that
+\(\|u\|_{L^p} \leq C_1\|\nabla u\|_{L^q} + C_2\| u\|_{L^q}\) for
+\(u\in W^{1,q}(M)\) and \(\frac{1}{p} = \frac{1}{q}-\frac{1}{n}\).
+
+The proof by \cite{aubin_nonlinear_1998} tries to optimise the constant \(C_1\), in an
+attempt to find the best inequality \cite[page 50]{aubin_nonlinear_1998}. We will follow
+their arguments, as the extra effort is not much. We will prove that
+
+\begin{proposition}
+\label{prop:sobolev-imbedding-1}
+Given \(p,q\in \mathbb{R}_{>0}\) such that \(\frac{1}{p}=\frac{1}{q} - \frac{1}{n}>0\),
+for any \(\epsilon >0\), there exists \(A_q(\epsilon)\) such that
+\[
+ \|u\|_p \leq (K(n,q) + \epsilon) \|\nabla u\|_{L^q} + A_q(\epsilon) \| u\|_{L^q}
+\]
+\end{proposition}
+The appearance of the constant \(K(n,q)\), given by 
+\[
+K(n,q):=\begin{cases}
+\frac{q-1}{n(q-1)}\left[\frac{n-q}{n(q-1)}\right]^{1/q}\left[\frac{\Gamma(n+1)}{\Gamma(n/q)\Gamma(n+1-n/q)\omega_{n-1}}\right]^{1/n},  & \text{if $q>1$} \\
+\frac{1}{n}\left(\frac{n}{\omega_{n-1}}\right)^{1/n}, & \text{if $q=1$}
+\end{cases}
+\] 
+is due to the following local result.
+\begin{theorem}[Aubin]
+\label{thm:aubin-loc}
+Given \(1\leq q < n\) and \(u\in W^{1,q}(\mathbb{R}^n)\), with \(\frac{1}{p}=\frac{1}{q}-\frac{1}{n}\), one has
+\[
+ \|u\|_{L^p} \leq K(n,q) \|\nabla u\|_{L^q}.
+\]
+In fact, \(K(n,q)\) this the norm of the imbedding \(W^{1,q}(\mathbb{R}^n) \hookrightarrow L^p(\mathbb{R}^n)\).
+\end{theorem}
+
+We will accept the local result and use the Covering Lemma \ref{lem:uni-loc-finite-cover} to
+prove Proposition \ref{prop:sobolev-imbedding-1}, which implies Theorem
+\ref{thm:sobolev-imbedding}.
+
+\begin{proof}[Proof of Proposition \ref{prop:sobolev-imbedding-1}]
+Note that given any smooth function \(f\) supported in a small geodesic ball \(B(q,\delta)\),
+by applying theorem \ref{thm:aubin-loc} to the \(f\), viewed in the chart (that is,
+\(f\circ \exp_q\)) and use the fact that \(C(\delta)^{-1} \|\nabla (f\circ\exp_q)\|_{L^q(dE)} \leq \|\nabla f\|_{L^q(dV)} \leq C(\delta)
+\|\nabla (f\circ\exp_q)\|_{L^q(dE)}\) (see remark \ref{rem:cor-vol-comp}), one has
+\[
+\|f\|_{L^p} \leq K_\delta(n,q) \|\nabla f \|_{L^q}
+\]
+where \(K_\delta(n,q)\) converges to \(K(n,q)\) as \(\delta\to 0\).
+
+
+It suffice to cover \(M\) by geodesic ball \(B(Q_i,\delta)\) such that there exists a
+partition of unity subordinated to \(B(Q_i,\delta)\) such that
+\(\|\nabla (h_i^{1/q})\| \leq H=\const\). In fact for \(\varphi \in W^{1,q}(M)\), one has
+\begin{equation*}
+\begin{split}
+\|\varphi\|_p^q &= \left(\int_M |\varphi|^p\right)^{q/p}=\left(\int_M \left(\sum_i |\varphi|^q h_i\right)^{p/q} \right)^{q/p}\\
+(\text{since } p\geq q)\qquad		&\leq \sum_i\left(\int_M \left(|\varphi|^q h_i\right)^{p/q} \right)^{q/p} = \sum_i \left\| \varphi h_i^{1/q} \right\|_p^q\\
+	       	     			&\leq K^q_\delta(n,q) \sum_i \left\| h_i^{1/q}\nabla\varphi + \varphi\nabla h_i^{1/q}\right\|_q^q
+\end{split}   
+\end{equation*}
+Using the fact that there are at most \(k(\delta)\) balls overlapping at a point and that \((a+b)^q = a^q \left(1+ \frac{b}{a}\right)^q \leq a^q(1 + 2^q \frac{b}{a} +
+2^q (\frac{b}{a})^{q})\leq a^q + 2^q ba^{q-1} + 2^{q}b^q\), one has
+\begin{equation*}
+\begin{split}
+\|\varphi\|_{p}^q &\leq K^q_\delta(n,q)\left(\|\nabla\varphi\|_q^q + 2^q k(\delta) H^{q-1}\int_M |\varphi|^{q-1}|\nabla\varphi| + 2^q k(\delta) H^q \| \varphi\|_q^q \right) \\
+		  &\leq K^q_\delta(n,q)\left[\|\nabla\varphi\|_q^q + 2^q k(\delta) H^{q-1}\|\nabla\varphi\|_q\|\varphi\|_q^{q-1}  + 2^q k(\delta) H^q \| \varphi\|_q^q \right]\\
+\end{split}   
+\end{equation*}
+It is elementary to see that this implies
+\(\|\varphi\|_{p}^q \leq (1+\epsilon)^qK^q(n,q)\left[(1+\epsilon)\|\nabla\varphi\|_q^q +
+A(\epsilon) \| \varphi\|_q^q \right]\), from which the conclusion follows.  
+
+For the existence of such \(h_i\), one cover \(M\) by balls \(B(Q_i,\delta)\) using
+Lemma \ref{lem:uni-loc-finite-cover}. Denote by \(\varphi_i:B(Q_i,\delta) \longrightarrow
+B(0,\delta)\) the inverse of exponential maps and let \(u:  \mathbb{R}^n \longrightarrow
+\mathbb{R}\) be the smooth function, choose \(u\) to be a bell curve with maximal value
+\(1\) at \(0\), supported in \(B(0,\delta)\) and \(u\leq \frac{1}{2}\) in \(B(0,\delta/2)\) and pose \(u_i = u\circ \varphi_i\). Then 
+\[
+ \|\nabla u_i\|_{g_M} \leq C_1(g_M,\delta) \|\nabla u\|_E = C_2(g_M,\delta)
+\]
+Pose \(h_i = \frac{u_i^m}{\sum u_j^m}\) with \(m>q\) then
+\begin{equation*}
+\begin{split}
+\left|\nabla(h_i^{1/q})\right| &= \left|\frac{m}{q}\frac{u_i^{\frac{m}{q} - 1}\nabla u_i}{(\sum u_j^m)^{1/q}} + u_i^{m/q}\left(\frac{-1}{q}\right)\frac{\sum\nabla (u_j^m)}{(\sum u_j^m)^{1+ \frac{1}{q}}}\right|\\
+		  &\leq \frac{m}{q.2^{-m/q}}|\nabla u_i| + \frac{1}{q}\sum m \frac{|\nabla u_j|}{(2^{-m})^{1+\frac{1}{q}}}\\
+		  &\leq \left( \frac{m}{q}2^{m/q} + \frac{m}{q}2^{m(1+\frac{1}{q})}k(\delta)\right)C_2(g_M,\delta)=\const
+\end{split}   
+\end{equation*}
+where \(k(\delta)\), as in Lemma \ref{lem:uni-loc-finite-cover}, is the upper bound of
+number of balls overlapping at the point in question.
+\end{proof}
+
+
+
+
+
+
+\section{Kondrachov's theorem}
+\label{sec:org74edf88}
+The generalised version of Kondrachov's theorem is much easier to prove
+\begin{theorem}[Kondrachov]
+\label{thm:kondrachov}
+Theorem \ref{thm:Kondrachov-Rn} holds when one replaces \(\Omega\) by a compact Riemannian
+manifolds of dimension \(n\).
+\end{theorem}
+\begin{proof}
+Cover \(M\) by finitely many small geodesic ball \(B(Q_i,\delta)\) subordinating a partition of unity \(\sum_{i=1}^N \chi_i = 1\), then if a sequence \(\{u_n\}_n \subset W^{k,q}\) is bounded then \(\{\chi_i u_n\}_n\) is also bounded in \(W^{k,q}\). The conclusion follows using Remark \ref{rem:cor-vol-comp} and the
+Euclidean version of Kondrachov's theorem.
+\end{proof}
+
+
+\section{Solving \(\Delta u = f\) on a Riemannian manifold.}
+\label{sec:orgad038eb}
+With Kondrachov's theorem \ref{thm:kondrachov}, one can uses the familiar "subsequence
+extracting" technique to find a minimiser of the quadratic functional
+\(\psi \mapsto \frac{1}{2}\int_M \|\nabla\psi\|^2 dV\) in a suitable subspace of
+\(W^{1,2}(M)\) (method of Lagrange multiplier), one can prove the following results.
+
+\begin{theorem}[Spectrum of \( \Delta \)]
+\label{thm:spec-lap}
+Let \(M^n\) be a compact Riemannian manifold then
+\begin{enumerate}
+\item The eigenvalues of \(\Delta - \nabla^\nu\nabla_\nu\) are \(\geq 0\).
+\item The eigenfunctions of \(\delta_0=0\) are constant functions.
+\item The eigenvalue \(\lambda_1\) is the minimum value of the functional
+\[
+    \psi \mapsto \frac{1}{2}\int_M \|\nabla\psi\|^2 dV
+   \]
+ on the subspace \(\left\{\psi \in W^{1,2}(M): \ \|\psi\|_2 = 1,\int\psi dV=0 \right\}\).
+Moreover, first eigenfunctions are smooth.
+\end{enumerate}
+\end{theorem}
+
+
+\begin{theorem}
+\label{thm:lap-l2}
+Given \(M^n\) be a compact Riemannian manifold, consider the Laplace equation on \(M\):
+\begin{equation}
+\label{eq:lap-M}
+\Delta u = f	
+\end{equation}
+where \(f\in L^2(M)\), then:
+\begin{enumerate}
+\item There exists \(u\in W^{1,2}(M)\) satisfying \eqref{eq:lap-M} in the weak sense if and only if \(\int_M f
+   dV = 0\)
+\item \(u\) is unique up to an additive constant.
+\item If \(f\in C^{r,\alpha}\) then \(u\in C^{r+2,\alpha}\).
+\end{enumerate}
+\end{theorem}

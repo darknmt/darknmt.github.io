@@ -1,0 +1,1272 @@
+\section{Commutative diagram and linear PDE. Example: Semi-elliptic equation on \(\mathbb{R}^n\)}
+\label{sec:org2267616}
+Fix a weight \((\sigma_1,\dots,\sigma_n)\) on \(X = \mathbb{R}^n\) and recall that
+for an index \(\alpha\), we note \(\|\alpha\| := \sum_i \frac{\sigma}{\sigma_i}\alpha_i\).
+
+We will consider in this section a partial differential operator \(A\) that is
+\uline{heterogeneous}, of \uline{constant coefficient} and of weight \(r\), i.e.
+\[
+ A(D) = \sum_{\|\alpha\|=r} a_\alpha D^\alpha,\quad D^\alpha = \left(\frac{1}{i}
+\frac{\partial}{\partial x}\right)^\alpha
+\]
+
+
+The \textbf{symbol} of \(A\) is \(A(\xi):= \sum_{\|\alpha\| = r} a_\alpha\xi^\alpha\) and \(A\) is
+called \textbf{semi-elliptic} if \(A(\xi) \ne 0\) for all \(\xi\in \mathbb{R}^n\setminus 0\)
+
+\begin{remark}
+If \(A\) is semi-elliptic then \(\sigma \mid r\). In fact choose all \(\xi_j = 0\)
+except \(\xi_i\ne 0\), one sees that there must be a non-zero coefficient \(a_{(0,\dots, \frac{r\sigma_i}{\sigma},\dots, 0)}\), i.e. \(\frac{r\sigma_i}{\sigma}\in
+\mathbb{Z}\) for all \(i=\overline{1,n}\). Hence \(\sigma \mid r\) (\(\sigma= \lcm
+(\sigma_i)\) being a combination of \(\sigma_i\), look at the same combination of \(\frac{r\sigma_i}{\sigma}\)).
+\end{remark}
+
+It is clear that the operator \(A: W^{n,p}(X) \longrightarrow W^{n-r,p}(X)\) is bounded
+for all \(n\in \mathbb{R}\) and the following diagram commutes for every real numbers \(k < n\).
+\begin{equation}
+\label{diag:elliptic}
+\xymatrix{
+W^{n,p}(X) \ar@{->}[r]^{A(D)} \ar@{^{(}->}[d]^{i} & W^{n-r,p}(X) \ar@{^{(}->}[d]^{i} \\
+W^{k,p}(X) \ar@{->}[r]^{A(D)} & W^{k-r,p}(X)
+}
+\end{equation}
+
+\begin{definition}
+Let \(E,F,G,H\) be Banach spaces and \(l,m,p,q\) are bounded operator such that the
+following diagram \eqref{diag:D} commutes
+\begin{equation}
+\label{diag:D}
+\tag{diag:D}
+\xymatrix{
+E \ar@{->}[r]^{l} \ar@{->}[d]^{m} & F \ar@{->}[d]^{p} \\
+G \ar@{->}[r]^{q} & H
+}
+\end{equation}
+Then \eqref{diag:D} is said to be an \textbf{exact square} if the following associated sequence is exact
+\[
+ \xymatrix{
+0 \ar@{->}[r] & E \ar@{->}[r]^{l\oplus m} & F\oplus G \ar@{->}[r]^{p\ominus q} & H \ar@{->}[r] & 0
+}
+\]
+\end{definition}
+
+\begin{exampl}
+If \((A,B)\) is an interpolatable pair of Banach spaces then
+\[
+ \xymatrix{
+A\cap B \ar@{->}[d] \ar@{->}[r] & A \ar@{->}[d] \\
+B \ar@{->}[r] & A+B
+}
+\]
+is exact, where arrows are natural inclusions.
+\end{exampl}
+
+The notion of exact square allows us to reformulate classical results of elliptic
+equation as
+
+\begin{theorem}[Elliptic equation with constant coefficients]
+\label{thm:elliptic-const}
+The square \eqref{diag:elliptic} is exact for all \(k < n\) in \(\mathbb{R}\). This encodes the
+following 3 results:
+\begin{enumerate}
+\item \(\xymatrix{
+   W^{n,p}(X) \ar@{^{(}->}[r]^<<<<<{A\oplus i} & W^{n-r,p}(X)\oplus W^{k,p}(X)
+   }\) is of closed image, i.e. there exists \(C>0\) such that
+\[
+    \|f\|_{W^{n,p}(X)}\leq C \left( \|A f\|_{W^{n-r,p}(X)} +\|f\|_{W^{k,p}(X)}  \right)
+   \]
+ which is Gårding's inequality.
+\item \(\ker A\ominus i = \im A\oplus i\), i.e. if \(f\in W^{k,p}(X)\) and \(Af\in
+   W^{n-r}(X)\) then actually \(f\in W^{n,p}(X)\), which is regularity theorem.
+\item \(\im A\ominus i = W^{k-r,p}(X)\), i.e. for all \(g\in W^{k-r,p}(X)\), there exists
+\(f\in W^{k,p}(X)\) such that \(Af - g\in W^{n-r,p}(X)\), which is the existence of
+approximate solution (the idea behind \href{./green-function.org}{\emph{parametrix}}).
+\end{enumerate}
+\end{theorem}
+
+A way to prove that a square is exact is to show that it splits
+
+\begin{definition}
+The square \eqref{diag:D} is called \textbf{split} if there exists \(l',m',p',q'\) such that
+\begin{equation}
+\label{diag:split}
+\xymatrix{
+E \ar@{->}[r]_{l} \ar@{->}[d]^{m} & F \ar@{->}[d]_{p} \ar@/_/@{->}[l]_{l'} \\
+G \ar@{->}[r]^{q} \ar@/^/@{->}[u]^{m'} & H \ar@/_/@{->}[u]_{p'} \ar@/^/@{->}[l]^{q'}
+}
+\end{equation}
+commutes in 4 ways: 
+\[
+ \xymatrix{
+{} \ar@{-}[r] \ar@{-}[d] & {} \ar@{->}[d] \\
+{} \ar@{->}[r] & {}
+}\quad
+\xymatrix{
+{} \ar@{->}[r] & {} \\
+{} \ar@{-}[u] \ar@{-}[r] & {} \ar@{->}[u]
+}\quad
+\xymatrix{
+{} & {} \ar@{->}[l] \\
+{} \ar@{->}[u] \ar@{-}[r] & {} \ar@{-}[u]
+}\quad
+\xymatrix{
+{} \ar@{->}[d] & {} \ar@{-}[l] \\
+{} & {} \ar@{-}[u] \ar@{->}[l]
+}
+\]
+and splits in 4 ways
+\[
+ \xymatrix{
+{} \ar@/_/@{->}[r] \ar@/^/@{->}[d] & {} \ar@/_/@{->}[l] \\
+{} \ar@/^/@{->}[u] & 
+}\quad
+\xymatrix{
+{} \ar@/_/@{->}[r] & {} \ar@/_/@{->}[l] \ar@/^/@{->}[d] \\
+ & {} \ar@/^/@{->}[u]
+}\quad
+\xymatrix{
+ & {} \ar@/^/@{->}[d] \\
+{} \ar@/^/@{->}[r] & {} \ar@/^/@{->}[u] \ar@/^/@{->}[l]
+}\quad
+\xymatrix{
+{} \ar@/^/@{->}[d] &  \\
+{} \ar@/^/@{->}[u] \ar@/_/@{->}[r] & {} \ar@/_/@{->}[l]
+},
+\]
+i.e. the sum of two circle in each diagram is the identities.
+\end{definition}
+
+\begin{theorem}
+\label{thm:split-exact}
+\begin{enumerate}
+\item A split square is exact. In fact, if a square splits, then the associated short sequence splits.
+\item If \(E,F,G,H\) are Hilbert spaces then any exact square splits.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}[Proof of Theorem \ref{thm:elliptic-const} ]
+Since \(A\) is semi-elliptic, there exists \(\epsilon>0\) such that \(|A(\xi)|\geq
+\epsilon \|\xi\|^r\) for \(\|\xi\| := (\xi_1^{2\sigma_1}+\dots +
+\xi_n^{2\sigma_n})^{1/2\sigma}\). Let \(\psi(\xi)\) be a radial function in \(\xi\)
+that is identically \(1\) for \(\|\xi\|\leq 1\) and \(0\) for \(\|\xi\|\geq 2\)
+and define
+\[
+G(\xi):=\begin{cases}
+\frac{1-\psi(\xi)}{A(\xi)},  & \text{if $\|\xi\|\geq 1$} \\
+0, & \text{if $\|\xi\| \leq 1$}
+\end{cases}
+\]
+Then by Stein's multiplier theorem, 
+\begin{align*}
+   G(D):\ W^{k-r,p}(X) &\longrightarrow W^{k,p}(X) \quad\forall k\in \mathbb{R},\\ 
+\psi(D):\ W^{l,p}(X) &\longrightarrow W^{k,p}(X) \quad \forall k,l\in \mathbb{R}
+\end{align*}
+are bounded operators. We say that \(G(D)\) is an \emph{approximate inverse} of \(A(D)\)
+because \(G(D)A(D)=A(D)G(D) = 1-\psi(D)\). It is easy to check that \eqref{diag:elliptic}
+splits: 
+\[
+\xymatrix{
+W^{k,p}(X) \ar@/_/@{->}[r]_{A(D)} \ar@{->}[d]^{i} & W^{k-r,p}(X) \ar@{->}[d]_{i} \ar@/_/@{->}[l]_{G(D)} \\
+W^{l,p}(X) \ar@/^/@{->}[r]^{A(D)} \ar@/^/@{->}[u]^{\psi(D)} & W^{l-r,p}(X) \ar@/^/@{->}[l]^{G(D)} \ar@/_/@{->}[u]_{\psi(D)}
+}
+\]
+\end{proof}
+
+The following abstract result shows that solutions of homogeneous equation \(Af=0\) are
+smooth (also proved in the second point of Theorem \ref{thm:elliptic-const}) and the
+solution space is of finite dimension.
+
+\begin{theorem}
+\label{thm:compact-op-exact}
+Suppose that the square 
+\[
+ \xymatrix{
+E \ar@{->}[r]^{l} \ar@{->}[d]^{m} & F \ar@{->}[d]^{p} \\
+G \ar@{->}[r]^{q} & H
+}
+\]
+is exact and \(m,p\) are compact operators. Then \(l\) and \(q\) have closed image,
+and their kernels and cokernels are isomorphic through \(m\) and \(p\), and are of finite dimensional.
+\end{theorem}
+
+\begin{proof}
+By basic diagram chasing, one can see that the restriction of \(m\) is an isomorphism \(\ker l \longrightarrow \ker q\). But \(m\) is compact, \(\ker l \cong \ker q\) are
+locally compact, hence of finite dimension.
+
+It is easy to check (with sequential limit) that \(\im l\) is closed in \(F\), since \(\im (l\oplus m) =\ker
+p\ominus q\) is closed and \(m\) is compact. So \(\coker l\) is a Banach space.
+
+Let \(p'': \coker l = F/l(E) \longrightarrow H/\overline{ q(G)}\) be the map induced by
+\(p\) to the quotients, note that we have to take the closure of \(q(G)\) to ensure
+that the quotient is Banach. Then \(p''\) is obviously continuous and compact. Also \(p''\) is surjective because \(\xymatrix{F\oplus G \ar@{->>}[r]^{p\ominus q} & H}\).
+
+We will prove that \(p''\) is injective. If \(f\in F\setminus l(E)\) then by
+\href{https://en.wikipedia.org/wiki/Hahn–Banach\_theorem}{Hahn-Banach theorem}, there exists a linear functional \(\lambda\in F^*\) such that \(\lambda(f)=1\) and \(\lambda (l(E))=0\). One has
+\[
+ \xymatrix{
+0 \ar@{->}[r] & H^* \ar@{->}[r]^{(p\ominus q)^*} & F^*\oplus G^* \ar@{->>}[r]^{(l\oplus m)^*} & E^* \ar@{->}[r] & 0
+}
+\]
+and that \((l\oplus m)^*(\lambda \oplus 0) = 0\), hence there exists \(\lambda'\in H^*\) such that \(\lambda \oplus 0 = (p\ominus q)^* \lambda'\), i.e. \(\lambda'\circ q = 0\) and \(\lambda'\circ p =\lambda\), which means \(\lambda'\) vanishes on \(q(G)\), hence \(\overline
+q(G)\), and that \(\lambda'(p(f)) = \lambda (f)=1\). Hence \(p(f)\not\in
+\overline{q(G)}\) and \(p''\) is injective.
+
+The injectivity of \(p''\) has 2 consequences. First, it means that \(\coker l \cong
+H/\overline{q(G)}\) by a compact operator, hence the two are locally compact and of
+finite dimension.
+
+Second, it proves that \(q(G)\) is closed in \(H\). In fact, given \(h\in
+\overline{q(G)}\), by surjectivity of \(p\ominus q\), one has \(h= pf + qg\) for \(f\in F\) and \(g\in G\), this means \(p''(\bar f) = \bar 0 \in H/\overline{q(G)}\), hence \(\bar f =
+\bar 0 \in \coker l\), i.e. \(f = l(e)\) for some \(e\in E\). Therefore
+\[
+ h = p\circ l (e) + q(g)=  q(m(e) +g)\in q(G)
+\]
+and \(p(G)=\overline{p(G)}\) is closed in \(H\).
+\end{proof}
+
+\begin{remark}
+The proof of Theorem \ref{thm:compact-op-exact} is much simpler for split squares. We
+presented the version for exact squares because we will use it later. The advantage of
+using exact squares instead of split square is, as we will see, that among commutative squares, exact
+squares form a relatively open set, allowing us to "pertube" an exact square and extend
+the theory to cover the case \(A\) of variable coefficients.
+\end{remark}
+
+
+\section{Elliptic equation on half-plan \(X\times Y^+\). Boundary conditions. \label{ell-half-plan}}
+\label{sec:org0deb1e7}
+We will quickly review in this part the ideas to solve elliptic equations with constant
+coefficients on half-plan. This does not require any more abstract (i.e. with diagram)
+results. The main tasks will be using suitable cut-off function on the frequent space (1)
+to define the approximate inverse of an elliptic operator on half-plan that is adapted to
+the boundary structure and (2) to approximately inverse the boundary operators.
+
+We will solve elliptic equation on \(X\times Y^+\) where the variables are \(x_1,\dots,
+x_n\) and \(y\), under weight \(\Sigma = (\sigma_1,\dots, \sigma_n,\rho)\). Recall
+that \(A(D) = \sum_{\|(\alpha,\beta)\|=r}a_{\alpha \beta}D^\alpha_x D^\beta_y\) with
+symbol \(A(\xi,\eta)=\sum_{\|(\alpha,\beta)\|=r}\xi^\alpha\eta^\beta\).
+
+If \(A(D)\) is semi-elliptic then for all \(\xi \ne 0\) the polynomial \(\eta \mapsto
+A(\xi,\eta)\) has no real zeros, hence can be factorized to
+\[
+ A(\xi,\eta)=A^+(\xi,\eta)A^-(\xi,\eta)
+\]
+where \(A^+(\xi,\eta)\) (resp. \(A^-(\xi,\eta)\)) only has zeros \(\eta\) with \(\im\eta >0\) (resp. \(\im \eta <0\)).
+
+\begin{remark}
+\begin{enumerate}
+\item By semi-ellipticity, the monomial \(a_{\alpha\beta}\xi^\alpha \eta^\beta\) with biggest \(\beta\) has
+index \(\alpha = 0\). Hence we can suppose that the leading coefficients, as
+polynomials in \(\eta\) of \(A, A^+, A^-\) are \(1\).
+\item As polynomial in \(\eta\), \(A^+(\xi,\eta)=\sum_{\beta=0}^m a^+_\beta(\xi)\eta^\beta\) where \(m=r\rho/\sigma\) and \(a^+_\beta(\xi)\) are \(\Sigma\)-heterogeneous
+of weight \((m-\beta)\rho\), i.e. 
+\[
+    a^+_\beta(t^{\sigma/\sigma_1}\xi_1,\dots,t^{\sigma/\sigma_n}\xi_n) = t^{(m-\beta)\rho}a^+_\beta(\xi)
+   \]
+ Also, the coefficients \(a^+_\beta\) are smooth in \(\xi\).
+\end{enumerate}
+\end{remark}
+
+We will solve the elliptic equation under some \emph{suitable} boundary conditions. Let \(B^j\), \(1\leq j\leq m\) be \(m\) \(\Sigma\)-heterogeneous \emph{boundary operators} of
+weights \(r_j\), i.e.
+\[
+B^j(D) = \sum_{\|(\alpha,\beta)\| = r_j} b^j_{\alpha\beta}D^\alpha_x D^\beta_y
+\]
+of symbol 
+\[ 
+B^j(\xi,\eta) = \sum_{\|(\alpha,\beta)\| = r_j} b^j_{\alpha\beta}\xi^\alpha
+\eta^\beta = \sum_{\|(\alpha,\beta)\| = r_j} b^j_{\beta}(\xi)\eta^\beta  
+\]
+where \(b_\beta^j\) are heterogeneous in \(\xi\) (actually polynomials) and of weight \(r_j-\beta\).
+
+
+As our \href{./interpolation-sobolev.org}{discussion on trace operator}, if \(k > r_j + \frac{\sigma}{\rho p}\) then \(B^j\) extends to a bounded operator 
+\[
+ \xymatrix{
+W^{k,p}(X\times Y^+) \ar@{->}[rd] \ar@{->}[rr]^{B_j} &  & \partial W^{k-r_j,p}(X) \ar@{^{(}->}[r] & W^{l,p}(X) \\
+ & W^{k-r_j,p}(X\times Y^+) \ar@{->}[ru] &  & 
+}
+\]
+for all \(0\leq l < n - r_j - \frac{\sigma}{\rho p}\).
+
+
+\begin{definition}
+We will say that the operators \(Bf = (B^1 f, \dots, B^m f)\) satisfy the \textbf{complementary
+boundary condition (CBC)} if the 
+\[
+ \det \left(c^j_\beta(\xi)\right)_{j,\beta}\ne 0\quad\forall \xi\in \mathbb{R}^n\setminus\{0\}
+\]
+where \(c^j_\beta(\xi)\) are the cofficients of the remanders \(C^j(\xi,\eta)\) when one divides \(B^j(\xi,\eta)\) by \(A^+(\xi,\eta)\) as polynomials in \(\eta\), i.e.
+\[
+B^j(\xi,\eta) \equiv C^j(\xi,\eta) = \sum_{\beta =
+0}^{m-1}c^j_\beta(\xi)\eta^\beta\quad\mod A^+(\xi,\eta)
+\]
+\end{definition}
+
+\paragraph{Approximate inverse of boundary operator \(B\).}
+\label{sec:org52b14de}
+The CBC condition allows us to approximately inverse boundary operator \(B\).
+
+\begin{theorem}[Approximate inverse of \( B \)]
+\label{thm:approx-inv-B}
+Let \(B:\ \mathcal{S}(X\times Y^+) \longrightarrow \mathcal{S}(X)^{\oplus m}\) be a
+boundary operator that satisfies CBC condition, then there exists an operator
+\begin{align*}
+  H: \mathcal{S}(X)^{\oplus m} &\longrightarrow \mathcal{S}(X\times Y^+)\\
+     (h_1,\dots,h_m) &\longmapsto H_1 h_1 + \dots + H_m h_m
+\end{align*}
+such that
+\begin{enumerate}
+\item \(({\rm Id} - BH)h = \psi(D_x)h\) for all \(h\in \mathcal{S}(X)^{\oplus m}\).
+\item \(({\rm Id} - HB)f = \psi(D_x)f\) for all \(f\in \ker A(D): \mathcal{S}(X\times Y^+)
+   \longrightarrow \mathcal{S}(X\times Y^+)\).
+\end{enumerate}
+where \(\psi(\xi)\) is the radial smooth cut-off function in \(\xi\) that equals \(1\) when
+\(\|\xi\|\leq 1\) and \(0\) when \(\|\xi\|\geq 2\).
+
+Moreover, if \(k>r_j + \frac{\sigma}{\rho p}\) then the operators \(H_j: \mathcal{S}(X)
+\longrightarrow \mathcal{S}(X\times Y^+)\) extends to a bounded operator
+\[
+ H_j:\ \partial W^{n-r_j,p}(X) \longrightarrow W^{k,p}(X\times Y^+)
+\]
+\end{theorem}
+
+\begin{proof}[Sketch of proof]
+We define \(H_j:\ \mathcal{S}(X) \longrightarrow \mathcal{S}(X\times Y^+)\) by its
+action on the frequent space of \(X\), in particular, set
+\[
+\tilde{H_j h}(\xi,\eta):= H_j(\xi,y) \tilde h(\xi)
+\]
+where \(\tilde f\) is the partial (in
+\(x\)) Fourier transform of \(f\) and \(H_j(\xi,y)\) is given by
+\[
+ H_j(\xi,y):= (1-\psi(\xi))\int_\Gamma \sum_{\alpha= 0}^{m-1}e^\alpha_j(\xi)
+ \frac{A_\alpha^+(\xi,\eta)}{A^+(\xi,\eta)}e^{i\eta y}d\eta
+\]
+where \(\Gamma\subset \mathbb{C}\) is a curve enclosing all zeros of \(A(\xi,\eta)\) with \(\im
+\eta >0\), \((e^\alpha_j(\xi))_{\alpha,j}\) is the inverse matrix of \((c^j_\beta(\xi))_{j,\beta}\) and \(A_\alpha^+(\xi,\eta):= \sum_{\beta=0}^{m-\alpha-1} a^+_{\alpha+\beta+1}(\xi)\eta^\beta\).
+\end{proof}
+
+\paragraph{Some auxilary functions.}
+\label{sec:org25e9d81}
+We cannot use the operator \(G\) as in the case of whole plan as an inverse of \(A\)
+on the half-plan \(X\times Y^+\), since we only have access to the frequent space of \(X\). However we can modify the cut-off function to create an approximate inverse of \(A\) on the half-plan.
+
+Let \(\varphi: \mathbb{R}_{\geq 0}\longrightarrow \mathbb{R}\) be the function that we used in the
+definition of \(E_+\), i.e.
+\[
+\varphi(x) := \frac{e^4}{\pi}.\frac{e^{-(x^{1/4} + x^{-1/4})} \sin(x^{1/4} -
+x^{-1/4})}{1+x} , \quad x\geq 0
+\]
+with the properties \(\int_0^{\infty}x^n \varphi(x)dx = (-1)^n\) for all \(n\in
+\mathbb{Z}\setminus\{0\}\) and \(\int_0^\infty \varphi(x)dx=0\).
+Extending \(\varphi\) by 0 for \(x<0\), one still has a smooth function. Define
+\(\chi(y):=-\varphi(-y-1),\)
+then \(\chi \in \mathcal{S}(Y)\), with support in \((-\infty,-1]\) and
+\[
+\int_{\mathbb{R}} y^n\chi(y) dy = \begin{cases}
+0,  & \text{if $n > 0$} \\
+1, & \text{if $n=0$}
+\end{cases}
+\]
+In the frequent space of \(Y\), this means \(\hat\chi(0)=1\) and \(D^k_{\eta}\hat\chi(0)=0\), i.e. \(1-\hat\chi(\eta)\) has a zero of infinite order at \(\eta=0\).
+
+Also, since \(\chi = 0\) when \(y>-1\), the convolution 
+\[ 
+f\longmapsto \hat\chi(D_y) f = \chi * f 
+\]
+maps \(\mathcal{S}(Y^-/0)\) to itself, hence induces a mapping from \(\mathcal{S}(Y^+)\) to itself, since
+\[
+ \xymatrix{
+0 \ar@{->}[r] & \mathcal{S}(Y^-/0) \ar@{->}[r] & \mathcal{S}(Y) \ar@{->}[r] & \mathcal{S}(Y^+) \ar@{->}[r] & 0
+}
+\]
+(given any \(f\in \mathcal{S}(Y^+)\), any extension \(\tilde f\) of \(f\)
+to \(\mathcal{S}(Y)\) has the same restriction of \(\hat\chi(D_y)\tilde f\) on \(Y^+\)).
+
+Let \(w(\xi,\eta):=\psi(\xi)\hat\chi(\eta)\) then \(w\) defines an operator
+\[
+ w(D): \mathcal{S}(X\times Y^+) \longrightarrow \mathcal{S}(X\times Y^+)
+\]
+In fact, for all \(k,l\in \mathbb{R}\), there exists \(C>0\) such that
+\[
+ \|w(D)f\|_{W^{k,p}(X\times Y^+)} \leq C \|f\|_{W^{l,p}(X\times Y^+)}.
+\]
+
+\iffalse
+
+\begin{remark}
+\label{rem:hamilton-sign-issue}
+I changed the definition of \(\chi\) in \cite{hamilton_harmonic_1975},
+where originally \(\chi(y):=\varphi(y-1)\) and should maps \(\mathcal{S}(Y^+/0)\) to
+itself, not \(\mathcal{S}(Y^-/0)\) to itself as we wish.
+\end{remark}
+\fi
+
+
+\paragraph{Approximate inverse of elliptic operator \(A\) on half-plan.}
+\label{sec:org9757bc8}
+The auxilary function \(w\) will play the role of \(\psi\) in the whole plan case.
+
+\begin{theorem}[Approximate inverse of \( A \) on \( X\times Y^+ \)]
+\label{thm:approx-inv-A}
+There exists an operator \(G: \mathcal{S}(X\times Y^+) \longrightarrow
+\mathcal{S}(X\times Y^+)\) such that:
+\begin{enumerate}
+\item \(({\rm Id} - AG) = w(D)\)
+\item For all \(k,l\in \mathbb{R}\), there exists \(C>0\) such that for all \(f\in
+   \mathcal{S}(X\times Y^+)\):
+\[
+    \|({\rm Id} - GA)\psi(D_x)\|_{W^{k,p}(X\times Y^+)}\leq C \|f\|_{W^{l,p}(X\times Y^+)}
+   \]
+\end{enumerate}
+Also \(G\) extends to a bounded operator \(G:\ W^{k-r,p}(X\times Y^+) \longrightarrow
+W^{k,p}(X\times Y^+)\) for all \(k\in \mathbb{R}\).
+\end{theorem}
+
+\begin{proof}[Sketch of proof]
+In fact \(G\) is defined as follows:
+\[
+ G_0(\xi,\eta):= \frac{1-w(\xi,\eta)}{A(\xi,\eta)}
+\]
+which is smooth at \((0,0)\), where \(1- w\) has a zero of infinite order. Then \(G_0(D): \mathcal{S}(X\times Y) \longrightarrow \mathcal{S}(X\times Y)\) extends to \(W^{k-r,p}(X\times Y) \longrightarrow W^{k,p}(X\times Y)\). Finally, take \(G=C_+ G E_+\), which maps \(\mathcal{S}(X\times Y^+) \longrightarrow \mathcal{S}(X\times Y^+)\) by
+first extending a function to the whole plan, applying \(G_0\) and finally cutting-off.
+\end{proof}
+
+
+\paragraph{Approximate inverse of the combined operator.}
+\label{sec:orgac1470a}
+Let \(\mathcal{C}\) be the combined operator:
+
+\begin{align*}
+   \mathcal{C}: \mathcal{S}(X\times Y^+) &\longrightarrow \mathcal{S}(X\times
+Y^+)\oplus \mathcal{S}(X)^{\oplus m}\\
+f &\longmapsto (Af, Bf)
+\end{align*} 
+and define the operator \(\mathcal{J}\) as
+
+\begin{align*}
+   \mathcal{J}: \mathcal{S}(X\times
+Y^+)\oplus \mathcal{S}(X)^{\oplus m} & \longrightarrow  \mathcal{S}(X\times Y^+) \\
+(g,h) &\longmapsto Gg+ H(h-BGg)
+\end{align*}
+then one can prove with straightforward computation that \(\mathcal{J}\) is an
+approximate inverse of \(\mathcal{C}\).
+
+\begin{theorem}[Approximate inverse of \mathcal{C}]
+\label{thm:approx-inv-C}
+For smooth functions \(f\in \mathcal{S}(X\times Y^+)\) and \((g,h)\in
+\mathcal{S}(X\times Y^+) \oplus \mathcal{S}(X)^{\oplus m}\), one has
+\begin{enumerate}
+\item \(({\rm Id} - \mathcal{C}\mathcal{J})(g,h) = (w(D)g, \psi(D_x)(h-BGg))=:\lambda(g,h)\)
+\item \(({\rm Id} - \mathcal{J}\mathcal{C})f = \psi(D_x) \left({\rm Id} -GA)f + ({\rm Id} -HB -\psi(D_x)\right)w(D)f=:\mu(f)\)
+\end{enumerate}
+\end{theorem}
+
+Since \(G,H\) extend to Sobolev spaces, one also has
+\[
+\mathcal{J}:\ W^{k-r,p}(X\times Y^+)\bigoplus_{j=1}^m \partial W^{k-r_j,p}(X)
+\longrightarrow W^{k,p}(X\times Y^+)
+\]
+whenever \(k > \frac{\sigma}{\rho p} + \max_j r_j\).
+
+\begin{theorem}
+\label{thm:exact-half}
+In analogue of Theorem \ref{thm:elliptic-const}, one has the following exact-split square
+\begin{equation}
+\label{eq:elliptic-half}
+\xymatrix{
+W^{k,p}(X\times Y^+) \ar@{->}[r]_<<<<<{\mathcal{C}} \ar@{->}[d]^{\iota} & W^{k-r,p}(X\times Y^+)\bigoplus_{j=1}^m \partial W^{k-r_j,p}(X) \ar@{->}[d]_{\iota} \ar@/_/@{->}[l]_>>>{\mathcal{J}} \\
+W^{l,p}(X\times Y^+) \ar@{->}[r]^<<<<<{\mathcal{C}} \ar@/^/@{->}[u]^{\mu} & W^{l-r,p}(X\times Y^+)\bigoplus_{j=1}^m \partial W^{l-r_j,p}(X) \ar@/^/@{->}[l]^>>>{\mathcal{J}} \ar@/_/@{->}[u]_{\lambda}
+}
+\end{equation}
+for all \(k>l> \frac{\sigma}{\rho p} + \max_j r_j\).
+\end{theorem}
+
+
+\section{From local to global.}
+\label{sec:org7498191}
+\subsection{Pertubation of exact squares and consequences.}
+\label{sec:orgfa2fb3e}
+We will extend the result of Theorem \ref{thm:elliptic-const} (exactness of heterogeneous elliptic
+operator with constant coefficient on Euclidean plan) in 2 levels: (1) for general
+elliptic operators (non-heterogeneous and with variable coefficients) and (2) for such
+operators on compact manifold (with boundary if needed). These 2 generalizations will be
+done using the same technique: "cube by cube" approximating an exact square.
+
+We topologize the space of commutative squares \(\xymatrix{
+E \ar@{->}[r]^{l} \ar@{->}[d]_{m} & F \ar@{->}[d]^{p} \\
+G \ar@{->}[r]^{q} & H
+}\) as a closed subspace \(SQ(E,F,G,H)\) of \(L(E,F)\times L(F,H)\times L(E,G)\times L(G,H)\) defined
+by the equation \(q\circ m = p\circ l\).
+
+\begin{theorem}
+\label{thm:exact-open}
+In \(SQ(E,F,G,H)\), the exact squares form an open set.
+\end{theorem}
+
+Instead of giving a proof (see \cite[page 75-77]{hamilton_harmonic_1975}), let us explain why Theorem \ref{thm:exact-open} is true. The
+commutativity already tells us that the composition of any two consecutive arrows in
+\[
+ \xymatrix{
+0 \ar@{->}[r] & E \ar@{->}[r]^{l\oplus m} & F\oplus G \ar@{->}[r]^{p\ominus q} & H \ar@{->}[r] & 0
+}
+\]
+is 0, and exactness is an extra condition of type "maximal rank", which is an open
+condition (For matrices, this means the derterminant does not vanish. The analogous
+phenomenon for Banach spaces is that a linear map sufficiently close to an invertible one
+is also invertible).
+
+
+We will distinguish the following 2 types of cubes that we will use to cover a
+manifold. We will call the following set an \emph{interior cube}
+\[ 
+B_\epsilon := \left\{ (x_1,\dots,
+x_n): |x_1|\leq\epsilon^{\sigma/\sigma_1},\dots |x_n|
+\leq\epsilon^{\sigma/\sigma_n}\right\} 
+\]
+and the following an \emph{boundary cube}
+\[ 
+B^+_\epsilon := \left\{ (x_1,\dots,
+x_n,y): |x_1|\leq\epsilon^{\sigma/\sigma_1},\dots |x_n|
+\leq\epsilon^{\sigma/\sigma_n}, 0\leq y\leq \epsilon^{\sigma/\rho}\right\} 
+\]
+
+For the second type, we note by \(\partial_0\) the part \(y=0\) of the boundary of \(B^+_\epsilon\), and by \(\partial_e\) the remaining part.
+
+We will say that the \(A:= \sum_{\|\alpha\|\leq r}a_{\alpha}(x) D^\alpha\) is
+\textbf{semi-elliptic at \(0\)} if \(A_0:=  \sum_{\|\alpha\|= r}a_{\alpha}(0) D^\alpha\) is a
+semi-elliptic operator.
+
+\begin{proposition}[Approximate operator on interior cube]
+\label{prop:interior-cube}
+Suppose that \(A:=  \sum_{\|\alpha\|\leq r}a_{\alpha}(x) D^\alpha\) is defined in \(B_{\epsilon_0}\) and \(A\) is semi-elliptic at \(x = 0\). Fix \(-\infty < l <k <+\infty\). Then there exists an \(\epsilon>0\) sufficiently small and an operator \(A^\# =  \sum_{\|\alpha\|\leq
+r}a^\#_{\alpha}(x) D^\alpha\) with smooth coefficients defined on \(X\) such that
+\[
+ A^\# = \begin{cases}
+A       ,  & \text{inside $B_\epsilon$} \\
+A_0       , & \text{outside $B_{2\epsilon}$}
+       \end{cases}
+\]
+and the "\(k,l\)" square corresponding to \(A^\#\), i.e.
+\[
+ \xymatrix{
+W^{k,p}(X) \ar@{->}[r]^{A^\#} \ar@{^{(}->}[d]^{\iota} & W^{k-r,p}(X) \ar@{^{(}->}[d]^{\iota} \\
+W^{l,p}(X) \ar@{->}[r]^{A^\#} & W^{l-r,p}(X)
+}
+\]
+is exact.
+\end{proposition}
+
+An analoguous result holds for boundary problem. The setup for boundary problem on
+half-plan \(X\times Y^+\) is as follows.
+\begin{align*}
+  A &:=  \sum_{\|(\alpha,\beta)\|\leq r}a_{\alpha,\beta}(x,y) D^\alpha_x D^\beta_y \\
+  B^j &:=  \sum_{\|(\alpha,\beta)\|\leq r_j}b^j_{\alpha,\beta}(x,y) D^\alpha_x D^\beta_y,\quad j=\overline{1,m}
+\end{align*}
+are operators with smooth coefficients on \(B^+_{\epsilon_0}\) and
+\begin{align*}
+  A_0 &:=  \sum_{\|(\alpha,\beta)\|= r}a_{\alpha,\beta}(0,0) D^\alpha_x D^\beta_y \\
+  B^j_0 &:=  \sum_{\|(\alpha,\beta)\|= r_j}b^j_{\alpha,\beta}(0,0) D^\alpha_x D^\beta_y,\quad j=\overline{1,m}
+\end{align*}
+If \(A\) is semi-elliptic at \(0\) then we say that \(\{B^j\}\) satisfy the CBC
+condition at \(0\) uf \(\{B^j_0\}\) are CBC with respect to \(A_0\). Note that this
+is an "open condition", i.e. if the condition is satisfied at \((0,0)\) then it is also
+satisfied in a neighborhood of \((0,0)\) in \(X\times \{0\}\). The analoguous result
+for boundary problem can then be stated.
+
+\begin{proposition}[Approximate opearator on boundary cube]
+\label{prop:boundary-cube}
+Under the previous setup and with \(\frac{\sigma}{\rho p} + \max_j r_j < l < k < +\infty\), for \(\epsilon > 0\) sufficiently small, there exists operators \(C^\#=(A^\#, B^\#)\)
+with smooth coefficient in \(X\times Y^+\) agreeing with \((A,B)\) in \(B^+_\epsilon\) and with \((A_0,B_0)\) outside of \(B^+_{2\epsilon}\) such that the square
+\[
+ \xymatrix{
+W^{k,p}(X\times Y^+) \ar@{->}[r]^<<<<<{\mathcal{C}^\#} \ar@{^{(}->}[d]_{\iota} & W^{k-r,p}(X\times Y^+)\bigoplus_{j=1}^m \partial W^{k-r_j,p}(X) \ar@{^{(}->}[d]^{\iota} \\
+W^{l,p}(X\times Y^+) \ar@{->}[r]_<<<<<{\mathcal{C}^\#} & W^{l-r,p}(X\times Y^+)\bigoplus_{j=1}^m \partial W^{l-r_j,p}(X) 
+}
+\]
+is exact.
+\end{proposition}
+
+We will prove Proposition \ref{prop:interior-cube} here to demonstrate how Theorem
+\ref{thm:exact-open} is employed. Another reason is that the corresponding proof in
+\cite{hamilton_harmonic_1975} is not very readable due to a notation/printing issue.
+
+\begin{proof}[Proof of Proposition \ref{prop:interior-cube}]
+We will use the change of coordinates
+\(\tilde x_i = \lambda^{-\sigma/\sigma_i}x_i,\)
+which gives a diffeomorphism \(h_\lambda\) from \(B_{\epsilon_0}\) to \(B_{\epsilon_0/\lambda}\), in which the derivative operators are 
+\[ 
+\left(\frac{\partial}{\partial \tilde{x_i}}\right)^\alpha_i =
+\lambda^{\alpha_i\sigma/\sigma_i}\left(\frac{\partial}{\partial x_i}\right)^\alpha_i,\quad
+\tilde D^\alpha  = \lambda^{\|\alpha\|}D^\alpha 
+\]
+
+The operator \(A\), viewed in \(h_\lambda\), i.e. the operator \(f\mapsto
+A(f\circ h_\lambda)\), is \(\sum_{\|\alpha\|\leq r}
+a_\alpha(\lambda^{\sigma/\sigma_i}\tilde{x_i}) \lambda^{-\|\alpha\|} \tilde D^\alpha\). We pose
+\begin{align*}
+  \tilde A_\lambda &:= \sum_{\|\alpha\|\leq r}\lambda^{r-\|\alpha\|} a_{\alpha}(\lambda^{\sigma/\sigma_i}\tilde{x_i}) \tilde D^\alpha \\  
+  \tilde A_0 &:= \sum_{\|\alpha\|= r} a_{\alpha}(0) \tilde D^\alpha\\
+  \tilde A_\lambda^* &:= \varphi(\tilde x) \tilde A_\lambda + (1-\varphi(\tilde x)) \tilde A_0
+\end{align*}
+where \(\varphi\) is radial in \(\tilde x\), equals \(1\) for \(\|\tilde x\|\leq 1\) and \(0\) for \(\|\tilde x\| \geq 2\).
+
+The coefficient before \(\tilde D^\alpha\) of \(\tilde A_\lambda^*\) is \(\lambda^{r-\|\alpha\|} \left[\varphi(\tilde x) a_\alpha(\lambda^{\sigma/\sigma_i} \tilde{x_i}) +
+(1-\varphi(\tilde x))a_\alpha(0)\delta_{\|\alpha\|=r}\right]\) is the same as that of \(\tilde A_0\) for \(\tilde x\) outside of \(B_2\) and \(C^0\)-converges to that of \(\tilde
+A_0\) inside \(B_1\). Hence for \(\lambda\) sufficiently small the corresponding "\(k,l\)" diagram of \(\tilde A^*_\lambda\) is exact, hence so is the diagram of \(\lambda^{-r}\tilde
+A_\lambda^*\). Choose \(\epsilon = \lambda\) and \(A^\#\) to be \(\lambda^{-r}\tilde
+A_\lambda^*\) viewed in \(X\) through \(h\lambda\).
+\end{proof}
+
+\begin{remark}
+To avoid making infinite intersection of open sets, we have to fix \(k\) and \(l\) first in Proposition \ref{prop:interior-cube}
+and Proposition \ref{prop:boundary-cube}. The approximate operators \(A^\#, B^\#\) and the
+size \(\epsilon\) of the cube therefore depend on \(k,l\), but this dependence will
+not be a trouble when we pass from local to global situation.
+\end{remark}
+
+
+The exactness of semi-elliptic operator with variable coefficients on manifold will be
+establish analytically, meaning through the 3 statements similar to those of Theorem \ref{thm:elliptic-const}.
+Proposition \ref{prop:interior-cube} and \ref{prop:boundary-cube} can be applied to prove the
+the local version of these statements.
+
+\begin{lemma}
+\label{lem:ell-loc-cube}
+With the same \(\epsilon\) and \(k,l\) as Proposition \ref{prop:interior-cube} and the
+extra condition that \(l\geq k-1\), one has for all \(0< \delta <\epsilon\)
+\begin{enumerate}
+\item \(\|f\|_{W^{k,p}(B_\delta)}\leq C \left( \|Af\|_{W^{k-r,p}(B_\epsilon)} +
+   \|f\|_{W^{l,p}(B_\epsilon)} \right)\) for all \(f\in W^{k,p}(B_\epsilon)\).
+\item If \(f\in W^{l,p}(B_\epsilon)\) and \(Af\in W^{k-r,p}(B_\epsilon)\) then \(f\in W^{k,p}(B_\delta)\).
+\item If \(g\in W^{l-r,p}(B_\delta/ \partial)\) then there exists \(f\in
+   W^{l,p}(B_\epsilon, \partial)\) such that
+\[
+    g-Af \in W^{k-r,p}(B_\epsilon, \partial B_\epsilon).
+   \]
+\end{enumerate}
+\end{lemma}
+
+
+\begin{proof}
+Let \(\psi\) be a cut-off function that equals \(1\) on \(B_\delta\) and \(0\)
+outside of \(B_\epsilon\) and \(A^\#\) be the differential operator on \(X\) with
+exact "\(k,l\)" diagram given by Proposition \ref{prop:interior-cube} which equals \(A\)
+on \(B_\epsilon\). The idea of the remaining computation is to use the exactness of \(A^\#\)
+on \(\psi f\) and the reason for which the local-global passage is not trivial is that
+the operator \(A^\#\) and the multiplication by \(\psi\) do not commute. The
+commutator \([A^\#,\psi]\), however, is of weight at least \(1\) less than \(A\) and
+with the choice \(l\geq k-1\) the norm \(\|[\psi, A^\#]f\|_{W^{k-r,p}(X)}\) is
+dominated by \(\|f\|_{W^{l,p}}\).
+
+\begin{enumerate}
+\item If \(f\in W^{k,p}(B_\epsilon)\) then \(\psi f\in W^{k,p}(B_\epsilon, \partial)\)
+and 
+\begin{align*}
+\|f\|_{W^{k,p}(B_\delta)} &\leq \| \psi f\|_{W^{k,p}(X)} \leq C \left( \|A^\#\psi f\|_{W^{k-r,p}(X)} + \|\psi f\|_{W^{l,p}(X)}  \right)\\
+   			  &\leq C \left( \|\psi A^\# f\|_{W^{k-r,p}(X)} + \| [\psi, A^\#] f \|_{W^{k-r,p}(X)} + \|\psi f \|_{W^{l,p}(X)}  \right)\\
+			  &\leq C' \left( \| Af \|_{W^{k-r,p}(B_\epsilon)} + \| f \|_{W^{l,p}(B_\epsilon)} \right)
+\end{align*}
+\item Given \(f\in W^{l,p}(B_\epsilon)\) and \(Af\in W^{k-r,p}(B_\epsilon)\), one has \(\psi f\in W^{l,p}(X)\). Also, \([A^\#, \psi] f \in W^{l-r+1,p}(X)\subset W^{k-r,p}(X)\) and \(\psi A^\# f = \psi A f\in W^{k-r,p}(X)\), therefore \(A^\#(\psi f)\in
+   W^{k-r,p}(X)\). By exactness of \(A^\#\), one has \(\psi f\in W^{k,r}(X)\), so \(f\in W^{k,r}(B_\delta)\).
+\item If \(g\in W^{l-r,p}(B_\delta/ \partial) \subset W^{l-r,p}(X)\), by exactness
+of \(A^\#\) we can find
+\(\tilde f \in W^{l,p}(X)\) such that \(g-A^\# \tilde f \in W^{k-r,p}(X)\). Choose \(f =
+   \psi \tilde f \in W^{l,p}(B_\epsilon/ \partial)\) then 
+\[
+    g- Af = g - A^\#(\psi \tilde f) = \psi(g- A^\# \tilde f) + [\psi, A^\#]\tilde f \in W^{k-r,p}(B_\epsilon)
+   \]
+since \(\psi(g- A^\# \tilde f)\in W^{k-r,p}(B_\epsilon)\) and \([\psi, A^\#]\tilde f
+   \in W^{l-r+1,p}(B_\epsilon) \subset W^{k-r,p}(B_\epsilon)\).
+\end{enumerate}
+\end{proof}
+
+\begin{lemma}
+\label{lem:ell-loc-bndry}
+With \((A,B)\) and \(\epsilon, k,l\) as in Proposition \ref{prop:boundary-cube} with the
+extra condition \(l\geq k-1\), then for all
+\(\delta < \epsilon\), one has
+\begin{enumerate}
+\item \(\|f\|_{W^{k,p}(B^+_\delta)}\leq C \left( \|Af\|_{W^{k-r,p}(B^+_\epsilon)} +
+   \sum_{j=1}^m \|B^j f\|_{\partial W^{k-r_j,p}(\partial_0 B^+_\epsilon)}
+   +\|f\|_{W^{l,p}(B^+_\epsilon)} \right)\) for all \(f\in W^{k,p}(B^+_\epsilon)\).
+\item If \(f\in W^{l,p}(B^+_\epsilon)\) and \(Af\in W^{k-r,p}(B^+_\epsilon)\) and \(B^j
+   f\in \partial W^{k-r_j,p}(\partial_0 B^+_\epsilon)\) then actually \(f\in W^{k,p}(B^+_\delta)\).
+\item If \(g\in W^{l-r,p}(B^+_\delta/ \partial_e )\) and \(h_j\in \partial
+   W^{l-r_j,p}(\partial_0 B^+_\delta/ \partial)\) then there exists \(f\in
+   W^{l,p}(B^+_\epsilon, \partial_e)\) with
+\[
+    g-Af \in W^{k-r,p}(B^+_\epsilon, \partial_e),\quad h_j-B^j f \in \partial
+   W^{k-r_j,p}(\partial_0 B^+_\epsilon/ \partial).
+   \]
+\end{enumerate}
+\end{lemma}
+
+
+The generalisation of Theorem \ref{thm:elliptic-const} on manifold with variable
+coefficients is now straightforward. The only nontrivial issue is the definition of
+semi-elliptic operator \(A\) on manifold. This requires a Riemannian metric \(g\) and
+ellipticity is naturally defined at every point, viewed in a chart, as we did
+\href{./interpolation-sobolev.org}{before}. But this only defines the action of \(A\) on \(C^\infty(M)\) (or \(C^r(M)\)
+if regularity is important), but not on \(W^{k,p}(M/ \mathcal{A})\) where \(\mathcal{A}\subset \partial M\) is a connected component.
+
+The action of a differential operator \(A\) can be defined to be component-wise on \(W^{k,p}(M/ \mathcal{A}) \hookrightarrow \bigoplus_i
+W^{k,p}(\mathcal{R}_i/\mathcal{A}_i)\) where \(\mathcal{R}_i\) is an Euclidean plan or a half-plan and \(\mathcal{A}_i\) the corresponding boundary part,
+i.e.
+\[
+ \xymatrix{
+W^{k,p}(M/\mathcal{A}) \ar@{->}[r]^{\iota} \ar@{-->}[d]_{{A}} & \bigoplus_i W^{k,p}(\mathcal{R}_i/\mathcal{A}_i) \ar@{->}[d]^{{A}} \\
+W^{l,p}(M/\mathcal{A}) \ar@{->}[r]^{\iota} & \bigoplus_iW^{l,p}(\mathcal{R}_i, \mathcal{A}_i)
+}
+\]
+It remains to check that the component-wise operation of \({A}\) maps an element
+in the image
+on \(W^{k,p}(M/\mathcal{A})\) to an element in the image of \(W^{l,p}(M/\mathcal{A})\). This can be done using the projection as we did when defining trace operator on
+manifold, but the situation is much simpler here since we can differentiate directly an element
+in \(\mathcal{S}^*(M)\).
+
+
+
+\begin{theorem}[Elliptic equation on manifold]
+\label{thm:elliptic-general}
+Let \(M\) be a compact manifold possibly with boundary (and a compatible foliation if
+the weight is not uniform). Let \(A\) be a general semi-elliptic operator of weight \(r\), of variable coefficients and \(\{B^j\}_j\) be a set boundary operators of weight \(r_j\) satisfying
+CBC with respect to \(A\). Then for all \(\frac{\sigma}{\rho p}+\max_j r_j < l<
+k<+\infty\), the square
+\[
+ \xymatrix{
+W^{k,p}(M) \ar@{->}[r]^<<<<<{\mathcal{C}} \ar@{^{(}->}[d]_{\iota} &
+W^{k-r,p}(M)\bigoplus_{j=1}^m \partial W^{k-r_j,p}(\partial M) \ar@{^{(}->}[d]^{\iota} \\
+W^{l,p}(M) \ar@{->}[r]_<<<<<{\mathcal{C}} & W^{l-r,p}(M)\bigoplus_{j=1}^m \partial
+W^{l-r_j,p}(\partial M) 
+}
+\]
+is exact where \(\mathcal{C}=(A,B^j)\).
+\end{theorem}
+
+\begin{proof}
+We can suppose \(l\geq k-1\), the general case follows using
+
+\begin{lemma}
+\label{lem:compose-exact}
+If the two following squares are exact
+\[
+ \xymatrix{
+E \ar@{->}[r]^{l} \ar@{->}[d]_{m} & F \ar@{->}[d]^{p} \\
+G \ar@{->}[r]_{q} & H
+},\quad
+\xymatrix{
+G \ar@{->}[r]^{q} \ar@{->}[d]_{r} & H \ar@{->}[d]^{s} \\
+K \ar@{->}[r]_{t} & L
+}
+\]
+then
+\[
+ \xymatrix{
+E \ar@{->}[r]^{l} \ar@{->}[d]_{rm} & F \ar@{->}[d]^{sp} \\
+K \ar@{->}[r]_{t} & L
+}
+\]
+is exact.
+\end{lemma}
+
+Now covering \(M\) by finitely many charts of type \(B_\delta\subset B_\epsilon\) and
+\(B^+_\delta\subset B^+_\epsilon\) such that the interior of \(B_{\delta}\) and of \(B^+_{\delta}\)
+cover \(M\). Also, choose a partition of unity \(\sum \psi = 1\) subordinated to \(B_\delta\) and \(B^+_{\delta}\). The exactness will be established if we can prove the
+analogue of the 2 last statements of Theorem \ref{thm:elliptic-const}
+
+For the regularity statement: If \(f\in W^{l,p}(M)\), \(Af\in W^{k-r,p}(M)\) and \(B^j f\in W^{k-r_j,p}(\partial M)\) then the same holds for \(\psi f\) in \(B_\epsilon\) and \(B_\epsilon^+\) since 
+\[
+ [A,\psi]f\in W^{l-r+1,p}\subset W^{k-r,p},\quad [B^j,\psi] f \in
+\partial W^{l-r_j+1,p}\subset \partial W^{k-r_j,p}
+\]
+Therefore \(\psi f \in W^{k,p}(B_\delta)\) or \(W^{k,p}(B^+_\delta)\) hence \(f\in W^{k,p}(M)\).
+
+For the approximation: If \(g\in W^{l-r,p}(M)\) and \(h_j\in \partial
+W^{l-r_j,p}(\partial M)\) then \(\psi g\in W^{l-r,p}(B_\delta/ \partial)\) or
+\(W^{l-r,p}(B_\delta^+/ \partial_e)\) and \(\psi h_j\in \partial W^{l-r_j,p}(\partial_0
+B^+_\delta / \partial)\). Then by Lemma \ref{lem:ell-loc-bndry}, we can find \(\tilde f\in
+W^{l,p}(B_\epsilon/\partial)\) with \(\psi
+g - A \tilde f \in W^{k-r,p}(B_\epsilon/ \partial)\) or in a boundary cube  \(\tilde f\in
+W^{l,p}(B^+_\epsilon/ \partial_e)\) with \(\psi
+g - A \tilde f \in W^{k-r,p}(B^+_\epsilon/ \partial_e)\) with \(\psi h_j - B^j \tilde
+f\in \partial W^{k-r_j,p}(\partial_0 B^+_\epsilon/ \partial)\).
+Then \(f:=\sum \tilde f\) makes sense and satisfies
+ \begin{cases}
+g - Af = \sum (\psi g - A\tilde f)  & \text{is in $W^{k-r,p}(M)$} \\
+h - B^j f = \sum (\psi h_j - B^j \tilde f)  & \text{is in $ \partial W^{k-r_j,p}(\partial M)$}
+ \end{cases}
+\end{proof}
+
+
+\subsection{Consequences of Theorem \ref{thm:compact-op-exact}.}
+\label{sec:orge2f277f}
+Under the same setup as Theorem \ref{thm:elliptic-general}, one has
+
+\begin{theorem}[Regularity of kernel and cokernel]
+\label{thm:ref-kernel}
+The map \(\mathcal{C} = (A,B): W^{k,p}(M) \longrightarrow W^{k-r,p}(M) \bigoplus_{j=1}^m
+\partial W^{k-r_j,p}( \partial M)\) has closed range, finite dimensional kernel and
+cokernel and the kernel and cokernel are independent of \(k\) in the sense of Theorem
+\ref{thm:compact-op-exact}. In particular, \(\ker C \subset C^\infty(M)\)
+\end{theorem}
+
+The analoguous regularity for cokernel is less straightforward. We resume here the result.
+
+\begin{theorem}[Regularity of cokernel]
+\label{thm:reg-coker}
+If \(r>\max r_j\) then the image of \(\mathcal{C}\) can be represented by finitely
+many linear relations: \((g,h)\in \im \mathcal{C}\) if and only if it satisfies finitely
+many equations of type:
+\[
+ \langle g,\gamma \rangle_M + \sum_{j=1}^m \langle h_j, \eta_j \rangle_{\partial M} = 0
+\]
+with \(\gamma\in C^\infty(M)\) and \(\eta_j\in C^\infty (\partial M)\).
+
+If \(\max r_j -r = k \geq 0\) then for all \(g\in W^{k-r,p}(M)\), the normal
+derivatives \(\frac{\partial g}{\partial \nu^i}\) are well defined if \(\frac{\sigma_i}{\rho}\leq k\). The cokernel is then given by the relations
+\[
+ \langle g, \gamma \rangle_M + \sum_{\sigma_i/\rho \leq k} \langle \frac{\partial
+g}{\partial \nu^i},\chi_i \rangle_{\partial M} + \sum_{j=1}^m \langle h_j, \eta_j
+\rangle_{\partial M}=0
+\]
+with \(\gamma\in C^\infty(M)\), \(\chi_i\in C^\infty (\partial M)\), \(\eta_j\in
+C^\infty (\partial M)\). 
+\end{theorem}
+
+
+\section{Parabolic equation on manifold.}
+\label{sec:org414d75c}
+
+\subsection{Parabolicity and local results.}
+\label{sec:org4c87ce2}
+
+\begin{definition}
+The constant coefficient differential operator \(A(D_x,D_t) =
+\sum_{\|(\alpha,\beta)\|\leq r}a_{\alpha\beta}D^\alpha_x D^\beta_t\) is called
+\textbf{parabolic} if its symbol \(A(\xi,\theta):= \sum_{\|(\alpha,\beta)\| = r}
+a_{\alpha\beta}\xi^\alpha\theta^\beta\) has no zero when \(\xi\in \mathbb{R}\) and \(\im \theta \leq 0\) except \(\xi=\theta=0\).
+\end{definition}
+
+\begin{exampl}
+Take \(A= \partial_t - \partial_x^2 - \partial_y^2 - \partial_z^2 = iD_t + D_x^2 +
+D_y^2 + D_z^2\), the symbol is \(i\theta + \sum \xi_i^2\) has no zero \(\xi\in
+\mathbb{R}^3,\im\theta \leq 0\) except \(0\). Generally, the operator \(\partial_t + A(D_{x^i})\) is parabolic if \(A\) is an elliptic operator with the symbol
+\(A(\xi)\geq 0\) for all \(\xi\in \mathbb{R}\) with equality only at \(\xi=0\).
+\end{exampl}
+
+\begin{remark}
+\begin{enumerate}
+\item If \(\sigma = \lcm (\sigma_1,\dots,\sigma_n)\) is the \(\lcm\) of weights of variable
+\(x_i\) and \(\tau\) is the weight of \(t\), then parabolicity implies \(2\tau \mid
+   \sigma\). Therefore if the weights of \(x_i\) are uniform, one can suppose that \(\tau
+   = 1\).
+\item Parabolicity implies ellipticity.
+\end{enumerate}
+\end{remark}
+
+Similarly to the elliptic case, we attempt to define an approximate inverse \(G\) of \(A\), of the form
+\[
+ G(\xi,\theta) = (1-\psi(\xi,\theta))/A(\xi,\theta)
+\]
+such that \(G(D_x,D_t): W^{k-r,p}(X\times T^+/0) \longrightarrow  W^{k,p}(X\times T^+/0)\) and \(\psi(D_x,D_t): W^{k,p}(X\times T^+/0) \longrightarrow W^{k,p}(X\times T^+/0)\)
+for all \(k,l\in \mathbb{R}\).
+
+The sufficient condition for this is that \(\psi(\xi,\theta) = \psi(\xi)\hat\chi(\theta)\) where \(\psi\) is compactly support and \(\hat\chi\in \mathcal{S}(T)\) with \(\hat\chi - 1\) having a zero of infinite order at \(\theta = 0\), and \(\hat\chi\)
+extends to a holomorphic function in \(\im \theta \leq 0\). The function \(\hat\chi\)
+used in section \ref{ell-half-plan} suffices. We then have the following exact square
+\[
+\xymatrix{
+W^{k,p}(X\times T^+/0) \ar@{->}[r]_{A} \ar@{^{(}->}[d]^{\iota} & W^{k-r,p}(X\times T^+/0) \ar@{^{(}->}[d]_{\iota} \ar@/_/@{->}[l]_{G} \\
+W^{l,p}(X\times T^+/0) \ar@{->}[r]^{A} \ar@/^/@{->}[u]^{\psi} & W^{l-r,p}(X\times T^+/0) \ar@/^/@{->}[l]^{G} \ar@/_/@{->}[u]_{\psi}
+}
+\]
+
+The theory in section \ref{ell-half-plan} also allows us to treat spatial boundary
+condition, that is, to replace the Euclidean plan \(X\) by the half-plan \(X\times Y^+\). The analog of \textbf{CBC condition} for boundary operators
+\[
+ B^j(D_x,D_y,D_t) = \sum_{\|(\alpha,\beta,\gamma)\|\leq r_j} b_{\alpha\beta\gamma}^j
+D_x^\alpha D_y^\beta D_t^\gamma
+\]
+is that the symbols
+\[
+B^j(\xi,\eta,\theta) = \sum_{\|(\alpha,\beta,\gamma)\|= r_j} b_{\alpha\beta\gamma}^j
+\xi^\alpha \eta^\beta \theta^\gamma
+\]
+are linearly independent modulo \(A^+(\xi,\eta,\theta)\) as polynomial in \(\eta\) for
+all \(\xi\in \mathbb{R}^n\) \textbf{and} for all \(\im\theta \leq 0\) except when \(\xi=\theta= 0\). In that case we have the exactness of
+\[
+\xymatrix{
+W^{k,p}(X\times Y^+\times T^+/0) \ar@{->}[r]^<<<<<{(A,B^j)} \ar@{^{(}->}[d]^{\iota} & W^{k-r,p}(X\times Y^+\times T^+/0)\bigoplus_{j=1}^m \partial W^{k-r_j,p}(X\times T^+/0) \ar@{^{(}->}[d]_{\iota} \\
+W^{l,p}(X\times Y^+\times T^+/0) \ar@{->}[r]^<<<<<{(A,B^j)} & W^{l-r,p}(X\times Y^+\times T^+/0)\bigoplus_{j=1}^m\partial W^{l-r_j,p}(X\times T^+/0)
+}
+\]
+
+
+\subsection{Global results and causality. \label{sec:global-result-para}}
+\label{sec:org33fecf2}
+
+We will use the following setup. Let \(M\) be a compact manifold (possibly with boundary), of the form \(N\times
+[\alpha,\omega]\ni (x,t)\). The global product gives a foliation that allows us to set the
+spatial weight to be uniformly \(\sigma\) and the temporal weight to be \(\tau\). The
+boundary of \(M\) has 3 parts: \(\partial_\alpha M := N\times \alpha\), \(\partial_\omega M := N\times\omega\) and \(\partial_S M := \partial N\times [\alpha,\omega]\).
+
+Let \(A\) be a parabolic operator, meaning that \(A\) is parabolic at every point and
+\(B^j, j=\overline{1,m}\) be a set of boundary operator satisfying CBC condition at
+every point on \(\partial_S M\). We take into account the initial condition by only
+considering the space \(W^{k,p}(M/\partial_\alpha)\) of function vanishing before time \(t=\alpha\). As before the operator
+\[
+ \mathcal{C}:=(A,B^j):\  W^{k,p}(M/ \partial_\alpha) \longrightarrow W^{k-r,p}(M/
+\partial_\alpha)\bigoplus_{j=1}^m \partial W^{k-r_j,p}(\partial_S M/ \partial_\alpha)
+\]
+has closed range, finite dimensional kernel and cokernel which are independent of \(k >
+\frac{1}{p}+\max r_j\).
+
+The same method allows us to conclude that \(\ker \mathcal{C}\subset C^\infty(M)\) and
+the cokernel is given by finitely many linear relations of type
+\[
+\langle g,\gamma \rangle_M + \sum_j \langle h_j,\eta_j \rangle_{\partial M} + \sum_i \langle
+\frac{\partial}{\partial \nu^i} g ,\chi_i \rangle_{\partial_S M}
+\]
+where \(\gamma\in C^\infty (M/ \partial_\omega)\), \(\chi_i\in C^\infty(\partial_S M/
+\partial_\omega)\) and \(\eta_j\in C^\infty(\partial_S M/ \partial_\omega)\).
+
+The difference with elliptic equation is that the kernel and cokernel of \(\mathcal{C}\)
+are not only of finite dimension, but are zero.
+
+\begin{theorem}[Causality]
+\label{thm:para-causality}
+With the previous setup, the operator \(\mathcal{C}=(A, B^j)\) defines an isomorphism
+\[
+\xymatrix{
+W^{k,p}(M/\partial_\alpha) \ar@{->}[r]^<<<<<{\mathcal{C}} & W^{k-r,p}(M/\partial_\alpha)\bigoplus_{j=1}^m \partial W^{k-r_j,p}(\partial_S M/\partial_\alpha)
+}
+\]
+for all \(k > \frac{1}{p} + \max_j r_j\), and therefore an isomorphism
+\[
+ \xymatrix{
+C^\infty(M/\partial_\alpha) \ar@{->}[r]^<<<<<{\mathcal{C}} & C^\infty(M/\partial_\alpha)\bigoplus_{j=1}^mC^\infty(\partial_S M/\partial_\alpha)
+}
+\]
+\end{theorem}
+
+\begin{proof}
+Let \(\beta \leq \gamma\) be real numbers in \([\alpha,\omega]\) and let \(\ker
+(\beta,\gamma)\) and \(\coker (\beta,\gamma)\) be the kernel and cokernel of operator
+\(\mathcal{C}\) on \(N\times [\beta,\gamma]\) with vanishing initial condition at \(\beta\). Since \(\dim \ker (\beta,\gamma)\) and \(\dim\coker (\beta,\gamma)\) are
+integer-valued, using the fact that \(\dim \ker (\beta,\omega)\) is decreasing in \(\beta\) and \(\dim\coker (\alpha,\gamma)\) is increasing in \(\gamma\), one can
+easily check that it suffices to show that the two functions are
+continuous in \((\beta,\gamma)\) to prove that they are identically \(0\).
+
+The following statements can be verified mechanically:
+\begin{enumerate}
+\item \emph{Monotonicity:} \(\dim\ker(\beta,\gamma)\) is decreasing in \(\beta\), \(\dim\coker
+   (\beta,\gamma)\) is increasing in \(\gamma\).
+\item \emph{One-sided continuity:} \(\dim \ker (\beta,\gamma)\) is left-continuous in \(\beta\),
+\(\dim\coker (\beta,\gamma)\) is right-continuous in \(\gamma\).
+\item \emph{One-sided semi-continuity:} \(\dim\ker (\beta,\gamma)\) is left upper semi-continuous in
+\(\gamma\), i.e.
+\[
+   \lim_{\gamma_1 \to \gamma_2^-} \inf \dim \ker (\beta,\gamma_1) \geq \dim\ker (\beta,\gamma_2)
+   \]
+This is due to the left-continuity in first variable of \(\dim\ker\) and the exact
+sequence
+\[
+    0 \longrightarrow \ker (\gamma_1,\gamma_2) \longrightarrow \ker(\beta,\gamma_2) \longrightarrow \ker(\beta,\gamma_1)
+   \]
+ where the last arrow is the restriction. Similar statement for \(\coker\):
+\[
+    \lim_{\beta_2 \to \beta_1^+} \dim \inf \coker (\beta_2,\gamma) \geq \dim\coker (\beta_1,\gamma)
+   \]
+\end{enumerate}
+
+This 3 statements suffice to finish the proof in the case where boundary conditions \(B^j\) on \(\partial_S M\) are of constant coefficients since \(\ker, \coker\)
+only depend on the difference \(\gamma -\beta\), up to a translation in time of the solutions.
+
+In case \(B^j\) are of variable coefficients, the idea of making translation in time can
+be formulated using Index theory for Fredholm maps:
+
+We recall that Fredholm maps between Banach spaces \(E, F\) are those in \(L(E,F)\) with
+closed image and finite dimensional kernel and cokernel. It is a classical result that
+\begin{enumerate}
+\item The set \(\mathcal{F}\) of Fredholm maps are open in \(L(E,F)\).
+\item The index \(i(l):= \dim \ker l - \dim \coker l\) is continuous in \(\mathcal{F}\).
+\end{enumerate}
+
+The difference \(\dim \ker (\beta,\gamma) -\dim\coker (\beta,\gamma)\) can be
+regarded as the index of a continuous family \(\mathcal{C}_{(\beta,\gamma)}\) of
+operators on the same space \(N\times [0,1]\) using the diffeomorphism
+\[
+ N\times [0,1] \xrightarrow{\sim} N\times [\beta,\gamma].
+\]
+Hence \(\dim\ker (\beta,\gamma) - \dim \coker (\beta,\gamma)\) is constant. It follows
+that \(\dim \ker (\beta,\gamma)\) is both increasing and one-sided semi-continuous in \(\gamma\) hence is right-continuous in \(\gamma\), hence \(\dim \coker (\beta,\gamma)\) is continuous in \(\gamma\). Other continuities follows similarly.  
+\end{proof}
+
+\begin{remark}
+\label{rem:init-cond-para}
+To take into account the initial condition \(\restr{f}{\alpha} = f_\alpha\) smooth, one looks
+for solution of the form \(f = f_b + f_\#\) where \(f_b\) satisfies the initial
+condition and \(f_\#\in W^{k,p}(N\times[\alpha,\omega]/\alpha)\) satisfying a parabolic
+equation \((A f_\#, B^j f) = (g,h)\) where \(g,h\) and the coefficients of \(A\) and
+\(B^j\) depend smoothly on \(f_b\), and therefore still \(C^\infty\) in \((x,t)\).
+\end{remark}
+
+
+
+\subsection{Regularisation effect and Gårding inequality.}
+\label{sec:org13c850a}
+
+With the same technique used for elliptic equation, one can also prove regularity result
+for parabolic equation. There are 2 different points, in comparison with the elliptic
+case:
+\begin{enumerate}
+\item There is a regularisation effect of parabolic equation: An arbitrarily weak estimate in
+the past gives an arbitrarily strong estimate in the future. We will see that this is
+in fact a consequence of the causality of parabolic equation (Theorem \ref{thm:para-causality}) and Kondrachov's theorem.
+\item The temporal boundary condition is thicken: We will look at the norm on \(N\times [\alpha,\pi]\) rather
+than the restriction to \(\partial_\alpha M\).
+\end{enumerate}
+
+\begin{theorem}[Regularity and Garding inequality]
+\label{thm:reg-parabolic}
+Under the same setup and notation as Section \ref{sec:global-result-para}, let \(p\in
+(1,+\infty)\) and \(k>l> \frac{1}{p}+\max r_j\). We denote by \(W^{k,p}([\beta,\gamma])\) the Sobolev space \(W^{k,p}(N\times[\beta,\gamma])\). Suppose that
+\[
+ f\in W^{l,p}([\alpha,\omega]),\quad Af\in W^{k-r,p}( [\alpha,\omega]),\quad
+B^j f \in \partial W^{k-r_j,p}( [\alpha,\omega])
+\]
+then \(f\in W^{k,p}([\pi,\omega])\) for all \(\pi \in (\alpha,\omega)\). Also, for all  \(l' > -\infty\), there exists a constant \(C>0\) such that
+\[
+ \|f\|_{W^{k,p}([\pi,\omega])} \leq C \left( \|Af\|_{W^{k-r,p}([\alpha,\omega])} + \|B^j
+f\|_{\partial W^{k-r_j,p}([\alpha,\omega])} + \| f \|_{W^{l',p}([\alpha,\pi])}  \right).
+\]
+In particular, for homogeneous equation, i.e. \(Af = 0, B^j f = 0\), the solution is \(C^\infty\) and an arbitrarily weak estimate in the past gives an arbitrarily strong
+estimate in the future.
+\end{theorem}
+
+\begin{proof}
+Let us explain why the theorem is true in the case of no spatial boundary \(\partial N
+=\emptyset\). In this case, there is no distinction between \(l\) and \(l'\). Consider \(A\) as an elliptic operator on \(N\times [\tilde\pi,\omega]\) with \(\tilde\pi = \frac{\alpha +\pi}{2}\) and with no boundary operator, one has the following exact diagram:
+\[
+\xymatrix{
+W^{k,p}([\tilde\pi,\omega]) \ar@{^{(}->}[d] \ar@{->}[r]^<<<<<{{A}} & W^{k-r,p}([\tilde\pi,\omega])   \ar@{^{(}->}[d] \\
+W^{l,p}([\tilde\pi,\omega]) \ar@{->}[r]^<<<<<{{A}} & W^{l-r,p}([\tilde\pi,\omega])
+}
+\]
+Therefore the if \(f\in W^{l,p}([\alpha,\omega])\) and \(Af \in W^{k-r,p}([\alpha,\omega])\)then \(f \in W^{k,p}([\tilde\pi,\omega])\subset W^{k,p}([\pi,\omega])\) and 
+\begin{align}
+\|f\|_{W^{k,p}([\pi,\omega])} \leq \|f\|_{W^{k,p}([\tilde\pi,\omega])} &\leq C \left( \|Af\|_{W^{k-r,p}([\alpha,\omega])} + \| f \|_{W^{l,p}([\alpha,\omega])}  \right) \\ 
+			      	   &\leq C \left( \|Af\|_{W^{k-r,p}([\alpha,\omega])} + \| f \|_{W^{l,p}([\alpha,\pi])} + \| f \|_{W^{l,p}([\tilde\pi,\omega])} \right) \label{eq:reg-para}
+\end{align}
+It remains to check that we can get rid of the \(\| f \|_{W^{l,p}([\tilde\pi,\omega])}\) 
+term on the right hand side. Suppose not, then there exists a sequence \(\{f_i\} \subset
+W^{l,p}([\alpha,\omega])\) such that \(Af_i \to 0\) in \(W^{k-r,p}([\alpha,\omega])\) and
+\(f_i \to 0\) in \(W^{l,p}([\alpha,\pi])\) but \(\| f_i\|_{W^{l,p}([\tilde\pi,\omega])} =
+1\). Then by \eqref{eq:reg-para}, \(\{f_i\}\) is a bounded sequence in \(W^{k,p}([\tilde\pi,\omega])\) and, by
+Kondrachov's theorem, can be supposed to converge in \(W^{l,p}([\tilde\pi,\omega])\) to a
+function \(\tilde f\) which has \(\| \tilde f \|_{W^{l,p}([\tilde\pi,\omega])} =
+1\) and \(A\tilde f = 0\) on \([\tilde\pi,\omega]\) because \(A\) commutes with the restriction. Moreover, since \(\|f_i\|_{W^{l,p}([\alpha,\pi])} \to 0\), one has \(\tilde f\in W^{l,p}([\tilde\pi,\omega]/\tilde\pi)\) and the fact that \(\tilde f\ne 0\) contradicts Theorem \ref{thm:para-causality}).
+\end{proof}
+
+\begin{remark}
+The proof of Theorem \ref{thm:reg-parabolic} in the general case, with spatial boundary
+taken into account requires the notion of bigraded Sobolev spaces on half-plan, see
+\cite[page 97-100]{hamilton_harmonic_1975}. This is also how the regularity result for
+cokernel of elliptic operator, Theorem \ref{thm:reg-coker}, is proved.
+\end{remark}
+
+
+\section{Example: Linear heat equation.}
+\label{sec:org0e058a2}
+
+We use the same setup of \(M,N,\alpha,\omega\) as Section
+\ref{sec:global-result-para}. Let \(\Delta\) be the (geometer's)
+Laplacian
+\[ 
+-\Delta f:= g^{ij}(x) \left( \frac{\partial^2 f}{\partial x^i \partial x^j} - \Gamma_{ij}^k(x)
+\frac{\partial f}{\partial x^k}\right) 
+\]
+It is easy to check that \(\Delta\) is an elliptic operator with symbol \(\Delta \geq
+0\) (there is a factor \(i\) when passing from \(\frac{\partial}{\partial x^i}\) to \(D_{x^i}\)). Hence on \(M = N\times [\alpha,\omega]\) the operator \(\frac{\partial}{\partial t}+ \Delta\) is parabolic.
+
+\subsection{Linear system.}
+\label{sec:org5395cc9}
+We will look at the linear parabolic system of equations for \(F = (f^1,\dots, f^n): M
+\longrightarrow \mathbb{R}^n\):
+\begin{equation}
+\label{eq:para-system}
+\frac{\partial F}{\partial t} + \Delta F + a \nabla F + bF = G
+\end{equation}
+where in local coordinates \((a \nabla F)^\alpha = a^{\alpha i}_\beta \frac{\partial f^\beta}{\partial x^i}\)
+and \((bF)^\alpha = b^\alpha_\beta f^\beta\) and \((\Delta F)^\alpha = \Delta
+f^\alpha\) and the coefficients \(a^{\alpha i}_\beta\) and \(b^\alpha_\beta\) are
+smooth.
+
+We will say that a function \(F=(f^1,\dots, f^n): M \longrightarrow \mathbb{R}^n\) of class
+\(W^{k,p}\) if it is \(W^{k,p}\) component-wise. We also denote abusively by \(W^{k,p}(M)\) the direct sum \(W^{k,p}(M)^{\oplus n}\) where \(F\) belongs to.
+
+\begin{theorem}[Linear heat equation]
+\label{thm:lin-heat}
+Let \(p > \dim M+1 = \dim N+2\) and \(k\geq 0\), then for all \(G\in
+W^{k,p}(N\times[\alpha,\omega]/\alpha)\), there exists a unique \(F\in
+W^{k+2,p}(N\times [\alpha,\omega]/\alpha)\) that solves
+\eqref{eq:para-system}. Moreover, the operator 
+\[ 
+F\longmapsto \frac{\partial F}{\partial t} + \Delta F +
+a\nabla F + b F
+\]
+is an isomorphism between Banach spaces \(W^{k+2,p}(N\times[\alpha,\omega]/\alpha) \longrightarrow
+W^{k,p}(N\times[\alpha,\omega]/\alpha)\).
+\end{theorem}
+\begin{proof}
+Note that
+\begin{align*}
+H:\  W^{k+2,p}(N\times[\alpha,\omega]/\alpha) &\longrightarrow W^{k,p}(N\times[\alpha,\omega]/\alpha)\\
+     F					      &\longmapsto      \frac{\partial F}{\partial t} + \Delta F
+\end{align*}
+is a direct sum of parabolic operators in each component, and hence an isomorphism, and 
+\begin{align*}
+K:\  W^{k+2,p}(N\times[\alpha,\omega]/\alpha) &\longrightarrow W^{k,p}(N\times[\alpha,\omega]/\alpha)\\
+     F					      &\longmapsto      a\nabla F + bF
+\end{align*}
+is a compact operator because it factors through \(W^{k+1}(N\times
+[\alpha,\omega]/\alpha)\). Therefore \(H+K\) is a Fredholm map with the same index as \(H\), which is \(0\). It is sufficient to check that the kernel of \(H+K\) is
+trivial.
+
+Suppose that \(F = (f^1,\dots, d^n)\in \ker (H+K)\) then \(f^\alpha\in W^{2,p}(N\times
+[\alpha,\omega]/\alpha)\), so \(f^\alpha\) and \(\frac{\partial f^\alpha}{\partial
+x^i}\) are continuous function on \(N\times[\alpha,\omega]\). Since
+\[
+ \frac{\partial f^\alpha}{\partial t} + \Delta f^\alpha = -a^{\alpha i}_\beta
+\frac{\partial f^\beta}{\partial x^i} - b^\alpha_\beta f^\beta,
+\]
+by repeated use of Theorem \ref{thm:reg-parabolic} the \(f^\alpha\) are smooth for \(t>\alpha\).
+
+Let \(e:= \frac{1}{2}|F|^2 := \frac{1}{2}\sum_\alpha |f_\alpha|^2\), then \(e\) is
+continuous on \(N\times [\alpha,\omega]\), vanishes on \(N\times \{\alpha\}\) and one has
+\begin{align*}
+ \frac{d e}{dt} &= -\Delta e - |\nabla F|^2 - a^{\alpha i}_\beta f^\alpha \frac{\partial f^\beta}{\partial x^i} - b^\alpha_\beta f^\alpha f^\beta  \\
+ 	 	&\leq -\Delta e + \frac{1}{2} C |F|^2 = -\Delta e + Ce
+\end{align*}
+where we used the inequality \(-u^2 - 2uv \leq v^2\) to bound the second and third
+terms. We conclude that \(F=0\) since \(e= 0\) by the following Maximum principle. 
+\end{proof}
+
+\subsection{Maximum principle and \(L^\infty\)-Comparison theorem.}
+\label{sec:org641166d}
+
+With the same proof as for open set in \(\mathbb{R}^n\), one has the maximum principle
+for parabolic equation on manifolds. The constant \(C\) in the following Theorem
+\ref{thm:max-princ-para} can depend on the point \(x\in M\), but will be most of the time
+globally constant, since the manifold \(M\) is compact. The following statement of
+Maximum principle will be sufficient for most of our application.
+
+\begin{theorem}[Maximum principle]
+\label{thm:max-princ-para}
+Let \(f: M \longrightarrow \mathbb{R}\) be a continuous function on \(M = N\times
+[\alpha,\omega]\) with \(\restr{f}{\partial_\alpha M} \leq 0\) and \(\restr{f}{
+\partial_S M} \leq 0\). Suppose that whenever \(f>0\), \(f\) is smooth satisfies
+\[
+ \frac{\partial f}{\partial t} \leq -\Delta f + Cf
+\]
+Then in fact \(f \leq 0\).
+\end{theorem}
+
+With the same proof as Theorem \ref{thm:max-princ-para}, one can prove the following \(L^\infty\) Comparison theorem.
+
+\begin{theorem}[\( L^\infty \)-Comparison theorem]
+\label{thm:infty-comparison}
+Let \(f:\ M=N\times[\alpha,\omega] \longrightarrow \mathbb{R}\) be a continuous function
+on \(M\), smooth for time \(t>0\) such that
+\begin{equation}
+\label{eq:infty-comparison}
+ \frac{d f}{dt} = -\Delta f + a\nabla f+ b f \text{ on } N\times (\alpha,\omega]
+\end{equation}
+where \(a\) is a smooth vector field and \(b\) is a smooth function on \(N\). Then there exists \(B=B(a,b)\) depending only on \(a\) and \(b\) such that
+\[
+ \|\restr{f}{\omega}\|_{L^\infty} \leq e^{B(\omega-\alpha)}
+\|\restr{f}{\alpha}\|_{L^\infty}
+\]
+\end{theorem}
+\begin{proof}
+We can suppose \(b \leq -1\) and prove that \(\|f\|_{L^\infty(\partial_\omega M)} \leq
+\|f\|_{L^\infty(\partial_\alpha M)}\). Intuitively, this means that since heat spreads
+out, the largest density must be attained at time \(t=\alpha\).
+In fact, choose \(B = \max_M b + 1\) and define \(\tilde f = f e^{-B(t-\alpha)}\) then
+\(\|\restr{\tilde f}{\alpha}\|_{L^\infty} = \| \restr{f}{\alpha} \|_{L^\infty}\) and \(\| \restr{\tilde f}{\omega}\|_{L^\infty} =
+e^{-B(\omega-\alpha)}\|\restr{f}{\omega}\|_{l^\infty}\). The function \(\tilde f\)
+satisfies the same heat equation \eqref{eq:infty-comparison} as \(f\), with \(b\) replaced by \(b-B \leq -1\).
+
+Now let us prove that under this supposition, \(|f|\) attains it maximum at time \(t=\alpha\). Since we can replace the solution \(f\) of \eqref{eq:infty-comparison} by \(-f\), we can suppose, for sake of contradiction, that \(|f|\) attains it maximum on \(N\times[\alpha,\omega]\) at \((x^*, t^*)\) with \(|f(x^*,t^*)| = f(x^*,t^*) > 0\) and \(t^* >\alpha\). Then one has
+
+\begin{cases}
+\nabla f (x^*, t^*)= 0, \\
+\frac{d f}{dt}(x^*,t^*) \geq 0, \text{ (this is not true if \( t^*=\alpha \))}\\
+\Delta f(x^*, t^*) \geq 0, \\
+f(x^*, t^*)>0
+\end{cases}
+
+Plugging these in \eqref{eq:infty-comparison}, one has a contradiction.
+\end{proof}
+
+
+\subsection{Backwards heat equation and \(L^1\)-Comparison theorem.}
+\label{sec:orgb1e4ade}
+We will use backwards heat equation, which is just heat equation with the reversed sense
+of time (so with the reversed sign for \(\Delta\) as well), in order to dualise the
+estimate of Theorem \ref{thm:infty-comparison} and obtain a \(L^1\) estimate of \(f\) at time \(t=\omega\) in term of its \(L^1\) norm at \(t=\alpha\). In particular,
+we prove the following theorem.
+
+\begin{theorem}[\( L^1 \)-comparison theorem]
+\label{thm:1-comparison}
+Let \(a\) be a smooth, divergence-free vector field on a Riemannian manifold \(N\) and
+\(b\) be a smooth function on \(N\).Let \(f:\ N\times[\alpha,\omega] \longrightarrow
+\mathbb{R}\) be a continuous function on \(M\) such that
+\begin{equation}
+\label{eq:1-comparison}
+ \frac{d f}{dt} = -\Delta f + a\nabla f+ b f \text{ on } N\times (\alpha,\omega].
+\end{equation}
+Then there exists \(B=B(a,b)\) depending only on \(a\) and \(b\) such that
+\[
+ \|\restr{f}{\omega}\|_{L^1} \leq e^{B(\omega-\alpha)}
+\|\restr{f}{\alpha}\|_{L^1}
+\]
+\end{theorem}
+\begin{proof}
+Since \(L^1\) is the dual space of \(L^\infty\), it is sufficient to prove that for
+all \(h\in C^\infty(N)\), one has
+\[
+\int_{N\times \{\omega\}} fh \leq e^{B(\omega-\alpha)}
+\left\|\restr{f}{\alpha}\right\|_{L^1}. \|h\|_{L^\infty}.
+\]
+
+Consider the backwards heat equation
+\begin{cases}
+\frac{d g}{dt} = \Delta g - \tilde a\nabla g - \tilde b g,  & \text{on $ N\times{[\alpha,\omega]}$} \\
+\restr{g}{\omega} = h, 
+\end{cases}
+which is just a heat equation on \(N\times[\alpha,\omega]\) with initial condition at \(\alpha\) if we pose \(\tilde g (t) :=
+g(\omega+\alpha - t)\). The solution \(g\) exists and is smooth on \(N\times[\alpha,\omega]\). One has, at any time \(t\)
+\begin{align*}
+  \int_{N} g \Delta f &= \int_N g\left(-\frac{d f}{dt} + a\nabla f + bf\right)\\
+  \int_{N} f\Delta g &= \int_N f\left( \frac{d g}{dt} +\tilde a \nabla g + \tilde b g \right)
+\end{align*}
+Therefore
+\[
+ \int_N  f \frac{dg}{dt} + g \frac{df}{dt} = \int_N (a\nabla f)g - (\tilde a \nabla g)f +
+(b-\tilde b) fg
+\]
+Choose \(b=\tilde b\) and \(\tilde a = -a\) then the term \((b-\tilde b)fg\)
+vanishes and the two first terms become
+\(\int_N \nabla_a (fg) = - \int_N fg \text{ div } a = 0\)
+where \(\text{ div } a := \frac{\partial}{\partial x^i} a^i\) is the
+divergence. Therefore one has \(\frac{d}{dt}\int_N fg = 0\), meaning that
+\[
+\int_{N} \restr{f}{\omega}. h = \int_{N\times{\omega}} fg = \int_{N\times{\alpha}} fg \leq
+\|\restr{f}{\alpha} \|_{L^1}. \| h \|_{L^\infty} \leq e^{B(\omega-\alpha)} \|\restr{f}{\alpha}\|_{L^1}. \|h\|_{L^\infty}
+\]
+where we applied Theorem \ref{thm:infty-comparison} to \(g\) (strictly speaking, to \(\tilde
+g\)) and  \(B\) only depends on \(\tilde a = -a\) and \(\tilde b = b\).
+\end{proof}

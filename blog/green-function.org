@@ -7,8 +7,10 @@
 #+SETUPFILE: ../res/mathsetup.org
 #+INCLUDE: ../res/include.org
 
+#+LATEX:\iffalse
 This post is the second part of my reading note for cite:aubin_nonlinear_1998. The first
 part is [[file:sobolev-riemannian.org][here]].
+#+LATEX:\fi
 
 
 Recall that in the Euclidean space \( \mathbb{R}^n \), one obtains a representation of the

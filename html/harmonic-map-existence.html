@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-30 Wed 23:09 -->
+<!-- 2018-05-31 Thu 23:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Global existence for nonlinear heat equation and harmonic maps between Riemannian manifolds</title>
@@ -311,7 +311,7 @@ solution still exists. We then conclude that the solution exists globally on \(
 <p>
 The crucial step to prove that the solution can be extended on \( [\alpha,\omega] \) is to
 uniformly bound all of its derivatives in time of evolution \( [\alpha,\omega) \). These
-estimates will also be useful to justify that the solution \( F_t \) converges in \(
+estimates will also be useful to justify the convergence of \( F_t \) in \(
 C^\infty(M) \) to a smooth function \( F_\infty \) which will eventually be a harmonic map
 from \( M \) to \( M' \).
 </p>
@@ -327,7 +327,7 @@ the initial total energies. Since \( \frac{dF_t}{dt } \) relates to spatial deri
 
 <div id="thm:bound-2-2" btit="(\(W^{2,2}\)-boundedness)" class="theorem">
 <p>
-There exist a constant \( C \) depending only on \( \delta \), the curvatures and initial
+There exist a constant \( C \) depending only on \( \delta \), the metrics and initial
 total energies such that
 \[
  \|F\|_{W^{2,2}(\tau,\tau+\delta)}\leq C\quad\text{for all } \alpha \leq \tau <\omega-\delta.
@@ -344,7 +344,7 @@ Since
 \right\|^2_{L^2}dt
 \]
 The first term and the second term are bounded by \( C^2\delta \), the third one, since \(
-\Gamma(F_t) \) is bounded by \( C^2\delta \) where \( C \) is a constant only depending on
+\Gamma(F_t) \) is bounded, by \( C^2\delta \) where \( C \) is a constant only depending on
 the metrics and initial total energies.
 </p>
 
@@ -379,7 +379,7 @@ where \( A:= \frac{\partial}{\partial t} + \Delta \) is the heat operator, one h
  -\frac{\delta}{3},\tau +\delta ])} + \|F\|_{W^{2,2}([\tau-\frac{\delta}{3},\tau +\delta])}  \right)
 \]
 The second term of RHS is already bounded by applying Theorem <a href="#thm:bound-2-2">thm:bound-2-2</a> to \(
-\frac{\delta}{3} \). For the first term:
+\frac{4\delta}{3} \). For the first term:
 \[
 \left\| \Gamma(F) (\nabla F)^2\right\|_{L^p([\tau-\frac{\delta}{3},\tau+\delta])} \leq
 C(M') \| |\nabla F|^2 \|_{L^p([\tau-\frac{\delta}{3}, \tau+\delta])} = C(M') \| e(F)
@@ -416,12 +416,8 @@ Now apply \( L^1 \)-<a href="elliptic-parabolic.html">Comparison Theorem</a> <a 
 \begin{equation}
 \label{eq:lem:bound-2-p:3}
 \|\psi_\tau\|_{L^1([\tau-
-\frac{\delta}{2},\tau+\delta])} \leq \frac{3\delta}{2} \left\| \restr{\psi_\tau}{\tau-\frac{\delta}{2}}\right\|_{L^1(M)} =  \frac{3\delta}{2} \left\| \restr{e}{\tau-\frac{\delta}{2}}\right\|_{L^1(M)}\leq C
+\frac{\delta}{2},\tau+\delta])} \leq \int_0^{3\delta/2} \|\restr{\psi_\tau}{\tau-\frac{\delta}{2}}\|_{L^1}e^{Bt}dt \leq \int_0^{3\delta/2}e^{Bt}dt.  \|\restr{e}{\tau-\frac{\delta}{2}}\|_{L^1}\leq C.
 \end{equation}
-<p>
-where the constant is the initial potential energy.
-</p>
-
 <p>
 The lemma follows from \eqref{eq:lem:bound-2-p:2} and \eqref{eq:lem:bound-2-p:3}.
 </p>
@@ -451,7 +447,7 @@ differential operator</a>, one has for \( \epsilon \ll \delta \):
 </p>
 \begin{align*}
  \|F\|_{W^{k,p}([\tau,\tau+\delta])} &\leq C_\epsilon \left(
-\|F\|_{W^{2,p}([\tau-\delta,\tau+\delta])} + \|\Gamma(F)(\nabla F)^2\|_{W^{k-2,p}([\tau-\epsilon,\tau+\delta])}\right)  \\
+\|F\|_{W^{2,p}([\tau-\epsilon,\tau+\delta])} + \|\Gamma(F)(\nabla F)^2\|_{W^{k-2,p}([\tau-\epsilon,\tau+\delta])}\right)  \\
 					   &\leq C_\epsilon\left(1 + C\left(1+\|F\|_{W^{s,q}([\tau-\epsilon,\tau+\delta])}\right)^{q/p}\right)
 \end{align*}
 <p>
@@ -511,7 +507,7 @@ by Theorem <a href="#thm:bound-k-p">thm:bound-k-p</a>, for all \( \tau \in [\alp
  \| D^u_t D^v_x F \|_{L^\infty(M\times[\tau,\tau+\delta])} \leq C_{\rm Sobolev} \| D^u_t D^v_x F
 \|_{W^{k,p}(M\times[\tau,\tau+\delta])} \leq C_{\rm Sobolev} . C(k,p,\delta)
 \]
-where, if we choose \( k \) sufficiently large, \( C_{\rm Sobolev} \) is the constant off Sobolev imbedding \(
+where, if we choose \( k \) sufficiently large, \( C_{\rm Sobolev} \) is the constant of Sobolev imbedding \(
 W^{k,p}(M\times[0,\delta]) \hookrightarrow C(M\times[0,\delta]) \) and \( C(k,p,\delta) \)
 is the constant provided by Theorem <a href="#thm:bound-k-p">thm:bound-k-p</a>. 
 </p>
@@ -536,12 +532,15 @@ of Eells and Sampson.
 <ol class="org-ol">
 <li><p>
 Let \( M, M' \) be compact Riemannian manifolds with \( \Riem(M') \leq 0 \). Then for
-every smooth map \( f_0:\ M \longrightarrow M'\subset B\subset \mathbb{R}^N \), the nonlinear heat equation
+every smooth map \( f_0:\ M \longrightarrow M'\subset B\subset \mathbb{R}^N \), the
+nonlinear heat equation
 </p>
+\begin{equation*}
 \begin{cases}
 \frac{df_t}{dt} = \tau(f_t),  & \text{for all $t\geq 0$} \\
 \restr{f}{t=0} = f_0,
-\end{cases}
+\end{cases}      
+\end{equation*}
 <p>
 admit a globally defined smooth solution \( f_t \). Moreover, all derivatives \( D^\alpha
    f_t \) remains uniformly bounded as \( t\to +\infty \).
@@ -555,7 +554,7 @@ admit a globally defined smooth solution \( f_t \). Moreover, all derivatives \(
 <div class="proof">
 <p>
 For any sequence \(t_n\), one can extract from \( \{f_{t_n}\} \), since their derivatives are
-uniformly bounded, a convergent subsequence \( \{f_{t_{n_i}}\} \) in \( C^k(M,
+uniformly bounded, a subsequence \( \{f_{t_{n_i}}\} \) converging in \( C^k(M,
 \mathbb{R}^N) \). By a diagonalisation argument, one can extract from any sequence \(
 \{f_{t_n}\} \) a subsequence converging in \( C^\infty(M, \mathbb{R}^N) \) to \( f_\infty
 \). Abusively denote this subsequence by \( \{f_{t_n}\} \), by Theorem <a href="#thm:den-kin">thm:den-kin</a>
@@ -575,7 +574,7 @@ Therefore \( \tau(f_{t_n}) \to 0 \) in \( L^2(M)^{\oplus N} \). But also \( \tau
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-05-30 Wed 23:08. <br>
+Last updated 2018-05-31 Thu 23:15. <br>
 </div>
 </div>
 </body>

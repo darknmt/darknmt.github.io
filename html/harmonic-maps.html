@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-30 Wed 15:06 -->
+<!-- 2018-06-01 Fri 11:30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Harmonic maps of Riemannian manifolds</title>
@@ -266,7 +266,7 @@ for the JavaScript code in this tag.
 <ul>
 <li>
 <ul>
-<li><a href="#orgbf69892">1.1.0.1. Notation.</a></li>
+<li><a href="#org930a707">1.1.0.1. Notation.</a></li>
 </ul>
 </li>
 </ul>
@@ -288,7 +288,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgeadf23c">1.3.1. Energy functional and tension field</a></li>
 <li><a href="#orgf595675">1.3.2. Fundamental form, some results in case of signed curvature</a>
 <ul>
-<li><a href="#org930a707">1.3.2.1. Notation.</a></li>
+<li><a href="#org95203c0">1.3.2.1. Notation.</a></li>
 </ul>
 </li>
 </ul>
@@ -361,8 +361,8 @@ This is my reading note for <a class='org-ref-reference' href="#eells_harmonic_1
 </div><div id="outline-container-org2b417a5" class="outline-3">
 <h3 id="org2b417a5"><span class="section-number-3">1.1</span> Variational approach: energy integral and tension field</h3>
 <div class="outline-text-3" id="text-1-1">
-</div><div id="outline-container-orgbf69892" class="outline-5">
-<h5 id="orgbf69892"><span class="section-number-5">1.1.0.1</span> Notation.</h5>
+</div><div id="outline-container-org930a707" class="outline-5">
+<h5 id="org930a707"><span class="section-number-5">1.1.0.1</span> Notation.</h5>
 <div class="outline-text-5" id="text-1-1-0-1">
 <p>
 Let \( M, M', M''\) be Riemannian manifolds of dimension \( n, n' \) and \( n', n''\)
@@ -381,7 +381,7 @@ so that \( \nabla h = h_i dx^i \) and \( \nabla (\nabla h) = h_{ij}dx^i\otimes d
 <p>
 The <b>energy desity</b> of \( f \) at \( p\in m \) is defined by
 \[
-e(f)(p) = \frac{1}{2}\langle g(p), f^g(p) \rangle_p = \frac{1}{2}g^{ij}f^\alpha_i
+e(f)(p) = \frac{1}{2}\langle g, f^*g \rangle_p = \frac{1}{2}g^{ij}f^\alpha_i
 f^\beta_j g'_{\alpha\beta}
 \]
 and the <b>energy functional</b> of \( f \) is
@@ -401,8 +401,7 @@ g_{i_m k_m} g^{j_n l_m}S^{i_1\dots i_p}_{j_1\dots j_q} T^{k_1\dots k_p}_{l_1\dot
 
 <div class="remark">
 <p>
-Under any orthonormal basis of \( T_P M \) and \( T_{f(P)}N \), one can see that the
-energy density is non-negative at every point. Hence \( E(f) = 0 \) if and only if \(
+The energy density is non-negative at every point. Hence \( E(f) = 0 \) if and only if \(
 e(f)=0 \) at all points if and only if \( f \) is constant.
 </p>
 
@@ -412,14 +411,14 @@ e(f)=0 \) at all points if and only if \( f \) is constant.
 <p>
 Let \( \sigma \) be a symmetric function of \( n \) variables and \( \alpha \) be a
 symmetric (0,2) tensor field, one can define the <b>\(
-\sigma- \)energy desity</b> of \( \alpha \) at \( P\in M \) to be \( \sigma
+\sigma\)-energy desity</b> of \( \alpha \) at \( P\in M \) to be \( \sigma
 (\beta_1,\dots,\beta_n)(P) \) where \( \beta_i \) are eigenvalues of the linear operator
 \( (g^{ik}\alpha_{ij})_{k,j} \). The <b>\( \sigma \)-energy</b> of \( \alpha \) is \( I_\sigma(\alpha)
 := \int_M  \sigma(\alpha) dV\)
 </p>
 
 <p>
-Take \( \alpha = f^*g' \), one calls \( \sigma(\alpha) \) the /\( \sigma \)-energy density
+Take \( \alpha = f^*g' \), one calls \( \sigma(\alpha) \) the <b>\( \sigma \)-energy density</b>
 of \( f \) and \( I_\sigma(\alpha) \) the \( \sigma \)-energy of \( f \).
 </p>
 
@@ -504,14 +503,14 @@ of \( f \) is given by
 <div class="remark">
 <ol class="org-ol">
 <li>If \( M' \) is flat, i.e. \( R'_{\alpha\beta\gamma\delta} = 0 \) then \( \tau(f)^\gamma
-   = -\Delta f^\gamma\) is linear in \( f \).</li>
+   = -\Delta f^\gamma\) is linear in \( f \). We refind the definition of harmonic function.</li>
 <li>Since \( \tau(f) \) depends locally on \( f \), isometries and covering maps are
 harmonic.</li>
 </ol>
 
 </div>
 
-<div id="prop:holo-harmonic" btit="(holomorphicity implies harmonicity)" class="proposition">
+<div id="prop:holo-harmonic" btit="(Holomorphicity implies harmonicity)" class="proposition">
 <p>
 Holomorphic maps between Kahler manifolds are harmonic.
 </p>
@@ -519,8 +518,8 @@ Holomorphic maps between Kahler manifolds are harmonic.
 </div>
 <div class="proof">
 <p>
-We recall that exponential functions \( \exp_P: T_PM \longrightarrow M' \) on a Kahler
-manifold \( M \) are holomorphic for any \( P\in M \). In fact, let \( v\in T_PM \) and \( \delta
+We recall that exponential function \( \exp_P: T_PM \longrightarrow M' \) on a Kahler
+manifold \( M \) is holomorphic for any \( P\in M \). In fact, let \( v\in T_PM \) and \( \delta
 v \in T_v(T_P M) \) be a tangent vector  at \( v \) and denote abusively by \( J \) the complex
 structure of the complex vector space \( T_P M \) and that of \( M \), one needs to see that
 </p>
@@ -542,7 +541,7 @@ that \( Y_2(t) - J(U(t)) Y_1(t) = 0\) for every \( t\in [0,1] \) since it is tru
 Therefore, at a point \( P \) of a Kahler manifold \( M \), there exist holomorphic coordinates \( z^j = x^j + i y^j \) of \( M \) in a
 neighborhood of \( P \) such that \( \{ x_j,y_j: j=\overline{1,n/2} \} \) are normal
 coordinates centered in \( P \). Using such coordinates for \( P\in M \) and \( f(P)\in M'
-\), one has \( f^\gamma=0 \) since \( f^\gamma \) is holomorphic and \(
+\), one has \(\Delta f^\gamma=0 \) since \( f^\gamma \) is holomorphic and \(
 \Gamma'^\gamma_{\alpha\beta}(P)=0 \) by normality, it follows that \( \tau(f)=0 \) at
 every point \( P\in M \).
 </p>
@@ -573,9 +572,9 @@ of \( M \) of the fiber.
 <h5 id="org5fb62b4"><span class="section-number-5">1.2.0.2</span> Covariant derivatives and exterior derivatives.</h5>
 <div class="outline-text-5" id="text-1-2-0-2">
 <p>
-We recall that a <b>covariant derivative</b> or a <b>connection</b> \( \tilde\nabla \) of \( E \) is uniquely determined in a
-local coordinates by an \( m\times m \) matrix \( A \) of 1-form on \( M \), in other
-words an 1-form on \( M \) with value in \( Hom_M(E,E) \) which depends on the local frame
+We recall that a <b>covariant derivative</b> or a <b>connection</b> \( \tilde\nabla \) of \( E \) is uniquely determined in 
+local coordinates by an \( m\times m \) matrix \( A \) of 1-forms, in other
+words, it is an 1-form on \( M \) with value in \( Hom_M(E,E) \) which depends on the local frame
 of \( E \) (i.e. \( A \) is not a tensor with value in \( E \)). \( A \) is called the
 <b>connection form</b> of \( \tilde \nabla \). Locally
 \[
@@ -587,7 +586,7 @@ A^\alpha_\beta(X)s^\beta\tilde e_\alpha.
 
 
 <p>
-When one prefers to work with forms other than tensors with value in \( E \), one uses an
+When one prefers to work with forms rather than tensors with value in \( E \), one uses an
 <b>exterior derivative</b>, a map \( D: A^p(M,E) \longrightarrow A^{p+1}(M,E) \) which turns an
 \( p \)-form with value in \( E \) to an \( p+1 \)-form with value in \( E \). Locally 
 \[
@@ -596,7 +595,7 @@ A^\alpha_\beta\wedge s^\beta\tilde e_\alpha.
 \]
 and 
 \[
- D^2(s^\alpha \tilde e_\alpha = (dA + A\wedge A)\wedge s.
+ D^2(s^\alpha \tilde e_\alpha) = (dA + A\wedge A)\wedge s.
 \]
 One notes \( \Theta := dA + A\wedge A \), which is an \( m\times m \) matrix of 2-forms of
 \( M \). Unlike \( A \), \( \Theta \), seen as an 2-form with value in \( Hom_M(E,E) \)
@@ -610,10 +609,10 @@ tensor with value in \( E \), called the <b>curvature form</b>.
 The fibrewise metric structure of \( E \) and the metric tensor of \( M \) give rise to a pointwise inner product of
 \((p,q) \) tensors of \( M \) with value in \( E \), in particular a pointwise inner
 product \( (s, s')\mapsto s\cdot s' \) from \( A^p(M,E)\times A^p(M,E) \) to \( C^\infty(M) \). Integrated over \( M \), the pointwise inner product gives rise
-to a global inner product \( \langle  \cdot,\cdot \rangle  \), i.e. a true inner product of \( A^p(M,E) \). One denotes by
+to a global inner product \(\int_M \langle  \cdot,\cdot \rangle  \) of \( A^p(M,E) \). One denotes by
 \( \delta: A^{p+1}(M,E)\longrightarrow A^p(M,E) \) the adjoint operator of
 \( D: A^p(M,E) \longrightarrow A^{p+1}(M,E) \) with respect to this inner product, i.e.
-\( \langle Ds, s' \rangle_{A^{p+1}(M,E)} = \langle s, \delta s' \rangle_{A^{p}(M,E)}\) for
+\( \int_M\langle Ds, s' \rangle_{A^{p+1}(M,E)} = \int_M\langle s, \delta s' \rangle_{A^{p}(M,E)}\) for
 all \( s\in A^{p}(M,E), s'\in A^{p+1}(M,E) \).
 </p>
 </div>
@@ -632,7 +631,7 @@ The <b>connection Laplacian</b> is defined as a endomorphism of \( A^p(M,E) \) g
 and a form \( s\in A^p(M,E) \) is called <b>harmonic</b> if \( \tilde\Delta s=0 \). Since the
 Laplacian operator represents the <i>Dirichlet integral</i>, i.e.
 \[
- \langle Ds, Ds' \rangle + \langle \delta s, \delta s' \rangle = \langle \tilde\Delta s, s' \rangle,
+ \int_M\langle Ds, Ds' \rangle + \int_M\langle \delta s, \delta s' \rangle = \int_M\langle \tilde\Delta s, s' \rangle,
 \]
 one has \( \tilde\Delta s = 0 \) if and only if \( Ds = \delta s = 0 \).
 </p>
@@ -646,7 +645,7 @@ one has \( \tilde\Delta s = 0 \) if and only if \( Ds = \delta s = 0 \).
 <div class="outline-text-5" id="text-1-2-0-4">
 <p>
 The metric vector bundle \( E \) over \( M \) is called a <b>Riemannian-connected bundle</b> if
-it has a connection \( \tilde \nabla \) under which the metric \( g' \) of \( E \) is
+it is equipped with a connection \( \tilde \nabla \) under which the metric \( g' \) of \( E \) is
 parallel, i.e. \( \tilde\nabla g' = 0 \), in other words, the matrix \( A \) in a
 orthonormal frame is anti-symmetric: \( A + \transp{A} = 0 \). Unless explicitly
 indicated, we always suppose that our metric vector bundle \( E \) is Riemannian-connected
@@ -672,7 +671,7 @@ Riemannian-connected bundle over \( M \).
 
 <div id="lem:calculs-general" class="lemma">
 <p>
-Let \( E \) be a Riemannian-connected bundle and \( s\in A^1(M,E) \), one has
+Let \( E \) be a Riemannian-connected bundle and \( s = s^\alpha_i dx^i \tilde e_\alpha\in A^1(M,E) \), one has
 </p>
 <ol class="org-ol">
 <li>\( \delta s = (\delta s)^\alpha \tilde e_\alpha \in A^0(M,E) \) where
@@ -687,7 +686,7 @@ matrix given by
    \]
 where:
 <ul class="org-ul">
-<li>the indices \( i,h,k \) correspond to local coordinates of \( M \), <span class="underline">not</span> a frame of \( M' \),</li>
+<li>the indices \( i,h,k \) correspond to local coordinates of \( M \),</li>
 <li>\( \Theta_i^h \) is the curvature form of \(\tilde\nabla \) with its
 indices raised by the metric \( g \) of \( M \),</li>
 <li>\( {\rm Ric}_i^h = {\rm Ric}_i^h I_m \) is the Ricci curvature tensor of \( (M,g) \) with indices
@@ -696,12 +695,15 @@ raised by the metric \( g \), multiplied by the identity \( m\times m \) matrix,
 </ul></li>
 <li><p>
 With \( s\cdot s' \) denoting the pointwise inner product of \( A^1(M,E) \) and \(
-   \langle \cdot,\cdot \rangle \) denoting the metric \( g' \) of \( E \), one has
+   \langle \cdot,\cdot \rangle_E \) denoting the metric \( g' \) of \( E \), one has
 </p>
 \begin{equation}
 \label{eq:laplace-Q}   
  -\frac{1}{2}\Delta(s\cdot s) =  s\cdot \Delta s - \langle\tilde\nabla_i s_k,\tilde\nabla^i s^k \rangle_E - \left\langle \transp{\left(\Theta_i^h - {\rm Ric}_i^h\right)}s_h, s^i\right\rangle_E
-\end{equation}</li>
+\end{equation}
+<p>
+where the superscript \( i,h \) are raised by the metric \( g \).
+</p></li>
 </ol>
 
 </div>
@@ -717,7 +719,7 @@ Computational in nature.
 <li>We note by \( Q(s) \) the last term of \eqref{eq:laplace-Q}, then \( Q \) is a (2,0)
 tensor on \( M \) with value in \( E^*\otimes E^* \) where \( E^* \) is the dualised
 bundle of \( E \). In practice, \( Q \) is an \( mn\times mn \) matrix with
-coefficients \[ Q(s)_{\alpha\beta}^{hi} = g^{hk}h^{ij}\left[ \left(g'_{\alpha\gamma} \Theta_\beta^\gamma\right)_{kj} - g'_{\alpha\beta} {\rm Ric}_{kj} \right] \].</li>
+coefficients \[ Q_{\alpha\beta}^{hi} = g^{hk}g^{ij}\left[ \left(g'_{\alpha\gamma} \Theta_\beta^\gamma\right)_{kj} - g'_{\alpha\beta} {\rm Ric}_{kj} \right] \].</li>
 <li><p>
 Since \( \int_M \Delta(s\cdot s)dV=0 \), if \( s \) is harmonic, one has
 </p>
@@ -748,12 +750,12 @@ Since \( \int_M \Delta(s\cdot s)dV=0 \), if \( s \) is harmonic, one has
 <p>
 Our interest will be the case of Example <a href="#ex:pullback-tangent">ex:pullback-tangent</a> where \( E =f^*TM'\) for
 some smooth map \( f: M \longrightarrow M' \) of Riemannian manifolds is a
-Riemmanian-connected bundle over \( M \) with the connection \( \tilde\nabla \) given by
+Riemannian-connected bundle over \( M \) with the connection \( \tilde\nabla \) given by
 the Levi-Civita connection of \( M' \).
 </p>
 
 <p>
-The tangent map \( Tf: TM \longrightarrow TM' \) can be interpreted as a form \( f_* \) in
+In this section, the tangent map \( Tf: TM \longrightarrow TM' \) can be interpreted as a form \( f_* \) in
 \( A^1(M, E) \). The energy functional can be rewritten as
 \[
  E(f) = \frac{1}{2}\int_M f^\alpha_i f^\beta_j g^{ij}g'_{\alpha\beta}dV =\frac{1}{2}\langle f_*, f_* \rangle_{A^1{M,E}}.
@@ -771,7 +773,7 @@ over \( M \). Then:
    \) are Christoffel symbols of \( (M',g') \).</li>
 <li>\( Df_* = 0 \) where \( f_* \) is considered as an element of \( A^1(M,E) \). Hence \(
    \tilde\Delta f_*= D\delta f_* \).</li>
-<li>The tension field of \( f \) is \( \tau f_* = -\delta f_*\).</li>
+<li>The tension field of \( f \) is \( \tau (f) = -\delta f_*\).</li>
 </ol>
 
 </div>
@@ -790,10 +792,9 @@ Taking \( s,t \) to be of small support, \( \alpha=\beta \) and substituing \(
 \[
     D f_* = \left(\frac{\partial^2 f^\alpha}{\partial x^i \partial x^j} +
    \Gamma'^\alpha_{\gamma\beta} f^\gamma_i f^\beta_j \right)dx^j\wedge dx^i\otimes
-   \tilde e_\alpha, 
+   \tilde e_\alpha = 0 
    \]
-which is the product of a symmetric quantity in \( (i,j) \) and an anti-symmetric one,
-hence 0.</li>
+since it is the product of a symmetric quantity in \( (i,j) \) and an anti-symmetric one.</li>
 <li>Using the first part of Lemma <a href="#lem:calculs-general">lem:calculs-general</a> for \( s=f_* = f^\alpha_i dx^i\otimes
    \tilde e_\alpha \), one has \( \delta f_* = -g^{ij}\left(\nabla_i\nabla_j f^\gamma +
    \Gamma'^\gamma_{\alpha\beta} f^\alpha_i f^\beta_j\right)\tilde e_\gamma=-\tau(f) \)</li>
@@ -828,14 +829,14 @@ f^\alpha_i f^\beta_j\right) dx^i\otimes dx^j\otimes \tilde e_\gamma.
 </p>
 
 <p>
-The function \( f \) is called <b>totally symmetric</b> if \( \beta(f) = 0 \) identically on \( M \).
+The function \( f \) is called <b>totally geodesic</b> if \( \beta(f) = 0 \) identically on \( M \).
 </p>
 
 </div>
 
 <div class="remark">
 <ol class="org-ol">
-<li>The tension field \( \tau(f) = g^{ij} (\beta(f))_{ij} \) is the trace of the
+<li>The tension field \( \tau(f) = g^{ij} \beta(f)_{ij} \) is the trace of the
 fundamental form.</li>
 <li>If \( f \) is totally geodesic then it is harmonic.</li>
 </ol>
@@ -844,7 +845,7 @@ fundamental form.</li>
 
 <p>
 When \( s = f_* \), Lemma <a href="#lem:calculs-general">lem:calculs-general</a> and Remark <a href="#rem:calculs-general">rem:calculs-general</a>
-become, with no more than direct computation. The appearance of the Riemann curvature
+become Lemma <a href="#lem:calculs-Q-pullback">lem:calculs-Q-pullback</a>, with no more than direct computation. The appearance of the Riemann curvature
 tensor \( R' \) of \( (M',g') \) is due to the formula
 \[ R'^\rho{}_{\sigma\mu\nu} = \partial_\mu\Gamma'^\rho{}_{\nu\sigma} -
 \partial_\nu\Gamma'^\rho{}_{\mu\sigma} +
@@ -881,8 +882,8 @@ M \) and \( M' \) are of definite sign.
 </p>
 </div>
 
-<div id="outline-container-org930a707" class="outline-5">
-<h5 id="org930a707"><span class="section-number-5">1.3.2.1</span> Notation.</h5>
+<div id="outline-container-org95203c0" class="outline-5">
+<h5 id="org95203c0"><span class="section-number-5">1.3.2.1</span> Notation.</h5>
 <div class="outline-text-5" id="text-1-3-2-1">
 <p>
 Given a Riemannian manifold \( M \), we will use the following notation:
@@ -918,13 +919,13 @@ harmonic, then \( f \) is either constant or maps \( M \) onto a closed geodesic
 <div class="proof">
 <p>
 All the statements are consequence of 2) of Lemma <a href="#lem:calculs-Q-pullback">lem:calculs-Q-pullback</a> and the fact
-that \( \int_M \Delta e(f)dV = 0 \) noticing that
+that \( \int_M \Delta e(f)dV = 0 \), noticing that
 </p>
 <ul class="org-ul">
 <li>\( {\rm Ric}^{ij}f^\alpha_i f^\beta_j g'_{\alpha\beta} \) is \( {\rm Ric}\otimes g' \)
 applied doubly to \( f_i^\alpha dx^i\otimes\tilde e_\alpha \).</li>
 <li>\( R'_{\alpha\beta\gamma\delta} f^\alpha_i f^\beta_j f^\gamma_k f^\delta_l
-   g^{ik}g^{jl} \) is \( (f^* R')_{ijhk}g^{ik}h^{jl} \). In a normal coordinate at \( P \)
+   g^{ik}g^{jl} \) is \( (f^* R')_{ijhk}g^{ik}g^{jl} \). In a normal coordinate at \( P \)
 where \( g^{ik}=\delta_{ik}, g^{jl}=\delta_{jl} \), it is the sum of sectional curvatures of tangent
 planes formed by \( f_*e_i, f_*e_j \), and therefore negative.</li>
 </ul>
@@ -936,8 +937,8 @@ e_\alpha =0 \), meaning \( f_*=0 \), hence \( e(f) \) vanishes at \( P \). Since
 </p>
 
 <p>
-If \( {\rm Riem}(M') < 0 \), one sees that all \( f_* e_i, f_* e_j\) are colinearmmetric, i.e. the image of \( Tf \) is of one dimension, which leads to the conclusion,
-  as we will see later that a totally geodesic map transform geodesic to geodesic.
+If \( {\rm Riem}(M') < 0 \), one sees that all \( f_* e_i, f_* e_j\) are colinear, so the image of \( Tf \) is of one dimension, which leads to the conclusion,
+  as we will see later that a totally geodesic map transforms geodesic to geodesic.
 </p>
 
 </div>
@@ -953,8 +954,7 @@ If \( {\rm Riem}(M') < 0 \), one sees that all \( f_* e_i, f_* e_j\) are colinea
 <div class="outline-text-3" id="text-1-4">
 <p>
 Let \( f: M \longrightarrow M' \) be a Riemannian immersion, i.e. \( Tf \) is injective and \( f^*g' = g \). We will
-see that the fundamental form \( \beta(f) \) that we defined earlier is the same as how it
-is often defined in courses of Riemannian geometry.
+see that the fundamental form \( \beta(f) \) that we defined earlier is the same as usual definition in courses of Riemannian geometry.
 </p>
 </div>
 <div id="outline-container-org0016185" class="outline-4">
@@ -963,7 +963,7 @@ is often defined in courses of Riemannian geometry.
 <p>
 One defines the symmetric (0,2)-tensor \( \sff \) as the unique tangent vector of \( M' \) such that
 \[
-\langle \sff_{ij},\xi_\sigma \rangle= -\langle \tilde\nabla_i\xi_\sigma, f_* e_j\rangle
+\langle \sff_{ij},\xi_\sigma \rangle:= -\langle \tilde\nabla_i\xi_\sigma, f_* e_j\rangle
 \]
 for every vector field \( \xi_\sigma \) of \( M' \) orthogonal to \( M \).
 </p>
@@ -983,29 +983,30 @@ One has
 </p>
 \begin{equation}
 \label{eq:second-fund-form}
-\begin{split}
-\langle \tilde\nabla_i\xi_\sigma, f_* e_j)\rangle &= \langle\xi_\sigma, \tilde\nabla_i (f_* e_j)\rangle
+\begin{align*}
+\langle \tilde\nabla_i\xi_\sigma, f_* e_j\rangle &= \langle\xi_\sigma, \tilde\nabla_i (f_* e_j)\rangle
 				      		  = \langle \xi_\sigma,\tilde\nabla_i(f^\gamma_l dx^l\otimes \tilde e_\gamma) e_j + f_* \nabla_i e_j \rangle\\
 						  &= \langle \xi_\sigma, (f^\gamma_{il} dx^l\tilde e_\gamma + f^\gamma_l dx^l \tilde\nabla_i\tilde e_\gamma) e_j \rangle\\
 						  &= \langle \xi_\sigma, f^\gamma_{ij} \tilde e_\gamma + f^\gamma_j A^\alpha_{\gamma_i}\tilde e_\alpha \rangle
-						   = \left\langle \xi_\sigma,  \left(f^\gamma_{ij} + \Gamma'^\gamma_{\alpha\beta} f^\alpha_i f^\beta_j \right)\tilde e_\gamma \right\rangle = \langle\xi_\sigma\tilde\nabla_i(f_*).e_j \rangle
-\end{split}   
+						   = \left\langle \xi_\sigma,  \left(f^\gamma_{ij} + \Gamma'^\gamma_{\alpha\beta} f^\alpha_i f^\beta_j \right)\tilde e_\gamma \right\rangle \\ 
+						  &= \langle\xi_\sigma,\tilde\nabla_i(f_*).e_j \rangle = \langle \xi_\sigma,\beta_{ij}(f) \rangle
+\end{align*}   
 \end{equation}
 <p>
-where we used \( \xi_\sigma \perp f_* e_j \) in the first reduction and \( \xi_\sigma
-\perp f_*([e_i, e_j] \) in the second one. Hence \( \sff_{ij} \equiv \beta(f)_{ij} \) modulo an element in \( TM \). In fact one has
-\( \beta(f)_{ij}\perp M \) and therefore \( \sff = \beta(f) \), since \( \beta(f)_{ij} =
+where we used \( \xi_\sigma \perp f_* e_j \) in the first line and \( \xi_\sigma
+\perp f_*([e_i, e_j]) \) in the second line. Hence \( \sff_{ij} \equiv -\beta(f)_{ij} \) modulo an element in \( TM \). In fact one has
+\( \beta(f)_{ij}\perp M \) and therefore \( \sff = -\beta(f) \), since \( \beta(f)_{ij} =
 \tilde \nabla_i (f_*). e_j \) and
 </p>
-\begin{equation}
-\begin{split}
+\begin{equation*}
+\begin{align*}
 \langle \beta(f)_{ij}, f_* e_k \rangle &= \langle\tilde \nabla_i (f_*). e_j, f_* e_k
 \rangle = \tilde\nabla_i \langle f_* e_j, f_* e_k \rangle - \langle  \nabla_i e_j, e_k \rangle -
 \langle  f_*e_j, \tilde\nabla_i(f_* e_k) \rangle  \\
 &=-\langle \beta(f)_{ik}, f_* e_j \rangle + \nabla_i \langle e_j,e_k \rangle - \langle
 \nabla_i e_j, e_k \rangle - \langle e_j, \nabla_i e_k \rangle\\ &= -\langle \beta(f)_{ik}, f_* e_j \rangle
-\end{split}   
-\end{equation}
+\end{align*}   
+\end{equation*}
 <p>
 Then using the symmetric of \( \beta(f)_{ij} \), one has \( \langle \beta(f)_{ij}, f_* e_k
 \rangle=0 \).
@@ -1035,7 +1036,7 @@ product \( M\times N \) is totally geodesic.
 Given an orthonormal frame \( (\xi_\sigma)_{1\leq\sigma\leq n'-n} \), the <b>mean normal
 curvature field</b> of \( M \) in \( M' \) at \( P\in M \) is defined as
 \[
-\xi(P):= \sum_{\sigma=1}^{n'-n} g^{ij}\sff_{ij} \xi_\sigma = \sum_{\sigma=1}^{n'-n}\langle
+\xi(P):= \sum_{\sigma=1}^{n'-n} g^{ij} \langle \sff_{ij}, \xi_\sigma\rangle \xi_\sigma = - \sum_{\sigma=1}^{n'-n}\langle
 \tau(f),\xi_\sigma \rangle \xi_\sigma.
 \]
 The immersion \( f \) is said to be <b>minimal</b> if \( \xi \) vanishes identically on \( M
@@ -1050,7 +1051,7 @@ The immersion \( f \) is said to be <b>minimal</b> if \( \xi \) vanishes identic
 \[
     \xi(P) = -g^{ij}\langle \tilde\nabla_i\xi_\sigma, f_* e_j \rangle \xi_\sigma(P)= - \sum_{\sigma=1}^{n'-n}  {\rm div\ }(\xi_\sigma(P))\ \xi_\sigma(P)
    \]</li>
-<li>The mean normal curvature field is the tension field of \( f \), i.e. \( \xi = \tau(f) \). Minimal immersions are exactly harmonic immersion.</li>
+<li>The mean normal curvature field is the tension field of \( f \), i.e. \( \xi = -\tau(f) \). Minimal immersions are exactly harmonic immersion.</li>
 </ol>
 
 </div>
@@ -1061,8 +1062,8 @@ The immersion \( f \) is said to be <b>minimal</b> if \( \xi \) vanishes identic
 <h4 id="orgb6a0bfe"><span class="section-number-4">1.4.2</span> The case of signed curvature.</h4>
 <div class="outline-text-4" id="text-1-4-2">
 <p>
-Noticing that if \( f: M \longrightarrow M' \) is a Riemannian immersion then the Ricci
-term of <a href="#lem:calculs-Q-pullback">lem:calculs-Q-pullback</a> is actually the scalar curvature of \( M \), one has
+If \( f: M \longrightarrow M' \) is a Riemannian immersion then the Ricci
+term of Lemma <a href="#lem:calculs-Q-pullback">lem:calculs-Q-pullback</a> is actually the scalar curvature of \( M \), one has
 </p>
 
 <div id="prop:harm-imm-curvature" class="proposition">
@@ -1085,11 +1086,11 @@ Riem}(M')\leq 0 \) and \( r=g^{ij} {\rm Ric}_{ij} <0 \) at one point of \( M \).
 <h4 id="orgc3b7a78"><span class="section-number-4">1.5.1</span> Results of Ehresmann and Hermann.</h4>
 <div class="outline-text-4" id="text-1-5-1">
 <p>
-In this section, the function \( f: M \longrightarrow M' \) will be a Riemannian submersion \( pi: M \longrightarrow B \), i.e. \( T\pi \) is subjective and \( \pi^*g' = g \). We will
-regard \( \pi \) as a fibration and calculate its tension field. We start with two theorem
+In this section, the function \( f: M \longrightarrow M' \) will be a Riemannian submersion \( \pi: M \longrightarrow B \), i.e. \( T\pi \) is subjective and \( \pi^*g' = g \). We will
+regard \( \pi \) as a fibration and calculate its tension field. We start with two theorems
 of Hermann with <a class='org-ref-reference' href="#besse_einstein_2007">besse_einstein_2007</a> as reference. A tangent vector of \( M \) lying
 in \( \ker T_P\pi \) is said to be <b>vertical</b>. Since \( \pi^* g' = g \), the plane \(
-\mathcal{H}_P = \ker T_P\pi \) is isometric to \( T_{\pi(P)}B \) and is said to be
+\mathcal{H}_P := \ker T_P\pi^\perp \) is isometric to \( T_{\pi(P)}B \) and is said to be
 <b>horizontal</b>, such \( \mathcal{H}_P \) form a distribution of planes as \( P \) varies in
 \( M \).
 </p>
@@ -1097,7 +1098,7 @@ in \( \ker T_P\pi \) is said to be <b>vertical</b>. Since \( \pi^* g' = g \), th
 <div class="definition">
 <p>
 The plane distribution \( \mathcal{H} \) is called <b>complete</b> if every curve \( \gamma \) in \( B \)
-lifts horizontally on \( M \) at each point \( P \) in \( M_{\gamma(0)} \), i.e. there exists a curve \( \hat \gamma \) in \( M \)
+<b>lifts</b> horizontally on \( M \) at each point \( P \) in \( M_{\gamma(0)} \), i.e. there exists a curve \( \hat \gamma \) in \( M \)
 such that \( \pi\circ\hat\gamma = \gamma \) and \( \hat\gamma(0)=P\in M \).
 </p>
 
@@ -1146,7 +1147,7 @@ a complete manifold.</li>
 <div class="remark">
 <ol class="org-ol">
 <li>The trivialising map \( \phi: U_M \longrightarrow U_B\times F\), where \( U_M, U_B \) are
-open set of \( M,B \), is only a diffeomorphism and not a isometry, each fibre is equipped
+open sets of \( M,B \), is only a diffeomorphism and not a isometry, each fibre is equipped
 with different metric when identified with \( F \).</li>
 <li><p>
 The metric of \( M \) is not a Riemannian product of a (vertical) metric on \( F \)
@@ -1158,7 +1159,7 @@ one has
  g_{(b,f)}(v_h^1 + v_v^1, v_h^2 + v_v^2) = g'_b(v^1_h, v^2_h)\times \hat{g}_{(b,f)}(v_v^1, v_v^2)   
 \end{equation}
 <p>
-where \( v^i = v_h^i + v_v^i \) is the decomposition of vector \( v^i \) to horizontal and vertical components.
+where \( v^i = v_h^i + v_v^i \) is the decomposition of vector \( v^i \) to horizontal and vertical components,
 \( g' \) is the horizontal metric (the metric on \( M \)) and \( \hat g_{(b,f)} \) is
 the restriction of \( g \) on the fibre \( M_b \). However, when the fibration is of
 totally geodesic fibres, \( g \) is a Riemannian product \( g_{(b,f)} = g'_b\times \hat
@@ -1182,7 +1183,7 @@ The second part, due to Hermann, can be established in 2 steps:
 </p>
 
 <p>
-First, by direct computation, one proves that if any geodesic field \( X \) on \( B \) lift to a horizontal
+First, by direct computation, one proves that if any geodesic field \( X \) on \( B \) lifts to a horizontal
 vector field \( \hat X \) then \( \hat X \) is a geodesic vector field. In fact, denote by
 \( \nabla \) and \( \tilde\nabla \) the Levi-Civita connection on \( M \) and \( B \)
 respectively and \( \mathcal{V}, \mathcal{H} \) the vertical and horizontal projection of
@@ -1204,7 +1205,7 @@ on \( b \)).
 <p>
 Now if \( M \) is complete then for every geodesic curve \( \gamma \)
 in \( B \), let \( X \) be the velocity field of \( \gamma \) and \( \hat X \) be the
-horizontal lift of \( X \), which is now a horizontal,geodesic field of \( M \), whose
+horizontal lift of \( X \), which is now a horizontal, geodesic field of \( M \), whose
 integral curves are lifts of \(\gamma \). Therefore \( B \) is complete and every geodesic curve of \( B \) lifts horizontally to \( M \).
 </p>
 
@@ -1241,7 +1242,7 @@ metric induced by \( M \).
 <div class="proof">
 <p>
 We need to prove that the metric on fibres \( \hat g_{(b,f)} \) does not depend on the point
-\( f \) of the fibre, i.e. for every basic vecotr field \( X \), one has \(
+\( f \) of the fibre, i.e. for every basic vector field \( X \), one has \(
 \mathcal{L}_X\hat g=0 \), where by \( \hat g \), we mean the (0,2) symmetric tensor \( (Y_1, Y_2)\mapsto \langle
 \mathcal{V}Y_1, \mathcal{V}Y_2 \rangle \). Let \( U,V \) be vertical vector fields of \( M \) then
 </p>
@@ -1325,7 +1326,7 @@ A complete Riemannian fibration \( \pi: M \longrightarrow B \) with totally geod
 <p>
 The following results come from direct computation of the second fundamental form and
 tension field of composition of maps between Riemannian manifolds. Again, we use indices
-\( i,j,k,\dots \) for \( M \), \( \alpha,\beta,\gamma,\dots \) for \( M' \) and \( a,b,c
+\( i,j,k,\dots \) for \( M \), \( \alpha,\beta,\gamma,\dots \) for \( M' \) and \( a,b,c,\dots
 \) for \( M'' \).
 </p>
 
@@ -1380,7 +1381,7 @@ Therefore,
 </tbody>
 </table>
 <p>
-and the inverse of a totally geodesic map is geodesic.
+and the inverse of a totally geodesic map is totally geodesic.
 </p>
 
 </div>
@@ -1393,7 +1394,7 @@ Direct computation.
 
 <div class="remark">
 <p>
-It is not true in general that the composition of harmonic functions are harmonic.
+It is not true in general that the composition of harmonic maps are harmonic.
 </p>
 
 </div>
@@ -1405,7 +1406,7 @@ M' \) then
 </p>
 <ol class="org-ol">
 <li>Energy functionals: \( E(f) = E(f'\circ f) \).</li>
-<li>Tension fields: \( \tau(f) \) is the projection of \( \tau(f'\circ f \) to \( M' \).</li>
+<li>Tension fields: \( \tau(f) \) is the projection of \( \tau(f'\circ f) \) to \( M' \).</li>
 </ol>
 
 </div>
@@ -1438,7 +1439,7 @@ A map \( f: M \longrightarrow M' \) is harmonic if and only if \( \tau(f'\circ f
 
 <div id="prop:compo-submersion" btit="(composition with submersion)" class="proposition">
 <p>
-Let \( f': M' \longrightarrow M'' \) be a Riemannian fibration with locally geodesic
+Let \( f': M' \longrightarrow M'' \) be a Riemannian fibration with totally geodesic
 fibres and \( f: M \longrightarrow M' \) then 
 \[
 \tau(f'\circ f) = f'_*(\tau(f))  
@@ -1453,10 +1454,10 @@ One can suppose that \( M' \) is a Riemannian product of \( M'' \) and its fibre
 \( f' \) is the projection to \( M'' \), since this is true locally and the proposition is
 local. Then the conclusion is that the tension field of the projection is the projection
 of the tension field, or equivalently the tension field of \( f= f_1\times f_2: M \longrightarrow
-M''\times F \) is \( \tau(f) = (\tau f_1,\tau f_2) \). This follows from the explicite
+M''\times F \) is \( \tau(f) = (\tau f_1,\tau f_2) \). This follows from the explicit
 formula of \( \tau(f) \), noting that the Christoffel symbols \(
 \Gamma^\alpha_{\beta\gamma} \) vanish except when the indice \( \alpha,\beta,\gamma \)
-belong to the same tangent space (of \( M'' \) or \( F \)).
+belong to the same tangent space (\( TM'' \) or \( TF \)).
 </p>
 
 </div>
@@ -1464,7 +1465,7 @@ belong to the same tangent space (of \( M'' \) or \( F \)).
 <div class="exampl">
 <ol class="org-ol">
 <li>A map \( f: M \longrightarrow M'\times M'' \) is harmonic if \( f=(f^1, f^2) \) with \(
-   f^1, f^2 \) being harmonic.</li>
+   f^1, f^2 \) harmonic.</li>
 <li>Take \( M''=M \) in Proposition <a href="#prop:compo-submersion">prop:compo-submersion</a> and \( f=s: M \longrightarrow M' \) a
 section of the fibration \( f' \), one sees that the tension field \( \tau(s) \) is
 always vertical.</li>
@@ -1500,7 +1501,7 @@ M \longrightarrow N\), \( \pi\circ f \) is harmonic if and only if \( \tau(f) \)
 <p>
 We want to prove in the next part the existence of harmonic map between manifolds \( M \)
 and \( M' \) by deforming any map \( f: M
-\longrightarrow M' \) using the heat flow, meaning solving the PDE:
+\longrightarrow M' \) using the \( \tau \)-flow, meaning solving the PDE:
 </p>
 \begin{equation}
 \label{eq:loc-heat-flow}
@@ -1512,9 +1513,9 @@ f_\alpha = f, &
 <p>
 The equation makes sense because both \( \frac{d f_t}{d t} \) and \( \tau f_t \) are
 vector fields along \( f_t \). Since this is the gradient-descent equation for \( E \),
-clearly the energy of \( f_t \) decreases and we hope, under conditions, to obtain
-convergence of \( \{f_t\} \) to a critical point \( f \) of \( E \), this will prove
-that any homotopy class of \( C^\infty(M,M') \) has at least harmonic function.
+the energy of \( f_t \) decreases and we hope, under conditions, to obtain
+convergence of \( \{f_t\} \) to a critical point \( f_\infty \) of \( E \), this will prove
+that any homotopy class of \( C^\infty(M,M') \) has at least a harmonic map.
 </p>
 
 <p>
@@ -1685,7 +1686,7 @@ Christoffel symbols of \( M' \).
 Let \( c \) be a point in the chart \( V_i \) and choose the normal coordinates of \( M'
 \) at \( c \). Then for \( a,b\in M' \) near \( c \), one has, since \( \sigma(a,b) =
 \sigma(b,a) \) and \( \sigma(a,b)=0 \) if \( b^\gamma = k a^\gamma \) (the Euclidean
-straight line from \( a \) to \( b \) viewed on \( M' \) is a geodesic):
+straight line from \( a \) to \( ka \) viewed on \( M' \) is a geodesic):
 \[
  \sigma(a,b) = \frac{1}{2}d_{M'}(a,b)^2 = \frac{1}{2}d_E(a,b)^2 +
 \lambda_{\beta\gamma,\delta}(a^\beta a^\gamma b^\delta + b^\beta b^\gamma a^\delta)
@@ -1822,7 +1823,7 @@ justified:
 \]
 where the last "=" is due to \(  D df_t = 0 \). Note that \( D \) and \( \delta \)
 are the exterior derivative and its adjoint of the bundle \( (f_t)^*TM' \) on \( M \),
-since \( t \) can be fixed after the third "=" sign.
+where \( t \) can be fixed after the third "=" sign.
 </p>
 
 </div>
@@ -1939,7 +1940,7 @@ If \( f_t \) satisfies \eqref{eq:loc-heat-flow} and \( \Riem(M')\leq 0 \) then \
 </ol>
 <p>
 In particular, \( \int_{M\times \{\tau\}} |\nabla f|^2 \) and \( \int_{M\times\{\tau\}} \left|
-\frac{\partial f_t}{\partial t} \right|^2 \) is bounded above by a constant \( C>0 \)
+\frac{\partial f_t}{\partial t} \right|^2 \) are bounded above by a constant \( C>0 \)
 independent of the time \( \tau \in[\alpha,\omega] \).
 </p>
 
@@ -2006,7 +2007,7 @@ an Euclidean ball \( B \).
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-05-30 Wed 15:06. <br>
+Last updated 2018-06-01 Fri 11:30. <br>
 </div>
 </div>
 </body>

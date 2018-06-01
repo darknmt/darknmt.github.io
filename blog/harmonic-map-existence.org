@@ -23,7 +23,7 @@ solution still exists. We then conclude that the solution exists globally on \(
 
 The crucial step to prove that the solution can be extended on \( [\alpha,\omega] \) is to
 uniformly bound all of its derivatives in time of evolution \( [\alpha,\omega) \). These
-estimates will also be useful to justify that the solution \( F_t \) converges in \(
+estimates will also be useful to justify the convergence of \( F_t \) in \(
 C^\infty(M) \) to a smooth function \( F_\infty \) which will eventually be a harmonic map
 from \( M \) to \( M' \).
 
@@ -38,7 +38,7 @@ the initial total energies. Since \( \frac{dF_t}{dt } \) relates to spatial deri
 #+ATTR_HTML: :id thm:bound-2-2 :btit (\(W^{2,2}\)-boundedness) 
 #+BEGIN_theorem
 #+LATEX: \label{thm:bound-2-2}
-There exist a constant \( C \) depending only on \( \delta \), the curvatures and initial
+There exist a constant \( C \) depending only on \( \delta \), the metrics and initial
 total energies such that
 \[
  \|F\|_{W^{2,2}(\tau,\tau+\delta)}\leq C\quad\text{for all } \alpha \leq \tau <\omega-\delta.
@@ -52,7 +52,7 @@ Since
 \right\|^2_{L^2}dt
 \]
 The first term and the second term are bounded by \( C^2\delta \), the third one, since \(
-\Gamma(F_t) \) is bounded by \( C^2\delta \) where \( C \) is a constant only depending on
+\Gamma(F_t) \) is bounded, by \( C^2\delta \) where \( C \) is a constant only depending on
 the metrics and initial total energies.
 #+END_proof
 
@@ -81,7 +81,7 @@ where \( A:= \frac{\partial}{\partial t} + \Delta \) is the heat operator, one h
  -\frac{\delta}{3},\tau +\delta ])} + \|F\|_{W^{2,2}([\tau-\frac{\delta}{3},\tau +\delta])}  \right)
 \]
 The second term of RHS is already bounded by applying Theorem ref:thm:bound-2-2 to \(
-\frac{\delta}{3} \). For the first term:
+\frac{4\delta}{3} \). For the first term:
 \[
 \left\| \Gamma(F) (\nabla F)^2\right\|_{L^p([\tau-\frac{\delta}{3},\tau+\delta])} \leq
 C(M') \| |\nabla F|^2 \|_{L^p([\tau-\frac{\delta}{3}, \tau+\delta])} = C(M') \| e(F)
@@ -111,10 +111,8 @@ Now apply \( L^1 \)-[[file:elliptic-parabolic.org][Comparison Theorem]] ref:thm:
 \begin{equation}
 \label{eq:lem:bound-2-p:3}
 \|\psi_\tau\|_{L^1([\tau-
-\frac{\delta}{2},\tau+\delta])} \leq \frac{3\delta}{2} \left\| \restr{\psi_\tau}{\tau-\frac{\delta}{2}}\right\|_{L^1(M)} =  \frac{3\delta}{2} \left\| \restr{e}{\tau-\frac{\delta}{2}}\right\|_{L^1(M)}\leq C
+\frac{\delta}{2},\tau+\delta])} \leq \int_0^{3\delta/2} \|\restr{\psi_\tau}{\tau-\frac{\delta}{2}}\|_{L^1}e^{Bt}dt \leq \int_0^{3\delta/2}e^{Bt}dt.  \|\restr{e}{\tau-\frac{\delta}{2}}\|_{L^1}\leq C.
 \end{equation}
-where the constant is the initial potential energy.
-
 The lemma follows from eqref:eq:lem:bound-2-p:2 and eqref:eq:lem:bound-2-p:3.
 #+END_proof
 
@@ -137,7 +135,7 @@ Applying Gårding Inequality to the equation \( \frac{dF}{dt} + \Delta F_t =
 differential operator]], one has for \( \epsilon \ll \delta \):
 \begin{align*}
  \|F\|_{W^{k,p}([\tau,\tau+\delta])} &\leq C_\epsilon \left(
-\|F\|_{W^{2,p}([\tau-\delta,\tau+\delta])} + \|\Gamma(F)(\nabla F)^2\|_{W^{k-2,p}([\tau-\epsilon,\tau+\delta])}\right)  \\
+\|F\|_{W^{2,p}([\tau-\epsilon,\tau+\delta])} + \|\Gamma(F)(\nabla F)^2\|_{W^{k-2,p}([\tau-\epsilon,\tau+\delta])}\right)  \\
 					   &\leq C_\epsilon\left(1 + C\left(1+\|F\|_{W^{s,q}([\tau-\epsilon,\tau+\delta])}\right)^{q/p}\right)
 \end{align*}
 as long as \( k-1 < s \) and \( \frac{1}{p} > \frac{k}{s}.\frac{1}{q} \). Therefore if \(
@@ -184,7 +182,7 @@ by Theorem ref:thm:bound-k-p, for all \( \tau \in [\alpha,\omega-\delta) \):
  \| D^u_t D^v_x F \|_{L^\infty(M\times[\tau,\tau+\delta])} \leq C_{\rm Sobolev} \| D^u_t D^v_x F
 \|_{W^{k,p}(M\times[\tau,\tau+\delta])} \leq C_{\rm Sobolev} . C(k,p,\delta)
 \]
-where, if we choose \( k \) sufficiently large, \( C_{\rm Sobolev} \) is the constant off Sobolev imbedding \(
+where, if we choose \( k \) sufficiently large, \( C_{\rm Sobolev} \) is the constant of Sobolev imbedding \(
 W^{k,p}(M\times[0,\delta]) \hookrightarrow C(M\times[0,\delta]) \) and \( C(k,p,\delta) \)
 is the constant provided by Theorem ref:thm:bound-k-p. 
 
@@ -203,11 +201,14 @@ of Eells and Sampson.
 #+BEGIN_theorem
 #+LATEX: \label{thm:final}
 1. Let \( M, M' \) be compact Riemannian manifolds with \( \Riem(M') \leq 0 \). Then for
-   every smooth map \( f_0:\ M \longrightarrow M'\subset B\subset \mathbb{R}^N \), the nonlinear heat equation
+   every smooth map \( f_0:\ M \longrightarrow M'\subset B\subset \mathbb{R}^N \), the
+   nonlinear heat equation
+   \begin{equation*}
    \begin{cases}
    \frac{df_t}{dt} = \tau(f_t),  & \text{for all $t\geq 0$} \\
    \restr{f}{t=0} = f_0,
-   \end{cases}
+   \end{cases}      
+   \end{equation*}
    admit a globally defined smooth solution \( f_t \). Moreover, all derivatives \( D^\alpha
    f_t \) remains uniformly bounded as \( t\to +\infty \).
 2. For a suitable sequence \( t_n \) increasing to \( +\infty \) the sequence \( f_{t_n}
@@ -216,7 +217,7 @@ of Eells and Sampson.
 #+END_theorem
 #+BEGIN_proof
 For any sequence \(t_n\), one can extract from \( \{f_{t_n}\} \), since their derivatives are
-uniformly bounded, a convergent subsequence \( \{f_{t_{n_i}}\} \) in \( C^k(M,
+uniformly bounded, a subsequence \( \{f_{t_{n_i}}\} \) converging in \( C^k(M,
 \mathbb{R}^N) \). By a diagonalisation argument, one can extract from any sequence \(
 \{f_{t_n}\} \) a subsequence converging in \( C^\infty(M, \mathbb{R}^N) \) to \( f_\infty
 \). Abusively denote this subsequence by \( \{f_{t_n}\} \), by Theorem ref:thm:den-kin

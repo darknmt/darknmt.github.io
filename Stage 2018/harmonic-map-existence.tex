@@ -1,0 +1,196 @@
+Let \(M\) be a compact Riemannian manifold. We want to solve the following nonlinear
+heat equation where \(F: M \longrightarrow M'\subset
+B\subset V = \mathbb{R}^N\):
+\[
+ \frac{d F_t}{d t} = -\Delta F_t + \Gamma(F_t) (\nabla F_t)^2
+\]
+We have proved that the solution \href{polynomial-besov.org}{exists in short-time and is
+smooth whenever it exists}. We will now establish long-time existence using continuity
+method, that is we will show that if the solution exists on \([\alpha,\omega_n]\) where
+\(\omega_n\) is an increasing sequence to \(\omega\), then the solution exists on \([\alpha,\omega]\). We then apply short-time existence to gain a small open interval where
+solution still exists. We then conclude that the solution exists globally on \([\alpha,+\infty)\) since this interval is connected.
+
+The crucial step to prove that the solution can be extended on \([\alpha,\omega]\) is to
+uniformly bound all of its derivatives in time of evolution \([\alpha,\omega)\). These
+estimates will also be useful to justify the convergence of \(F_t\) in \(C^\infty(M)\) to a smooth function \(F_\infty\) which will eventually be a harmonic map
+from \(M\) to \(M'\).
+
+Recall that we \href{harmonic-maps.org}{proved} in Corollary \ref{cor:bound-2-2} the boundedness of \(\|F_t\|_{W^{2,2}(M)}\) by a constant \(C\) depending only on curvatures of \(M, M'\) and
+the initial total energies. Since \(\frac{dF_t}{dt }\) relates to spatial derivatives of
+\(F\) by the nonlinear heat equation, it is easy to see that \(\|F_t\|_{W^{2,2}(M\times[\tau,\tau +\delta])}\) is bounded by a constant independent of
+\(\tau\). Again, we will denote \(W^{k,p}(M\times [\beta,\gamma])\) by \(W^{k,p}([\beta,\gamma])\).
+
+\begin{theorem}[\(W^{2,2}\)-boundedness]
+\label{thm:bound-2-2}
+There exist a constant \(C\) depending only on \(\delta\), the metrics and initial
+total energies such that
+\[
+ \|F\|_{W^{2,2}(\tau,\tau+\delta)}\leq C\quad\text{for all } \alpha \leq \tau <\omega-\delta.
+\]
+\end{theorem}
+\begin{proof}
+Since 
+\[ \|F\|^2_{W^{2,2}([\tau,\tau+\delta])} \leq \int_\tau^{\tau+\delta}
+\|F_t\|^2_{W^{2,2}(M)} dt + 2\int_\tau^{\tau+\delta} \left\| \Delta F_t
+\right\|^2_{L^2}dt + 2\int_\tau^{\tau+\delta} \left\| \Gamma(F_t)(\nabla F_t)^2
+\right\|^2_{L^2}dt
+\]
+The first term and the second term are bounded by \(C^2\delta\), the third one, since \(\Gamma(F_t)\) is bounded, by \(C^2\delta\) where \(C\) is a constant only depending on
+the metrics and initial total energies.
+\end{proof}
+
+The estimates of higher derivatives of \(F\) will be established in the following order: first in \(W^{2,p}\) for all \(p\) norm then in \(W^{k,p}\) for all \(k,p\), then in \(C^\infty\).
+
+\section{Estimate of higher derivatives.}
+\label{sec:org0f82044}
+
+\begin{lemma}[\( W^{2,p} \)-boundedness]
+\label{lem:bound-2-p}
+For all \(p \in (1,+\infty)\), there exists a constant \(C>0\) depending only on \(\delta\), \(p\), the metrics and initial energies such that for all \(\alpha +\delta \leq \tau \leq \omega-\delta\):
+\[
+\|F\|_{W^{2,p}([\tau,\tau+\delta])}\leq C
+\]
+\end{lemma}
+
+\begin{proof}
+Applying Gårding Inequality to the parabolic equation \(AF = \Gamma(F) (\nabla F)^2\)
+where \(A:= \frac{\partial}{\partial t} + \Delta\) is the heat operator, one has
+\[
+ \|F\|_{W^{2,p}([\tau,\tau+\delta])} \leq C\left( \|\Gamma(F)(\nabla F)^2\|_{L^p([\tau
+ -\frac{\delta}{3},\tau +\delta ])} + \|F\|_{W^{2,2}([\tau-\frac{\delta}{3},\tau +\delta])}  \right)
+\]
+The second term of RHS is already bounded by applying Theorem \ref{thm:bound-2-2} to \(\frac{4\delta}{3}\). For the first term:
+\[
+\left\| \Gamma(F) (\nabla F)^2\right\|_{L^p([\tau-\frac{\delta}{3},\tau+\delta])} \leq
+C(M') \| |\nabla F|^2 \|_{L^p([\tau-\frac{\delta}{3}, \tau+\delta])} = C(M') \| e(F)
+\|_{L^p([\tau - \frac{\delta}{3},\tau+\delta])}.
+\]
+
+
+Recall that, by Theorem \ref{thm:den-pot}, the \href{harmonic-maps.org}{potential density} satisfies \(\frac{de}{dt} +\Delta e -Ce \leq 0\) for
+certain constant \(C\) depending only on the metric of \(M\), by \href{elliptic-parabolic.org}{Maximum principle}
+(Theorem \ref{thm:max-princ-para}), one has \(e \leq \psi_\tau\) where \(\psi_\tau\) is
+the solution of
+\begin{cases}
+\frac{d}{dt}\psi_\tau + \Delta\psi_\tau -C\psi_\tau = 0  \\
+\restr{\psi_\tau}{\tau - \frac{\delta}{2}} = \restr{e}{\tau - \frac{\delta}{2}}
+\end{cases}
+We apply Gårding Inequality again for \(\psi_\tau\) and obtain
+\begin{equation}
+\label{eq:lem:bound-2-p:2}
+ \| e(F) \|_{L^p([\tau - \frac{\delta}{3},\tau+\delta])} \leq \|\psi_\tau\|_{L^p([\tau-
+\frac{\delta}{3},\tau+\delta])} \leq C \|\psi_\tau\|_{L^1([\tau-
+\frac{\delta}{2},\tau+\delta])}.
+\end{equation}
+
+
+Now apply \(L^1\)-\href{elliptic-parabolic.org}{Comparison Theorem} \ref{thm:1-comparison} to \(\psi_\tau\), one has
+\begin{equation}
+\label{eq:lem:bound-2-p:3}
+\|\psi_\tau\|_{L^1([\tau-
+\frac{\delta}{2},\tau+\delta])} \leq \int_0^{3\delta/2} \|\restr{\psi_\tau}{\tau-\frac{\delta}{2}}\|_{L^1}e^{Bt}dt \leq \int_0^{3\delta/2}e^{Bt}dt.  \|\restr{e}{\tau-\frac{\delta}{2}}\|_{L^1}\leq C.
+\end{equation}
+The lemma follows from \eqref{eq:lem:bound-2-p:2} and \eqref{eq:lem:bound-2-p:3}.
+\end{proof}
+
+We can now estimate higher order derivatives.
+
+\begin{theorem}[\( W^{k,p} \)-boundedness]
+\label{thm:bound-k-p}
+For all \(p\in (1,+\infty)\) and \(k<+\infty\), there exists \(C\) depending only on
+\(k\), \(p\), the metrics and initial energies such that
+\[
+\|F\|_{W^{k,p}([\tau, \tau+\delta])} \leq C
+\]
+for all \(\alpha +\delta \leq\tau\leq\omega-\delta\).
+\end{theorem}
+\begin{proof}
+Applying Gårding Inequality to the equation \(\frac{dF}{dt} + \Delta F_t =
+\Gamma(F)(\nabla F)^2\) then Regularity Theorem \ref{thm:reg-poly-diff} for \href{polynomial-besov.org}{polynomial
+differential operator}, one has for \(\epsilon \ll \delta\):
+\begin{align*}
+ \|F\|_{W^{k,p}([\tau,\tau+\delta])} &\leq C_\epsilon \left(
+\|F\|_{W^{2,p}([\tau-\epsilon,\tau+\delta])} + \|\Gamma(F)(\nabla F)^2\|_{W^{k-2,p}([\tau-\epsilon,\tau+\delta])}\right)  \\
+					   &\leq C_\epsilon\left(1 + C\left(1+\|F\|_{W^{s,q}([\tau-\epsilon,\tau+\delta])}\right)^{q/p}\right)
+\end{align*}
+as long as \(k-1 < s\) and \(\frac{1}{p} > \frac{k}{s}.\frac{1}{q}\). Therefore if \(\|F\|_{W^{s,q}([\tau,\tau+\delta])}\leq C(\delta,s,q)\) for all \(\beta\leq
+\tau\leq\omega-\delta\) and \(q\in (1,+\infty)\), we just proved that
+\[
+ \|F\|_{W^{k,p}([\tau,\tau+\delta])} \leq C({\epsilon}, k,p)
+\]
+for all 
+\begin{cases}
+\beta + \epsilon \leq \tau \leq \omega-\delta \\
+k < s+1, p \in(1,+\infty)
+\end{cases}
+since \(\|F\|_{W^{s,q}([\tau-\epsilon,\tau+\delta])} \leq 2C(\delta,s,q)\).
+
+One can then conclude by induction on \(k\), with step \(\frac{1}{2}\), starting with
+\(k=2\) and \(\epsilon=\frac{\delta}{2}\) and each time
+dividing \(\epsilon\) by 2.
+\end{proof}
+
+
+\section{Global existence for nonlinear heat equation.}
+\label{sec:org2a281f3}
+
+\begin{theorem}[Global existence]
+\label{thm:global-heat-existence}
+The solution of nonlinear heat equation
+\begin{equation}
+\label{eq:thm:global-heat}
+ \frac{dF}{dt} = -\Delta F +\Gamma(F) (\nabla F)^2
+\end{equation}
+with smooth initial condition exists globally for all time \(t >\alpha\).
+\end{theorem}
+
+\begin{proof}
+Let \(F_n\) be a sequence of solution of \eqref{eq:thm:global-heat} on \([\alpha,\omega_n]\) with \(\omega_n\) increasing to \(\omega\) then they coincide by
+uniqueness of solution the equation. As discussed in the beginning of this part, it is
+sufficient to prove that the solution extends to \([\alpha,\omega]\). Let \(F\) be the
+solution on \([\alpha,\omega)\) such that \(\restr{F}{[\alpha,\omega_n]} = F_n\), then
+by Theorem \ref{thm:bound-k-p}, for all \(\tau \in [\alpha,\omega-\delta)\):
+\[
+ \| D^u_t D^v_x F \|_{L^\infty(M\times[\tau,\tau+\delta])} \leq C_{\rm Sobolev} \| D^u_t D^v_x F
+\|_{W^{k,p}(M\times[\tau,\tau+\delta])} \leq C_{\rm Sobolev} . C(k,p,\delta)
+\]
+where, if we choose \(k\) sufficiently large, \(C_{\rm Sobolev}\) is the constant of Sobolev imbedding \(W^{k,p}(M\times[0,\delta]) \hookrightarrow C(M\times[0,\delta])\) and \(C(k,p,\delta)\)
+is the constant provided by Theorem \ref{thm:bound-k-p}. 
+
+So all partial derivatives of \(F\) is uniformly bounded on \([\alpha +\delta,\omega)\). This proves that \(F\) extends
+to a solution on \([\alpha,\omega]\). In fact \(\restr{F}{\tau}:=\restr{F}{M\times\{\tau\}}\) converges
+in \(C^\infty(M)\) as \(\tau\to \omega\), since \(\|D^\alpha \restr{F}{\tau} -
+D^\alpha\restr{F}{\tau'}\|_{L^\infty} \leq \max_{\|\beta\| = \|\alpha\|+1}\|D^{\beta}F\|_{L^\infty}|\tau-\tau'|\).
+\end{proof}
+
+We have just proved the first part of the following theorem. The second part is a
+reformulation of Theorem \ref{thm:eells-sampson}
+of Eells and Sampson.
+
+\begin{theorem}
+\label{thm:final}
+\begin{enumerate}
+\item Let \(M, M'\) be compact Riemannian manifolds with \(\Riem(M') \leq 0\). Then for
+every smooth map \(f_0:\ M \longrightarrow M'\subset B\subset \mathbb{R}^N\), the
+nonlinear heat equation
+\begin{equation*}
+\begin{cases}
+\frac{df_t}{dt} = \tau(f_t),  & \text{for all $t\geq 0$} \\
+\restr{f}{t=0} = f_0,
+\end{cases}      
+\end{equation*}
+admit a globally defined smooth solution \(f_t\). Moreover, all derivatives \(D^\alpha
+   f_t\) remains uniformly bounded as \(t\to +\infty\).
+\item For a suitable sequence \(t_n\) increasing to \(+\infty\) the sequence \(f_{t_n}\) converges in \(C^\infty(M)\) to a function \(f_\infty\) with \(\tau(f_\infty)=0\). Therefore any map \(f_0:\ M \longrightarrow M'\) is homotopic to a harmonic map.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+For any sequence \(t_n\), one can extract from \(\{f_{t_n}\}\), since their derivatives are
+uniformly bounded, a subsequence \(\{f_{t_{n_i}}\}\) converging in \(C^k(M,
+\mathbb{R}^N)\). By a diagonalisation argument, one can extract from any sequence \(\{f_{t_n}\}\) a subsequence converging in \(C^\infty(M, \mathbb{R}^N)\) to \(f_\infty\). Abusively denote this subsequence by \(\{f_{t_n}\}\), by Theorem \ref{thm:den-kin}
+\[
+ \lim_{n\to\infty} K(f_{t_n}) = \lim_{n\to\infty} \int_M |\tau(f_{t_n})|^2 = 0
+\]
+Therefore \(\tau(f_{t_n}) \to 0\) in \(L^2(M)^{\oplus N}\). But also \(\tau(f_{t_n})
+\to \tau(f_\infty)\) in \(C^\infty(M, \mathbb{R}^N)\), one has \(\tau(f_\infty)=0\). The homotopic conlusion follows by rescaling the deformation time between \(f_{t_n}\) and \(f_{t_{n+1}}\) to \(\frac{1}{2^n}\).
+\end{proof}

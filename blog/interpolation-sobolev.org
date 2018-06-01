@@ -12,18 +12,18 @@
 We will define a more general notion of Sobolev spaces on compact manifold than those in
 cite:aubin_nonlinear_1998 and cite:jost_riemannian_2008, where Sobolev spaces on a
 (Riemannian) manifold \( W^{k,p}(M) \) of dimension \( n \) are defined for
-\( k\in \mathbb{Z}_{\geq 0} \) and for /uniform weight/, i.e. a function \( f\in W^{k,p}(M)
+\( k\in \mathbb{Z}_{\geq 0} \) and for /uniform weight/, meaning that a function \( f\in W^{k,p}(M)
 \) is supposed to be weakly differentiable up to order \( k \) in every variables \(
 x_1,\dots, x_n \) in each smooth coordinates. The space \( W^{k,p}(M) \) in this case can
-be defined by density with respect to a certain norm involving derivatives \(
+be defined by density with respect to a norm involving derivatives \(
 \frac{\partial f}{\partial x^\alpha} \).
 
 Meanwhile, the suitable function spaces to
 solve parabolic equations are those whose regularity in time is half of that in space,
 i.e. we will solve parabolic equations on the Sobolev spaces \( W^{k,p}(M\times T) \) of functions
 \( k \) times regular in \( M \) and \( k/2 \) times regular in \( T \). We cannot always,
-(for example when \( k \) is odd) find a simple norm involving derivatives of \( f \) in
-order to define \( W^{k,p} \) by density. This generalisation will be done using Stein's
+(for example when \( k \) is odd) find a simple norm involving derivatives of \( f \) 
+to define \( W^{k,p} \) by density. This generalisation will be done using Stein's
 multipliers.
 
 Another generalisation will be made is to allow the manifold to have boundary. Even when
@@ -31,7 +31,7 @@ we only want to solve parabolic equation on manifold \( M \) without boundary, t
 underlying space is \( M\times [0, T] \) which has boundary. Moreover, we will have to
 discuss the notion of trace in order to use the initial condition at \( t=0 \). 
 
-All manifolds will be compact, with no given metric. This is not really a
+In this part, all manifolds will be compact, with no given metric. This is not really a
 generalisation since on compact manifolds, Sobolev spaces \( W^{k,p}(M) \), as defined in
 cite:aubin_nonlinear_1998 and cite:jost_riemannian_2008 set theoretically do not depend on
 the metric and (the equivalent class of) their norms also independent of the metric.
@@ -41,13 +41,6 @@ works on manifold with /corner/, i.e. irregular boundary. The corners, modeled b
 \mathbb{R}^{n-k}\times \mathbb{R}_{\geq 0}^k \), appear naturally,
 for example at the boundary \( \partial M \) in \( t=0 \). The extra effort to cover the
 case of corners is not much (see [[cite:hamilton_harmonic_1975][page 50]]) and essentially algebraic.
-
-The advantage of this approach (Stein's multipliers and interpolation theory) over the
-definition by density is that it is based on an algebraic framework compatible with
-compact operators and capable of formulating analytic result economically. For example,
-3 classical results of elliptic equations (existence and approximate solution, regularity,
-Garding's inequality) can be nicely encoded in a commutative diagram and can be proved at
-the same time (and the proof is essentially algebraic), see this [[./elliptic-parabolic.org][post]].
 
 * Preparatory material
 We will recall here basic elements of Fourier transform on the space of tempered
@@ -115,7 +108,7 @@ Note by \( \sigma:= \lcm(\sigma_1,\dots,\sigma_n) \) then \( W_\Sigma(\xi) = \le
 \xi_1^{2\sigma_1} + \dots + \xi_n^{2\sigma_n} \right)^{1/2\sigma} \) is a weight. We will
 only use weights of this type in our discussion. The index \( \Sigma =
 (\sigma_1,\dots,\sigma_n) \) is chosen according to the differential operator in the
-elliptic/parabolic equation. In particular, for Laplace equation, one choose \(
+elliptic/parabolic equation. In particular, for Laplace equation, one chooses \(
 \Sigma=(1,\dots, 1) \) and for heat equation \( \Sigma = (1,2,\dots, 2) \) where \( 1 \)
 is in the time component.
 #+END_exampl
@@ -154,7 +147,7 @@ If \( k>0 \) and \( \sigma \mid k \) and \( 1<p<\infty \), then given \( u\in
 
 #+BEGIN_exampl
 1. When \( \sigma_1=\dots=\sigma_n=1 \), one has the familiar Sobolev spaces.
-2. For (the weight of) heat equation, \( W^{2,p} \) cam be defined by density using the
+2. For (the weight of) heat equation, \( W^{2,p} \) can be defined by density using the
    norm
    \[
     \|u(t,x)\| = \left\|\frac{\partial u}{\partial t}\right\|_{L^p} +
@@ -166,15 +159,15 @@ If \( k>0 \) and \( \sigma \mid k \) and \( 1<p<\infty \), then given \( u\in
 ** Holomorphic interpolation of Banach spaces
 
 The Interpolation theory is based on the following Three-lines theorem whose proof follows
-from the classic [[https://en.wikipedia.org/wiki/Hadamard_three-lines_theorem][Hadamard's three-lines theorem]] (the case \( A=\mathbb{C} \)) and how we
-define complex Banach spaces and holomorphic functions taking value there.
+from the classic [[https://en.wikipedia.org/wiki/Hadamard_three-lines_theorem][Hadamard's three-lines theorem]] (the case \( A=\mathbb{C} \)) and the way we
+define complex Banach spaces and holomorphic maps taking value there.
 
 #+ATTR_LATEX: :options [Three-lines]
 #+ATTR_HTML: :id thm:3-line :btit (Three-line) 
 #+BEGIN_theorem
 #+LATEX: \label{thm:3-line}
 Let \( A \) be a complex Banach space and \( h:\ S=\left \{0\leq \re z\leq 1\right\}\subset
-\mathbb{C} \longrightarrow  A  \) be a holomorphic function, i.e. continuous and
+\mathbb{C} \longrightarrow  A  \) be a holomorphic map, i.e. continuous and
 holomorphic in the interior such that \( h \) is bounded at infinity, i.e. \( h(x+iy)
 \to 0 \) as \( y \to \infty \). Let \( M(x):=\sup_y \|h(x+iy)\| \) then one has
 \[
@@ -185,7 +178,7 @@ holomorphic in the interior such that \( h \) is bounded at infinity, i.e. \( h(
 Let \( A_0, A_1 \) be complex Banach spaces such that 
 1. \( A_0, A_1 \) can be continuously embedded into a Hausdorff topological complex vector
    space \( E \) such that the complex structures are compatible with each others,
-   i.e. the linear embeddings preserve complex structures.
+   i.e. the linear embeddings \( A_i \hookrightarrow E \) preserve complex structures.
 2. The intersection \( A_0\cap A_1 \) in \( E \) is dense in \( (A_i,\|\|_{A_i}) \) for \( i=0,1 \).
 such \( (A_0,A_1) \) is called an *interpolatable* pair.
 
@@ -194,7 +187,7 @@ are Banach and the diagram
 \begin{equation}
 \label{fig:interpol-pair}
 \xymatrix{
-0 \ar@{->}[r] & A\cap B \ar@{->}[r] & A\oplus B \ar@{->}[r] & A+B \ar@{->}[r] & 0
+0 \ar@{->}[r] & A_0\cap A_1 \ar@{->}[r] & A_0\oplus A_1 \ar@{->}[r] & A_0+A_1 \ar@{->}[r] & 0
 }
 \end{equation}
 commutes and the arrows are
@@ -220,16 +213,16 @@ uniquely determined by 2 complex Banach spaces \( U,V \) (which are eventually \
 }
 \end{equation}
 in which 
-1. All arrows are continuous and compatible with complex structures. The vertical sequence
-   is exact, the horizontal sequence is exact and canonical.
+1. All arrows are continuous and compatible with complex structures. The horizontal sequence
+   is exact, the vertical sequence is exact and canonical.
 2. The diagonal arrows from \( U \) to \( A_0, A_1 \) are injective and of dense image in
    \( A_0, A_1 \).
 3. The maps composed by the diagonal arrows \( U \to A_i \to V \) are injective for \(
    i=0,1 \). Since the two maps are additive inverse, it suffices to have injectivity for
    one of them.
 
-In the language that we will use to solve [[./elliptic-parabolic.org][linear equation]], the diagram
-eqref:fig:unique-interpol-pair is equivalent to the square
+In the language that we will use to solve [[./elliptic-parabolic.org][linear equation]], these properties of diagram
+eqref:fig:unique-interpol-pair are equivalent to the square
 \[
  \xymatrix{
 U \ar@{->}[r] \ar@{->}[d] & A_0 \ar@{->}[d] \\
@@ -244,8 +237,8 @@ A_0+A_1 \) containing \( A_0\cap A_1 \) for \( 0\leq \theta\leq 1 \) that interp
 A_0 \) and \( A_1 \) that satisfies the following properties, called interpolation
 inequalities
 
-#+ATTR_LATEX: :options [Interpolation inequality for common elements]
-#+ATTR_HTML: :id thm:interp-ineq-ele :btit (Interpolation inequality for common elements) 
+#+ATTR_LATEX: :options [Interpolation inequality for elements in the intersection]
+#+ATTR_HTML: :id thm:interp-ineq-ele :btit (Interpolation inequality for elements in the intersection) 
 #+BEGIN_theorem
 #+LATEX: \label{thm:interp-ineq-ele}
 Let \( a\in A_0\cap A_1 \) then \( a\in A_\theta \) and
@@ -254,7 +247,7 @@ Let \( a\in A_0\cap A_1 \) then \( a\in A_\theta \) and
 \]
 #+END_theorem
 
-and 
+ 
 #+ATTR_LATEX: :options [Interpolation inequality for operators]
 #+ATTR_HTML: :id thm:interp-ineq-op :btit (Interpolation inequality for operators) 
 #+BEGIN_theorem
@@ -280,8 +273,7 @@ Also, \( T \) defines a bounded operator \( T:\ A_\theta \longrightarrow  B_\the
 
 To define \( A_\theta \), let 
 \[
- \mathcal{H}(A_0,A_1):= \left\{ h: S \longrightarrow A_0+ A_1:\ h \text{ is holomorphic
-and } h(z) \to 0 \text{ as } |y| \to\infty, h(iy)\in A_0,\ h(1+iy)\in A_1 \right\}
+ \mathcal{H}(A_0,A_1):= \left\{ h: S \longrightarrow A_0+ A_1 :\ h \text{ is holomorphic, } \lim_{|y|\to\infty}h(z) = 0, h(iy)\in A_0,\ h(1+iy)\in A_1 \}
 \]
 where, as above, \( S \) denotes the strip \( 0\leq \re z\leq 1 \). Then \(
 \mathcal{H}(A_0, A_1) \) is a Banach space with the norm
@@ -390,9 +382,9 @@ natural inclusion \( X_\theta \hookrightarrow Y_\theta \) with closed image in \
 #+BEGIN_remark
 1. The condition \( X_0+X_1 \hookrightarrow Y_0+Y_1 \) being of closed image is redundant
    if \( X_1 \hookrightarrow X_0 \) and \( Y_1 \hookrightarrow Y_0 \), as in the case of
-   interpolation of /certain/ Sobolev spaces on manifolds. In general context, one can also check that this condition holds for the
+   interpolation of /certain/ Sobolev spaces on manifolds. In general, one can also check that this condition holds for the
    maps \( \iota_{k,p} \) and \( \iota_{l,q} \) in Definition ref:def:sobolev-space of
-   Sobolev spaces using the fact that the \( \iota \) admit left-inverse given by \(
+   Sobolev spaces using the fact that they admit left-inverse given by \(
    \{\tilde \psi_i\} \). See Remark ref:rem:hamilton-typo.
 2. If one has two exact sequences
    \begin{equation}
@@ -404,9 +396,8 @@ natural inclusion \( X_\theta \hookrightarrow Y_\theta \) with closed image in \
    \( X_i \longrightarrow Y_i \) being kernel of \( Y_i \longrightarrow Z_i \) are
    closed, one has the inclusion for interpolation spaces, also of closed image:
    \[
-    0 \longrightarrow X_\theta \longrightarrow Y_\theta,\quad 0\leq\theta\leq 1
+    0 \longrightarrow X_\theta \longrightarrow Y_\theta,\quad 0\leq\theta\leq 1.
    \]
-    I am not sure if this exact sequence can be extended to \( Z_\theta \) in general.
 3. In particular, if the sequences in eqref:eq:ses-interp split, meaning that one can find
    a retraction \( 0 \longrightarrow Z_i \longrightarrow  Y_i \), then by applying the
    theorem for the retractions, one sees that the interpolation sequence extend to \(
@@ -428,8 +419,7 @@ of Theorem ref:thm:dir-sum-interp since \( \mathcal{H}(X_0, X_1) \) is strictly 
 in \( \mathcal{H}(Y_0, Y_1) \). What we can say is that the interpolation norm \( X_\theta
 \) dominates the interpolation norm of \( Y_\theta \), since it involves the infimum on
 the smaller set. In other words, it means that the inclusion \( X_\theta \hookrightarrow
-Y_\theta \) is continuous. Therefore, to establish the equivalence of norms, it remains,
-by Open mapping theorem, to check that the image of \( X_\theta \hookrightarrow Y_\theta
+Y_\theta \) is continuous. It remains to check that the image of \( X_\theta \hookrightarrow Y_\theta
 \) is closed.
 
 Since
@@ -442,9 +432,10 @@ X_\theta \ar@{->}[r] & Y_\theta \\
 \]
 it suffices to show that the image \( \mathcal{H}(X_0,X_1) \hookrightarrow
 \mathcal{H}(Y_0,Y_1) \) is closed, meaning if \(\mathcal{H}(X_0,X_1)\ni h_n \to h \) in \(
-\mathcal{H}(Y_0,Y_1) \), then \( h \) must take value in \( X_0 + X_1 \). By the
+\mathcal{H}(Y_0,Y_1) \), then \( h \) must take value in \( X_0 + X_1 \). This is easy to
+verify on \( \partial S \): By the
 equivalence of the norm on \( X_i \) and the restricted norm from \( Y_i \), \( i=0,1 \),
-one sees that \( h(iy)\in A_0 \) and \( h(1+iy)\in A_1 \).
+one sees that \( h(iy)\in X_0 \) and \( h(1+iy)\in X_1 \).
 
 Since \( X_0+X_1 \) is
 closed in \( Y_0+Y_1 \), any holomorphic map \(  \mathcal{H}(Y_0,Y_1)\ni f: S
@@ -458,8 +449,8 @@ Maximum modulus principle for holomorphic functions.
 #+ATTR_HTML: :id thm:compact-interp :btit (Interpolation of compact embedding) 
 #+BEGIN_theorem
 #+LATEX: \label{thm:compact-interp}
-If \( A_1 \hookrightarrow A_0 \) is a compact embedding, then \( A_1 \cong A_0\cap A_1
-\hookrightarrow A_0  \) is a compact embedding where the first \( \cong \) denotes the
+If \( A_1 \hookrightarrow A_0 \) is a compact embedding, then \( A_1 \cong A_\theta\cap A_1
+\hookrightarrow A_\theta  \) is a compact embedding where the first \( \cong \) denotes the
 same space with equivalent norms.
 #+END_theorem
 #+BEGIN_proof
@@ -480,7 +471,7 @@ following 2 remarks
    one has the compactness embedding if \( k \gg 1 \) and \( l<k \).
 2. For the case of small \( k \), note that 
    \[ 
-   W^{k+r,p}(X) \twoheadrightarrow W^{k,p}(X):\ v \mapsto W(D)^r u 
+   W^{k+r,p}(X) \twoheadrightarrow W^{k,p}(X):\ v \longmapsto W(D)^r u 
    \]
    is surjective and any \( u\in W^{k,p}(X) \) can be lifted to an element \( \tilde u\in
    W^{k+r,p}(X) \) of the same norm. In fact, if \( W(\xi)^k \hat u \in L^p \) then choose
@@ -501,9 +492,9 @@ The advantage of this proof is that it is valid for weighted Sobolev spaces over
 Let \( M \) be a compact manifold without boundary. We fix a finite atlas of \( M \) by
 chart \(  \varphi_i:\ M\supset U_i \longrightarrow V_i \subset \mathbb{R}^n \) such that
 the transitions \( \varphi_{ij}=\varphi_i \circ \varphi_j^{-1}: V_j \longrightarrow V_i \)
-are of strictly positive and bounded derivatives, i.e. \( C(\alpha)^{-1}\geq D^\alpha
+are of strictly positive and bounded derivatives, i.e. \( C(\alpha)^{-1}\leq D^\alpha
 \varphi_{ij}\leq C(\alpha) \) for all indices \( \alpha \). We will called such atlas a
-good atlas. 
+/good atlas/. 
 One can always obtain such atlas by shrinking a bit each chart of a given atlas of \( M \). Let \( \psi_i \) be a
 partition of unity subordinated to \( \{U_i\} \)
 
@@ -521,7 +512,7 @@ partition of unity subordinated to \( \{U_i\} \)
    \]
 2. Weighted Sobolev spaces can be defined when \( M \) has a foliation structure, i.e. \(M \) is locally modeled by
    \( 0\subsetneq F_1\subsetneq \dots \subset F_k \subsetneq \mathbb{R}^n \) where
-   \( F_i \) are vector subspace of \( \mathbb{R^n} \) of dimension
+   \( F_i \) are vector subspace of \( \mathbb{R}^n \) of dimension
    \( 0<n_1 <\dots < n_k< n \) respectively and \( F_k \) are preserved by the transition
    maps \( \varphi_{ij} \), for example when \( M \) is a product of manifolds of lower
    dimension. Then the above definition extends to weighted Sobolev spaces with weight
@@ -532,24 +523,24 @@ partition of unity subordinated to \( \{U_i\} \)
 #+BEGIN_remark
 1. One can define \( \mathcal{S}(M)^* \) as the dual space of
    \( \mathcal{S}(M) = C^\infty(M) \) under Schwartz topology with respect to any metric,
-   since by compactness any two metrics on \( M \) are comparable. The distributions 
+   because by compactness any two metrics on \( M \) are comparable. The distributions 
    \(\psi_i f\) are tempered because they are compactly supported.
 2. One can identify \( C^\infty(M) \) with a subspace of \( \mathcal{S}^*(M) \) that is
    contained in any Sobolev space \( W^{k,p}(M) \) by fixing a Riemannian metric \( g \)
    on \( M \). The map \( C^\infty(M) \hookrightarrow \mathcal{S}^*(M) \) may depend on
-   the \( g \), but its image does not. Similarly, one can also identify an element of \(
-   \mathbb{W}^{k,p}(\mathbb{R}^n) \) supported in \( V_i \) with an element in \( W^{k,p}(M) \).
+   \( g \), but its image does not. Similarly, one can also identify an element of \(
+   W^{k,p}(\mathbb{R}^n) \) supported in \( V_i \) with an element in \( W^{k,p}(M) \).
 3. If one uses another good atlas \( U'_i \) or a different partition of unity, one
    obtains the same set \( W^{k,p}(M) \) and an equivalent norm. To see this, let us call
    two good atlas /compatible/ if their union is also a good atlas, then the statement
    holds for two compatible atlas by comparing their union. Moreover, for any two
-   arbitrary good atlas \( \{U_i\},\{U'_j\} \), one can find a good atlas compatible to
+   arbitrary good atlas \( \{U_i\},\{U'_j\} \), one can find a good atlas compatible with
    both of them by shrinking their union.
 #+END_remark
 
 By definition, one has an inclusion \(\iota:\ W^{k,p}(M) \hookrightarrow \bigoplus_i
 W^{k,p}(\mathbb{R}^n) \). Also \( \iota \) is of closed image because one can find a
-projection \( \pi:\ \bigoplus W^{k,p}(\mathbb{R}^n) \longrightarrow W^{k,p}(M) \) with \(
+projection \( \pi:\ \bigoplus_i W^{k,p}(\mathbb{R}^n) \longrightarrow W^{k,p}(M) \) with \(
 \pi\circ \iota = {\rm Id} \). In fact, let \( \tilde \psi_i \) be functions supported in \( U_i
 \) that equal \( 1 \) in the support of \( \psi_i \), then 
 \[ 
@@ -563,7 +554,7 @@ The closedness of image of \( \iota \) is equivalent to the fact that \( W^{k,p}
 #+BEGIN_remark
 #+LATEX: \label{rem:hamilton-typo}
 Although \( \iota \) preserves the norm of \( W^{k,p}(M) \) and has a right-inverse, it is far
-from being an isomorphism (it is not surjective). Each component of an element in the
+from being an isomorphism (it is not surjective). Each summand of an element in the
 image of \( \iota \) tends to 0 on the boundary of \( V_i \) (take \( k \gg 1 \) then everyone
 is continuous by Sobolev embedding, there is no subtlety in what we mean by "tends to
 0"). [[cite:hamilton_harmonic_1975][page 54]] seems to claim that \( \iota \) is an
@@ -589,12 +580,12 @@ manifold \( M \).
 
 In this part, we will define the Sobolev spaces \( W^{k,p}(M/ \mathcal{A}) \) where \(k\in
 \mathbb{R}, p\in(1, \infty) \) and \( M \)
-is manifolds with boundary and \( \mathcal{A} \) is union of connected components of \( \partial M
+is a manifold with boundary and \( \mathcal{A} \) is union of connected components of \( \partial M
 \) the boundary of \( M \). These spaces contain \( W^{k,p}(M) \) "functions" who vanish
-on \( A \). The appearance of the parameter \( \mathcal{A} \) is because we will later
+on \( \mathcal{A} \). The motivation is that we will later
 take \( M = M'\times [0,T] \) where \( M' \) is a manifold without boundary where we want
-to solve heat equation, and the natural \( \mathcal{A} \) would be \( \partial M \times
-\{0\} \). We also want that when the new definition coincides with the case of no boundary
+to solve heat equation, and the natural \( \mathcal{A} \) would be \( M \times
+\{0\} \). We also want that the new definition coincides with the case of no boundary
 when \( \mathcal{A} = \emptyset \)
 
 
@@ -613,7 +604,7 @@ W^{k,p}(X\times Y^+) = W^{k,p}(X\times Y^+/\emptyset) \) and \( W^{k,p}(X\times 
    \varphi_i^{-1}\in W^{k,p}(R_i/\mathcal{A}_i)\right\}
    \]
    where \( \mathcal{A}_i = \varphi_i(U_i \cap \mathcal{A}) \) and \( R_i \) is the
-   Euclidean space containing \( U_i \), that is either \( \mathbb{R}^{n+1} \) when \( \mathcal{A}_i=\emptyset \) or \(
+   Euclidean space containing \( \varphi(U_i) \), that is either \( \mathbb{R}^{n+1} \) when \( \mathcal{A}_i=\emptyset \) or \(
    \mathbb{R}^{n}\times \mathbb{R}_{\geq 0} \) when \( \mathcal{A}_i\subset
    \mathbb{R}^n\times \{0\} \). The norm is given by
    \[
@@ -626,9 +617,9 @@ W^{k,p}(X\times Y^+) = W^{k,p}(X\times Y^+/\emptyset) \) and \( W^{k,p}(X\times 
 The fact that different good atlas and different partition of unity defines the same space
 \( W^{k,p}(M/\mathcal{A}) \) (as a subset of \( \mathcal{S}^*(M) \)) with equivalents norm
 comes from the following lemma, which is just a formulation of arguments in the case of no
-boundary. Its proof follows from 2 remarks: On reduces the lemma, by interpolation
+boundary. For the proof, one reduces the lemma, by interpolation
 inequality, to the case \( k \) is a multiple of \( \sigma \) and use the criteria in
-Theorem ref:thm:equiv-norm-Sobolev. Then in this case, use the boundedness of derivative
+Theorem ref:thm:equiv-norm-Sobolev and the boundedness of derivative
 of the transition map.
 
 #+ATTR_HTML: :id lem:equiv-norm-sobolev
@@ -636,17 +627,15 @@ of the transition map.
 #+LATEX: \label{lem:equiv-norm-sobolev}
 Let \( (U,\mathcal{A}_U)\) and \( (V,\mathcal{A}_V) \) be subsets of \( (X\times Y^+,
 X\times \{0\}) \) and \( \varphi_{VU}:\ (U, \mathcal{A}_U) \longrightarrow (V, \mathcal{A}_V) \)
-being a diffeomorphism mapping \( \mathcal{A}_U\subset \partial U \) to \( \mathcal{A}_V \subset \partial V \)
-bijectively and of bounded derivatives. Let \( 0\leq \psi \leq 1 \) be a smooth function compactly supported in \( U
+being a diffeomorphism between \( U \) and \( V \) mapping \( \mathcal{A}_U\subset \partial U \) to \( \mathcal{A}_V \subset \partial V \)
+bijectively and of bounded derivatives. Let \( 0\leq \psi \leq 1 \) be a smooth function compactly supported in \( V
 \). Then the linear mapping \( T: \mathcal{S}^*(X\times Y^+/X\times \{0\}) \longrightarrow
 \mathcal{S}^*(X\times Y^+/X\times\{0\}):\ f \longrightarrow \psi. (f\circ
 \varphi^{-1}_{VU}) \) extends to a bounded operator from \( W^{k,p}(U/\mathcal{A}_U)
 \longrightarrow W^{k,p}(V, \mathcal{A}_V) \).
 #+END_lemma
 
-The Sobolev spaces on half-plan \( X\times Y^+ \) therefore has to have the following
-properties: they have to be Banach spaces, satisfying Interpolation theorem
-ref:thm:interp-sobolev and having \( \mathcal{S}(M) \) as a dense subspace. We will sketch
+We will sketch
 rapidly the (well known) ideas to define Sobolev spaces on half-plan and the trace
 operator in the next sections.
 
@@ -657,7 +646,7 @@ with weight \( (\sigma_1,\dots,\sigma_n,\rho) \) and \( \sigma:= \lcm (\sigma_1,
 Let \( \mathcal{S}(X\times Y^+) \) denote the space of
 smooth, rapidly decreasing functions (and all of their derivatives) on \( X\times Y^+ \)
 and  \( \mathcal{S}(X\times Y^+/0) \) denotes the subspace of functions who vanish, together with
-all their derivatives, at \( X\times \{0\} \). Idem for \( \mathcal{S}(X\times Y^-) \) and
+all their derivatives, at \( X\times \{0\} \). Similar definition for \( \mathcal{S}(X\times Y^-) \) and
 \( \mathcal{S}(X\times Y^-/0) \). The following exact sequence is obvious and the arrows are continuous under Schwartz topology.
 \begin{equation}
 \label{eq:ses-S}
@@ -665,11 +654,10 @@ all their derivatives, at \( X\times \{0\} \). Idem for \( \mathcal{S}(X\times Y
 0 \ar@{->}[r] & \mathcal{S}(X\times Y^-/0) \ar@{->}[r]^{Z_-} & \mathcal{S}(X\times Y) \ar@{->}[r]^{C_+} & \mathcal{S}(X\times Y^+) \ar@{->}[r] & 0
 }
 \end{equation}
-
 where \( Z_- \) be the extension by \( 0 \) and \( C_+ \) be the cut-off operator. 
 
 It is however not obvious that the sequence in eqref:eq:ses-S splits. Algebraically this
-is equivalent to the fact that \( C_+ \) admits a retraction, noted \( E_+ \) since it is
+is equivalent to the fact that \( C_+ \) admits a retraction, that we will note by \( E_+ \) since it is
 in fact an extension to the negative half-plan, which is continuous
 under Schwartz topology. The construction of \( E_+ \) is as follows
 \begin{align*}
@@ -679,7 +667,7 @@ under Schwartz topology. The construction of \( E_+ \) is as follows
 								       \int_0^\infty \varphi(\lambda) f(x,-\lambda y) d\lambda, & \text{if $y<0$}
 								       \end{cases} \right)
 \end{align*}
-This pushes the difficult part to the construction of \( \varphi \), which is resolved by
+where the difficult part is the choice of \( \varphi \), which is resolved by
 the following lemma.
 
 #+ATTR_HTML: :id lem:construction-varphi
@@ -715,7 +703,7 @@ which is also continuous in Schwartz topology. To resume, one has the split exac
 0 \ar@{->}[r] & \mathcal{S}(X\times Y^-/0) \ar@/^/@{->}[r]^{Z_-} & \mathcal{S}(X\times Y) \ar@/^/@{->}[r]^{C_+} \ar@/^/@{->}[l]^{R_-} & \mathcal{S}(X\times Y^+) \ar@{->}[r] \ar@/^/@{->}[l]^{E_+} & 0
 }
 \end{equation}
-idem for \( \mathcal{S}(X\times Y^+/0 \) and \( \mathcal{S}(X\times Y^-) \) and the
+and a similar sequence for \( \mathcal{S}(X\times Y^+/0 \) and \( \mathcal{S}(X\times Y^-) \) with
 operators \( Z_+, C_-, E_-\) and \( R_+ \).
 
 
@@ -724,20 +712,20 @@ Also, note that
 \label{eq:Eplus-Rplus}
 \langle E_+ f, g \rangle = \langle f, R_+ g \rangle
 \end{equation}
-where the first coupling is on \( \mathcal{S}(X\times Y) \times \mathcal{S}(X\times Y) \)
+where the first pairing is on \( \mathcal{S}(X\times Y) \times \mathcal{S}(X\times Y) \)
 and the second is on \( \mathcal{S}(X\times Y^+)\times \mathcal{S}(X\times Y^+/0) \).
 
 #+ATTR_HTML: :id rem:coupling-S
 #+BEGIN_remark
 #+LATEX: \label{rem:coupling-S}
-1. The two couplings satisfy \( \langle D^\alpha u, v \rangle = (-1)^{|\alpha|} \langle u,
+1. The two pairings satisfy \( \langle D^\alpha u, v \rangle = (-1)^{|\alpha|} \langle u,
    D^\alpha v \rangle \).
-2. The second coupling give two natural identifications
+2. The second pairing gives two natural identifications
    \[
     \mathcal{S}(X\times Y^+/0) \hookrightarrow \mathcal{S}^*(X\times Y^+),\quad
    \mathcal{S}(X\times Y^+) \hookrightarrow \mathcal{S}^*(X\times Y^+/0)
    \]
-   while the first one gives \( \mathcal{S}(X\times Y) \hookrightarrow
+   while the first pairing gives \( \mathcal{S}(X\times Y) \hookrightarrow
    \mathcal{S}^*(X\times Y)\).
 3. eqref:eq:Eplus-Rplus shows that \( E_+ \) and \( R_+ \) are adjoint, strictly speaking
    \( E_+ \) is the restriction of \( R_+^* \), that is
@@ -748,8 +736,8 @@ and the second is on \( \mathcal{S}(X\times Y^+)\times \mathcal{S}(X\times Y^+/0
     }
    \]
 #+END_remark
-Also, one has \( \langle C_- f, g \rangle = \langle f, Z_- g \rangle \), hence similarly,
-one has
+
+Similarly. since \( \langle C_- f, g \rangle = \langle f, Z_- g \rangle \), one has
 \[
      \xymatrix{
     \mathcal{S}(X\times Y^-/0) \ar@{^{(}->}[d] \ar@{->}[r]^{Z_-} & \mathcal{S}(X\times Y) \ar@{^{(}->}[d] \\
@@ -767,7 +755,7 @@ To resume, one can extend the sequence in eqref:eq:ses-S to the following diagra
 \end{equation}
 
 We will define Sobolev spaces \( W^{k,p}(X\times Y^-/0) \) and \( W^{k,p}(X\times Y^+) \)
-so that the Sobolev spaces form an intermediate row in diagram, since the center cell \(
+so that they form an intermediate row in diagram. Since the center cell \(
 \mathcal{S}(X\times Y)\subset W^{k,p}(X\times Y) \subset \mathcal{S}^*(X\times Y) \) is
 already defined, there is only one natural way to do this.
 
@@ -790,9 +778,9 @@ already defined, there is only one natural way to do this.
 2. The topology of \( W^{k,p}(X\times Y) \) being finer than the induced of weak-* topology from \(
    \mathcal{S}^*(X\times Y) \), the restricted operator \( \restr{Z_+^*}{W^{k,p}}: W^{k,p}(X\times Y)
    \longrightarrow \mathcal{S}^*(X\times Y^+/0) \) is continuous, hence \( \ker
-   \restr{Z_+^*}{W^{k,p}}\subset W^{k,p}(X\times Y) \), which is also the image by \( C_-^* \) of
-   \(W^{k,p}(X\times Y^-/0) \), is a closed subspace of the Banach space \(
-   W^{k,p}(X\times Y) \). Therefore \( W^{k,p}(X\times Y^-/0) \) and \( W^{k,p}(X\times
+   \restr{Z_+^*}{W^{k,p}}\subset W^{k,p}(X\times Y) \) is a closed subspace of the Banach space \(
+   W^{k,p}(X\times Y) \). But this is also the image by \( C_-^* \) of
+   \(W^{k,p}(X\times Y^-/0) \). Therefore \( W^{k,p}(X\times Y^-/0) \) and \( W^{k,p}(X\times
    Y^+) \) are Banach spaces.
 3. Idem for \( W^{k,p}(X\times Y^+/0) \) and \( W^{k,p}(X\times
    Y^-) \).
@@ -837,15 +825,14 @@ Idem for the side of \(
 #+END_proof
 
 #+BEGIN_remark
-By dualizing the diagram eqref:eq:ses-S-W-Sstar and using the fact that the dual space of
+By dualising the diagram eqref:eq:ses-S-W-Sstar and using the fact that the dual space of
 \( W^{k,p}(X\times Y) \) is \( W^{-k, p'}(X\times Y) \), one can prove that the dual space
 of \( W^{k,p}(X\times Y^+) \) is \( W^{-k, p'}(X\times Y^+/0) \). 
 #+END_remark
 
 *** Functoriality of \( D_x \) and equivalent definitions
 The following discussion appeared as 4 lemmas in [[cite:hamilton_harmonic_1975][page
-38-42]] in the proof of Vanishing trace theorem ref:thm:vanishing-trace. The reason of
-this paragraph is that I do not want to consider these results as technical details, and I
+38-42]] in the proof of Vanishing trace theorem ref:thm:vanishing-trace. I
 think these ideas can be presented without much computation.
 
 Note that the weight \( W(\xi,\eta) = \left(1 +\xi_1^{2\sigma_1} +\dots +
@@ -878,7 +865,7 @@ eqref:eq:ses-S-W-Sstar.
 One can construct \( W(D_x)^l \) arrows from \( W^{k,p}(X\times Y^-/0)
 \longrightarrow W^{k-l,p}(X\times Y^-/0) \) and \( W^{k,p}(X\times Y^+)
 \longrightarrow W^{k-l,p}(X\times Y^+) \) as adjoint of \( W(D_x)^l \) on
-\mathcal{S}(X\times Y^+) and \( \mathcal{S}(X\times Y^+/0) \). They are by definition continuous on the
+\(\mathcal{S}(X\times Y^+)\) and \( \mathcal{S}(X\times Y^+/0) \). They are by definition continuous on the
 weak-* topology. It is easy to see that if we can prove that these two \( W(D_x)^l \) arrows commute with \(
 C^*_-, E^*_- \) and \( Z^*_+, R^*_+ \) on \( W^{k,p} \)-row and \( W^{k-l,p} \)-row, then
 by the continuity of the \(W(D_x)^l \) arrow from \( W^{k,p}(X\times Y) \longrightarrow
@@ -890,8 +877,7 @@ smooth functions, \( D_x \) commutes with \( Z_- \) (extension by 0) and \( C_+ 
 (cut-off).
 
 The fact that \( W(D_x)^l \) commutes with the "\( \longleftarrow  \)" arrows,
-i.e. \(E^*_-\) and \( R^*_+ \) because the way we define extension operators \( E_+ \) and
-\( R_- \) for smooth functions that satisfy
+i.e. \(E^*_-\) and \( R^*_+ \) is due to:
 
 \(
  \xymatrix{
@@ -926,7 +912,7 @@ are equivalent.
 The density of \( \mathcal{S}(X\times Y^-/0) \) and \( \mathcal{S}(X\times Y^+) \) in the
 corresponding \( W^{k,p} \) shows that the new \( W^{k,p} \) spaces can also be defined by
 density using the \( W^{k,p} \)-norm of the extension (\( Z_- \) and \(
-E_+ \) respectively) from half-plan to the whole plan. By the continuity of \( R_+^* \) in the second row of eqref:eq:ses-S-W-Sstar when \( k=0 \), one see that
+E_+ \) respectively) from half-plan to the whole plan. By the continuity of \( R_+^* \) in the second row of eqref:eq:ses-S-W-Sstar when \( k=0 \), one sees that
 the \( L^p \)-norms of the extensions by \( Z_-\) and \(E_+ \) are equivalent to the \( L^p
 \) norm on the half-plan. Therefore, one has the following analog of Theorem ref:thm:equiv-norm-Sobolev.
 
@@ -959,17 +945,17 @@ Z_+^*, E_-^*, R_+^* \).
 The goal of this section is to define the restriction of a function \( f\in
 W^{k,p}(X\times Y^+) \) on \( X\times \{0\} \). The pointwise restriction of \( f \) does
 not make sense because \( f \) is only defined up to a negligible set (i.e. of Lebesgue
-measure 0). The strategy is to take a sequence \( f_n\in \mathcal{S}(X\times Y^+) \)
+measure 0). The strategy is to take a sequence \( f_n\in \mathcal{S}(X\times Y^+) \) that is
 \( W^{k,p} \)-converging to \( f \) and to see if \( \{\restr{f_n}{X\times \{0\}}\} \)
-converges in \( L^p(X\times \{0\}) \). If it does one calls the limit trace of \( f \) on
+converges in \( L^p(X\times \{0\}) \). If it does one calls the limit /trace/ of \( f \) on
 \( X\times \{0\} \). Theorem ref:thm:vanishing-trace, Example ref:ex:vanishing-trace and
 Theorem ref:thm:def-trace show that one should expect 
 - high regularity of \( f \), i.e. \( k \) large enough, so that the limit exists,
 - a drop of regularity of the restriction.
 
-From diagram eqref:eq:ses-S-W-Sstar and its opposite version (with all \( + \) sign
-replaced by \( - \) and vice versa), there is a natural inclusion \(\iota:\ W^{k,p}(X\times
-Y^+/0) \) to \( W^{k,p}(X\times Y^+) \), by, for smooth functions, first extending by zero, then cut-off
+From diagram eqref:eq:ses-S-W-Sstar and its opposite version (with all \( + \) and \( - \)
+signs interchanged), there is a natural inclusion \(\iota:\ W^{k,p}(X\times
+Y^+/0) \) to \( W^{k,p}(X\times Y^+) \), by first extending by zero, then cutting-off
 \[
  \xymatrix{
 W^{k,p}(X\times Y^+/0) \ar@{^{(}->}[rr]^{\iota} \ar@{->}[rd]^{Z_+} &  & W^{k,p}(X\times Y^+) \\
@@ -1057,7 +1043,7 @@ converge in \( W^{k,p}(X\times Y) \) to \( \tilde M f \).
 #+ATTR_HTML: :id ex:vanishing-trace
 #+BEGIN_remark
 #+LATEX: \label{ex:vanishing-trace}
-If \( \rho=\sigma_i \) then \( \sigma=1 \), take \( k=0 \) then the Theorem
+If \( \rho=\sigma_i=1 \) then \( \sigma=1 \), take \( k=0 \) then the Theorem
 ref:thm:vanishing-trace claims that \( \mathcal{S}(X\times Y^+/0) \) is dense in \(
 L^P(X\times Y^+) \supset \mathcal{S}(X\times Y^+) \), or equivalently any smooth function
 \( f\in \mathcal{S}(X\times Y^+) \) not necessarily vanishes on \( X\times \{0\} \) can be
@@ -1119,13 +1105,13 @@ It suffices to prove that \( \|Bf\|_{L^p(X)} \leq C\|f\|_{W^{k,p}(X\times Y^+)} 
 for \( v>0 \). One can check that \( T_v \) extends to a bounded operator \(T_v:\
 W^{k,p}(X\times Y^+) \longrightarrow W^{k,p}(X\times Y^+) \) for all \( k\geq 0 \) and
 that
-\[
+\begin{equation*}
 \begin{cases}
 \|D_y T_v f\|_{L^p(X\times Y^+)} \leq Cv^{-1} \|f\|_{L^p(X\times Y^+)},  \\
 \|D_y T_v f\|_{L^p(X\times Y^+)} \leq C\|f\|_{W^{\sigma/\rho,p}(X\times Y^+)}
 \end{cases}
-\]
-hence by Interpolation inequality ref:thm:interp-ineq-op, one obtains for all \( 0\leq
+\end{equation*}
+hence by Interpolation inequality Theorem ref:thm:interp-ineq-op, one obtains for all \( 0\leq
 k\leq \sigma/\rho \): \( \|D_y T_v f\|_{L^p(X\times Y^+)} \leq C v^{\rho k/\sigma -
 1}\|f\|_{W^{k,p}(X\times Y^+)} \) hence
 \begin{equation}
@@ -1163,10 +1149,7 @@ C\|f\|_{W^{k,p}(X\times Y^+)} \). Since \( f \) is continuous, the limit is \(
 #+BEGIN_remark
 The fact that the condition on \( l \) in Theorem ref:thm:trace-reg is an open condition
 explains why we topologize the space of boundary value  \( \partial W^{k,p}(X\times Y^+)
-\) by the quotient \( W^{k,p} \)-norm instead of any \( W^{l,p} \)-norm. On one hand, we have completeness for free. On the
-other hand, since \( B:\ W^{k,p}(X\times Y^+) \longrightarrow
-L^p(X) \) factorizes to any \( W^{l,p}(X) \), the quotient \( W^{k,p} \)-norm is stronger
-than any \( W^{l,p} \)-norm.
+\) by the quotient \( W^{k,p} \)-norm instead of any \( W^{l,p} \)-norm. Also, we have completeness for free.
 #+END_remark
 
 
@@ -1181,7 +1164,7 @@ on \( X\times \{0\} \) and the result is a function in \( W^{\sigma/\rho,p}(X\ti
 #+LATEX: \label{thm:patching}
 If \( p\in (1,+\infty) \) and \( \frac{1}{p} < \rho \frac{k}{\sigma} < 1+\frac{1}{p} \),
 then given \( f_+\in W^{k,p}(X\times Y^+) \) and \( f_-\in W^{k,p}(X\times Y^-) \) such
-that \( B f_+ = B f_- \) in \( L^p(X) \), one define \( f\in L^p(X\times Y) \) such that \(f=
+that \( B f_+ = B f_- \) in \( L^p(X) \), one defines \( f\in L^p(X\times Y) \) such that \(f=
 f_+ \) on \( X\times Y^+ \) and \(f= f_- \) on \( X\times Y^- \). Then actually \( f\in
 W^{k,p}(X\times Y) \).
 #+END_theorem
@@ -1206,7 +1189,7 @@ dimension as \( M \) (\( \mathcal{A}_i = \emptyset \)), or a half-plan (\(
 of \( \mathcal{B} \) and \( \psi_i \) is still a partition of unity subordinated to this
 atlas, therefore take \( g_i\in W^{l,p}(\partial R_i) \) to be
 trace of \( f_i \) on the image of \( \mathcal{B} \) of each chart. It remains to check
-that the data \( g_i \) correspond to a unique element \( g\in W^{l,p}(\mathcal{B})
+that the data \( (g_i) \) corresponds to a unique element \( g\in W^{l,p}(\mathcal{B})
 \). Recall that we have the following diagram:
 \[
 \xymatrix{

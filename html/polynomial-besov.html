@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-30 Wed 23:12 -->
+<!-- 2018-05-31 Thu 23:28 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Short-time existence and regularity for nonlinear heat equation: Polynomial differential operators and Besov spaces</title>
@@ -303,7 +303,7 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 We will establish in this part a regularity estimate for differential
 operator with coefficient depending nonlinearly in \( x \) and \( f(x) \). Although the
 result can be stated using only Sobolev spaces, it is natural for the proof to make a
-detour to Besov space where we can use theorem <a href="#thm:compo-besov">thm:compo-besov</a>.
+detour to Besov space where we can use Theorem <a href="#thm:compo-besov">thm:compo-besov</a>.
 </p>
 
 <p>
@@ -327,7 +327,7 @@ function theorem for Banach spaces. Since the solution is smooth, we can apply T
 We say that \( P \) is a <b>polynomial differential operator of type \( (n,k) \)</b> if \( P \)
 is of the form
 \[
- P(F) = \sum c_{\alpha_1,\dots, \alpha_\nu} (x, F(x)) D^{\alpha_1} F^{a_1} \dots D^{\alpha_nu} F^{a_{\nu}}
+ P(F) = \sum c_{\alpha_1,\dots, \alpha_\nu} (x, F(x)) D^{\alpha_1} F^{a_1} \dots D^{\alpha_\nu} F^{a_{\nu}}
 \]
 where the coefficients \( c_{\alpha_1,\dots,\alpha_nu} \) depend smoothly and nonlinearly on \( x
 \) and \( F \) and \( \alpha_i\in \mathbb{R}^N \) are indices with the weighted norm \(
@@ -365,7 +365,7 @@ operator of type \( (n,k) \) on \( X \). Suppose that
  r\geq 0,\quad p,q\in (1,\infty),\quad r+k < s, \quad \frac{1}{p}> \frac{r+n}{s} \frac{1}{q}.
 \end{equation}
 <p>
-Then for all \( F\in C (X,B) \cap W^{s,q}(X) \), one has \( Pf\in W^{r,p}(X) \) and
+Then for all \( F\in C (X,B) \cap W^{s,q}(X) \), one has \( PF\in W^{r,p}(X) \) and
 \[
  \|P F \|_{W^{r,p}} \leq C\left(1 + \|F\|_{W^{s,q}}\right)^{q/p}.
 \]
@@ -413,7 +413,7 @@ the chart. Since \( \tilde \psi_i = 1 \) in the support of \( \psi_i \), one has
  \psi_i(\xi). c_\alpha (\xi,g_i). D^\alpha g_i = \psi_i(\xi). c_\alpha(\xi,\tilde \psi_i g_i) D^\alpha
 (\tilde\psi_i g_i)
 \]
-hence
+hence by the local statement:
 \[
 \| \psi_i(\xi). c_\alpha (\xi,g_i). D^\alpha g_i \|_{W^{r,p}} \leq C \left( 1 + 
 \|\tilde \psi_i g_i\|_{W^{s,q}} \right)^{q/p} \leq C \left( 1 + \|F \|_{W^{s,q}}\right)^{q/p}.
@@ -455,7 +455,7 @@ W^{s,p} \). In <a href="https://en.wikipedia.org/wiki/Besov_space">a more standa
 <p>
 We define \( B^{s,p} \) as the completion of \( \mathcal{S}(X) \) under the norm
 \[
-\|f\|_{B^{s,p}} := \sum_{\|\gamma\| < s} \|D^\gamma\|_{L^p} +
+\|f\|_{B^{s,p}} := \sum_{\|\gamma\| < s} \|D^\gamma f\|_{L^p} +
 \sum_{ s- \frac{\sigma}{\sigma_j} < \|\gamma\| < s}\sup_{v} \frac{\|\Delta^v_j D^\gamma
 f\|_{L^p}}{|v|^{(s - \|\gamma\|) \sigma_j/\sigma}}
 \]
@@ -469,7 +469,8 @@ We cite here some well-known facts
 <ol class="org-ol">
 <li>While Sobolev spaces with non-integral regularity are complex interpolation of integral
 ones, Besov spaces are their real interpolation.</li>
-<li>Besov spaces \( B^{s,p}(X) \) are reflexive Banach space with their dual spaces being \( B^{-s,p}(X) \).</li>
+<li>Besov spaces \( B^{s,p}(X) \) are reflexive Banach spaces with their dual spaces being
+\( B^{-s,p'}(X) \) where \( \frac{1}{p} + \frac{1}{p'}=1 \).</li>
 </ol>
 
 <div id="thm:besov-sobolev" class="theorem">
@@ -512,7 +513,7 @@ Let \( \Gamma(x,y) \) be a continuous, nonlinear function of variables \( x\in
 outside of a compact in \( \mathbb{R}^n \) and \( \Gamma \) is \( C \)-Lipschitz in \( y
 \), and define
 \[
-\Gamma f:= \left( x\mapsto \Gamma(x,f(x)) \right).
+\Gamma f:= \left( x\longmapsto \Gamma(x,f(x)) \right).
 \]
 Then 
 \[ 
@@ -608,7 +609,7 @@ using Theorem <a href="#thm:besov-sobolev">thm:besov-sobolev</a>:
 
 <p>
 And finally plugging \eqref{eq:est-del-c} and \eqref{eq:est-del-f} in \eqref{eq:est-term-c} and
-\eqref{eq:est-term-f}, and noting that \( \|c_{\beta_1,\dots,\beta_\mu} \|_{\infty}\| \) in
+\eqref{eq:est-term-f}, and noting that \( \|c_{\beta_1,\dots,\beta_\mu} \|_{\infty} \) in
 \eqref{eq:est-term-small} is bounded by a constant, it remains to estimate \( \| f^{b_i}
 \|_{W^{\|\beta_i\|, p_i}} \), \( \| f^{b_i}
 \|_{W^{\|\beta_i\| + \theta, \tilde p_i}} \) and \( \|F\|_{W^{\theta, \tilde p_0}} \) in
@@ -624,7 +625,7 @@ Let \( 0\leq r\leq s\) and \( p,q\in (1, \infty) \) such that \( 0 <
 \[
  \|F\|_{W^{r,p}} \leq C \|F\|^{1-r/s}_\infty \|F\|^{r/s}_{W^{s,q}}\leq C' \|F\|^{r/s}_{W^{s,q}}
 \]
-where \( C \) depends only on \( B \) and the support of \( F \), but not \( F \).
+where \( C,C' \) depend only on \( B \) and the support of \( F \), but not \( F \).
 </p>
 
 </div>
@@ -657,7 +658,7 @@ We choose \(\frac{1}{p_i}\) just a bit bigger than \( \frac{\|\beta_i\|}{s}\frac
 +\theta\|}{s}\frac{1}{q} \) and \( \frac{1}{\tilde p_0}\) just a bit bigger than
 \(\frac{\theta}{s}\frac{1}{q} \). We will now come back to justify the estimates
 \eqref{eq:est-term-small}, \eqref{eq:est-term-c}, \eqref{eq:est-term-f}. Since \( F \) is
-bounded in \( B \) and compactly supported in \( V \), we see that \( \|f^\alpha\|_p \leq
+bounded in \( B \) and compactly supported in an open set \( V \), we see that \( \|f^\alpha\|_p \leq
 C(B,V) \|f^\alpha\|_q \) if \( p\leq q \). Therefore,
 </p>
 <ol class="org-ol">
@@ -666,7 +667,7 @@ C(B,V) \|f^\alpha\|_q \) if \( p\leq q \). Therefore,
     \frac{1}{p} \geq \frac{1}{p_1}+\dots + \frac{1}{p_\mu} 
    \]
  which is true because the RHS is is a bit bigger than \( \frac{1}{qs}\sum \|\beta_i\|
-   \leq \frac{n + \|\gamma\|}{qs} < \frac{n+r}{qs} \).</li>
+   \leq \frac{n + \|\gamma\|}{qs} < \frac{n+r}{qs} < \frac{1}{p} \).</li>
 <li>For \eqref{eq:est-term-c}, it is sufficient to have
 \[
     \frac{1}{p} \geq \frac{1}{\tilde p_0} + \frac{1}{p_1}+\dots + \frac{1}{p_\mu} 
@@ -697,18 +698,18 @@ the last two \eqref{eq:fin-del-c} and \eqref{eq:fin-del-f} give
  \sum_{ s- \frac{\sigma}{\sigma_j} < \|\gamma\| < s}\sup_{v} \frac{\|\Delta^v_j D^\gamma (PF) \|_p}{|v|^{(r-\|\gamma\|)\sigma_j/\sigma}} \leq C \left(
 1 + \|F\|^{(n+r)/s}_{W^{q,s}}\right)
 \]
+We proved the local statement Lemma <a href="#lem:loc-reg-poly-diff">lem:loc-reg-poly-diff</a>.
 </p>
 </div>
 </div>
 </div>
-
 
 <div id="outline-container-orge1b189c" class="outline-2">
 <h2 id="orge1b189c"><span class="section-number-2">2</span> Regularity for nonlinear heat equation.</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Let \( p>\dim M + 2 \), using the regularity estimate for polynomial differential
-operator, we now can prove
+operator, we now can prove:
 </p>
 
 <div id="thm:reg-nonlin-heat" btit="(Bootstrap for nonlinear heat equation)" class="theorem">
@@ -727,13 +728,13 @@ and \( \restr{F}{M\times\{\alpha\}} \) is smooth. Then \( F \) is smooth on \( M
 <div class="remark">
 <p>
 Note that since \( p > \dim M + 2 = \dim (M\times [\alpha,\omega])+1 \), if \( F\in
-W^{2,p}(M\times[\alpha,\alpha+\epsilon]) \) then \( F \) and \( \frac{\partial F}{\partial
-x^i} \) are in \( C(M\times[\alpha,\alpha+\epsilon]) \) by <a href="sobolev-riemannian.html">Sobolev imbeddings</a>. It makes sense then to talk
+W^{2,p}(M\times[\alpha,\omega]) \) then \( F \) and \( \frac{\partial F}{\partial
+x^i} \) are in \( C(M\times[\alpha,\omega]) \) by <a href="sobolev-riemannian.html">Sobolev imbeddings</a>. It makes sense then to talk
 about:
 </p>
 <ol class="org-ol">
 <li>the restriction and boundary condition at time \( t=\alpha \) (in fact, by <a href="interpolation-sobolev.html">Trace theorem</a>, \( p>1 \) is enough).</li>
-<li>the pointwise condition \( F: M\times [\alpha,\alpha+\epsilon] \longrightarrow
+<li>the pointwise condition \( F: M\times [\alpha,\omega] \longrightarrow
    B\subset V \).</li>
 </ol>
 
@@ -758,7 +759,7 @@ for a sequence \( \tilde p \to +\infty \).</li>
 
 <p>
 <i>Step 1.</i> By Theorem <a href="#thm:reg-poly-diff">thm:reg-poly-diff</a>, \( AF = PF \in W^{r,q}([\alpha,\omega]) \) whenever \( r<1 \) and \(
-\frac{1}{q} > (\frac{r}{2}+1)\frac{1}{p} \). Apply Theorem <a href="#thm:reg-parabolic">thm:reg-parabolic</a>, for all
+\frac{1}{q} > (\frac{r}{2}+1)\frac{1}{p} \). Apply Gårding inequality, for all
 \( \pi >\alpha \), \( F\in W^{r+2,q}([\pi,\omega]) \subset W^{2,\tilde p}([\pi,\omega]) \)
 for \( \frac{1}{\tilde p} = \frac{1}{q} - \frac{r}{\dim M + 1} \). Choose \( \frac{1}{q}
 \) very close to \( (\frac{r}{2}+1)\frac{1}{p} \), one sees that the condition on \(
@@ -772,7 +773,7 @@ step. We will say \( F\in W^{2,*}([\pi,\omega]) \) for \( F\in W^{2,p}([\pi,\ome
 
 <p>
 <i>Step 2.</i> By Theorem <a href="#thm:reg-poly-diff">thm:reg-poly-diff</a>, for all \( r<1 \), one has \( AF = PF \in
-W^{r,*}([\pi,\omega]) \), therefore by Theorem <a href="#thm:reg-parabolic">thm:reg-parabolic</a>, \(
+W^{r,*}([\pi,\omega]) \), therefore by Gårding inequality, \(
 F\in W^{r+2, * }([\pi,\omega]) \). Iterate this result and one has \(F\in
 W^{k,*}([\pi,\omega]) \) for all \( k\in [2,\infty) \) and \( \pi >\alpha \). So \( F \)
 is smooth for \( t>\alpha \).
@@ -781,7 +782,7 @@ is smooth for \( t>\alpha \).
 <p>
 <i>Step 3.</i> We apply regularity result (Theorem <a href="#thm:elliptic-general">thm:elliptic-general</a>) for elliptic operator \( A \) and boundary
 operators \( B^0: F \mapsto \restr{F}{M\times\{\alpha\}} \) and \( B^1: F \mapsto
-\restr{F}{M\times\{\omega\}} \), both are of weight \( 0 \): Since for \( q,r \) in Step 1,
+\restr{F}{M\times\{\omega\}} \), both are of weight \( 0 \): For \( q,r \) in Step 1,
 one has \( AF = PF \in W^{r,q}([\alpha,\omega]) \) and \( B^j F \in \partial W^{r,q} \),
 therefore \( F\in W^{r+2,q}([\alpha,\omega])\subset W^{2,\tilde p}([\alpha,\omega]) \)
 for the same \( \tilde p \) as Step 1. This proves that \( F\in W^{2,*}([\alpha,\omega])
@@ -812,8 +813,7 @@ order to apply regularity result for elliptic operator on manifold with boundary
 <p>
 We will choose as always \( p > \dim M +2 \). As before, \( M \) is a compact Riemannian
 manifold and \( f\ : M \longrightarrow B \subset V = \mathbb{R}^N \) where \( B \) is a
-large Euclidean ball
-ball.
+large Euclidean ball.
 </p>
 
 <div id="thm:short-time" btit="(Short-time existence)" class="theorem">
@@ -846,10 +846,10 @@ The nonlinear heat operator is
 <p>
 where \( \tau(F)^\alpha = \Delta F^\alpha + g^{ij}\Gamma'^\alpha_{\beta\gamma}(F)
 F^\beta_i F^\gamma_j \), which can be rewritten as \( \tau(F) = -\Delta F +
-\Gamma'(F)(\nabla F)^2 \). The derivative of \( T \) at \( F_\# \) in direction \( k\in
+\Gamma(F)(\nabla F)^2 \). The derivative of \( T \) at \( F_\# \) in direction \( k\in
 W^{2,p}(M\times[\alpha,\omega]/\alpha)^{\oplus N} \) is
 \[
- DT(F_\#) k = \Delta k +D \Gamma'(F)\cdot k . (\nabla F)^2 + 2\Gamma'(F) \nabla F. \nabla k,
+ DT(F_\#) k = \Delta k +D \Gamma(F)\cdot k . (\nabla F)^2 + 2\Gamma(F) \nabla F. \nabla k,
 \]
 or in local coordinates:
 \[
@@ -906,7 +906,7 @@ t\in[\alpha,\alpha+\epsilon] \). Theorem <a href="#thm:global-eq">thm:global-eq<
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-05-29 Tue 04:13. <br>
+Last updated 2018-05-31 Thu 23:27. <br>
 </div>
 </div>
 </body>

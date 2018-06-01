@@ -1,0 +1,444 @@
+
+We will establish in this part a regularity estimate for differential
+operator with coefficient depending nonlinearly in \(x\) and \(f(x)\). Although the
+result can be stated using only Sobolev spaces, it is natural for the proof to make a
+detour to Besov space where we can use Theorem \ref{thm:compo-besov}.
+
+We will then apply the regularity estimate for the nonlinear part of the heat operator in
+order to setup a bootstrap scheme that eventually will prove that any \(W^{2,p}\)
+solution of nonlinear heat equation that is initially \(C^\infty\) will be always \(C^\infty\). 
+
+We will also prove short-time existence using well-known method of Implicit
+function theorem for Banach spaces. Since the solution is smooth, we can apply Theorem
+\ref{thm:global-eq} to conclude that the it remains in \(M'\subset \mathbb{R}^N\).
+
+\section{Polynomial differential operator.}
+\label{sec:org0744758}
+
+\begin{definition}
+We say that \(P\) is a \textbf{polynomial differential operator of type \((n,k)\)} if \(P\)
+is of the form
+\[
+ P(F) = \sum c_{\alpha_1,\dots, \alpha_\nu} (x, F(x)) D^{\alpha_1} F^{a_1} \dots D^{\alpha_\nu} F^{a_{\nu}}
+\]
+where the coefficients \(c_{\alpha_1,\dots,\alpha_nu}\) depend smoothly and nonlinearly on \(x\) and \(F\) and \(\alpha_i\in \mathbb{R}^N\) are indices with the weighted norm \(\|\alpha_i\| \leq k\) and \(\sum \|\alpha_i\| \leq n\).
+\end{definition}
+
+\begin{exampl}
+On \(M\times [\alpha,\omega]\) the nonlinear heat operator \(P F := \frac{d F}{dt} -
+\tau (F_t)\) is a polynomial differential operator of type (2,2). The tension field alone
+is of type (2,1).
+\end{exampl}
+
+\subsection{A regularity estimate for polynomial differential operator.}
+\label{sec:org59b4c4d}
+Our goal in this part is to prove the following estimate for polynomial differential
+operator, in which \(X\) will be \(M\times[\alpha,\omega]\).
+
+\begin{theorem}[Regularity of polynomial differential operator]
+\label{thm:reg-poly-diff}
+Let \(X\) be a compact Riemannian manifold, \(B\subset \mathbb{R}^N\) is a
+large Euclidean ball and \(P\) be a polynomial differential
+operator of type \((n,k)\) on \(X\). Suppose that
+\begin{equation}
+\label{eq:cond:thm:reg-poly-diff}
+ r\geq 0,\quad p,q\in (1,\infty),\quad r+k < s, \quad \frac{1}{p}> \frac{r+n}{s} \frac{1}{q}.
+\end{equation}
+Then for all \(F\in C (X,B) \cap W^{s,q}(X)\), one has \(PF\in W^{r,p}(X)\) and
+\[
+ \|P F \|_{W^{r,p}} \leq C\left(1 + \|F\|_{W^{s,q}}\right)^{q/p}.
+\]
+where \(C\) is a constant independent of \(F\).
+\end{theorem}
+
+We will prove that the result is \emph{local}, in a sense to be defined. Then we will prove the
+local statement using Besov spaces.
+
+\begin{proof}[Proof (reduction of Theorem \ref{thm:reg-poly-diff} to a local statement)]
+Let \(\{ \varphi_i: U_i \longrightarrow V_i \}\) be an atlas of \(M\). We denote a point
+in \(U_i\) by \(x\) and its coordinates in \(V_i\) by \(\xi\). Let \(\sum \psi_i
+= 1\) be a partition of unity subordinated to \(\{U_i\}\) and \(\tilde \psi_i\)
+be smooth functions supported in \(U_i\) with \(0\leq \tilde \psi_i \leq 1\) and \(\tilde \psi_i = 1\) in the support of
+\(\psi_i\), as in the definition of Sobolev spaces on manifold. We suppose the following local statement is true:
+\begin{lemma}[Local statement]
+\label{lem:loc-reg-poly-diff}
+Let \(P\) be a polynomial differential operator of type \((n,k)\) and coefficients \(c_{\alpha_1,\dots,\alpha_\nu}(x,F)\) are smooth and vanish when \(x\in \mathbb{R}^{\dim X}\) is
+outside of a compact. Let \(B\subset \mathbb{R}^N\) be a large Euclidean ball and \(r,p,q,s\) as in \eqref{eq:cond:thm:reg-poly-diff}. Then for all compactly supported  \(F\in C (\mathbb{R}^{\dim X},B)
+\cap W^{s,q}(\mathbb{R}^{\dim X})\), one has
+\[
+ \|P F \|_{W^{r,p}} \leq C\left(1 + \|F\|_{W^{s,q}}\right)^{q/p}
+\]
+where the constant \(C\) depends only on \(B\) and the support of \(F\), and not on \(F\).
+\end{lemma}
+One has
+\[
+\| PF \|_{W^{r,p}} := \sum_i \|\psi_i P F\|_{W^{r,p}}
+\]
+where viewed in the chart \(U_i\), each \(\psi_i(x) PF(x)\) is \(\sum_\alpha\psi_i(\xi). c_\alpha
+(\xi,g_i). D^\alpha g_i\) where \(g_i = f_i\circ \varphi_i^{-1}\) is \(f_i\) viewed in
+the chart. Since \(\tilde \psi_i = 1\) in the support of \(\psi_i\), one has
+\[
+ \psi_i(\xi). c_\alpha (\xi,g_i). D^\alpha g_i = \psi_i(\xi). c_\alpha(\xi,\tilde \psi_i g_i) D^\alpha
+(\tilde\psi_i g_i)
+\]
+hence by the local statement:
+\[
+\| \psi_i(\xi). c_\alpha (\xi,g_i). D^\alpha g_i \|_{W^{r,p}} \leq C \left( 1 + 
+\|\tilde \psi_i g_i\|_{W^{s,q}} \right)^{q/p} \leq C \left( 1 + \|F \|_{W^{s,q}}\right)^{q/p}.
+\]
+Therefore \(\|PF\|_{W^{r,p}} \leq m C \left( 1 + \|F \|_{W^{s,q}}\right)^{q/p}\) where
+\(m\) is the number of charts we used to cover \(M\).
+\end{proof}
+\begin{remark}
+The use of partition of unity in the last proof is to decompose \(PF = \sum \psi_i PF\)
+and not \(F = \psi_i F\) since we no longer have linearity of the operator \(P\) in \(F\).
+\end{remark}
+
+\subsection{Review of Besov spaces \(B^{s,p}\).}
+\label{sec:org44fac2b}
+In this part, \(X = \mathbb{R}^n\) coordinated by \((x_1,\dots,x_n)\) with weight \((\sigma_1,\dots,\sigma_n)\). We define
+\[
+ T_j^v f(x_1,\dots,x_n) := f(x_1,\dots, x_j +v,\dots, x_n),\quad \Delta^v_j := T^v_j - {\rm Id}
+\]
+for \(f\in \mathcal{S}(X)\).
+
+For the notation, we will denote the Besov spaces by \(B^{s,p}\) with \(s\in \mathbb{R}_{>0}\setminus
+\mathbb{Z}\) and \(p\in (1,\infty)\) so that they look similar to Sobolev space \(W^{s,p}\). In \href{https://en.wikipedia.org/wiki/Besov\_space}{a more standard notation}, our spaces \(B^{s,p}\) are denoted by \(B^{s}_{p,p}\)
+
+\begin{definition}
+We define \(B^{s,p}\) as the completion of \(\mathcal{S}(X)\) under the norm
+\[
+\|f\|_{B^{s,p}} := \sum_{\|\gamma\| < s} \|D^\gamma f\|_{L^p} +
+\sum_{ s- \frac{\sigma}{\sigma_j} < \|\gamma\| < s}\sup_{v} \frac{\|\Delta^v_j D^\gamma
+f\|_{L^p}}{|v|^{(s - \|\gamma\|) \sigma_j/\sigma}}
+\]
+\end{definition}
+
+We cite here some well-known facts
+\begin{enumerate}
+\item While Sobolev spaces with non-integral regularity are complex interpolation of integral
+ones, Besov spaces are their real interpolation.
+\item Besov spaces \(B^{s,p}(X)\) are reflexive Banach spaces with their dual spaces being
+\(B^{-s,p'}(X)\) where \(\frac{1}{p} + \frac{1}{p'}=1\).
+\end{enumerate}
+
+\begin{theorem}
+\label{thm:besov-sobolev}
+If \(r < s\) then
+\[
+ W^{s,p}(X) \subset B^{s,p}(X) \subset W^{r,p}(X).
+\]
+\end{theorem}
+
+\begin{theorem}[Multiplication]
+\label{thm:estimate-product}
+For \(f,g\in \mathcal{S}(X)\) and \(\begin{cases}
+0<\alpha <1, \tilde p \leq p,\tilde q \leq q,\tilde r\leq r \\
+\frac{1}{p} + \frac{1}{q} = \frac{1}{r}, \frac{1}{\tilde p} + \frac{1}{q} = \frac{1}{p} +
+\frac{1}{\tilde q} = \frac{1}{\tilde r}				      
+				       \end{cases}\),  one has
+\begin{align}
+\|fg\|_{B^{\alpha,\tilde r}} &\leq C \left( \|f\|_{B^{\alpha,\tilde p}}\|g\|_{L^q} + \|f\|_{L^p}\|g\|_{B^{\alpha,\tilde q}} \right) \label{eq:estimate-product-1} \\
+\|fg\|_{L^r} &\leq \|f\|_{L^p}\|g\|_{L^q} \label{eq:estimate-product-2}
+\end{align}
+Therefore by density \eqref{eq:estimate-product-1} is true for all \(f\in L^p\cap
+B^{\alpha,\tilde p}, g\in L^q\cap B^{\alpha,\tilde q}\) and \eqref{eq:estimate-product-2}
+is true for all \(f\in L^p, g\in L^q\).
+\end{theorem}
+
+The reason for which we use the Besov norm is the following estimate:
+\begin{theorem}[Composition]
+\label{thm:compo-besov}
+Let \(\Gamma(x,y)\) be a continuous, nonlinear function of variables \(x\in
+\mathbb{R}^n, y\in \mathbb{R}^N\). Suppose that \(\Gamma\) vanishes for all \(x\)
+outside of a compact in \(\mathbb{R}^n\) and \(\Gamma\) is \(C\)-Lipschitz in \(y\), and define
+\[
+\Gamma f:= \left( x\longmapsto \Gamma(x,f(x)) \right).
+\]
+Then 
+\[ 
+\|\Gamma f\| \leq C\left( 1+ \|f\|_{B^{\alpha,p}}\right)
+\]
+\end{theorem}
+
+
+\subsection{Proof of the local estimate.}
+\label{sec:org9631d3c}
+Since \(B^{r+\epsilon,p}(X)\subset W^{r,p}(X)\), by increasing \(r\) a bit, we can
+suppose that \(r\not\in \mathbb{Z}\) and replace the \(W^{r,p}\) norm in the statement
+by the \(B^{r,p}\) norm, that is to estimate:
+\[
+ \|PF\|_{B^{r,p}} = \sum_{\|\gamma\| < r} \| D^\gamma(PF)\|_{L^p} + \sum_{
+r-\sigma/\sigma_j< \|\gamma\| < r} \frac{\| \Delta^v_j D^\gamma (PF)\|_{L^p}}{|v|^{(r-\|\gamma\|)\sigma_j/\sigma}}
+\]
+where 
+\begin{equation}
+\label{eq:term-small}
+ D^\gamma (PF) = \sum c_{\beta_1,\dots,\beta_\mu}(x,F) D^{\beta_1} f^{b_1}\dots D^{\beta_\mu}f^{b_\mu}
+\end{equation}
+with \(\max \|\beta_i\| \leq k +\|\gamma\|\) and \(\sum \|\beta_i\|\leq n + \|\gamma\|\).
+
+Using \(\Delta^v_j (fg) = \Delta^v_j f\ T^v_j g + f \Delta^v_j g\), one can see that \(\Delta^v_j D^\gamma (PF)\) is a sum of terms of 2 types:
+\begin{equation}
+\label{eq:term-c}
+\Delta^v_j c_{\beta_1,\dots,\beta_\mu}\ T^v_j(D^{\beta_1}f^{b_1})\dots T^v_j (D^{\beta_\mu}
+f^{b_\mu})
+\end{equation}
+and
+\begin{equation}
+\label{eq:term-f}
+ c_{\beta_1,\dots,\beta_\mu}\ D^{\beta_1}f^{b_1}\ \dots \ D^{\beta_{i-1}}f^{b_{i-1}}\ \Delta^v_j
+(D^{\beta_i} f^{b_i})\ T^v_j(D^{\beta_{i+1}} f^{b_{i+1}})\ \dots\ T^v_j(D^{\beta_\mu} f^{b_\mu})
+\end{equation}
+
+Our strategy is to use Theorem \ref{thm:estimate-product} to estimate the terms
+\eqref{eq:term-small}, \eqref{eq:term-c} and \eqref{eq:term-f} as follows, where we denote \(\|g\|_p:= \|g\|_{L^p}\)
+\begin{equation}
+\label{eq:est-term-small}
+\left\| c_{\beta_1,\dots,\beta_\mu}(x,F)\ D^{\beta_1} f^{b_1}\dots D^{\beta_\mu}f^{b_\mu} \right\|_{p} \leq \|c_{\beta_1,\dots,\beta_\mu} \|_{\infty}.\|D^{\beta_1} f^{b_1}\|_{p_1}\dots \|D^{\beta_\mu} f^{b_\mu}\|_{p_\mu}
+\end{equation}
+
+\begin{equation}
+\label{eq:est-term-c}
+\left\| \Delta^v_j c_{\beta_1,\dots,\beta_\mu}\ T^v_j(D^{\beta_1}f^{b_1})\dots T^v_j (D^{\beta_\mu}
+f^{b_\mu})  \right\|_p \leq \|\Delta^v_j c_{\beta_1,\dots,\beta_\mu}\|_{\tilde p_0}. \| D^{\beta_1} f^{b_1} \|_{p_1}\dots \|D^{\beta_\mu} f^{b_\mu}\|_{p_\mu}
+\end{equation}
+
+\begin{multline}
+\label{eq:est-term-f}
+\left\| c_{\beta_1,\dots,\beta_\mu}\ D^{\beta_1}f^{b_1}\ \dots \ D^{\beta_{i-1}}f^{b_{i-1}}\ \Delta^v_j
+(D^{\beta_i} f^{b_i})\ T^v_j(D^{\beta_{i+1}} f^{b_{i+1}})\ \dots\ T^v_j(D^{\beta_\mu} f^{b_\mu}) \right\|_p \leq  \\ \|c_{\beta_1,\dots,\beta_\mu}\|_\infty. \| D^{\beta_1}f^{b_1} \|_{p_1}\dots \| D^{\beta_{i-1}}f^{b_{i-1}}\|_{p_{i-1}}. \|\Delta^v_j
+(D^{\beta_i} f^{b_i}) \|_{\tilde p_i}. \| D^{\beta_{i+1}} f^{b_{i+1}} \|_{p_{i+1}}\dots \|D^{\beta_\mu} f^{b_\mu} \|_{p_\mu}
+\end{multline}
+
+Then continue by bounding the \(\Delta^v_j\) terms:
+\begin{equation}
+\label{eq:est-del-c}
+\|\Delta^v_j c_{\beta_1,\dots,\beta_\mu}\|_{\tilde p_0} \leq |v|^{\theta \sigma_j/\sigma} C (1+ \|F\|_{B^{\theta,\tilde p_0}}) \leq |v|^{\theta \sigma_j/\sigma} C (1+ \|F\|_{W^{\theta,\tilde p_0}})
+\end{equation}
+using Theorem \ref{thm:compo-besov}, where \(C\) is the Lipschitz constant of \(c_{\beta_1,\dots,\beta_\mu}(x,F)\) in \(F\), which exists because \(c_{\beta_1,\dots,\beta_\mu}\) is smooth and \(F\) always
+remains in a large Euclidean ball \(B\). The next \(\Delta^v_j\) term to bound is,
+using Theorem \ref{thm:besov-sobolev}:
+\begin{equation}
+\label{eq:est-del-f}
+\|\Delta^v_j (D^{\beta_i} f^{b_i}) \|_{\tilde p_i}\leq |v|^{\theta \sigma_j/\sigma} \|f^{b_i}\|_{B^{\|\beta_i\| +\theta, \tilde p_i}} \leq |v|^{\theta \sigma_j/\sigma} \|f^{b_i}\|_{W^{\|\beta_i\| +\theta, \tilde p_i}}
+\end{equation}
+
+And finally plugging \eqref{eq:est-del-c} and \eqref{eq:est-del-f} in \eqref{eq:est-term-c} and
+\eqref{eq:est-term-f}, and noting that \(\|c_{\beta_1,\dots,\beta_\mu} \|_{\infty}\) in
+\eqref{eq:est-term-small} is bounded by a constant, it remains to estimate \(\| f^{b_i}
+\|_{W^{\|\beta_i\|, p_i}}\), \(\| f^{b_i}
+\|_{W^{\|\beta_i\| + \theta, \tilde p_i}}\) and \(\|F\|_{W^{\theta, \tilde p_0}}\) in
+term of \(\|F\|_{W^{s,q}}\), for which we will use the following consequence of Interpolation
+inequality.
+
+\begin{lemma}
+\label{lem:loc-est-reg}
+Let \(0\leq r\leq s\) and \(p,q\in (1, \infty)\) such that \(0 <
+\frac{1}{p} - \frac{r}{s}\frac{1}{q} < 1-\frac{r}{s}\). Then for all compactly supported \(F\in C(X, B)\cap W^{s,q}\) where \(B\subset \mathbb{R}^N\) is a large Euclidean ball, one has
+\[
+ \|F\|_{W^{r,p}} \leq C \|F\|^{1-r/s}_\infty \|F\|^{r/s}_{W^{s,q}}\leq C' \|F\|^{r/s}_{W^{s,q}}
+\]
+where \(C,C'\) depend only on \(B\) and the support of \(F\), but not \(F\).
+\end{lemma}
+
+\begin{proof}
+Since \(F\) is bounded, \(f^\alpha\in W^{s,q} \cap W^{0,v}\) for all \(v > 1\). By
+Interpolation inequality
+\[
+ \|f^\alpha\|_{W^{r,p}} \leq 2 \|f^\alpha\|^{r/s}_{W^{s,q}} \|f^\alpha\|^{1-r/s}_{W^{0,v}}
+\]
+then choose \(v\) with \((1 - \frac{r}{s})\frac{1}{v} = \frac{1}{p} -
+\frac{r}{s}\frac{1}{q}\).
+\end{proof}
+
+To apply Lemma \ref{lem:loc-est-reg}, we have to choose \(p_i,\tilde p_i, \tilde p_0,\theta\) such that 
+\begin{cases}
+0< \frac{1}{p_i} - \frac{\|\beta_i\|}{s} \frac{1}{q} < 1 - \frac{\|\beta_i\|}{s},   \\
+0< \frac{1}{\tilde p_i} - \frac{\|\beta_i +\theta\|}{s}\frac{1}{q} < 1 - \frac{\|\beta_i +\theta\|}{s} \\
+0< \frac{1}{\tilde p_0} - \frac{\theta}{s}\frac{1}{q} < 1- \frac{\theta}{s}
+\end{cases}
+We choose \(\frac{1}{p_i}\) just a bit bigger than \(\frac{\|\beta_i\|}{s}\frac{1}{q}\),
+\(\frac{1}{\tilde p_i}\) just a bit bigger than \(\frac{\|\beta_i
++\theta\|}{s}\frac{1}{q}\) and \(\frac{1}{\tilde p_0}\) just a bit bigger than
+\(\frac{\theta}{s}\frac{1}{q}\). We will now come back to justify the estimates
+\eqref{eq:est-term-small}, \eqref{eq:est-term-c}, \eqref{eq:est-term-f}. Since \(F\) is
+bounded in \(B\) and compactly supported in an open set \(V\), we see that \(\|f^\alpha\|_p \leq
+C(B,V) \|f^\alpha\|_q\) if \(p\leq q\). Therefore,
+\begin{enumerate}
+\item For \eqref{eq:est-term-small}, it is sufficient to have
+\[
+    \frac{1}{p} \geq \frac{1}{p_1}+\dots + \frac{1}{p_\mu} 
+   \]
+ which is true because the RHS is is a bit bigger than \(\frac{1}{qs}\sum \|\beta_i\|
+   \leq \frac{n + \|\gamma\|}{qs} < \frac{n+r}{qs} < \frac{1}{p}\).
+\item For \eqref{eq:est-term-c}, it is sufficient to have
+\[
+    \frac{1}{p} \geq \frac{1}{\tilde p_0} + \frac{1}{p_1}+\dots + \frac{1}{p_\mu} 
+   \]
+ where the RHS is is a bit bigger than \(\frac{\theta}{s}\frac{1}{q}+ \frac{1}{qs}\sum \|\beta_i\|
+   \leq \frac{n + \|\gamma\| + \theta}{qs}\).
+\item For \eqref{eq:est-term-f}, it is sufficient to have
+\[
+    \frac{1}{p} \geq  \frac{1}{p_1}+\dots + \frac{1}{\tilde p_i} + \dots + \frac{1}{p_\mu} 
+   \]
+where the RHS is is a bit bigger than \(\frac{\theta}{s}\frac{1}{q}+ \frac{1}{qs}\sum \|\beta_i\|
+   \leq \frac{n + \|\gamma\| + \theta}{qs}\).
+\end{enumerate}
+
+It is sufficient then to take \(\theta = r- \|\gamma\|\). Now the estimates
+\eqref{eq:est-term-small}, \eqref{eq:est-term-c}, \eqref{eq:est-term-f} can be continued as
+\begin{align}
+  RHS \eqref{eq:est-term-small} &\leq \prod_i \|f^{b_i}\|^{\|\beta_i\|/s}_{W^{s,q}} \leq \|F\|_{W^{s,q}}^{\frac{n+\|\gamma\|}{s}} \leq \|F\|_{W^{s,q}}^{q/p}\label{eq:fin-del-small}\\
+  RHS \eqref{eq:est-term-c} &\leq |v|^{\theta\sigma_j/\sigma}\left( 1 + \|F\|_{W^{s,q}}^{\theta/s} \right)\prod_i \|f^{b_i}\|^{\|\beta_i\|/s}_{W^{s,q}}\leq |v|^{\theta\sigma_j/\sigma}\left( 1 + \|F\|_{W^{s,q}}^{\theta/s} \right)\|F\|_{W^{s,q}}^{q/p} \label{eq:fin-del-c}\\
+  RHS \eqref{eq:est-term-f} &\leq |v|^{\theta\sigma_j/\sigma}\left( 1 + \|f^{b_i}\|_{W^{s,q}}^{\frac{\|\beta_i\| +\theta}{s}} \right)\prod_{u\ne i} \|f^{b_u}\|^{\|\beta_u\|/s}_{W^{s,q}}\leq |v|^{\theta\sigma_j/\sigma}\left( 1 + \|F\|_{W^{s,q}}^{\frac{\|\beta_i\| +\theta}{s}} \right)\|F\|_{W^{s,q}}^{q/p} \label{eq:fin-del-f}
+\end{align}
+While \eqref{eq:fin-del-small} gives \(\|D^\gamma (PF)\|_p \leq C \|F\|_{W^{s,q}}^{q/p}\),
+the last two \eqref{eq:fin-del-c} and \eqref{eq:fin-del-f} give
+\[
+ \sum_{ s- \frac{\sigma}{\sigma_j} < \|\gamma\| < s}\sup_{v} \frac{\|\Delta^v_j D^\gamma (PF) \|_p}{|v|^{(r-\|\gamma\|)\sigma_j/\sigma}} \leq C \left(
+1 + \|F\|^{(n+r)/s}_{W^{q,s}}\right)
+\]
+We proved the local statement Lemma \ref{lem:loc-reg-poly-diff}.
+
+\section{Regularity for nonlinear heat equation.}
+\label{sec:orge66e875}
+Let \(p>\dim M + 2\), using the regularity estimate for polynomial differential
+operator, we now can prove:
+
+\begin{theorem}[Bootstrap for nonlinear heat equation]
+\label{thm:reg-nonlin-heat}
+Let \(F:\ M\times [\alpha,\omega] \longrightarrow B\) such that \(F\in W^{2,p}(M\times
+[\alpha,\omega])\) and \(\frac{d F_t}{dt} = \tau(F_t)\), i.e.
+\[
+ \frac{d F^\alpha}{dt} = -\Delta F^\alpha + g^{ij}\Gamma'^\alpha_{\beta\gamma}(F)
+F^\beta_i F^\gamma_j
+\]
+and \(\restr{F}{M\times\{\alpha\}}\) is smooth. Then \(F\) is smooth on \(M\times [\alpha,\omega]\).
+\end{theorem}
+
+\begin{remark}
+Note that since \(p > \dim M + 2 = \dim (M\times [\alpha,\omega])+1\), if \(F\in
+W^{2,p}(M\times[\alpha,\omega])\) then \(F\) and \(\frac{\partial F}{\partial
+x^i}\) are in \(C(M\times[\alpha,\omega])\) by \href{sobolev-riemannian.org}{Sobolev imbeddings}. It makes sense then to talk
+about:
+\begin{enumerate}
+\item the restriction and boundary condition at time \(t=\alpha\) (in fact, by \href{interpolation-sobolev.org}{Trace theorem}, \(p>1\) is enough).
+\item the pointwise condition \(F: M\times [\alpha,\omega] \longrightarrow
+   B\subset V\).
+\end{enumerate}
+\end{remark}
+
+\begin{proof}
+We define the operators \(P F := g^{ij}\Gamma'^\alpha_{\beta\gamma}(F) F^\beta_i
+F^\gamma_j\)of type (2,1) and \(A F := \frac{dF }{dt} + \Delta F\) of type (2,2). As in
+Theorem \ref{thm:reg-parabolic}, we will abusively denote \(W^{k,p}(M\times
+[\beta,\gamma])\) by \(W^{k,p}([\beta,\gamma])\). Our bootstrap scheme consists of 3
+steps:
+\begin{enumerate}
+\item Prove that \(F\in W^{2,\tilde p}([\pi,\omega])\) for every \(\pi > \alpha\) and \(\tilde p \in (1,\infty)\). By
+compactness of \(M\), it is sufficient to prove this
+for a sequence \(\tilde p \to +\infty\).
+\item Prove that \(F\) is \(C^\infty\) for all time \(t >\alpha\).
+\item Prove that \(F\) is \(C^\infty\) on \(M\times [\alpha,\omega]\).
+\end{enumerate}
+
+\emph{Step 1.} By Theorem \ref{thm:reg-poly-diff}, \(AF = PF \in W^{r,q}([\alpha,\omega])\) whenever \(r<1\) and \(\frac{1}{q} > (\frac{r}{2}+1)\frac{1}{p}\). Apply Gårding inequality, for all
+\(\pi >\alpha\), \(F\in W^{r+2,q}([\pi,\omega]) \subset W^{2,\tilde p}([\pi,\omega])\)
+for \(\frac{1}{\tilde p} = \frac{1}{q} - \frac{r}{\dim M + 1}\). Choose \(\frac{1}{q}\) very close to \((\frac{r}{2}+1)\frac{1}{p}\), one sees that the condition on \(\tilde p\) is \(\frac{1}{\tilde p } > (\frac{r}{2} +1 ) \frac{1}{p} - \frac{r}{p-1}\),
+which will be satisfied if \(\frac{1}{\tilde p} > (1-\frac{r}{2})
+\frac{1}{p}\), i.e. for all \(\tilde p < \frac{p}{1 -r/2}\). It remains to repeat this
+result to finish the first
+step. We will say \(F\in W^{2,*}([\pi,\omega])\) for \(F\in W^{2,p}([\pi,\omega])\) for all \(p\in (1,\infty)\).
+
+\emph{Step 2.} By Theorem \ref{thm:reg-poly-diff}, for all \(r<1\), one has \(AF = PF \in
+W^{r,*}([\pi,\omega])\), therefore by Gårding inequality, \(F\in W^{r+2, * }([\pi,\omega])\). Iterate this result and one has \(F\in
+W^{k,*}([\pi,\omega])\) for all \(k\in [2,\infty)\) and \(\pi >\alpha\). So \(F\)
+is smooth for \(t>\alpha\).
+
+\emph{Step 3.} We apply regularity result (Theorem \ref{thm:elliptic-general}) for elliptic operator \(A\) and boundary
+operators \(B^0: F \mapsto \restr{F}{M\times\{\alpha\}}\) and \(B^1: F \mapsto
+\restr{F}{M\times\{\omega\}}\), both are of weight \(0\): For \(q,r\) in Step 1,
+one has \(AF = PF \in W^{r,q}([\alpha,\omega])\) and \(B^j F \in \partial W^{r,q}\),
+therefore \(F\in W^{r+2,q}([\alpha,\omega])\subset W^{2,\tilde p}([\alpha,\omega])\)
+for the same \(\tilde p\) as Step 1. This proves that \(F\in W^{2,*}([\alpha,\omega])\), which also means that one has \(F\in W^{r+2,q}([\alpha,\omega])\) with no additional
+condition on \(q\) except \(q\in (1,\infty)\). Iterate and one obtains the regularity
+of \(F\) on \([\alpha,\omega]\).
+\end{proof}
+
+\begin{remark}
+The first 2 steps were to prove the regularity of \(\restr{F}{M\times
+\{\omega\}}\), which was then used as a boundary condition in
+order to apply regularity result for elliptic operator on manifold with boundary.
+\end{remark}
+
+
+
+
+\section{Short-time existence for nonlinear heat equation.}
+\label{sec:org5d82ff9}
+We will choose as always \(p > \dim M +2\). As before, \(M\) is a compact Riemannian
+manifold and \(f\ : M \longrightarrow B \subset V = \mathbb{R}^N\) where \(B\) is a
+large Euclidean ball.
+
+\begin{theorem}[Short-time existence]
+\label{thm:short-time}
+Let \(F_\alpha: M \longrightarrow  B\) be a smooth map, then there exists \(\epsilon>0\) depending on \(F_\alpha\) and \(F: M\times [\alpha,\alpha + \epsilon] \longrightarrow
+B\) such that \(F\in W^{2,p}(M\times [\alpha,\alpha+\epsilon])\) with \(\restr{F}{M\times \{\alpha\}} = F_\alpha\) and
+\[
+ \frac{d F_t}{dt} = \tau(F_t) \quad \text{on } M\times [\alpha,\alpha +\epsilon]
+\]
+\end{theorem}
+
+\begin{proof}
+We find \(F\) as a sum \(F = F_b + F_\#\) where \(F_b\in C^\infty(M\times
+[\alpha,\omega])\) satisfies the initial condition and \(F_\# \in W^{2,p}(M\times
+[\alpha,\alpha+\epsilon]/\alpha)\).
+
+The nonlinear heat operator is
+\begin{align*}
+  T: W^{2,p}(M\times[\alpha,\omega]/\alpha)^{\oplus N} &\longrightarrow L^p(M\times[\alpha,\omega])^{\oplus N}\\
+  	F_\#					       &\longmapsto \tau(F_b + F_\#)
+\end{align*} 
+where \(\tau(F)^\alpha = \Delta F^\alpha + g^{ij}\Gamma'^\alpha_{\beta\gamma}(F)
+F^\beta_i F^\gamma_j\), which can be rewritten as \(\tau(F) = -\Delta F +
+\Gamma(F)(\nabla F)^2\). The derivative of \(T\) at \(F_\#\) in direction \(k\in
+W^{2,p}(M\times[\alpha,\omega]/\alpha)^{\oplus N}\) is
+\[
+ DT(F_\#) k = \Delta k +D \Gamma(F)\cdot k . (\nabla F)^2 + 2\Gamma(F) \nabla F. \nabla k,
+\]
+or in local coordinates:
+\[
+  DT(F_\#)^\alpha = g^{ij}\left( \frac{\partial^2 k^\alpha}{\partial x^i \partial x^j} - k^\alpha_l \Gamma^l_{ij} \right) + g^{ij} \frac{\partial \Gamma'^\alpha_{\beta\gamma}}{\partial y^\delta} k^\delta F^\beta_i F^\gamma_j + 2g^{ij} \Gamma'^\alpha_{\beta\gamma}(F) F^\beta_i F^\gamma_j 
+\]
+which is of form \(DT(F_\#) k = -\Delta k - a(x,F) \nabla k -b(x,F) k\) where \(a,b\)
+are smooth.
+
+Therefore if we note by 
+\begin{align*}
+  H: W^{2,p}(M\times[\alpha,\omega]/\alpha)^{\oplus N} &\longrightarrow L^p(M\times[\alpha,\omega])^{\oplus N}\\
+  	F_\#					       &\longmapsto (\frac{d }{dt} - \tau)(F_b + F_\#)
+\end{align*}
+then the derivative of \(H\) at \(F_\# = 0\) is
+\[
+ DH(0)\cdot k = \frac{d k}{d t} + \Delta k + a(x, F_b) \nabla k + b(x, F_b) k
+\]
+which by Theorem \ref{thm:lin-heat} is an isomorphism from \(W^{2,p}(M\times[\alpha,\omega]/\alpha)^{\oplus N}\) to
+\(W^{0,p}(M\times[\alpha,\omega]/\alpha)^{\oplus N} =  L^p(M\times[\alpha,\omega])^{\oplus
+N}\). This shows that \(H\) is a local isomorphism mapping a neighborhood of \(0\) to
+a neighborhood of \((\frac{d }{dt}-\tau)F_b\).
+
+Define \(g_\epsilon\in L^p(M\times [\alpha,\omega])^{\oplus N}\) by 
+\[
+ g_\epsilon:= \begin{cases}
+0	      ,  & \text{if $t\in[\alpha,\alpha+\epsilon]$} \\
+(\frac{d }{dt}-\tau)F_b	      , & \text{if $t > \alpha+\epsilon$}
+	      \end{cases}
+\]
+which is arbitrarily \(L^p(M\times[\alpha,\omega])\)-close to \((\frac{d }{dt}-\tau)F_b\) for \(0<\epsilon \ll 1\). There exists therefore \(F_\#\in W^{2,p}(M\times
+[\alpha,\omega]/\alpha)^{\oplus N}\) such that \(H(F_\#) = g_\epsilon\), meaning that
+the function \(F= F_b + F_\#: M \longrightarrow V\) satisfies \(\restr{F}{M\times\{\alpha\}} = F_\alpha\)
+and \(\frac{d F}{d t} -\tau(F_t) = 0\) for \(t\in[\alpha,\alpha+\epsilon]\).
+
+By Regularity Theorem \ref{thm:reg-nonlin-heat}, \(F\) is \(C^\infty\) for \(t\in[\alpha,\alpha+\epsilon]\). Theorem \ref{thm:global-eq} assures that the image of \(F\) is in \(B\), hence in \(M'\) for \(t\in [\alpha,\alpha+\epsilon]\).
+\end{proof}

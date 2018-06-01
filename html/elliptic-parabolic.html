@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-30 Wed 23:12 -->
+<!-- 2018-06-01 Fri 13:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Elliptic and parabolic equation on compact manifolds</title>
@@ -332,7 +332,7 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 <div class="outline-text-2" id="text-1">
 <p>
 Fix a weight \( (\sigma_1,\dots,\sigma_n) \) on \( X = \mathbb{R}^n \) and recall that
-for an index \( \alpha \), we note \( \|\alpha\| = \sum_i \frac{\sigma}{\sigma_i}\alpha_i
+for an index \( \alpha \), we note \( \|\alpha\| := \sum_i \frac{\sigma}{\sigma_i}\alpha_i
 \).
 </p>
 
@@ -347,7 +347,7 @@ We will consider in this section a partial differential operator \( A \) that is
 
 
 <p>
-The <b>symbol</b> of \( A \) is \( A(\xi):= \sum_{\|\alpha\| = r} \xi^\alpha \) and \( A \) is
+The <b>symbol</b> of \( A \) is \( A(\xi):= \sum_{\|\alpha\| = r} a_\alpha\xi^\alpha \) and \( A \) is
 called <b>semi-elliptic</b> if \( A(\xi) \ne 0 \) for all \( \xi\in \mathbb{R}^n\setminus 0 \)
 </p>
 
@@ -355,7 +355,7 @@ called <b>semi-elliptic</b> if \( A(\xi) \ne 0 \) for all \( \xi\in \mathbb{R}^n
 <p>
 If \( A \) is semi-elliptic then \( \sigma \mid r \). In fact choose all \( \xi_j = 0 \)
 except \( \xi_i\ne 0 \), one sees that there must be a non-zero coefficient \(
-a_{(0,\dots, \frac{r\sigma_i}{\sigma},\dots, 0} \), i.e. \( \frac{r\sigma_i}{\sigma}\in
+a_{(0,\dots, \frac{r\sigma_i}{\sigma},\dots, 0)} \), i.e. \( \frac{r\sigma_i}{\sigma}\in
 \mathbb{Z} \) for all \( i=\overline{1,n} \). Hence \( \sigma \mid r \) (\( \sigma= \lcm
 (\sigma_i) \) being a combination of \( \sigma_i \), look at the same combination of \( \frac{r\sigma_i}{\sigma} \)).
 </p>
@@ -363,7 +363,7 @@ a_{(0,\dots, \frac{r\sigma_i}{\sigma},\dots, 0} \), i.e. \( \frac{r\sigma_i}{\si
 </div>
 
 <p>
-it is clear that the operator \( A: W^{n,p}(X) \longrightarrow W^{n-r,p}(X) \) is bounded
+It is clear that the operator \( A: W^{n,p}(X) \longrightarrow W^{n-r,p}(X) \) is bounded
 for all \( n\in \mathbb{R} \) and the following diagram commutes for every real numbers \( k < n \).
 </p>
 \begin{equation}
@@ -419,7 +419,7 @@ equation as
 
 <div id="thm:elliptic-const" btit="(Elliptic equation with constant coefficients)" class="theorem">
 <p>
-The square \eqref{diag:elliptic} is exact for all \( k<n \) in \mathbb{R}. This encodes the
+The square \eqref{diag:elliptic} is exact for all \( k < n \) in \(\mathbb{R}\). This encodes the
 following 3 results:
 </p>
 <ol class="org-ol">
@@ -493,7 +493,7 @@ and splits in 4 ways
 {} \ar@/^/@{->}[u] \ar@/_/@{->}[r] & {} \ar@/_/@{->}[l]
 },
 \]
-i.e. the sum of two circle in each diagram is the identities \).
+i.e. the sum of two circle in each diagram is the identities.
 </p>
 
 </div>
@@ -501,7 +501,7 @@ i.e. the sum of two circle in each diagram is the identities \).
 <div id="thm:split-exact" class="theorem">
 <ol class="org-ol">
 <li>A split square is exact. In fact, if a square splits, then the associated short sequence splits.</li>
-<li>If \( E,F,G,H \) are Hilbert space then any exact square splits.</li>
+<li>If \( E,F,G,H \) are Hilbert spaces then any exact square splits.</li>
 </ol>
 
 </div>
@@ -514,15 +514,12 @@ Since \( A \) is semi-elliptic, there exists \( \epsilon>0 \) such that \( |A(\x
 that is identically \( 1 \) for \( \|\xi\|\leq 1 \) and \( 0 \) for \( \|\xi\|\geq 2 \)
 and define
 \[
-G(&xi;):=
-</p>
-\begin{cases}
+G(\xi):=\begin{cases}
 \frac{1-\psi(\xi)}{A(\xi)},  & \text{if $\|\xi\|\geq 1$} \\
 0, & \text{if $\|\xi\| \leq 1$}
 \end{cases}
-<p>
 \]
-The by Stein's multiplier theorem, 
+Then by Stein's multiplier theorem, 
 </p>
 \begin{align*}
    G(D):\ W^{k-r,p}(X) &\longrightarrow W^{k,p}(X) \quad\forall k\in \mathbb{R},\\ 
@@ -557,7 +554,7 @@ E \ar@{->}[r]^{l} \ar@{->}[d]^{m} & F \ar@{->}[d]^{p} \\
 G \ar@{->}[r]^{q} & H
 }
 \]
-is exact and \( p,q \) are compact operator. Then \( l \) and \( q \) have closed image,
+is exact and \( m,p \) are compact operators. Then \( l \) and \( q \) have closed image,
 and their kernels and cokernels are isomorphic through \( m \) and \( p \), and are of finite dimensional.
 </p>
 
@@ -643,7 +640,7 @@ the boundary structure and (2) to approximately inverse the boundary operators.
 </p>
 
 <p>
-We will solve elliptic euqation on \( X\times Y^+ \) where the variables are \( x_1,\dots,
+We will solve elliptic equation on \( X\times Y^+ \) where the variables are \( x_1,\dots,
 x_n \) and \( y \), under weight \( \Sigma = (\sigma_1,\dots, \sigma_n,\rho) \). Recall
 that \( A(D) = \sum_{\|(\alpha,\beta)\|=r}a_{\alpha \beta}D^\alpha_x D^\beta_y \) with
 symbol \( A(\xi,\eta)=\sum_{\|(\alpha,\beta)\|=r}\xi^\alpha\eta^\beta \).
@@ -655,7 +652,7 @@ A(\xi,\eta)\) has no real zeros, hence can be factorized to
 \[
  A(\xi,\eta)=A^+(\xi,\eta)A^-(\xi,\eta)
 \]
-where \( A^+(\xi,\eta) \) (resp. \( A^-(\xi,\eta) \) only has zeros \( \eta \) with \(
+where \( A^+(\xi,\eta) \) (resp. \( A^-(\xi,\eta) \)) only has zeros \( \eta \) with \(
 \im\eta >0 \) (resp. \( \im \eta <0 \)).
 </p>
 
@@ -794,7 +791,7 @@ X \). However we can modify the cut-off function to create an approximate invers
 </p>
 
 <p>
-Let \( \varphi: \mathbb{R}_{\geq 0}\longrightarrow \mathbb{R} \) be the function that we in the
+Let \( \varphi: \mathbb{R}_{\geq 0}\longrightarrow \mathbb{R} \) be the function that we used in the
 definition of \( E_+ \), i.e.
 \[
 \varphi(x) := \frac{e^4}{\pi}.\frac{e^{-(x^{1/4} + x^{-1/4})} \sin(x^{1/4} -
@@ -842,7 +839,7 @@ Let \( w(\xi,\eta):=\psi(\xi)\hat\chi(\eta) \) then \( w \) defines an operator
 \]
 In fact, for all \( k,l\in \mathbb{R} \), there exists \( C>0 \) such that
 \[
- \|w(D)f\|_{W^{k,p}(X\times Y^+)} \leq C \|f\|_{W^{l,p}(X\times Y^+)}
+ \|w(D)f\|_{W^{k,p}(X\times Y^+)} \leq C \|f\|_{W^{l,p}(X\times Y^+)}.
 \]
 </p>
 
@@ -856,7 +853,6 @@ itself, not \( \mathcal{S}(Y^-/0) \) to itself as we wish.
 </div>
 </div>
 </div>
-
 
 
 <div id="outline-container-orgca8eafc" class="outline-5">
@@ -945,7 +941,7 @@ For smooth functions \( f\in \mathcal{S}(X\times Y^+) \) and \( (g,h)\in
 <p>
 Since \( G,H \) extend to Sobolev spaces, one also has
 \[
-\mathcal{J} W^{k-r,p}(X\times Y^+)\bigoplus_{j=1}^m \partial W^{k-r_j,p}(X)
+\mathcal{J}:\ W^{k-r,p}(X\times Y^+)\bigoplus_{j=1}^m \partial W^{k-r_j,p}(X)
 \longrightarrow W^{k,p}(X\times Y^+)
 \]
 whenever \( k > \frac{\sigma}{\rho p} + \max_j r_j \).
@@ -983,7 +979,7 @@ We will extend the result of Theorem <a href="#thm:elliptic-const">thm:elliptic-
 operator with constant coefficient on Euclidean plan) in 2 levels: (1) for general
 elliptic operators (non-heterogeneous and with variable coefficients) and (2) for such
 operators on compact manifold (with boundary if needed). These 2 generalizations will be
-done using the same technique: approximating an exact square on "cube by cube".
+done using the same technique: "cube by cube" approximating an exact square.
 </p>
 
 <p>
@@ -1011,7 +1007,7 @@ commutativity already tells us that the composition of any two consecutive arrow
 \]
 is 0, and exactness is an extra condition of type "maximal rank", which is an open
 condition (For matrices, this means the derterminant does not vanish. The analogous
-phenomenon for Banach space is that a linear map sufficiently close to an invertible one
+phenomenon for Banach spaces is that a linear map sufficiently close to an invertible one
 is also invertible).
 </p>
 
@@ -1109,7 +1105,7 @@ is exact.
 
 <p>
 We will prove Proposition <a href="#prop:interior-cube">prop:interior-cube</a> here to demonstrate how Theorem
-<a href="#thm:exact-open">thm:exact-open</a> is employed. Also, the corresponding proof in
+<a href="#thm:exact-open">thm:exact-open</a> is employed. Another reason is that the corresponding proof in
 <a class='org-ref-reference' href="#hamilton_harmonic_1975">hamilton_harmonic_1975</a> is not very readable due to a notation/printing issue.
 </p>
 
@@ -1160,7 +1156,7 @@ A_\lambda^* \) viewed in \( X \) through \( h\lambda \).
 <div class="remark">
 <p>
 To avoid making infinite intersection of open sets, we have to fix \( k \) and \( l \) first in Proposition <a href="#prop:interior-cube">prop:interior-cube</a>
-and Proposition <a href="#prop:boundary-cube">prop:boundary-cube</a> (they are slightly modified, if compared with <a class='org-ref-reference' href="#hamilton_harmonic_1975">hamilton_harmonic_1975</a>). The approximate operators \( A^\#, B^\# \) and the
+and Proposition <a href="#prop:boundary-cube">prop:boundary-cube</a>. The approximate operators \( A^\#, B^\# \) and the
 size \( \epsilon \) of the cube therefore depend on \( k,l \), but this dependence will
 not be a trouble when we pass from local to global situation.
 </p>
@@ -1270,9 +1266,8 @@ if regularity is important), but not on \( W^{k,p}(M/ \mathcal{A}) \) where \(
 </p>
 
 <p>
-The action of a differential operator \( A \) to be component-wise on \( W^{k,p}(M/ \mathcal{A}) \hookrightarrow \bigoplus_i
-W^{k,p}(\mathcal{R}_i/\mathcal{A}_i) \) where \( \mathcal{R}_i \) is an open set of the
-Euclidean plan or a half-plan and \( \mathcal{A}_i \) the corresponding boundary part,
+The action of a differential operator \( A \) can be defined to be component-wise on \( W^{k,p}(M/ \mathcal{A}) \hookrightarrow \bigoplus_i
+W^{k,p}(\mathcal{R}_i/\mathcal{A}_i) \) where \( \mathcal{R}_i \) is an Euclidean plan or a half-plan and \( \mathcal{A}_i \) the corresponding boundary part,
 i.e.
 \[
  \xymatrix{
@@ -1305,7 +1300,7 @@ W^{l,p}(M) \ar@{->}[r]_<<<<<{\mathcal{C}} & W^{l-r,p}(M)\bigoplus_{j=1}^m \parti
 W^{l-r_j,p}(\partial M) 
 }
 \]
-is exact where \( \mathcal{C}=(A,B^j) \)
+is exact where \( \mathcal{C}=(A,B^j) \).
 </p>
 
 </div>
@@ -1452,7 +1447,7 @@ a_{\alpha\beta}\xi^\alpha\theta^\beta\) has no zero when \( \xi\in \mathbb{R} \)
 <p>
 Take \( A= \partial_t - \partial_x^2 - \partial_y^2 - \partial_z^2 = iD_t + D_x^2 +
 D_y^2 + D_z^2 \), the symbol is \( i\theta + \sum \xi_i^2 \) has no zero \( \xi\in
-\mathbb{R}^3,\im\theta \leq 0 \) except \(0 \). In generally, the operator \(
+\mathbb{R}^3,\im\theta \leq 0 \) except \(0 \). Generally, the operator \(
 \partial_t + A(D_{x^i}) \) is parabolic if \( A \) is an elliptic operator with the symbol
 \( A(\xi)\geq 0 \) for all \( \xi\in \mathbb{R} \) with equality only at \( \xi=0 \).
 </p>
@@ -1600,7 +1595,7 @@ The following statements can be verified mechanically:
    (\beta,\gamma) \) is increasing in \( \gamma \).</li>
 <li><i>One-sided continuity:</i> \( \dim \ker (\beta,\gamma) \) is left-continuous in \( \beta \),
 \( \dim\coker (\beta,\gamma) \) is right-continuous in \( \gamma \).</li>
-<li><i>One-sided semi-continuity:</i> \( \ker (\beta,\gamma) \) is left upper semi-continuous in
+<li><i>One-sided semi-continuity:</i> \( \dim\ker (\beta,\gamma) \) is left upper semi-continuous in
 \( \gamma \), i.e.
 \[
    \lim_{\gamma_1 \to \gamma_2^-} \inf \dim \ker (\beta,\gamma_1) \geq \dim\ker (\beta,\gamma_2)
@@ -1624,15 +1619,15 @@ only depend on the difference \( \gamma -\beta \), up to a translation in time o
 
 <p>
 In case \( B^j \) are of variable coefficients, the idea of making translation in time can
-be formulated using Index theory for Fredhom maps:
+be formulated using Index theory for Fredholm maps:
 </p>
 
 <p>
-We recall that Fredhom maps between Banach spaces \( E, F \) are those in \( L(E,F) \) with
+We recall that Fredholm maps between Banach spaces \( E, F \) are those in \( L(E,F) \) with
 closed image and finite dimensional kernel and cokernel. It is a classical result that
 </p>
 <ol class="org-ol">
-<li>The set \( \mathcal{F} \) of Fredhom maps are open in \( L(E,F) \).</li>
+<li>The set \( \mathcal{F} \) of Fredholm maps are open in \( L(E,F) \).</li>
 <li>The index \( i(l):= \dim \ker l - \dim \coker l \) is continuous in \( \mathcal{F} \).</li>
 </ol>
 
@@ -1707,31 +1702,32 @@ estimate in the future.
 <div class="proof">
 <p>
 Let us explain why the theorem is true in the case of no spatial boundary \(\partial N
-=\emptyset \). In this case, there is no distinction between \( l \) and \( l' \). Consider \( A \) as an elliptic operator on \( N\times [\pi,\omega] \) with
-the no boundary operator, one has the following exact diagram:
+=\emptyset \). In this case, there is no distinction between \( l \) and \( l'
+\). Consider \( A \) as an elliptic operator on \( N\times [\tilde\pi,\omega] \) with \(
+\tilde\pi = \frac{\alpha +\pi}{2} \) and with no boundary operator, one has the following exact diagram:
 \[
 \xymatrix{
-W^{k,p}([\pi,\omega]) \ar@{^{(}->}[d] \ar@{->}[r]^<<<<<{{A}} & W^{k-r,p}([\pi,\omega])   \ar@{^{(}->}[d] \\
-W^{l,p}([\pi,\omega]) \ar@{->}[r]^<<<<<{{A}} & W^{l-r,p}([\pi,\omega])
+W^{k,p}([\tilde\pi,\omega]) \ar@{^{(}->}[d] \ar@{->}[r]^<<<<<{{A}} & W^{k-r,p}([\tilde\pi,\omega])   \ar@{^{(}->}[d] \\
+W^{l,p}([\tilde\pi,\omega]) \ar@{->}[r]^<<<<<{{A}} & W^{l-r,p}([\tilde\pi,\omega])
 }
 \]
 Therefore the if \( f\in W^{l,p}([\alpha,\omega]) \) and \( Af \in W^{k-r,p}([\alpha,\omega])
-\)then \( f \in W^{k,p}([\pi,\omega])  \) and 
+\)then \( f \in W^{k,p}([\tilde\pi,\omega])\subset W^{k,p}([\pi,\omega])  \) and 
 </p>
 \begin{align}
-\|f\|_{W^{k,p}([\pi,\omega])} &\leq C \left( \|Af\|_{W^{k-r,p}([\alpha,\omega])} + \| f \|_{W^{l,p}([\alpha,\omega])}  \right) \\ 
-			      &\leq C \left( \|Af\|_{W^{k-r,p}([\alpha,\omega])} + \| f \|_{W^{l,p}([\alpha,\pi])} + \| f \|_{W^{l,p}([\pi,\omega])} \right) \label{eq:reg-para}
+\|f\|_{W^{k,p}([\pi,\omega])} \leq \|f\|_{W^{k,p}([\tilde\pi,\omega])} &\leq C \left( \|Af\|_{W^{k-r,p}([\alpha,\omega])} + \| f \|_{W^{l,p}([\alpha,\omega])}  \right) \\ 
+			      	   &\leq C \left( \|Af\|_{W^{k-r,p}([\alpha,\omega])} + \| f \|_{W^{l,p}([\alpha,\pi])} + \| f \|_{W^{l,p}([\tilde\pi,\omega])} \right) \label{eq:reg-para}
 \end{align}
 <p>
-It remains to check that we can get rid of the \( \| f \|_{W^{l,p}([\pi,\omega])} \) 
+It remains to check that we can get rid of the \( \| f \|_{W^{l,p}([\tilde\pi,\omega])} \) 
 term on the right hand side. Suppose not, then there exists a sequence \( \{f_i\} \subset
 W^{l,p}([\alpha,\omega]) \) such that \( Af_i \to 0 \) in \(W^{k-r,p}([\alpha,\omega])\) and
-\( f_i \to 0\) in \( W^{l,p}([\alpha,\pi]) \) but \( \| f_i\|_{W^{l,p}([\pi,\omega])} =
-1\). Then by \eqref{eq:reg-para}, \( \{f_i\} \) is a bounded sequence in \( W^{k,p}([\pi,\omega]) \) and, by
-Kondrachov's theorem, can be supposed to converge in \( W^{l,p}([\pi,\omega]) \) to a
-function \( \tilde f \) which has \(  \| \tilde f \|_{W^{l,p}([\pi,\omega])} =
-1  \) and \( A\tilde f = 0 \) because \( A \) commutes with the restriction. Moreover, since \(
-\|f_i\|_{W^{l,p}([\alpha,\pi])} \to 0 \), one has \( \tilde f\in W^{l,p}([\pi,\omega]/\pi)
+\( f_i \to 0\) in \( W^{l,p}([\alpha,\pi]) \) but \( \| f_i\|_{W^{l,p}([\tilde\pi,\omega])} =
+1\). Then by \eqref{eq:reg-para}, \( \{f_i\} \) is a bounded sequence in \( W^{k,p}([\tilde\pi,\omega]) \) and, by
+Kondrachov's theorem, can be supposed to converge in \( W^{l,p}([\tilde\pi,\omega]) \) to a
+function \( \tilde f \) which has \(  \| \tilde f \|_{W^{l,p}([\tilde\pi,\omega])} =
+1  \) and \( A\tilde f = 0 \) on \( [\tilde\pi,\omega] \) because \( A \) commutes with the restriction. Moreover, since \(
+\|f_i\|_{W^{l,p}([\alpha,\pi])} \to 0 \), one has \( \tilde f\in W^{l,p}([\tilde\pi,\omega]/\tilde\pi)
 \) and the fact that \( \tilde f\ne 0 \) contradicts Theorem <a href="#thm:para-causality">thm:para-causality</a>).
 </p>
 
@@ -1825,7 +1821,7 @@ K:\  W^{k+2,p}(N\times[\alpha,\omega]/\alpha) &\longrightarrow W^{k,p}(N\times[\
 \end{align*}
 <p>
 is a compact operator because it factors through \( W^{k+1}(N\times
-[\alpha,\omega]/\alpha) \). Therefore \( H+K \) is a Fredhom map with the same index as \(
+[\alpha,\omega]/\alpha) \). Therefore \( H+K \) is a Fredholm map with the same index as \(
 H \), which is \( 0 \). It is sufficient to check that the kernel of \( H+K \) is
 trivial.
 </p>
@@ -2036,7 +2032,7 @@ g \)) and  \( B \) only depends on \( \tilde a = -a \) and \( \tilde b = b \).
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-05-29 Tue 17:47. <br>
+Last updated 2018-06-01 Fri 13:48. <br>
 </div>
 </div>
 </body>
