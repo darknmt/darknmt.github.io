@@ -7,6 +7,10 @@
 #+SETUPFILE: ../res/mathsetup.org
 #+INCLUDE: ../res/include.org
 
+#+LATEX:\iffalse
+Here is the [[../Stage 2018/main.pdf][memoire]].
+#+LATEX:\fi
+
 * Summary
 
 The goal of this part is to give a summary of what will be developed in the next chapters. In brief, we are interested in
@@ -251,7 +255,6 @@ This can be done by considering the backwards heat equation propagating from tim
 This equation was chosen so that \( \frac{d}{dt}\int_M fg = \int_M f \frac{d }{dt}g + g
 \frac{d }{dt}f =0\), therefore \( \int_{M\times\{\alpha\}}fg = \int_{M\times\{\omega\}} fg
 \). Apply \( L^\infty \)-estimate to \( g \) and one obtains an \( L^1 \)-estimate for \( f \).
-
 
 * Table of contents
 ** Harmonic maps: examples and the reduction to a local PDE
