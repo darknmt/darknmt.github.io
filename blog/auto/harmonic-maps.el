@@ -1,112 +1,67 @@
 (TeX-add-style-hook
  "harmonic-maps"
  (lambda ()
-   (TeX-add-to-alist 'LaTeX-provided-class-options
-                     '(("article" "11pt")))
-   (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem") ("xy" "all")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
-   (TeX-run-style-hooks
-    "latex2e"
-    "article"
-    "art11"
-    "inputenc"
-    "fontenc"
-    "graphicx"
-    "grffile"
-    "longtable"
-    "wrapfig"
-    "rotating"
-    "ulem"
-    "amsmath"
-    "textcomp"
-    "amssymb"
-    "capt-of"
-    "hyperref"
-    "amsthm"
-    "amscd"
-    "mathtools"
-    "tikz-cd"
-    "svg"
-    "xy"
-    "pgfplots")
-   (TeX-add-symbols
-    '("transp" ["argument"] 1)
-    '("restr" 2)
-    "re"
-    "im"
-    "coker"
-    "supp"
-    "ord"
-    "Spec"
-    "vol"
-    "sff"
-    "tr"
-    "const"
-    "lcm"
-    "gcd"
-    "Ric"
-    "Riem")
    (LaTeX-add-labels
-    "sec:org609c41e"
-    "sec:org138fa59"
-    "sec:orgf84efe8"
+    "sec:org29d0638"
+    "sec:org56d0c24"
+    "sec:orgaf42f2d"
     "lem:var-energy"
     "prop:holo-harmonic"
     "eq:tangent-exp"
-    "sec:org4ead65d"
-    "sec:org6eafbc8"
-    "sec:orgb225162"
-    "sec:org4ed5e17"
-    "sec:org4678661"
+    "sec:orgd687da3"
+    "sec:orgb856f17"
+    "sec:org5b3844c"
+    "sec:orgbf49e8f"
+    "sec:org492e9b2"
     "ex:pullback-tangent"
     "lem:calculs-general"
     "eq:laplace-Q"
     "rem:calculs-general"
     "eq:Q-negative"
-    "sec:org0ca0002"
+    "sec:orge42d7b2"
     "sec:general-calcul"
-    "sec:org280ce18"
+    "sec:org2b0f54d"
     "prop:calculs-pullback-tangent"
-    "sec:org88fba4e"
+    "sec:orgff5bc61"
     "lem:calculs-Q-pullback"
-    "sec:org0ef1be0"
+    "sec:orgef3c269"
     "cor:signed-curvature"
-    "sec:orgfd1fe09"
-    "sec:orgd15dfba"
+    "sec:org00f7819"
+    "sec:orgad0ad89"
     "lem:second-fund-form"
     "eq:second-fund-form"
-    "sec:org6d509cb"
+    "sec:orgcc8fdcf"
     "prop:harm-imm-curvature"
-    "sec:orge6facef"
-    "sec:org28edfec"
+    "sec:org03e4f9f"
+    "sec:orgfcf0960"
     "thm:Ehresmann-Hermann"
     "eq:g-product"
     "trivalising-map"
     "thm:Hermann"
     "eq:calcul-Hermann"
-    "sec:orgfaa9311"
+    "sec:org87c8e11"
     "prop:tension-fibration"
-    "sec:org597aaf3"
+    "sec:orgb5b6454"
     "prop:composition-general"
     "eq:sff-composition"
     "eq:tension-field-composition"
     "prop:compo-immersion"
     "prop:compo-submersion"
     "cor:compo-with-submersion"
-    "sec:orgb2eb562"
-    "sec:org1eb8119"
+    "sec:org6190a72"
+    "sec:org69a04d2"
     "eq:loc-heat-flow"
     "thm:eells-sampson"
     "thm:hamilton-bndry-Dirichlet"
-    "sec:org50fd7bd"
-    "sec:orgc334805"
+    "sec:orgcd4af9e"
+    "sec:orgf2de8fe"
     "thm:global-eq"
     "eq:global-heat"
     "thm:unique-nonlinear-heat"
@@ -114,31 +69,20 @@
     "eq:sym-red-beta"
     "eq:first-order-w"
     "rem:hamilton-alg-rig"
-    "sec:org1ad5b6a"
-    "sec:org30239a7"
+    "sec:org08246ad"
+    "sec:org77cb4c6"
     "thm:den-pot"
     "eq:den-pot-est"
     "thm:den-kin"
     "eq:den-kin-est"
     "eq:den-kin-1"
     "eq:den-kin-2"
-    "sec:org18b792d"
+    "sec:orgcde4a70"
     "thm:energy-cons"
     "thm:int-den-kin"
     "thm:int-den-pot"
     "cor:bound-2-2")
    (LaTeX-add-bibliographies
-    "../res/Stage2018")
-   (LaTeX-add-amsthm-newtheorems
-    "remark"
-    "theorem"
-    "lemma"
-    "corollary"
-    "conjecture"
-    "proposition"
-    "problem"
-    "exampl"
-    "definition"
-    "propdef"))
+    "../res/Stage2018"))
  :latex)
 

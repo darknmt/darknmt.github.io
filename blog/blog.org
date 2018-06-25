@@ -3,6 +3,7 @@
 
 
 * Stage 2018
+***** [#A] [[file:minimal-immersion-S2.org][Minimal immersions of \( \mathbb{S}^2 \)]] <2018-06-24 Sun>
 ***** [#A] [[file:summary-stage-2018.org][Summary and the report]] <2018-05-29 Tue>
 ***** [#A] [[file:harmonic-map-existence.org][Energy estimates and Existence of harmonic maps between Riemannian manifolds]] <2018-05-06 Sun>
 ***** [#A] [[file:polynomial-besov.org][Short-time existence and regularity for nonlinear heat equation: Polynomial differential operators and Besov spaces]] <2018-05-27 Sun> 
@@ -13,6 +14,7 @@
 ***** [#A] [[file:harmonic-maps.org][Harmonic maps of Riemannian manifolds]] <2018-02-20 Tue>
 
 * Orsay 2017-2018
+***** TODO [[file:h-principe-Stein.org][Gromov's h-principle and Topological characterisation of Stein manifolds]] <2018-06-11 Mon>
 ***** [[file:chow-theorem.org][Algebraisation theorems I: Chow's theorem]] <2018-04-05 Thu>
 ***** [[file:two-Hartogs.org][Two theorems of Hartogs]] <2018-01-08 Mon>
 ***** [[file:local-several-complex-var.org][Local results of several complex variables]] <2017-12-22 Fri>

@@ -885,9 +885,16 @@ geodesic of \( M' \) in relative homotopy class.
 ** Strategy of the proof.
 In order to have a global frame, we will embed \( M' \) into an Euclidean space \( V \),
 but we will not use the Euclidean metric of \( V \). In fact, let \( T \) be a tubular
-neighborhood of \( M' \) in \( V \) then \( T \) is diffeomorphic to \( M'\times D \)
+neighborhood of \( M' \) in \( V \) then if \( T \) is trivial, i.e. if it is diffeomorphic to \( M'\times D \)
 where \( D \) is a sufficiently small of dimension being the codimension of \( M' \) in \(
 V \), and we will equip \( T \) with the product metric of \( M'\times D \). 
+
+If \( T \) is not trivial, use a partition of unity of \( M' \), one can construct a metric on \( T \)
+as linear combination of the previously defined metrics on trivialised pieces such that
+the involution \( \iota: T \longrightarrow T \) locally given by \( (y,d)\mapsto (y,-d) \)
+for \( y\in M', d\in D \) is an isometry. As a consequence, \( M' \) is totally geodesic
+in \( T \).
+
 
 Since \( M' \equiv M'\times \{0\}  \) is totally geodesic in \( T \), one has for every smooth
 function \( f: M \longrightarrow M' \):
@@ -1039,7 +1046,7 @@ the following development of \( \sigma \):
 \]
 which was justified by \( \sigma(a,b) = \sigma(b,a) \) and \( \sigma(a,a)=0
 \). Algebraically these symmetries of \( \sigma \) are not sufficient to justify the
-development, and one can also proved, using \( \sigma(a,ka)=0 \), that if such development
+development, and one can also prove, using \( \sigma(a,ka)= \frac{1}{2}d_E(a,ka)^2 \), that if such development
 was valid then all \( \lambda_{\beta\gamma,\delta} \) would be zero, and there would be no
 third-order term. We made this reduction using the symmetry of \( \frac{\partial^2
 \sigma}{\partial f_1^\beta \partial f_2^\gamma} {f_1}^\beta_i {f_2}^\gamma_j  \) in \(

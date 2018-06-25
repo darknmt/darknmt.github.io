@@ -10,12 +10,11 @@ The reasons that I write this blog instead of using Wordpress are
    theorem/lemma/definition also play a crucial role.
 3. [[https://darknmt.github.io/html/Cheeger-Gromoll-splitting.html][Here]] is a webpage, [[https://raw.githubusercontent.com/darknmt/darknmt.github.io/master/blog/Cheeger-Gromoll-splitting.org][here]] is what I have to type, and here are the LaTeX exports in [[../res/Cheeger-Gromoll-splitting.tex][TEX]] and [[../res/Cheeger-Gromoll-splitting.pdf][PDF]].
 #+END_COMMENT
-* About me
-Here is my [[http://172.17.71.229/dokuwiki/doku.php][DokuWiki]] and personal [[http://172.17.71.229/nextcloud][nextcloud]].
 
 * Links
+- Here is my [[http://172.17.71.229/dokuwiki/doku.php][DokuWiki]] and personal [[http://172.17.71.229/nextcloud][nextcloud]].
 - [[https://darknmt.github.io/res/tikzcd-editor/][A GUI editor]] for commutative diagram with ~tikzcd~, also [[https://tikzcd.yichuanshen.de/][originally hosted by the author]].
-- If you prefer ~xypic~, use [[https://darknmt.github.io/res/xypic-editor/][this one]].
+- If you prefer ~xypic~, use [[https://darknmt.github.io/res/xypic-editor/][this one]]. [[https://github.com/darknmt/xypic-editor][Source code]].
 
 # +ATTR_HTML: :width 60%
 # [[https://darknmt.github.io/res/xypic-editor][file:../img/simple-portrait.png]] 

@@ -1,9 +1,21 @@
+\iffalse
+\begin{info}
+The PDF version of this page can be downloaded by replacing \texttt{html} in the its address by
+\texttt{pdf}. 
+For example \texttt{/html/sheaf-cohomology.html} should become \texttt{/pdf/sheaf-cohomology.pdf}.
+\end{info}
+\fi
+
+\iffalse
+This is my reading note for \cite{eells_harmonic_1964}.
+\fi
+
 \section{Harmonic maps}
-\label{sec:org609c41e}
+\label{sec:org29d0638}
 \subsection{Variational approach: energy integral and tension field}
-\label{sec:org138fa59}
+\label{sec:org56d0c24}
 \paragraph{Notation.}
-\label{sec:orgf84efe8}
+\label{sec:orgaf42f2d}
 Let \(M, M', M''\) be Riemannian manifolds of dimension \(n, n'\) and \(n', n''\)
 respectively. We will use \(i,j,k,\dots, \alpha,\beta,\gamma,\dots, a,b,c\) for local
 coordinates of \(M, M', M''\).
@@ -144,9 +156,9 @@ every point \(P\in M\).
 
 
 \subsection{Formulation using connection on vector bundle}
-\label{sec:org4ead65d}
+\label{sec:orgd687da3}
 \paragraph{Setup and notation.}
-\label{sec:org6eafbc8}
+\label{sec:orgb856f17}
 Let \(E\) be a metric vector bundle over a Riemannian manifold \(M\), i.e. each fiber
 of \(E\) is equiped with an inner product that we denote by \((g'_{\alpha\beta})\). The
 metric of \(M\) is denoted by \((g_{ij})\). Let \(n\) and \(m\) be the dimension
@@ -154,7 +166,7 @@ of \(M\) of the fiber.
 
 
 \paragraph{Covariant derivatives and exterior derivatives.}
-\label{sec:orgb225162}
+\label{sec:org5b3844c}
 We recall that a \textbf{covariant derivative} or a \textbf{connection} \(\tilde\nabla\) of \(E\) is uniquely determined in 
 local coordinates by an \(m\times m\) matrix \(A\) of 1-forms, in other
 words, it is an 1-form on \(M\) with value in \(Hom_M(E,E)\) which depends on the local frame
@@ -197,7 +209,7 @@ all \(s\in A^{p}(M,E), s'\in A^{p+1}(M,E)\).
 
 
 \paragraph{Laplacian operator and harmonic forms.}
-\label{sec:org4ed5e17}
+\label{sec:orgbf49e8f}
 The \textbf{connection Laplacian} is defined as a endomorphism of \(A^p(M,E)\) given by
 \[
  \tilde \Delta = D\delta +\delta D
@@ -212,7 +224,7 @@ one has \(\tilde\Delta s = 0\) if and only if \(Ds = \delta s = 0\).
 
 
 \paragraph{Riemannian connected bundle.}
-\label{sec:org4678661}
+\label{sec:org492e9b2}
 The metric vector bundle \(E\) over \(M\) is called a \textbf{Riemannian-connected bundle} if
 it is equipped with a connection \(\tilde \nabla\) under which the metric \(g'\) of \(E\) is
 parallel, i.e. \(\tilde\nabla g' = 0\), in other words, the matrix \(A\) in a
@@ -289,10 +301,10 @@ coefficients \[ Q_{\alpha\beta}^{hi} = g^{hk}g^{ij}\left[ \left(g'_{\alpha\gamma
 \end{remark}
 
 \subsection{The case of \(E = f^* TM'\)}
-\label{sec:org0ca0002}
+\label{sec:orge42d7b2}
 \label{sec:general-calcul}
 \subsubsection{Energy functional and tension field}
-\label{sec:org280ce18}
+\label{sec:org2b0f54d}
 Our interest will be the case of Example \ref{ex:pullback-tangent} where \(E =f^*TM'\) for
 some smooth map \(f: M \longrightarrow M'\) of Riemannian manifolds is a
 Riemannian-connected bundle over \(M\) with the connection \(\tilde\nabla\) given by
@@ -344,7 +356,7 @@ It follows immediately that
 \end{corollary}
 
 \subsubsection{Fundamental form, some results in case of signed curvature}
-\label{sec:org88fba4e}
+\label{sec:orgff5bc61}
 
 \begin{definition}
 The \textbf{fundamental form} of a map \(f: M \longrightarrow M'\) of Riemannian manifolds is
@@ -399,7 +411,7 @@ The previous computation of \(Q(f_*)\) in term of Riemannian curvature of \(M'\)
 Ricci curvature of \(M\) give the following result in the case where the curvature of \(M\) and \(M'\) are of definite sign.
 
 \paragraph{Notation.}
-\label{sec:org0ef1be0}
+\label{sec:orgef3c269}
 Given a Riemannian manifold \(M\), we will use the following notation:
 \begin{enumerate}
 \item \({\rm Ric} \geq 0\) (resp. \({\rm Ric} > 0\)) if the Ricci curvature is positive
@@ -448,11 +460,11 @@ If \({\rm Riem}(M') < 0\), one sees that all \(f_* e_i, f_* e_j\) are colinear, 
 
 
 \subsection{Example: Riemannian immersion}
-\label{sec:orgfd1fe09}
+\label{sec:org00f7819}
 Let \(f: M \longrightarrow M'\) be a Riemannian immersion, i.e. \(Tf\) is injective and \(f^*g' = g\). We will
 see that the fundamental form \(\beta(f)\) that we defined earlier is the same as usual definition in courses of Riemannian geometry.
 \subsubsection{Second fundamental form.}
-\label{sec:orgd15dfba}
+\label{sec:orgad0ad89}
 One defines the symmetric (0,2)-tensor \(\sff\) as the unique tangent vector of \(M'\) such that
 \[
 \langle \sff_{ij},\xi_\sigma \rangle:= -\langle \tilde\nabla_i\xi_\sigma, f_* e_j\rangle
@@ -529,7 +541,7 @@ The immersion \(f\) is said to be \textbf{minimal} if \(\xi\) vanishes identical
 \end{remark}
 
 \subsubsection{The case of signed curvature.}
-\label{sec:org6d509cb}
+\label{sec:orgcc8fdcf}
 If \(f: M \longrightarrow M'\) is a Riemannian immersion then the Ricci
 term of Lemma \ref{lem:calculs-Q-pullback} is actually the scalar curvature of \(M\), one has
 
@@ -541,9 +553,9 @@ Riem}(M')\leq 0\) and \(r=g^{ij} {\rm Ric}_{ij} <0\) at one point of \(M\). If \
 
 
 \subsection{Example: Riemannian submersion}
-\label{sec:orge6facef}
+\label{sec:org03e4f9f}
 \subsubsection{Results of Ehresmann and Hermann.}
-\label{sec:org28edfec}
+\label{sec:orgfcf0960}
 In this section, the function \(f: M \longrightarrow M'\) will be a Riemannian submersion \(\pi: M \longrightarrow B\), i.e. \(T\pi\) is subjective and \(\pi^*g' = g\). We will
 regard \(\pi\) as a fibration and calculate its tension field. We start with two theorems
 of Hermann with \cite{besse_einstein_2007} as reference. A tangent vector of \(M\) lying
@@ -679,7 +691,7 @@ associate to a basic vector field \(X\), it preserves \(\hat g\).
 \end{proof}
 
 \subsubsection{Tension fields and harmonic fibrations.}
-\label{sec:orgfaa9311}
+\label{sec:org87c8e11}
 We will now calculate the tension field of a fibration map \(\pi: M \longrightarrow B\).
 
 \begin{proposition}[]
@@ -714,7 +726,7 @@ A complete Riemannian fibration \(\pi: M \longrightarrow B\) with totally geodes
 \end{exampl}
 
 \subsection{Composition of maps}
-\label{sec:org597aaf3}
+\label{sec:orgb5b6454}
 
 The following results come from direct computation of the second fundamental form and
 tension field of composition of maps between Riemannian manifolds. Again, we use indices
@@ -823,9 +835,9 @@ M \longrightarrow N\), \(\pi\circ f\) is harmonic if and only if \(\tau(f)\) is 
 
 
 \section{Nonlinear heat flow: Global equation and existence of harmonic maps.}
-\label{sec:orgb2eb562}
+\label{sec:org6190a72}
 \subsection{Statement of the main results.}
-\label{sec:org1eb8119}
+\label{sec:org69a04d2}
 
 We want to prove in the next part the existence of harmonic map between manifolds \(M\)
 and \(M'\) by deforming any map \(f: M
@@ -873,11 +885,18 @@ less than \(t\) with the same initial tangent therefore cannot be deformed into 
 geodesic of \(M'\) in relative homotopy class. 
 
 \subsection{Strategy of the proof.}
-\label{sec:org50fd7bd}
+\label{sec:orgcd4af9e}
 In order to have a global frame, we will embed \(M'\) into an Euclidean space \(V\),
 but we will not use the Euclidean metric of \(V\). In fact, let \(T\) be a tubular
-neighborhood of \(M'\) in \(V\) then \(T\) is diffeomorphic to \(M'\times D\)
+neighborhood of \(M'\) in \(V\) then if \(T\) is trivial, i.e. if it is diffeomorphic to \(M'\times D\)
 where \(D\) is a sufficiently small of dimension being the codimension of \(M'\) in \(V\), and we will equip \(T\) with the product metric of \(M'\times D\). 
+
+If \(T\) is not trivial, use a partition of unity of \(M'\), one can construct a metric on \(T\)
+as linear combination of the previously defined metrics on trivialised pieces such that
+the involution \(\iota: T \longrightarrow T\) locally given by \((y,d)\mapsto (y,-d)\)
+for \(y\in M', d\in D\) is an isometry. As a consequence, \(M'\) is totally geodesic
+in \(T\).
+
 
 Since \(M' \equiv M'\times \{0\}\) is totally geodesic in \(T\), one has for every smooth
 function \(f: M \longrightarrow M'\):
@@ -901,7 +920,7 @@ long-time solution and the vanishing of its tension field.
 
 
 \subsection{Global equation and Uniqueness of nonlinear heat equation.}
-\label{sec:orgc334805}
+\label{sec:orgf2de8fe}
 \begin{theorem}[Global equation]
 \label{thm:global-eq}
 If the smooth function \(F_t:\ M\times [\alpha,\beta] \longrightarrow V\) satisfies
@@ -1019,7 +1038,7 @@ the following development of \(\sigma\):
 \lambda_{\beta\gamma,\delta} (a^\beta - b^\beta)(a^\gamma -b^\gamma)(a^\delta + b^\delta) + O(|a|+|b|)^4
 \]
 which was justified by \(\sigma(a,b) = \sigma(b,a)\) and \(\sigma(a,a)=0\). Algebraically these symmetries of \(\sigma\) are not sufficient to justify the
-development, and one can also proved, using \(\sigma(a,ka)=0\), that if such development
+development, and one can also prove, using \(\sigma(a,ka)= \frac{1}{2}d_E(a,ka)^2\), that if such development
 was valid then all \(\lambda_{\beta\gamma,\delta}\) would be zero, and there would be no
 third-order term. We made this reduction using the symmetry of \(\frac{\partial^2
 \sigma}{\partial f_1^\beta \partial f_2^\gamma} {f_1}^\beta_i {f_2}^\gamma_j\) in \((\beta,\gamma)\) and not just \(\frac{\partial^2
@@ -1032,9 +1051,9 @@ O(x^4)\). So \(\sigma(a,b) = \frac{1}{2}d(a,b)^2\) has no third-order term.
 \end{remark}
 
 \section{A few energy estimates.}
-\label{sec:org1ad5b6a}
+\label{sec:org08246ad}
 \subsection{Estimate of density energies}
-\label{sec:org30239a7}
+\label{sec:org77cb4c6}
 We finish this part with a few straightforward computation concerning the \textbf{potential
 energy} \(e(f_t) = \frac{1}{2}|\nabla f_t|^2\) and the \textbf{kinetic energy} \(k(f_t) =
 \frac{1}{2}|\frac{\partial f_t}{\partial t}|\) of a nonlinear heat flow \(f_t\)
@@ -1130,7 +1149,7 @@ t} \right \rangle
 \end{proof}
 
 \subsection{Estimate of total energies}
-\label{sec:org18b792d}
+\label{sec:orgcde4a70}
 
 We will now work with the total energies, in particular the \textbf{total potential energy} \(E(f_t) := \int_M e(f_t)\) and \textbf{total kinetic energy} \(K(f_t) := \int_M k(f_t)\). Since
 tension field is the gradient of \(E\), one has:

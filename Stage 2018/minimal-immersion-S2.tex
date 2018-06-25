@@ -1,0 +1,716 @@
+\iffalse
+\begin{info}
+The PDF version of this page can be downloaded by replacing \texttt{html} in the its address by
+\texttt{pdf}. 
+For example \texttt{/html/sheaf-cohomology.html} should become \texttt{/pdf/sheaf-cohomology.pdf}.
+\end{info}
+\fi
+
+\iffalse
+This post is my reading note for \cite{sacks_existence_1981}. I want to present the authors'
+ideas as clear as possible and I may probably skip a few (important) details and computations.
+\fi
+
+\section{Brief view of Sacks and Uhlenbeck's strategy.}
+\label{sec:org932e912}
+
+Let \(M\) and \(N\) be compact Riemannian manifolds (without boundary), \(M\) is a
+surface and \(N\) is isometrically embedded in \(\mathbb{R}^k\). It was showed by
+Eells and Sampson \cite{eells_harmonic_1964} that if \(N\) is \href{harmonic-map-existence.org}{negatively curved} than any
+map from \(M\) to \(N\) is homotopic to a harmonic map. The idea of Sacks and
+Uhlenbeck in \cite{sacks_existence_1981} consists of (1) approximating the energy functional
+\(E\) by a family \(E_\alpha\) satisfying Palais-Smale condition, whose
+\emph{nontrivial} critical values can be more easily proved to exist and (2) trying to prove
+that the critical maps \(s_\alpha\) of \(E_\alpha\) converge in \(C^1\)-topology.
+
+We will first review the general machinery of Morse-Palais theory and prove the existence
+of \(s_\alpha\). The convergence of \(s_\alpha\) in the case of surface is due to the
+facts that energy functional \(E\) is a conformal invariant of \(M\), in particular \(E\) is
+invariant by homotheties (i.e.  \(E\) remains unchanged when we zoom in and out), which
+allows us to justify the \(C^1\)-convergence (under conditions of \(N\)) except at
+finitely many points using a local estimate and a suitable
+covering of \(M\). 
+
+Sacks and Uhlenbeck used a local extension result for harmonic map, in an elegant argument
+to prove that if the above sequence \(\{s_\alpha\}\) fails to converge at a point,
+for a certain surface \(M\), then one has a nontrivial harmonic map from \(\mathbb{S}^2\) to \(N\). Therefore if such sequence \(\{ s_\alpha \}\) from \(\mathbb{S}^2\) to \(N\) exists, for example when \(\pi_k (N)\) is nontrivial for a certain \(k\geq 2\) then, 
+whether \(s_\alpha\) converges or not, there exists a nontrivial harmonic map from \(\mathbb{S}^2\) to \(N\). 
+
+Finally, the theory of branched immersion of surfaces by Gulliver-Osserman-Royden
+\cite{gulliver_theory_1973} can be applied to show that the harmonic map obtained this way
+is a conformal, branched, minimal immersion of \(\mathbb{S}^2\) to \(N\).
+
+\section{General machinery by Morse and Palais.}
+\label{sec:org803244d}
+
+\subsection{Perturbed functionals \(E_\alpha\).}
+\label{sec:orgd6188a2}
+
+Let \(s: M \longrightarrow N \hookrightarrow \mathbb{R}^k\) be a map from a compact
+surface \(M\) to a compact Riemannian manifold \(N\) isometrically embedded into \(\mathbb{R}^k\). Recall that the energy functional of \(s\) is given by \(E(s):=
+\frac{1}{2}\int_M |ds|^2 dV_M = \frac{1}{2}\int_M \langle s^* g_N, g_M \rangle dV_M\). The perturbed energy functionals are
+\[
+ E_\alpha(s) := \int_M\left(1 + |ds|^2\right)^\alpha dV,\quad \alpha \geq 1
+\]
+We will suppose, by rescaling the metric \(g_M\) of \(M\) that the volume of \(M\)
+is 1, so when \(\alpha=1\), \(E_1 =  1+ 2E(s)\) is just the previously defined energy. Using \((a+b)^\alpha \geq a^\alpha + b^\alpha\) and Jensen's inequality, one has \(E_\alpha(s) \geq 1 + (2E(s))^\alpha\) for all \(\alpha \geq 1\). Also, since we only
+interest in the case \(\alpha\) close to \(1\), let us also suppose that all \(\alpha\) from now on is smaller than 2.
+
+By Sobolev embedding, one has \(W^{1,2\alpha}(M, \mathbb{R}^k) \subset C^0(M,
+\mathbb{R}^k)\) compactly for all \(\alpha >1\). It then makes sense to talk about \(W^{1,2\alpha}(M,N) \subset C^0(M,N)\) which consist of elements of \(W^{1,2\alpha}(M,
+\mathbb{R}^k)\subset C^0(M, \mathbb{R}^k)\) whose image lies in \(N\).
+
+\begin{theorem}[Palais]
+\label{thm:Palais-1}
+The spaces \(C^\infty (M,N)\subset W^{1,2\alpha}(M,N)\subset C^0(M,N), \ \alpha>1\) are
+of the same homotopy type and the inclusions are homotopy equivalences. In particular,
+their connected components are naturally in bijection.
+\end{theorem}
+
+We will also need the following version of Morse theory for function spaces, also
+developed by R. Palais.
+
+\begin{theorem}[Morse theory for Banach manifolds]
+\label{thm:Palais-2}
+\begin{enumerate}
+\item If \(F\) is a \(C^2\) functional on a complete \(C^2\) Finsler manifold \(L\)
+and \(F\) satisfies Palais-Smale condition then
+\begin{enumerate}
+\item The functional \(F\) admits minimum on each connected component of \(L\).
+\item If \(F\) has no critical value in \([a,b]\) then the sublevel \(\{F\leq b\}\)
+retracts by deformation to the sublevel \(\{F\leq a\}\).
+\end{enumerate}
+\item The pair \((L,F)=(W^{1,2\alpha}(M,N), E_\alpha)\) with \(\alpha > 1\) satisfies the
+condition of the first part.
+\end{enumerate}
+\end{theorem}
+
+By consequence, one has
+
+\begin{corollary}[Component-wise minimum of \( E_\alpha \)]
+\label{cor:Palais-1-2}
+The minimum of \(E_\alpha\) in each connected component \(C\) of \(W^{1,2\alpha}(M,N)\), \(\alpha >1\) is taken by some \(s_\alpha \in C^\infty(M,N)\) and there exists \(B>0\)
+depending on the component \(C\) such that 
+\[
+ \min_{C}E_\alpha \leq (1+B^2)^\alpha
+\]
+\end{corollary}
+
+\begin{proof}
+By Theorem \ref{thm:Palais-2}, \(E_\alpha\) admits minimum at \(s_\alpha\) on each
+component \(C\) of \(W^{1,2\alpha}(M,N)\). By writing down the Euler-Lagrange equation
+of \(E_\alpha\) and apply regularity estimates, one can prove that \(s_\alpha\) is
+actually smooth. By Theorem \ref{thm:Palais-1}, the preimage of \(C\) by inclusion \(C^\infty(M,N)\subset W^{1,2\alpha}(M,N)\) is a connected component \(C'\) of \(C^\infty(M,N)\) over which \(s_\alpha\)
+is the minimum of \(E_\alpha\). Take \(B = \sup_M |du|\) for an arbitrary element \(u\in C'\) and the conclusion follows.
+\end{proof}
+
+\begin{remark}
+Corollary \ref{cor:Palais-1-2} is trivialised when \(W^{1,2\alpha}(M,N)\) is connected
+(for one \(\alpha\) or equivalently for all \(\alpha\)). In
+this case, \(s_\alpha\) is a constant map and \(B=0\).
+\end{remark}
+
+To establish a nontrivial analog of Corollary \ref{cor:Palais-1-2} in the case where the
+spaces of maps from \(M\) to \(N\) are connected, we will have to look at the
+submanifold \(N_0\cong N\) formed by constant maps.
+
+\subsection{Tubular neighborhood of the submanifold of trivial maps.}
+\label{sec:orgcf6dde9}
+
+Fix \(y\in N\), considered as a constant maps in \(N_0\). We will summarise a few facts about the tangent space of \(W^{1,2\alpha}(M,N)\) at \(y\).
+
+\begin{remark}
+\label{rem:tangent-palais}
+\begin{enumerate}
+\item The tangent \(T_y W^{1, 2\alpha}(M,N)\) can be identified with \(W^{1,2\alpha}(M, T_y
+   N)\). The subspace \(T_y N_0\) contains constant maps from \(M\) to \(T_y N\).
+\item The fiber \(\mathcal{N}_y\) over \(y\) of the normal bundle \(\mathcal{N}\) of \(N_0\) can be identified with
+\[
+    \mathcal{N}_y = \left\{v\in W^{1,\alpha}(M, T_y N): \int_M v dV = 0\right\}
+   \]
+\end{enumerate}
+\end{remark}
+
+The exponential map on \(TW^{1,2\alpha}(M,N)\) can be defined as follows:
+\begin{align*}
+  e:\ TW^{1,2\alpha}(M,N) & \longrightarrow W^{1,2\alpha}(M,N)\\
+  (s,v) 		  &\longmapsto \left(x\mapsto \exp_{s(x)}v(x) \right)
+\end{align*}
+where \(s\in W^{1,2\alpha}(M,N)\) and \(v\in T_s W^{1,2\alpha}(M,N)\) is a \(W^{1,2\alpha}\) vector field along \(s(x)\). With the representation of normal bundle
+\(\mathcal{N}\) as Remark \ref{rem:tangent-palais}, the restriction of \(e\) on \(\mathcal{N}\) is given by
+\begin{align*}
+\restr{e}{\mathcal{N}}:\ \mathcal{N} &\longrightarrow  W^{1,2\alpha}(M,N)\\
+			 (y,v) &\longmapsto	       \left(x\mapsto \exp_y (v(x)) \right)
+\end{align*}
+where \(y\in N_0 \cong N\) and \(v \in W^{1,2\alpha}(M, T_yN)\). This is an local
+diffeomorphism near the zero-section of \(\mathcal{N}\).
+
+\begin{lemma}
+\label{lem:local-isom-e}
+The restriction \(\restr{e}{\mathcal{N}}\) of \(e\) on \(\mathcal{N}\) is a local
+diffeomorphism mapping a neighborhood of the zero-section of \(\mathcal{N}\) onto a
+neighborhood of \(N_0\) in \(W^{1,2\alpha}(M,N)\).
+\end{lemma}
+\begin{proof}
+It can be calculated that 
+\[
+  de_{(y,0)}(a,v) = \left(x\mapsto a + v(x)\right) \in T_yW^{1,2\alpha}(M,N) =
+W^{1,2\alpha}(M, T_yN)
+\]
+for \(a\in T_y N\) and \(v\in \mathcal{N}_y \subset W^{1,2\alpha}(M, T_y N)\), which
+is invertible since \(a\) is the tangential to \(N_0\) and \(v\in \mathcal{N}_y\) is
+in the normal component. The Inverse function theorem applies.
+\end{proof}
+
+\subsection{Critical values of \(E_\alpha\).}
+\label{sec:orgdc6dba3}
+
+The exponential map previously defined on the normal bundle of \(N_0\) in  \(W^{1,
+2\alpha}(M,N)\) allows us to retract by deformation a small neighborhood of \(N_0\) to
+\(N_0\). We will prove that if the energy \(E_\alpha(s)\) is sufficiently close to \(1=E_\alpha(N_0)\) then \(s\) is sufficiently \(W^{1,2\alpha}\)-close to \(N_0\) and hence can be retracted to \(N_0\), in other words, \(E_\alpha^{-1}[1, 1+\delta]\) retracts by deformation to \(N_0 = E_\alpha^{-1}(1)\).
+
+\begin{proposition}[]
+\label{prop:crit-val-1}
+Given \(\alpha>1\), there exists \(\delta >0\) depending on \(\alpha\) such that \(E_\alpha^{-1}[1, 1+\delta]\) retracts by deformation to \(E_\alpha^{-1}(1) = N_0\).
+\end{proposition}
+
+\begin{proof}
+Let \(s\in E_\alpha^{-1}[1, 1+\delta]\), using \((a+b)^\alpha \geq a^\alpha + b^\alpha\), one has
+\[
+ 1 + \delta > \int_M (1+|ds|^2)^\alpha dV > 1 + \int_M |ds|^{2\alpha}dV
+\]
+therefore \(\|ds\|_{L^{2\alpha}}\leq \delta ^{1/{2\alpha}}\). By Poincaré-Wirtinger
+inequality, \(\|s-\int_M s\|_{W^{1,2\alpha}}\leq C \delta^{1/4}\) where the
+Poincaré-Wirtinger constant \(C\) can be chosen to be independent of \(\alpha\).
+
+By Sobolev embedding, \(\max_M |s-\int_M s| \leq C_\alpha \|s -\int_M s\|_{W^{1,2\alpha}}\)
+where the Sobolev constant \(C_\alpha\) can no longer be chosen uniformly in \(\alpha
+\to 1\). Fix an \(x_0\in M\), one has
+\[
+ d_{W^{1,2\alpha}}(s, N_0) \leq \|s - s(x_0)\|_{W^{1,2\alpha}} \leq \left\|s-\int_M
+s\right\|_{W^{1,2\alpha}} + \left|\int_M s - s(x_0)\right| \leq C_\alpha \delta^{1/4}
+\]
+
+Now choose \(\delta \ll 1\) depending on \(\alpha\) such that \(s\) is in the
+neighborhood of \(N_0\) given by Lemma \ref{lem:local-isom-e}, \(s\) can be written as
+\[
+ s(x) = e(y,v(x)) = \exp_y v(x)
+\]
+where \(y\in N_0\) and \(v\in W^{1,2\alpha}(M, T_yN)\) depend continuously on \(s\in
+W^{1,2\alpha}(M,N)\). We can define the deformation retraction by
+\begin{align*}
+  \sigma:\ E^{-1}_\alpha [1,1+\delta]\times [0,1] & \longrightarrow E^{-1}_\alpha[1,1+\delta]\\
+  	   		 (s,t)		    	  &\longmapsto \left( x\mapsto \exp_y tv(x)\right)
+\end{align*}
+It is clear that \(\sigma\) is continuous and \(\sigma_0\) is a retraction. The only
+thing to check is that the image of \(\sigma\) remains in \(E_\alpha^{-1}[1,1+\delta]\) at all time. This can be checked by showing that \(\frac{d}{dt}E_\alpha(\sigma_t) \geq
+0\), hence \(E_\alpha(\sigma_t) \leq E_\alpha(\sigma_1) \leq 1+\delta\) for all \(0\leq
+t\leq 1\).
+\end{proof}
+
+We will now prove the existence of nontrivial critical value of \(E_\alpha\) in an
+interval \((1, B)\) for a certain \(B>1\) sufficiently big independently of \(\alpha
+> 1\).
+
+Fix \(z_0\in M\) and consider the map 
+\begin{align*}
+  p: \ C^0(M,N) &\longrightarrow N\\
+       s	&\longmapsto	 f(z_0)
+\end{align*}
+then \(p\) is a fiber bundle and therefore a \emph{Serre fibration}. In fact fix \(q_0\in N\) then for all \(q\in N\) near \(q_0\), there is a vector field \(v_q\) supported
+in a small ball centered at \(q_0\) such that the flow of \(v_q\) from time 0 to 1
+turns \(q_0\) to \(q\), i.e. \({\Phi_{v_q}}_0^1(q_0)=q\), and that \(v_q\) varies continuously
+in \(q\). Then any fiber \(p^{-1}(q)\) can be identified with \(p^{-1}(q_0)\) using
+the flow of \(v_q\). We will denote by \(\Omega(M,N)\) the topological fiber of \(p\).
+
+
+We will use some facts from algebraic topology, briefly summarised as follows.
+
+\begin{fact}
+\label{fact:alg-top-Omega-M-N}
+\begin{enumerate}
+\item (Long exact sequence of homotopy) Let \(p: E \longrightarrow B\) be a fiber bundle
+of fiber \(F = p^{-1}(b_0) \ni f_0\), then one has the following long exact sequence
+\[
+    \xymatrix{
+    \dots \ar@{->}[r]^{\partial} & \pi_n(F) \ar@{->}[r]^{\iota_*} & \pi_n(E) \ar@{->}[r]^{p_*} & \pi_n(B) \ar@{->}[r]^{\partial} & \pi_{n-1}(F) \ar@{->}[r] & \dots \ar@{->}[r] & \pi_0(E) \ar@{->}[r] & 0
+    }
+   \]
+ where \(\iota: F \longrightarrow E\) is the inclusion.
+\item If \(p\) admits a global section \(s\), then one has a retraction \(s_*\) of \(p_*\):
+\[
+    \xymatrix{
+    \pi_n(E) \ar@{->}[r]^{p_*} & \pi_n(B) \ar@/^/@{->}[l]^{s_*}
+    }
+   \]
+hence \(p_*\) is surjective and \(\partial\) factors through \(0\), which gives
+us the short exact sequence
+\[
+    \xymatrix{
+    0 \ar@{->}[r] & \pi_n(F) \ar@{->}[r]^{\iota_*} & \pi_n(E) \ar@{->}[r]^{p_*} & \pi_n(B) \ar@/^/@{->}[l]^{s_*} \ar@{->}[r] & 0
+    }
+   \]
+where \(p_*\) admits a retraction \(s_*\), so the short exact sequence splits and
+we have
+\[
+   \pi_n(E) \cong \pi_n(F) \oplus \pi_n(B).
+   \]
+\end{enumerate}
+\end{fact}
+
+Now apply Fact \ref{fact:alg-top-Omega-M-N} to the fiber bundle \(p: C^0(M,N)
+\longrightarrow N\) of fiber \(\Omega(M,N)\), which has \(N_0\) as a global section,
+one obtains
+\[
+ \pi_n(C^0(M,N)) \cong \pi_n(N) \oplus \pi_n(\Omega(M,N)).
+\]
+
+
+\begin{theorem}[Nontrivial critical value of \( E_\alpha \)]
+\label{thm:3-nontrivial-crit}
+If \(C^0(M,N)\) is not connected, or if \(\Omega(M,N)\) is not contractible, then
+there exists \(B>0\) such that for all \(\alpha >1\), \(E_\alpha\) has critical
+values in the interval \((1, (1+B^2)^\alpha)\). 
+
+In particular, if \(M=\mathbb{S}^2\) and if the universal covering \(\tilde N\) of \(N\) is not contractible then \(E_\alpha\) has critical values in \((1, (1+B^2)^\alpha)\).
+\end{theorem}
+
+\begin{proof}
+If \(C^0(M,N)\) is not connected, then just apply Corollary \ref{cor:Palais-1-2} to a
+connected component of \(W^{1,2\alpha}(M,N)\) not containing \(N_0\). We now suppose
+that \(C^0(M,N)\) is connected and \(\Omega(M,N)\) is not contractible.
+
+
+In this case, there exists \(n>0\) such that \(\pi_n(\Omega(M,N))\) is nontrivial and
+contains a nonzero element \(\gamma:\ \mathbb{S}^n \longrightarrow  \Omega(M,N)\)
+which is not homotopic to any \(\tilde\gamma:\ \mathbb{S}^n \longrightarrow N_0\) in \(\pi_n(C^0(M,N))\).
+
+
+Choose \(B:= \max_{\theta\in \mathbb{S}^n,x\in M} |d\gamma(\theta)(x)|\) then by
+definition
+\[
+ E_\alpha(\gamma(\theta)) \leq (1+B^2)^\alpha\quad\forall \theta\in \mathbb{S}^n,\alpha>1.
+\]
+If \(E_\alpha\) has no critical value in \([1+\frac{\delta_\alpha}{2}, (1+B^2)^\alpha]\) where \(\delta_\alpha\) is given by Proposition \ref{prop:crit-val-1}, then by Theorem
+\ref{thm:Palais-2}, \(E_\alpha^{-1}[1, (1+B^2)^\alpha]\) retracts by deformation to \(E_\alpha^{-1}[1, 1+\delta_\alpha]\) which retracts by deformation to \(E_\alpha^{-1}(1)=N_0\). But this means that \(\gamma\) is homotopic to a certain \(\tilde\gamma\in \pi_n(N)\), which is a contradiction.
+
+
+As an application, if \(M= \mathbb{S}^2\) and the universal covering \(\tilde N\) is
+not contractible then the long exact sequence of homotopy for the bundle \(\tilde N
+\longrightarrow N\) with fiber of dimension \(0\), gives
+\[
+ \pi_n(\tilde N) = \pi_n(N),\quad \forall n\geq 2.
+\]
+Since \(\tilde N\) is simply-connected and not contractible, there exists \(n\geq 2\)
+such that \(0\ne\pi_n(\tilde N) = \pi_n(N) = \pi_{n-2}(\Omega(\mathbb{S}^2,N))\), where
+the last equality follows from definition of homotopy group. The
+general argument applies.
+\end{proof}
+
+
+\section{Local results: Estimates and extension.}
+\label{sec:org25d7a4d}
+
+We will say that the map \(s: M \longrightarrow N\) is a critical point of \(E_\alpha\) on a small disc \(D(R)\subset M\) if \(s\) satisfies the Euler-Lagrange equation of
+\(E_\alpha\) (as functional on \(W^{1,2\alpha}(M,N)\)) on \(D(R)\).
+
+\begin{remark}
+\label{rem:rescal-Euclide}
+Rescaling \((D(R), g_M)\), where \(R\ll 1\) and \(g_M\) is
+\(\epsilon\)-close to the Euclidean metric, to the unit disc \(D\) one obtains a
+metric \(\tilde g_M\) that is still \(\epsilon\)-close to Euclidean metric. The
+curvature of \(\tilde g_M\) is \(R^2\) times smaller than that of \(g_M\).
+\end{remark}
+
+If \(s:\ D(R) \longrightarrow N\) is a critical map
+of \(E_\alpha\) on \(D(R)\), then the composition \(\tilde s\) of \(s\) and the rescaling operator \(D
+\longrightarrow D(R)\) satisfies the Euler-Lagrange equation of \(\tilde E_\alpha =
+R^{2(1-\alpha)}\int_D (R^2 + |d\tilde s|^2)^\alpha d\tilde V\) where \(d\tilde V\) is
+the volume form of the rescaled metric \(\tilde g_M\). We will abusively
+use the same notation for \(\tilde s\) and \(s\) and regard \(s\) as a map on the unit disc \(D\). 
+
+\begin{lemma}[Sacks-Uhlenback's Main estimate]
+\label{lem:main-est}
+For all \(p\in (1,+\infty)\), there exists \(\epsilon>0\) and \(\alpha_0 >1\)
+depending on \(p\) such that if
+\begin{itemize}
+\item \(s:\ (D,\tilde g) \longrightarrow N\) is a critical map of \(E_\alpha\) on \(D(R)\)
+\item \(E(s) < \epsilon\), \(1 < \alpha <\alpha_0\)
+\end{itemize}
+then
+\[
+ \|ds\|_{W^{1,p}(D')} < C(p,D') \|ds\|_{L^2(D)},\quad \text{for all disc}  D'\Subset D 
+\]
+\end{lemma}
+
+\begin{remark}
+In fact \(\alpha_0, \epsilon\) and \(C(p,D')\) depend on the rescaled metric \(\tilde
+g\) on \(D\), but if \(R \ll 1\) and \(\tilde g\) is very close to Euclidean metric,
+then one can choose these parameters independently of \(\tilde g\). 
+\end{remark}
+
+A consequence of (the proof of) Lemma \ref{lem:main-est} is the following global result:
+
+\begin{theorem}[Critical maps of low energy are trivial]
+\label{thm:4-trivial-energy}
+There exists \(\epsilon >0\) and \(\alpha_0 > 1\)  such that if
+\begin{itemize}
+\item \(s: M \longrightarrow N\) is critical map of \(E_\alpha\)
+\item \(E(s)<\epsilon\), 1 < \(\alpha\) <\(\alpha_{\text{0}}\)
+\end{itemize}
+then \(s\in N_0\) and \(E(s) = 0\).
+\end{theorem}
+
+We proved in the last section that, under certain algebraic topological condition on \(N\), \(E_\alpha\) admits critical value \(v_\alpha \in (1, (1+B^2)^\alpha)\). We now
+can conclude that, by Theorem \ref{thm:4-trivial-energy}, the critical values \(v_\alpha\)
+are bounded away from \(1\), i.e. \(\inf_{\alpha} v_\alpha > 1\).
+
+
+We will also need the following extension theorem:
+
+\begin{theorem}[Extension of harmonic maps]
+\label{thm:extension-sacks-uhlenbeck}
+If \(s:\ D\setminus \{0\} \longrightarrow N\) is a harmonic map with finite energy \(E(s) < \infty\), then \(s\) extends to a smooth harmonic map \(\tilde s:\ D \longrightarrow N\).
+\end{theorem}
+
+
+
+\section{Convergence of critical maps of \(E_{\alpha}\).}
+\label{sec:org8dbc46f}
+
+We proved in Theorem \ref{thm:3-nontrivial-crit} that if \(C^0(M,N)\) is not connected or
+if \(\Omega(M,N)\) is not contractible, then there exists a family \(\{s_\alpha\}\) of
+critical maps  of \(E_\alpha\) with bounded, nontrivial energy \(E_\alpha(s_\alpha) < B\). Since 
+\begin{itemize}
+\item \(\int_M |ds_\alpha|^2 \leq \left(E_\alpha(s_\alpha)-1\right)^{1/\alpha}\) is bounded
+uniformly on \(\alpha\)
+\item \(\|s_\alpha\|_{L^\infty}\) is bounded by compactness of \(N\).
+\end{itemize}
+the \(W^{1,2}(M, \mathbb{R}^k)\)-norms of \(\{s_\alpha\}\) are bounded. By
+reflexivity of Sobolev spaces, there exists a subsequence \(\{s_\beta\}\) weakly
+converging to \(s\) in \(W^{1,2}(M,\mathbb{R}^k)\) with
+\[
+\|s\|_{W^{1,2}}\leq \liminf_{\beta\to 1} \|s_\beta\|_{W^{1,2}}
+\]
+We do not know at this moment if the convergence is \(C^0\), or if \(s\) is
+continuous, or even if the image of \(s\) remains in \(N\). The following key lemma
+answer these questions on a small disc of \(M\) in the case the energy of \(s_\alpha\)
+is small.
+
+\begin{lemma}[Key]
+\label{lem:key-sacks-uhlenbeck}
+There exists an \(\epsilon>0\), in fact given by the Main estimate Lemma \ref{lem:main-est} with
+\(p=4\), such that if
+\begin{itemize}
+\item \(s_\alpha:\ D(R) \longrightarrow N\subset \mathbb{R}^k\) are critical maps of \(E_\alpha\) in \(W^{1, 2\alpha}(D(R),N)\),
+\item \(E(s_\alpha) < \epsilon\) and \(s_\alpha\) converges weakly to \(s\) in \(W^{1,2}(D(R),\mathbb{R}^k)\),
+\end{itemize}
+then 
+\begin{itemize}
+\item the restriction of \(s\) on \(\overline{D(R/2)}\) is smooth harmonic map with image in \(N\),
+\item \(s_\alpha \to s\) in \(C^1(\overline{D(R/2)},N))\).
+\end{itemize}
+\end{lemma}
+
+\begin{remark}
+\label{rem:topo-C1}
+There are two different ways to define convergence of a sequence \(s_n\) to \(s\) in
+\(C^1(\Omega)\) on an open set \(\Omega\):
+\begin{enumerate}
+\item The sequence \(s_\alpha\) and \(s\) extend to \(C^1(\bar\Omega)\) and have finite norm \(\max_\Omega |s| +
+   \max_\Omega|ds|\) and \(\max_\Omega |s_\alpha| + \max_\Omega|ds_\alpha|\) and
+\[
+     \max_\Omega |s_\alpha - s| + \max_\Omega |ds-ds_\alpha| \to 0.
+   \]
+In this case, we will say that \(s_\alpha\) converges to \(s\) in \(C^1(\bar\Omega)\). If no other information is given, we will suppose this notion of convergence.
+\item \(C^1(\Omega)\) is topologised by a family of seminorms
+\(\Gamma_K:\ s\longmapsto \max_{K} |s| + \max_{K}|ds|\)
+for \(K\Subset\Omega\). This makes \(C^1(\Omega)\) a Fréchet topological vector space.
+If the sequence \(s_\alpha\) converges to \(s\) under this topology then we will
+say that \(s_\alpha\) converges uniformly to \(s\) on compacts of \(\Omega\).
+\end{enumerate}
+\end{remark}
+
+\begin{proof}
+We consider \(s_\alpha\) and \(s\) as maps from the unit disc \(D\) to \(\mathbb{R}^k\), then by Main estimate Lemma \ref{lem:main-est} for \(p=4\), since \(E(s_\alpha) < \epsilon\), one has:
+\[
+\|ds_\alpha\|_{W^{1,4}(D(1/2), \mathbb{R}^k)} \leq C(4, D(1/2)) \| ds_\alpha\|_{L^2(D)} =
+C(4, D(1/2)) E(s_\alpha)^{1/2}
+\]
+So \(\{s_\alpha\}\) is bounded in \(W^{1,4}(D(1/2), \mathbb{R}^k)\) which is embedded
+compactly into \(C^1(\overline{D(1/2)}, \mathbb{R}^k)\).
+
+We now can prove that \(s_\alpha\) converges strongly to \(s\) in \(C^1(\overline{D(1/2)},\mathbb{R}^k)\): If there was a subsequence \(\{s_\beta\}\)
+whose restriction to \(\overline{D(1/2)}\) remains \(C^1\)-away from \(s\), then by compactness of \(W^{1,4}(D(1/2),
+\mathbb{R}^k) \hookrightarrow C^1(\overline{D(1/2)}, \mathbb{R}^k)\), we can suppose that \(\{s_\beta\}\) converges in \(C^1\) to a certain \(\bar s\ne s\) on \(\overline{D(1/2)}\). But as a
+subsequence of \(\{s_\alpha\}\), \(\{s_\beta\}\) converges weakly to \(s\) on \(D\), hence \(\overline{D(1/2)}\), we than obtain a contradiction using the uniqueness of
+weak limit.
+
+By considering the Euler-Lagrange equation and letting \(\alpha\to 0\), one concludes
+that \(s\) a harmonic map from \(D(1/2)\) to \(N\).
+\end{proof}
+
+The global convergence of \(\{s_\alpha\}\) can be established by a well-chosen covering
+of \(M\) by small balls or radius \(R\).
+
+\begin{proposition}
+\label{prop:2-sacks-uhlenbeck}
+Let \(s_\alpha:M \longrightarrow N\subset \mathbb{R}^k\) be critical maps of \(E_\alpha\) on \(M\) such that \(s_\alpha\) converges weakly to \(s\) in \(W^{1,2}(M,
+\mathbb{R}^k)\) and \(E(s_\alpha) < B\). Then there exists \(l=l(B,N)\) such that given any \(m>0\),
+one can find a sequence \(\{x_{m,1},\dots, x_{m,l}\}\subset M\) and a subsequence \(\{s_{\alpha(m)}\}\) of \(\{s_\alpha\}\) such that
+\[
+ s_{\alpha(m)} \longrightarrow  s\ \text{in } C^1\left(M\setminus\bigcup_{i=1}^{l} D(x_{m,i}, 2^{-m+1}),N\right)
+\]
+\end{proposition}
+\begin{proof}
+We cover \(M\) by finitely many ball \(D(y_i, 2^{-m})\) such that each point is covered
+at most \(h\) times by the bigger balls \(D(y_i,2^{-m+1})\). By Lemma
+\ref{lem:uni-loc-finite-cover} (a consequence of the \href{sobolev-riemannian.org}{comparison of the Riemannian
+manifold \(M\) with spaceforms}), \(h\) can be chosen independently of \(m\) as \(2^{-m} \to 0\).
+
+
+Since \(\sum_i \int_{D(y_i, 2^{-m+1})} |ds_\alpha|^2 < B h\), choosing \(l = \lceil
+\frac{Bh}{2\epsilon} \rceil\), we see that there are at most \(l\) balls \(D(y_{\alpha,i},
+2^{-m+1})\) depending on \(\alpha\), on which the energy \(E(s_\alpha)\) is less than
+\(\epsilon\). Passing to a subsequence \(\{s_{\alpha(m)}\}\) of \(\{s_\alpha\}\),
+we can suppose that \(\{y_{\alpha(m),i} \}\) converges to \(x_{m,i}\) as \(\{\alpha(m)\} \to 1\). But since the points \(\{y_i\}\) are of finite number and
+separated, \(y_{\alpha(m),i}\equiv x_{m,i}\) eventually and we can suppose that the bad balls
+\(D(y_{\alpha(m),i})\) where energy of \(s_{\alpha(m)}\) surpasses \(\epsilon\) are
+the same for every \(s_{\alpha(m)}\).
+
+Now apply Lemma \ref{lem:key-sacks-uhlenbeck} to the sequence \(\{s_{\alpha(m)}\}\) on all
+the other \(2^{-m+1}\)-balls, one sees that \(\{s_{\alpha(m)}\}\) converges in \(C^1\) to \(s\) on all \(\overline{D(y_i, 2^{-m})}\) except those centered at \(x_{m,i}\). The conclusion follows.
+\end{proof}
+
+Using a diagonal argument, we can find a subsequence \(\{s_\beta\}\) of \(\{s_\alpha\}\) that converges to \(s\) uniformly on compacts of \(M\setminus \{x_1,\dots, x_l\}\).
+
+\begin{theorem}[Convergence of \( \{s_\alpha\} \)]
+\label{thm:5-convergence-crit-map}
+Let \(s_\alpha:M \longrightarrow N\subset \mathbb{R}^k\) be critical maps of \(E_\alpha\) on \(M\) such that \(s_\alpha\) converges weakly to \(s\) in \(W^{1,2}(M,
+\mathbb{R}^k)\) and \(E(s_\alpha) < B\). Then there exist at most \(l\) points \(x_1,\dots, x_l\) in \(M\), where \(l\) is given by Proposition
+\ref{prop:2-sacks-uhlenbeck}, and a subsequence \(\{s_\beta\}\) of \(\{s_\alpha\}\) such that
+\[
+s_\beta \longrightarrow  s \ \text{in } C^1(M\setminus\{x_1,\dots, x_l\}, \mathbb{R}^k) \
+\text{uniformly on compacts}.
+\]
+\end{theorem}
+\begin{proof}
+By passing to a subsequence \(\{m_k\}\) of \(\{ m\}\), we can suppose that
+\(\{x_{m,i}\}\) converges to \(x_i\) in \(M\). Choose the diagonal subsequence \(\{s_\beta\}\) from \(\{s_{\alpha(m)}\}\) that consists of \(s_{\alpha(m)(a_m)}\)
+where \(a_m\) is sufficiently big such that \(\alpha(m)(a_m)\) is increasing and
+\(\|s_{\alpha(m)(b)} - s_{\alpha(m)(c)} \|_{C^1(M\setminus \cup_i D(x_{m,i},2^{-m+1})} <
+\frac{1}{m}\) for all \(b,c\geq a_m\). Then the sequence \(\{s_\beta\}\) converges
+uniformly on compacts of \(M\setminus\{x_1,\dots,x_l\}\) because \(\{\bigcup_i
+D(x_{m,i}, 2^{-m+1})\}_m\) is an exhaustive family of compacts of \(M\setminus\{x_1,\dots,x_l\}\).
+\end{proof}
+
+\begin{remark}
+With the same notation as Theorem \ref{thm:5-convergence-crit-map},
+\begin{enumerate}
+\item The image \(s(M\setminus\{x_1,\dots,x_l\}\) lies in \(N\). Also, using the
+Euler-Lagrange equation, one sees that \(s\) is a (smooth) harmonic map from \(M\setminus\{x_1,\dots, x_l\}\) to \(N\).
+\item Since \(E(s) \leq \|s\|_{W^{1,2}}^2 \leq \liminf_{\alpha\to 1} \|s_\alpha\|^2 \leq
+   \const<+\infty\), \(\restr{s}{M\setminus\{x_1,\dots, x_l\}}\) extends to a harmonic
+maps \(\tilde s:\ M \longrightarrow N\). We can suppose that the limit \(s\) of
+Theorem \ref{thm:5-convergence-crit-map} is smooth harmonic map on \(M\) and of image
+in \(N\).
+\end{enumerate}
+\end{remark}
+
+
+\section{Nontrivial harmonic maps from \(\mathbb{S}^2\).}
+\label{sec:org5815024}
+We will now prove the existence of nontrivial harmonic maps from \(\mathbb{S}^2\) to a
+compact Riemannian manifold \(N\) satisfying the conditions of Theorem
+\ref{thm:3-nontrivial-crit}. 
+
+The following theorem does not suppose any condition on \(N\).
+
+\begin{theorem}
+\label{thm:6-final-sacks-uhlenbeck}
+Let \(M\) be a compact surface and \(s_\alpha\) be critical maps of \(E_\alpha\). Suppose that
+\begin{itemize}
+\item \(s_\alpha\) converges in \(C^1\) to \(s\) uniformly on compacts of \(M\setminus\{x_1,\dots,x_l\}\) but not on \(M\setminus\{x_2,\dots,x_l\}\).
+\item \(E(s_\alpha) < B\)
+\end{itemize}
+Then there exists a nontrivial harmonic map \(s_*: \mathbb{S}^2 \longrightarrow N\).
+\end{theorem}
+
+Before proving the theorem, let us state its corollary.
+
+\begin{corollary}[Nontrivial harmonic map from \(\mathbb{S}^2\)]
+If the universal covering \(\tilde N\) of \(N\) is not contractible then there exists
+a nontrivial harmonic map \(s: \mathbb{S}^2 \longrightarrow N\).
+\end{corollary}
+
+\begin{proof}
+By Theorem \ref{thm:3-nontrivial-crit} and Theorem \ref{thm:4-trivial-energy}, there exist
+critical maps \(s_\alpha: \mathbb{S}^2 \longrightarrow N\) of \(E_\alpha\) corresponding to critical values \(E_\alpha(s_\alpha)\) in \((1+\delta,B)\). We claim that \(\{s_\alpha\}\) cannot converges
+in \(C^1(M)\) to a trivial harmonic map \(s\in N_0\). In fact, if it did,
+\[
+ 1+\delta  \leq \lim_{\alpha\to 1} \int_M (1+|ds_\alpha|^2)^\alpha dV = \int_M (1+|ds|^2)dV
+= 1
+\]
+which is contradictory.
+
+Therefore, we only have two possibilities: 
+\begin{itemize}
+\item \(\{s_\alpha\}\) does not converge in \(C^1(M)\) to \(s\), then by Theorem
+\ref{thm:6-final-sacks-uhlenbeck}, there exists a nontrivial harmonic map \(s_*:
+  \mathbb{S}^2 \longrightarrow N\).
+\item If \(\{s_\alpha\}\) converge in \(C^1(M)\) to a certain \(\tilde s\), then as
+argued above, \(\tilde s\) is nontrivial.
+\end{itemize}
+In both cases, nontrivial harmonic map from \(\mathbb{S}^2\) to \(N\) exists.
+\end{proof}
+
+Let us now prove Theorem \ref{thm:6-final-sacks-uhlenbeck}.
+
+\begin{proof}[Proof of Theorem \ref{thm:6-final-sacks-uhlenbeck}]
+If there is no \(C^1\) convergence near \(x_1\), we claim that:
+
+\begin{assertion}
+\label{assert:3-star}
+For all \(C>0\) and \(\delta >0\), there exists \(\alpha >1\) arbitrarily close to 1 such that
+\[
+ \max_{\overline{D}(x_1,2\delta)}|ds_\alpha|  > C.
+\]
+Moreover, we can suppose that \(\max_{\overline{D}(x_1,2\delta)}|ds_\alpha| = \max_{D(x_1,\delta)}|ds_\alpha|\).
+\end{assertion}
+
+
+Suppose that were not the case, then there exist \(C,\delta >0\) such that \(\max_{D(x_1,2\delta)} |ds_\alpha| \leq C\) for all \(\alpha>1\) sufficiently close
+to 1. Choose an radius \(R \ll \delta\) such that
+\[
+ \int_{D(x_1,R)} |ds_\alpha|^2 \leq \pi R^2 C^2 <\epsilon
+\]
+It suffices to apply Key lemma \ref{lem:key-sacks-uhlenbeck} to see that \(s_\alpha \to s\) in \(C^1(D(x_1,R/2))\), hence \(s_\alpha\) converges to \(s\) in \(C^1(M\setminus\{x_2,\dots,x_l\})\) uniformly on compacts. Moreover, since \(\{ds_\alpha\}\) converges uniformly to \(ds\) on \(\overline{D}(x_1,2\delta)\setminus
+D(x_1,\delta)\), we can suppose, with \(\alpha\) sufficiently close to \(1\) that the
+maximum is actually attained in \(D(x_1,\delta)\).
+
+
+Therefore, we can choose a sequence \(\{C_n\}\) increasing to \(+\infty\) and \(\{\delta_n\}\)
+decreasing to \(0\), such that \(C_n\delta_n\) diverging to \(+\infty\) and there exists a sequence \(\{\alpha_n\}\) decreasing to \(1\)
+such that
+\[
+ \left| ds_{\alpha_n}(y_n)\right|:=\max_{D(x_1,\delta_n)}|ds_{\alpha_n}|=\max_{D(x_1,2\delta_n)}|ds_{\alpha_n}| = C_n
+\]
+
+We define 
+\begin{align*}
+  \tilde s_{\alpha_n}:\ D(\delta_n C_n) & \longrightarrow N \\
+  	 		x	   	&\longmapsto 	  s_{\alpha_n}(y_n + C^{-1}_nx)
+\end{align*}
+then \(|d\tilde s_{\alpha_n}(0)|= \max_{D(C_n\delta_n)}|d\tilde s_{\alpha_n}| = 1\).
+
+Fix any large \(R <+\infty\), since \(C_n\delta_n\to +\infty\), \(\tilde s_{\alpha_n}\)  is eventually defined on \(D(R)\) and is a critical point of \(E_{\alpha_n}\) with
+respect to a metric \(\tilde g_n\) on \(D(R)\) converging to the Euclidean metric. The
+energy \(E(\restr{\tilde s_{\alpha_n}}{D(C_n\delta_n)},\tilde g_n) = E(\restr{\tilde
+s_{\alpha_n}}{D(y_n,\delta_n)},g_M)\leq B\).
+
+We claim that Proposition \ref{prop:2-sacks-uhlenbeck} and Theorem \ref{thm:5-convergence-crit-map} remains
+correct when \(M=D(R)\) and \(s_\alpha\) are critical maps of \(E_\alpha\) with
+respect to metrics \(\tilde g_\alpha\) converging to the Euclidean metric. To be
+precise:
+
+
+\begin{assertion}
+\label{prop:3-star}
+Let \(\tilde s_\alpha:\ (D(R),\tilde g_\alpha) \longrightarrow N\subset \mathbb{R}^k\)
+be critical maps of \(E_\alpha\) such that
+\begin{itemize}
+\item \(s_\alpha\) converges weakly to \(s_*\) in \(W^{1,2}(D(R), \text{Euclidean})\),
+\item \(E(s_\alpha) < B\)
+\end{itemize}
+then there exists at most \(l\) points \(\{x_1,\dots,x_l\}\) in \(\overline{D}(R)\)
+and a subsequence \(\{s_\beta\}\) such that \(s_\beta\) converges to \(s_*\) in \(C^1(\overline{D}({R/2})\setminus
+\{x_1,\dots, x_l\}, \mathbb{R}^k)\) uniformly on compacts, and \(s_*\) is harmonic in
+\(D(R/2)\).
+\end{assertion}
+
+
+The two ingredients of the proof of Proposition \ref{prop:2-sacks-uhlenbeck} and
+Theorem \ref{thm:5-convergence-crit-map} to be investigated are the covering and the estimate from Lemma
+\ref{lem:main-est}. For the estimates, we already remarked that the parameters \(\alpha_0,\epsilon,C(p,D')\) of Lemma \ref{lem:main-est} can be chosen independent of the
+metric \(\tilde g_\alpha\) if they are close to Euclidean. For the covering, the investigation is not on the constant
+\(h\), which can be chosen to be
+\(3^{\dim M}\), but on how small the radius of the covering balls must be, but Lemma
+\ref{lem:uni-loc-finite-cover} states that their size is dictated by the Ricci curvature and
+sectional curvature of \(\tilde g_\alpha\), which are also uniformly bounded.
+
+
+Using Assertion \ref{prop:3-star}, passing to a subsequence of \(\{\tilde s_{\alpha_n}\}\)
+if necessary, we can suppose that \(\tilde s_{\alpha_n} \to s_*\) in \(C^1(D(R),
+\mathbb{R}^k)\). Note that there is no singular point where \(\{\tilde s_{\alpha_n}\}\) fails to converge because \(|d\tilde s_{\alpha_n}|\) is bounded uniformly on \(D(R)\) (hence cannot explode as in Assertion \ref{assert:3-star}). We can also choose, by a
+diagonal argument, a
+subsequence of \(\{\tilde s_{\alpha_n}\}\) that converges to \(s_*\) in \(C^1(\mathbb{R}^2)\) uniformly on compacts.
+
+It is clear that \(s_*: \mathbb{R}^2 \longrightarrow N\) is harmonic and nontrivial
+because
+\[
+ \left| ds_*(0)\right|_{\text{Euclid}} = \lim_{\alpha_{n}\to 1}|d\tilde s_{\alpha_n}(0)|_{\tilde
+g_{\alpha_n}} = 1.
+\]
+Also,
+\[
+ \int_{D(R)}|ds_*|^2 dE = \lim_{\alpha_n \to 1}\int_{D(R)} |d\tilde
+s_{\alpha_n}|^2dV_{\tilde g_\alpha} \leq \limsup_{\alpha\to 1}
+2E(\restr{s_{\alpha}}{D(x_1,2\delta_n)}) < 2B
+\]
+which means the energy of \(s_*\) on \(\mathbb{R}^2\) is bounded above by \(2B\).
+
+Now since \((\mathbb{R}^2, \text{Euclid})\) is conformal to \(\mathbb{S}^2\setminus\{p\}\), \(s_*\) can be seen as a harmonic map on \(\mathbb{S}^2\setminus\{p\}\) with the
+same (finite) energy. By Extension theorem \ref{thm:extension-sacks-uhlenbeck}, \(s_*\)
+extends to a nontrivial harmonic map from \(\mathbb{S}^2\) to \(N\).
+\end{proof}
+
+
+\begin{remark}
+\label{rem:final-sacks-uhlenbeck}
+\begin{enumerate}
+\item We can have a better estimate of \(E(s_*)\). For any \(R>0\), one has
+\[
+    E(\restr{s_*}{D(R)}) + E(\restr{s}{M\setminus \cup_{i=1}^l D(x_i,\delta_n)}) \leq
+    \limsup_{\alpha_n\to 1} \left[E(\restr{s_{\alpha_n}}{D(x_1,\delta_n)}) + E(\restr{s_{\alpha_n}}{M\setminus\cup_{i=1}^l D(x_i,\delta_n)})\right]
+   \]
+ Let \(\delta \to 0\) then \(R\to +\infty\), one has
+\[
+   E(s_*) + E(s) \leq \limsup_{\alpha\to 1} E(s_\alpha).
+   \]
+\item The proof of Theorem \ref{thm:6-final-sacks-uhlenbeck} also gives a constraint on the
+image of \(s_*\): since \(s_*(D(R))\subset
+   \overline{\cup_{1<\beta<\alpha}s_\beta(D(x_1,2\delta))}\) for all \(\alpha\)
+arbitrarily close to \(1\) and \(\delta\) arbitrarily small, one has
+\[
+   s_*(\mathbb{S}^2)\subset \bigcap_{\delta \to 0}\bigcap_{\alpha \to 1}
+   \overline{\bigcup_{1<\beta<\alpha}s_\beta(D(x_1, \delta))}
+   \]
+\end{enumerate}
+\end{remark}
+
+
+
+\section{Minimal immersions of \(\mathbb{S}^2\).}
+\label{sec:org8c1ce33}
+
+Using the following result:
+
+\begin{theorem}[\cite{chern_volume_1975}, \cite{gulliver_theory_1973}, \cite{eells_harmonic_1964}]
+If \(s: \mathbb{S}^2 \longrightarrow N\) is a nontrivial harmonic map and \(\dim N\geq
+3\), then \(s\) is a \(C^\infty\) conformal, branched, minimal immersion.
+\end{theorem}
+where the "minimal" part follows from \cite{eells_harmonic_1964}, the "branched" part
+follows from \cite{gulliver_theory_1973} and the "conformal" part follows from
+\cite{chern_volume_1975} and the fact that there is no nontrivial holomorphic quadratic
+differential on \(\mathbb{S}^2\). Theorem \ref{thm:6-final-sacks-uhlenbeck} gives:
+
+\begin{theorem}
+If the universal covering \(\tilde N\) of \(N\) is not contractible then there exists
+a \(C^\infty\) conformal, branched, minimal immersion \(s: \mathbb{S}^2 \longrightarrow N\).
+\end{theorem}
+
+
+\iffalse
+\bibliographystyle{alpha}
+\bibliography{../res/Stage2018}
+\fi

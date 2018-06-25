@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-06-25 Mon 22:31 -->
+<!-- 2018-06-11 Mon 11:12 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Two theorems of Hartogs</title>
+<title>Topological characterisation of affine \( \mathbb{C} \)-schemes (Stein manifolds)</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="darknmt" />
+<meta name="author" content="Tien NGUYEN MANH" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -255,18 +255,16 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div id="content">
-<h1 class="title">Two theorems of Hartogs</h1>
+<h1 class="title">Topological characterisation of affine \( \mathbb{C} \)-schemes (Stein manifolds)</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org97d4bbc">1. Hartogs' theorem for subharmonic function</a></li>
-<li><a href="#orgdd0b02b">2. Hartogs theorem of separately holomorphicity</a>
-<ul>
-<li><a href="#org5d8ca24">2.1. Application of Baire theorem.</a></li>
-<li><a href="#org8b1d273">2.2. Analysis of series decomposition.</a></li>
-</ul>
-</li>
+<li><a href="#org3df22af">1. The statement of Cieliebak-Eliashberg about topology of Stein manifold.</a></li>
+<li><a href="#org71fd0bf">2. Morse theory and strategy of the proof.</a></li>
+<li><a href="#orgf67a61d">3. \( J \)-convex functions</a></li>
+<li><a href="#orgbb9c353">4. Extension of complex structure.</a></li>
+<li><a href="#org4807a83">5. Extension of \( J \)-convex function.</a></li>
 </ul>
 </div>
 </div>
@@ -297,209 +295,160 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
 \)
 
-<div id="outline-container-org97d4bbc" class="outline-2">
-<h2 id="org97d4bbc"><span class="section-number-2">1</span> Hartogs' theorem for subharmonic function</h2>
+<p>
+This is the note of my presentation as final exam of the course <i>Introduction au h-principe de Gromov</i> given by
+<a href="https://www.math.u-psud.fr/~pmassot/">Patrick Massot</a> at Departement de Mathématiques d'Orsay. I presented how Cieliebak and
+Eliashberg <a class='org-ref-reference' href="#cieliebak_stein_2013">cieliebak_stein_2013</a> applied h-principle to characterise the topology of
+Stein manifold. Further discussion can be found in the book <a class='org-ref-reference' href="#eliashberg_stein_2012">eliashberg_stein_2012</a>.
+</p>
+
+<div id="outline-container-org3df22af" class="outline-2">
+<h2 id="org3df22af"><span class="section-number-2">1</span> The statement of Cieliebak-Eliashberg about topology of Stein manifold.</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-The first Hartogs theorem concerns the convergence of harmonic functions. It says that
-under certain conditions, the convergence, apriori pointwise, is actually uniform on every compacts.
+Stein manifolds are affine schemes over \( \mathbb{C} \). There are many equivalent
+definitions of Stein manifolds, but we will use the following two:
 </p>
-<div id="thm:hartogs-subhar" btit="(Hartogs on subharmonic functions)" class="theorem">
+<ul class="org-ul">
+<li>They are complex manifolds that can be properly embedded into \( \mathbb{C}^N \) for
+some \( N\in \mathbb{Z}_{>0} \).</li>
+<li>They are complex manifolds that admit an <i>exhaustive</i>, <i>strictly plurisubharmonic</i> (PSH)
+function \( \phi \). The exhaustive part means that \( \phi \) is a proper, real-value
+function bounded below, and the strictly plurisubharmonic part means that \( -dd^c
+  \phi(v,Jv) > 0 \) for all tangent vector \( v \), where \( d^c\phi = d\phi\circ J \).</li>
+</ul>
+
 <p>
-Let \( \Omega \) be a domain and \( u_k \in SH(\Omega) \) a sequence of subharmonic
-function such that
+Strictly PSH condition locally reads: \( \frac{\partial^2 \phi}{\partial z^i \bar\partial
+z^j}\xi^i\bar\xi^j >0 \), this means that the restriction of \( \phi  \) on each complex
+line is subharmonic, i.e. it satisfies the sub-mean property. 
+</p>
+
+<p>
+Since we will frequently change the complex structure on manifold, it is better to make it
+appear explicitly in the notation of plurisubharmonicity. So instead of saying a
+function \( \phi \) is (strictly) PSH with respect to the complex structure \( J \), we
+will say that \( \phi \) is \( J \)-convex.
+</p>
+
+<div btit="(Stein manifolds)" class="exampl">
+<p>
+Here are a few example of Stein manifolds:
 </p>
 <ol class="org-ol">
-<li>Uniformly bounded on compacts: \( \restr{u_k}{K} < M_K \).</li>
-<li>Pointwise limit is continuous: \( \limsup_k u_k(x) = C \)</li>
+<li>The complex affine spaces \( \mathbb{C}^n \), a sub complex manifold of \( \mathbb{C}^N
+   \).</li>
+<li>Let \( X \) be a closed sub complex manifold of \( \mathbb{P}^N_{\mathbb{C}} \) and \(
+   H \subset \mathbb{P}^N_{\mathbb{C}}\) be a complex hyperplan. Then \( X\setminus H
+   \hookrightarrow \mathbb{P}^N_{\mathbb{C}}\setminus H = \mathbb{C}^N \) is a Stein manifold.</li>
 </ol>
+
+</div>
+
 <p>
-Then for every \( K\subset \Omega \) compact and \( \varepsilon >0 \), there exists \(
-N(K,\varepsilon) >0 \) such that \( u_k < C+ \varepsilon \) for all \( k > N(K,\varepsilon) \)
+Our goal will be to answer the following question:
+</p>
+
+<p>
+<b>Question.</b> Topologically, what are Stein manifolds.
+</p>
+
+<p>
+In other words, we want to find a necessary and sufficient condition of a differential
+manifold \( V \) (without boundary) such that we can equip \( V \) with a complex structure \( J \) that
+makes it a Stein manifold. It is easy to see that the following two conditions are
+necessary:
+</p>
+<ol class="org-ol">
+<li>\( V \) admits an almost complex structure.</li>
+<li>\( V \) is an open manifold, i.e. there is no compact connected component of \( V
+   \). This is an immediate consequence of Maximum modulus principle for holomorphic functions.</li>
+</ol>
+
+<p>
+There is another less obvious necessary condition:
+</p>
+
+<div id="rem:third-cond" class="remark">
+<p>
+Let \( (V,J,\phi) \) be a Stein manifold. By a generic perturbation we can suppose that \(
+\phi \) is a Morse function (the Hessian of \( \phi \) is non-degenerate at the critical
+points of \( \phi \)). Then the index of any critical point \( p \) of \( \phi \) is less
+than \( n = \dim_\mathbb{C}V \).
 </p>
 
 </div>
 
-<div class="proof">
 <p>
-By covering \( \Omega \) with an increasing sequence of compact \( K_n \) that \( K_n
-\Subset Int(K_{n+1}) \), one can suppose that \( u_k<M \) on \( \Omega \). One can also
-suppose that \( M=0 \). Note that it
-suffices to prove that for any \( x\in \Omega \), there exists \( N(x,\varepsilon) \) such
-that \( u_k < C+\varepsilon \) on a neighborhood \( U_x \) of \( x \) for all \( k>N(x,\varepsilon) \), then the conclusion
-follows by compactness of \( K \).
+The remark follows from a kind of Pigeonhole principle. Suppose that the index of \( p \)
+is strictly bigger than \( n \), then there exists a complex dimension in \( T_pV \) where
+the Hessian of \( \phi \) is definite negative, this means that there is a complex curve \(
+C \) passing by \( p \) on which the function \( \phi \) admits a local maximum at \( p
+\). This contradicts the pluriharmonicity.
 </p>
 
 <p>
-One has \( \lim_{k\to +\infty}\int_{B(x,R)}u_k = C|B(R)| \) by monotone convergence, so
-\( \int_{B(x,R)}u_k < (C + \varepsilon) |B(R)|\) for \( k> N_1(x,\varepsilon) \). For any
-\( r\ll R \) and \( y\in B(x,r) \) one has \( \int_{B(y, R+ r)}u_k \leq \int_{B(x,R)}u_k <
-(C+\varepsilon)|B(R)|\). Therefore
-\[
-u_k(y)\leq (C+\varepsilon)\frac{|B(R)|}{|B(R+r)|}\leq C+2\varepsilon\qquad \forall r \ll
-R, k>N_1(x,\varepsilon)
-\]
-which shows that \( u_k < C+2\varepsilon \) for in a small neighborhood \( B(x,r) \) of \( x \). 
+It was proved by Cieliebak and Eliashberg that these conditions are sufficient.
 </p>
 
-</div>
-
-<div class="remark">
+<div id="thm:topo-Stein" btit="(Cieliebak-Eliashberg)" class="theorem">
 <p>
-The Theorem <a href="#thm:hartogs-subhar">thm:hartogs-subhar</a> above can be easily generalized by replacing the
-constant \( C \) by a continuous function \( f \).
+Let \( V \) be a smooth manifold of real dimension \( 2n > 4 \) and \( J  \) be an almost
+complex structure on \( V \) and \( \phi \) be an exhaustive Morse function without any
+critical points of index \( k > n \). Then there exists an integrable complex structure \(
+\tilde J \)  such that \( (V,\tilde J) \) is a Stein manifold.
 </p>
 
 </div>
+
+<p>
+In fact, the authors proved that one can obtain \( \tilde J \) by a homotopy of \( J \)
+and the function \( \phi \) is \( \tilde J \)-convex. In the next part, we will not only
+modify the complex structure \( J \), but also modify the function \( \phi \) to a
+PSH function.
+</p>
 </div>
 </div>
 
 
-<div id="outline-container-orgdd0b02b" class="outline-2">
-<h2 id="orgdd0b02b"><span class="section-number-2">2</span> Hartogs theorem of separately holomorphicity</h2>
+<div id="outline-container-org71fd0bf" class="outline-2">
+<h2 id="org71fd0bf"><span class="section-number-2">2</span> Morse theory and strategy of the proof.</h2>
 <div class="outline-text-2" id="text-2">
-<p>
-The second result of Hartogs that I want to present here is about the founding notion of
-holomorphicity for several complex variables.
-</p>
 
-<div id="thm:hartogs-separate-holo" btit="(Hartogs for separate holomorphicity)" class="theorem">
-<p>
-A function \( f \) separately holomorphic on each variable then \( f \) is smooth and
-hence is completely holomorphic
-</p>
-
-</div>
-
-<p>
-The strategy is to establish the following steps:
-</p>
-
-<ol class="org-ol">
-<li>\( f \) is locally bounded.</li>
-<li>\( f \) is continuous.</li>
-<li>\( f \) is smooth, hence is completely holomorphic.</li>
-</ol>
-
-<p>
-The second and third steps are not difficult. In fact when one knows that \( f \) is
-locally bounded, one can prove that \( f \) is continuous by Schwartz lemma on each
-variable with appropriate scaling.
-\[
-f(z_1,\dots, z_i,\dots \xi_n ) - f(z_1,\dots, \xi_i,\dots, \xi_n)
-\leq |1-\overline{f(\dots,z_i,\dots)}f(\dots, \xi_i, \dots)|\left| \frac{z_i - \xi_i}{1 -
-z_i\bar \xi_i} \right|\quad \forall |z_i|,|\xi|<1, |f|<1 
-\]
-</p>
-
-<p>
-When \( f \) is continuous, one may refind Cauchy integral formulae and differentiability
-follows by dominated convergence.
-</p>
-
-<p>
-So the remaining point is to prove that \( f \) is locally bounded, which can be done
-using Baire theorem and the first Hartogs result, Theorem <a href="#thm:hartogs-subhar">thm:hartogs-subhar</a>.
-</p>
-</div>
-
-<div id="outline-container-org5d8ca24" class="outline-3">
-<h3 id="org5d8ca24"><span class="section-number-3">2.1</span> Application of Baire theorem.</h3>
-<div class="outline-text-3" id="text-2-1">
-<p>
-We will prove Theorem <a href="#thm:hartogs-separate-holo">thm:hartogs-separate-holo</a> by induction on the dimension \( n
-\). We can therefore suppose that with the last variable \( z_n \) fixed, the function is
-completely holomorphic on the \( n-1 \) first variables. Fix a closed \( n \)-polydisc
-\(\mathbb{D}^n\ni x=0 \), denote \[ W_L = \{ (z_1,\dots,z_{n-1})\in
-\mathbb{D}^{n-1}:\quad |f(z_1,\dots,z_n)|\leq L\quad \forall z_n\in \mathbb{D}^1\} \] then
-</p>
-<ol class="org-ol">
-<li>\( \bigcup_{L\in \mathbb{N}} W_L = \mathbb{D}^n \) since for fixed \( (z_1,\dots,z_{n-1})\in
-   \mathbb{D}^{n-1} \), the function \( f \) is continuous on \( z_{n-1} \).</li>
-<li>Each \( W_L \) is closed since for fixed \( z_n \), the function \( f \) is continuous
-on \( n-1 \) first variables.</li>
-</ol>
-<p>
-Therefore by Baire theorem, there exists \( L \) large enough such that \( W_L \) contains
-an open set of \( \mathbb{D}^{n-1} \). Therefore there exists a strip \( U_{n-1}\times
-\mathbb{D}\subset \mathbb{D}^n \) on which the function \( f \) is holomorphic.
-</p>
-
-<p>
-We will extend this strip using the following lemma
-</p>
-<div id="lem:ext-strip" class="lemma">
-<p>
-Let \( f \) be a separately holomorphic function defined on a neighborhood of \( \mathbb{D}^n \) such that
-</p>
-<ol class="org-ol">
-<li>\(f \) is continuous on a neighborhood of the strip \( \mathbb{D}_\rho\times\dots\times \mathbb{D}_\rho\times \mathbb{D} \),</li>
-<li>\( f \) is completely holomorphic on the first \( n-1 \) variables when the last one is fixed,</li>
-</ol>
-<p>
-then \( f \) is completely holomorphic on \( \mathbb{D}^n \)
-</p>
-
-</div>
-
-<p>
-This lemma can be proved using the series decomposition of \( f \). 
+<div class="figure">
+<p><object type="image/svg+xml" data="../img/svg/morse.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object>
 </p>
 </div>
 </div>
-
-<div id="outline-container-org8b1d273" class="outline-3">
-<h3 id="org8b1d273"><span class="section-number-3">2.2</span> Analysis of series decomposition.</h3>
-<div class="outline-text-3" id="text-2-2">
-<p>
-Since \( f \) is completely holomorphic on the first \( n-1 \) variables when \( z_n
-\) is fixed, one has
-\[
-f(z_1, \dots, z_n) = \sum_\alpha a_\alpha(z_n)z^\alpha,\qquad a_\alpha(z_n)=
-\partial^{\alpha} f(0,z_n)/\alpha! \text{ is holomorphic in } z_n
-\]
-Then the fact that for fixed \( z_n \), the holomorphic function \( f(z', z_n) \) is
-well-defined on \( z'\in \mathbb{D}^{n-1} \) shows
-that
-</p>
-\begin{equation}
-\label{eq:1}
- \limsup_{|\alpha| \to \infty}|a_\alpha(z_n)|^{1/|\alpha|} \leq 1.
-\end{equation}
-
-<p>
-Moreover, Cauchy integral on \( \mathbb{D}_\rho\times\dots\times \mathbb{D}_\rho\times
-\mathbb{D} \) shows that
-</p>
-\begin{equation}
-\label{eq:2}
-|a_\alpha(z_n)| = |\partial^{\alpha} f(0,z_n)|/\alpha! \leq \frac{1}{\rho^{|\alpha|}} M
-\end{equation}
-
-<p>
-where \( M \) is an upper bound of \( |f| \) on the strip.
-</p>
-
-<p>
-Let \( u_\alpha = \frac{1}{|\alpha|}\log|a_\alpha| \) be a subharmonic function of \( z_n\in \mathbb{D} \),
-\eqref{eq:1} and \eqref{eq:2} show that \( \limsup_{|\alpha|\to \infty} u_\alpha\leq 0 \) and
-\( u_\alpha \leq \frac{1}{|\alpha|}\log M -\log\rho \) hence uniformly bounded.
-</p>
-
-<p>
-By Theorem <a href="#thm:hartogs-subhar">thm:hartogs-subhar</a>, one has \(|a_\alpha(z_n)|^{1/|\alpha|} \leq
-1+\varepsilon \) for \( |\alpha| \) sufficient large. Letting \( \varepsilon \to 0 \), one
-sees that the series converge normally in the interieur of \( \mathbb{D}^{n-1} \), hence
-by Cauchy-Montel the limit \( f \) is holomorphic in the interieur of \( \mathbb{D}^n \).
-</p>
 </div>
+
+
+<div id="outline-container-orgf67a61d" class="outline-2">
+<h2 id="orgf67a61d"><span class="section-number-2">3</span> \( J \)-convex functions</h2>
+</div>
+
+<div id="outline-container-orgbb9c353" class="outline-2">
+<h2 id="orgbb9c353"><span class="section-number-2">4</span> Extension of complex structure.</h2>
+</div>
+
+<div id="outline-container-org4807a83" class="outline-2">
+<h2 id="org4807a83"><span class="section-number-2">5</span> Extension of \( J \)-convex function.</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+
+<h1 class='org-ref-bib-h1'>Bibliography</h1>
+<ul class='org-ref-bib'><li><a id="cieliebak_stein_2013">[cieliebak_stein_2013] Cieliebak & Eliashberg, Stein structures: existence and flexibility, <i>arXiv:1305.1619 [math]</i>, <b></b>, (2013). <a href="http://arxiv.org/abs/1305.1619">link</a>.</a></li>
+<li><a id="eliashberg_stein_2012">[eliashberg_stein_2012] Cieliebak & Eliashberg, From Stein to Weinstein and back : symplectic geometry of affine complex manifolds, Providence, R.I.: American Mathematical Society (2012).</a></li>
+</ul>
+</p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
-By darknmt.<br>
-Last updated 2018-01-08 Mon 17:56. <br>
+By Tien NGUYEN MANH.<br>
+Last updated 2018-06-11 Mon 11:12. <br>
 </div>
 </div>
 </body>

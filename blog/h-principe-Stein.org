@@ -1,0 +1,106 @@
+#+TITLE: Topological characterisation of affine \( \mathbb{C} \)-schemes (Stein manifolds)
+#+AUTHOR: Tien NGUYEN MANH
+#+DATE: June 11, 2018
+# +STARTUP: indent
+# +STARTUP: showstars
+
+#+SETUPFILE: ../res/mathsetup.org
+#+INCLUDE: ../res/include.org
+
+This is the note of my presentation as final exam of the course /Introduction au h-principe de Gromov/ given by
+[[https://www.math.u-psud.fr/~pmassot/][Patrick Massot]] at Departement de Mathématiques d'Orsay. I presented how Cieliebak and
+Eliashberg cite:cieliebak_stein_2013 applied h-principle to characterise the topology of
+Stein manifold. Further discussion can be found in the book cite:eliashberg_stein_2012.
+
+* The statement of Cieliebak-Eliashberg about topology of Stein manifold.
+Stein manifolds are affine schemes over \( \mathbb{C} \). There are many equivalent
+definitions of Stein manifolds, but we will use the following two:
+- They are complex manifolds that can be properly embedded into \( \mathbb{C}^N \) for
+  some \( N\in \mathbb{Z}_{>0} \).
+- They are complex manifolds that admit an /exhaustive/, /strictly plurisubharmonic/ (PSH)
+  function \( \phi \). The exhaustive part means that \( \phi \) is a proper, real-value
+  function bounded below, and the strictly plurisubharmonic part means that \( -dd^c
+  \phi(v,Jv) > 0 \) for all tangent vector \( v \), where \( d^c\phi = d\phi\circ J \).
+
+Strictly PSH condition locally reads: \( \frac{\partial^2 \phi}{\partial z^i \bar\partial
+z^j}\xi^i\bar\xi^j >0 \), this means that the restriction of \( \phi  \) on each complex
+line is subharmonic, i.e. it satisfies the sub-mean property. 
+
+Since we will frequently change the complex structure on manifold, it is better to make it
+appear explicitly in the notation of plurisubharmonicity. So instead of saying a
+function \( \phi \) is (strictly) PSH with respect to the complex structure \( J \), we
+will say that \( \phi \) is \( J \)-convex.
+
+#+ATTR_LATEX: :options [Stein manifolds]
+#+ATTR_HTML: :btit (Stein manifolds) 
+#+BEGIN_exampl
+Here are a few example of Stein manifolds:
+1. The complex affine spaces \( \mathbb{C}^n \), a sub complex manifold of \( \mathbb{C}^N
+   \).
+2. Let \( X \) be a closed sub complex manifold of \( \mathbb{P}^N_{\mathbb{C}} \) and \(
+   H \subset \mathbb{P}^N_{\mathbb{C}}\) be a complex hyperplan. Then \( X\setminus H
+   \hookrightarrow \mathbb{P}^N_{\mathbb{C}}\setminus H = \mathbb{C}^N \) is a Stein manifold.
+#+END_exampl
+
+Our goal will be to answer the following question:
+
+*Question.* Topologically, what are Stein manifolds.
+
+In other words, we want to find a necessary and sufficient condition of a differential
+manifold \( V \) (without boundary) such that we can equip \( V \) with a complex structure \( J \) that
+makes it a Stein manifold. It is easy to see that the following two conditions are
+necessary:
+1. \( V \) admits an almost complex structure.
+2. \( V \) is an open manifold, i.e. there is no compact connected component of \( V
+   \). This is an immediate consequence of Maximum modulus principle for holomorphic functions.
+
+There is another less obvious necessary condition:
+
+#+ATTR_HTML: :id rem:third-cond
+#+BEGIN_remark
+#+LATEX: \label{rem:third-cond}
+Let \( (V,J,\phi) \) be a Stein manifold. By a generic perturbation we can suppose that \(
+\phi \) is a Morse function (the Hessian of \( \phi \) is non-degenerate at the critical
+points of \( \phi \)). Then the index of any critical point \( p \) of \( \phi \) is less
+than \( n = \dim_\mathbb{C}V \).
+#+END_remark
+
+The remark follows from a kind of Pigeonhole principle. Suppose that the index of \( p \)
+is strictly bigger than \( n \), then there exists a complex dimension in \( T_pV \) where
+the Hessian of \( \phi \) is definite negative, this means that there is a complex curve \(
+C \) passing by \( p \) on which the function \( \phi \) admits a local maximum at \( p
+\). This contradicts the pluriharmonicity.
+
+It was proved by Cieliebak and Eliashberg that these conditions are sufficient.
+
+#+ATTR_LATEX: :options [Cieliebak-Eliashberg]
+#+ATTR_HTML: :id thm:topo-Stein :btit (Cieliebak-Eliashberg) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:topo-Stein}
+Let \( V \) be a smooth manifold of real dimension \( 2n > 4 \) and \( J  \) be an almost
+complex structure on \( V \) and \( \phi \) be an exhaustive Morse function without any
+critical points of index \( k > n \). Then there exists an integrable complex structure \(
+\tilde J \)  such that \( (V,\tilde J) \) is a Stein manifold.
+#+END_theorem
+
+In fact, the authors proved that one can obtain \( \tilde J \) by a homotopy of \( J \)
+and the function \( \phi \) is \( \tilde J \)-convex. In the next part, we will not only
+modify the complex structure \( J \), but also modify the function \( \phi \) to a
+PSH function.
+
+
+* Morse theory and strategy of the proof.
+
+[[../img/svg/morse.svg]]
+
+
+* \( J \)-convex functions
+
+* Extension of complex structure.
+
+* Extension of \( J \)-convex function.
+
+
+
+bibliographystyle:alpha
+bibliography:../res/blog.bib

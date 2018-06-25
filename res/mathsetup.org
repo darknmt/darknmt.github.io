@@ -25,6 +25,9 @@
 #+LATEX_HEADER: \newtheorem{exampl}{Example} 
 #+LATEX_HEADER: \newtheorem{definition}{Definition} 
 #+LATEX_HEADER: \newtheorem{propdef}[definition]{Proposition-Definition}
+#+LATEX_HEADER: \newtheorem{fact}{Fact}
+#+LATEX_HEADER: \newtheorem{assertion}{Assertion}
+
 
 #+LATEX_HEADER:    \newcommand{\re}{\mathop{\rm Re}\nolimits}
 #+LATEX_HEADER:    \newcommand{\im}{\mathop{\rm Im}\nolimits}

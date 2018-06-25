@@ -610,8 +610,8 @@ Let \( M^n \) be a Riemannian manifold with injectivity radius \( \delta_0>0 \) 
 bounded curvature, then for all \( \delta <\delta_0 \) sufficiently small, there exists a *uniformly locally
 finite covering* of \( M \) by balls \( \{B(p_i,\delta)\}_{i\in I} \), i.e. there exists
 \( k(\delta)\in \mathbb{Z}_{>0} \) such that for all \( q\in M \), there exists a
-neighborhood of \( q \) that intersects at most \( k(\delta) \) balls. Moreover, one can
-also require that \( \{B(p_i,\delta/2)\}_{i\in I} \) is still a covering.  
+neighborhood of \( q \) that intersects at most \( k(\delta) \) balls. Moreover, the
+constant \( k(\delta) \) can be chosen uniformly as \( \delta \to 0 \). Also, one can require that \( \{B(p_i,\delta/2)\}_{i\in I} \) is still a covering.  
 #+END_lemma
 
 #+BEGIN_proof
@@ -630,7 +630,7 @@ maximum and minimum volume of balls of radius \( 2\beta + 2\gamma \) and \( \gam
 respectively. By Theorem ref:thm:vol-comparison, for \( \delta < \epsilon(a',b) \) depending on
 the bound \( a' \) and \( b  \) of Ricci curvature and sectional curvature, the volume of
 these balls are equivalent to that of Euclidean balls of the same radius. The constant of
-equivalence was denoted by \( C(\delta) \).
+equivalence was denoted by \( C(\delta) \) can be bounded uniformly when \( \delta\to 0 \).
 #+END_proof
 
 

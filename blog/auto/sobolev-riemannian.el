@@ -5,6 +5,13 @@
                      '(("article" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem") ("xy" "all")))
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
+   (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
     "article"
@@ -95,7 +102,9 @@
     "thm:spec-lap"
     "thm:lap-l2"
     "eq:lap-M")
-   (LaTeX-add-environments
+   (LaTeX-add-bibliographies
+    "../res/Stage2018")
+   (LaTeX-add-amsthm-newtheorems
     "remark"
     "theorem"
     "lemma"
@@ -105,8 +114,8 @@
     "problem"
     "exampl"
     "definition"
-    "propdef")
-   (LaTeX-add-bibliographies
-    "../res/Stage2018"))
+    "propdef"
+    "fact"
+    "assertion"))
  :latex)
 

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-06-01 Fri 14:40 -->
+<!-- 2018-06-25 Mon 22:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Welcome to my blog</title>
@@ -227,6 +227,20 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path["Extra"] = "https://darknmt.github.io/res/XyJax/extensions/TeX";MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    "HTML-CSS": {
+      styles: {".MathJax_Preview": {visibility: "hidden"}}
+    },
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+    TeX: {equationNumbers: {  autoNumber: "AMS"  }, extensions: ["[Extra]/xypic.js", "AMSmath.js","AMSsymbols.js"]}
+    //                  ^^^^^^^^load xypic.js
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js"></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -258,7 +272,8 @@ for the JavaScript code in this tag.
 <div id="outline-container-org236da55" class="outline-2">
 <h2 id="org236da55">Stage 2018</h2>
 <div class="outline-text-2" id="text-org236da55">
-</div><ul class="org-ul"><li><a id="org7615b2e"></a><a href="summary-stage-2018.html">Summary and the report</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-05-29 Tue&gt;</span></span><br /></li>
+</div><ul class="org-ul"><li><a id="orgef5ce3b"></a><a href="minimal-immersion-S2.html">Minimal immersions of \( \mathbb{S}^2 \)</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-06-24 Sun&gt;</span></span><br /></li>
+<li><a id="org7615b2e"></a><a href="summary-stage-2018.html">Summary and the report</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-05-29 Tue&gt;</span></span><br /></li>
 <li><a id="org31615e9"></a><a href="harmonic-map-existence.html">Energy estimates and Existence of harmonic maps between Riemannian manifolds</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-05-06 Sun&gt;</span></span><br /></li>
 <li><a id="org96b3db5"></a><a href="polynomial-besov.html">Short-time existence and regularity for nonlinear heat equation: Polynomial differential operators and Besov spaces</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-05-27 Sun&gt;</span></span><br /></li>
 <li><a id="orgebd04da"></a><a href="elliptic-parabolic.html">Elliptic and parabolic equations on compact manifolds</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-04-30 Mon&gt;</span></span><br /></li>
@@ -271,7 +286,8 @@ for the JavaScript code in this tag.
 <div id="outline-container-org121162f" class="outline-2">
 <h2 id="org121162f">Orsay 2017-2018</h2>
 <div class="outline-text-2" id="text-org121162f">
-</div><ul class="org-ul"><li><a id="orgbf0249e"></a><a href="chow-theorem.html">Algebraisation theorems I: Chow's theorem</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-04-05 Thu&gt;</span></span><br /></li>
+</div><ul class="org-ul"><li><a id="org131f8a3"></a><span class="todo TODO">TODO</span> <a href="h-principe-Stein.html">Gromov's h-principle and Topological characterisation of Stein manifolds</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-06-11 Mon&gt;</span></span><br /></li>
+<li><a id="orgbf0249e"></a><a href="chow-theorem.html">Algebraisation theorems I: Chow's theorem</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-04-05 Thu&gt;</span></span><br /></li>
 <li><a id="orgadca904"></a><a href="two-Hartogs.html">Two theorems of Hartogs</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-01-08 Mon&gt;</span></span><br /></li>
 <li><a id="orgc9533fb"></a><a href="local-several-complex-var.html">Local results of several complex variables</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-12-22 Fri&gt;</span></span><br /></li>
 <li><a id="org5138b2c"></a><a href="kodaira.html">Divisors, Picard group and Kodaira embedding theorem</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-12-13 Wed&gt;</span></span><br /></li>
@@ -300,7 +316,7 @@ for the JavaScript code in this tag.
 <div id="postamble" class="status">
 <div class='footer'>
 By darknmt.<br>
-Last updated 2018-06-01 Fri 14:40. <br>
+Last updated 2018-06-25 Mon 16:19. <br>
 </div>
 </div>
 </body>
