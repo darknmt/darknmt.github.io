@@ -32,7 +32,7 @@ Given \( k,l\in \mathbb{Z},\ k>l \geq 0 \) and \( p,q\in \mathbb{R},\ p>q\geq 1 
    \[ 
    W^{k,q}(\mathbb{R}^n) \hookrightarrow C^{r,\alpha}(\mathbb{R}^n) 
    \]
-where \( C^r_B(\mathbb{R^n}) \) denotes the space of \( C^r \) functions with bounded
+where \( C^r_B(\mathbb{R}^n) \) denotes the space of \( C^r \) functions with bounded
 derivatives up to order \( n \), equipped with the norm \(\| u \|_{C^r_B} = \max_{l\leq
 r}\sup|\nabla^l u|\), and \( C^{r,\alpha} \) is the subspace of \( C^r_B \) of functions
 whose \( r^{\rm th} \)-derivative is \( \alpha \)-Holder, equipped with the norm \( \|

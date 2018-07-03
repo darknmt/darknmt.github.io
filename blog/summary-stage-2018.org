@@ -17,12 +17,16 @@ The goal of this part is to give a summary of what will be developed in the next
 maps \( f: M \longrightarrow M' \) between Riemannian manifolds (that to simplify, are
 supposed to be compact) that are critical points of the energy functional
 \[
- E(f) = \frac{1}{2}\int_M |\nabla f|^2 dV
+ E(f) = \frac{1}{2}\int_M |\nabla f|^2 dV.
 \]
-that is, by taking first order variation of \( E \), those whose *tension field* \(
-\tau(f) \) vanish. 
+By taking first order variation of \( E \), these are maps whose *tension field* \(
+\tau(f) \) vanishes. 
 
-We wish to prove that any smooth map \( f_0: M \longrightarrow M' \) can be deform to a
+
+** Deformation using nonlinear heat equation.
+
+The approach of cite:eells_harmonic_1964 is to prove that, if the target space is
+negatively curved, then any smooth map \( f_0: M \longrightarrow M' \) can be deformed to a
 harmonic map using the gradient descent equation, that is to show the equation
 \begin{equation}
 \label{eq:intro:1}
@@ -31,253 +35,55 @@ harmonic map using the gradient descent equation, that is to show the equation
 \restr{f}{t=0} = f_0
 \end{cases}
 \end{equation}
-We prove, in the rest of the memoire, that if \( M' \) is negatively curved then this PDE admits a globally defined smooth
+We will prove that if \( M' \) is negatively curved then this PDE admits a globally defined smooth
 solution \( f_t \) and that \( f_{\infty}:=\lim_{t\to \infty} f_t \) in \( C^\infty \) is
 a harmonic map.
 
 The resolution of eqref:eq:intro:1 can be organised in 3 steps:
 1. Find the global equation. We will find a global frame of \( M' \) and express
-   \( f \) in this frame, so that in stead of solving for a map, we will have to solve for functions.
-2. Study linear PDEs on manifolds. The equation, expressed in local coordinates is a nonlinear heat equation, i.e. other
-   than a heat operator, it has a nonlinear differential operator of strictly lower
-   degree. Short-time existence and regularity for eqref:eq:intro:1 follows from /standard/ results of
+   \( f \) in this frame, so that instead of solving for a map, we will have to solve for functions.
+2. Study linear PDEs on manifolds. The equation, expressed in local coordinates, is a nonlinear heat equation, i.e. other
+   than a heat operator, it has a quadratic term. Short-time existence and regularity for eqref:eq:intro:1 follows from /standard/ results of
    parabolic equation.
-3. Prove long-time existence. This follows from several energy estimate. 
+3. Prove long-time existence. In order to use continuity method, we will have to prove
+   that \( W^{k,p} \)-norms of the solution \( f_t \) do not explode. This will be
+   established first in the case \( W^{2,2} \) using physical quantities, namely the
+   potential energy \( E \) and the kinetic energy \( K \). The general case is proved
+   from the \( W^{2,2} \) estimate using Gårding's inequality and Comparison theorem for
+   parabolic equation. 
 
-Local form of eqref:eq:intro:1 can be found using calculus on Riemannian-connected vector
-bundle. The relevant vector bundle here is \( f^* TM' \) over \( M \) in case of a single
-map \( f: M \longrightarrow M' \), or \( F^* TM' \) over \( M\times[\alpha,\omega] \) for
-a deformation \( F_t:\ M\times [\alpha,\omega] \longrightarrow M' \).
-
-** Global equation.
-
-We will explain here how the step 1 is done. We will embed \( M' \) in a Euclidean space
-\( \mathbb{R}^N \), not necessarily isometric because we will not use the Euclidean metric
-on \( R^N \) anyway. We will equip a tubular neighborhood \( T \) of \( M' \), which is
-diffeomorphic to \( M'\times D \) where \( D \) is an open disc of dimension equal the
-codimension of \( M' \), with the product of the metric of \( M' \) and the Euclidean
-metric of \( D \). The global equation of eqref:eq:intro:1, as we will prove, is the flow
-along the tension field of \( T \), i.e. 
-\begin{equation}
-\label{eq:intro:2}
-\frac{df_t}{dt} = \tau_T(f_t). 
-\end{equation}
-
-What we want in a global equation is that locally
-it has to be the same as \( \frac{df_t}{dt} = \tau_{M'}(f_t) \) and globally the image of \(
-f_t \) has to remain in \( M' \). So in fact, if there is a global equation of eqref:eq:intro:1, then it has to be \(
-\frac{df_t}{dt} = \tau_T(f_t) \) because of the following fact:
-
-*Fact.* If the inclusion \( M' \longrightarrow T \) is totally geodesic and \( f: M
-\longrightarrow M' \) be a smooth map. Then the tension field of \( f \) in \( M' \) is
-actually the tension field of \( f \) as a map to \( T \).
-
-It is, however just a necessary condition. To complete the argument, one needs to justify
-that the \( \tau \)-flow in \( T \) always remain in \( M' \). The following idea is due
-to Hamilton cite:hamilton_harmonic_1975. The advantage, in comparison with Eells and
-Sampson cite:eells_harmonic_1964 is its clarity in idea. The disadvantage, is that one needs to
-establish uniqueness of solution first. Let \( \iota \) be the reflection in \( T \)
-around \( M' \) then if \( f_t \) is a solution of eqref:eq:intro:2 then \( \iota f_t \)
-is also a solution with the same initial condition, since \( \iota \) preserves \( M'
-\). Then by uniqueness of solution, \( f_t = \iota f_t \) for all relevant time, meaning
-that \( f_t \) remains in \( M' \) since \( \iota \) only preserves \( M' \).
-
-** Linear PDEs on manifolds.
-
-I passed more than half of my stage learning how to solve linear equations on manifold. I
-started with cite:aubin_nonlinear_1998 and cite:jost_riemannian_2008 as reference, where Sobolev spaces are defined by
-density and Laplace equation, heat equation are solved using parametrix. This approach has advantage of
-being quick, intuitive and clear in ideas. The disadvantage is that, while parametrix
-works perfectly for smooth functions, we have to remain fuzzy on function spaces while
-solving parabolic equation. I later discovered cite:hamilton_harmonic_1975 where a
-thorough treatment of Sobolev spaces on manifold was an important part of the paper. While
-the conceptual points behind are clear, the limit of this approach is that it only works
-for compact manifolds, unlike cite:aubin_nonlinear_1998 and cite:jost_riemannian_2008,
-whose manifolds are supposed to be complete, having strictly positive injectivity radius
-and bounded curvatures. This disadvantage cannot be remedied because for non-compact
-manifolds, Sobolev spaces, set-theoretically and as Banach spaces, depend on the metric. I
-choose to present here the second approach.
-
-*** Sobolev spaces
-Using a partition of unity \( \{\psi_i\} \) subordinated to a finite atlas of a compact manifold \( M \), the Sobolev
-space \( W^{k,p}(M) \) is defined as the preimage of \( \bigoplus_i W^{k,p}(\mathbb{R}^n)
-\) of:
-# \begin{equation}
-\begin{align}
-\label{eq:intro:2.5}
-  \iota:\ \mathcal{S}^*(M) &\longrightarrow \bigoplus_i \mathcal{S}^*(\mathbb{R}^n) \\
-  	  f &\longmapsto \oplus_i \psi_i f \nonumber
-\end{align}
-# \end{equation}
-meaning that we a natural inclusion
-\begin{equation}
-\label{eq:intro:3}
-\iota: \mathcal{S}^*(M)\supset W^{k,p}(M) \hookrightarrow  \bigoplus_i W^{k,p}(\mathbb{R}^n)
-\end{equation}
-
-The definition of \( W^{k,p}(M) \) as a subspace of a direct sum renders the task of
-generalising operators on \( W^{k,p}(M) \) indirect. 
-
-For example, to define a differential
-operator \( A \) of order \( r \) on \( W^{k,p}(M) \), we have to define it
-component-wise, that is \( Af:= \oplus_i A(\psi_i f_i) \) then verify that the RHS is
-actually in the image of \(\iota:\ W^{k-r,p}(M) \hookrightarrow \bigoplus_i
-W^{k-r,p}(\mathbb{R}^n) \). This is straightforward for differential operators be cause we
-can differentiate elements of \( \mathcal{S}^*(M) \): \( \iota(Af) = \oplus_i A(\psi_i
-f_i) \).
-
-A less straightforward example is the definition of trace operator of elements in \(
-W^{k,p}(M) \) where \( M \) is a compact manifold with boundary. The Sobolev space \(
-W^{k,p}(M) \) when \( \partial M\ne \emptyset \) is defined in the same spirit: so that we
-have the inclusion
-\begin{align}
-\label{eq:intro:4}
-  \iota:\  W^{k,p}(M) &\longrightarrow \bigoplus_i W^{k,p}(R_i) \\
-  	  f &\longmapsto \oplus_i \psi_i f \nonumber
-\end{align}
-where \( R_i \) is \( \mathbb{R}^n \) if the \( i^{\rm th} \) chart does not intersect the
-boundary, or the upper half plan \( \mathbb{R}^{n-1}\times \mathbb{R}_{\geq 0} \) if the
-intersection is not trivial. Then similarly, if \( k \) is sufficiently large, we can
-define a component-wise trace operator \( W^{k,p}(\mathbb{R}^{n-1}\times \mathbb{R}_{\geq
-0}) \longrightarrow W^{l,p}(\mathbb{R}^{n-1}) \). On \( \partial M \), the
-restriction of the atlas of \( M \) is still a finite atlas, subordinated by the partition
-of unity \( \{\psi_i\} \), one therefore has the following diagram, where the vertical
-arrow on the right was defined.
+The hypothesis of negative curvature is only used to establish the energy
+estimates. During deformation, the rate of potential energy can be calculated as: 
 \[
-\xymatrix{
-W^{k,p}(M) \ar@{^{(}->}[r] \ar@{-->}[d] & \bigoplus_i W^{k,p}(R_i) \ar@{->}[d]^{\rm Tr} \\
-W^{l,p}(\partial M) \ar@{->}[r] & \bigoplus_i W^{l,p}(\partial R_i)
-}
+ \frac{d e(f_t)}{dt}= -\Delta e(f_t) - |\beta(f_t)|^2 - \left\langle \Ric(M) \nabla_v
+f_t,\nabla_v f_t \rangle + \langle \Riem(M') (\nabla_v f_t,\nabla_w f_t)\nabla_v
+f_t,\nabla_w f_t \right\rangle
 \]
-The tricky part to define the dashed vertical arrow, in comparison with the case of
-differential operators, is that we cannot define trace operator on \( \mathcal{S}^*(M) \).
-
-The situation is resolved because the maps \( \iota \) in eqref:eq:intro:2.5, eqref:eq:intro:3 and
-eqref:eq:intro:4 admit a projection \( \pi \) (i.e. right-inverse) given by multiplication with a
-family of cut-off functions \( \tilde\psi_i \) that are still supported in the chart,
-but are identically 1 on the supports of \( \psi_i \). So to check whether an element is
-in \( \im \iota \), one only has to check if it is fixed by \( \pi\circ\iota \), which is
-simple.
-
-The existence of \( \pi \) also shows that \( \im\iota \) is closed, hence \( W^{k,p} \)
-is a reflexive Banach space, and that we can extend interpolation theory for \( W^{k,p}(M) \).
-
-*** Elliptic and parabolic equations
-We will encode classical results of linear equations in an exact diagram such as
-\begin{equation}
-\label{eq:intro:5}
-\xymatrix{
-E \ar@{->}[r]^{l} \ar@{->}[d]^{m} & F \ar@{->}[d]^{p} \\
-G \ar@{->}[r]^{q} & H
-}
-\end{equation}
-where exactness means that
+and the kinetic energy as:
 \[
- \xymatrix{
-0 \ar@{->}[r] & E \ar@{->}[r]^{l\oplus m} & F\oplus G \ar@{->}[r]^{p\ominus q} & H \ar@{->}[r] & 0
-}
+ \frac{d k(f_t)}{dt}= -\Delta k(f_t) - \left|\nabla \frac{\partial f_t}{\partial t}\right|^2 +
+\left\langle \Riem(M') (\nabla_v f_t,\frac{\partial f_t}{\partial t})\nabla_v
+f_t,\frac{\partial f_t}{\partial t} \right\rangle
 \]
-is a short exact sequence.
+Therefore if all sectional curvatures of \( M' \) are negative, these rates can be
+controlled and the energies are guaranteed not to explode.
 
-As a simplified example, for elliptic operator \( A \) with constant coefficient, one
-has the following exact diagram
-\[
-\xymatrix{
-W^{n,p}(\mathbb{R}^n) \ar@{->}[r]^{A} \ar@{^{(}->}[d]^{i} & W^{n-r,p}(\mathbb{R}^n) \ar@{^{(}->}[d]^{i} \\
-W^{k,p}(\mathbb{R}^n) \ar@{->}[r]^{A} & W^{k-r,p}(\mathbb{R}^n)
-}
-\]
-The closedness of \( \im A\oplus \iota = \ker A\ominus \iota \) implies, through Open
-mapping theorem, Gårding's inequality. The equality \(  \im A\oplus \iota = \ker A\ominus
-\iota  \) itself is the regularity result for elliptic equation. The subjectivity of \(
-A\ominus\iota \) is the existence of approximate solution.
+** Existence using Morse-Palais-Smale theory.
+We also give a less detailed review of the work by Sacks and Uhlenbeck
+cite:sacks_existence_1981. This approach uses an approximating family \(
+E_\alpha \) of the energy functional \( E \) whose critical functions in \( W^{1,2\alpha} \) can be easily proved
+to exist using Morse-Palais-Smale theory. We then try to prove that the critical sequence
+\( C^1 \)-converges to a nontrivial limit. 
 
-The exactness of the previous diagram comes from the fact that it splits, meaning that we
-can find compatible maps \( G \) and \( \psi(D) \) such that
-\[
-\xymatrix{
-W^{k,p}(\mathbb{R}^n) \ar@/_/@{->}[r]_{A} \ar@{->}[d]^{i} & W^{k-r,p}(\mathbb{R}^n) \ar@{->}[d]_{i} \ar@/_/@{->}[l]_{G} \\
-W^{l,p}(\mathbb{R}^n) \ar@/^/@{->}[r]^{A} \ar@/^/@{->}[u]^{\psi(D)} & W^{l-r,p}(\mathbb{R}^n) \ar@/^/@{->}[l]^{G} \ar@/_/@{->}[u]_{\psi(D)}
-}
-\]
-is a split diagram, where \( \psi(D) \) is certain cut-off function on the frequency
-space. The splitness of the diagram in local (in \( \mathbb{R}^n \)) instead of just
-exactness reflects the fact that we have an algebraic formula of the solution/ of the
-Green kernel in \(\mathbb{R}^n \).
-
-The idea to go from local to global, naturally since the equation is linear, is to use a
-partition of unity and to remark that the commutator of a differential operator and the
-multiplication by a cut-off function is a differential operator of strictly lower
-order. This however is not the only ingredient. In the same spirit (but not the same technical reason) as the parametrix
-approach where we have to iterate to find the Green kernel, in the "diagram" approach,
-we lose algebraic control of the solution in an argument of the following type: a diagram
-sufficiently closed to an exact diagram eqref:eq:intro:5 in \( L(E,F)\times L(F,H)\times
-L(E,G)\times L(G,H) \) is still exact.
-
-One also has a similar diagram for parabolic equation. The only difference is that one has
-/causality/ in the parabolic case, meaning that the operator \( A \) is now an
-isomorphism. This is because when
-the initial condition is a vanishing condition \( \restr{f}{t=\alpha}=0 \) and when the
-boundary conditions on \( \partial M \times [\alpha,\omega] \) is independent of time, we
-can make translation in time of the solution, and still have a solution. In the general
-case, we use Fredholm's Index theory.
-
-** Energy estimates.
-The ingredients to bound higher order derivative of the solution include: (1) estimates of
-physical quantities, i.e. the total potential and kinetic energy, (2) Maximum principle
-and  Gårding's inequality, (3) estimates of nonlinear differential operators using Besov
-spaces, and (4) \( L^1 \)-comparison theorem for linear heat equation. Let us explain the
-last item. If \( f \) is a smooth solution of a linear heat equation
-\[
- \frac{df}{dt} = -\Delta f + Cf \quad \text{on } [\alpha,\omega]
-\]
-then by an argument similar to the proof of Maximum principle, one can estimate the \(
-L^\infty \)-norm of \( \restr{f}{t=\omega} \) in term of \(
-\|\restr{f}{\alpha}\|_{L^\infty} \):
-\[
- \|\restr{f}{\omega}\|_{L^\infty} \leq e^{B(\omega-\alpha)}
-\|\restr{f}{\alpha}\|_{L^\infty}.
-\]
-We will need in certain moment to estimate \( \|\restr{f}{\omega}\|_{L^1} \) in term of \(
-\|\restr{f}{\alpha} \|_{L^1} \). Since \( L^1 \) is the dual space of \( L^\infty \), one
-can estimate \(\|\restr{f}{\omega}\|_{L^1}\) by finding an upper bound of \(
-\int_{t=\omega} fh \) in term of \( \|h\|_{L^\infty} \) where \( h \) is a smooth function
-on \( M\times\{\omega\} \).
-
-This can be done by considering the backwards heat equation propagating from time \(
-\omega \) to \( \alpha \): 
-\begin{equation*}
- \begin{cases}
-\frac{d g}{dt} = \Delta g - C g,  & \text{on $ N\times{[\alpha,\omega]}$} \\
-\restr{g}{\omega} = h, 
-\end{cases}
-\end{equation*}
-This equation was chosen so that \( \frac{d}{dt}\int_M fg = \int_M f \frac{d }{dt}g + g
-\frac{d }{dt}f =0\), therefore \( \int_{M\times\{\alpha\}}fg = \int_{M\times\{\omega\}} fg
-\). Apply \( L^\infty \)-estimate to \( g \) and one obtains an \( L^1 \)-estimate for \( f \).
-
-* Table of contents
-** Harmonic maps: examples and the reduction to a local PDE
-See [[file:harmonic-maps.org]].
-
-** Appendices: Linear PDE on manifolds.
-*** The global approach
-**** Comparison theorem and Sobolev spaces on manifold
-See [[file:sobolev-riemannian.org]]
-**** Green function
-See [[file:green-function.org]]
-*** The local approach
-**** Sobolev space
-See file:interpolation-sobolev.org. 
-**** Linear equations
-See file:elliptic-parabolic.org.
+As a concrete result, the authors proved,
+using an extension theorem for harmonic maps on surface and a suitable covering of \(
+M \) by small discs on which the energy \( E \) is sufficiently small, that if
+the fundamental group \( \pi_k(M') \) is nontrivial for a certain \( k\geq 2 \), or
+equivalently, if the universal covering \( \tilde M' \) of \( M' \) is not contractible,
+then there exists a nontrivial harmonic map from \( \mathbb{S}^2 \) to \(  M' \).
 
 
-** Short-time existence and regularity result
-See file:polynomial-besov.org
-
-** Energy estimates and global existence.
-See file:harmonic-map-existence.org.
-
+#+LATEX:\iffalse
 bibliographystyle:alpha
 bibliography:../res/Stage2018.bib
+#+LATEX:\fi

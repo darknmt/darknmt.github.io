@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-07-03 Tue 01:41 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Short-time existence and regularity for nonlinear heat equation</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Tien NGUYEN MANH" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' href='../res/blog.css' type='text/css'/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path["Extra"] = "https://darknmt.github.io/res/XyJax/extensions/TeX";MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    "HTML-CSS": {
+      styles: {".MathJax_Preview": {visibility: "hidden"}}
+    },
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+    TeX: {equationNumbers: {  autoNumber: "AMS"  }, extensions: ["[Extra]/xypic.js", "AMSmath.js","AMSsymbols.js"]}
+    //                  ^^^^^^^^load xypic.js
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js"></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='./index.html'>Home</a></li>
+<li><a href='./blog.html'>Blog</a></li>
+<li><a href='./writings.html'>Miscellany</a></li>
+<li><a href='http://github.com/darknmt/'>GitHub</a></li>
+<li><a href='./contact.html'>Contact</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<h1 class="title">Short-time existence and regularity for nonlinear heat equation</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org7b3863a">1. Review of Sobolev spaces and Linear equations.</a>
+<ul>
+<li><a href="#orge94415d">1.1. Sobolev spaces.</a></li>
+<li><a href="#org27da7c8">1.2. Trace theorem.</a></li>
+<li><a href="#org2e1d021">1.3. Linear equation on manifolds.</a>
+<ul>
+<li><a href="#org5c01761">1.3.1. Existence and Regularity.</a></li>
+<li><a href="#orge21172b">1.3.2. Maximum principle and Comparison theorems.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org146166b">2. Regularity estimate of the quadratic term.</a></li>
+<li><a href="#orga3c2451">3. Regularity for nonlinear heat equation.</a></li>
+<li><a href="#org5edd7a5">4. Short-time existence for nonlinear heat equation.</a></li>
+</ul>
+</div>
+</div>
+<div class="info">
+<p>
+The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
+<code>pdf</code>. 
+For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
+</p>
+
+</div>
+\(
+\newcommand{\re}{\mathop{\rm Re}\nolimits}
+\newcommand{\im}{\mathop{\rm Im}\nolimits}
+\newcommand{\coker}{\mathop{\rm coker}\nolimits}
+\newcommand{\supp}{\mathop{\rm supp}\nolimits}
+\newcommand{\ord}{\mathop{\rm ord}\nolimits}
+\newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
+\newcommand{\vol}{\mathop{\rm vol}\nolimits}
+\newcommand\restr[2]{{\left.#1\right|_{#2}}}
+\newcommand{\transp}{\mathop{\rm \,^t}\nolimits}
+\newcommand{\sff}{\mathop{\rm I\!I}\nolimits}
+\newcommand{\tr}{\mathop{\rm Tr}\nolimits}
+\newcommand{\const}{\mathop{\rm const }\nolimits}
+\newcommand{\lcm}{\mathop{\rm lcm}\nolimits}
+\newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
+\newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
+\newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
+\)
+
+<p>
+We will establish in this part a regularity estimate for the quadratic term of nonlinear
+heat operator use it to setup a bootstrap scheme that eventually will prove that any
+sufficiently regular solution of nonlinear heat equation that is initially \( C^\infty \)
+will be always \( C^\infty \).
+</p>
+
+<p>
+We will also prove short-time existence using well-known method of Inverse
+function theorem for Banach spaces. Since the solution is smooth, we can apply Theorem
+<a href="#thm:global-eq">thm:global-eq</a> to conclude that the it remains in \( M'\subset \mathbb{R}^N \).
+</p>
+
+<div id="outline-container-org7b3863a" class="outline-2">
+<h2 id="org7b3863a"><span class="section-number-2">1</span> Review of Sobolev spaces and Linear equations.</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+The following results are well-known and their statements are written here in the case of our interest (linear heat equation on
+manifold). A more careful formulation with complete proofs can be found in the
+appendices.
+</p>
+</div>
+
+<div id="outline-container-orge94415d" class="outline-3">
+<h3 id="orge94415d"><span class="section-number-3">1.1</span> Sobolev spaces.</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Let \( M \) be a Riemannian manifold, the <i>Sobolev spaces</i> \( W^{k,p}(M) \) on \( M
+\) can be defined as the completion of \( C^\infty(M) \) with respect to the Sobolev norms
+\[ 
+\|\varphi\|_{W^{k,p}} = \sum_{|\alpha|\leq k} \| D^\alpha \varphi \|_{L^p}. 
+\]
+We will suppose that \( M \) is a compact manifold, then set-theoretically \( W^{k,p} \) does not depend
+on the metric of \( M \) and their norm remains in the same equivalent class as the metric
+varies. The Sobolev spaces form a family of reflexive Banach spaces that is stable under holomorphic
+interpolation:
+</p>
+
+<div id="thm:interp-sobolev-d" btit="(Interpolation of Sobolev spaces)" class="theorem">
+<p>
+Let \( p,q\in (1,+\infty) \) and \( k,l\in \mathbb{R} \) and \( M \) be a compact
+Riemannian manifold. Then the holomorphic interpolations of 
+\[
+ A_0:= W^{k,p}(M)\quad \text{and}\quad A_1:=W^{l,q}(M)
+\]
+are \( A_\theta=W^{s,r}(M) \) where
+\[
+ \theta l + (1-\theta)k = s,\qquad \theta \frac{1}{q} + (1-\theta) \frac{1}{p} = \frac{1}{r}.
+\]
+In particular, one has the Interpolation inequality
+\[
+ \|f\|_{W^{s,r}}\leq 2 \|f \|^\theta_{W^{l,q}} \| f\|^{1-\theta}_{W^{k,p}}.
+\]
+</p>
+
+</div>
+
+<p>
+Sobolev embeddings and Kondrachov theorem remain correct on manifold. 
+</p>
+
+<div id="thm:Sobolev-Rn-d" btit="(Sobolev embedding)" class="theorem">
+<p>
+Given \( k,l\in \mathbb{Z},\ k>l \geq 0 \) and \( p,q\in \mathbb{R},\ p>q\geq 1 \). Then
+</p>
+<ol class="org-ol">
+<li>If \( \frac{1}{p}= \frac{1}{q} - \frac{k-l}{n} \) then 
+\[
+    W^{k,q}(M) \hookrightarrow W^{l,p}(M),
+   \]</li>
+<li>If \( \frac{k-r}{n}> \frac{1}{q} \) then
+\[
+   W^{k,q}(M) \hookrightarrow C^r(M)
+   \]
+If \( \frac{k-r-\alpha}{n}\leq \frac{1}{q} \) then 
+\[ 
+   W^{k,q}(M) \hookrightarrow C^{r,\alpha}(M) 
+   \]</li>
+</ol>
+<p>
+where \( C^r(M) \) denotes the space of \( C^r \) functions equipped with the norm \(\| u \|_{C^r} = \max_{l\leq
+r}\sup|\nabla^l u|\), and \( C^{r,\alpha} \) is the subspace of \( C^r \) of functions
+whose \( r^{\rm th} \)-derivative is \( \alpha \)-Holder, equipped with the norm \( \|
+u\|_{C^{r,\alpha}} = \| u \|_{C^r} + \sup_{P\ne Q}\{ \frac{u(P) - u(Q)}{d(P,Q)^\alpha} \} \).
+</p>
+
+</div>
+
+<div id="thm:Kondrachov-Rn-d" btit="(Kondrachov)" class="theorem">
+<p>
+Let \( k\in \mathbb{Z}_{\geq 0} \) and \( p,q\in \mathbb{R}_{>0} \) be such that
+\( 1\geq \frac{1}{p} > \frac{1}{q} - \frac{k}{n} > 0\) then
+</p>
+<ol class="org-ol">
+<li>The embedding \( W^{k,q}(M) \hookrightarrow  L^p(M) \) is compact,</li>
+<li>The embedding \( W^{k,q}(M) \hookrightarrow  C^\alpha(M) \) is compact if
+\( k-\alpha > \frac{n}{q} \) where \( 0\leq \alpha < 1 \),</li>
+</ol>
+
+</div>
+
+<p>
+It is also natural, for regularity results of parabolic equation, to use weighted Sobolev
+spaces because each derivative in time should be counted as twice as that in space. For
+example, the space \( W^{2,p}(M\times[\alpha,\omega]) \) is the completion of \( C^\infty(M) \) with respect to
+the norm
+\[
+ \|\varphi\|_{W^{2,p}} := \|\varphi\|_{L^p} + \left\| \frac{d\varphi}{dt}\right\|_{L^p} + \sum_{i,j} \left\| \frac{\partial^2\varphi}{\partial x^i \partial
+x^j} \right\|_{L^p} + \sum_i \left\| \frac{\partial\varphi}{\partial x^i} \right\|_{L^p}
+\]
+Similarly, one can define \( W^{2k,p}(M\times[\alpha,\omega]) \) using \( L^p \)-norm of
+derivatives \( \partial_t^\beta \partial_x^\gamma \varphi \) of \( \varphi \) with \( 2\beta + \gamma
+\leq 2k \).
+</p>
+
+
+<p>
+We also want to be able to talk about \( W^{k,p} \) when \( k \) is not an integer and not necessarily positive. This
+allows us to have a more flexible bootstrap scheme for nonlinear heat equation and to use
+Interpolation Theorem <a href="#thm:interp-sobolev-d">thm:interp-sobolev-d</a> more efficiently. We claim that these
+generalised Sobolev spaces (with weight and with non-integral regularity) can be defined on
+manifold and satisfy all the above properties (reflexivity, Interpolation theorem, Sobolev
+embedding and Kondrachov theorem) and refer to the appendices for all the details.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org27da7c8" class="outline-3">
+<h3 id="org27da7c8"><span class="section-number-3">1.2</span> Trace theorem.</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+It is possible to avoid a discussion on Trace operator if we only want to make sense of the
+initial condition of nonlinear heat equation: one can consider only solutions with
+regularity greater than \( W^{2,p}(M\times[\alpha,\omega]) \) with \( p \geq \dim M + 2
+\), which can be embedded in \( C(M) \). It is however necessary to investigate regularity of Trace operator to have a complete proof of the bootstrap. We will review
+briefly some results.
+</p>
+
+<p>
+The following two behaviors of trace are well-known:
+</p>
+<ol class="org-ol">
+<li>If \( -1 + \frac{1}{p} < k < \frac{1}{p} \) then the natural map \(
+   W^{k,p}(M\times[\alpha,\omega]/\alpha) \hookrightarrow W^{k,p}(M\times[\alpha,\omega])
+   \) is an isomorphism, where \( W^{k,p}(M\times[\alpha,\omega]/\alpha) \) denotes the
+completion under \( W^{k,p} \)-norm of the space of smooth functions vanishing on a
+neighborhood of \(
+   M\times \{\alpha\} \). There is therefore no meaningful notion of trace in this case.</li>
+<li>If \( k > \frac{1}{p} + l,\ l\geq 0\), then the restriction map
+\[
+    B:\ C^\infty(M\times[\alpha,\omega]) \longrightarrow C^\infty(M):\ f(x,t) \longmapsto f(x,\alpha)
+   \]
+extends to a bounded operator \(B:\ W^{k,p}(M\times[\alpha,\omega]) \longrightarrow
+   W^{l,p}(M) \), called <i>Trace operator</i>.</li>
+</ol>
+
+<p>
+We will topologise the space \( \partial_\alpha W^{k,p}(M\times[\alpha,\omega]) \) of
+restrictions to time \( t=\alpha \) of functions in \(
+W^{k,p}(M\times[\alpha,\omega]) \), in case Trace operator is well defined, as cokernel of
+\( B \), that is, as a quotient
+space of \( W^{k,p}(M\times[\alpha,\omega]) \). This makes \( \partial_\alpha
+W^{k,p}(M\times[\alpha,\omega]) \) a Banach space with stronger norm than any \(
+W^{l,p}(M) \) for any \( l < k-\frac{1}{p} \).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2e1d021" class="outline-3">
+<h3 id="org2e1d021"><span class="section-number-3">1.3</span> Linear equation on manifolds.</h3>
+<div class="outline-text-3" id="text-1-3">
+</div><div id="outline-container-org5c01761" class="outline-4">
+<h4 id="org5c01761"><span class="section-number-4">1.3.1</span> Existence and Regularity.</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+It can be easily verified that the linear heat operator \(AF:= \frac{d}{dt}F + \Delta F \)
+is a parabolic operator and therefore is also an elliptic operator. All of the following results
+holds for operator \( A \).
+</p>
+
+<div id="thm:elliptic-d" btit="(Regularity for elliptic operator)" class="theorem">
+<p>
+Let \( M \) be a compact manifold and \( AF:= \frac{d}{dt}F + \Delta F \) be an elliptic
+operator of second order. Given \( \frac{1}{p} < l < k <\infty \) and \( F\in
+W^{l,p}(M\times[\alpha,\omega]) \) and suppose that 
+\[
+ AF\in W^{k-2,p}(M\times[\alpha,\omega]),\quad \restr{f}{\alpha}\in \partial_\alpha
+W^{k,p}(M\times[\alpha,\omega]), \quad  \restr{f}{\omega}\in \partial_\alpha W^{k,p}(M\times[\alpha,\omega]).
+\]
+Then actually \( F\in W^{k,p}(M\times[\alpha,\omega]) \).
+</p>
+
+</div>
+
+
+<div id="thm:para-existence-d" btit="(Causality of parabolic equation)" class="theorem">
+<p>
+Let \( M \) be a compact manifold and \( AF:= \frac{d}{dt}F + \Delta F \) be an parabolic
+operator. Then 
+\[
+ A:\ W^{k,p}(M\times[\alpha,\omega]/\alpha) \longrightarrow W^{k-2,p}(M\times[\alpha,\omega]/\alpha)
+\]
+is an isomorphism of Banach spaces.
+</p>
+
+</div>
+
+
+<div id="thm:para-eq-d" btit="(Gårding's Inequality and Regularity for parabolic operator)" class="theorem">
+<p>
+Let \( M \) be a compact manifold, \( p\in (1,+\infty) \), \( k > l > -\infty\) and \( AF:= \frac{d}{dt}F + \Delta F\) be a parabolic operator. We write \( W^{k,p}([\beta,\gamma]) \) shortly for \( W^{k,p}(M\times[\beta,\gamma])
+\). Suppose that
+\[
+ F\in W^{l,p}([\alpha,\omega]),\quad AF\in W^{k-2,p}([\alpha,\omega]).
+\]
+Then \( F\in W^{k,p}([\pi,\omega]) \) for all \( \pi\in (\alpha,\omega) \). Also, there
+exists a constant \( C>0 \) such that 
+\[
+ \|F\|_{W^{k,p}([\pi,\omega])} \leq C \left( \|AF\|_{W^{k-2,p}([\alpha,\omega])} + \| F \|_{W^{l,p}([\alpha,\pi])}  \right).
+\]
+In particular for homogeneous equation, the solution is \( C^\infty \) and an arbitrarily weak estimate in the past gives an arbitrarily strong estimate in the future. 
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge21172b" class="outline-4">
+<h4 id="orge21172b"><span class="section-number-4">1.3.2</span> Maximum principle and Comparison theorems.</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+Other than regularity results which are generally true for parabolic operators, the linear
+heat operator also enjoys the following versions of Maximum principle. See Appendices for
+their proofs.
+</p>
+
+<div id="thm:max-princ-d" btit="(Maximum principle)" class="theorem">
+<p>
+Let \( M \) be a compact manifold and \( f: M\times[\alpha,\omega] \longrightarrow \mathbb{R} \) be a continuous function
+with \( \restr{f}{\alpha}\leq 0 \). Suppose that whenever \( f>0 \), \( f \) is smooth and
+\[
+ \frac{\partial f}{\partial t} \leq -\Delta f + Cf.
+\]
+Then in fact \( f\leq 0 \).
+</p>
+
+</div>
+
+<p>
+With the same proof as Theorem <a href="#thm:max-princ-d">thm:max-princ-d</a>, one also has:
+</p>
+
+<div id="thm:infty-comparison-d" btit="(\( L^\infty \)-Comparison theorem)" class="theorem">
+<p>
+Let \( f: M\times[\alpha,\omega] \longrightarrow \mathbb{R} \) be a continuous function on
+\( M \), smooth for all time \( t>0 \) such that
+\[
+  \frac{d f}{dt} = -\Delta f + b f \text{ on } M\times (\alpha,\omega]
+\]
+where \( b \) is a smooth function on \( M \). Then there exists a constant \( B \) depending
+only on \( b \) such that 
+\[
+ \|\restr{f}{\omega}\|_{L^\infty} \leq e^{B(\omega-\alpha)}
+\|\restr{f}{\alpha}\|_{L^\infty}.
+\]
+</p>
+
+</div>
+
+<p>
+Using backwards heat equation and Theorem <a href="#thm:infty-comparison-d">thm:infty-comparison-d</a>, one can prove its
+version for \( L^1 \).
+</p>
+
+<div id="thm:1-comparison-d" btit="(\( L^1 \)-Comparison theorem)" class="theorem">
+<p>
+Let \( f: M\times[\alpha,\omega] \longrightarrow \mathbb{R} \) be a continuous function on
+\( M \), smooth for all time \( t>0 \) such that
+\[
+  \frac{d f}{dt} = -\Delta f + b f \text{ on } M\times (\alpha,\omega]
+\]
+where \( b \) is a smooth function on \( M \). Then there exists a constant \( B \) depending
+only on \( b \) such that 
+\[
+ \|\restr{f}{\omega}\|_{L^1} \leq e^{B(\omega-\alpha)}
+\|\restr{f}{\alpha}\|_{L^1}.
+\]
+</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org146166b" class="outline-2">
+<h2 id="org146166b"><span class="section-number-2">2</span> Regularity estimate of the quadratic term.</h2>
+<div class="outline-text-2" id="text-2">
+<div id="thm:reg-quad" btit="(Regularity of the quadratic term)" class="theorem">
+<p>
+Let \( F:\ M\times [\alpha,\omega] \longrightarrow B\subset \mathbb{R}^N \) be in \(
+W^{s,q}(M\times[\alpha,\omega])\cap C(M\times [\alpha,\omega]) \) and
+\[ 
+P F := g^{ij}\Gamma'^\alpha_{\beta\gamma}(F) F^\beta_i
+F^\gamma_j.
+\]
+Suppose that
+</p>
+\begin{equation}
+\label{eq:cond:thm:reg-poly-diff}
+ r\geq 0,\quad p,q\in (1,\infty),\quad r+1 < s, \quad \frac{1}{p}> \frac{r+2}{s} \frac{1}{q}.
+\end{equation}
+<p>
+Then one has \( PF\in W^{r,p}(X) \) and
+\[
+ \|P F \|_{W^{r,p}} \leq C\left(1 + \|F\|_{W^{s,q}}\right)^{q/p}.
+\]
+where \( C \) is a constant independent of \( F \).
+</p>
+
+</div>
+
+<div class="proof">
+<p>
+We will suppose here that \( r,s \) are even integers so that the \( W^{r,p} \)
+(respectively \(
+W^{s,q} \)) norm of \( PF \) (respectively \( F \)) can be written as sum of \( L^p \)
+(respectively \( L^q \)) norms of its derivatives. Also, we will use chain rule freely to
+differentiate the term \( \Gamma'^\alpha_{\beta\gamma}(F) \) using weak derivatives of \( F
+\). The general and rigorous proof, which involves fractional Sobolev space to treat non-integral
+\( r, s \) and a detour to Besov spaces to justify chain rule, can be found in the appendices.
+</p>
+
+<p>
+The derivatives of \( PF \) that appear in its \( W^{r,p} \) norm are of form
+\[
+ C(x,F)\ \prod_i \partial_t^{b_i} \partial_x^{c_i} F^{\beta_i} 
+\]
+where \( 2\sum b_i + \sum c_i \leq r+2 \) and \( \max \{2b_i+ c_i\}\leq r+1 \) and \(
+C(x,F) \) is bounded on \( M \). Using Multiplication theorem for \( L^p \)-spaces, one has
+\[
+  \left\|C(x,F)\ \prod_i \partial_t^{b_i} \partial_x^{c_i} F^{\beta_i} \right\|_{L^p} \leq
+\|C(x,F)\|_{L^\infty} \prod_i \left\|\partial_t^{b_i} \partial_x^{c_i}
+F^{\beta_i}\right\|_{L^{p_i}}  \leq \|C(x,F)\|_{L^\infty} \prod_i \left\|F\right\|_{W^{2b_i+c_i,p_i}}
+\]
+as long as we choose \( p_i\in (1,\infty) \) such that \( \frac{1}{p} \geq \sum
+\frac{1}{p_i} \). The
+strategy is to choose \( \frac{1}{p_i} \) big enough to have \( W^{s,q}
+\hookrightarrow W^{2b_i+c_i,p_i} \) in order to
+bound \(\left\|F\right\|_{W^{2b_i+c_i,p_i}}\) by \( \left\|F\right\|_{W^{s,q}} \), then
+use the upper bound of \( 2b_i +c_i \) to justify that \( \frac{1}{p} > \frac{r+2}{s}
+\frac{1}{q} \geq \sum \frac{1}{p_i} \), meaning that such choice of \( p_i \) are valid.
+</p>
+
+<p>
+The straightforward way to have a sufficient condition of \( p_i \) such that \( W^{s,q}
+\hookrightarrow W^{2b_i+c_i,p_i} \) is to use Sobolev embedding, but the result is sub-optimal
+because Sobolev embedding does not take into account the \( L^\infty
+\)-bounded of \( F \) (its image lies in a compact of \( \mathbb{R}^N \)). A better way is to use
+Interpolation inequality, by remarking that \( F\in W^{0,v} \) for all \( v\in (1,+\infty)
+\) and writing \( W^{2b_i+c_i, p_i} \) as an interpolation space of \( W^{s,q} \) and \(
+W^{0,v} \). It can be seen, by direct computation, that the sufficient condition for \( W^{s,q}
+\hookrightarrow W^{2b_i+c_i,p_i} \) is \( 2b_i+c_i < s \) and
+\[
+ 0 < \frac{1}{p_i} - \frac{2b_i+c_i}{s}\frac{1}{q} < 1 - \frac{2b_i + c_i}{s}.
+\]
+Choose \( \frac{1}{p_i} \) just a bit bigger than \( \frac{2b_i+c_i}{s}\frac{1}{q} \), one
+still has
+\[
+\sum \frac{1}{p_i} \simeq \sum  \frac{2b_i+c_i}{s}\frac{1}{q} \leq \frac{r+2}{s}\frac{1}{q} < \frac{1}{p}.
+\]
+The conclusion follows.  
+</p>
+
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orga3c2451" class="outline-2">
+<h2 id="orga3c2451"><span class="section-number-2">3</span> Regularity for nonlinear heat equation.</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Let \( p>\dim M + 2 \), using the regularity estimate for the quadratic term, we now can prove:
+</p>
+
+<div id="thm:reg-nonlin-heat" btit="(Bootstrap for nonlinear heat equation)" class="theorem">
+<p>
+Let \( F:\ M\times [\alpha,\omega] \longrightarrow B \) such that \( F\in W^{2,p}(M\times
+[\alpha,\omega]) \) and \( \frac{d F_t}{dt} = \tau(F_t) \), i.e.
+\[
+ \frac{d F^\alpha}{dt} = -\Delta F^\alpha + g^{ij}\Gamma'^\alpha_{\beta\gamma}(F)
+F^\beta_i F^\gamma_j
+\]
+and \( \restr{F}{M\times\{\alpha\}} \) is smooth. Then \( F \) is smooth on \( M\times [\alpha,\omega] \).
+</p>
+
+</div>
+
+<div class="remark">
+<p>
+Note that since \( p > \dim M + 2 = \dim (M\times [\alpha,\omega])+1 \), if \( F\in
+W^{2,p}(M\times[\alpha,\omega]) \) then \( F \) and \( \frac{\partial F}{\partial
+x^i} \) are in \( C(M\times[\alpha,\omega]) \) by <a href="sobolev-riemannian.html">Sobolev embeddings</a>. It makes sense then to talk
+about:
+</p>
+<ol class="org-ol">
+<li>the restriction and boundary condition at time \( t=\alpha \) (in fact, by <a href="interpolation-sobolev.html">Trace theorem</a>, \( p>1 \) is enough).</li>
+<li>the pointwise condition \( F: M\times [\alpha,\omega] \longrightarrow
+   B\subset V \).</li>
+</ol>
+
+</div>
+
+<div class="proof">
+<p>
+We define the operators \( P F := g^{ij}\Gamma'^\alpha_{\beta\gamma}(F) F^\beta_i
+F^\gamma_j \) and \( A F := \frac{dF }{dt} + \Delta F \). We will abusively denote \( W^{k,p}(M\times
+[\beta,\gamma])\) by \( W^{k,p}([\beta,\gamma]) \). Our bootstrap scheme consists of 3
+steps:
+</p>
+<ol class="org-ol">
+<li>Prove that \( F\in W^{2,\tilde p}([\pi,\omega]) \) for every \( \pi > \alpha \) and \(
+   \tilde p \in (1,\infty) \). By
+compactness of \( M \), it is sufficient to prove this
+for a sequence \( \tilde p \to +\infty \).</li>
+<li>Prove that \( F \) is \( C^\infty \) for all time \( t >\alpha \).</li>
+<li>Prove that \( F \) is \( C^\infty \) on \( M\times [\alpha,\omega] \).</li>
+</ol>
+
+<p>
+<i>Step 1.</i> By Theorem <a href="#thm:reg-quad">thm:reg-quad</a>, \( AF = PF \in W^{r,q}([\alpha,\omega]) \) whenever \( r<1 \) and \(
+\frac{1}{q} > (\frac{r}{2}+1)\frac{1}{p} \). Apply Gårding inequality, for all
+\( \pi >\alpha \), \( F\in W^{r+2,q}([\pi,\omega]) \subset W^{2,\tilde p}([\pi,\omega]) \)
+for \( \frac{1}{\tilde p} = \frac{1}{q} - \frac{r}{\dim M + 1} \). Choose \( \frac{1}{q}
+\) very close to \( (\frac{r}{2}+1)\frac{1}{p} \), one sees that the condition on \(
+\tilde p \) is \(\frac{1}{\tilde p } > (\frac{r}{2} +1 ) \frac{1}{p} - \frac{r}{p-1}\),
+which will be satisfied if \( \frac{1}{\tilde p} > (1-\frac{r}{2})
+\frac{1}{p}\), i.e. for all \( \tilde p < \frac{p}{1 -r/2} \). It remains to repeat this
+result to finish the first
+step. We will say \( F\in W^{2,*}([\pi,\omega]) \) for \( F\in W^{2,p}([\pi,\omega])
+\) for all \( p\in (1,\infty) \).
+</p>
+
+<p>
+<i>Step 2.</i> By Theorem <a href="#thm:reg-quad">thm:reg-quad</a>, for all \( r<1 \), one has \( AF = PF \in
+W^{r,*}([\pi,\omega]) \), therefore by Gårding inequality, \(
+F\in W^{r+2, * }([\pi,\omega]) \). Iterate this result and one has \(F\in
+W^{k,*}([\pi,\omega]) \) for all \( k\in [2,\infty) \) and \( \pi >\alpha \). So \( F \)
+is smooth for \( t>\alpha \).
+</p>
+
+<p>
+<i>Step 3.</i> We apply regularity result (Theorem <a href="#thm:elliptic-d">thm:elliptic-d</a>) for elliptic operator \( A \) and boundary
+operators \( B^0: F \mapsto \restr{F}{M\times\{\alpha\}} \) and \( B^1: F \mapsto
+\restr{F}{M\times\{\omega\}} \): For \( q,r \) in Step 1,
+one has \( AF = PF \in W^{r,q}([\alpha,\omega]) \) and \( B^j F \in \partial W^{r,q} \),
+therefore \( F\in W^{r+2,q}([\alpha,\omega])\subset W^{2,\tilde p}([\alpha,\omega]) \)
+for the same \( \tilde p \) as Step 1. This proves that \( F\in W^{2,*}([\alpha,\omega])
+\), which also means that one has \( F\in W^{r+2,q}([\alpha,\omega]) \) with no additional
+condition on \( q \) except \( q\in (1,\infty) \). Iterate and one obtains the regularity
+of \( F \) on \( [\alpha,\omega] \).
+</p>
+
+</div>
+
+<div class="remark">
+<p>
+The first 2 steps were to prove the regularity of \( \restr{F}{M\times
+\{\omega\}} \), which was then used as a boundary condition in
+order to apply regularity result for elliptic operator on manifold with boundary.
+</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org5edd7a5" class="outline-2">
+<h2 id="org5edd7a5"><span class="section-number-2">4</span> Short-time existence for nonlinear heat equation.</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+We will choose as always \( p > \dim M +2 \). As before, \( M \) is a compact Riemannian
+manifold and \( B\subset \mathbb{R}^N \) is a large Euclidean ball.
+</p>
+
+<div id="thm:short-time" btit="(Short-time existence)" class="theorem">
+<p>
+Let \( F_\alpha: M \longrightarrow  B\) be a smooth map, then there exists \( \epsilon>0
+\) depending on \( F_\alpha \) and \( F: M\times [\alpha,\alpha + \epsilon] \longrightarrow
+B \) such that \( F\in W^{2,p}(M\times [\alpha,\alpha+\epsilon]) \) with \(
+\restr{F}{M\times \{\alpha\}} = F_\alpha \) and
+\[
+ \frac{d F_t}{dt} = \tau(F_t) \quad \text{on } M\times [\alpha,\alpha +\epsilon]
+\]
+</p>
+
+</div>
+
+<div class="proof">
+<p>
+We find \( F \) as a sum \( F = F_b + F_\# \) where \( F_b\in C^\infty(M\times
+[\alpha,\omega]) \) satisfies the initial condition and \( F_\# \in W^{2,p}(M\times
+[\alpha,\alpha+\epsilon]/\alpha) \).
+</p>
+
+<p>
+The nonlinear heat operator can be written as:
+</p>
+\begin{align*}
+  T: W^{2,p}(M\times[\alpha,\omega]/\alpha)^{\oplus N} &\longrightarrow L^p(M\times[\alpha,\omega])^{\oplus N}\\
+  	F_\#					       &\longmapsto \tau(F_b + F_\#)
+\end{align*} 
+<p>
+where \( \tau(F)^\alpha = - \Delta F^\alpha + g^{ij}\Gamma'^\alpha_{\beta\gamma}(F)
+F^\beta_i F^\gamma_j \), which can be rewritten as \( \tau(F) = -\Delta F +
+\Gamma(F)(\nabla F)^2 \). The derivative of \( T \) at \( F_\# \) in direction \( k\in
+W^{2,p}(M\times[\alpha,\omega]/\alpha)^{\oplus N} \) is
+\[
+ DT(F_\#) k = -\Delta k +D \Gamma(F)\cdot k . (\nabla F)^2 + 2\Gamma(F) \nabla F. \nabla k,
+\]
+or in local coordinates:
+\[
+  DT(F_\#)^\alpha = g^{ij}\left( \frac{\partial^2 k^\alpha}{\partial x^i \partial x^j} -
+\Gamma^l_{ij} k^\alpha_l \right) + g^{ij} \frac{\partial \Gamma'^\alpha_{\beta\gamma}}{\partial y^\delta} k^\delta F^\beta_i F^\gamma_j + 2g^{ij} \Gamma'^\alpha_{\beta\gamma}(F) F^\beta_i F^\gamma_j 
+\]
+which is of form \( DT(F_\#) k = -\Delta k - a(x,F) \nabla k -b(x,F) k \) where \( a,b \)
+are smooth.
+</p>
+
+<p>
+Therefore if we note  
+</p>
+\begin{align*}
+  H: W^{2,p}(M\times[\alpha,\omega]/\alpha)^{\oplus N} &\longrightarrow L^p(M\times[\alpha,\omega])^{\oplus N}\\
+  	F_\#					       &\longmapsto (\frac{d }{dt} - \tau)(F_b + F_\#)
+\end{align*}
+<p>
+then the derivative of \( H \) at \( F_\# = 0 \) is
+\[
+ DH(0)\cdot k = \frac{d k}{d t} + \Delta k + a(x, F_b) \nabla k + b(x, F_b) k
+\]
+which by Theorem <a href="#thm:para-existence-d">thm:para-existence-d</a> is an isomorphism from \(
+W^{2,p}(M\times[\alpha,\omega]/\alpha)^{\oplus N}\) to
+\(W^{0,p}(M\times[\alpha,\omega]/\alpha)^{\oplus N} =  L^p(M\times[\alpha,\omega])^{\oplus
+N} \). This shows that \( H \) is a local isomorphism mapping a neighborhood of \( 0 \) to
+a neighborhood of \( (\frac{d }{dt}-\tau)F_b \).
+</p>
+
+<p>
+Define \( g_\epsilon\in L^p(M\times [\alpha,\omega])^{\oplus N} \) by 
+\[
+ g_\epsilon:= \begin{cases}
+0	      ,  & \text{if $t\in[\alpha,\alpha+\epsilon]$} \\
+(\frac{d }{dt}-\tau)F_b	      , & \text{if $t > \alpha+\epsilon$}
+	      \end{cases}
+\]
+which is arbitrarily \( L^p(M\times[\alpha,\omega]) \)-close to \( (\frac{d }{dt}-\tau)F_b
+\) for \( 0<\epsilon \ll 1 \). There exists therefore \( F_\#\in W^{2,p}(M\times
+[\alpha,\omega]/\alpha)^{\oplus N} \) such that \( H(F_\#) = g_\epsilon \), meaning that
+the function \( F= F_b + F_\#: M \longrightarrow V \) satisfies \( \restr{F}{M\times\{\alpha\}} = F_\alpha \)
+and \( \frac{d F}{d t} -\tau(F_t) = 0 \) for \( t\in[\alpha,\alpha+\epsilon] \).
+</p>
+
+<p>
+By Regularity Theorem <a href="#thm:reg-nonlin-heat">thm:reg-nonlin-heat</a>, \( F \) is \( C^\infty \) for \(
+t\in[\alpha,\alpha+\epsilon] \). Theorem <a href="#thm:global-eq">thm:global-eq</a> assures that the image of \( F
+\) is in \( M \), hence in \( M' \) for \( t\in [\alpha,\alpha+\epsilon] \).
+</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<div class='footer'>
+By Tien NGUYEN MANH.<br>
+Last updated 2018-07-03 Tue 01:41. <br>
+</div>
+</div>
+</body>
+</html>

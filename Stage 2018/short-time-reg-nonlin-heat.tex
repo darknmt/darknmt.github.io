@@ -1,0 +1,440 @@
+\iffalse
+\begin{info}
+The PDF version of this page can be downloaded by replacing \texttt{html} in the its address by
+\texttt{pdf}. 
+For example \texttt{/html/sheaf-cohomology.html} should become \texttt{/pdf/sheaf-cohomology.pdf}.
+\end{info}
+\fi
+
+We will establish in this part a regularity estimate for the quadratic term of nonlinear
+heat operator use it to setup a bootstrap scheme that eventually will prove that any
+sufficiently regular solution of nonlinear heat equation that is initially \(C^\infty\)
+will be always \(C^\infty\).
+
+We will also prove short-time existence using well-known method of Inverse
+function theorem for Banach spaces. Since the solution is smooth, we can apply Theorem
+\ref{thm:global-eq} to conclude that the it remains in \(M'\subset \mathbb{R}^N\).
+
+\section{Review of Sobolev spaces and Linear equations.}
+\label{sec:org3af8194}
+
+The following results are well-known and their statements are written here in the case of our interest (linear heat equation on
+manifold). A more careful formulation with complete proofs can be found in the
+appendices.
+
+\subsection{Sobolev spaces.}
+\label{sec:orge4cbcfa}
+
+Let \(M\) be a Riemannian manifold, the \emph{Sobolev spaces} \(W^{k,p}(M)\) on \(M\) can be defined as the completion of \(C^\infty(M)\) with respect to the Sobolev norms
+\[ 
+\|\varphi\|_{W^{k,p}} = \sum_{|\alpha|\leq k} \| D^\alpha \varphi \|_{L^p}. 
+\]
+We will suppose that \(M\) is a compact manifold, then set-theoretically \(W^{k,p}\) does not depend
+on the metric of \(M\) and their norm remains in the same equivalent class as the metric
+varies. The Sobolev spaces form a family of reflexive Banach spaces that is stable under holomorphic
+interpolation:
+
+\begin{theorem}[Interpolation of Sobolev spaces]
+\label{thm:interp-sobolev-d}
+Let \(p,q\in (1,+\infty)\) and \(k,l\in \mathbb{R}\) and \(M\) be a compact
+Riemannian manifold. Then the holomorphic interpolations of 
+\[
+ A_0:= W^{k,p}(M)\quad \text{and}\quad A_1:=W^{l,q}(M)
+\]
+are \(A_\theta=W^{s,r}(M)\) where
+\[
+ \theta l + (1-\theta)k = s,\qquad \theta \frac{1}{q} + (1-\theta) \frac{1}{p} = \frac{1}{r}.
+\]
+In particular, one has the Interpolation inequality
+\[
+ \|f\|_{W^{s,r}}\leq 2 \|f \|^\theta_{W^{l,q}} \| f\|^{1-\theta}_{W^{k,p}}.
+\]
+\end{theorem}
+
+Sobolev embeddings and Kondrachov theorem remain correct on manifold. 
+
+\begin{theorem}[Sobolev embedding]
+\label{thm:Sobolev-Rn-d}
+Given \(k,l\in \mathbb{Z},\ k>l \geq 0\) and \(p,q\in \mathbb{R},\ p>q\geq 1\). Then
+\begin{enumerate}
+\item If \(\frac{1}{p}= \frac{1}{q} - \frac{k-l}{n}\) then 
+\[
+    W^{k,q}(M) \hookrightarrow W^{l,p}(M),
+   \]
+\item If \(\frac{k-r}{n}> \frac{1}{q}\) then
+\[
+   W^{k,q}(M) \hookrightarrow C^r(M)
+   \]
+If \(\frac{k-r-\alpha}{n}\leq \frac{1}{q}\) then 
+\[ 
+   W^{k,q}(M) \hookrightarrow C^{r,\alpha}(M) 
+   \]
+\end{enumerate}
+where \(C^r(M)\) denotes the space of \(C^r\) functions equipped with the norm \(\| u \|_{C^r} = \max_{l\leq
+r}\sup|\nabla^l u|\), and \(C^{r,\alpha}\) is the subspace of \(C^r\) of functions
+whose \(r^{\rm th}\)-derivative is \(\alpha\)-Holder, equipped with the norm \(\|
+u\|_{C^{r,\alpha}} = \| u \|_{C^r} + \sup_{P\ne Q}\{ \frac{u(P) - u(Q)}{d(P,Q)^\alpha} \}\).
+\end{theorem}
+
+\begin{theorem}[Kondrachov]
+\label{thm:Kondrachov-Rn-d}
+Let \(k\in \mathbb{Z}_{\geq 0}\) and \(p,q\in \mathbb{R}_{>0}\) be such that
+\(1\geq \frac{1}{p} > \frac{1}{q} - \frac{k}{n} > 0\) then
+\begin{enumerate}
+\item The embedding \(W^{k,q}(M) \hookrightarrow  L^p(M)\) is compact,
+\item The embedding \(W^{k,q}(M) \hookrightarrow  C^\alpha(M)\) is compact if
+\(k-\alpha > \frac{n}{q}\) where \(0\leq \alpha < 1\),
+\end{enumerate}
+\end{theorem}
+
+It is also natural, for regularity results of parabolic equation, to use weighted Sobolev
+spaces because each derivative in time should be counted as twice as that in space. For
+example, the space \(W^{2,p}(M\times[\alpha,\omega])\) is the completion of \(C^\infty(M)\) with respect to
+the norm
+\[
+ \|\varphi\|_{W^{2,p}} := \|\varphi\|_{L^p} + \left\| \frac{d\varphi}{dt}\right\|_{L^p} + \sum_{i,j} \left\| \frac{\partial^2\varphi}{\partial x^i \partial
+x^j} \right\|_{L^p} + \sum_i \left\| \frac{\partial\varphi}{\partial x^i} \right\|_{L^p}
+\]
+Similarly, one can define \(W^{2k,p}(M\times[\alpha,\omega])\) using \(L^p\)-norm of
+derivatives \(\partial_t^\beta \partial_x^\gamma \varphi\) of \(\varphi\) with \(2\beta + \gamma
+\leq 2k\).
+
+
+We also want to be able to talk about \(W^{k,p}\) when \(k\) is not an integer and not necessarily positive. This
+allows us to have a more flexible bootstrap scheme for nonlinear heat equation and to use
+Interpolation Theorem \ref{thm:interp-sobolev-d} more efficiently. We claim that these
+generalised Sobolev spaces (with weight and with non-integral regularity) can be defined on
+manifold and satisfy all the above properties (reflexivity, Interpolation theorem, Sobolev
+embedding and Kondrachov theorem) and refer to the appendices for all the details.
+
+\subsection{Trace theorem.}
+\label{sec:orgbc9f39d}
+
+It is possible to avoid a discussion on Trace operator if we only want to make sense of the
+initial condition of nonlinear heat equation: one can consider only solutions with
+regularity greater than \(W^{2,p}(M\times[\alpha,\omega])\) with \(p \geq \dim M + 2\), which can be embedded in \(C(M)\). It is however necessary to investigate regularity of Trace operator to have a complete proof of the bootstrap. We will review
+briefly some results.
+
+The following two behaviors of trace are well-known:
+\begin{enumerate}
+\item If \(-1 + \frac{1}{p} < k < \frac{1}{p}\) then the natural map \(W^{k,p}(M\times[\alpha,\omega]/\alpha) \hookrightarrow W^{k,p}(M\times[\alpha,\omega])\) is an isomorphism, where \(W^{k,p}(M\times[\alpha,\omega]/\alpha)\) denotes the
+completion under \(W^{k,p}\)-norm of the space of smooth functions vanishing on a
+neighborhood of \(M\times \{\alpha\}\). There is therefore no meaningful notion of trace in this case.
+\item If \(k > \frac{1}{p} + l,\ l\geq 0\), then the restriction map
+\[
+    B:\ C^\infty(M\times[\alpha,\omega]) \longrightarrow C^\infty(M):\ f(x,t) \longmapsto f(x,\alpha)
+   \]
+extends to a bounded operator \(B:\ W^{k,p}(M\times[\alpha,\omega]) \longrightarrow
+   W^{l,p}(M)\), called \emph{Trace operator}.
+\end{enumerate}
+
+We will topologise the space \(\partial_\alpha W^{k,p}(M\times[\alpha,\omega])\) of
+restrictions to time \(t=\alpha\) of functions in \(W^{k,p}(M\times[\alpha,\omega])\), in case Trace operator is well defined, as cokernel of
+\(B\), that is, as a quotient
+space of \(W^{k,p}(M\times[\alpha,\omega])\). This makes \(\partial_\alpha
+W^{k,p}(M\times[\alpha,\omega])\) a Banach space with stronger norm than any \(W^{l,p}(M)\) for any \(l < k-\frac{1}{p}\).
+
+\subsection{Linear equation on manifolds.}
+\label{sec:orgb9f137c}
+
+\subsubsection{Existence and Regularity.}
+\label{sec:orgff9fdf8}
+
+It can be easily verified that the linear heat operator \(AF:= \frac{d}{dt}F + \Delta F\)
+is a parabolic operator and therefore is also an elliptic operator. All of the following results
+holds for operator \(A\).
+
+\begin{theorem}[Regularity for elliptic operator]
+\label{thm:elliptic-d}
+Let \(M\) be a compact manifold and \(AF:= \frac{d}{dt}F + \Delta F\) be an elliptic
+operator of second order. Given \(\frac{1}{p} < l < k <\infty\) and \(F\in
+W^{l,p}(M\times[\alpha,\omega])\) and suppose that 
+\[
+ AF\in W^{k-2,p}(M\times[\alpha,\omega]),\quad \restr{f}{\alpha}\in \partial_\alpha
+W^{k,p}(M\times[\alpha,\omega]), \quad  \restr{f}{\omega}\in \partial_\alpha W^{k,p}(M\times[\alpha,\omega]).
+\]
+Then actually \(F\in W^{k,p}(M\times[\alpha,\omega])\).
+\end{theorem}
+
+
+\begin{theorem}[Causality of parabolic equation]
+\label{thm:para-existence-d}
+Let \(M\) be a compact manifold and \(AF:= \frac{d}{dt}F + \Delta F\) be an parabolic
+operator. Then 
+\[
+ A:\ W^{k,p}(M\times[\alpha,\omega]/\alpha) \longrightarrow W^{k-2,p}(M\times[\alpha,\omega]/\alpha)
+\]
+is an isomorphism of Banach spaces.
+\end{theorem}
+
+
+\begin{theorem}[Gårding's Inequality and Regularity for parabolic operator]
+\label{thm:para-eq-d }
+Let \(M\) be a compact manifold, \(p\in (1,+\infty)\), \(k > l > -\infty\) and \(AF:= \frac{d}{dt}F + \Delta F\) be a parabolic operator. We write \(W^{k,p}([\beta,\gamma])\) shortly for \(W^{k,p}(M\times[\beta,\gamma])\). Suppose that
+\[
+ F\in W^{l,p}([\alpha,\omega]),\quad AF\in W^{k-2,p}([\alpha,\omega]).
+\]
+Then \(F\in W^{k,p}([\pi,\omega])\) for all \(\pi\in (\alpha,\omega)\). Also, there
+exists a constant \(C>0\) such that 
+\[
+ \|F\|_{W^{k,p}([\pi,\omega])} \leq C \left( \|AF\|_{W^{k-2,p}([\alpha,\omega])} + \| F \|_{W^{l,p}([\alpha,\pi])}  \right).
+\]
+In particular for homogeneous equation, the solution is \(C^\infty\) and an arbitrarily weak estimate in the past gives an arbitrarily strong estimate in the future. 
+\end{theorem}
+
+\subsubsection{Maximum principle and Comparison theorems.}
+\label{sec:orgf25e20e}
+Other than regularity results which are generally true for parabolic operators, the linear
+heat operator also enjoys the following versions of Maximum principle. See Appendices for
+their proofs.
+
+\begin{theorem}[Maximum principle]
+\label{thm:max-princ-d}
+Let \(M\) be a compact manifold and \(f: M\times[\alpha,\omega] \longrightarrow \mathbb{R}\) be a continuous function
+with \(\restr{f}{\alpha}\leq 0\). Suppose that whenever \(f>0\), \(f\) is smooth and
+\[
+ \frac{\partial f}{\partial t} \leq -\Delta f + Cf.
+\]
+Then in fact \(f\leq 0\).
+\end{theorem}
+
+With the same proof as Theorem \ref{thm:max-princ-d}, one also has:
+
+\begin{theorem}[\( L^\infty \)-Comparison theorem]
+\label{thm:infty-comparison-d}
+Let \(f: M\times[\alpha,\omega] \longrightarrow \mathbb{R}\) be a continuous function on
+\(M\), smooth for all time \(t>0\) such that
+\[
+  \frac{d f}{dt} = -\Delta f + b f \text{ on } M\times (\alpha,\omega]
+\]
+where \(b\) is a smooth function on \(M\). Then there exists a constant \(B\) depending
+only on \(b\) such that 
+\[
+ \|\restr{f}{\omega}\|_{L^\infty} \leq e^{B(\omega-\alpha)}
+\|\restr{f}{\alpha}\|_{L^\infty}.
+\]
+\end{theorem}
+
+Using backwards heat equation and Theorem \ref{thm:infty-comparison-d}, one can prove its
+version for \(L^1\).
+
+\begin{theorem}[\( L^1 \)-Comparison theorem]
+\label{thm:1-comparison-d}
+Let \(f: M\times[\alpha,\omega] \longrightarrow \mathbb{R}\) be a continuous function on
+\(M\), smooth for all time \(t>0\) such that
+\[
+  \frac{d f}{dt} = -\Delta f + b f \text{ on } M\times (\alpha,\omega]
+\]
+where \(b\) is a smooth function on \(M\). Then there exists a constant \(B\) depending
+only on \(b\) such that 
+\[
+ \|\restr{f}{\omega}\|_{L^1} \leq e^{B(\omega-\alpha)}
+\|\restr{f}{\alpha}\|_{L^1}.
+\]
+\end{theorem}
+
+
+\section{Regularity estimate of the quadratic term.}
+\label{sec:org7baff5d}
+
+\begin{theorem}[Regularity of the quadratic term]
+\label{thm:reg-quad}
+Let \(F:\ M\times [\alpha,\omega] \longrightarrow B\subset \mathbb{R}^N\) be in \(W^{s,q}(M\times[\alpha,\omega])\cap C(M\times [\alpha,\omega])\) and
+\[ 
+P F := g^{ij}\Gamma'^\alpha_{\beta\gamma}(F) F^\beta_i
+F^\gamma_j.
+\]
+Suppose that
+\begin{equation}
+\label{eq:cond:thm:reg-poly-diff}
+ r\geq 0,\quad p,q\in (1,\infty),\quad r+1 < s, \quad \frac{1}{p}> \frac{r+2}{s} \frac{1}{q}.
+\end{equation}
+Then one has \(PF\in W^{r,p}(X)\) and
+\[
+ \|P F \|_{W^{r,p}} \leq C\left(1 + \|F\|_{W^{s,q}}\right)^{q/p}.
+\]
+where \(C\) is a constant independent of \(F\).
+\end{theorem}
+
+\begin{proof}
+We will suppose here that \(r,s\) are even integers so that the \(W^{r,p}\)
+(respectively \(W^{s,q}\)) norm of \(PF\) (respectively \(F\)) can be written as sum of \(L^p\)
+(respectively \(L^q\)) norms of its derivatives. Also, we will use chain rule freely to
+differentiate the term \(\Gamma'^\alpha_{\beta\gamma}(F)\) using weak derivatives of \(F\). The general and rigorous proof, which involves fractional Sobolev space to treat non-integral
+\(r, s\) and a detour to Besov spaces to justify chain rule, can be found in the appendices.
+
+The derivatives of \(PF\) that appear in its \(W^{r,p}\) norm are of form
+\[
+ C(x,F)\ \prod_i \partial_t^{b_i} \partial_x^{c_i} F^{\beta_i} 
+\]
+where \(2\sum b_i + \sum c_i \leq r+2\) and \(\max \{2b_i+ c_i\}\leq r+1\) and \(C(x,F)\) is bounded on \(M\). Using Multiplication theorem for \(L^p\)-spaces, one has
+\[
+  \left\|C(x,F)\ \prod_i \partial_t^{b_i} \partial_x^{c_i} F^{\beta_i} \right\|_{L^p} \leq
+\|C(x,F)\|_{L^\infty} \prod_i \left\|\partial_t^{b_i} \partial_x^{c_i}
+F^{\beta_i}\right\|_{L^{p_i}}  \leq \|C(x,F)\|_{L^\infty} \prod_i \left\|F\right\|_{W^{2b_i+c_i,p_i}}
+\]
+as long as we choose \(p_i\in (1,\infty)\) such that \(\frac{1}{p} \geq \sum
+\frac{1}{p_i}\). The
+strategy is to choose \(\frac{1}{p_i}\) big enough to have \(W^{s,q}
+\hookrightarrow W^{2b_i+c_i,p_i}\) in order to
+bound \(\left\|F\right\|_{W^{2b_i+c_i,p_i}}\) by \(\left\|F\right\|_{W^{s,q}}\), then
+use the upper bound of \(2b_i +c_i\) to justify that \(\frac{1}{p} > \frac{r+2}{s}
+\frac{1}{q} \geq \sum \frac{1}{p_i}\), meaning that such choice of \(p_i\) are valid.
+
+The straightforward way to have a sufficient condition of \(p_i\) such that \(W^{s,q}
+\hookrightarrow W^{2b_i+c_i,p_i}\) is to use Sobolev embedding, but the result is sub-optimal
+because Sobolev embedding does not take into account the \(L^\infty\)-bounded of \(F\) (its image lies in a compact of \(\mathbb{R}^N\)). A better way is to use
+Interpolation inequality, by remarking that \(F\in W^{0,v}\) for all \(v\in (1,+\infty)\) and writing \(W^{2b_i+c_i, p_i}\) as an interpolation space of \(W^{s,q}\) and \(W^{0,v}\). It can be seen, by direct computation, that the sufficient condition for \(W^{s,q}
+\hookrightarrow W^{2b_i+c_i,p_i}\) is \(2b_i+c_i < s\) and
+\[
+ 0 < \frac{1}{p_i} - \frac{2b_i+c_i}{s}\frac{1}{q} < 1 - \frac{2b_i + c_i}{s}.
+\]
+Choose \(\frac{1}{p_i}\) just a bit bigger than \(\frac{2b_i+c_i}{s}\frac{1}{q}\), one
+still has
+\[
+\sum \frac{1}{p_i} \simeq \sum  \frac{2b_i+c_i}{s}\frac{1}{q} \leq \frac{r+2}{s}\frac{1}{q} < \frac{1}{p}.
+\]
+The conclusion follows.  
+\end{proof}
+
+
+
+\section{Regularity for nonlinear heat equation.}
+\label{sec:org703224a}
+Let \(p>\dim M + 2\), using the regularity estimate for the quadratic term, we now can prove:
+
+\begin{theorem}[Bootstrap for nonlinear heat equation]
+\label{thm:reg-nonlin-heat}
+Let \(F:\ M\times [\alpha,\omega] \longrightarrow B\) such that \(F\in W^{2,p}(M\times
+[\alpha,\omega])\) and \(\frac{d F_t}{dt} = \tau(F_t)\), i.e.
+\[
+ \frac{d F^\alpha}{dt} = -\Delta F^\alpha + g^{ij}\Gamma'^\alpha_{\beta\gamma}(F)
+F^\beta_i F^\gamma_j
+\]
+and \(\restr{F}{M\times\{\alpha\}}\) is smooth. Then \(F\) is smooth on \(M\times [\alpha,\omega]\).
+\end{theorem}
+
+\begin{remark}
+Note that since \(p > \dim M + 2 = \dim (M\times [\alpha,\omega])+1\), if \(F\in
+W^{2,p}(M\times[\alpha,\omega])\) then \(F\) and \(\frac{\partial F}{\partial
+x^i}\) are in \(C(M\times[\alpha,\omega])\) by \href{sobolev-riemannian.org}{Sobolev embeddings}. It makes sense then to talk
+about:
+\begin{enumerate}
+\item the restriction and boundary condition at time \(t=\alpha\) (in fact, by \href{interpolation-sobolev.org}{Trace theorem}, \(p>1\) is enough).
+\item the pointwise condition \(F: M\times [\alpha,\omega] \longrightarrow
+   B\subset V\).
+\end{enumerate}
+\end{remark}
+
+\begin{proof}
+We define the operators \(P F := g^{ij}\Gamma'^\alpha_{\beta\gamma}(F) F^\beta_i
+F^\gamma_j\) and \(A F := \frac{dF }{dt} + \Delta F\). We will abusively denote \(W^{k,p}(M\times
+[\beta,\gamma])\) by \(W^{k,p}([\beta,\gamma])\). Our bootstrap scheme consists of 3
+steps:
+\begin{enumerate}
+\item Prove that \(F\in W^{2,\tilde p}([\pi,\omega])\) for every \(\pi > \alpha\) and \(\tilde p \in (1,\infty)\). By
+compactness of \(M\), it is sufficient to prove this
+for a sequence \(\tilde p \to +\infty\).
+\item Prove that \(F\) is \(C^\infty\) for all time \(t >\alpha\).
+\item Prove that \(F\) is \(C^\infty\) on \(M\times [\alpha,\omega]\).
+\end{enumerate}
+
+\emph{Step 1.} By Theorem \ref{thm:reg-quad}, \(AF = PF \in W^{r,q}([\alpha,\omega])\) whenever \(r<1\) and \(\frac{1}{q} > (\frac{r}{2}+1)\frac{1}{p}\). Apply Gårding inequality, for all
+\(\pi >\alpha\), \(F\in W^{r+2,q}([\pi,\omega]) \subset W^{2,\tilde p}([\pi,\omega])\)
+for \(\frac{1}{\tilde p} = \frac{1}{q} - \frac{r}{\dim M + 1}\). Choose \(\frac{1}{q}\) very close to \((\frac{r}{2}+1)\frac{1}{p}\), one sees that the condition on \(\tilde p\) is \(\frac{1}{\tilde p } > (\frac{r}{2} +1 ) \frac{1}{p} - \frac{r}{p-1}\),
+which will be satisfied if \(\frac{1}{\tilde p} > (1-\frac{r}{2})
+\frac{1}{p}\), i.e. for all \(\tilde p < \frac{p}{1 -r/2}\). It remains to repeat this
+result to finish the first
+step. We will say \(F\in W^{2,*}([\pi,\omega])\) for \(F\in W^{2,p}([\pi,\omega])\) for all \(p\in (1,\infty)\).
+
+\emph{Step 2.} By Theorem \ref{thm:reg-quad}, for all \(r<1\), one has \(AF = PF \in
+W^{r,*}([\pi,\omega])\), therefore by Gårding inequality, \(F\in W^{r+2, * }([\pi,\omega])\). Iterate this result and one has \(F\in
+W^{k,*}([\pi,\omega])\) for all \(k\in [2,\infty)\) and \(\pi >\alpha\). So \(F\)
+is smooth for \(t>\alpha\).
+
+\emph{Step 3.} We apply regularity result (Theorem \ref{thm:elliptic-d}) for elliptic operator \(A\) and boundary
+operators \(B^0: F \mapsto \restr{F}{M\times\{\alpha\}}\) and \(B^1: F \mapsto
+\restr{F}{M\times\{\omega\}}\): For \(q,r\) in Step 1,
+one has \(AF = PF \in W^{r,q}([\alpha,\omega])\) and \(B^j F \in \partial W^{r,q}\),
+therefore \(F\in W^{r+2,q}([\alpha,\omega])\subset W^{2,\tilde p}([\alpha,\omega])\)
+for the same \(\tilde p\) as Step 1. This proves that \(F\in W^{2,*}([\alpha,\omega])\), which also means that one has \(F\in W^{r+2,q}([\alpha,\omega])\) with no additional
+condition on \(q\) except \(q\in (1,\infty)\). Iterate and one obtains the regularity
+of \(F\) on \([\alpha,\omega]\).
+\end{proof}
+
+\begin{remark}
+The first 2 steps were to prove the regularity of \(\restr{F}{M\times
+\{\omega\}}\), which was then used as a boundary condition in
+order to apply regularity result for elliptic operator on manifold with boundary.
+\end{remark}
+
+
+
+
+\section{Short-time existence for nonlinear heat equation.}
+\label{sec:org6dd8c2b}
+We will choose as always \(p > \dim M +2\). As before, \(M\) is a compact Riemannian
+manifold and \(B\subset \mathbb{R}^N\) is a large Euclidean ball.
+
+\begin{theorem}[Short-time existence]
+\label{thm:short-time}
+Let \(F_\alpha: M \longrightarrow  B\) be a smooth map, then there exists \(\epsilon>0\) depending on \(F_\alpha\) and \(F: M\times [\alpha,\alpha + \epsilon] \longrightarrow
+B\) such that \(F\in W^{2,p}(M\times [\alpha,\alpha+\epsilon])\) with \(\restr{F}{M\times \{\alpha\}} = F_\alpha\) and
+\[
+ \frac{d F_t}{dt} = \tau(F_t) \quad \text{on } M\times [\alpha,\alpha +\epsilon]
+\]
+\end{theorem}
+
+\begin{proof}
+We find \(F\) as a sum \(F = F_b + F_\#\) where \(F_b\in C^\infty(M\times
+[\alpha,\omega])\) satisfies the initial condition and \(F_\# \in W^{2,p}(M\times
+[\alpha,\alpha+\epsilon]/\alpha)\).
+
+The nonlinear heat operator can be written as:
+\begin{align*}
+  T: W^{2,p}(M\times[\alpha,\omega]/\alpha)^{\oplus N} &\longrightarrow L^p(M\times[\alpha,\omega])^{\oplus N}\\
+  	F_\#					       &\longmapsto \tau(F_b + F_\#)
+\end{align*} 
+where \(\tau(F)^\alpha = - \Delta F^\alpha + g^{ij}\Gamma'^\alpha_{\beta\gamma}(F)
+F^\beta_i F^\gamma_j\), which can be rewritten as \(\tau(F) = -\Delta F +
+\Gamma(F)(\nabla F)^2\). The derivative of \(T\) at \(F_\#\) in direction \(k\in
+W^{2,p}(M\times[\alpha,\omega]/\alpha)^{\oplus N}\) is
+\[
+ DT(F_\#) k = -\Delta k +D \Gamma(F)\cdot k . (\nabla F)^2 + 2\Gamma(F) \nabla F. \nabla k,
+\]
+or in local coordinates:
+\[
+  DT(F_\#)^\alpha = g^{ij}\left( \frac{\partial^2 k^\alpha}{\partial x^i \partial x^j} -
+\Gamma^l_{ij} k^\alpha_l \right) + g^{ij} \frac{\partial \Gamma'^\alpha_{\beta\gamma}}{\partial y^\delta} k^\delta F^\beta_i F^\gamma_j + 2g^{ij} \Gamma'^\alpha_{\beta\gamma}(F) F^\beta_i F^\gamma_j 
+\]
+which is of form \(DT(F_\#) k = -\Delta k - a(x,F) \nabla k -b(x,F) k\) where \(a,b\)
+are smooth.
+
+Therefore if we note  
+\begin{align*}
+  H: W^{2,p}(M\times[\alpha,\omega]/\alpha)^{\oplus N} &\longrightarrow L^p(M\times[\alpha,\omega])^{\oplus N}\\
+  	F_\#					       &\longmapsto (\frac{d }{dt} - \tau)(F_b + F_\#)
+\end{align*}
+then the derivative of \(H\) at \(F_\# = 0\) is
+\[
+ DH(0)\cdot k = \frac{d k}{d t} + \Delta k + a(x, F_b) \nabla k + b(x, F_b) k
+\]
+which by Theorem \ref{thm:para-existence-d} is an isomorphism from \(W^{2,p}(M\times[\alpha,\omega]/\alpha)^{\oplus N}\) to
+\(W^{0,p}(M\times[\alpha,\omega]/\alpha)^{\oplus N} =  L^p(M\times[\alpha,\omega])^{\oplus
+N}\). This shows that \(H\) is a local isomorphism mapping a neighborhood of \(0\) to
+a neighborhood of \((\frac{d }{dt}-\tau)F_b\).
+
+Define \(g_\epsilon\in L^p(M\times [\alpha,\omega])^{\oplus N}\) by 
+\[
+ g_\epsilon:= \begin{cases}
+0	      ,  & \text{if $t\in[\alpha,\alpha+\epsilon]$} \\
+(\frac{d }{dt}-\tau)F_b	      , & \text{if $t > \alpha+\epsilon$}
+	      \end{cases}
+\]
+which is arbitrarily \(L^p(M\times[\alpha,\omega])\)-close to \((\frac{d }{dt}-\tau)F_b\) for \(0<\epsilon \ll 1\). There exists therefore \(F_\#\in W^{2,p}(M\times
+[\alpha,\omega]/\alpha)^{\oplus N}\) such that \(H(F_\#) = g_\epsilon\), meaning that
+the function \(F= F_b + F_\#: M \longrightarrow V\) satisfies \(\restr{F}{M\times\{\alpha\}} = F_\alpha\)
+and \(\frac{d F}{d t} -\tau(F_t) = 0\) for \(t\in[\alpha,\alpha+\epsilon]\).
+
+By Regularity Theorem \ref{thm:reg-nonlin-heat}, \(F\) is \(C^\infty\) for \(t\in[\alpha,\alpha+\epsilon]\). Theorem \ref{thm:global-eq} assures that the image of \(F\) is in \(M\), hence in \(M'\) for \(t\in [\alpha,\alpha+\epsilon]\).
+\end{proof}

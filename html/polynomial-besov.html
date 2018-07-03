@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-31 Thu 23:28 -->
+<!-- 2018-07-02 Mon 16:34 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Short-time existence and regularity for nonlinear heat equation: Polynomial differential operators and Besov spaces</title>
+<title>Polynomial differential operators and Besov spaces</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Tien NGUYEN MANH" />
 <style type="text/css">
@@ -255,20 +255,14 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div id="content">
-<h1 class="title">Short-time existence and regularity for nonlinear heat equation: Polynomial differential operators and Besov spaces</h1>
+<h1 class="title">Polynomial differential operators and Besov spaces</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgdad6d87">1. Polynomial differential operator.</a>
-<ul>
-<li><a href="#org2de9ad0">1.1. A regularity estimate for polynomial differential operator.</a></li>
-<li><a href="#org00ccdb1">1.2. Review of Besov spaces \( B^{s,p} \).</a></li>
-<li><a href="#org4f3102f">1.3. Proof of the local estimate.</a></li>
-</ul>
-</li>
-<li><a href="#orge1b189c">2. Regularity for nonlinear heat equation.</a></li>
-<li><a href="#orga1a5a53">3. Short-time existence for nonlinear heat equation.</a></li>
+<li><a href="#org2de9ad0">1. A regularity estimate for polynomial differential operator.</a></li>
+<li><a href="#org00ccdb1">2. Review of Besov spaces \( B^{s,p} \).</a></li>
+<li><a href="#org4f3102f">3. Proof of the local estimate.</a></li>
 </ul>
 </div>
 </div>
@@ -299,29 +293,8 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
 \)
 
-<p>
-We will establish in this part a regularity estimate for differential
-operator with coefficient depending nonlinearly in \( x \) and \( f(x) \). Although the
-result can be stated using only Sobolev spaces, it is natural for the proof to make a
-detour to Besov space where we can use Theorem <a href="#thm:compo-besov">thm:compo-besov</a>.
-</p>
 
-<p>
-We will then apply the regularity estimate for the nonlinear part of the heat operator in
-order to setup a bootstrap scheme that eventually will prove that any \( W^{2,p} \)
-solution of nonlinear heat equation that is initially \( C^\infty \) will be always \(
-C^\infty \). 
-</p>
 
-<p>
-We will also prove short-time existence using well-known method of Implicit
-function theorem for Banach spaces. Since the solution is smooth, we can apply Theorem
-<a href="#thm:global-eq">thm:global-eq</a> to conclude that the it remains in \( M'\subset \mathbb{R}^N \).
-</p>
-
-<div id="outline-container-orgdad6d87" class="outline-2">
-<h2 id="orgdad6d87"><span class="section-number-2">1</span> Polynomial differential operator.</h2>
-<div class="outline-text-2" id="text-1">
 <div class="definition">
 <p>
 We say that \( P \) is a <b>polynomial differential operator of type \( (n,k) \)</b> if \( P \)
@@ -338,17 +311,16 @@ where the coefficients \( c_{\alpha_1,\dots,\alpha_nu} \) depend smoothly and no
 
 <div class="exampl">
 <p>
-On \( M\times [\alpha,\omega] \) the nonlinear heat operator \( P F := \frac{d F}{dt} -
-\tau (F_t) \) is a polynomial differential operator of type (2,2). The tension field alone
-is of type (2,1).
+On \( M\times [\alpha,\omega] \) the tension field \( \tau(F) :=  -\Delta F^\alpha + g^{ij}\Gamma'^\alpha_{\beta\gamma}(F)
+F^\beta_i F^\gamma_j \) is a polynomial differential operator of type (2,2). The quadratic
+term alone is of type (2,1).
 </p>
 
 </div>
-</div>
 
-<div id="outline-container-org2de9ad0" class="outline-3">
-<h3 id="org2de9ad0"><span class="section-number-3">1.1</span> A regularity estimate for polynomial differential operator.</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-org2de9ad0" class="outline-2">
+<h2 id="org2de9ad0"><span class="section-number-2">1</span> A regularity estimate for polynomial differential operator.</h2>
+<div class="outline-text-2" id="text-1">
 <p>
 Our goal in this part is to prove the following estimate for polynomial differential
 operator, in which \( X \) will be \( M\times[\alpha,\omega] \).
@@ -433,9 +405,9 @@ and not \( F = \psi_i F \) since we no longer have linearity of the operator \( 
 </div>
 </div>
 
-<div id="outline-container-org00ccdb1" class="outline-3">
-<h3 id="org00ccdb1"><span class="section-number-3">1.2</span> Review of Besov spaces \( B^{s,p} \).</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-org00ccdb1" class="outline-2">
+<h2 id="org00ccdb1"><span class="section-number-2">2</span> Review of Besov spaces \( B^{s,p} \).</h2>
+<div class="outline-text-2" id="text-2">
 <p>
 In this part, \( X = \mathbb{R}^n \) coordinated by \( (x_1,\dots,x_n) \) with weight \(
 (\sigma_1,\dots,\sigma_n) \). We define
@@ -526,9 +498,9 @@ Then
 </div>
 
 
-<div id="outline-container-org4f3102f" class="outline-3">
-<h3 id="org4f3102f"><span class="section-number-3">1.3</span> Proof of the local estimate.</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-org4f3102f" class="outline-2">
+<h2 id="org4f3102f"><span class="section-number-2">3</span> Proof of the local estimate.</h2>
+<div class="outline-text-2" id="text-3">
 <p>
 Since \( B^{r+\epsilon,p}(X)\subset W^{r,p}(X) \), by increasing \( r \) a bit, we can
 suppose that \( r\not\in \mathbb{Z} \) and replace the \( W^{r,p} \) norm in the statement
@@ -703,210 +675,10 @@ We proved the local statement Lemma <a href="#lem:loc-reg-poly-diff">lem:loc-reg
 </div>
 </div>
 </div>
-
-<div id="outline-container-orge1b189c" class="outline-2">
-<h2 id="orge1b189c"><span class="section-number-2">2</span> Regularity for nonlinear heat equation.</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-Let \( p>\dim M + 2 \), using the regularity estimate for polynomial differential
-operator, we now can prove:
-</p>
-
-<div id="thm:reg-nonlin-heat" btit="(Bootstrap for nonlinear heat equation)" class="theorem">
-<p>
-Let \( F:\ M\times [\alpha,\omega] \longrightarrow B \) such that \( F\in W^{2,p}(M\times
-[\alpha,\omega]) \) and \( \frac{d F_t}{dt} = \tau(F_t) \), i.e.
-\[
- \frac{d F^\alpha}{dt} = -\Delta F^\alpha + g^{ij}\Gamma'^\alpha_{\beta\gamma}(F)
-F^\beta_i F^\gamma_j
-\]
-and \( \restr{F}{M\times\{\alpha\}} \) is smooth. Then \( F \) is smooth on \( M\times [\alpha,\omega] \).
-</p>
-
-</div>
-
-<div class="remark">
-<p>
-Note that since \( p > \dim M + 2 = \dim (M\times [\alpha,\omega])+1 \), if \( F\in
-W^{2,p}(M\times[\alpha,\omega]) \) then \( F \) and \( \frac{\partial F}{\partial
-x^i} \) are in \( C(M\times[\alpha,\omega]) \) by <a href="sobolev-riemannian.html">Sobolev imbeddings</a>. It makes sense then to talk
-about:
-</p>
-<ol class="org-ol">
-<li>the restriction and boundary condition at time \( t=\alpha \) (in fact, by <a href="interpolation-sobolev.html">Trace theorem</a>, \( p>1 \) is enough).</li>
-<li>the pointwise condition \( F: M\times [\alpha,\omega] \longrightarrow
-   B\subset V \).</li>
-</ol>
-
-</div>
-
-<div class="proof">
-<p>
-We define the operators \( P F := g^{ij}\Gamma'^\alpha_{\beta\gamma}(F) F^\beta_i
-F^\gamma_j \)of type (2,1) and \( A F := \frac{dF }{dt} + \Delta F \) of type (2,2). As in
-Theorem <a href="#thm:reg-parabolic">thm:reg-parabolic</a>, we will abusively denote \( W^{k,p}(M\times
-[\beta,\gamma])\) by \( W^{k,p}([\beta,\gamma]) \). Our bootstrap scheme consists of 3
-steps:
-</p>
-<ol class="org-ol">
-<li>Prove that \( F\in W^{2,\tilde p}([\pi,\omega]) \) for every \( \pi > \alpha \) and \(
-   \tilde p \in (1,\infty) \). By
-compactness of \( M \), it is sufficient to prove this
-for a sequence \( \tilde p \to +\infty \).</li>
-<li>Prove that \( F \) is \( C^\infty \) for all time \( t >\alpha \).</li>
-<li>Prove that \( F \) is \( C^\infty \) on \( M\times [\alpha,\omega] \).</li>
-</ol>
-
-<p>
-<i>Step 1.</i> By Theorem <a href="#thm:reg-poly-diff">thm:reg-poly-diff</a>, \( AF = PF \in W^{r,q}([\alpha,\omega]) \) whenever \( r<1 \) and \(
-\frac{1}{q} > (\frac{r}{2}+1)\frac{1}{p} \). Apply Gårding inequality, for all
-\( \pi >\alpha \), \( F\in W^{r+2,q}([\pi,\omega]) \subset W^{2,\tilde p}([\pi,\omega]) \)
-for \( \frac{1}{\tilde p} = \frac{1}{q} - \frac{r}{\dim M + 1} \). Choose \( \frac{1}{q}
-\) very close to \( (\frac{r}{2}+1)\frac{1}{p} \), one sees that the condition on \(
-\tilde p \) is \(\frac{1}{\tilde p } > (\frac{r}{2} +1 ) \frac{1}{p} - \frac{r}{p-1}\),
-which will be satisfied if \( \frac{1}{\tilde p} > (1-\frac{r}{2})
-\frac{1}{p}\), i.e. for all \( \tilde p < \frac{p}{1 -r/2} \). It remains to repeat this
-result to finish the first
-step. We will say \( F\in W^{2,*}([\pi,\omega]) \) for \( F\in W^{2,p}([\pi,\omega])
-\) for all \( p\in (1,\infty) \).
-</p>
-
-<p>
-<i>Step 2.</i> By Theorem <a href="#thm:reg-poly-diff">thm:reg-poly-diff</a>, for all \( r<1 \), one has \( AF = PF \in
-W^{r,*}([\pi,\omega]) \), therefore by Gårding inequality, \(
-F\in W^{r+2, * }([\pi,\omega]) \). Iterate this result and one has \(F\in
-W^{k,*}([\pi,\omega]) \) for all \( k\in [2,\infty) \) and \( \pi >\alpha \). So \( F \)
-is smooth for \( t>\alpha \).
-</p>
-
-<p>
-<i>Step 3.</i> We apply regularity result (Theorem <a href="#thm:elliptic-general">thm:elliptic-general</a>) for elliptic operator \( A \) and boundary
-operators \( B^0: F \mapsto \restr{F}{M\times\{\alpha\}} \) and \( B^1: F \mapsto
-\restr{F}{M\times\{\omega\}} \), both are of weight \( 0 \): For \( q,r \) in Step 1,
-one has \( AF = PF \in W^{r,q}([\alpha,\omega]) \) and \( B^j F \in \partial W^{r,q} \),
-therefore \( F\in W^{r+2,q}([\alpha,\omega])\subset W^{2,\tilde p}([\alpha,\omega]) \)
-for the same \( \tilde p \) as Step 1. This proves that \( F\in W^{2,*}([\alpha,\omega])
-\), which also means that one has \( F\in W^{r+2,q}([\alpha,\omega]) \) with no additional
-condition on \( q \) except \( q\in (1,\infty) \). Iterate and one obtains the regularity
-of \( F \) on \( [\alpha,\omega] \).
-</p>
-
-</div>
-
-<div class="remark">
-<p>
-The first 2 steps were to prove the regularity of \( \restr{F}{M\times
-\{\omega\}} \), which was then used as a boundary condition in
-order to apply regularity result for elliptic operator on manifold with boundary.
-</p>
-
-</div>
-</div>
-</div>
-
-
-
-
-<div id="outline-container-orga1a5a53" class="outline-2">
-<h2 id="orga1a5a53"><span class="section-number-2">3</span> Short-time existence for nonlinear heat equation.</h2>
-<div class="outline-text-2" id="text-3">
-<p>
-We will choose as always \( p > \dim M +2 \). As before, \( M \) is a compact Riemannian
-manifold and \( f\ : M \longrightarrow B \subset V = \mathbb{R}^N \) where \( B \) is a
-large Euclidean ball.
-</p>
-
-<div id="thm:short-time" btit="(Short-time existence)" class="theorem">
-<p>
-Let \( F_\alpha: M \longrightarrow  B\) be a smooth map, then there exists \( \epsilon>0
-\) depending on \( F_\alpha \) and \( F: M\times [\alpha,\alpha + \epsilon] \longrightarrow
-B \) such that \( F\in W^{2,p}(M\times [\alpha,\alpha+\epsilon]) \) with \(
-\restr{F}{M\times \{\alpha\}} = F_\alpha \) and
-\[
- \frac{d F_t}{dt} = \tau(F_t) \quad \text{on } M\times [\alpha,\alpha +\epsilon]
-\]
-</p>
-
-</div>
-
-<div class="proof">
-<p>
-We find \( F \) as a sum \( F = F_b + F_\# \) where \( F_b\in C^\infty(M\times
-[\alpha,\omega]) \) satisfies the initial condition and \( F_\# \in W^{2,p}(M\times
-[\alpha,\alpha+\epsilon]/\alpha) \).
-</p>
-
-<p>
-The nonlinear heat operator is
-</p>
-\begin{align*}
-  T: W^{2,p}(M\times[\alpha,\omega]/\alpha)^{\oplus N} &\longrightarrow L^p(M\times[\alpha,\omega])^{\oplus N}\\
-  	F_\#					       &\longmapsto \tau(F_b + F_\#)
-\end{align*} 
-<p>
-where \( \tau(F)^\alpha = \Delta F^\alpha + g^{ij}\Gamma'^\alpha_{\beta\gamma}(F)
-F^\beta_i F^\gamma_j \), which can be rewritten as \( \tau(F) = -\Delta F +
-\Gamma(F)(\nabla F)^2 \). The derivative of \( T \) at \( F_\# \) in direction \( k\in
-W^{2,p}(M\times[\alpha,\omega]/\alpha)^{\oplus N} \) is
-\[
- DT(F_\#) k = \Delta k +D \Gamma(F)\cdot k . (\nabla F)^2 + 2\Gamma(F) \nabla F. \nabla k,
-\]
-or in local coordinates:
-\[
-  DT(F_\#)^\alpha = g^{ij}\left( \frac{\partial^2 k^\alpha}{\partial x^i \partial x^j} - k^\alpha_l \Gamma^l_{ij} \right) + g^{ij} \frac{\partial \Gamma'^\alpha_{\beta\gamma}}{\partial y^\delta} k^\delta F^\beta_i F^\gamma_j + 2g^{ij} \Gamma'^\alpha_{\beta\gamma}(F) F^\beta_i F^\gamma_j 
-\]
-which is of form \( DT(F_\#) k = -\Delta k - a(x,F) \nabla k -b(x,F) k \) where \( a,b \)
-are smooth.
-</p>
-
-<p>
-Therefore if we note by 
-</p>
-\begin{align*}
-  H: W^{2,p}(M\times[\alpha,\omega]/\alpha)^{\oplus N} &\longrightarrow L^p(M\times[\alpha,\omega])^{\oplus N}\\
-  	F_\#					       &\longmapsto (\frac{d }{dt} - \tau)(F_b + F_\#)
-\end{align*}
-<p>
-then the derivative of \( H \) at \( F_\# = 0 \) is
-\[
- DH(0)\cdot k = \frac{d k}{d t} + \Delta k + a(x, F_b) \nabla k + b(x, F_b) k
-\]
-which by Theorem <a href="#thm:lin-heat">thm:lin-heat</a> is an isomorphism from \(
-W^{2,p}(M\times[\alpha,\omega]/\alpha)^{\oplus N}\) to
-\(W^{0,p}(M\times[\alpha,\omega]/\alpha)^{\oplus N} =  L^p(M\times[\alpha,\omega])^{\oplus
-N} \). This shows that \( H \) is a local isomorphism mapping a neighborhood of \( 0 \) to
-a neighborhood of \( (\frac{d }{dt}-\tau)F_b \).
-</p>
-
-<p>
-Define \( g_\epsilon\in L^p(M\times [\alpha,\omega])^{\oplus N} \) by 
-\[
- g_\epsilon:= \begin{cases}
-0	      ,  & \text{if $t\in[\alpha,\alpha+\epsilon]$} \\
-(\frac{d }{dt}-\tau)F_b	      , & \text{if $t > \alpha+\epsilon$}
-	      \end{cases}
-\]
-which is arbitrarily \( L^p(M\times[\alpha,\omega]) \)-close to \( (\frac{d }{dt}-\tau)F_b
-\) for \( 0<\epsilon \ll 1 \). There exists therefore \( F_\#\in W^{2,p}(M\times
-[\alpha,\omega]/\alpha)^{\oplus N} \) such that \( H(F_\#) = g_\epsilon \), meaning that
-the function \( F= F_b + F_\#: M \longrightarrow V \) satisfies \( \restr{F}{M\times\{\alpha\}} = F_\alpha \)
-and \( \frac{d F}{d t} -\tau(F_t) = 0 \) for \( t\in[\alpha,\alpha+\epsilon] \).
-</p>
-
-<p>
-By Regularity Theorem <a href="#thm:reg-nonlin-heat">thm:reg-nonlin-heat</a>, \( F \) is \( C^\infty \) for \(
-t\in[\alpha,\alpha+\epsilon] \). Theorem <a href="#thm:global-eq">thm:global-eq</a> assures that the image of \( F
-\) is in \( B \), hence in \( M' \) for \( t\in [\alpha,\alpha+\epsilon] \).
-</p>
-
-</div>
-</div>
-</div>
-</div>
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-05-31 Thu 23:27. <br>
+Last updated 2018-07-01 Sun 00:13. <br>
 </div>
 </div>
 </body>

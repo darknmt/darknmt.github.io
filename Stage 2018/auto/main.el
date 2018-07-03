@@ -2,9 +2,9 @@
  "main"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
-                     '(("book" "11pt")))
+                     '(("book" "12pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem") ("xy" "all")))
+                     '(("inputenc" "utf8") ("polytechnique" "a4paper" "titlepage" "markboth" "pagenumber") ("fontenc" "T1") ("ulem" "normalem") ("xy" "all")))
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
@@ -16,16 +16,18 @@
     "latex2e"
     "summary-stage-2018"
     "harmonic-maps"
-    "polynomial-besov"
+    "short-time-reg-nonlin-heat"
     "harmonic-map-existence"
     "minimal-immersion-S2"
     "interpolation-sobolev"
     "elliptic-parabolic"
+    "polynomial-besov"
     "sobolev-riemannian"
     "green-function"
     "book"
-    "bk11"
+    "bk12"
     "inputenc"
+    "polytechnique"
     "fontenc"
     "graphicx"
     "grffile"
@@ -37,10 +39,10 @@
     "textcomp"
     "amssymb"
     "capt-of"
-    "hyperref"
     "amsthm"
     "amscd"
     "mathtools"
+    "hyperref"
     "tikz-cd"
     "svg"
     "xy"
@@ -61,6 +63,8 @@
     "lcm"
     "Ric"
     "Riem")
+   (LaTeX-add-labels
+    "sec:declaration")
    (LaTeX-add-bibliographies
     "Stage2018.bib")
    (LaTeX-add-amsthm-newtheorems
@@ -73,6 +77,8 @@
     "problem"
     "exampl"
     "definition"
-    "propdef"))
+    "propdef"
+    "fact"
+    "assertion"))
  :latex)
 

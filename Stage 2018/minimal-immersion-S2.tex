@@ -12,7 +12,7 @@ ideas as clear as possible and I may probably skip a few (important) details and
 \fi
 
 \section{Brief view of Sacks and Uhlenbeck's strategy.}
-\label{sec:org932e912}
+\label{sec:org3f79ab6}
 
 Let \(M\) and \(N\) be compact Riemannian manifolds (without boundary), \(M\) is a
 surface and \(N\) is isometrically embedded in \(\mathbb{R}^k\). It was showed by
@@ -23,7 +23,7 @@ Uhlenbeck in \cite{sacks_existence_1981} consists of (1) approximating the energ
 \emph{nontrivial} critical values can be more easily proved to exist and (2) trying to prove
 that the critical maps \(s_\alpha\) of \(E_\alpha\) converge in \(C^1\)-topology.
 
-We will first review the general machinery of Morse-Palais theory and prove the existence
+We will first review the general machinery of Morse-Palais-Smale theory and prove the existence
 of \(s_\alpha\). The convergence of \(s_\alpha\) in the case of surface is due to the
 facts that energy functional \(E\) is a conformal invariant of \(M\), in particular \(E\) is
 invariant by homotheties (i.e.  \(E\) remains unchanged when we zoom in and out), which
@@ -40,11 +40,11 @@ Finally, the theory of branched immersion of surfaces by Gulliver-Osserman-Royde
 \cite{gulliver_theory_1973} can be applied to show that the harmonic map obtained this way
 is a conformal, branched, minimal immersion of \(\mathbb{S}^2\) to \(N\).
 
-\section{General machinery by Morse and Palais.}
-\label{sec:org803244d}
+\section{General machinery by Morse-Palais-Smale.}
+\label{sec:org369b6f1}
 
 \subsection{Perturbed functionals \(E_\alpha\).}
-\label{sec:orgd6188a2}
+\label{sec:org2619de2}
 
 Let \(s: M \longrightarrow N \hookrightarrow \mathbb{R}^k\) be a map from a compact
 surface \(M\) to a compact Riemannian manifold \(N\) isometrically embedded into \(\mathbb{R}^k\). Recall that the energy functional of \(s\) is given by \(E(s):=
@@ -62,7 +62,7 @@ By Sobolev embedding, one has \(W^{1,2\alpha}(M, \mathbb{R}^k) \subset C^0(M,
 
 \begin{theorem}[Palais]
 \label{thm:Palais-1}
-The spaces \(C^\infty (M,N)\subset W^{1,2\alpha}(M,N)\subset C^0(M,N), \ \alpha>1\) are
+The spaces \(C^\infty (M,N)\subset W^{1,2\alpha}(M,N)\subset C^0(M,N)\), where \(\alpha>1\), are
 of the same homotopy type and the inclusions are homotopy equivalences. In particular,
 their connected components are naturally in bijection.
 \end{theorem}
@@ -115,7 +115,7 @@ spaces of maps from \(M\) to \(N\) are connected, we will have to look at the
 submanifold \(N_0\cong N\) formed by constant maps.
 
 \subsection{Tubular neighborhood of the submanifold of trivial maps.}
-\label{sec:orgcf6dde9}
+\label{sec:org8969f45}
 
 Fix \(y\in N\), considered as a constant maps in \(N_0\). We will summarise a few facts about the tangent space of \(W^{1,2\alpha}(M,N)\) at \(y\).
 
@@ -157,13 +157,13 @@ It can be calculated that
   de_{(y,0)}(a,v) = \left(x\mapsto a + v(x)\right) \in T_yW^{1,2\alpha}(M,N) =
 W^{1,2\alpha}(M, T_yN)
 \]
-for \(a\in T_y N\) and \(v\in \mathcal{N}_y \subset W^{1,2\alpha}(M, T_y N)\), which
-is invertible since \(a\) is the tangential to \(N_0\) and \(v\in \mathcal{N}_y\) is
+for \(a\in T_y N\) and \(v\in \mathcal{N}_y \subset W^{1,2\alpha}(M, T_y N)\). It
+is invertible since \(a\) is tangential to \(N_0\) and \(v\in \mathcal{N}_y\) is
 in the normal component. The Inverse function theorem applies.
 \end{proof}
 
 \subsection{Critical values of \(E_\alpha\).}
-\label{sec:orgdc6dba3}
+\label{sec:orgaed99f5}
 
 The exponential map previously defined on the normal bundle of \(N_0\) in  \(W^{1,
 2\alpha}(M,N)\) allows us to retract by deformation a small neighborhood of \(N_0\) to
@@ -180,8 +180,8 @@ Let \(s\in E_\alpha^{-1}[1, 1+\delta]\), using \((a+b)^\alpha \geq a^\alpha + b^
  1 + \delta > \int_M (1+|ds|^2)^\alpha dV > 1 + \int_M |ds|^{2\alpha}dV
 \]
 therefore \(\|ds\|_{L^{2\alpha}}\leq \delta ^{1/{2\alpha}}\). By Poincaré-Wirtinger
-inequality, \(\|s-\int_M s\|_{W^{1,2\alpha}}\leq C \delta^{1/4}\) where the
-Poincaré-Wirtinger constant \(C\) can be chosen to be independent of \(\alpha\).
+inequality, \(\|s-\int_M s\|_{W^{1,2\alpha}}\leq C \delta^{1/4}\) where \(C\) is the
+Poincaré-Wirtinger constant.
 
 By Sobolev embedding, \(\max_M |s-\int_M s| \leq C_\alpha \|s -\int_M s\|_{W^{1,2\alpha}}\)
 where the Sobolev constant \(C_\alpha\) can no longer be chosen uniformly in \(\alpha
@@ -217,14 +217,14 @@ Fix \(z_0\in M\) and consider the map
   p: \ C^0(M,N) &\longrightarrow N\\
        s	&\longmapsto	 f(z_0)
 \end{align*}
-then \(p\) is a fiber bundle and therefore a \emph{Serre fibration}. In fact fix \(q_0\in N\) then for all \(q\in N\) near \(q_0\), there is a vector field \(v_q\) supported
+then \(p\) is a fiber bundle and therefore is a \emph{Serre fibration}. In fact fix \(q_0\in N\) then for all \(q\in N\) near \(q_0\), there is a vector field \(v_q\) supported
 in a small ball centered at \(q_0\) such that the flow of \(v_q\) from time 0 to 1
 turns \(q_0\) to \(q\), i.e. \({\Phi_{v_q}}_0^1(q_0)=q\), and that \(v_q\) varies continuously
 in \(q\). Then any fiber \(p^{-1}(q)\) can be identified with \(p^{-1}(q_0)\) using
 the flow of \(v_q\). We will denote by \(\Omega(M,N)\) the topological fiber of \(p\).
 
 
-We will use some facts from algebraic topology, briefly summarised as follows.
+We will use a few facts from algebraic topology, briefly summarised here.
 
 \begin{fact}
 \label{fact:alg-top-Omega-M-N}
@@ -258,7 +258,7 @@ we have
 \end{enumerate}
 \end{fact}
 
-Now apply Fact \ref{fact:alg-top-Omega-M-N} to the fiber bundle \(p: C^0(M,N)
+Now apply this result to the fiber bundle \(p: C^0(M,N)
 \longrightarrow N\) of fiber \(\Omega(M,N)\), which has \(N_0\) as a global section,
 one obtains
 \[
@@ -276,7 +276,7 @@ In particular, if \(M=\mathbb{S}^2\) and if the universal covering \(\tilde N\) 
 \end{theorem}
 
 \begin{proof}
-If \(C^0(M,N)\) is not connected, then just apply Corollary \ref{cor:Palais-1-2} to a
+If \(C^0(M,N)\) is not connected, one only needs to apply Corollary \ref{cor:Palais-1-2} to a
 connected component of \(W^{1,2\alpha}(M,N)\) not containing \(N_0\). We now suppose
 that \(C^0(M,N)\) is connected and \(\Omega(M,N)\) is not contractible.
 
@@ -309,7 +309,7 @@ general argument applies.
 
 
 \section{Local results: Estimates and extension.}
-\label{sec:org25d7a4d}
+\label{sec:org431f144}
 
 We will say that the map \(s: M \longrightarrow N\) is a critical point of \(E_\alpha\) on a small disc \(D(R)\subset M\) if \(s\) satisfies the Euler-Lagrange equation of
 \(E_\alpha\) (as functional on \(W^{1,2\alpha}(M,N)\)) on \(D(R)\).
@@ -339,7 +339,7 @@ depending on \(p\) such that if
 \end{itemize}
 then
 \[
- \|ds\|_{W^{1,p}(D')} < C(p,D') \|ds\|_{L^2(D)},\quad \text{for all disc}  D'\Subset D 
+ \|ds\|_{W^{1,p}(D')} < C(p,D') \|ds\|_{L^2(D)},\quad \text{for all disc }  D'\Subset D 
 \]
 \end{lemma}
 
@@ -353,10 +353,10 @@ A consequence of (the proof of) Lemma \ref{lem:main-est} is the following global
 
 \begin{theorem}[Critical maps of low energy are trivial]
 \label{thm:4-trivial-energy}
-There exists \(\epsilon >0\) and \(\alpha_0 > 1\)  such that if
+There exists \(\epsilon' >0\) and \(\alpha_0 > 1\)  such that if
 \begin{itemize}
 \item \(s: M \longrightarrow N\) is critical map of \(E_\alpha\)
-\item \(E(s)<\epsilon\), 1 < \(\alpha\) <\(\alpha_{\text{0}}\)
+\item \(E(s)<\epsilon'\), 1 < \(\alpha\) <\(\alpha_{\text{0}}\)
 \end{itemize}
 then \(s\in N_0\) and \(E(s) = 0\).
 \end{theorem}
@@ -376,7 +376,7 @@ If \(s:\ D\setminus \{0\} \longrightarrow N\) is a harmonic map with finite ener
 
 
 \section{Convergence of critical maps of \(E_{\alpha}\).}
-\label{sec:org8dbc46f}
+\label{sec:org42be906}
 
 We proved in Theorem \ref{thm:3-nontrivial-crit} that if \(C^0(M,N)\) is not connected or
 if \(\Omega(M,N)\) is not contractible, then there exists a family \(\{s_\alpha\}\) of
@@ -422,7 +422,7 @@ There are two different ways to define convergence of a sequence \(s_n\) to \(s\
 \[
      \max_\Omega |s_\alpha - s| + \max_\Omega |ds-ds_\alpha| \to 0.
    \]
-In this case, we will say that \(s_\alpha\) converges to \(s\) in \(C^1(\bar\Omega)\). If no other information is given, we will suppose this notion of convergence.
+In this case, we will say that \(s_\alpha\) converges to \(s\) in \(C^1(\bar\Omega)\).
 \item \(C^1(\Omega)\) is topologised by a family of seminorms
 \(\Gamma_K:\ s\longmapsto \max_{K} |s| + \max_{K}|ds|\)
 for \(K\Subset\Omega\). This makes \(C^1(\Omega)\) a Fréchet topological vector space.
@@ -443,11 +443,11 @@ compactly into \(C^1(\overline{D(1/2)}, \mathbb{R}^k)\).
 We now can prove that \(s_\alpha\) converges strongly to \(s\) in \(C^1(\overline{D(1/2)},\mathbb{R}^k)\): If there was a subsequence \(\{s_\beta\}\)
 whose restriction to \(\overline{D(1/2)}\) remains \(C^1\)-away from \(s\), then by compactness of \(W^{1,4}(D(1/2),
 \mathbb{R}^k) \hookrightarrow C^1(\overline{D(1/2)}, \mathbb{R}^k)\), we can suppose that \(\{s_\beta\}\) converges in \(C^1\) to a certain \(\bar s\ne s\) on \(\overline{D(1/2)}\). But as a
-subsequence of \(\{s_\alpha\}\), \(\{s_\beta\}\) converges weakly to \(s\) on \(D\), hence \(\overline{D(1/2)}\), we than obtain a contradiction using the uniqueness of
+subsequence of \(\{s_\alpha\}\), \(\{s_\beta\}\) converges weakly to \(s\) on \(D\), hence on \(\overline{D(1/2)}\), we than obtain a contradiction using the uniqueness of
 weak limit.
 
 By considering the Euler-Lagrange equation and letting \(\alpha\to 0\), one concludes
-that \(s\) a harmonic map from \(D(1/2)\) to \(N\).
+that \(s\) is a harmonic map from \(D(1/2)\) to \(N\).
 \end{proof}
 
 The global convergence of \(\{s_\alpha\}\) can be established by a well-chosen covering
@@ -471,7 +471,7 @@ manifold \(M\) with spaceforms}), \(h\) can be chosen independently of \(m\) as 
 
 Since \(\sum_i \int_{D(y_i, 2^{-m+1})} |ds_\alpha|^2 < B h\), choosing \(l = \lceil
 \frac{Bh}{2\epsilon} \rceil\), we see that there are at most \(l\) balls \(D(y_{\alpha,i},
-2^{-m+1})\) depending on \(\alpha\), on which the energy \(E(s_\alpha)\) is less than
+2^{-m+1})\) with centers depending on \(\alpha\), on which the energy \(E(s_\alpha)\) is less than
 \(\epsilon\). Passing to a subsequence \(\{s_{\alpha(m)}\}\) of \(\{s_\alpha\}\),
 we can suppose that \(\{y_{\alpha(m),i} \}\) converges to \(x_{m,i}\) as \(\{\alpha(m)\} \to 1\). But since the points \(\{y_i\}\) are of finite number and
 separated, \(y_{\alpha(m),i}\equiv x_{m,i}\) eventually and we can suppose that the bad balls
@@ -507,11 +507,10 @@ D(x_{m,i}, 2^{-m+1})\}_m\) is an exhaustive family of compacts of \(M\setminus\{
 \begin{remark}
 With the same notation as Theorem \ref{thm:5-convergence-crit-map},
 \begin{enumerate}
-\item The image \(s(M\setminus\{x_1,\dots,x_l\}\) lies in \(N\). Also, using the
+\item The image \(s(M\setminus\{x_1,\dots,x_l\})\) lies in \(N\). Also, using the
 Euler-Lagrange equation, one sees that \(s\) is a (smooth) harmonic map from \(M\setminus\{x_1,\dots, x_l\}\) to \(N\).
-\item Since \(E(s) \leq \|s\|_{W^{1,2}}^2 \leq \liminf_{\alpha\to 1} \|s_\alpha\|^2 \leq
-   \const<+\infty\), \(\restr{s}{M\setminus\{x_1,\dots, x_l\}}\) extends to a harmonic
-maps \(\tilde s:\ M \longrightarrow N\). We can suppose that the limit \(s\) of
+\item Since \(E(s) \leq \|s\|_{W^{1,2}}^2 \leq \liminf_{\alpha\to 1} \|s_\alpha\|^2 <+\infty\), \(\restr{s}{M\setminus\{x_1,\dots, x_l\}}\) extends to a harmonic
+map \(\tilde s:\ M \longrightarrow N\). We can therefore suppose that the limit \(s\) of
 Theorem \ref{thm:5-convergence-crit-map} is smooth harmonic map on \(M\) and of image
 in \(N\).
 \end{enumerate}
@@ -519,7 +518,7 @@ in \(N\).
 
 
 \section{Nontrivial harmonic maps from \(\mathbb{S}^2\).}
-\label{sec:org5815024}
+\label{sec:org1ecdb27}
 We will now prove the existence of nontrivial harmonic maps from \(\mathbb{S}^2\) to a
 compact Riemannian manifold \(N\) satisfying the conditions of Theorem
 \ref{thm:3-nontrivial-crit}. 
@@ -545,7 +544,7 @@ a nontrivial harmonic map \(s: \mathbb{S}^2 \longrightarrow N\).
 
 \begin{proof}
 By Theorem \ref{thm:3-nontrivial-crit} and Theorem \ref{thm:4-trivial-energy}, there exist
-critical maps \(s_\alpha: \mathbb{S}^2 \longrightarrow N\) of \(E_\alpha\) corresponding to critical values \(E_\alpha(s_\alpha)\) in \((1+\delta,B)\). We claim that \(\{s_\alpha\}\) cannot converges
+critical maps \(s_\alpha: \mathbb{S}^2 \longrightarrow N\) of \(E_\alpha\) corresponding to critical values \(E_\alpha(s_\alpha)\) in \((1+\delta,B)\). We claim that \(\{s_\alpha\}\) cannot converge
 in \(C^1(M)\) to a trivial harmonic map \(s\in N_0\). In fact, if it did,
 \[
  1+\delta  \leq \lim_{\alpha\to 1} \int_M (1+|ds_\alpha|^2)^\alpha dV = \int_M (1+|ds|^2)dV
@@ -558,7 +557,7 @@ Therefore, we only have two possibilities:
 \item \(\{s_\alpha\}\) does not converge in \(C^1(M)\) to \(s\), then by Theorem
 \ref{thm:6-final-sacks-uhlenbeck}, there exists a nontrivial harmonic map \(s_*:
   \mathbb{S}^2 \longrightarrow N\).
-\item If \(\{s_\alpha\}\) converge in \(C^1(M)\) to a certain \(\tilde s\), then as
+\item If \(\{s_\alpha\}\) converges in \(C^1(M)\) to a certain \(\tilde s\), then as
 argued above, \(\tilde s\) is nontrivial.
 \end{itemize}
 In both cases, nontrivial harmonic map from \(\mathbb{S}^2\) to \(N\) exists.
@@ -579,18 +578,18 @@ Moreover, we can suppose that \(\max_{\overline{D}(x_1,2\delta)}|ds_\alpha| = \m
 \end{assertion}
 
 
-Suppose that were not the case, then there exist \(C,\delta >0\) such that \(\max_{D(x_1,2\delta)} |ds_\alpha| \leq C\) for all \(\alpha>1\) sufficiently close
-to 1. Choose an radius \(R \ll \delta\) such that
+Suppose that was not the case, then there exist \(C,\delta >0\) such that \(\max_{D(x_1,2\delta)} |ds_\alpha| \leq C\) for all \(\alpha>1\) sufficiently close
+to 1. Choose a radius \(R \ll \delta\) such that
 \[
  \int_{D(x_1,R)} |ds_\alpha|^2 \leq \pi R^2 C^2 <\epsilon
 \]
 It suffices to apply Key lemma \ref{lem:key-sacks-uhlenbeck} to see that \(s_\alpha \to s\) in \(C^1(D(x_1,R/2))\), hence \(s_\alpha\) converges to \(s\) in \(C^1(M\setminus\{x_2,\dots,x_l\})\) uniformly on compacts. Moreover, since \(\{ds_\alpha\}\) converges uniformly to \(ds\) on \(\overline{D}(x_1,2\delta)\setminus
-D(x_1,\delta)\), we can suppose, with \(\alpha\) sufficiently close to \(1\) that the
+D(x_1,\delta)\), we can suppose, with \(\alpha\) sufficiently close to \(1\), that the
 maximum is actually attained in \(D(x_1,\delta)\).
 
 
 Therefore, we can choose a sequence \(\{C_n\}\) increasing to \(+\infty\) and \(\{\delta_n\}\)
-decreasing to \(0\), such that \(C_n\delta_n\) diverging to \(+\infty\) and there exists a sequence \(\{\alpha_n\}\) decreasing to \(1\)
+decreasing to \(0\), such that \(C_n\delta_n\) diverges to \(+\infty\) and there exists a sequence \(\{\alpha_n\}\) decreasing to \(1\)
 such that
 \[
  \left| ds_{\alpha_n}(y_n)\right|:=\max_{D(x_1,\delta_n)}|ds_{\alpha_n}|=\max_{D(x_1,2\delta_n)}|ds_{\alpha_n}| = C_n
@@ -608,7 +607,7 @@ respect to a metric \(\tilde g_n\) on \(D(R)\) converging to the Euclidean metri
 energy \(E(\restr{\tilde s_{\alpha_n}}{D(C_n\delta_n)},\tilde g_n) = E(\restr{\tilde
 s_{\alpha_n}}{D(y_n,\delta_n)},g_M)\leq B\).
 
-We claim that Proposition \ref{prop:2-sacks-uhlenbeck} and Theorem \ref{thm:5-convergence-crit-map} remains
+We claim that Proposition \ref{prop:2-sacks-uhlenbeck} and Theorem \ref{thm:5-convergence-crit-map} remain
 correct when \(M=D(R)\) and \(s_\alpha\) are critical maps of \(E_\alpha\) with
 respect to metrics \(\tilde g_\alpha\) converging to the Euclidean metric. To be
 precise:
@@ -619,7 +618,7 @@ precise:
 Let \(\tilde s_\alpha:\ (D(R),\tilde g_\alpha) \longrightarrow N\subset \mathbb{R}^k\)
 be critical maps of \(E_\alpha\) such that
 \begin{itemize}
-\item \(s_\alpha\) converges weakly to \(s_*\) in \(W^{1,2}(D(R), \text{Euclidean})\),
+\item \(s_\alpha\) converges weakly to \(s_*\) in \(W^{1,2}(D(R), \text{Euclid})\),
 \item \(E(s_\alpha) < B\)
 \end{itemize}
 then there exists at most \(l\) points \(\{x_1,\dots,x_l\}\) in \(\overline{D}(R)\)
@@ -691,15 +690,16 @@ arbitrarily close to \(1\) and \(\delta\) arbitrarily small, one has
 
 
 \section{Minimal immersions of \(\mathbb{S}^2\).}
-\label{sec:org8c1ce33}
+\label{sec:org1346626}
 
-Using the following result:
+We use the following result:
 
 \begin{theorem}[\cite{chern_volume_1975}, \cite{gulliver_theory_1973}, \cite{eells_harmonic_1964}]
 If \(s: \mathbb{S}^2 \longrightarrow N\) is a nontrivial harmonic map and \(\dim N\geq
 3\), then \(s\) is a \(C^\infty\) conformal, branched, minimal immersion.
 \end{theorem}
-where the "minimal" part follows from \cite{eells_harmonic_1964}, the "branched" part
+
+The "minimal" part follows from \cite{eells_harmonic_1964}, the "branched" part
 follows from \cite{gulliver_theory_1973} and the "conformal" part follows from
 \cite{chern_volume_1975} and the fact that there is no nontrivial holomorphic quadratic
 differential on \(\mathbb{S}^2\). Theorem \ref{thm:6-final-sacks-uhlenbeck} gives:

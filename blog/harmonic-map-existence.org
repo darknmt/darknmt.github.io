@@ -13,9 +13,8 @@ B\subset V = \mathbb{R}^N  \):
 \[
  \frac{d F_t}{d t} = -\Delta F_t + \Gamma(F_t) (\nabla F_t)^2
 \]
-We have proved that the solution [[file:polynomial-besov.org][exists in short-time and is
-smooth whenever it exists]]. We will now establish long-time existence using continuity
-method, that is we will show that if the solution exists on \( [\alpha,\omega_n] \) where
+We have proved that the solution [[file:polynomial-besov.org][exists in short-time and is smooth whenever it exists]]. We will now establish long-time existence using continuity
+method: we will show that if the solution exists on \( [\alpha,\omega_n] \) where
 \( \omega_n \) is an increasing sequence to \( \omega \), then the solution exists on \(
 [\alpha,\omega]\). We then apply short-time existence to gain a small open interval where
 solution still exists. We then conclude that the solution exists globally on \(
@@ -32,13 +31,13 @@ Recall that we [[file:harmonic-maps.org][proved]] in Corollary ref:cor:bound-2-2
 the initial total energies. Since \( \frac{dF_t}{dt } \) relates to spatial derivatives of
 \( F \) by the nonlinear heat equation, it is easy to see that \(
 \|F_t\|_{W^{2,2}(M\times[\tau,\tau +\delta])} \) is bounded by a constant independent of
-\( \tau \). Again, we will denote \( W^{k,p}(M\times [\beta,\gamma]) \) by \( W^{k,p}([\beta,\gamma]) \).
+\( \tau \). We will denote \( W^{k,p}(M\times [\beta,\gamma]) \) by \( W^{k,p}([\beta,\gamma]) \).
 
 #+ATTR_LATEX: :options [\(W^{2,2}\)-boundedness]
 #+ATTR_HTML: :id thm:bound-2-2 :btit (\(W^{2,2}\)-boundedness) 
 #+BEGIN_theorem
 #+LATEX: \label{thm:bound-2-2}
-There exist a constant \( C \) depending only on \( \delta \), the metrics and initial
+There exists a constant \( C \) depending only on \( \delta \), the metrics and initial
 total energies such that
 \[
  \|F\|_{W^{2,2}(\tau,\tau+\delta)}\leq C\quad\text{for all } \alpha \leq \tau <\omega-\delta.
@@ -56,8 +55,9 @@ The first term and the second term are bounded by \( C^2\delta \), the third one
 the metrics and initial total energies.
 #+END_proof
 
-The estimates of higher derivatives of \( F \) will be established in the following order: first in \(
-W^{2,p} \) for all \( p \) norm then in \( W^{k,p} \) for all \( k,p \), then in \( C^\infty \).
+The estimates of higher derivatives of \( F \) will be established in the same strategy as
+the bootstrap: first in \(
+W^{2,p} \) for all \( p \) then in \( W^{k,p} \) for all \( k,p \), then in \( C^\infty \).
 
 * Estimate of higher derivatives.
 
@@ -89,14 +89,16 @@ C(M') \| |\nabla F|^2 \|_{L^p([\tau-\frac{\delta}{3}, \tau+\delta])} = C(M') \| 
 \]
 
 
-Recall that, by Theorem ref:thm:den-pot, the [[file:harmonic-maps.org][potential density]] satisfies \( \frac{de}{dt} +\Delta e -Ce \leq 0 \) for
-certain constant \( C \) depending only on the metric of \( M \), by [[file:elliptic-parabolic.org][Maximum principle]]
+Recall that by Theorem ref:thm:den-pot, the [[file:harmonic-maps.org][potential density]] satisfies \( \frac{de}{dt} +\Delta e -Ce \leq 0 \) for
+certain constant \( C \) depending only on the metric of \( M \). By [[file:elliptic-parabolic.org][Maximum principle]]
 (Theorem ref:thm:max-princ-para), one has \( e \leq \psi_\tau \) where \( \psi_\tau \) is
 the solution of
+
 \begin{cases}
 \frac{d}{dt}\psi_\tau + \Delta\psi_\tau -C\psi_\tau = 0  \\
 \restr{\psi_\tau}{\tau - \frac{\delta}{2}} = \restr{e}{\tau - \frac{\delta}{2}}
 \end{cases}
+
 We apply Gårding Inequality again for \( \psi_\tau \) and obtain
 \begin{equation}
 \label{eq:lem:bound-2-p:2}
@@ -106,7 +108,7 @@ We apply Gårding Inequality again for \( \psi_\tau \) and obtain
 \end{equation}
 
 
-Now apply \( L^1 \)-[[file:elliptic-parabolic.org][Comparison Theorem]] ref:thm:1-comparison to \( \psi_\tau
+Now apply \( L^1 \)-[[file:elliptic-parabolic.org][Comparison Theorem]] ref:thm:1-comparison-d to \( \psi_\tau
 \), one has
 \begin{equation}
 \label{eq:lem:bound-2-p:3}
@@ -131,8 +133,7 @@ for all \( \alpha +\delta \leq\tau\leq\omega-\delta \).
 #+END_theorem
 #+BEGIN_proof
 Applying Gårding Inequality to the equation \( \frac{dF}{dt} + \Delta F_t =
-\Gamma(F)(\nabla F)^2 \) then Regularity Theorem ref:thm:reg-poly-diff for [[file:polynomial-besov.org][polynomial
-differential operator]], one has for \( \epsilon \ll \delta \):
+\Gamma(F)(\nabla F)^2 \) then Regularity estimate for the quadratic term (Theorem ref:thm:reg-quad), one has for \( \epsilon \ll \delta \):
 \begin{align*}
  \|F\|_{W^{k,p}([\tau,\tau+\delta])} &\leq C_\epsilon \left(
 \|F\|_{W^{2,p}([\tau-\epsilon,\tau+\delta])} + \|\Gamma(F)(\nabla F)^2\|_{W^{k-2,p}([\tau-\epsilon,\tau+\delta])}\right)  \\
@@ -152,8 +153,7 @@ k < s+1, p \in(1,+\infty)
 since \( \|F\|_{W^{s,q}([\tau-\epsilon,\tau+\delta])} \leq 2C(\delta,s,q) \).
 
 One can then conclude by induction on \( k \), with step \( \frac{1}{2} \), starting with
-\( k=2 \) and \( \epsilon=\frac{\delta}{2} \) and each time
-dividing \( \epsilon \) by 2.
+\( k=2 \) and \( \epsilon=\frac{\delta}{2} \) divided by 2 after each induction step.
 #+END_proof
 
 
@@ -174,7 +174,7 @@ with smooth initial condition exists globally for all time \( t >\alpha \).
 #+BEGIN_proof
 Let \( F_n \) be a sequence of solution of eqref:eq:thm:global-heat on \(
 [\alpha,\omega_n] \) with \( \omega_n \) increasing to \( \omega \) then they coincide by
-uniqueness of solution the equation. As discussed in the beginning of this part, it is
+uniqueness of the solution. As discussed in the beginning of this part, it is
 sufficient to prove that the solution extends to \( [\alpha,\omega] \). Let \( F \) be the
 solution on \( [\alpha,\omega) \) such that \( \restr{F}{[\alpha,\omega_n]} = F_n \), then
 by Theorem ref:thm:bound-k-p, for all \( \tau \in [\alpha,\omega-\delta) \):
@@ -187,17 +187,19 @@ W^{k,p}(M\times[0,\delta]) \hookrightarrow C(M\times[0,\delta]) \) and \( C(k,p,
 is the constant provided by Theorem ref:thm:bound-k-p. 
 
 So all partial derivatives of \( F
-\) is uniformly bounded on \( [\alpha +\delta,\omega) \). This proves that \( F \) extends
+\) are uniformly bounded on \( [\alpha +\delta,\omega) \). This proves that \( F \) extends
 to a solution on \( [\alpha,\omega] \). In fact \(\restr{F}{\tau}:=\restr{F}{M\times\{\tau\}} \) converges
-in \( C^\infty(M) \) as \( \tau\to \omega \), since \( \|D^\alpha \restr{F}{\tau} -
-D^\alpha\restr{F}{\tau'}\|_{L^\infty} \leq \max_{\|\beta\| = \|\alpha\|+1}\|D^{\beta}F\|_{L^\infty}|\tau-\tau'| \).
+in \( C^\infty(M) \) as \( \tau\to \omega \), since 
+\[ \|D^\alpha \restr{F}{\tau} -
+D^\alpha\restr{F}{\tau'}\|_{L^\infty} \leq \max_{\|\beta\| =
+\|\alpha\|+1}\|D^{\beta}F\|_{L^\infty}|\tau-\tau'|. 
+\]
 #+END_proof
 
-We have just proved the first part of the following theorem. The second part is a
-reformulation of Theorem ref:thm:eells-sampson
-of Eells and Sampson.
+We have just proved the first part of the following theorem.
 
-#+ATTR_HTML: :id thm:final
+#+ATTR_LATEX: :options [Eells-Sampson]
+#+ATTR_HTML: :id thm:final :btit (Eells-Sampson) 
 #+BEGIN_theorem
 #+LATEX: \label{thm:final}
 1. Let \( M, M' \) be compact Riemannian manifolds with \( \Riem(M') \leq 0 \). Then for
@@ -209,16 +211,16 @@ of Eells and Sampson.
    \restr{f}{t=0} = f_0,
    \end{cases}      
    \end{equation*}
-   admit a globally defined smooth solution \( f_t \). Moreover, all derivatives \( D^\alpha
-   f_t \) remains uniformly bounded as \( t\to +\infty \).
-2. For a suitable sequence \( t_n \) increasing to \( +\infty \) the sequence \( f_{t_n}
+   admits a globally defined smooth solution \( f_t \). Moreover, all derivatives \( D^\alpha
+   f_t \) remain bounded as \( t\to +\infty \).
+2. For a suitable sequence \( \{t_n\} \) increasing to \( +\infty \) the sequence \( \{f_{t_n}\}
    \) converges in \( C^\infty(M) \) to a function \( f_\infty \) with \( \tau(f_\infty)=0
    \). Therefore any map \( f_0:\ M \longrightarrow M' \) is homotopic to a harmonic map.
 #+END_theorem
 #+BEGIN_proof
-For any sequence \(t_n\), one can extract from \( \{f_{t_n}\} \), since their derivatives are
+For any sequence \(\{t_n\}\), one can extract from \( \{f_{t_n}\} \), since their derivatives are
 uniformly bounded, a subsequence \( \{f_{t_{n_i}}\} \) converging in \( C^k(M,
-\mathbb{R}^N) \). By a diagonalisation argument, one can extract from any sequence \(
+\mathbb{R}^N) \). By a diagonal argument, one can extract from any sequence \(
 \{f_{t_n}\} \) a subsequence converging in \( C^\infty(M, \mathbb{R}^N) \) to \( f_\infty
 \). Abusively denote this subsequence by \( \{f_{t_n}\} \), by Theorem ref:thm:den-kin
 \[
@@ -226,6 +228,5 @@ uniformly bounded, a subsequence \( \{f_{t_{n_i}}\} \) converging in \( C^k(M,
 \]
 Therefore \( \tau(f_{t_n}) \to 0 \) in \( L^2(M)^{\oplus N} \). But also \( \tau(f_{t_n})
 \to \tau(f_\infty) \) in \( C^\infty(M, \mathbb{R}^N) \), one has \( \tau(f_\infty)=0
-\). The homotopic conlusion follows by rescaling the deformation time between \( f_{t_n}
-\) and \( f_{t_{n+1}} \) to \( \frac{1}{2^n} \).
+\).
 #+END_proof

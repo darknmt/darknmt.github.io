@@ -6,7 +6,8 @@
 ***** [#A] [[file:minimal-immersion-S2.org][Minimal immersions of \( \mathbb{S}^2 \)]] <2018-06-24 Sun>
 ***** [#A] [[file:summary-stage-2018.org][Summary and the report]] <2018-05-29 Tue>
 ***** [#A] [[file:harmonic-map-existence.org][Energy estimates and Existence of harmonic maps between Riemannian manifolds]] <2018-05-06 Sun>
-***** [#A] [[file:polynomial-besov.org][Short-time existence and regularity for nonlinear heat equation: Polynomial differential operators and Besov spaces]] <2018-05-27 Sun> 
+***** [#A] [[file:short-time-reg-nonlin-heat.org][Short-time existence and regularity for nonlinear heat equation]] <2018-06-01 Fri>
+***** [#A] [[file:polynomial-besov.org][Polynomial differential operators and Besov spaces]] <2018-05-27 Sun> 
 ***** [#A] [[file:elliptic-parabolic.org][Elliptic and parabolic equations on compact manifolds]] <2018-04-30 Mon>
 ***** [#A] [[file:interpolation-sobolev.org][Interpolation theory and Sobolev spaces on compact manifolds]] <2018-04-30 Mon>
 ***** [#A] [[file:green-function.org][Parametrix and Green's function of Laplacian operator on Riemannian manifolds]] <2018-03-22 Thu>

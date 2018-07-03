@@ -1,7 +1,11 @@
 % Created 2018-06-01 Fri 14:47
 % Intended LaTeX compiler: pdflatex
-\documentclass[11pt]{book}
+\documentclass[12pt]{book}
 \usepackage[utf8]{inputenc}
+
+\usepackage[a4paper,titlepage,markboth,pagenumber]{polytechnique}
+\renewcommand{\baselinestretch}{1.1}
+
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{grffile}
@@ -13,9 +17,9 @@
 \usepackage{textcomp}
 \usepackage{amssymb}
 \usepackage{capt-of}
-\usepackage{hyperref}
 \usepackage{amsthm}
 \usepackage{amsmath,amscd,amssymb,mathtools}
+\usepackage{hyperref}
 \usepackage{tikz-cd}
 \usepackage{svg}
 \usepackage[all]{xy}
@@ -30,6 +34,9 @@
 \newtheorem{exampl}{Example}
 \newtheorem{definition}{Definition}
 \newtheorem{propdef}[definition]{Proposition-Definition}
+\newtheorem{fact}{Fact}
+\newtheorem{assertion}{Assertion}
+
 \newcommand{\re}{\mathop{\rm Re}\nolimits}
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
 \newcommand{\coker}{\mathop{\rm coker}\nolimits}
@@ -52,8 +59,10 @@
 \right|_{#2} % this is the delimiter
 }}
 \author{Tien NGUYEN MANH}
-\date{June 1, 2018}
-\title{Harmonic maps of Riemannian manifolds}
+\date{July 3, 2018}
+\title{Harmonic maps\\ of Riemannian manifolds}
+\subtitle{Supervised by \\Joel FINE}
+
 \hypersetup{
  pdfauthor={Tien NGUYEN MANH},
  pdftitle={Harmonic maps of Riemannian manifolds},
@@ -64,6 +73,49 @@
 \begin{document}
 
 \maketitle
+
+\section*{Déclaration d’intégrité relative au plagiat}
+\label{sec:declaration}
+Je soussigné, \textbf{Manh-Tien NGUYEN}, certifie sur l'honneur :
+
+\begin{itemize} 
+\item Que les résultats décrits dans ce rapport sont l’aboutissement de mon travail.
+\item Que je suis l’auteur de ce rapport.
+
+\item   Que je n’ai pas utilisé des sources ou résultats tiers sans clairement les citer et les référencer selon les règles bibliographiques préconisées.
+
+\end{itemize}
+ Je déclare que ce travail ne peut être suspecté de plagiat.
+
+ \vspace{2cm}
+
+\begin{minipage}{0.5\textwidth}
+\begin{flushleft}
+\emph{Signature:}\\
+\href{}{Manh-Tien NGUYEN} 
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{flushright}
+\emph{Date :} \\
+\href{}{03/07/2018} 
+\end{flushright}
+\end{minipage}\\[3cm]
+
+
+\newpage
+
+\section*{Acknowledgements}
+
+I sincerely thank Joel Fine for introducing me to this subject, for the references and for his prompt responses to
+all of my questions that enlightened me on many details of this memoire.
+
+I also want to thank Bruno Premoselli for reading this master thesis and for his
+participation in its defense.
+
+
+\newpage
+
 \tableofcontents
 \chapter{Summary}
 \input{summary-stage-2018.tex}
@@ -73,17 +125,17 @@
 \input{harmonic-maps.tex}
 
 \part{Resolution of nonlinear heat equation on manifold}
-\chapter[Short-time existence and regularity for nonlinear heat equation]{Short-time existence and regularity for nonlinear heat equation: Polynomial differential operators and Besov spaces}
-\input{polynomial-besov.tex}
+\chapter{Short-time existence and regularity for nonlinear heat equation}
+\input{short-time-reg-nonlin-heat.tex}
 
 \chapter[Global existence for nonlinear heat equation]{Global existence for nonlinear heat equation and harmonic maps between Riemannian manifolds}
 \input{harmonic-map-existence.tex}
 
-\part{Existence using Morse-Palais theory}
+\part{Existence using Morse-Palais-Smale theory}
 \chapter{Minimal immersions of $\mathbb{S}^2$}
 \input{minimal-immersion-S2.tex}
 
-\part{Appendices: Resolution of linear equations on manifold}
+\part{Appendix 1: Resolution of linear equations on manifold}
 
 \chapter{Interpolation theory and Sobolev spaces on compact manifolds }
 \input{interpolation-sobolev.tex}
@@ -91,7 +143,11 @@
 \chapter{Elliptic and parabolic equations on compact manifolds}
 \input{elliptic-parabolic.tex}
 
-\part{Appendices: Parametrix and Linear equations}
+\part{Appendix 2: Besov spaces and Polynomial differential operators}
+\chapter{Regularity estimate of Polynomial differential operators}
+\input{polynomial-besov.tex}
+
+\part{Appendix 3: Parametrix and Linear equations}
 \chapter[Sobolev spaces on Riemannian manifolds]{A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds}
 \input{sobolev-riemannian.tex}
 
