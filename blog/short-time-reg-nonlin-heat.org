@@ -55,8 +55,8 @@ In particular, one has the Interpolation inequality
 
 Sobolev embeddings and Kondrachov theorem remain correct on manifold. 
 
-#+ATTR_LATEX: :options [Sobolev embedding]
-#+ATTR_HTML: :id thm:Sobolev-Rn-d :btit (Sobolev embedding) 
+#+ATTR_LATEX: :options [Sobolev embeddings]
+#+ATTR_HTML: :id thm:Sobolev-Rn-d :btit (Sobolev embeddings) 
 #+BEGIN_theorem
 #+LATEX: \label{thm:Sobolev-Rn-d}
 Given \( k,l\in \mathbb{Z},\ k>l \geq 0 \) and \( p,q\in \mathbb{R},\ p>q\geq 1 \). Then
@@ -139,7 +139,7 @@ space of \( W^{k,p}(M\times[\alpha,\omega]) \). This makes \( \partial_\alpha
 W^{k,p}(M\times[\alpha,\omega]) \) a Banach space with stronger norm than any \(
 W^{l,p}(M) \) for any \( l < k-\frac{1}{p} \).
 
-** Linear equation on manifolds.
+** Linear equations on manifolds.
 
 *** Existence and Regularity.
 
@@ -166,7 +166,7 @@ Then actually \( F\in W^{k,p}(M\times[\alpha,\omega]) \).
 #+ATTR_HTML: :id thm:para-existence-d :btit (Causality of parabolic equation) 
 #+BEGIN_theorem
 #+LATEX: \label{thm:para-existence-d}
-Let \( M \) be a compact manifold and \( AF:= \frac{d}{dt}F + \Delta F \) be an parabolic
+Let \( M \) be a compact manifold and \( AF:= \frac{d}{dt}F + \Delta F + a\nabla F + bF \) be an parabolic
 operator. Then 
 \[
  A:\ W^{k,p}(M\times[\alpha,\omega]/\alpha) \longrightarrow W^{k-2,p}(M\times[\alpha,\omega]/\alpha)
@@ -279,8 +279,7 @@ We will suppose here that \( r,s \) are even integers so that the \( W^{r,p} \)
 W^{s,q} \)) norm of \( PF \) (respectively \( F \)) can be written as sum of \( L^p \)
 (respectively \( L^q \)) norms of its derivatives. Also, we will use chain rule freely to
 differentiate the term \( \Gamma'^\alpha_{\beta\gamma}(F) \) using weak derivatives of \( F
-\). The general and rigorous proof, which involves fractional Sobolev space to treat non-integral
-\( r, s \) and a detour to Besov spaces to justify chain rule, can be found in the appendices.
+\). The general and rigorous proof, which involves non-integral Sobolev space to treat \( r, s \) and a detour to Besov spaces to justify chain rule, can be found in the appendices.
 
 The derivatives of \( PF \) that appear in its \( W^{r,p} \) norm are of form
 \[
@@ -302,9 +301,9 @@ use the upper bound of \( 2b_i +c_i \) to justify that \( \frac{1}{p} > \frac{r+
 \frac{1}{q} \geq \sum \frac{1}{p_i} \), meaning that such choice of \( p_i \) are valid.
 
 The straightforward way to have a sufficient condition of \( p_i \) such that \( W^{s,q}
-\hookrightarrow W^{2b_i+c_i,p_i} \) is to use Sobolev embedding, but the result is sub-optimal
-because Sobolev embedding does not take into account the \( L^\infty
-\)-bounded of \( F \) (its image lies in a compact of \( \mathbb{R}^N \)). A better way is to use
+\hookrightarrow W^{2b_i+c_i,p_i} \) is to use Sobolev embeddings but the result is sub-optimal
+because Sobolev embeddings do not take into account the \( L^\infty
+\)-boundedness of \( F \) (its image lies in a compact of \( \mathbb{R}^N \)). A better way is to use
 Interpolation inequality, by remarking that \( F\in W^{0,v} \) for all \( v\in (1,+\infty)
 \) and writing \( W^{2b_i+c_i, p_i} \) as an interpolation space of \( W^{s,q} \) and \(
 W^{0,v} \). It can be seen, by direct computation, that the sufficient condition for \( W^{s,q}
@@ -406,7 +405,7 @@ manifold and \( B\subset \mathbb{R}^N \) is a large Euclidean ball.
 #+ATTR_HTML: :id thm:short-time :btit (Short-time existence) 
 #+BEGIN_theorem
 #+LATEX: \label{thm:short-time}
-Let \( F_\alpha: M \longrightarrow  B\) be a smooth map, then there exists \( \epsilon>0
+Let \( F_\alpha: M \longrightarrow  B\) be a smooth map, then there exist \( \epsilon>0
 \) depending on \( F_\alpha \) and \( F: M\times [\alpha,\alpha + \epsilon] \longrightarrow
 B \) such that \( F\in W^{2,p}(M\times [\alpha,\alpha+\epsilon]) \) with \(
 \restr{F}{M\times \{\alpha\}} = F_\alpha \) and

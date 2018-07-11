@@ -27,7 +27,7 @@ By taking first order variation of \( E \), these are maps whose *tension field*
 
 The approach of cite:eells_harmonic_1964 is to prove that, if the target space is
 negatively curved, then any smooth map \( f_0: M \longrightarrow M' \) can be deformed to a
-harmonic map using the gradient descent equation, that is to show the equation
+harmonic map using the gradient descent equation:
 \begin{equation}
 \label{eq:intro:1}
 \begin{cases}
@@ -72,7 +72,7 @@ controlled and the energies are guaranteed not to explode.
 We also give a less detailed review of the work by Sacks and Uhlenbeck
 cite:sacks_existence_1981. This approach uses an approximating family \(
 E_\alpha \) of the energy functional \( E \) whose critical functions in \( W^{1,2\alpha} \) can be easily proved
-to exist using Morse-Palais-Smale theory. We then try to prove that the critical sequence
+to exist using Morse-Palais-Smale theory. One then tries to prove that the critical sequence
 \( C^1 \)-converges to a nontrivial limit. 
 
 As a concrete result, the authors proved,

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-07-03 Tue 12:04 -->
+<!-- 2018-07-06 Fri 01:04 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Harmonic maps of Riemannian manifolds</title>
@@ -266,7 +266,7 @@ for the JavaScript code in this tag.
 <ul>
 <li>
 <ul>
-<li><a href="#orgae27eac">1.1.0.1. Notation.</a></li>
+<li><a href="#org1206cc5">1.1.0.1. Notation.</a></li>
 </ul>
 </li>
 </ul>
@@ -288,7 +288,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgeadf23c">1.3.1. Energy functional and tension field</a></li>
 <li><a href="#orgf595675">1.3.2. Fundamental form, some results in case of signed curvature</a>
 <ul>
-<li><a href="#org1206cc5">1.3.2.1. Notation.</a></li>
+<li><a href="#orgc9f1e65">1.3.2.1. Notation.</a></li>
 </ul>
 </li>
 </ul>
@@ -361,12 +361,12 @@ This is my reading note for <a class='org-ref-reference' href="#eells_harmonic_1
 </div><div id="outline-container-org2b417a5" class="outline-3">
 <h3 id="org2b417a5"><span class="section-number-3">1.1</span> Variational approach: energy integral and tension field</h3>
 <div class="outline-text-3" id="text-1-1">
-</div><div id="outline-container-orgae27eac" class="outline-5">
-<h5 id="orgae27eac"><span class="section-number-5">1.1.0.1</span> Notation.</h5>
+</div><div id="outline-container-org1206cc5" class="outline-5">
+<h5 id="org1206cc5"><span class="section-number-5">1.1.0.1</span> Notation.</h5>
 <div class="outline-text-5" id="text-1-1-0-1">
 <p>
-Let \( M, M', M''\) be Riemannian manifolds of dimension \( n, n' \) and \( n', n''\)
-respectively. We will use \( i,j,k,\dots, \alpha,\beta,\gamma,\dots, a,b,c \) for local
+Let \( M, M', M''\) be Riemannian manifolds of dimension \( n, n' \) and \( n''\)
+respectively. We will use indices \( i,j,k,\dots, \alpha,\beta,\gamma,\dots, a,b,c \) to denote local
 coordinates of \( M, M', M'' \).
 Let \( f: M \longrightarrow M', f': M' \longrightarrow M''\) be a smooth maps, one denotes
 \[
@@ -394,7 +394,7 @@ f^\beta_j g'_{\alpha\beta} |\det (g_{ij})|^\frac{1}{2} dx^1\wedge \dots\wedge dx
 </div>
 
 <p>
-We recall that the inner product is between 2 tensors of type \( (p,q) \) \( S =
+We recall that the inner product between 2 tensors of type \( (p,q) \) \( S =
 S^{i_1\dots i_p}_{j_1\dots j_q}, T = T^{k_1\dots k_p}_{l_1\dots l_q} \) is \( \prod_{m,n}
 g_{i_m k_m} g^{j_n l_m}S^{i_1\dots i_p}_{j_1\dots j_q} T^{k_1\dots k_p}_{l_1\dots l_q}  \)
 </p>
@@ -477,7 +477,7 @@ when we are allowed to permute \( \alpha,\beta \), which is routine.
 <div class="definition">
 <ol class="org-ol">
 <li>A <b>vector field along \( f: M \longrightarrow M' \)</b> is a smooth application \(v: M\longrightarrow TM'\) such that \( \pi\circ v = f \) where \( \pi: TM' \longrightarrow M'\) is the canonical projection. In other words, it is the association of each point \(P\in M \) a tangent vector at \( f(P) \)</li>
-<li>The <b>tension field</b> of \( f \) is the following vector field along \( f \) defined by
+<li>The <b>tension field</b> of \( f \) is the vector field along \( f \) defined by
 \[
    \tau(f)^\gamma:= -\Delta f^\gamma +g^{ij}\Gamma'^{\gamma}_{\alpha\beta} f^{\alpha}_{i}f^{\beta}_{j}
    \]
@@ -485,8 +485,8 @@ By the Lemma <a href="#lem:var-energy">lem:var-energy</a>, \( \tau(f) \) is the 
 such that \( \frac{d }{dt}E(f_t) = -\int_M \langle \tau(f), \frac{df_t}{dt}\rangle \). In
 particular, if \( f_t \) is the variation of \( f \) along a vector field \( v \) along
 \( f \), i.e. \(f_t(P) = \exp_{f(P)}(tv(P))\) then \(\frac{d}{dt} E(f_t) = - \langle \tau(f), v
-   \rangle\) along \( f \).</li>
-<li>\( f: M \longrightarrow M' \) is called <b>harmonic</b> if \( \tau(f)=0 \), or equivalently
+   \rangle\).</li>
+<li>\( f: M \longrightarrow M' \) is called <b>harmonic</b> if \( \tau(f)=0 \), or equivalently if
 \( f \) is a critical point of \( E \).</li>
 </ol>
 
@@ -646,7 +646,7 @@ one has \( \tilde\Delta s = 0 \) if and only if \( Ds = \delta s = 0 \).
 <p>
 The metric vector bundle \( E \) over \( M \) is called a <b>Riemannian-connected bundle</b> if
 it is equipped with a connection \( \tilde \nabla \) under which the metric \( g' \) of \( E \) is
-parallel, i.e. \( \tilde\nabla g' = 0 \), in other words, the matrix \( A \) in a
+parallel, i.e. \( \tilde\nabla g' = 0 \), in other words, the matrix \( A \) in an
 orthonormal frame is anti-symmetric: \( A + \transp{A} = 0 \). Unless explicitly
 indicated, we always suppose that our metric vector bundle \( E \) is Riemannian-connected
 and the metric \( g' \) is parallel to the connection being used.
@@ -749,7 +749,7 @@ Since \( \int_M \Delta(s\cdot s)dV=0 \), if \( s \) is harmonic, one has
 <div class="outline-text-4" id="text-1-3-1">
 <p>
 Our interest will be the case of Example <a href="#ex:pullback-tangent">ex:pullback-tangent</a> where \( E =f^*TM'\) for
-some smooth map \( f: M \longrightarrow M' \) of Riemannian manifolds is a
+a smooth map \( f: M \longrightarrow M' \) of Riemannian manifolds is a
 Riemannian-connected bundle over \( M \) with the connection \( \tilde\nabla \) given by
 the Levi-Civita connection of \( M' \).
 </p>
@@ -845,7 +845,7 @@ fundamental form.</li>
 
 <p>
 When \( s = f_* \), Lemma <a href="#lem:calculs-general">lem:calculs-general</a> and Remark <a href="#rem:calculs-general">rem:calculs-general</a>
-become Lemma <a href="#lem:calculs-Q-pullback">lem:calculs-Q-pullback</a>, with no more than direct computation. The appearance of the Riemann curvature
+become Lemma <a href="#lem:calculs-Q-pullback">lem:calculs-Q-pullback</a>, with no more than direct computation. The appearance of Riemann curvature
 tensor \( R' \) of \( (M',g') \) is due to the formula
 \[ R'^\rho{}_{\sigma\mu\nu} = \partial_\mu\Gamma'^\rho{}_{\nu\sigma} -
 \partial_\nu\Gamma'^\rho{}_{\mu\sigma} +
@@ -878,13 +878,13 @@ and
 
 <p>
 The previous computation of \( Q(f_*) \) in term of Riemannian curvature of \( M' \) and
-Ricci curvature of \( M \) give the following result in the case where the curvature of \(
+Ricci curvature of \( M \) give the following result in case the curvature of \(
 M \) and \( M' \) are of definite sign.
 </p>
 </div>
 
-<div id="outline-container-org1206cc5" class="outline-5">
-<h5 id="org1206cc5"><span class="section-number-5">1.3.2.1</span> Notation.</h5>
+<div id="outline-container-orgc9f1e65" class="outline-5">
+<h5 id="orgc9f1e65"><span class="section-number-5">1.3.2.1</span> Notation.</h5>
 <div class="outline-text-5" id="text-1-3-2-1">
 <p>
 Given a Riemannian manifold \( M \), we will use the following notation:
@@ -945,7 +945,7 @@ see that the fundamental form \( \beta(f) \) that we defined earlier is the same
 <h4 id="org0016185"><span class="section-number-4">1.4.1</span> Second fundamental form.</h4>
 <div class="outline-text-4" id="text-1-4-1">
 <p>
-One defines the symmetric (0,2)-tensor \( \sff \) as the unique normal vector of \( M \) such that
+One defines the symmetric (0,2)-tensor \( \sff \) of \( f^*TM' \) as the unique normal vector of \( M \) such that
 \[
 \langle \sff_{ij},\xi_\sigma \rangle:= -\langle \tilde\nabla_i\xi_\sigma, f_* e_j\rangle
 \]
@@ -1400,7 +1400,7 @@ M' \) then
    (f'\circ f)^* g'' \rangle = e(f'\circ f)\).</li>
 <li>One has \( \tau(f'\circ f)^a  = \tau(f)^a +
    g^{ij}\beta(f')^a_{\alpha\beta} f^\alpha_i f^\beta_j\) by
-\eqref{eq:tension-field-composition}. The conclusion follows since the second term is normal to \( M' \), .</li>
+\eqref{eq:tension-field-composition}. The conclusion follows since the second term is normal to \( M' \).</li>
 </ol>
 
 </div>
@@ -1479,7 +1479,7 @@ M \longrightarrow N\), \( \pi\circ f \) is harmonic if and only if \( \tau(f) \)
 <h3 id="orge56f960"><span class="section-number-3">2.1</span> Statement of the main results.</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
-We want to prove in the next part the existence of harmonic map between manifolds \( M \)
+We want to prove in the next part existence of harmonic map between manifolds \( M \)
 and \( M' \) by deforming any map \( f: M
 \longrightarrow M' \) using the \( \tau \)-flow, meaning solving the PDE:
 </p>
@@ -1553,7 +1553,7 @@ geodesic of \( M' \) in relative homotopy class.
 In order to have a global frame, we will embed \( M' \) into an Euclidean space \( V \),
 but we will not use the Euclidean metric of \( V \). In fact, let \( T \) be a tubular
 neighborhood of \( M' \) in \( V \) then if \( T \) is trivial, i.e. if it is diffeomorphic to \( M'\times D \)
-where \( D \) is a sufficiently small of dimension being the codimension of \( M' \) in \(
+where \( D \) is a sufficiently small ball of dimension being the codimension of \( M' \) in \(
 V \), and we will equip \( T \) with the product metric of \( M'\times D \). 
 </p>
 
@@ -1587,7 +1587,7 @@ establish the uniqueness of solution of \eqref{eq:loc-heat-flow} first.
 <p>
 After having the global equation, we will prove the short time existence of solution by
 linearising the equation and using Inverse function theorem. The global formulation and the
-proof of short-time existence is independent of the negative curvature hypothesis, which
+proof of short-time existence are independent of the negative curvature hypothesis, which
 will only be used later to establish energy estimates and assure the convergence of
 long-time solution and the vanishing of its tension field.
 </p>
@@ -1749,7 +1749,7 @@ the following development of \( \sigma \):
 \lambda_{\beta\gamma,\delta} (a^\beta - b^\beta)(a^\gamma -b^\gamma)(a^\delta + b^\delta) + O(|a|+|b|)^4
 \]
 which was justified by \( \sigma(a,b) = \sigma(b,a) \) and \( \sigma(a,a)=0
-\). It can be proved this is equivalent to \eqref{eq:dev-sig-unique} and the symmetries \( \lambda_{\beta\gamma,\delta} =
+\). It can be proved that this is equivalent to \eqref{eq:dev-sig-unique} and the symmetries \( \lambda_{\beta\gamma,\delta} =
 \lambda_{\gamma\beta,\delta},\ \lambda_{\beta\gamma,\delta}
 +\lambda_{\gamma\delta,\beta} + \lambda_{\beta\delta,\gamma}= 0 \).
 </p>
@@ -1905,19 +1905,14 @@ tension field is the gradient of \( E \), one has:
 If \( f_t: M \longrightarrow  M' \) satisfies \eqref{eq:loc-heat-flow} then
 \[
  \frac{d E(f_t)}{dt} = -\int_M \left\langle \tau(f_t), \frac{\partial f_t}{\partial t}
-\right \rangle = -\int_M |\tau(f_t)|^2 = -2K(f_t) \leq 0
-\]
-and
-\[
-\frac{d^2 E(f_t)}{dt} = -2\int_M \left \langle \nabla_{\partial t}\frac{\partial
-f_t}{\partial t},\tau(f_t)\right \rangle
+\right \rangle = -\int_M |\tau(f_t)|^2 = -2K(f_t) \leq 0.
 \]
 </p>
 
 </div>
 
 <p>
-Intergrating Theorem <a href="#thm:den-kin">thm:den-kin</a> on \( M \) then using Theorem <a href="#thm:energy-cons">thm:energy-cons</a>, one obtains:
+Integrating Theorem <a href="#thm:den-kin">thm:den-kin</a> on \( M \) then using Theorem <a href="#thm:energy-cons">thm:energy-cons</a>, one obtains:
 </p>
 
 <div id="thm:int-den-kin" class="theorem">
@@ -1999,7 +1994,7 @@ an Euclidean ball \( B \).
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-07-02 Mon 17:28. <br>
+Last updated 2018-07-06 Fri 01:03. <br>
 </div>
 </div>
 </body>

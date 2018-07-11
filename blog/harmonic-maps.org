@@ -14,8 +14,8 @@ This is my reading note for cite:eells_harmonic_1964.
 * Harmonic maps
 ** Variational approach: energy integral and tension field
 **** Notation.
-Let \( M, M', M''\) be Riemannian manifolds of dimension \( n, n' \) and \( n', n''\)
-respectively. We will use \( i,j,k,\dots, \alpha,\beta,\gamma,\dots, a,b,c \) for local
+Let \( M, M', M''\) be Riemannian manifolds of dimension \( n, n' \) and \( n''\)
+respectively. We will use indices \( i,j,k,\dots, \alpha,\beta,\gamma,\dots, a,b,c \) to denote local
 coordinates of \( M, M', M'' \).
 Let \( f: M \longrightarrow M', f': M' \longrightarrow M''\) be a smooth maps, one denotes
 \[
@@ -38,7 +38,7 @@ f^\beta_j g'_{\alpha\beta} |\det (g_{ij})|^\frac{1}{2} dx^1\wedge \dots\wedge dx
 \]
 #+END_definition
 
-We recall that the inner product is between 2 tensors of type \( (p,q) \) \( S =
+We recall that the inner product between 2 tensors of type \( (p,q) \) \( S =
 S^{i_1\dots i_p}_{j_1\dots j_q}, T = T^{k_1\dots k_p}_{l_1\dots l_q} \) is \( \prod_{m,n}
 g_{i_m k_m} g^{j_n l_m}S^{i_1\dots i_p}_{j_1\dots j_q} T^{k_1\dots k_p}_{l_1\dots l_q}  \)
 
@@ -101,7 +101,7 @@ when we are allowed to permute \( \alpha,\beta \), which is routine.
 
 #+BEGIN_definition
 1. A *vector field along \( f: M \longrightarrow M' \)* is a smooth application \(v: M\longrightarrow TM'\) such that \( \pi\circ v = f \) where \( \pi: TM' \longrightarrow M'\) is the canonical projection. In other words, it is the association of each point \(P\in M \) a tangent vector at \( f(P) \)
-2. The *tension field* of \( f \) is the following vector field along \( f \) defined by
+2. The *tension field* of \( f \) is the vector field along \( f \) defined by
    \[
    \tau(f)^\gamma:= -\Delta f^\gamma +g^{ij}\Gamma'^{\gamma}_{\alpha\beta} f^{\alpha}_{i}f^{\beta}_{j}
    \]
@@ -109,8 +109,8 @@ when we are allowed to permute \( \alpha,\beta \), which is routine.
    such that \( \frac{d }{dt}E(f_t) = -\int_M \langle \tau(f), \frac{df_t}{dt}\rangle \). In
    particular, if \( f_t \) is the variation of \( f \) along a vector field \( v \) along
    \( f \), i.e. \(f_t(P) = \exp_{f(P)}(tv(P))\) then \(\frac{d}{dt} E(f_t) = - \langle \tau(f), v
-   \rangle\) along \( f \).
-3. \( f: M \longrightarrow M' \) is called *harmonic* if \( \tau(f)=0 \), or equivalently
+   \rangle\).
+3. \( f: M \longrightarrow M' \) is called *harmonic* if \( \tau(f)=0 \), or equivalently if
    \( f \) is a critical point of \( E \).
 #+END_definition
 
@@ -226,7 +226,7 @@ one has \( \tilde\Delta s = 0 \) if and only if \( Ds = \delta s = 0 \).
 **** Riemannian connected bundle.
 The metric vector bundle \( E \) over \( M \) is called a *Riemannian-connected bundle* if
 it is equipped with a connection \( \tilde \nabla \) under which the metric \( g' \) of \( E \) is
-parallel, i.e. \( \tilde\nabla g' = 0 \), in other words, the matrix \( A \) in a
+parallel, i.e. \( \tilde\nabla g' = 0 \), in other words, the matrix \( A \) in an
 orthonormal frame is anti-symmetric: \( A + \transp{A} = 0 \). Unless explicitly
 indicated, we always suppose that our metric vector bundle \( E \) is Riemannian-connected
 and the metric \( g' \) is parallel to the connection being used.
@@ -301,7 +301,7 @@ Computational in nature.
 label:sec:general-calcul
 *** Energy functional and tension field
 Our interest will be the case of Example ref:ex:pullback-tangent where \( E =f^*TM'\) for
-some smooth map \( f: M \longrightarrow M' \) of Riemannian manifolds is a
+a smooth map \( f: M \longrightarrow M' \) of Riemannian manifolds is a
 Riemannian-connected bundle over \( M \) with the connection \( \tilde\nabla \) given by
 the Levi-Civita connection of \( M' \).
 
@@ -373,7 +373,7 @@ The function \( f \) is called *totally geodesic* if \( \beta(f) = 0 \) identica
 #+END_remark
 
 When \( s = f_* \), Lemma ref:lem:calculs-general and Remark ref:rem:calculs-general
-become Lemma ref:lem:calculs-Q-pullback, with no more than direct computation. The appearance of the Riemann curvature
+become Lemma ref:lem:calculs-Q-pullback, with no more than direct computation. The appearance of Riemann curvature
 tensor \( R' \) of \( (M',g') \) is due to the formula
 \[ R'^\rho{}_{\sigma\mu\nu} = \partial_\mu\Gamma'^\rho{}_{\nu\sigma} -
 \partial_\nu\Gamma'^\rho{}_{\mu\sigma} +
@@ -403,7 +403,7 @@ tensor \( R' \) of \( (M',g') \) is due to the formula
 
 
 The previous computation of \( Q(f_*) \) in term of Riemannian curvature of \( M' \) and
-Ricci curvature of \( M \) give the following result in the case where the curvature of \(
+Ricci curvature of \( M \) give the following result in case the curvature of \(
 M \) and \( M' \) are of definite sign.
 
 **** Notation.
@@ -447,7 +447,7 @@ that \( \int_M \Delta e(f)dV = 0 \), noticing that
 Let \( f: M \longrightarrow M' \) be a Riemannian immersion, i.e. \( Tf \) is injective and \( f^*g' = g \). We will
 see that the fundamental form \( \beta(f) \) that we defined earlier is the same as usual definition in courses of Riemannian geometry.
 *** Second fundamental form.
-One defines the symmetric (0,2)-tensor \( \sff \) as the unique normal vector of \( M \) such that
+One defines the symmetric (0,2)-tensor \( \sff \) of \( f^*TM' \) as the unique normal vector of \( M \) such that
 \[
 \langle \sff_{ij},\xi_\sigma \rangle:= -\langle \tilde\nabla_i\xi_\sigma, f_* e_j\rangle
 \]
@@ -769,7 +769,7 @@ M' \) then
    (f'\circ f)^* g'' \rangle = e(f'\circ f)\).
 2. One has \( \tau(f'\circ f)^a  = \tau(f)^a +
    g^{ij}\beta(f')^a_{\alpha\beta} f^\alpha_i f^\beta_j\) by
-   eqref:eq:tension-field-composition. The conclusion follows since the second term is normal to \( M' \), .
+   eqref:eq:tension-field-composition. The conclusion follows since the second term is normal to \( M' \).
 #+END_proof
 
 The following immediate corollary of Proposition ref:prop:compo-immersion is a generalization of the fact that a curve is geodesic if and only if it
@@ -830,7 +830,7 @@ M \longrightarrow N\), \( \pi\circ f \) is harmonic if and only if \( \tau(f) \)
 * Nonlinear heat flow: Global equation and existence of harmonic maps.
 ** Statement of the main results.
 
-We want to prove in the next part the existence of harmonic map between manifolds \( M \)
+We want to prove in the next part existence of harmonic map between manifolds \( M \)
 and \( M' \) by deforming any map \( f: M
 \longrightarrow M' \) using the \( \tau \)-flow, meaning solving the PDE:
 \begin{equation}
@@ -888,7 +888,7 @@ geodesic of \( M' \) in relative homotopy class.
 In order to have a global frame, we will embed \( M' \) into an Euclidean space \( V \),
 but we will not use the Euclidean metric of \( V \). In fact, let \( T \) be a tubular
 neighborhood of \( M' \) in \( V \) then if \( T \) is trivial, i.e. if it is diffeomorphic to \( M'\times D \)
-where \( D \) is a sufficiently small of dimension being the codimension of \( M' \) in \(
+where \( D \) is a sufficiently small ball of dimension being the codimension of \( M' \) in \(
 V \), and we will equip \( T \) with the product metric of \( M'\times D \). 
 
 If \( T \) is not trivial, using a partition of unity of \( M' \), one can construct a metric on \( T \)
@@ -914,7 +914,7 @@ establish the uniqueness of solution of eqref:eq:loc-heat-flow first.
 
 After having the global equation, we will prove the short time existence of solution by
 linearising the equation and using Inverse function theorem. The global formulation and the
-proof of short-time existence is independent of the negative curvature hypothesis, which
+proof of short-time existence are independent of the negative curvature hypothesis, which
 will only be used later to establish energy estimates and assure the convergence of
 long-time solution and the vanishing of its tension field.
 
@@ -1050,7 +1050,7 @@ the following development of \( \sigma \):
 \lambda_{\beta\gamma,\delta} (a^\beta - b^\beta)(a^\gamma -b^\gamma)(a^\delta + b^\delta) + O(|a|+|b|)^4
 \]
 which was justified by \( \sigma(a,b) = \sigma(b,a) \) and \( \sigma(a,a)=0
-\). It can be proved this is equivalent to eqref:eq:dev-sig-unique and the symmetries \( \lambda_{\beta\gamma,\delta} =
+\). It can be proved that this is equivalent to eqref:eq:dev-sig-unique and the symmetries \( \lambda_{\beta\gamma,\delta} =
 \lambda_{\gamma\beta,\delta},\ \lambda_{\beta\gamma,\delta}
 +\lambda_{\gamma\delta,\beta} + \lambda_{\beta\delta,\gamma}= 0 \).
 
@@ -1175,16 +1175,11 @@ tension field is the gradient of \( E \), one has:
 If \( f_t: M \longrightarrow  M' \) satisfies eqref:eq:loc-heat-flow then
 \[
  \frac{d E(f_t)}{dt} = -\int_M \left\langle \tau(f_t), \frac{\partial f_t}{\partial t}
-\right \rangle = -\int_M |\tau(f_t)|^2 = -2K(f_t) \leq 0
-\]
-and
-\[
-\frac{d^2 E(f_t)}{dt} = -2\int_M \left \langle \nabla_{\partial t}\frac{\partial
-f_t}{\partial t},\tau(f_t)\right \rangle
+\right \rangle = -\int_M |\tau(f_t)|^2 = -2K(f_t) \leq 0.
 \]
 #+END_theorem
 
-Intergrating Theorem ref:thm:den-kin on \( M \) then using Theorem ref:thm:energy-cons, one obtains:
+Integrating Theorem ref:thm:den-kin on \( M \) then using Theorem ref:thm:energy-cons, one obtains:
 
 #+ATTR_HTML: :id thm:int-den-kin 
 #+BEGIN_theorem

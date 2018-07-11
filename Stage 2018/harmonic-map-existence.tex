@@ -22,14 +22,14 @@ uniformly bound all of its derivatives in time of evolution \([\alpha,\omega)\).
 estimates will also be useful to justify the convergence of \(F_t\) in \(C^\infty(M)\) to a smooth function \(F_\infty\) which will eventually be a harmonic map
 from \(M\) to \(M'\).
 
-Recall that we \href{harmonic-maps.org}{proved} in Corollary \ref{cor:bound-2-2} the boundedness of \(\|F_t\|_{W^{2,2}(M)}\) by a constant \(C\) depending only on curvatures of \(M, M'\) and
+Recall that we \href{harmonic-maps.org}{proved} in Corollary \ref{cor:bound-2-2}, under the hypothesis of negative curvature, the boundedness of \(\|F_t\|_{W^{2,2}(M)}\) by a constant \(C\) depending only on curvatures of \(M, M'\) and
 the initial total energies. Since \(\frac{dF_t}{dt }\) relates to spatial derivatives of
 \(F\) by the nonlinear heat equation, it is easy to see that \(\|F_t\|_{W^{2,2}(M\times[\tau,\tau +\delta])}\) is bounded by a constant independent of
 \(\tau\). We will denote \(W^{k,p}(M\times [\beta,\gamma])\) by \(W^{k,p}([\beta,\gamma])\).
 
 \begin{theorem}[\(W^{2,2}\)-boundedness]
 \label{thm:bound-2-2}
-There exists a constant \(C\) depending only on \(\delta\), the metrics and initial
+Suppose \(\Riem(M') \leq 0\). There exists a constant \(C\) depending only on \(\delta\), the metrics and initial
 total energies such that
 \[
  \|F\|_{W^{2,2}(\tau,\tau+\delta)}\leq C\quad\text{for all } \alpha \leq \tau <\omega-\delta.
@@ -50,11 +50,11 @@ The estimates of higher derivatives of \(F\) will be established in the same str
 the bootstrap: first in \(W^{2,p}\) for all \(p\) then in \(W^{k,p}\) for all \(k,p\), then in \(C^\infty\).
 
 \section{Estimate of higher derivatives.}
-\label{sec:org77ab882}
+\label{sec:org50e3df5}
 
 \begin{lemma}[\( W^{2,p} \)-boundedness]
 \label{lem:bound-2-p}
-For all \(p \in (1,+\infty)\), there exists a constant \(C>0\) depending only on \(\delta\), \(p\), the metrics and initial energies such that for all \(\alpha +\delta \leq \tau \leq \omega-\delta\):
+Suppose \(\Riem(M') \leq 0\). For all \(p \in (1,+\infty)\), there exists a constant \(C>0\) depending only on \(\delta\), \(p\), the metrics and initial energies such that for all \(\alpha +\delta \leq \tau \leq \omega-\delta\):
 \[
 \|F\|_{W^{2,p}([\tau,\tau+\delta])}\leq C
 \]
@@ -77,7 +77,7 @@ C(M') \| |\nabla F|^2 \|_{L^p([\tau-\frac{\delta}{3}, \tau+\delta])} = C(M') \| 
 
 Recall that by Theorem \ref{thm:den-pot}, the \href{harmonic-maps.org}{potential density} satisfies \(\frac{de}{dt} +\Delta e -Ce \leq 0\) for
 certain constant \(C\) depending only on the metric of \(M\). By \href{elliptic-parabolic.org}{Maximum principle}
-(Theorem \ref{thm:max-princ-para}), one has \(e \leq \psi_\tau\) where \(\psi_\tau\) is
+(Theorem \ref{thm:max-princ-d}), one has \(e \leq \psi_\tau\) where \(\psi_\tau\) is
 the solution of
 
 \begin{cases}
@@ -107,7 +107,7 @@ We can now estimate higher order derivatives.
 
 \begin{theorem}[\( W^{k,p} \)-boundedness]
 \label{thm:bound-k-p}
-For all \(p\in (1,+\infty)\) and \(k<+\infty\), there exists \(C\) depending only on
+Suppose \(\Riem(M') \leq 0\). For all \(p\in (1,+\infty)\) and \(k<+\infty\), there exists \(C\) depending only on
 \(k\), \(p\), the metrics and initial energies such that
 \[
 \|F\|_{W^{k,p}([\tau, \tau+\delta])} \leq C
@@ -140,11 +140,11 @@ One can then conclude by induction on \(k\), with step \(\frac{1}{2}\), starting
 
 
 \section{Global existence for nonlinear heat equation.}
-\label{sec:orgc8639fa}
+\label{sec:orga0359a0}
 
 \begin{theorem}[Global existence]
 \label{thm:global-heat-existence}
-The solution of nonlinear heat equation
+Suppose \(\Riem(M') \leq 0\). The solution of nonlinear heat equation
 \begin{equation}
 \label{eq:thm:global-heat}
  \frac{dF}{dt} = -\Delta F +\Gamma(F) (\nabla F)^2
@@ -165,7 +165,7 @@ by Theorem \ref{thm:bound-k-p}, for all \(\tau \in [\alpha,\omega-\delta)\):
 where, if we choose \(k\) sufficiently large, \(C_{\rm Sobolev}\) is the constant of Sobolev imbedding \(W^{k,p}(M\times[0,\delta]) \hookrightarrow C(M\times[0,\delta])\) and \(C(k,p,\delta)\)
 is the constant provided by Theorem \ref{thm:bound-k-p}. 
 
-So all partial derivatives of \(F\) are uniformly bounded on \([\alpha +\delta,\omega)\). This proves that \(F\) extends
+So all partial derivatives of \(F\) are uniformly bounded on \([\alpha,\omega)\). This proves that \(F\) extends
 to a solution on \([\alpha,\omega]\). In fact \(\restr{F}{\tau}:=\restr{F}{M\times\{\tau\}}\) converges
 in \(C^\infty(M)\) as \(\tau\to \omega\), since 
 \[ \|D^\alpha \restr{F}{\tau} -

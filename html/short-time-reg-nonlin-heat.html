@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-07-03 Tue 01:41 -->
+<!-- 2018-07-06 Fri 01:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Short-time existence and regularity for nonlinear heat equation</title>
@@ -264,7 +264,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#orge94415d">1.1. Sobolev spaces.</a></li>
 <li><a href="#org27da7c8">1.2. Trace theorem.</a></li>
-<li><a href="#org2e1d021">1.3. Linear equation on manifolds.</a>
+<li><a href="#org4ca6f55">1.3. Linear equations on manifolds.</a>
 <ul>
 <li><a href="#org5c01761">1.3.1. Existence and Regularity.</a></li>
 <li><a href="#orge21172b">1.3.2. Maximum principle and Comparison theorems.</a></li>
@@ -366,7 +366,7 @@ In particular, one has the Interpolation inequality
 Sobolev embeddings and Kondrachov theorem remain correct on manifold. 
 </p>
 
-<div id="thm:Sobolev-Rn-d" btit="(Sobolev embedding)" class="theorem">
+<div id="thm:Sobolev-Rn-d" btit="(Sobolev embeddings)" class="theorem">
 <p>
 Given \( k,l\in \mathbb{Z},\ k>l \geq 0 \) and \( p,q\in \mathbb{R},\ p>q\geq 1 \). Then
 </p>
@@ -473,8 +473,8 @@ W^{l,p}(M) \) for any \( l < k-\frac{1}{p} \).
 </div>
 </div>
 
-<div id="outline-container-org2e1d021" class="outline-3">
-<h3 id="org2e1d021"><span class="section-number-3">1.3</span> Linear equation on manifolds.</h3>
+<div id="outline-container-org4ca6f55" class="outline-3">
+<h3 id="org4ca6f55"><span class="section-number-3">1.3</span> Linear equations on manifolds.</h3>
 <div class="outline-text-3" id="text-1-3">
 </div><div id="outline-container-org5c01761" class="outline-4">
 <h4 id="org5c01761"><span class="section-number-4">1.3.1</span> Existence and Regularity.</h4>
@@ -502,7 +502,7 @@ Then actually \( F\in W^{k,p}(M\times[\alpha,\omega]) \).
 
 <div id="thm:para-existence-d" btit="(Causality of parabolic equation)" class="theorem">
 <p>
-Let \( M \) be a compact manifold and \( AF:= \frac{d}{dt}F + \Delta F \) be an parabolic
+Let \( M \) be a compact manifold and \( AF:= \frac{d}{dt}F + \Delta F + a\nabla F + bF \) be an parabolic
 operator. Then 
 \[
  A:\ W^{k,p}(M\times[\alpha,\omega]/\alpha) \longrightarrow W^{k-2,p}(M\times[\alpha,\omega]/\alpha)
@@ -635,8 +635,7 @@ We will suppose here that \( r,s \) are even integers so that the \( W^{r,p} \)
 W^{s,q} \)) norm of \( PF \) (respectively \( F \)) can be written as sum of \( L^p \)
 (respectively \( L^q \)) norms of its derivatives. Also, we will use chain rule freely to
 differentiate the term \( \Gamma'^\alpha_{\beta\gamma}(F) \) using weak derivatives of \( F
-\). The general and rigorous proof, which involves fractional Sobolev space to treat non-integral
-\( r, s \) and a detour to Besov spaces to justify chain rule, can be found in the appendices.
+\). The general and rigorous proof, which involves non-integral Sobolev space to treat \( r, s \) and a detour to Besov spaces to justify chain rule, can be found in the appendices.
 </p>
 
 <p>
@@ -662,9 +661,9 @@ use the upper bound of \( 2b_i +c_i \) to justify that \( \frac{1}{p} > \frac{r+
 
 <p>
 The straightforward way to have a sufficient condition of \( p_i \) such that \( W^{s,q}
-\hookrightarrow W^{2b_i+c_i,p_i} \) is to use Sobolev embedding, but the result is sub-optimal
-because Sobolev embedding does not take into account the \( L^\infty
-\)-bounded of \( F \) (its image lies in a compact of \( \mathbb{R}^N \)). A better way is to use
+\hookrightarrow W^{2b_i+c_i,p_i} \) is to use Sobolev embeddings but the result is sub-optimal
+because Sobolev embeddings do not take into account the \( L^\infty
+\)-boundedness of \( F \) (its image lies in a compact of \( \mathbb{R}^N \)). A better way is to use
 Interpolation inequality, by remarking that \( F\in W^{0,v} \) for all \( v\in (1,+\infty)
 \) and writing \( W^{2b_i+c_i, p_i} \) as an interpolation space of \( W^{s,q} \) and \(
 W^{0,v} \). It can be seen, by direct computation, that the sufficient condition for \( W^{s,q}
@@ -797,7 +796,7 @@ manifold and \( B\subset \mathbb{R}^N \) is a large Euclidean ball.
 
 <div id="thm:short-time" btit="(Short-time existence)" class="theorem">
 <p>
-Let \( F_\alpha: M \longrightarrow  B\) be a smooth map, then there exists \( \epsilon>0
+Let \( F_\alpha: M \longrightarrow  B\) be a smooth map, then there exist \( \epsilon>0
 \) depending on \( F_\alpha \) and \( F: M\times [\alpha,\alpha + \epsilon] \longrightarrow
 B \) such that \( F\in W^{2,p}(M\times [\alpha,\alpha+\epsilon]) \) with \(
 \restr{F}{M\times \{\alpha\}} = F_\alpha \) and
@@ -886,7 +885,7 @@ t\in[\alpha,\alpha+\epsilon] \). Theorem <a href="#thm:global-eq">thm:global-eq<
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-07-03 Tue 01:41. <br>
+Last updated 2018-07-06 Fri 01:08. <br>
 </div>
 </div>
 </body>

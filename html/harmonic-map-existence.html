@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-07-03 Tue 01:47 -->
+<!-- 2018-07-06 Fri 01:14 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Global existence for nonlinear heat equation and harmonic maps between Riemannian manifolds</title>
@@ -316,7 +316,7 @@ from \( M \) to \( M' \).
 </p>
 
 <p>
-Recall that we <a href="harmonic-maps.html">proved</a> in Corollary <a href="#cor:bound-2-2">cor:bound-2-2</a> the boundedness of \(
+Recall that we <a href="harmonic-maps.html">proved</a> in Corollary <a href="#cor:bound-2-2">cor:bound-2-2</a>, under the hypothesis of negative curvature, the boundedness of \(
 \|F_t\|_{W^{2,2}(M)} \) by a constant \( C \) depending only on curvatures of \( M, M' \) and
 the initial total energies. Since \( \frac{dF_t}{dt } \) relates to spatial derivatives of
 \( F \) by the nonlinear heat equation, it is easy to see that \(
@@ -326,7 +326,7 @@ the initial total energies. Since \( \frac{dF_t}{dt } \) relates to spatial deri
 
 <div id="thm:bound-2-2" btit="(\(W^{2,2}\)-boundedness)" class="theorem">
 <p>
-There exists a constant \( C \) depending only on \( \delta \), the metrics and initial
+Suppose \( \Riem(M') \leq 0 \). There exists a constant \( C \) depending only on \( \delta \), the metrics and initial
 total energies such that
 \[
  \|F\|_{W^{2,2}(\tau,\tau+\delta)}\leq C\quad\text{for all } \alpha \leq \tau <\omega-\delta.
@@ -360,7 +360,7 @@ W^{2,p} \) for all \( p \) then in \( W^{k,p} \) for all \( k,p \), then in \( C
 <div class="outline-text-2" id="text-1">
 <div id="lem:bound-2-p" btit="(\( W^{2,p} \)-boundedness)" class="lemma">
 <p>
-For all \( p \in (1,+\infty) \), there exists a constant \( C>0 \) depending only on \(
+Suppose \( \Riem(M') \leq 0 \). For all \( p \in (1,+\infty) \), there exists a constant \( C>0 \) depending only on \(
 \delta \), \( p \), the metrics and initial energies such that for all \(
 \alpha +\delta \leq \tau \leq \omega-\delta  \):
 \[
@@ -391,7 +391,7 @@ C(M') \| |\nabla F|^2 \|_{L^p([\tau-\frac{\delta}{3}, \tau+\delta])} = C(M') \| 
 <p>
 Recall that by Theorem <a href="#thm:den-pot">thm:den-pot</a>, the <a href="harmonic-maps.html">potential density</a> satisfies \( \frac{de}{dt} +\Delta e -Ce \leq 0 \) for
 certain constant \( C \) depending only on the metric of \( M \). By <a href="elliptic-parabolic.html">Maximum principle</a>
-(Theorem <a href="#thm:max-princ-para">thm:max-princ-para</a>), one has \( e \leq \psi_\tau \) where \( \psi_\tau \) is
+(Theorem <a href="#thm:max-princ-d">thm:max-princ-d</a>), one has \( e \leq \psi_\tau \) where \( \psi_\tau \) is
 the solution of
 </p>
 
@@ -432,7 +432,7 @@ We can now estimate higher order derivatives.
 
 <div id="thm:bound-k-p" btit="(\( W^{k,p} \)-boundedness)" class="theorem">
 <p>
-For all \( p\in (1,+\infty) \) and \( k<+\infty \), there exists \( C \) depending only on
+Suppose \( \Riem(M') \leq 0 \). For all \( p\in (1,+\infty) \) and \( k<+\infty \), there exists \( C \) depending only on
 \( k\), \(p\), the metrics and initial energies such that
 \[
 \|F\|_{W^{k,p}([\tau, \tau+\delta])} \leq C
@@ -483,7 +483,7 @@ One can then conclude by induction on \( k \), with step \( \frac{1}{2} \), star
 <div class="outline-text-2" id="text-2">
 <div id="thm:global-heat-existence" btit="(Global existence)" class="theorem">
 <p>
-The solution of nonlinear heat equation
+Suppose \( \Riem(M') \leq 0 \). The solution of nonlinear heat equation
 </p>
 \begin{equation}
 \label{eq:thm:global-heat}
@@ -514,7 +514,7 @@ is the constant provided by Theorem <a href="#thm:bound-k-p">thm:bound-k-p</a>.
 
 <p>
 So all partial derivatives of \( F
-\) are uniformly bounded on \( [\alpha +\delta,\omega) \). This proves that \( F \) extends
+\) are uniformly bounded on \( [\alpha,\omega) \). This proves that \( F \) extends
 to a solution on \( [\alpha,\omega] \). In fact \(\restr{F}{\tau}:=\restr{F}{M\times\{\tau\}} \) converges
 in \( C^\infty(M) \) as \( \tau\to \omega \), since 
 \[ \|D^\alpha \restr{F}{\tau} -
@@ -574,7 +574,7 @@ Therefore \( \tau(f_{t_n}) \to 0 \) in \( L^2(M)^{\oplus N} \). But also \( \tau
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-07-03 Tue 01:47. <br>
+Last updated 2018-07-06 Fri 01:14. <br>
 </div>
 </div>
 </body>

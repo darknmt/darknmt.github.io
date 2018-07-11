@@ -12,7 +12,7 @@ ideas as clear as possible and I may probably skip a few (important) details and
 \fi
 
 \section{Brief view of Sacks and Uhlenbeck's strategy.}
-\label{sec:org3f79ab6}
+\label{sec:org4fcb43b}
 
 Let \(M\) and \(N\) be compact Riemannian manifolds (without boundary), \(M\) is a
 surface and \(N\) is isometrically embedded in \(\mathbb{R}^k\). It was showed by
@@ -31,7 +31,7 @@ allows us to justify the \(C^1\)-convergence (under conditions of \(N\)) except 
 finitely many points using a local estimate and a suitable
 covering of \(M\). 
 
-Sacks and Uhlenbeck used a local extension result for harmonic map, in an elegant argument
+Sacks and Uhlenbeck used an extension result for harmonic map, in an elegant argument
 to prove that if the above sequence \(\{s_\alpha\}\) fails to converge at a point,
 for a certain surface \(M\), then one has a nontrivial harmonic map from \(\mathbb{S}^2\) to \(N\). Therefore if such sequence \(\{ s_\alpha \}\) from \(\mathbb{S}^2\) to \(N\) exists, for example when \(\pi_k (N)\) is nontrivial for a certain \(k\geq 2\) then, 
 whether \(s_\alpha\) converges or not, there exists a nontrivial harmonic map from \(\mathbb{S}^2\) to \(N\). 
@@ -41,10 +41,10 @@ Finally, the theory of branched immersion of surfaces by Gulliver-Osserman-Royde
 is a conformal, branched, minimal immersion of \(\mathbb{S}^2\) to \(N\).
 
 \section{General machinery by Morse-Palais-Smale.}
-\label{sec:org369b6f1}
+\label{sec:org4d8655c}
 
 \subsection{Perturbed functionals \(E_\alpha\).}
-\label{sec:org2619de2}
+\label{sec:orgb908691}
 
 Let \(s: M \longrightarrow N \hookrightarrow \mathbb{R}^k\) be a map from a compact
 surface \(M\) to a compact Riemannian manifold \(N\) isometrically embedded into \(\mathbb{R}^k\). Recall that the energy functional of \(s\) is given by \(E(s):=
@@ -54,7 +54,7 @@ surface \(M\) to a compact Riemannian manifold \(N\) isometrically embedded into
 \]
 We will suppose, by rescaling the metric \(g_M\) of \(M\) that the volume of \(M\)
 is 1, so when \(\alpha=1\), \(E_1 =  1+ 2E(s)\) is just the previously defined energy. Using \((a+b)^\alpha \geq a^\alpha + b^\alpha\) and Jensen's inequality, one has \(E_\alpha(s) \geq 1 + (2E(s))^\alpha\) for all \(\alpha \geq 1\). Also, since we only
-interest in the case \(\alpha\) close to \(1\), let us also suppose that all \(\alpha\) from now on is smaller than 2.
+interest in the case \(\alpha\) close to \(1\), let us also suppose that \(\alpha\) from now on is smaller than 2.
 
 By Sobolev embedding, one has \(W^{1,2\alpha}(M, \mathbb{R}^k) \subset C^0(M,
 \mathbb{R}^k)\) compactly for all \(\alpha >1\). It then makes sense to talk about \(W^{1,2\alpha}(M,N) \subset C^0(M,N)\) which consist of elements of \(W^{1,2\alpha}(M,
@@ -115,7 +115,7 @@ spaces of maps from \(M\) to \(N\) are connected, we will have to look at the
 submanifold \(N_0\cong N\) formed by constant maps.
 
 \subsection{Tubular neighborhood of the submanifold of trivial maps.}
-\label{sec:org8969f45}
+\label{sec:orgde54354}
 
 Fix \(y\in N\), considered as a constant maps in \(N_0\). We will summarise a few facts about the tangent space of \(W^{1,2\alpha}(M,N)\) at \(y\).
 
@@ -142,8 +142,7 @@ where \(s\in W^{1,2\alpha}(M,N)\) and \(v\in T_s W^{1,2\alpha}(M,N)\) is a \(W^{
 \restr{e}{\mathcal{N}}:\ \mathcal{N} &\longrightarrow  W^{1,2\alpha}(M,N)\\
 			 (y,v) &\longmapsto	       \left(x\mapsto \exp_y (v(x)) \right)
 \end{align*}
-where \(y\in N_0 \cong N\) and \(v \in W^{1,2\alpha}(M, T_yN)\). This is an local
-diffeomorphism near the zero-section of \(\mathcal{N}\).
+where \(y\in N_0 \cong N\) and \(v \in W^{1,2\alpha}(M, T_yN)\).
 
 \begin{lemma}
 \label{lem:local-isom-e}
@@ -163,7 +162,7 @@ in the normal component. The Inverse function theorem applies.
 \end{proof}
 
 \subsection{Critical values of \(E_\alpha\).}
-\label{sec:orgaed99f5}
+\label{sec:org7be5a37}
 
 The exponential map previously defined on the normal bundle of \(N_0\) in  \(W^{1,
 2\alpha}(M,N)\) allows us to retract by deformation a small neighborhood of \(N_0\) to
@@ -309,7 +308,7 @@ general argument applies.
 
 
 \section{Local results: Estimates and extension.}
-\label{sec:org431f144}
+\label{sec:org5c54772}
 
 We will say that the map \(s: M \longrightarrow N\) is a critical point of \(E_\alpha\) on a small disc \(D(R)\subset M\) if \(s\) satisfies the Euler-Lagrange equation of
 \(E_\alpha\) (as functional on \(W^{1,2\alpha}(M,N)\)) on \(D(R)\).
@@ -376,7 +375,7 @@ If \(s:\ D\setminus \{0\} \longrightarrow N\) is a harmonic map with finite ener
 
 
 \section{Convergence of critical maps of \(E_{\alpha}\).}
-\label{sec:org42be906}
+\label{sec:orgfd03f49}
 
 We proved in Theorem \ref{thm:3-nontrivial-crit} that if \(C^0(M,N)\) is not connected or
 if \(\Omega(M,N)\) is not contractible, then there exists a family \(\{s_\alpha\}\) of
@@ -463,10 +462,9 @@ one can find a sequence \(\{x_{m,1},\dots, x_{m,l}\}\subset M\) and a subsequenc
 \]
 \end{proposition}
 \begin{proof}
-We cover \(M\) by finitely many ball \(D(y_i, 2^{-m})\) such that each point is covered
+We cover \(M\) by finitely many balls \(D(y_i, 2^{-m})\) such that each point is covered
 at most \(h\) times by the bigger balls \(D(y_i,2^{-m+1})\). By Lemma
-\ref{lem:uni-loc-finite-cover} (a consequence of the \href{sobolev-riemannian.org}{comparison of the Riemannian
-manifold \(M\) with spaceforms}), \(h\) can be chosen independently of \(m\) as \(2^{-m} \to 0\).
+\ref{lem:uni-loc-finite-cover}, \(h\) can be chosen independently of \(m\) as \(2^{-m} \to 0\).
 
 
 Since \(\sum_i \int_{D(y_i, 2^{-m+1})} |ds_\alpha|^2 < B h\), choosing \(l = \lceil
@@ -518,7 +516,7 @@ in \(N\).
 
 
 \section{Nontrivial harmonic maps from \(\mathbb{S}^2\).}
-\label{sec:org1ecdb27}
+\label{sec:orgffd7b44}
 We will now prove the existence of nontrivial harmonic maps from \(\mathbb{S}^2\) to a
 compact Riemannian manifold \(N\) satisfying the conditions of Theorem
 \ref{thm:3-nontrivial-crit}. 
@@ -690,7 +688,7 @@ arbitrarily close to \(1\) and \(\delta\) arbitrarily small, one has
 
 
 \section{Minimal immersions of \(\mathbb{S}^2\).}
-\label{sec:org1346626}
+\label{sec:org1da06c8}
 
 We use the following result:
 

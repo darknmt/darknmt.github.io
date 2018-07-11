@@ -31,7 +31,7 @@ allows us to justify the \( C^1 \)-convergence (under conditions of \( N \)) exc
 finitely many points using a local estimate and a suitable
 covering of \( M \). 
 
-Sacks and Uhlenbeck used a local extension result for harmonic map, in an elegant argument
+Sacks and Uhlenbeck used an extension result for harmonic map, in an elegant argument
 to prove that if the above sequence \( \{s_\alpha\} \) fails to converge at a point,
 for a certain surface \( M \), then one has a nontrivial harmonic map from \( \mathbb{S}^2
 \) to \( N \). Therefore if such sequence \( \{ s_\alpha \}\) from \(\mathbb{S}^2\) to \(
@@ -58,7 +58,7 @@ surface \( M \) to a compact Riemannian manifold \( N \) isometrically embedded 
 We will suppose, by rescaling the metric \( g_M \) of \( M \) that the volume of \( M \)
 is 1, so when \( \alpha=1 \), \( E_1 =  1+ 2E(s) \) is just the previously defined energy. Using \( (a+b)^\alpha \geq a^\alpha + b^\alpha \) and Jensen's inequality, one has \(
 E_\alpha(s) \geq 1 + (2E(s))^\alpha \) for all \( \alpha \geq 1 \). Also, since we only
-interest in the case \( \alpha \) close to \( 1 \), let us also suppose that all \( \alpha
+interest in the case \( \alpha \) close to \( 1 \), let us also suppose that \( \alpha
 \) from now on is smaller than 2.
 
 By Sobolev embedding, one has \( W^{1,2\alpha}(M, \mathbb{R}^k) \subset C^0(M,
@@ -154,8 +154,7 @@ W^{1,2\alpha} \) vector field along \( s(x) \). With the representation of norma
 \restr{e}{\mathcal{N}}:\ \mathcal{N} &\longrightarrow  W^{1,2\alpha}(M,N)\\
 			 (y,v) &\longmapsto	       \left(x\mapsto \exp_y (v(x)) \right)
 \end{align*}
-where \( y\in N_0 \cong N \) and \( v \in W^{1,2\alpha}(M, T_yN) \). This is an local
-diffeomorphism near the zero-section of \( \mathcal{N} \).
+where \( y\in N_0 \cong N \) and \( v \in W^{1,2\alpha}(M, T_yN) \).
 
 #+ATTR_HTML: :id lem:local-isom-e 
 #+BEGIN_lemma
@@ -502,10 +501,9 @@ one can find a sequence \( \{x_{m,1},\dots, x_{m,l}\}\subset M \) and a subseque
 \]
 #+END_proposition
 #+BEGIN_proof
-We cover \( M \) by finitely many ball \( D(y_i, 2^{-m}) \) such that each point is covered
+We cover \( M \) by finitely many balls \( D(y_i, 2^{-m}) \) such that each point is covered
 at most \( h \) times by the bigger balls \( D(y_i,2^{-m+1}) \). By Lemma
-ref:lem:uni-loc-finite-cover (a consequence of the [[file:sobolev-riemannian.org][comparison of the Riemannian
-manifold \( M \) with spaceforms]]), \( h \) can be chosen independently of \( m \) as \(
+ref:lem:uni-loc-finite-cover, \( h \) can be chosen independently of \( m \) as \(
 2^{-m} \to 0 \).
 
 

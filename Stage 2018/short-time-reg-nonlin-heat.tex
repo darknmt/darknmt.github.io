@@ -16,14 +16,14 @@ function theorem for Banach spaces. Since the solution is smooth, we can apply T
 \ref{thm:global-eq} to conclude that the it remains in \(M'\subset \mathbb{R}^N\).
 
 \section{Review of Sobolev spaces and Linear equations.}
-\label{sec:org3af8194}
+\label{sec:org4087266}
 
 The following results are well-known and their statements are written here in the case of our interest (linear heat equation on
 manifold). A more careful formulation with complete proofs can be found in the
 appendices.
 
 \subsection{Sobolev spaces.}
-\label{sec:orge4cbcfa}
+\label{sec:org8ba9ef0}
 
 Let \(M\) be a Riemannian manifold, the \emph{Sobolev spaces} \(W^{k,p}(M)\) on \(M\) can be defined as the completion of \(C^\infty(M)\) with respect to the Sobolev norms
 \[ 
@@ -53,7 +53,7 @@ In particular, one has the Interpolation inequality
 
 Sobolev embeddings and Kondrachov theorem remain correct on manifold. 
 
-\begin{theorem}[Sobolev embedding]
+\begin{theorem}[Sobolev embeddings]
 \label{thm:Sobolev-Rn-d}
 Given \(k,l\in \mathbb{Z},\ k>l \geq 0\) and \(p,q\in \mathbb{R},\ p>q\geq 1\). Then
 \begin{enumerate}
@@ -108,7 +108,7 @@ manifold and satisfy all the above properties (reflexivity, Interpolation theore
 embedding and Kondrachov theorem) and refer to the appendices for all the details.
 
 \subsection{Trace theorem.}
-\label{sec:orgbc9f39d}
+\label{sec:orgf736ac7}
 
 It is possible to avoid a discussion on Trace operator if we only want to make sense of the
 initial condition of nonlinear heat equation: one can consider only solutions with
@@ -134,11 +134,11 @@ restrictions to time \(t=\alpha\) of functions in \(W^{k,p}(M\times[\alpha,\omeg
 space of \(W^{k,p}(M\times[\alpha,\omega])\). This makes \(\partial_\alpha
 W^{k,p}(M\times[\alpha,\omega])\) a Banach space with stronger norm than any \(W^{l,p}(M)\) for any \(l < k-\frac{1}{p}\).
 
-\subsection{Linear equation on manifolds.}
-\label{sec:orgb9f137c}
+\subsection{Linear equations on manifolds.}
+\label{sec:orgd35bcf3}
 
 \subsubsection{Existence and Regularity.}
-\label{sec:orgff9fdf8}
+\label{sec:org644a45f}
 
 It can be easily verified that the linear heat operator \(AF:= \frac{d}{dt}F + \Delta F\)
 is a parabolic operator and therefore is also an elliptic operator. All of the following results
@@ -159,7 +159,7 @@ Then actually \(F\in W^{k,p}(M\times[\alpha,\omega])\).
 
 \begin{theorem}[Causality of parabolic equation]
 \label{thm:para-existence-d}
-Let \(M\) be a compact manifold and \(AF:= \frac{d}{dt}F + \Delta F\) be an parabolic
+Let \(M\) be a compact manifold and \(AF:= \frac{d}{dt}F + \Delta F + a\nabla F + bF\) be an parabolic
 operator. Then 
 \[
  A:\ W^{k,p}(M\times[\alpha,\omega]/\alpha) \longrightarrow W^{k-2,p}(M\times[\alpha,\omega]/\alpha)
@@ -183,7 +183,7 @@ In particular for homogeneous equation, the solution is \(C^\infty\) and an arbi
 \end{theorem}
 
 \subsubsection{Maximum principle and Comparison theorems.}
-\label{sec:orgf25e20e}
+\label{sec:org680ddd2}
 Other than regularity results which are generally true for parabolic operators, the linear
 heat operator also enjoys the following versions of Maximum principle. See Appendices for
 their proofs.
@@ -235,7 +235,7 @@ only on \(b\) such that
 
 
 \section{Regularity estimate of the quadratic term.}
-\label{sec:org7baff5d}
+\label{sec:org7a9fe66}
 
 \begin{theorem}[Regularity of the quadratic term]
 \label{thm:reg-quad}
@@ -260,8 +260,7 @@ where \(C\) is a constant independent of \(F\).
 We will suppose here that \(r,s\) are even integers so that the \(W^{r,p}\)
 (respectively \(W^{s,q}\)) norm of \(PF\) (respectively \(F\)) can be written as sum of \(L^p\)
 (respectively \(L^q\)) norms of its derivatives. Also, we will use chain rule freely to
-differentiate the term \(\Gamma'^\alpha_{\beta\gamma}(F)\) using weak derivatives of \(F\). The general and rigorous proof, which involves fractional Sobolev space to treat non-integral
-\(r, s\) and a detour to Besov spaces to justify chain rule, can be found in the appendices.
+differentiate the term \(\Gamma'^\alpha_{\beta\gamma}(F)\) using weak derivatives of \(F\). The general and rigorous proof, which involves non-integral Sobolev space to treat \(r, s\) and a detour to Besov spaces to justify chain rule, can be found in the appendices.
 
 The derivatives of \(PF\) that appear in its \(W^{r,p}\) norm are of form
 \[
@@ -282,8 +281,8 @@ use the upper bound of \(2b_i +c_i\) to justify that \(\frac{1}{p} > \frac{r+2}{
 \frac{1}{q} \geq \sum \frac{1}{p_i}\), meaning that such choice of \(p_i\) are valid.
 
 The straightforward way to have a sufficient condition of \(p_i\) such that \(W^{s,q}
-\hookrightarrow W^{2b_i+c_i,p_i}\) is to use Sobolev embedding, but the result is sub-optimal
-because Sobolev embedding does not take into account the \(L^\infty\)-bounded of \(F\) (its image lies in a compact of \(\mathbb{R}^N\)). A better way is to use
+\hookrightarrow W^{2b_i+c_i,p_i}\) is to use Sobolev embeddings but the result is sub-optimal
+because Sobolev embeddings do not take into account the \(L^\infty\)-boundedness of \(F\) (its image lies in a compact of \(\mathbb{R}^N\)). A better way is to use
 Interpolation inequality, by remarking that \(F\in W^{0,v}\) for all \(v\in (1,+\infty)\) and writing \(W^{2b_i+c_i, p_i}\) as an interpolation space of \(W^{s,q}\) and \(W^{0,v}\). It can be seen, by direct computation, that the sufficient condition for \(W^{s,q}
 \hookrightarrow W^{2b_i+c_i,p_i}\) is \(2b_i+c_i < s\) and
 \[
@@ -300,7 +299,7 @@ The conclusion follows.
 
 
 \section{Regularity for nonlinear heat equation.}
-\label{sec:org703224a}
+\label{sec:orgfa5214c}
 Let \(p>\dim M + 2\), using the regularity estimate for the quadratic term, we now can prove:
 
 \begin{theorem}[Bootstrap for nonlinear heat equation]
@@ -372,13 +371,13 @@ order to apply regularity result for elliptic operator on manifold with boundary
 
 
 \section{Short-time existence for nonlinear heat equation.}
-\label{sec:org6dd8c2b}
+\label{sec:org05e16d6}
 We will choose as always \(p > \dim M +2\). As before, \(M\) is a compact Riemannian
 manifold and \(B\subset \mathbb{R}^N\) is a large Euclidean ball.
 
 \begin{theorem}[Short-time existence]
 \label{thm:short-time}
-Let \(F_\alpha: M \longrightarrow  B\) be a smooth map, then there exists \(\epsilon>0\) depending on \(F_\alpha\) and \(F: M\times [\alpha,\alpha + \epsilon] \longrightarrow
+Let \(F_\alpha: M \longrightarrow  B\) be a smooth map, then there exist \(\epsilon>0\) depending on \(F_\alpha\) and \(F: M\times [\alpha,\alpha + \epsilon] \longrightarrow
 B\) such that \(F\in W^{2,p}(M\times [\alpha,\alpha+\epsilon])\) with \(\restr{F}{M\times \{\alpha\}} = F_\alpha\) and
 \[
  \frac{d F_t}{dt} = \tau(F_t) \quad \text{on } M\times [\alpha,\alpha +\epsilon]
