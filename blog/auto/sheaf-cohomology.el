@@ -5,12 +5,12 @@
                      '(("article" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem") ("xy" "all")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -63,7 +63,7 @@
     "fig:morph-short-sequence"
     "thm:prism-operator"
     "fig:homotopy-operator"
-    "sec:orgf209fdc"
+    "sec:org0a3e395"
     "thm:Kunneth"
     "sec:org62ef2d8"
     "sec:org65911e0"
@@ -71,7 +71,7 @@
     "lem:exactness"
     "thm:uniqueness-cohomology"
     "thm:fine-resolution"
-    "sec:org0a3e395"
+    "sec:org8b30707"
     "sec:orgbd2adbd"
     "thm:de-rham-singular"
     "sec:org91022b2"
@@ -90,6 +90,8 @@
     "problem"
     "exampl"
     "definition"
-    "propdef"))
+    "propdef"
+    "fact"
+    "assertion"))
  :latex)
 

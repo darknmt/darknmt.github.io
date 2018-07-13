@@ -1,17 +1,10 @@
 (TeX-add-style-hook
- "Berger-remark-complex"
+ "h-principe-Stein"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("article" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem") ("xy" "all")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
-   (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
     "article"
@@ -54,22 +47,14 @@
     "Ric"
     "Riem")
    (LaTeX-add-labels
-    "sec:org5f81b1f"
-    "sec:orgf28312a"
-    "thm:Berger"
-    "org5e12bbd"
-    "sec:org96f905f"
-    "sec:orgd598223"
-    "sec:org6a06657"
-    "sec:org0bc364a"
-    "sec:org5765369"
-    "sec:org992de83"
-    "lem:alg-exterior"
-    "orga3b6b70"
-    "fig:dz"
-    "fig:dzbar"
-    "sec:orgb502420")
-   (LaTeX-add-amsthm-newtheorems
+    "sec:org98f108f"
+    "rem:third-cond"
+    "thm:topo-Stein"
+    "sec:orge14a1d2"
+    "sec:orgd38ddcc"
+    "sec:orgf4cd7d4"
+    "sec:orgd77106a")
+   (LaTeX-add-environments
     "remark"
     "theorem"
     "lemma"
@@ -81,6 +66,8 @@
     "definition"
     "propdef"
     "fact"
-    "assertion"))
+    "assertion")
+   (LaTeX-add-bibliographies
+    "../res/blog"))
  :latex)
 

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-07-06 Fri 01:48 -->
+<!-- 2018-07-13 Fri 00:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Minimal immersions of \( \mathbb{S}^2 \)</title>
@@ -388,14 +388,17 @@ their connected components are naturally in bijection.
 </div>
 
 <p>
-We will also need the following version of Morse theory for function spaces, also
-developed by R. Palais.
+We will also need a version of Morse theory for Banach manifolds, also
+developed by R. Palais in <a class='org-ref-reference' href="#palais_lusternik-schnirelman_1966">palais_lusternik-schnirelman_1966</a>. For the terminologies, in the same way that a manifold is modeled
+by\( \mathbb{R}^n \), a <i>Banach manifold</i> is modeled by Banach spaces. A <i>Finsler
+manifold</i> is a Banach manifold with a norm on its tangent space that is comparable with
+the norm of Banach charts.
 </p>
 
 <div id="thm:Palais-2" btit="(Morse theory for Banach manifolds)" class="theorem">
 <ol class="org-ol">
-<li>If \( F \) is a \( C^2 \) functional on a complete \( C^2 \) Finsler manifold \( L \)
-and \( F \) satisfies Palais-Smale condition then
+<li>If \( F \) is a \( C^2 \) functional on a complete \( C^2 \) Finsler manifold \( L \),
+\( F \) is bounded below and \( F \) satisfies Palais-Smale condition (C) then
 <ol class="org-ol">
 <li>The functional \( F \) admits minimum on each connected component of \( L \).</li>
 <li>If \( F \) has no critical value in \( [a,b] \) then the sublevel \( \{F\leq b\} \)
@@ -408,7 +411,30 @@ condition of the first part.</li>
 </div>
 
 <p>
-By consequence, one has
+The <i>Palais-Smale condition</i> is as follows:
+</p>
+
+<p>
+(C): Let \( S\subset L \) be a subset on which \( |F| \) is bounded, but \( |dF| \) is not
+bounded away from \( 0 \). Then there exists a critical point of \( F \) in \( \bar S \).
+</p>
+
+
+<p>
+The strategy to prove Theorem <a href="#thm:Palais-2">thm:Palais-2</a> is, as in finite dimensional case, to use
+a pseudo-gradient flow of \( F \) whose existence is due to a partition of unity of \( L
+\) (instead of a Riemannian metric on \( L \)). The role of Palais-Smale condition in the
+proof is as follows: Suppose that \( \{x_n\} \) is a sequence in a connected component \( L_1
+\) of \( L \) such that \( F(x_n)
+\) tends to \( \inf_{L_1} F \), then using the pseudo-gradient flow of \( F \), we can
+suppose that \( x_n \) are critical points of \( F \). Choose a sequence \( \{y_n\} \) of
+regular points near \( x_n \) such that \( F(y_n) \to \inf_{L_1} F \) and \( |dF(y_n)|\to
+0\) and use (C) for \( S=\{y_n\} \), one obtains a limit point \( y_\infty \) of \(
+\{y_n\} \), hence also of \( \{x_n\} \), which minimises \( F \).
+</p>
+
+<p>
+As a consequence of Theorem <a href="#thm:Palais-2">thm:Palais-2</a>, one has:
 </p>
 
 <div id="cor:Palais-1-2" btit="(Component-wise minimum of \( E_\alpha \))" class="corollary">
@@ -457,8 +483,32 @@ submanifold \( N_0\cong N \) formed by constant maps.
 <h3 id="org895b9e9"><span class="section-number-3">2.2</span> Tubular neighborhood of the submanifold of trivial maps.</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
-Fix \( y\in N \), considered as a constant maps in \( N_0 \). We will summarise a few facts about the tangent space of \( W^{1,2\alpha}(M,N) \) at \( y \).
+Fix \( y\in N \), considered as a constant maps in \( N_0 \). We will summarise a few
+facts about the tangent space of \( W^{1,2\alpha}(M,N) \) at \( y \) in the following Remark. 
 </p>
+
+<p>
+These facts come from the
+<i>differential structure</i> of the Banach manifold \( W^{1,2\alpha}(M,N) \) that so far has not
+been introduced, since we only consider \( W^{1,2\alpha}(M,N) \) as a closed subset of \(
+W^{1,2\alpha}(M,\mathbb{R})^{\oplus k} \) (so only a topological structure was given). We
+summarise here, and refer to <a class='org-ref-reference' href="#palais_foundations_1968">palais_foundations_1968</a>, how a differential structure is given to \( W^{k,p}(M,N) \) with \( k,p \)
+such that \( W^{k,p}(M) \hookrightarrow C^0(M) \):
+</p>
+<ul class="org-ul">
+<li>Let \( \xi \) be a finite dimensional vector bundle over a compact manifold \( M \),
+then \( W^{k,p}(\xi,M) \) can be defined as the Banach space of sections of \(\xi \)
+that are locally \( W^{k,p} \). A norm of \( W^{k,p}(\xi,M) \) can be given using a
+metric of \( \xi \) and a volume form of \( M \), but by compactness of \( M \), its
+equivalent class is independent of such choices.</li>
+<li>Let \( E \) be a fiber bundle over \( M \), in our case, \( E = N\times M \), and \( s
+  \in C^0(E) \) be a continuous section. It can be proved that there exists an open
+subset \( \xi \) of \( E \) containing \( s \) such that \( \xi \to M \) has a vector
+bundle structure. We say that \( s\in W^{k,p}(E,M) \) if \( s\in W^{k,p}(\xi,M) \) and
+it turns out that this definition is independent of the choice of \( \xi \). This
+defines \( W^{k,p}(E,M) \) set-theoretically.</li>
+<li>The differential structure of \( W^{k,p}(E,M) \) is given by the atlas \( W^{k,p}(\xi,M) \).</li>
+</ul>
 
 <div id="rem:tangent-palais" class="remark">
 <ol class="org-ol">
@@ -1291,6 +1341,8 @@ a \( C^\infty \) conformal, branched, minimal immersion \( s: \mathbb{S}^2 \long
 <ul class='org-ref-bib'><li><a id="sacks_existence_1981">[sacks_existence_1981] Sacks & Uhlenbeck, The Existence of Minimal Immersions of 2-Spheres, <i>Annals of Mathematics</i>, <b>113(1)</b>, 1-24 (1981). <a href="http://www.jstor.org/stable/1971131">link</a>. <a href="http://dx.doi.org/10.2307/1971131">doi</a>.</a></li>
 <li><a id="eells_harmonic_1964">[eells_harmonic_1964] Eells & Sampson, Harmonic Mappings of Riemannian Manifolds, <i>American Journal of Mathematics</i>, <b>86(1)</b>, 109-160 (1964). <a href="http://www.jstor.org/stable/2373037">link</a>. <a href="http://dx.doi.org/10.2307/2373037">doi</a>.</a></li>
 <li><a id="gulliver_theory_1973">[gulliver_theory_1973] Gulliver, Osserman & Royden, A Theory of Branched Immersions of Surfaces, <i>American Journal of Mathematics</i>, <b>95(4)</b>, 750-812 (1973). <a href="http://www.jstor.org/stable/2373697">link</a>. <a href="http://dx.doi.org/10.2307/2373697">doi</a>.</a></li>
+<li><a id="palais_lusternik-schnirelman_1966">[palais_lusternik-schnirelman_1966] Palais, Lusternik-Schnirelman theory on Banach manifolds, <i>Topology</i>, <b>5(2)</b>, 115-132 (1966). <a href="http://linkinghub.elsevier.com/retrieve/pii/0040938366900139">link</a>. <a href="http://dx.doi.org/10.1016/0040-9383(66)90013-9">doi</a>.</a></li>
+<li><a id="palais_foundations_1968">[palais_foundations_1968] Palais, Foundations of global non-linear analysis, W. A. Benjamin (1968).</a></li>
 <li><a id="chern_volume_1975">[chern_volume_1975] Chern & Goldberg, On the Volume Decreasing Property of a Class of Real Harmonic Mappings, <i>American Journal of Mathematics</i>, <b>97(1)</b>, 133-147 (1975). <a href="http://www.jstor.org/stable/2373664">link</a>. <a href="http://dx.doi.org/10.2307/2373664">doi</a>.</a></li>
 </ul>
 </p>
@@ -1300,7 +1352,7 @@ a \( C^\infty \) conformal, branched, minimal immersion \( s: \mathbb{S}^2 \long
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-07-06 Fri 01:48. <br>
+Last updated 2018-07-13 Fri 00:48. <br>
 </div>
 </div>
 </body>
