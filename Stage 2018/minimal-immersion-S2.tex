@@ -12,7 +12,7 @@ ideas as clear as possible and I may probably skip a few (important) details and
 \fi
 
 \section{Brief view of Sacks and Uhlenbeck's strategy.}
-\label{sec:org4fcb43b}
+\label{sec:org39dd5c6}
 
 Let \(M\) and \(N\) be compact Riemannian manifolds (without boundary), \(M\) is a
 surface and \(N\) is isometrically embedded in \(\mathbb{R}^k\). It was showed by
@@ -41,10 +41,10 @@ Finally, the theory of branched immersion of surfaces by Gulliver-Osserman-Royde
 is a conformal, branched, minimal immersion of \(\mathbb{S}^2\) to \(N\).
 
 \section{General machinery by Morse-Palais-Smale.}
-\label{sec:org4d8655c}
+\label{sec:orga338044}
 
 \subsection{Perturbed functionals \(E_\alpha\).}
-\label{sec:orgb908691}
+\label{sec:orgd6dc53c}
 
 Let \(s: M \longrightarrow N \hookrightarrow \mathbb{R}^k\) be a map from a compact
 surface \(M\) to a compact Riemannian manifold \(N\) isometrically embedded into \(\mathbb{R}^k\). Recall that the energy functional of \(s\) is given by \(E(s):=
@@ -67,14 +67,17 @@ of the same homotopy type and the inclusions are homotopy equivalences. In parti
 their connected components are naturally in bijection.
 \end{theorem}
 
-We will also need the following version of Morse theory for function spaces, also
-developed by R. Palais.
+We will also need a version of Morse theory for Banach manifolds, also
+developed by R. Palais in \cite{palais_lusternik-schnirelman_1966}. For the terminologies, in the same way that a manifold is modeled
+by\(\mathbb{R}^n\), a \emph{Banach manifold} is modeled by Banach spaces. A \emph{Finsler
+manifold} is a Banach manifold with a norm on its tangent space that is comparable with
+the norm of Banach charts.
 
 \begin{theorem}[Morse theory for Banach manifolds]
 \label{thm:Palais-2}
 \begin{enumerate}
-\item If \(F\) is a \(C^2\) functional on a complete \(C^2\) Finsler manifold \(L\)
-and \(F\) satisfies Palais-Smale condition then
+\item If \(F\) is a \(C^2\) functional on a complete \(C^2\) Finsler manifold \(L\),
+\(F\) is bounded below and \(F\) satisfies Palais-Smale condition (C) then
 \begin{enumerate}
 \item The functional \(F\) admits minimum on each connected component of \(L\).
 \item If \(F\) has no critical value in \([a,b]\) then the sublevel \(\{F\leq b\}\)
@@ -85,7 +88,21 @@ condition of the first part.
 \end{enumerate}
 \end{theorem}
 
-By consequence, one has
+The \emph{Palais-Smale condition} is as follows:
+
+(C): Let \(S\subset L\) be a subset on which \(|F|\) is bounded, but \(|dF|\) is not
+bounded away from \(0\). Then there exists a critical point of \(F\) in \(\bar S\).
+
+
+The strategy to prove Theorem \ref{thm:Palais-2} is, as in finite dimensional case, to use
+a pseudo-gradient flow of \(F\) whose existence is due to a partition of unity of \(L\) (instead of a Riemannian metric on \(L\)). The role of Palais-Smale condition in the
+proof is as follows: Suppose that \(\{x_n\}\) is a sequence in a connected component \(L_1\) of \(L\) such that \(F(x_n)\) tends to \(\inf_{L_1} F\), then using the pseudo-gradient flow of \(F\), we can
+suppose that \(|dF(x_n)|\) is arbitrarily small, in particular, we can suppose that
+\(|dF(x_n)|\to 0\). Choose a sequence \(\{y_n\}\) of
+regular points near \(x_n\) such that \(F(y_n) \to \inf_{L_1} F\) and \(|dF(y_n)|\to
+0\) and use (C) for \(S=\{y_n\}\), one obtains a limit point \(y_\infty\) of \(\{y_n\}\), hence also of \(\{x_n\}\), which minimises \(F\).
+
+As a consequence of Theorem \ref{thm:Palais-2}, one has:
 
 \begin{corollary}[Component-wise minimum of \( E_\alpha \)]
 \label{cor:Palais-1-2}
@@ -115,9 +132,30 @@ spaces of maps from \(M\) to \(N\) are connected, we will have to look at the
 submanifold \(N_0\cong N\) formed by constant maps.
 
 \subsection{Tubular neighborhood of the submanifold of trivial maps.}
-\label{sec:orgde54354}
+\label{sec:org6af512b}
 
-Fix \(y\in N\), considered as a constant maps in \(N_0\). We will summarise a few facts about the tangent space of \(W^{1,2\alpha}(M,N)\) at \(y\).
+Fix \(y\in N\), considered as a constant maps in \(N_0\). We will summarise a few
+facts about the tangent space of \(W^{1,2\alpha}(M,N)\) at \(y\) in the following Remark. 
+
+These facts come from the
+\emph{differential structure} of the Banach manifold \(W^{1,2\alpha}(M,N)\) that so far has not
+been introduced, since we only consider \(W^{1,2\alpha}(M,N)\) as a closed subset of \(W^{1,2\alpha}(M,\mathbb{R})^{\oplus k}\) (so only a topological structure was given). We
+summarise here, and refer to \cite{palais_foundations_1968}, how a differential structure is given to \(W^{k,p}(M,N)\) with \(k,p\)
+such that \(W^{k,p}(M) \hookrightarrow C^0(M)\):
+\begin{itemize}
+\item Let \(\xi\) be a finite dimensional vector bundle over a compact manifold \(M\),
+then \(W^{k,p}(\xi,M)\) can be defined as the Banach space of sections of \(\xi\)
+that are locally \(W^{k,p}\). A norm of \(W^{k,p}(\xi,M)\) can be given using a
+metric of \(\xi\) and a volume form of \(M\), but by compactness of \(M\), its
+equivalent class is independent of such choices.
+\item Let \(E\) be a fiber bundle over \(M\), in our case, \(E = N\times M\), and \(s
+  \in C^0(E)\) be a continuous section. It can be proved that there exists an open
+subset \(\xi\) of \(E\) containing \(s\) such that \(\xi \to M\) has a vector
+bundle structure. We say that \(s\in W^{k,p}(E,M)\) if \(s\in W^{k,p}(\xi,M)\) and
+it turns out that this definition is independent of the choice of \(\xi\). This
+defines \(W^{k,p}(E,M)\) set-theoretically.
+\item The differential structure of \(W^{k,p}(E,M)\) is given by the atlas \(W^{k,p}(\xi,M)\).
+\end{itemize}
 
 \begin{remark}
 \label{rem:tangent-palais}
@@ -162,7 +200,7 @@ in the normal component. The Inverse function theorem applies.
 \end{proof}
 
 \subsection{Critical values of \(E_\alpha\).}
-\label{sec:org7be5a37}
+\label{sec:orgb66d183}
 
 The exponential map previously defined on the normal bundle of \(N_0\) in  \(W^{1,
 2\alpha}(M,N)\) allows us to retract by deformation a small neighborhood of \(N_0\) to
@@ -308,7 +346,7 @@ general argument applies.
 
 
 \section{Local results: Estimates and extension.}
-\label{sec:org5c54772}
+\label{sec:orgd635134}
 
 We will say that the map \(s: M \longrightarrow N\) is a critical point of \(E_\alpha\) on a small disc \(D(R)\subset M\) if \(s\) satisfies the Euler-Lagrange equation of
 \(E_\alpha\) (as functional on \(W^{1,2\alpha}(M,N)\)) on \(D(R)\).
@@ -375,7 +413,7 @@ If \(s:\ D\setminus \{0\} \longrightarrow N\) is a harmonic map with finite ener
 
 
 \section{Convergence of critical maps of \(E_{\alpha}\).}
-\label{sec:orgfd03f49}
+\label{sec:org9deaeda}
 
 We proved in Theorem \ref{thm:3-nontrivial-crit} that if \(C^0(M,N)\) is not connected or
 if \(\Omega(M,N)\) is not contractible, then there exists a family \(\{s_\alpha\}\) of
@@ -516,7 +554,7 @@ in \(N\).
 
 
 \section{Nontrivial harmonic maps from \(\mathbb{S}^2\).}
-\label{sec:orgffd7b44}
+\label{sec:org91b778d}
 We will now prove the existence of nontrivial harmonic maps from \(\mathbb{S}^2\) to a
 compact Riemannian manifold \(N\) satisfying the conditions of Theorem
 \ref{thm:3-nontrivial-crit}. 
@@ -688,7 +726,7 @@ arbitrarily close to \(1\) and \(\delta\) arbitrarily small, one has
 
 
 \section{Minimal immersions of \(\mathbb{S}^2\).}
-\label{sec:org1da06c8}
+\label{sec:org09a24ba}
 
 We use the following result:
 

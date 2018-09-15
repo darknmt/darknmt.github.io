@@ -16,14 +16,14 @@ function theorem for Banach spaces. Since the solution is smooth, we can apply T
 \ref{thm:global-eq} to conclude that the it remains in \(M'\subset \mathbb{R}^N\).
 
 \section{Review of Sobolev spaces and Linear equations.}
-\label{sec:org4087266}
+\label{sec:orgb1e72b7}
 
 The following results are well-known and their statements are written here in the case of our interest (linear heat equation on
 manifold). A more careful formulation with complete proofs can be found in the
 appendices.
 
 \subsection{Sobolev spaces.}
-\label{sec:org8ba9ef0}
+\label{sec:orgc3d8567}
 
 Let \(M\) be a Riemannian manifold, the \emph{Sobolev spaces} \(W^{k,p}(M)\) on \(M\) can be defined as the completion of \(C^\infty(M)\) with respect to the Sobolev norms
 \[ 
@@ -108,7 +108,7 @@ manifold and satisfy all the above properties (reflexivity, Interpolation theore
 embedding and Kondrachov theorem) and refer to the appendices for all the details.
 
 \subsection{Trace theorem.}
-\label{sec:orgf736ac7}
+\label{sec:org36dfc67}
 
 It is possible to avoid a discussion on Trace operator if we only want to make sense of the
 initial condition of nonlinear heat equation: one can consider only solutions with
@@ -135,10 +135,10 @@ space of \(W^{k,p}(M\times[\alpha,\omega])\). This makes \(\partial_\alpha
 W^{k,p}(M\times[\alpha,\omega])\) a Banach space with stronger norm than any \(W^{l,p}(M)\) for any \(l < k-\frac{1}{p}\).
 
 \subsection{Linear equations on manifolds.}
-\label{sec:orgd35bcf3}
+\label{sec:org06823dd}
 
 \subsubsection{Existence and Regularity.}
-\label{sec:org644a45f}
+\label{sec:org8997e62}
 
 It can be easily verified that the linear heat operator \(AF:= \frac{d}{dt}F + \Delta F\)
 is a parabolic operator and therefore is also an elliptic operator. All of the following results
@@ -183,7 +183,7 @@ In particular for homogeneous equation, the solution is \(C^\infty\) and an arbi
 \end{theorem}
 
 \subsubsection{Maximum principle and Comparison theorems.}
-\label{sec:org680ddd2}
+\label{sec:org36d56c0}
 Other than regularity results which are generally true for parabolic operators, the linear
 heat operator also enjoys the following versions of Maximum principle. See Appendices for
 their proofs.
@@ -235,7 +235,7 @@ only on \(b\) such that
 
 
 \section{Regularity estimate of the quadratic term.}
-\label{sec:org7a9fe66}
+\label{sec:org6edb6c6}
 
 \begin{theorem}[Regularity of the quadratic term]
 \label{thm:reg-quad}
@@ -280,9 +280,8 @@ bound \(\left\|F\right\|_{W^{2b_i+c_i,p_i}}\) by \(\left\|F\right\|_{W^{s,q}}\),
 use the upper bound of \(2b_i +c_i\) to justify that \(\frac{1}{p} > \frac{r+2}{s}
 \frac{1}{q} \geq \sum \frac{1}{p_i}\), meaning that such choice of \(p_i\) are valid.
 
-The straightforward way to have a sufficient condition of \(p_i\) such that \(W^{s,q}
-\hookrightarrow W^{2b_i+c_i,p_i}\) is to use Sobolev embeddings but the result is sub-optimal
-because Sobolev embeddings do not take into account the \(L^\infty\)-boundedness of \(F\) (its image lies in a compact of \(\mathbb{R}^N\)). A better way is to use
+One straightforward way to have a sufficient condition of \(p_i\) such that \(W^{s,q}
+\hookrightarrow W^{2b_i+c_i,p_i}\) is to use Sobolev embeddings. Another way is to use
 Interpolation inequality, by remarking that \(F\in W^{0,v}\) for all \(v\in (1,+\infty)\) and writing \(W^{2b_i+c_i, p_i}\) as an interpolation space of \(W^{s,q}\) and \(W^{0,v}\). It can be seen, by direct computation, that the sufficient condition for \(W^{s,q}
 \hookrightarrow W^{2b_i+c_i,p_i}\) is \(2b_i+c_i < s\) and
 \[
@@ -299,7 +298,7 @@ The conclusion follows.
 
 
 \section{Regularity for nonlinear heat equation.}
-\label{sec:orgfa5214c}
+\label{sec:org429b531}
 Let \(p>\dim M + 2\), using the regularity estimate for the quadratic term, we now can prove:
 
 \begin{theorem}[Bootstrap for nonlinear heat equation]
@@ -371,7 +370,7 @@ order to apply regularity result for elliptic operator on manifold with boundary
 
 
 \section{Short-time existence for nonlinear heat equation.}
-\label{sec:org05e16d6}
+\label{sec:org728beaf}
 We will choose as always \(p > \dim M +2\). As before, \(M\) is a compact Riemannian
 manifold and \(B\subset \mathbb{R}^N\) is a large Euclidean ball.
 

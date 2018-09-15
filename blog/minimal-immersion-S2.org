@@ -106,7 +106,8 @@ a pseudo-gradient flow of \( F \) whose existence is due to a partition of unity
 proof is as follows: Suppose that \( \{x_n\} \) is a sequence in a connected component \( L_1
 \) of \( L \) such that \( F(x_n)
 \) tends to \( \inf_{L_1} F \), then using the pseudo-gradient flow of \( F \), we can
-suppose that \( x_n \) are critical points of \( F \). Choose a sequence \( \{y_n\} \) of
+suppose that \( |dF(x_n)| \) is arbitrarily small, in particular, we can suppose that
+\( |dF(x_n)|\to 0 \). Choose a sequence \( \{y_n\} \) of
 regular points near \( x_n \) such that \( F(y_n) \to \inf_{L_1} F \) and \( |dF(y_n)|\to
 0\) and use (C) for \( S=\{y_n\} \), one obtains a limit point \( y_\infty \) of \(
 \{y_n\} \), hence also of \( \{x_n\} \), which minimises \( F \).

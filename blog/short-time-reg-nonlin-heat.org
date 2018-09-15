@@ -300,10 +300,8 @@ bound \(\left\|F\right\|_{W^{2b_i+c_i,p_i}}\) by \( \left\|F\right\|_{W^{s,q}} \
 use the upper bound of \( 2b_i +c_i \) to justify that \( \frac{1}{p} > \frac{r+2}{s}
 \frac{1}{q} \geq \sum \frac{1}{p_i} \), meaning that such choice of \( p_i \) are valid.
 
-The straightforward way to have a sufficient condition of \( p_i \) such that \( W^{s,q}
-\hookrightarrow W^{2b_i+c_i,p_i} \) is to use Sobolev embeddings but the result is sub-optimal
-because Sobolev embeddings do not take into account the \( L^\infty
-\)-boundedness of \( F \) (its image lies in a compact of \( \mathbb{R}^N \)). A better way is to use
+One straightforward way to have a sufficient condition of \( p_i \) such that \( W^{s,q}
+\hookrightarrow W^{2b_i+c_i,p_i} \) is to use Sobolev embeddings. Another way is to use
 Interpolation inequality, by remarking that \( F\in W^{0,v} \) for all \( v\in (1,+\infty)
 \) and writing \( W^{2b_i+c_i, p_i} \) as an interpolation space of \( W^{s,q} \) and \(
 W^{0,v} \). It can be seen, by direct computation, that the sufficient condition for \( W^{s,q}

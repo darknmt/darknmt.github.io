@@ -5,6 +5,13 @@
                      '(("article" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem") ("xy" "all")))
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
+   (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
     "article"
@@ -49,7 +56,7 @@
    (LaTeX-add-labels
     "sec:orga0770cb"
     "sec:orgc583005"
-    "sec:org438b098"
+    "sec:org4e4cbbd"
     "lem:var-energy"
     "prop:holo-harmonic"
     "eq:tangent-exp"
@@ -61,15 +68,13 @@
     "ex:pullback-tangent"
     "lem:calculs-general"
     "eq:laplace-Q"
-    "rem:calculs-general"
-    "eq:Q-negative"
     "sec:orge32ae52"
     "sec:general-calcul"
     "sec:orgce54bf2"
     "prop:calculs-pullback-tangent"
     "sec:org75bf29d"
     "lem:calculs-Q-pullback"
-    "sec:org4e4cbbd"
+    "sec:org232b92e"
     "cor:signed-curvature"
     "sec:orgde0028d"
     "sec:org46dcaf2"

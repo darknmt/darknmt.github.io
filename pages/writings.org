@@ -1,6 +1,64 @@
+
 #+SETUPFILE: ../res/mathsetup.org
 #+OPTIONS: toc:1 num:nil
 # [[file:../img/ly-ngu-vong-nguyet.jpg]]
+* Log term in energy of \( f: \overline{\mathbb{H}^2} \longrightarrow \overline{\mathbb{H}^{n+1}} \).
+Let \(\mathbb{H}^2 \) be coordinated by \( (t,s) \) with \( t>0,s\in \mathbb{R} \) and \( \mathbb{H}^{n+1} \) be cordinated by \( x\geq 0, y^1,\dots, y^n\in \mathbb{R} \).
+
+Let \( f: \overline{\mathbb{H}^2} \longrightarrow \overline{\mathbb{H}^{n+1}} \) be
+defined by
+\[
+(t,s) \mapsto \left(t+t^2, \gamma^i(s)\right)
+\]
+whose image is the vertical cylinder over the curve \( s \mapsto (\gamma^i(s)) \).
+
+#+BEGIN_exampl
+If \( n=2 \), one can take \( (y^1,y^2) := \left(\frac{2s}{s^2+1},\frac{s^2-1}{s^2+1}
+\right)  \). Its image is the unit circle in \( \{x=0\} \), only filled once as \( s \)
+varies in \( \mathbb{R} \).
+#+END_exampl
+
+Now that 
+\[
+ dx = (1+2t)dt,\quad dy^i = \dot \gamma^i ds,
+\]
+the pullback by \( f \) of Poincaré metric \( g = \frac{1}{x^2}(dx^2 + \sum d{y^i}^2) \) on \(
+\mathbb{H}^{n+1} \) is
+\[
+ f^* g = \frac{1}{t^2 (1+t)^2} \left( (1+2t)^2 dt^2 + \sum \dot {\gamma^i}^2(s) ds^2 \right)
+\]
+Its trace w.r.t the Euclidean metric on the half 2-plane is
+\[
+ \tr f^* g = \frac{(1+2t)^2}{t^2(1+t)^2} + \frac{\varphi(s)}{t^2(1+t)^2}
+\]
+where \( \varphi \) only depends on \( s \) and can be replaced by \( a^2\varphi \) for
+any constant \( a>0 \) when one modifies the boundary curve \( \gamma \to a\gamma \)).
+
+Integrate by \( s\in \mathbb{R} \) and \( t \) in \( (t_{\min},1) \) (we can suppose
+\(t\leq 1 \) since we are only interested in the energy near boundary, \( t_{\min} =
+\frac{-1 + \sqrt{1+4\epsilon}}{2} = \epsilon + O(\epsilon^2) \)):
+
+\[
+ \int_t \frac{1}{t^2} + \frac{1}{(1+t)^2} + \frac{2}{t(1+t)} + \const(\varphi) \left(
+ \frac{1}{t^2} - \frac{2}{t(1+t)} + \frac{1}{(1+t)^2} \right)
+\]
+where \( \const(\varphi) \) can be scaled up \( a^2 \) times when one replaces \( \gamma
+ \) by \( a\gamma \). Choose \( a \) so that the term \( \frac{2}{t(1+t)} \) remains,
+ which integrates to \( \log t_{\min} = \log(\epsilon) + O(\epsilon) \).
+
+
+#+ATTR_HTML: :id rem:bndry-condition
+#+BEGIN_remark
+#+LATEX: \label{rem:bndry-condition}
+It is clear that one needs a certain regularity of \( f \) at boundary of the initial
+space so that the \( \log\epsilon \) term does not appear. The "Poincaré half-plane to
+Poincaré disk" transform is only smooth and diffeomorphic in the interior. The boundary map
+\( (y^1,y^2) := \left(\frac{2s}{s^2+1},\frac{s^2-1}{s^2+1} \right) \) in the example above
+(\( n=2 \)) is the restriction on boundary of the half-plane-to-disk transform.
+#+END_remark
+
+
+
 
 * Commutative diagram revisited
 ** xypic and xyJax
@@ -44,94 +102,6 @@ with ~nextcloud~, and ~downgrade~ for ghostscript)
 
 
 The problem is well documented [[https://bbs.archlinux.org/viewtopic.php?id=224340][here]] and [[https://bitbucket.org/pitgarbe/textext/issues/48/ghostscript-still-bug-under-linux][here]].
-
-* A suspicious formula
-
-  I believe the second lemma in Section 7B of cite:eells_harmonic_1964 is incorrect. To
-  recall the setting and notation, the goal of the 3 pages 138-140 is to translate the
-  deformation equation \(df_t/dt = \tau(f_t)\) , where \(f_t\) is a deformation of a function
-  \(f: M \to M'\) and \(\tau\) is the torsion field, to a global equation by embedding \(M'\) into a
-  Euclidean space \( R^q \). The tricky detail, (which, in my oppinion, was a bit oversimplified in
-  cite:eells_two_1995), involves using at the same time 2 metric structures on a same space:
-- First equip a tubular neighborhood \( N \) of \(M'\) in \(R^q\) a new metric \(g''\) (the Lemma on page
-  138), which is, to reformulate, the product metric of \(N \cong M' \times B\) (the
-  diffeomorphism is by exponential map) where B is a ball of dimension = codimension of \(M'\)
-  in \( R^q \), equipped with the Euclidean metric.
-- For \(Q\in N\), let \(\pi(Q)\in M\) denote the (geodesic) projection of \( Q \) on \( M \) and
-  \(\rho(Q)\in \mathcal{N}_{M'/ \mathbb{R}^q}\) is the normal vector of \( M \) at \(\pi(Q)\) such that
-  \(\exp_{\pi(Q)}(\rho(Q)) = Q\). Interpreting \( \pi(Q) \) and \( \rho(Q) \) as vector in
-  \( \mathbb{R}^q \), one can write \(\rho(Q) = Q - \pi(Q)\).
-- Denote by \( w^a, w^b,w^c,\dots \) the coordinate in Euclidean frame of \( \mathbb{R}^q
-  \) and by \( y^\alpha, y^\beta, y^\gamma,\dots \) the local coordinate of \( M' \). Then \(
-  \pi^c_a + \rho^c_a = \delta^c_a \) and the covariant differential w.r.t \( g'' \) is
-  \[
-   \pi^c_{ab} = \frac{\partial^2 \pi^c}{\partial w^a \partial w^b} - \Gamma''^d_{ab}\pi^c_d
-  \]
-  where \( \Gamma'' \) are Christoffel symbols of \( g''\). Also, \( \rho^c_{ab} + \pi^c_{ab}+\Gamma''^c_{ab} = 0 \).
-
-Now cite:eells_harmonic_1964 claims that on \( M' \):
-\begin{equation}
-\label{eq:double}
- -\rho^c_{ab}w^a_\alpha w^b_\beta = \frac{\partial^2 \pi^c}{\partial w^a \partial w^b}w^a_\alpha w^b_\beta =
-\rho^c_b \frac{\partial^2\pi^b}{\partial y^\alpha \partial y^\beta}
-\end{equation}
-therefore
-#+ATTR_HTML: :id lem:suspicious
-#+BEGIN_lemma
-#+LATEX: \label{lem:suspicious}
-For any vector \( U,V\in T_Q M' \) the vector \(\rho^c_{ab}U^a V^b \) is perpendicular to \(T_{Q}M'\)
-#+END_lemma
-
-I believe that the first half of eqref:eq:double (hence also the Lemma) is incorrect. 
-
-#+BEGIN_remark
-In fact, all applications of the Lemma in the section 7 of
-cite:eells_harmonic_1964 concern the second half of eqref:eq:double, in order to claim that any vector
-\( \frac{\partial^2\pi^c}{\partial w^a \partial w^b}U^b  V^a \tilde e_c \) is perpendicular to \( TM'
-\), if the vectors \( U,V \) are tangent to \( M \).
-#+END_remark
-
-
-
-For the detail, since
-\[
- -\rho^c_{ab} = \pi^c_{ab} + \Gamma''^c_{ab} = \frac{\partial^2 \pi^c}{\partial w^a
-\partial w^b} - \Gamma''^d_{ab}\pi^c_d +\Gamma''^c_{ab}
-\]
-the claim is equivalent to
-\( \Gamma''^d_{ab}\pi^c_d w^a_\alpha w^b_\beta = \Gamma''^c_{ab}w^a_\alpha w^b_\beta \),
-in other words
-\( pr_{TM'}(\Gamma''^c_{ab}\tilde e_c w^a_\alpha w^b_\beta) =
-\Gamma''^c_{ab}\tilde e_c w^a_\alpha w^b_\beta \), meaning that
-\(
- (\nabla''_{e_\alpha}\tilde e_b)w^b_\beta \in TM'
-\)
-Note that
-\[
- (\nabla''_{e_\alpha}\tilde e_b)w^b_\beta = \nabla''_{e_\alpha} e_\beta - {e_\alpha}
-(w^b_\beta) \tilde e_b = \nabla''_{e_\alpha} e_\beta - \nabla_{e_\alpha}(w^b_\beta \tilde
-e_b) = \nabla''_{e_\alpha} e_\beta - \nabla_{e_\alpha}e_\beta
-\]
-where \( \nabla \) is Levi-Civita connection of \( \mathbb{R}^q \) corresponding to Euclidean metric, and \(
-\tilde e_b \) is the \( b^{\rm th} \) vector field corresponding to the canonical coordinate of
-\( \mathbb{R}^q \), therefore \( \nabla \tilde e_b = 0 \).
-
-Now already \( \nabla''_{e_\alpha} e_\beta \in TM' \) since \( e_\alpha, e_\beta\in TM' \) and \( \nabla'' \) is the
-Levi-Civita of the induced metric on \( M' \). The problem is the term \(
-\nabla_{e_\alpha}e_\beta \), which is not only different from \(\nabla''_{e_\alpha} e_\beta\)
-even when the metric \( g'' \) and the Euclidean metric coincide on \( M' \) containing
-the flow of \( e_\alpha \), but also not necessarily lies in \( TM' \).
-
-A counter example is \( M'= \mathbb{S}^1\subset \mathbb{R}^2 \) with \( e_\alpha=e_\beta \)
-defined by \( (\cos t, \sin t) \mapsto \sin t\ dx - \cos t\ dy  \) (the geodesic field on \(
-M' \)) then \( \nabla_{e_\alpha}e_\beta = \cos t\ dx + \sin t\ dy \) is perpendicular to \( TM' \). 
-
-# In fact, it is always true that \( \nabla_{U} V \) is perpendicular to \( TM'
-# \) for \( U, V\in T_QM' \), since \( \nabla_{U}V = \nabla_{U}\nabla_{V} \pi \perp T_QM'\)
-# by the second half of eqref:eq:double.
-
-
-bibliographystyle:alpha bibliography:../res/Stage2018.bib
 
 * LaTeX indentation in org-mode <2018-02-20 Tue>
   I was told, in accordance with my experience, that we visually process text better if

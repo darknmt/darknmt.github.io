@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-07-06 Fri 01:04 -->
+<!-- 2018-07-15 Sun 01:53 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Harmonic maps of Riemannian manifolds</title>
@@ -266,7 +266,7 @@ for the JavaScript code in this tag.
 <ul>
 <li>
 <ul>
-<li><a href="#org1206cc5">1.1.0.1. Notation.</a></li>
+<li><a href="#orgc9f1e65">1.1.0.1. Notation.</a></li>
 </ul>
 </li>
 </ul>
@@ -288,7 +288,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgeadf23c">1.3.1. Energy functional and tension field</a></li>
 <li><a href="#orgf595675">1.3.2. Fundamental form, some results in case of signed curvature</a>
 <ul>
-<li><a href="#orgc9f1e65">1.3.2.1. Notation.</a></li>
+<li><a href="#org6a4a421">1.3.2.1. Notation.</a></li>
 </ul>
 </li>
 </ul>
@@ -361,8 +361,8 @@ This is my reading note for <a class='org-ref-reference' href="#eells_harmonic_1
 </div><div id="outline-container-org2b417a5" class="outline-3">
 <h3 id="org2b417a5"><span class="section-number-3">1.1</span> Variational approach: energy integral and tension field</h3>
 <div class="outline-text-3" id="text-1-1">
-</div><div id="outline-container-org1206cc5" class="outline-5">
-<h5 id="org1206cc5"><span class="section-number-5">1.1.0.1</span> Notation.</h5>
+</div><div id="outline-container-orgc9f1e65" class="outline-5">
+<h5 id="orgc9f1e65"><span class="section-number-5">1.1.0.1</span> Notation.</h5>
 <div class="outline-text-5" id="text-1-1-0-1">
 <p>
 Let \( M, M', M''\) be Riemannian manifolds of dimension \( n, n' \) and \( n''\)
@@ -401,7 +401,7 @@ g_{i_m k_m} g^{j_n l_m}S^{i_1\dots i_p}_{j_1\dots j_q} T^{k_1\dots k_p}_{l_1\dot
 
 <div class="remark">
 <p>
-The energy density is non-negative at every point. Hence \( E(f) = 0 \) if and only if \(
+The energy density is non-negative at every point. And \( E(f) = 0 \) if and only if \(
 e(f)=0 \) at all points if and only if \( f \) is constant.
 </p>
 
@@ -426,7 +426,7 @@ of \( f \) and \( I_\sigma(\alpha) \) the \( \sigma \)-energy of \( f \).
 
 <div class="exampl">
 <p>
-For example, the energy functional \( E(f) \) is \( I_\frac{\sigma_1}{2}(f) \). \(
+The energy functional \( E(f) \) is \( I_\frac{\sigma_1}{2}(f) \). \(
 V(f):=I_{\sigma^{1/2}_n}(f) \) is called the <b>volume</b> of \( f \).
 </p>
 
@@ -458,7 +458,7 @@ d t}   + g^{ij}f^\alpha_i f^\beta_j \frac{\partial g'_{\alpha\beta}}{\partial y^
 The first term is
 </p>
 \begin{align*}
-   -\left(2g^{ij}  f^\alpha_i g'_{\alpha\beta}\right)_j &= -2 g^{ij}f^\alpha_{ij}
+   -\left(2g^{ij}  f^\alpha_i g'_{\alpha\beta}\right)_j \frac{d f^\beta_t}{dt} &= -2 g^{ij}f^\alpha_{ij}
 \frac{d f^\beta}{d t}g'_{\alpha\beta} - 2 g^{ij}f^\alpha_i
 \frac{d f^\beta}{d t}\frac{\partial g'_{\alpha\beta}}{\partial y^\nu} f^\nu_j\\
 &= 2\Delta f^\alpha g'_{\alpha\beta} \frac{d f_t^\beta}{d t} - 2 g^{ij}f^\alpha_i f^\beta_j \frac{\partial g'_{\alpha\nu}}{\partial y^\beta} \frac{d f_t^\nu}{dt}
@@ -699,7 +699,7 @@ With \( s\cdot s' \) denoting the pointwise inner product of \( A^1(M,E) \) and 
 </p>
 \begin{equation}
 \label{eq:laplace-Q}   
- -\frac{1}{2}\Delta(s\cdot s) =  s\cdot \Delta s - \langle\tilde\nabla_i s_k,\tilde\nabla^i s^k \rangle_E - \left\langle \transp{\left(\Theta_i^h - {\rm Ric}_i^h\right)}s_h, s^i\right\rangle_E
+ -\frac{1}{2}\Delta(s\cdot s) =  - s\cdot \Delta s + \langle\tilde\nabla_i s_k,\tilde\nabla^i s^k \rangle_E - \left\langle \transp{\left(\Theta_i^h - {\rm Ric}_i^h\right)}s_h, s^i\right\rangle_E
 \end{equation}
 <p>
 where the superscript \( i,h \) are raised by the metric \( g \).
@@ -713,29 +713,10 @@ Computational in nature.
 </p>
 
 </div>
+</div>
+</div>
+</div>
 
-<div id="rem:calculs-general" class="remark">
-<ol class="org-ol">
-<li>We note by \( Q(s) \) the last term of \eqref{eq:laplace-Q}, then \( Q \) is a (2,0)
-tensor on \( M \) with value in \( E^*\otimes E^* \) where \( E^* \) is the dualised
-bundle of \( E \). In practice, \( Q \) is an \( mn\times mn \) matrix with
-coefficients \[ Q_{\alpha\beta}^{hi} = g^{hk}g^{ij}\left[ \left(g'_{\alpha\gamma} \Theta_\beta^\gamma\right)_{kj} - g'_{\alpha\beta} {\rm Ric}_{kj} \right] \].</li>
-<li><p>
-Since \( \int_M \Delta(s\cdot s)dV=0 \), if \( s \) is harmonic, one has
-</p>
-\begin{equation}
-\label{eq:Q-negative}
-\begin{split}
-    \int_M Q(s) dV &= -\int_M \langle\tilde\nabla_i s_k,\tilde\nabla^i s^k \rangle_E dV\\
-                   &= -\int_M \| \nabla_i s^\alpha_k dx^i\otimes dx^k\otimes \tilde e_\alpha\|^2_{A^2(M,E)}dV\leq 0
-     \end{split}   
-\end{equation}</li>
-</ol>
-
-</div>
-</div>
-</div>
-</div>
 
 <div id="outline-container-org8806f6b" class="outline-3">
 <h3 id="org8806f6b"><span class="section-number-3">1.3</span> The case of \( E = f^* TM' \)</h3>
@@ -779,15 +760,14 @@ over \( M \). Then:
 </div>
 <div class="proof">
 <ol class="org-ol">
-<li>We will use the fact that \( \tilde\nabla g' = 0 \). Given two section \( s=s^\alpha
-   \tilde e_\alpha,t=t^\beta \tilde e_\beta \) of \( E \), expanding
-\( \nabla_i(s\cdot t) = (\tilde\nabla_i s)\cdot t +s\cdot \tilde\nabla_i t \), one has
-\[ 
-   s^\alpha t^\beta \frac{\partial g'_{\alpha\beta}}{\partial x^i} = s^\alpha t^\beta
-   \left( A^\gamma_{\alpha i} g'_{\gamma\beta} + A^\gamma_{\beta i} g'_{\alpha\gamma}\right)
+<li>One has
+\[
+    A^\beta_{\alpha i} \tilde e_\beta = \tilde\nabla_i \tilde e_\alpha =
+   \tilde\nabla_{f^\gamma_i \tilde e_\gamma} \tilde e_\alpha = f^\gamma_i
+   \Gamma'^\beta_{\gamma\alpha}\tilde e_\beta,
    \]
-Taking \( s,t \) to be of small support, \( \alpha=\beta \) and substituing \(
-   A^\gamma_{\alpha i} = \Gamma'^\nu_{\gamma\alpha}f^\gamma_i \), one obtains the first statement.</li>
+Therefore \( A^\beta_\alpha = f^\gamma_i
+   \Gamma'^\beta_{\gamma\alpha} dx^i \).</li>
 <li>By direct computation:
 \[
     D f_* = \left(\frac{\partial^2 f^\alpha}{\partial x^i \partial x^j} +
@@ -883,8 +863,8 @@ M \) and \( M' \) are of definite sign.
 </p>
 </div>
 
-<div id="outline-container-orgc9f1e65" class="outline-5">
-<h5 id="orgc9f1e65"><span class="section-number-5">1.3.2.1</span> Notation.</h5>
+<div id="outline-container-org6a4a421" class="outline-5">
+<h5 id="org6a4a421"><span class="section-number-5">1.3.2.1</span> Notation.</h5>
 <div class="outline-text-5" id="text-1-3-2-1">
 <p>
 Given a Riemannian manifold \( M \), we will use the following notation:
@@ -1073,7 +1053,7 @@ Riem}(M')\leq 0 \) and \( r=g^{ij} {\rm Ric}_{ij} <0 \) at one point of \( M \).
 <p>
 In this section, the function \( f: M \longrightarrow M' \) will be a Riemannian submersion \( \pi: M \longrightarrow B \), i.e. \( T\pi \) is subjective and \( \pi^*g' = g \). We will
 regard \( \pi \) as a fibration and calculate its tension field. We start with two theorems
-of Hermann with <a class='org-ref-reference' href="#besse_einstein_2007">besse_einstein_2007</a> as reference. A tangent vector of \( M \) lying
+of Hermann with <a class='org-ref-reference' href="#besse_einstein_1987">besse_einstein_1987</a>, as reference. A tangent vector of \( M \) lying
 in \( \ker T_P\pi \) is said to be <b>vertical</b>. Since \( \pi^* g' = g \), the plane \(
 \mathcal{H}_P := \ker T_P\pi^\perp \) is isometric to \( T_{\pi(P)}B \) and is said to be
 <b>horizontal</b>, such \( \mathcal{H}_P \) form a distribution of planes as \( P \) varies in
@@ -1406,8 +1386,9 @@ M' \) then
 </div>
 
 <p>
-The following immediate corollary of Proposition <a href="#prop:compo-immersion">prop:compo-immersion</a> is a generalization of the fact that a curve is geodesic if and only if it
-is perpendicular to its tension field.
+The following immediate corollary of Proposition <a href="#prop:compo-immersion">prop:compo-immersion</a> is a
+generalization of the fact that a curve on a surface \( M' \) of \( \mathbb{R}^3 \) is geodesic of if and only if its curvature vector is
+orthogonal to \( M' \).
 </p>
 
 <div class="corollary">
@@ -1538,8 +1519,9 @@ embedding \(s: \partial M' \hookrightarrow M' \), which is \( \sff(s) = -\Gamma'
 <p>
 It is easy to see that the convexity of \( \partial M' \) is a necessary condition, as
 harmonic maps from \( \mathbb{R} \) are geodesics: Suppose the condition does not hold at
-\( x\in \partial M' \), meaning that upto time \( t \) the geodesic flow of \( M' \) initially tangent to
-\( \partial M' \) remains in the interior. The geodesic of \( \partial M' \) of length
+\( x\in \partial M' \), meaning that upto time \( t \) the geodesic flow of \( M' \)
+initially pointing into
+\( M' \) remains in the interior. The geodesic of \( \partial M' \) of length
 less than \( t \) with the same initial tangent therefore cannot be deformed into a
 geodesic of \( M' \) in relative homotopy class. 
 </p>
@@ -1634,7 +1616,7 @@ functions satisfying the non-linear heat equation
  \frac{d f_i}{d t} = \tau_{M'}(f_i) 
 \), i.e.
 \[
- \frac{d f_i}{d t} =-\Delta f^\gamma +g^{ij}\Gamma'^{\gamma}_{\alpha\beta} f^{\alpha}_{i}f^{\beta}_{j}
+ \frac{d f^\gamma}{d t} =-\Delta f^\gamma +g^{ij}\Gamma'^{\gamma}_{\alpha\beta} f^{\alpha}_{i}f^{\beta}_{j}
 \]
 where \( \Gamma'^\gamma_{\alpha\beta} \) are Christoffel symbols of \( M' \). Suppose that
 \( f_1 \) and \( f_2 \) coincide on \( M\times \{\alpha\} \). Then \( f_1=f_2 \) on \( M\times[\alpha,\omega] \).
@@ -1698,7 +1680,7 @@ series development of \( \sigma \) at \( (0,0) \):
 and the development of its derivatives
 </p>
 \begin{align*}
-  \frac{\partial^2 \sigma}{\partial a^\beta \partial b^\gamma}(a,b) &= -\delta_{\beta\gamma} + \lambda_{\beta\delta,\gamma}a^\delta + \lambda_{\gamma\delta,\beta}b^\delta + O(|a|+|b|)^2\\
+  \frac{\partial^2 \sigma}{\partial a^\beta \partial b^\gamma}(a,b) &= -\delta_{\beta\gamma} + O(|a|+|b|)^2\\
   \frac{\partial^2 \sigma}{\partial a^\beta \partial a^\gamma}(a,b) &= \delta_{\beta\gamma} + \lambda_{\beta\gamma,\delta}b^\delta + O(|a|+|b|)^2\\
   \frac{\partial^2 \sigma}{\partial b^\beta \partial b^\gamma}(a,b) &= \delta_{\beta\gamma} + \lambda_{\beta\gamma,\delta}a^\delta + O(|a|+|b|)^2\\
    \frac{\partial\sigma}{\partial a^\alpha}(a,b) &= O(|a|+|b|),\quad {\Gamma'}^\alpha_{\beta\gamma}(a) = O(|a|)
@@ -1709,15 +1691,11 @@ f_2(x,t)) = (w,-w)\) in the chart, one has:
 </p>
 \begin{align}
  \frac{d\rho}{d t} &= -\Delta\rho - \left( \delta_{\beta\gamma} -\lambda_{\beta\gamma,\delta}w^\delta + O(|w|^2)  \right) {f_1}^\beta_i {f_1}^\gamma_j g^{ij}   - \left( \delta_{\beta\gamma} + \lambda_{\beta\gamma,\delta} w^\delta + O(|w|^2)\right) {f_2}^\beta_i {f_2}^\gamma_j g^{ij}  \label{eq:sym-red-beta-before}\\
-		   & - 2\left( -\delta_{\beta\gamma} + \lambda_{\beta\delta,\gamma}w^\delta - \lambda_{\gamma\delta,\beta} w^\delta + O(|w|^2)  \right) {f_1}^\beta_i {f_2}^\gamma_j g^{ij} \label{eq:sym-red-beta}\\
-		   & = -\Delta \rho - |df_1 -df_2|^2 - w^\delta \lambda_{\beta\gamma,\delta}g^{ij}\left(  {f_2}^\beta_i {f_2}^\gamma_j - {f_1}^\beta_i {f_1}^\gamma_j  \right) \label{eq:first-order-w}
+		   & - 2\left( -\delta_{\beta\gamma} + O(|w|^2)  \right) {f_1}^\beta_i {f_2}^\gamma_j g^{ij} \label{eq:sym-red-beta}\\
+		   & = -\Delta \rho - |df_1 -df_2|^2 - w^\delta \lambda_{\beta\gamma,\delta}g^{ij}\left(  {f_2}^\beta_i {f_2}^\gamma_j - {f_1}^\beta_i {f_1}^\gamma_j  \right) + O(|\omega|^2) \label{eq:first-order-w}
 \end{align}
 <p>
-where we made a reduction of the term \eqref{eq:sym-red-beta}, using the symmetric role of \( \beta \) and
-\( \gamma \) to cancel the first order term \( w^\delta \). This symmetry is not apparent
-in the term \eqref{eq:sym-red-beta} itself, but can be seen through their symmetry in the
-2 terms of \eqref{eq:sym-red-beta-before} and their symmetry in the sum of all three,
-i.e. in the RHS of \eqref{eq:drho-dt}. The last term of \eqref{eq:first-order-w} can be bounded as follows:
+The last term of \eqref{eq:first-order-w} can be bounded as follows:
 </p>
 \begin{align*}
     \left | w^\delta \lambda_{\beta\gamma,\delta}\left({f_2}^\beta_i {f_2}^\gamma_j -
@@ -1966,7 +1944,7 @@ on the curvatures and initial total energies.
 If \( F_t \) satisfies \eqref{eq:global-heat} and \( \Riem(M')\leq 0 \) and \( \Ric(M) \)
 is bounded below then
 \[
-\|F_t\|^2_{W^{2,2}(M)} := \int_M | \beta(F_t)|^2 + |\nabla F_t| +|F|^2 \leq C
+\|F_t\|^2_{W^{2,2}(M)} := \int_M | \beta(F_t)|^2 + |\nabla F_t|^2 +|F|^2 \leq C
 \]
 for all time \( t \) where the constant \( C \) only depends on the curvature of \( M, M'
 \) and the initial total potential and kinetic energy, in particular, \( C \) does not depend on \( t \).
@@ -1983,7 +1961,7 @@ an Euclidean ball \( B \).
 
 <h1 class='org-ref-bib-h1'>Bibliography</h1>
 <ul class='org-ref-bib'><li><a id="eells_harmonic_1964">[eells_harmonic_1964] Eells & Sampson, Harmonic Mappings of Riemannian Manifolds, <i>American Journal of Mathematics</i>, <b>86(1)</b>, 109-160 (1964). <a href="http://www.jstor.org/stable/2373037">link</a>. <a href="http://dx.doi.org/10.2307/2373037">doi</a>.</a></li>
-<li><a id="besse_einstein_2007">[besse_einstein_2007] Besse, Einstein Manifolds, Springer Berlin Heidelberg (2007).</a></li>
+<li><a id="besse_einstein_1987">[besse_einstein_1987] Besse, Einstein Manifolds, Springer-Verlag (1987).</a></li>
 <li><a id="hamilton_harmonic_1975">[hamilton_harmonic_1975] Hamilton, Harmonic Maps of Manifolds with Boundary, Springer-Verlag (1975).</a></li>
 </ul>
 </p>
@@ -1994,7 +1972,7 @@ an Euclidean ball \( B \).
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-07-06 Fri 01:03. <br>
+Last updated 2018-07-15 Sun 01:53. <br>
 </div>
 </div>
 </body>
