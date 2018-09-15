@@ -5,10 +5,9 @@
 #+OPTIONS: toc:1 num:nil
 # [[file:../img/ly-ngu-vong-nguyet.jpg]]
 * Log term in energy of \( f: \overline{\mathbb{H}^2} \longrightarrow \overline{\mathbb{H}^{n+1}} \).
-Let \(\mathbb{H}^2 \) be coordinated by \( (t,s) \) with \( t>0,s\in \mathbb{R} \) and \( \mathbb{H}^{n+1} \) be cordinated by \( x\geq 0, y^1,\dots, y^n\in \mathbb{R} \).
+Let \(\mathbb{H}^2 \) be coordinated by \( (t,s) \) with \( t>0,s\in \mathbb{R} \) and \( \mathbb{H}^{n+1} \) be cordinated by \( x> 0, y^1,\dots, y^n\in \mathbb{R} \).
 
-Let \( f: \overline{\mathbb{H}^2} \longrightarrow \overline{\mathbb{H}^{n+1}} \) be
-defined by
+Define \( f: \overline{\mathbb{H}^2} \longrightarrow \overline{\mathbb{H}^{n+1}} \) by
 \[
 (t,s) \mapsto \left(t+t^2, \gamma^i(s)\right)
 \]
