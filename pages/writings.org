@@ -1,5 +1,7 @@
 
 #+SETUPFILE: ../res/mathsetup.org
+#+INCLUDE: ../res/include.org
+
 #+OPTIONS: toc:1 num:nil
 # [[file:../img/ly-ngu-vong-nguyet.jpg]]
 * Log term in energy of \( f: \overline{\mathbb{H}^2} \longrightarrow \overline{\mathbb{H}^{n+1}} \).
