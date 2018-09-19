@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-09-15 Sat 02:22 -->
+<!-- 2018-09-19 Wed 19:02 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -259,6 +259,7 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
+<li><a href="#org9f31ee3">Log term in energy: half-sphere in \( \mathbb{H}^3 \).</a></li>
 <li><a href="#org8dba713">Log term in energy of \( f: \overline{\mathbb{H}^2} \longrightarrow \overline{\mathbb{H}^{n+1}} \).</a></li>
 <li><a href="#org3704448">Commutative diagram revisited</a></li>
 <li><a href="#orgf1b129f">LaTeX in Inkscape: Incompatibility between <code>ghostscript</code> and <code>pstoedit</code> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-03-30 Fri&gt;</span></span></a></li>
@@ -294,6 +295,95 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
 \newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
 \)
+<div id="outline-container-org9f31ee3" class="outline-2">
+<h2 id="org9f31ee3">Log term in energy: half-sphere in \( \mathbb{H}^3 \).</h2>
+<div class="outline-text-2" id="text-org9f31ee3">
+<p>
+The following example concerns a compact surface (a half-sphere) in \( \mathbb{H}^3 \) (so
+there is no subtlety of its boundary in Poincaré's \( \mathbb{H}^3 \) or
+\(\mathbb{D}^3\)).
+</p>
+
+<p>
+Let \( \mathbb{D} \) be the unit disk coordinated by \( (s,\theta)\in [0,1)\times
+[0,2\pi)  \) and \( \mathbb{H}^3 \) be the Poincaré half-space coordinated by \(
+(x_0,r,\theta)\in (0,+\infty)\times [0,+\infty)\times [0,2\pi) \). Consider the map \( f:
+\mathbb{D} \longrightarrow \mathbb{H}^3 \) given by 
+\[
+ (s,\theta) \longmapsto \left( \frac{1-s^2}{1+s^2}, (\frac{2s}{1+s^2},\theta) \right)
+\]
+which is the totally geodesic imbedding of \( (\mathbb{D}^2,\text{Poincaré}) \) into \(
+(\mathbb{H}^3,\text{Poincaré}) \). One can verify that if \( g = \frac{1}{x_0^2} (dx_0^2 +
+dr^2 + r^2d\theta^2) \) is the Poincaré metric on \( \mathbb{H}^3 \) then
+\[
+ f^* g = \frac{4}{(1-s^2)^2} (ds^2 + s^2 d\theta^2)
+\]
+is the Poincaré metric on \( \mathbb{D}^2 \).
+</p>
+
+<p>
+We will equip \( \mathbb{D}^2 \) with the following metric
+\[
+ g_A = dx^2 + dy^2 + 2A dxdy = (1+A\sin 2\theta) ds^2 + s^2 (1-A\sin 2\theta) d\theta^2 +
+2As\cos 2\theta ds d\theta
+\]
+where \( A \) is a suitable smooth function on \( \mathbb{D}^2 \) with \( |A|< 1 \). We
+will show that when \( A:=\frac{2s^2}{1+s^4} \) then there will be a \( \ln\epsilon \)
+term in the energy of \( f: (\mathbb{D}^2,g_A) \longrightarrow (\mathbb{H}^3,
+g=\text{Poincaré}) \).
+</p>
+
+
+<div class="proof">
+<p>
+One can check that \( \det
+(g_A) = s^2(1-A^2) \) and the contravariant metric is
+\[
+ (g_A)^{ij} = \frac{1}{s^2 (1-A^2)}\begin{bmatrix}s^2 (1-A\sin 2\theta) & -As\cos 2\theta\\-As\cos 2\theta &
+1+A\sin 2\theta\end{bmatrix}
+\]
+</p>
+
+<p>
+The trace of the pullback metric \( f^*g \) under the metric \( g_A \) is
+\[
+ \tr_{g_A} (f^*g) = \frac{8}{(1-s^2)^2}.\frac{1}{1-A^2}
+\]
+Therefore
+\[
+E_\epsilon(f) := \int_{x_0\geq \epsilon} \tr_{g_A}(f^* g) \sqrt{|\det g_A|} ds d\theta = \int_{x_0\geq
+\epsilon} \frac{8}{\sqrt{1-A^2}}.\frac{s}{(1-s^2)^2} ds d\theta
+\]
+</p>
+
+
+<p>
+Take \( A:= \frac{2s^2}{1+s^4} \) then \( \sqrt{1-A^2} = \frac{1-s^4}{1+s^4} \) and 
+\[
+E_\epsilon(f) = 8\pi \int_{y\leq y_{\max}} \frac{1+y^2}{1-y^2}.\frac{1}{(1-y)^2} dy
+\]
+where \( y=s^2 \) running from \( 0 \) to \( y_{\max}=\frac{1-\epsilon}{1+\epsilon} \).
+</p>
+
+<p>
+By writing the rational function as
+\[
+ \frac{1+y^2}{(1-y^2)(1-y)^2} = -\frac{1}{2} .\frac{1}{(1-y)^2} + \frac{1}{(1-y)^3} +
+\frac{1}{4}.\frac{1}{1+y} + \frac{1}{4}.\frac{1}{1-y},
+\]
+one sees that
+\[
+ E_\epsilon(f) = \frac{\pi}{\epsilon^2} + \frac{4\pi}{\epsilon} -2\pi \ln\epsilon - 5\pi.
+\]
+</p>
+
+</div>
+</div>
+</div>
+
+
+
+
 <div id="outline-container-org8dba713" class="outline-2">
 <h2 id="org8dba713">Log term in energy of \( f: \overline{\mathbb{H}^2} \longrightarrow \overline{\mathbb{H}^{n+1}} \).</h2>
 <div class="outline-text-2" id="text-org8dba713">
@@ -513,7 +603,7 @@ also in this period that I start this blog. The memoire can be founded here [<a 
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien.<br>
-Last updated 2018-09-15 Sat 02:18. <br>
+Last updated 2018-09-19 Wed 19:02. <br>
 </div>
 </div>
 </body>
