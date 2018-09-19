@@ -9,10 +9,10 @@ The following example concerns a compact surface (a half-sphere) in \( \mathbb{H
 there is no subtlety of its boundary in Poincaré's \( \mathbb{H}^3 \) or
 \(\mathbb{D}^3\)).
 
-Let \( \mathbb{D} \) be the unit disk coordinated by \( (s,\theta)\in [0,1)\times
+Let \( \mathbb{D}^2 \) be the unit disk coordinated by \( (s,\theta)\in [0,1)\times
 [0,2\pi)  \) and \( \mathbb{H}^3 \) be the Poincaré half-space coordinated by \(
 (x_0,r,\theta)\in (0,+\infty)\times [0,+\infty)\times [0,2\pi) \). Consider the map \( f:
-\mathbb{D} \longrightarrow \mathbb{H}^3 \) given by 
+\mathbb{D}^2 \longrightarrow \mathbb{H}^3 \) given by 
 \[
  (s,\theta) \longmapsto \left( \frac{1-s^2}{1+s^2}, (\frac{2s}{1+s^2},\theta) \right)
 \]
