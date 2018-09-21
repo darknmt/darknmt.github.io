@@ -67,6 +67,32 @@ g_{\gamma\delta}-f^\alpha_x f^\beta_y g_{\alpha\beta}f^\gamma_xf^\delta_y g_{\ga
 The result follows.
 #+END_proof
 
+Therefore the renormalised energy \( E_{\rm norm} \) is given by 
+\begin{align}
+   E_{\rm norm} &= 2A_{\rm norm} + \frac{1}{4}\int_\Sigma \frac{|q(f)_g|^2}{\tr_h (f^*g) + 2\sqrt{\det_{h}(f^*g)}}dA_h\\
+   	  	&= -4\pi\chi(f(\Sigma)) + \int_{f(\Sigma)}(2W_{1212}+ 2|H|^2 - |\hat k|^2) + \frac{1}{4}\int_\Sigma \frac{|q(f)_g|^2}{\tr_h (f^*g) + 2\sqrt{\det_{h}(f^*g)}}dA_h
+\end{align}
+according Alexasky-Mazzeo [[https://arxiv.org/abs/0802.2250][formula]] for renormalised area.
+
+
+#+ATTR_HTML: :id rem:compact-perb
+#+BEGIN_remark
+#+LATEX: \label{rem:compact-perb}
+Let \( \{f_t\} \) be a perturbation of \( f \) with compact support lying outside of
+\(r\leq \epsilon_0 \). Then since \( E_\epsilon(f_t) - E_\delta(f_t) =  E_\epsilon(f) -
+E_\delta(f) \) for all \( t \), one has
+\[
+ E_\epsilon(f_t) - E_\epsilon(f) = E_{\rm norm}(f_t) - E_{\rm norm}(f).
+\]
+
+Because harmonicity of \( f \) means that \( f \) is critical point of \( E_\epsilon  \) on
+\( r\geq \epsilon \) for all \( \epsilon \) arbitrarily closed to 0, it follows that any critical point of \(
+E_{\rm norm} \) is harmonic.
+#+END_remark
+
+
+
+
 
 * Log term in energy: half-sphere in \( \mathbb{H}^3 \).
 The following example concerns a compact surface (a half-sphere) in \( \mathbb{H}^3 \) (so

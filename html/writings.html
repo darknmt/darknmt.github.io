@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-09-21 Fri 02:45 -->
+<!-- 2018-09-21 Fri 16:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -376,8 +376,41 @@ The result follows.
 </p>
 
 </div>
+
+<p>
+Therefore the renormalised energy \( E_{\rm norm} \) is given by 
+</p>
+\begin{align}
+   E_{\rm norm} &= 2A_{\rm norm} + \frac{1}{4}\int_\Sigma \frac{|q(f)_g|^2}{\tr_h (f^*g) + 2\sqrt{\det_{h}(f^*g)}}dA_h\\
+   	  	&= -4\pi\chi(f(\Sigma)) + \int_{f(\Sigma)}(2W_{1212}+ 2|H|^2 - |\hat k|^2) + \frac{1}{4}\int_\Sigma \frac{|q(f)_g|^2}{\tr_h (f^*g) + 2\sqrt{\det_{h}(f^*g)}}dA_h
+\end{align}
+<p>
+according Alexasky-Mazzeo <a href="https://arxiv.org/abs/0802.2250">formula</a> for renormalised area.
+</p>
+
+
+<div id="rem:compact-perb" class="remark">
+<p>
+Let \( \{f_t\} \) be a perturbation of \( f \) with compact support lying outside of
+\(r\leq \epsilon_0 \). Then since \( E_\epsilon(f_t) - E_\delta(f_t) =  E_\epsilon(f) -
+E_\delta(f) \) for all \( t \), one has
+\[
+ E_\epsilon(f_t) - E_\epsilon(f) = E_{\rm norm}(f_t) - E_{\rm norm}(f).
+\]
+</p>
+
+<p>
+Because harmonicity of \( f \) means that \( f \) is critical point of \( E_\epsilon  \) on
+\( r\geq \epsilon \) for all \( \epsilon \) arbitrarily closed to 0, it follows that any critical point of \(
+E_{\rm norm} \) is harmonic.
+</p>
+
 </div>
 </div>
+</div>
+
+
+
 
 
 <div id="outline-container-org9f31ee3" class="outline-2">
@@ -724,7 +757,7 @@ also in this period that I start this blog. The memoire can be founded here [<a 
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien.<br>
-Last updated 2018-09-21 Fri 02:45. <br>
+Last updated 2018-09-21 Fri 16:46. <br>
 </div>
 </div>
 </body>
