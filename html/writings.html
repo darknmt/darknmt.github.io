@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-09-19 Wed 19:14 -->
+<!-- 2018-09-21 Fri 02:34 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -259,6 +259,7 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
+<li><a href="#org824bf3b">Existence and invariance by special bdf of the renormalised energy.</a></li>
 <li><a href="#org9f31ee3">Log term in energy: half-sphere in \( \mathbb{H}^3 \).</a></li>
 <li><a href="#org8dba713">Log term in energy of \( f: \overline{\mathbb{H}^2} \longrightarrow \overline{\mathbb{H}^{n+1}} \).</a></li>
 <li><a href="#org3704448">Commutative diagram revisited</a></li>
@@ -295,6 +296,90 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
 \newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
 \)
+
+<div id="outline-container-org824bf3b" class="outline-2">
+<h2 id="org824bf3b">Existence and invariance by special bdf of the renormalised energy.</h2>
+<div class="outline-text-2" id="text-org824bf3b">
+<p>
+Let \( f: (\Sigma, \partial\Sigma) \longrightarrow  (M,\partial M) \) be smooth map
+from a Riemann surface to an asymptotically hyperbolic manifold \( M \). Let \( r \) be a
+special bdf of \( M \), \( \bar g = r^2 g \) be the metric underwhich \( M \) is compact, and \( A_\epsilon(f), E_\epsilon(f) \) be the area and energy of \(
+f \) in the region \( r\geq \epsilon \) as a map from \( (\Sigma,h) \) to \( (M,g) \)
+for any choice of metric \( h \) in the natural conformal class of \( \Sigma \). 
+</p>
+
+<p>
+Denote by 
+</p>
+<ul class="org-ul">
+<li>\( q(f)_{g} \) and \( q(f)_{\bar g} = r^2 q(f)_{g} \) the quadratic differentials of \( f \) from the Riemann surface \( \Sigma \) to the Riemannian manifolds \( (M, g) \) and \( (M,\bar g) \) respectively.</li>
+<li>\( |q(f)_g| \) and \( |q(f)_{\bar g}| \) their norm under \( h \).</li>
+</ul>
+
+<p>
+We will prove that
+</p>
+
+<div id="prop:renorm-en" btit="(Renormalised energy)" class="proposition">
+<p>
+Under no further supposition, one has
+</p>
+\begin{align}
+  E_{\epsilon}(f)-2A_\epsilon(f) &= \frac{1}{4} \int_{r\geq\epsilon}\frac{1}{r^2} \frac{|q(f)_{\bar g}|^2}{\tr_h(f^* \bar g) + 2 \sqrt{\det_h(f^* \bar g)}} dA_h \label{eq:en-1}\\
+       &= \frac{1}{4}\int_{r\geq\epsilon} \frac{|q(f)_{g}|^2}{\tr_h(f^* g) + 2 \sqrt{\det_h(f^* g)}}dA_h \label{eq:en-2}
+\end{align}
+<p>
+One can see from \eqref{eq:en-1} that if the quadratic differential of \( f \) vanishes on
+\( \partial \Sigma \) then \( |q(f)_{\bar g}|^2 = O(r)^2 \) and the integral increases to
+a finite limit as \( \epsilon \to 0 \). Meanwhile \eqref{eq:en-2} shows that this limit,
+which is the difference between the renormalised energy and renormalised area is
+independent of the special bdf \( r \).
+</p>
+
+</div>
+
+<p>
+We remark that the two integrals only depend on the conformal class of \( h \) and the
+determinators are sums of densities of energy and area of \( f \) under \( \bar g \) and \(
+g \) respectively.
+</p>
+
+<div class="proof">
+<p>
+It suffices to prove \eqref{eq:en-2}, which means, at any point \( P \) of \( \Sigma \)
+\[
+ \tr_h(f^*g)^2 - 4{\rm det}_{h}(f^*g) = \frac{1}{4}|q(f)_g|^2
+\]
+Choose a holomorphic coordinate \( x,y \) centered at \( P \), one has, with computation:
+\[ 
+q(f)_g = \left(\left|\frac{\partial f}{\partial x}\right|^2_g - \left|\frac{\partial f}{\partial y}\right|^2_g - 2i
+\langle \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \rangle_g\right)
+dz\otimes dz\]
+hence
+\[
+\frac{1}{4}\left|q(f)_g\right|^2 = (f^\alpha_x f^\beta_x g_{\alpha\beta} - f^\alpha_y f^\beta_y
+g_{\alpha\beta})^2 + 4(f^\alpha_xf^\beta_y g_{\alpha\beta})^2
+\]
+</p>
+
+<p>
+Moreover
+\[
+ \tr_h(f^*g) = f^\alpha_x f^\beta_x g_{\alpha\beta} + f^\alpha_y f^\beta_y g_{\alpha\beta}  
+\]
+and
+\[
+ {\rm det}_h(f^*g) = f^\alpha_x f^\beta_x g_{\alpha\beta}f^\gamma_yf^\delta_y
+g_{\gamma\delta}-f^\alpha_x f^\beta_y g_{\alpha\beta}f^\gamma_xf^\delta_y g_{\gamma\delta}
+\]
+The result follows.
+</p>
+
+</div>
+</div>
+</div>
+
+
 <div id="outline-container-org9f31ee3" class="outline-2">
 <h2 id="org9f31ee3">Log term in energy: half-sphere in \( \mathbb{H}^3 \).</h2>
 <div class="outline-text-2" id="text-org9f31ee3">
@@ -378,9 +463,45 @@ one sees that
 </p>
 
 </div>
-</div>
-</div>
 
+<p>
+Let us reuse the formula
+\[
+ E_\epsilon(f) = \int_{x\geq \epsilon} \frac{8}{\sqrt{1-A^2}} \frac{s}{(1-s^2)^2}dsd\theta
+ = 8\pi\int_{z\geq z_{\min}} \frac{1}{B(z)} \frac{1}{z^2}dz
+\]
+where \( z = 1-s^2 \) running from \( z_{\min} = \frac{2\epsilon}{1+\epsilon} \) to \( 1
+\) and \( B = \sqrt{1-A^2} \).
+</p>
+
+<p>
+Let us assume that 
+</p>
+<ul class="org-ul">
+<li>\( A \) is at least \( C^1 \) on \( z = 1-s^2 \),</li>
+<li>\( A \) tends to \( 0 \) near the boundary circle, i.e. when \( z\to 0 \),</li>
+</ul>
+<p>
+The second assumption is equivalent to \( B(z=0) = 1 \) and the first assumption at \( z=0
+\) (given that the second holds) is equivalent to \( B'(z=0) = 0 \). So \( B = 1 + az^2 + O(z^3) \) 
+</p>
+
+<p>
+Trying to integrate \( \frac{1}{z^2 (z-a)(z-b)(z-c)} \) when \( abc=1 \) and \( ab+bc+ca=0
+\), one sees that there is no \( \ln z \) term (there may be \( \ln(z+\omega) \) with \(
+\omega\ne 0 \) term though).
+</p>
+
+<div id="rem:cond-A-bndry" class="remark">
+<p>
+So an appropriate condition to add (so that there is no \( \ln\epsilon \) term in the
+energy) is that \( A\to 0 \) near the boundary circle, meaning that \( f \) is 
+conformal at the boundary.
+</p>
+
+</div>
+</div>
+</div>
 
 
 
@@ -603,7 +724,7 @@ also in this period that I start this blog. The memoire can be founded here [<a 
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien.<br>
-Last updated 2018-09-19 Wed 19:14. <br>
+Last updated 2018-09-21 Fri 02:34. <br>
 </div>
 </div>
 </body>
