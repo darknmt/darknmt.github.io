@@ -44,6 +44,8 @@
 #+LATEX_HEADER:    \newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
 #+LATEX_HEADER:    \newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
 #+LATEX_HEADER:    \newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
+#+LATEX_HEADER:    \newcommand{\Enorm}{\mathop{\mathcal{E}_{\rm norm}}\nolimits}
+#+LATEX_HEADER:    \newcommand{\Anorm}{\mathop{\mathcal{A}_{\rm norm}}\nolimits}
 
 
 #+LATEX_HEADER: \newcommand\restr[2]{{% we make the whole thing an ordinary symbol

@@ -24,5 +24,7 @@ For example ~/html/sheaf-cohomology.html~ should become ~/pdf/sheaf-cohomology.p
 \newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
 \newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
 \newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
+\newcommand{\Enorm}{\mathop{\mathcal{E}_{\rm norm}}\nolimits}
+\newcommand{\Anorm}{\mathop{\mathcal{A}_{\rm norm}}\nolimits}
 \)
 #+END_EXPORT

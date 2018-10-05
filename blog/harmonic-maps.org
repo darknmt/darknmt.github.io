@@ -447,9 +447,8 @@ geodesics of \( M' \)
 #+END_lemma
 #+BEGIN_proof
 One has
-\begin{equation}
-\label{eq:second-fund-form}
 \begin{align*}
+\label{eq:second-fund-form}
 \langle \tilde\nabla_i\xi_\sigma, f_* e_j\rangle &= \langle\xi_\sigma, \tilde\nabla_i (f_* e_j)\rangle
 				      		  = \langle \xi_\sigma,\tilde\nabla_i(f^\gamma_l dx^l\otimes \tilde e_\gamma) e_j + f_* \nabla_i e_j \rangle\\
 						  &= \langle \xi_\sigma, (f^\gamma_{il} dx^l\tilde e_\gamma + f^\gamma_l dx^l \tilde\nabla_i\tilde e_\gamma) e_j \rangle\\
@@ -457,14 +456,12 @@ One has
 						   = \left\langle \xi_\sigma,  \left(f^\gamma_{ij} + \Gamma'^\gamma_{\alpha\beta} f^\alpha_i f^\beta_j \right)\tilde e_\gamma \right\rangle \\ 
 						  &= \langle\xi_\sigma,\tilde\nabla_i(f_*).e_j \rangle = \langle \xi_\sigma,\beta(f)_{ij} \rangle
 \end{align*}   
-\end{equation}
 where we used \( \xi_\sigma \perp f_* e_j \) in the first line and \( \xi_\sigma
 \perp f_*([e_i, e_j]) \) in the second line. Hence \( \sff_{ij} \equiv -\beta(f)_{ij} \)
 modulo an element in \( TM \). It remains to see that
 \( \beta(f)_{ij}\perp M \) in order to conclude \( \sff = -\beta(f) \). By definition, one has
 \( \beta(f)_{ij} =
 \tilde \nabla_i (f_*). e_j \) and
-\begin{equation*}
 \begin{align*}
 \langle \beta(f)_{ij}, f_* e_k \rangle &= \langle\tilde \nabla_i (f_*). e_j, f_* e_k
 \rangle = \tilde\nabla_i \langle f_* e_j, f_* e_k \rangle - \langle  \nabla_i e_j, e_k \rangle -
@@ -472,7 +469,6 @@ modulo an element in \( TM \). It remains to see that
 &= \nabla_i \langle e_j,e_k \rangle - \langle
 \nabla_i e_j, e_k \rangle -\langle \beta(f)_{ik}, f_* e_j \rangle - \langle e_j, \nabla_i e_k \rangle\\ &= -\langle \beta(f)_{ik}, f_* e_j \rangle
 \end{align*}   
-\end{equation*}
 Then using the symmetric of \( \beta(f)_{ij} \), one has \( \langle \beta(f)_{ij}, f_* e_k
 \rangle=0 \).
 

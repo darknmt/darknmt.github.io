@@ -2,10 +2,147 @@
 #+SETUPFILE: ../res/mathsetup.org
 #+INCLUDE: ../res/include.org
 
-#+OPTIONS: toc:1 num:nil
-# [[file:../img/ly-ngu-vong-nguyet.jpg]]
 
-* Existence and invariance by special bdf of the renormalised energy.
+* Another formula for \( \Enorm\). Harmonic maps are critical points of \( \Enorm \) when \( |q(f)_g| \) vanishes on \( \partial \Sigma \).
+** Review of Alexakis--Mazzeo. Another formula of \( \Enorm \)
+Alexakis and Mazzeo obtained a formula for renormalised area \( \Anorm \) by rewriting 
+\[
+ A_\epsilon = \int_{\Sigma_\epsilon}1 dA = \int_{\Sigma_\epsilon}(1 + K)dA - \int_{\Sigma_\epsilon}KdA
+\]
+where \( K \) is the Gauss curvature of the restriction of the metric \( g \) on \( \Sigma
+\). They then 
+- use Gauss--Codazzi formula and Einstein equation to rewrite \( 1+K \) in term of
+  second fundamental form to prove that \( \int_{\Sigma_\epsilon}(1+K)dA \) converges to a
+  finite limit as \( \epsilon\to 0 \)
+- use Gauss--Bonnet formula to rewrite \( \int_{\Sigma_\epsilon}KdA = 2\pi\chi -
+  \int_{\partial\Sigma_\epsilon}\kappa ds \)  where \( \chi \) is Euler characteristic of
+  \( \Sigma \) and \( \kappa \) is the geodesic curvature of the boundary curve \(
+  \partial\Sigma_{\epsilon} \) w.r.t the surface \( \Sigma_\epsilon \). Then prove that
+  the integral \(
+  \int_{\partial\Sigma_\epsilon}\kappa ds = \frac{{\rm
+  length}(\partial\Sigma_\epsilon)}{\epsilon} + O(\epsilon) \)
+Therefore \( \Anorm \) can be expressed as
+\[
+ \Anorm = -2\pi\chi + \lim_{\epsilon\to 0}(A_\epsilon + K_\epsilon) = -2\pi\chi+ \int_{\Sigma}(1+K)dA
+\]
+where \( K_\epsilon = \int_{\Sigma_\epsilon}KdA \).
+
+
+We [[ref:existence-enorm][proved]] that \( E_\epsilon - 2A_\epsilon \) has a finite limit as \( \epsilon\to 0 \),
+i.e. \( \Enorm -2 \Anorm = \lim_{\epsilon\to 0} (E_\epsilon - 2A_\epsilon) \)
+so \( \Enorm = -4\pi\chi + \lim_{\epsilon\to 0}(E_\epsilon + 2K_\epsilon) \), or
+\begin{equation}
+\label{eq:enorm-simple}
+ \Enorm = -4\pi\chi + \int_\Sigma \left[ 2K(f^*g)\sqrt{{\rm det}_h f^*g} + \tr_h f^*g \right] dA_h
+\end{equation}
+where \( h \) is the metric on \( \Sigma \), \( g \) is the AH metric on \( M \), \( K(f^*g) \)
+is the Gauss curvature of \( (\Sigma, f^*g) \)
+
+#+BEGIN_remark
+The expression eqref:eq:enorm-simple does not make it obvious that \( \Enorm \) is
+finite. It is however simpler and it allows us to see that \( \Enorm \) only depends on \( f^* g \), the
+restriction of \( g \) on the surface, and not the entire metric \( g \).
+#+END_remark
+
+
+
+** Eells--Sampson with boundary
+Eells and Sampson proved that the variation of energy \( E = \int_{\Sigma}|df|^2 \) of a
+map \( f: (\Sigma,h) \longrightarrow (M,g) \) between Riemannian manifolds without
+boundary is given by
+\[
+ \frac{d}{dt}E(f_t) = -\int_\Sigma \left\langle \tau(f_0), \frac{df_t}{dt} \right\rangle_g dV_h
+\]
+where they applied Stokes' formula once in their computation. 
+
+In case of manifold with
+boundary, the variation of \( E \) should be given by
+\[
+ \frac{d}{dt}E(f_t) = -\int_{\Sigma} \left\langle \tau(f_0),\frac{d f_t}{dt}\right
+\rangle_g dV_h + 2\int_{\partial\Sigma} \left\langle \frac{\partial f}{\partial n} , \frac{d
+f_t}{dt} \right\rangle_g dA_h
+\]
+
+In our case, if \( \{f_t\} \) is a perturbation of \( f_0: (\Sigma,h) \longrightarrow
+(M,g) \) with the same boundary curve \( \restr{f_t}{\partial\Sigma} \), but not
+necessarily of compact support, one has
+\begin{equation}
+\label{eq:eells-sampson-bndry}
+\frac{d E_\epsilon(f_t)}{dt} = \int_{\Sigma_\epsilon} \left \langle\tau(f_0), \frac{d
+f_t}{dt} \right \rangle_g dA_h + 2\int_{\partial\Sigma_\epsilon(f_0)} \left\langle
+\frac{\partial f_0}{\partial n}, \frac{d f_t}{dt}\right \rangle_g ds_h
+\end{equation}
+where \( n \) is the outward \( h \)-normal vector of \( \partial\Sigma_\epsilon \) in \(
+\Sigma_\epsilon \).
+
+In case of compact perturbation, the boundary term vanishes when \( \epsilon \) is
+sufficiently small, it follows that if \( f_0 \) is a critical point of \( \Enorm \) then
+\( f_0 \) is harmonic.
+
+** Critical points of \( \mathcal{E}_{\text norm} \)
+We will prove, modulo a justification to pass the limit inside an integral, that if we
+restrict to perturbations \( \{f_t\} \) with vanishing quadratic differential \( q(f_t)_g = 0
+\) (the stronger vanishing condition) then \( f_0 \) is a critical point of \( \Enorm \)
+if and only if it is harmonic. In fact we will prove that
+
+\begin{equation}
+\label{eq:var-Eep}
+ \frac{d E_\epsilon(f_t)}{dt} = \int_{\Sigma_\epsilon} \left
+ \langle \tau(f_0),\frac{df_t}{dt} \right \rangle_g dA_h
+\end{equation}
+
+for any admissible perturbation \( \{f_t\} \). 
+
+Since \( \Enorm = E_\epsilon
+ -\frac{l}{\epsilon} + O(\epsilon) \) where \( l \) is the length of the boundary curve,
+ by interchanging the limit and integral sign, one sees that \( \frac{d}{dt}\Enorm (f_0) = \lim_{\epsilon\to 0}
+ \frac{d}{dt}E_\epsilon(f_0) \), hence any harmonic map is a critical point of \( \Enorm
+ \).
+
+#+BEGIN_remark
+It follows from the development in our toy model (see the next paragraph) that \( |\frac{df_t}{dt}|_g =
+O(\epsilon^2)O(\epsilon^{-1}) = O(\epsilon) \). Let us suppose that \( h  = f^*g \) (since \( E_\epsilon \) is a conformal invariance with respect to \( h \) and the
+quadratic differential vanishes near the boundary), then Alexakis--Mazzeo proved that
+\( |\tau(f_0)|_g = O(\epsilon) \). Therefore \( \left
+ \langle \tau(f_0),\frac{df_t}{dt} \right \rangle_g dA_h = O(1)  \) and the integral on
+RHS of eqref:eq:var-Eep is finite.
+#+END_remark
+
+#+BEGIN_proof
+By eqref:eq:eells-sampson-bndry, we only need to prove that the boundary integral tends to
+0 as \( \epsilon \to 0 \). Let us prove this in our toy model \( f_t: \mathbb{H}^2
+\longrightarrow \mathbb{H^k} \) where \( \mathbb{H}^2 \) is coordinated by \( (u,s)\in
+\mathbb{R}_{\geq 0}\times \mathbb{R} \)
+and \( \mathbb{H^k} \) is coordinated by \( (x,y^i)\in \mathbb{R}_{\geq 0}\times
+\mathbb{R}^{k-1} \). Suppose that \( f_t \) are given by
+\[
+ x = au +bu^2 +\dots,\qquad y^i = \gamma^i + W^iu^2 + \dots
+\]
+where \( b, W^i \) depend on \( t \), \( \gamma^i \) and \( a \) do not depend on \( t \)
+because we fixed the boundary curve \( \gamma \) and \( \restr{q(f)_{\bar g}}{\partial
+\mathbb{H}^2}=0 \) (the weaker vanishing condition) implies \( a^2 = |\dot\gamma|^2 \). It
+follows that \( \frac{df_t}{dt} = u^2 (b_t \frac{\partial}{\partial x} + W^i_t
+\frac{\partial}{\partial y^i}) + O(u^3) \).
+
+It is also straightforward to check that \( \frac{\partial f}{\partial n} = a
+\frac{\partial}{\partial x}+ O(u) \). Therefore 
+\[
+ \left \langle \frac{\partial f}{\partial n}, \frac{df_t}{dt} \right \rangle_g = b_t a
+O(1) + O(u)
+\]
+
+The stronger vanishing condition \( \restr{q(f)_g}{\partial \mathbb{H}^2} \) implies \(
+b=0 \) for all admissible \( \{f_t\} \), one has \( b_t=0 \) and therefore \(  \left
+\langle \frac{\partial f}{\partial n}, \frac{df_t}{dt} \right \rangle_g= O(u) \). It
+follows that the boundary integral in eqref:eq:eells-sampson-bndry tends to \( 0 \) as \(
+\epsilon\to 0 \).
+
+#+END_proof
+
+
+
+
+* Existence and invariance by special bdf of the renormalised energy. label:existence-enorm
 
 Let \( f: (\Sigma, \partial\Sigma) \longrightarrow  (M,\partial M) \) be smooth map
 from a Riemann surface to an asymptotically hyperbolic manifold \( M \). Let \( r \) be a
@@ -36,7 +173,7 @@ independent of the special bdf \( r \).
 #+END_proposition
 
 We remark that the two integrals only depend on the conformal class of \( h \) and the
-determinators are sums of densities of energy and area of \( f \) under \( \bar g \) and \(
+denominators are sums of densities of energy and area of \( f \) under \( \bar g \) and \(
 g \) respectively.
 
 #+BEGIN_proof
