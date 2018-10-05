@@ -3,7 +3,7 @@
 #+INCLUDE: ../res/include.org
 
 
-* Another formula for \( \Enorm\). Harmonic maps are critical points of \( \Enorm \) when \( |q(f)_g| \) vanishes on \( \partial \Sigma \).
+* Another formula for \( \Enorm\). Harmonic maps are critical points of \( \Enorm \) in case of stronger vanishing condition.
 ** Review of Alexakis--Mazzeo. Another formula of \( \Enorm \)
 Alexakis and Mazzeo obtained a formula for renormalised area \( \Anorm \) by rewriting 
 \[
@@ -51,14 +51,14 @@ Eells and Sampson proved that the variation of energy \( E = \int_{\Sigma}|df|^2
 map \( f: (\Sigma,h) \longrightarrow (M,g) \) between Riemannian manifolds without
 boundary is given by
 \[
- \frac{d}{dt}E(f_t) = -\int_\Sigma \left\langle \tau(f_0), \frac{df_t}{dt} \right\rangle_g dV_h
+ \frac{d}{dt}E(f_t) = \int_\Sigma \left\langle \tau(f_0), \frac{df_t}{dt} \right\rangle_g dV_h
 \]
 where they applied Stokes' formula once in their computation. 
 
 In case of manifold with
 boundary, the variation of \( E \) should be given by
 \[
- \frac{d}{dt}E(f_t) = -\int_{\Sigma} \left\langle \tau(f_0),\frac{d f_t}{dt}\right
+ \frac{d}{dt}E(f_t) = \int_{\Sigma} \left\langle \tau(f_0),\frac{d f_t}{dt}\right
 \rangle_g dV_h + 2\int_{\partial\Sigma} \left\langle \frac{\partial f}{\partial n} , \frac{d
 f_t}{dt} \right\rangle_g dA_h
 \]

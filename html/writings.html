@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-10-05 Fri 19:22 -->
+<!-- 2018-10-05 Fri 19:28 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -259,7 +259,7 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd11abe7">1. Another formula for \( \Enorm\). Harmonic maps are critical points of \( \Enorm \) when \( |q(f)_g| \) vanishes on \( \partial \Sigma \).</a>
+<li><a href="#orgb30928f">1. Another formula for \( \Enorm\). Harmonic maps are critical points of \( \Enorm \) in case of stronger vanishing condition.</a>
 <ul>
 <li><a href="#orgff378a1">1.1. Review of Alexakis&#x2013;Mazzeo. Another formula of \( \Enorm \)</a></li>
 <li><a href="#org93fcd48">1.2. Eells&#x2013;Sampson with boundary</a></li>
@@ -311,8 +311,8 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \)
 
 
-<div id="outline-container-orgd11abe7" class="outline-2">
-<h2 id="orgd11abe7"><span class="section-number-2">1</span> Another formula for \( \Enorm\). Harmonic maps are critical points of \( \Enorm \) when \( |q(f)_g| \) vanishes on \( \partial \Sigma \).</h2>
+<div id="outline-container-orgb30928f" class="outline-2">
+<h2 id="orgb30928f"><span class="section-number-2">1</span> Another formula for \( \Enorm\). Harmonic maps are critical points of \( \Enorm \) in case of stronger vanishing condition.</h2>
 <div class="outline-text-2" id="text-1">
 </div><div id="outline-container-orgff378a1" class="outline-3">
 <h3 id="orgff378a1"><span class="section-number-3">1.1</span> Review of Alexakis&#x2013;Mazzeo. Another formula of \( \Enorm \)</h3>
@@ -381,7 +381,7 @@ Eells and Sampson proved that the variation of energy \( E = \int_{\Sigma}|df|^2
 map \( f: (\Sigma,h) \longrightarrow (M,g) \) between Riemannian manifolds without
 boundary is given by
 \[
- \frac{d}{dt}E(f_t) = -\int_\Sigma \left\langle \tau(f_0), \frac{df_t}{dt} \right\rangle_g dV_h
+ \frac{d}{dt}E(f_t) = \int_\Sigma \left\langle \tau(f_0), \frac{df_t}{dt} \right\rangle_g dV_h
 \]
 where they applied Stokes' formula once in their computation. 
 </p>
@@ -390,7 +390,7 @@ where they applied Stokes' formula once in their computation.
 In case of manifold with
 boundary, the variation of \( E \) should be given by
 \[
- \frac{d}{dt}E(f_t) = -\int_{\Sigma} \left\langle \tau(f_0),\frac{d f_t}{dt}\right
+ \frac{d}{dt}E(f_t) = \int_{\Sigma} \left\langle \tau(f_0),\frac{d f_t}{dt}\right
 \rangle_g dV_h + 2\int_{\partial\Sigma} \left\langle \frac{\partial f}{\partial n} , \frac{d
 f_t}{dt} \right\rangle_g dA_h
 \]
@@ -963,7 +963,7 @@ also in this period that I start this blog. The memoire can be founded here [<a 
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien.<br>
-Last updated 2018-10-05 Fri 19:22. <br>
+Last updated 2018-10-05 Fri 19:28. <br>
 </div>
 </div>
 </body>
