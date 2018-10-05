@@ -3,7 +3,7 @@
 #+INCLUDE: ../res/include.org
 
 
-* Another formula for \( \Enorm\). Harmonic maps are critical points of \( \Enorm \) in case of stronger vanishing condition.
+* Another formula for \( \Enorm\). Harmonic maps are critical points of \( \Enorm \) under stronger vanishing condition.
 ** Review of Alexakis--Mazzeo. Another formula of \( \Enorm \)
 Alexakis and Mazzeo obtained a formula for renormalised area \( \Anorm \) by rewriting 
 \[
