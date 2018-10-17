@@ -3,7 +3,7 @@
 #+INCLUDE: ../res/include.org
 
 
-* Another formula for \( \Enorm\). Harmonic maps are critical points of \( \Enorm \) under stronger vanishing condition.
+* Another formula for \( \Enorm\). Harmonic maps are critical points of \( \Enorm \) under stronger vanishing condition. :noexport: 
 ** Review of Alexakis--Mazzeo. Another formula of \( \Enorm \)
 Alexakis and Mazzeo obtained a formula for renormalised area \( \Anorm \) by rewriting 
 \[
@@ -142,7 +142,7 @@ follows that the boundary integral in eqref:eq:eells-sampson-bndry tends to \( 0
 
 
 
-* Existence and invariance by special bdf of the renormalised energy. label:existence-enorm
+* Existence and invariance by special bdf of the renormalised energy.  label:existence-enorm :noexport:
 
 Let \( f: (\Sigma, \partial\Sigma) \longrightarrow  (M,\partial M) \) be smooth map
 from a Riemann surface to an asymptotically hyperbolic manifold \( M \). Let \( r \) be a
@@ -231,7 +231,7 @@ E_{\rm norm} \) is harmonic.
 
 
 
-* Log term in energy: half-sphere in \( \mathbb{H}^3 \).
+* Log term in energy: half-sphere in \( \mathbb{H}^3 \). :noexport:
 The following example concerns a compact surface (a half-sphere) in \( \mathbb{H}^3 \) (so
 there is no subtlety of its boundary in Poincaré's \( \mathbb{H}^3 \) or
 \(\mathbb{D}^3\)).
@@ -326,7 +326,7 @@ conformal at the boundary.
 
 
 
-* Log term in energy of \( f: \overline{\mathbb{H}^2} \longrightarrow \overline{\mathbb{H}^{n+1}} \).
+* Log term in energy of \( f: \overline{\mathbb{H}^2} \longrightarrow \overline{\mathbb{H}^{n+1}} \). :noexport:
 Let \(\mathbb{H}^2 \) be coordinated by \( (t,s) \) with \( t>0,s\in \mathbb{R} \) and \( \mathbb{H}^{n+1} \) be cordinated by \( x> 0, y^1,\dots, y^n\in \mathbb{R} \).
 
 Define \( f: \overline{\mathbb{H}^2} \longrightarrow \overline{\mathbb{H}^{n+1}} \) by
@@ -381,6 +381,9 @@ Poincaré disk" transform is only smooth and diffeomorphic in the interior. The 
 #+END_remark
 
 
+
+
+#+END_COMMENT
 
 
 * Commutative diagram revisited
