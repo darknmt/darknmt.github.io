@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-10-10 Wed 23:01 -->
+<!-- 2018-11-28 Wed 01:28 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -227,6 +227,20 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path["Extra"] = "https://darknmt.github.io/res/XyJax/extensions/TeX";MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    "HTML-CSS": {
+      styles: {".MathJax_Preview": {visibility: "hidden"}}
+    },
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+    TeX: {equationNumbers: {  autoNumber: "AMS"  }, extensions: ["[Extra]/xypic.js", "AMSmath.js","AMSsymbols.js"]}
+    //                  ^^^^^^^^load xypic.js
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js"></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -245,7 +259,7 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3704448">1. Commutative diagram revisited</a>
+<li><a href="#org0a551fb">1. Commutative diagram in \( \TeX \) revisited</a>
 <ul>
 <li><a href="#org7f2b65b">1.1. xypic and xyJax</a></li>
 </ul>
@@ -256,14 +270,6 @@ for the JavaScript code in this tag.
 <li><a href="#org5aa26c3">5. My 2016-2017 internship <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-07-31 Mon&gt;</span></span></a></li>
 </ul>
 </div>
-</div>
-<div class="info">
-<p>
-The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
-<code>pdf</code>. 
-For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
-</p>
-
 </div>
 \(
 \newcommand{\re}{\mathop{\rm Re}\nolimits}
@@ -287,8 +293,8 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \)
 
 
-<div id="outline-container-org3704448" class="outline-2">
-<h2 id="org3704448"><span class="section-number-2">1</span> Commutative diagram revisited</h2>
+<div id="outline-container-org0a551fb" class="outline-2">
+<h2 id="org0a551fb"><span class="section-number-2">1</span> Commutative diagram in \( \TeX \) revisited</h2>
 <div class="outline-text-2" id="text-1">
 </div><div id="outline-container-org7f2b65b" class="outline-3">
 <h3 id="org7f2b65b"><span class="section-number-3">1.1</span> xypic and xyJax</h3>
@@ -425,13 +431,21 @@ For a decent map of Mathematics, made by a mathematician, see <a href="http://ww
 I have just recently finished my Stage3A at <a href="https://www.i2m.univ-amu.fr/">Institut de Mathématiques de Marseille</a>. It is
 also in this period that I start this blog. The memoire can be founded here [<a href="../res/Stage2017.pdf">PDF</a>]
 </p>
+
+
+<p>
+
+<h1 class='org-ref-bib-h1'>Bibliography</h1>
+<ul class='org-ref-bib'><li><a id="eells_harmonic_1964">[eells_harmonic_1964] Eells & Sampson, Harmonic Mappings of Riemannian Manifolds, <i>American Journal of Mathematics</i>, <b>86(1)</b>, 109-160 (1964). <a href="http://www.jstor.org/stable/2373037">link</a>. <a href="http://dx.doi.org/10.2307/2373037">doi</a>.</a></li>
+</ul>
+</p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien.<br>
-Last updated 2018-10-10 Wed 23:00. <br>
+Last updated 2018-11-28 Wed 01:28. <br>
 </div>
 </div>
 </body>

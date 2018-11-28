@@ -1,0 +1,234 @@
+% Created 2018-11-19 Mon 10:40
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{amsmath,amscd,amssymb,mathtools}
+\usepackage{tikz-cd}
+\usepackage{svg}
+\usepackage[all]{xy}
+\usepackage{pgfplots}
+\newtheorem{remark}{Remark}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{proposition}{Proposition}[theorem]
+\newtheorem{problem}{Problem}
+\newtheorem{exampl}{Example}
+\newtheorem{definition}{Definition}
+\newtheorem{propdef}[definition]{Proposition-Definition}
+\newtheorem{fact}{Fact}
+\newtheorem{assertion}{Assertion}
+\newcommand{\re}{\mathop{\rm Re}\nolimits}
+\newcommand{\im}{\mathop{\rm Im}\nolimits}
+\newcommand{\coker}{\mathop{\rm coker}\nolimits}
+\newcommand{\supp}{\mathop{\rm supp}\nolimits}
+\newcommand{\ord}{\mathop{\rm ord}\nolimits}
+\newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
+\newcommand{\vol}{\mathop{\rm vol}\nolimits}
+\newcommand*{\transp}[2][-3mu]{\ensuremath{\mskip1mu\prescript{\smash{\mathrm t\mkern#1}}{}{\mathstrut#2}}}
+\newcommand{\sff}{\mathop{\rm I\*I}\nolimits}
+\newcommand{\tr}{\mathop{\rm Tr}\nolimits}
+\newcommand{\const}{\mathop{\rm const }\nolimits}
+\newcommand{\lcm}{\mathop{\rm lcm}\nolimits}
+\newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
+\newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
+\newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
+\newcommand{\Enorm}{\mathop{\mathcal{E}_{\rm norm}}\nolimits}
+\newcommand{\Anorm}{\mathop{\mathcal{A}_{\rm norm}}\nolimits}
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+\left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+#1 % the function
+\vphantom{\big|} % pretend it's a little taller at normal size
+\right|_{#2} % this is the delimiter
+}}
+\author{Tien}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={Tien},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.1 (Org mode 9.0.5)}, 
+ pdflang={English}}
+\begin{document}
+
+\tableofcontents
+
+
+\section{First variation of renormalised energy. \textit{<2018-10-26 Fri>}}
+\label{sec:org3eec4ba}
+\subsection{The results.}
+\label{sec:orgfcf699d}
+
+I will start by writing down the result before giving the proofs. Let \((\Sigma,i)\)
+be a Riemann surface and \((M,g)\) be an asymptotically hyperbolic Riemannian
+four-manifold. We are interested in critical points of renormalised energy \(\Enorm\)
+because these maps form a special class among harmonic maps whose energy is critical to all
+pertubation (and not just compact pertubation).
+
+Even though we obtained an explicit formula for renormalised energy where a density appears
+\[
+  \Enorm = -4\pi\chi + \int_\Sigma \left[ 2K(f^*g)\sqrt{{\rm det}_h f^*g} + \tr_h f^*g \right] dA_h,
+  \]
+it is not easy to compute its variation directly from it. The following
+approach gives us a formula that although is not explicit, allows us to see the
+following phenomenon.
+\begin{theorem}[Critical points of \(\Enorm\) = Harmonic + good germ on the boundary]
+\label{thm:crit-Enorm-bndry-germ}
+Let \(f: (\Sigma,i) \longrightarrow (M,g)\) be a harmonic map from a Riemann surface \(\Sigma\) to
+a AH Riemannian four-manifold \(M\) such that \(q(f)_{\bar g} = 0\) on \(\partial\Sigma\). There is a boundary quantity \(\mathcal{B}_2(f)\) that only concerns the germ of \(f\) on \(\partial\Sigma\) such that:
+\begin{center}
+\(f\) is critical to \(\Enorm\) if and only if \(\mathcal{B}_2(f) = 0\).
+\end{center}
+\end{theorem}
+
+We know that the \(\epsilon\)-energy must be writen as
+\[
+   E_\epsilon (f) = \frac{1}{\epsilon} {\rm length}(\gamma) + \Enorm + O(\epsilon)
+  \]
+where \(\gamma\) is the boundary curve of \(f\) and the length is taken under the
+metric \(\bar g\). Now given a pertubation \(\{f_t\}\) of \(f_0\), we can recover
+the variation of \(\Enorm\) by looking at the \(O(1)\) term of \(\frac{dE_\epsilon}{dt}(f_t)\). It turns out that in order to compute the variation of
+\(E_\epsilon\), we only need to do the following 2 tasks:
+\begin{itemize}
+\item Extend the computation made by Eells-Sampson \cite{eells_harmonic_1964} to manifold with boundary.
+\item Take care of the variation of the domain of integration \(\Sigma_\epsilon(f_t):=
+    f_t^{-1}(r\geq\epsilon)\) which also depends on \(t\) where \(r\) is the boundary
+defining function (bdf).
+\end{itemize}
+
+\begin{proposition}[Variation of \( E_\epsilon \)]
+\label{prop:var-Eeps}
+For any pertubation \(\{f_t\}\) of \(f: (\Sigma,\partial\Sigma,i) \longrightarrow (M,\partial M,g)\), one has
+\begin{equation}
+\label{eq:var-Eeps}
+\frac{d}{dt}E_\epsilon(f_t) = \int_{\Sigma_\epsilon(f_0)} \left\langle \tau(f_0), \frac{df_t}{dt} \right\rangle_g dV_h + \frac{1}{\epsilon^2}\int_{\partial\Sigma_\epsilon(f_0)}\left \langle 2 \frac{\partial f_0}{\partial n} + \frac{\nabla^g r(f_0)}{|d(r\circ f_0|_h}  , \frac{df_t}{dt}\right \rangle_{\bar g} ds_h  
+\end{equation}
+where 
+\begin{itemize}
+\item \(h\) is a metric in the conformal class \(i\) of \(\Sigma\),
+\item \(\frac{\partial}{\partial n}\) is the \(h\)-unit normal vector of \(\partial\Sigma_\epsilon(f_0)\) in \(\Sigma_\epsilon(f_0)\),
+\item \(\tau(f_0)\) is the tension field of \(f_0\) with respect to the metric \(h\)
+on \(\Sigma\) and \(g\) on \(M\).
+\end{itemize}
+Denote \(\mathcal{B} := \int_{\partial\Sigma_\epsilon(f_0)}\left
+  \langle 2 \frac{\partial f_0}{\partial n} + \frac{\nabla^g r(f_0)}{|d(r\circ f_0|_h}  ,
+  \frac{df_t}{dt}\right \rangle_{\bar g} ds_h =: \mathcal{B}_0 + \mathcal{B}_1 \epsilon +
+  \mathcal{B}_2 \epsilon^2 + O(\epsilon^3)\) then 
+\begin{itemize}
+\item \(\mathcal{B}_i\) only depends on the germ of \(f_0\) on \(\partial\Sigma\)
+\item \(\mathcal{B}_0 = 2\int_{\partial\Sigma}\left \langle \frac{\partial f_0}{\partial n} +
+     \frac{\nabla^{\bar g}r(f_0)}{|\nabla^{\bar g}r(f_0)|_{\bar g}}, \frac{df_t}{dt}\right
+     \rangle_{\bar g} ds_h = 0\) where \(n\) is the \(f^* \bar g\)-normal vector of \(\Sigma\) on
+the boundary.
+\end{itemize}
+\end{proposition}
+
+As a straightforward consequence, one has
+\begin{proposition}[]
+\label{prop:}
+Given a map \(f: (\Sigma, \partial\Sigma, i) \longrightarrow (M, \partial M, g)\), then:
+\begin{enumerate}
+\item \(f_0\) is harmonic and \(\mathcal{B}_2(f_0) = 0\) if and only if \(f_0\) is a
+critical point of \(\Enorm\).
+\item The first variation of \(\Enorm\) can be writen as:
+\begin{align*}
+\frac{d \Enorm}{dt}(f_t) &= \int_{\Sigma} \left\langle \tau(f_0),
+\frac{df_t}{dt} \right\rangle_g dV_h  \\ &+
+\lim_{\epsilon\to 0} \frac{1}{\epsilon^2} \left
+[\int_{\partial\Sigma_\epsilon(f_0)}\left \langle 2
+\frac{\partial f_0}{\partial n} + \frac{\nabla^g r(f_0)}{|d(r\circ f_0|_h}  ,
+\frac{df_t}{dt}\right \rangle_{\bar g} ds_h +  \int_{\Sigma_\epsilon(f_0)} \left
+\langle \nabla^{\bar g}_{\dot\gamma} \frac{\dot\gamma}{|\dot\gamma|_h} ,
+\frac{df_t}{dt}\right \rangle_{\bar g}\right]      
+\end{align*}
+
+where \(\gamma\) is the boundary curve of \(f\), \(\frac{\partial}{\partial n}\) is the \(h\)-unit normal vector of \(\partial\Sigma_\epsilon\) in \(\Sigma_\epsilon\).
+\end{enumerate}
+\end{proposition}
+
+
+\subsection{Proofs.}
+\label{sec:org4f7be82}
+We \ref{Eells-Sampson-bndry} knew that the variation of energy functional can be represented by the tension field, in
+case of manifolds with boundary, we obtain an additional term from Stokes formula: 
+\begin{align}
+   \frac{d}{dt}E_\epsilon(f_t) &= \frac{d}{dt}\int_{\Sigma_\epsilon(f_0)} \tr_h (f_t^* g) +   \frac{d}{dt}\int_{\Sigma_\epsilon(f_t)} \tr_h (f_0^*g)\\
+      			       &= \int_{\Sigma_\epsilon(f_0)} \left \langle \tau(f_0), \frac{df_t}{dt} \right \rangle_g dV_h + 2\int_{\partial\Sigma_\epsilon(f_0)} \left \langle \frac{\partial f_0}{\partial n}, \frac{df_t}{dt}\right \rangle_g + \frac{d}{dt} \int_{\Sigma_\epsilon(f_t)} \tr_h( f_0^* g) dV_h
+\end{align}
+Equation \eqref{eq:var-Eeps} is a straightforward application of the
+following lemma for \(\Omega_t = \Sigma_\epsilon(f_t)\), \(F=\tr_h(f_0^* g)\) and \(r_t = r\circ f_t\).
+
+\begin{lemma}[Riemannian Cavalieri]
+\label{lem:var-domain}
+Let \(\Omega\) be a domain in \(\Sigma\) and  \(\{r_t\}_{t=\overline{0,1}}\) be a familly of functions on \(\Omega\) where \(dr_t\) are non-zero and \(\Omega_t\subset \Omega\) be subdomains of \(\Omega\) defined by \(\Omega_t =
+   \{r_t \geq \epsilon\}\). Then for any function \(F\) on \(\Omega\), one has
+\[
+   \restr{\frac{d}{dt}}{t=0}\int_{\Omega_t}F dV_h = \int_{\partial\Omega_0}
+   \frac{r_1}{|\nabla^h r_0|_h}F ds_h
+   \]
+where \(r_1 = \restr{\frac{dr_t}{dt}}{t=0}\).
+\end{lemma}
+
+
+\begin{proof}
+Let us prove the lemma in case \(\Omega_t\) only has one connected component with
+non-empty interior, since
+the number of such components does not change for \(t\) near 0 (this is because
+\(r_0\) has no critical point in \(\Omega\)). Let
+us also suppose that \(r_1 \geq 0\) meaning that the domain \(\Omega_t\)
+becomes bigger as \(t\) increases from \(0\). This is because one can always
+partition the curve \(\gamma = \partial\Omega_0\) into pieces where \(r_1>0, r_1 <0\) or \(r_1=0\)
+and the area difference of pieces touching the \(r_1=0\) parts is of \(O(t^2)\). 
+
+The difference \(\Omega_t\setminus \Omega_0\) is the region where \(\epsilon -r_1 t+
+   O(t^2)\leq r_0 \leq \epsilon\), therefore \(\Omega_t\setminus \Omega_0\) is of \(O(t^2)\) difference from the region \(\Phi_t = \{ \exp_{\gamma(s)}\frac{\theta r_1\nabla^h
+   r_0}{|\nabla^h r_0|^2}:\theta \in[0,t], s\in[0,1] \}\). Therefore
+\[
+   \restr{\frac{d}{dt}}{t=0}\int_{\Omega_t}F dV_h
+   =\restr{\frac{d}{dt}}{t=0} \int_0^t \int_{\gamma} F \frac{r_1}{|\nabla^h r_0|_h} \text{vol }ds_h d\theta = \int_{\gamma} F\frac{r_1}{|\nabla^h r_0|_h} ds_h .
+   \]
+where \(\frac{r_1}{|\nabla^h r_0|_h}\text{vol}(s,\theta) ds_h d\theta\) is the
+pullback of the volume form by exponential map
+\((s,\theta)\mapsto \exp_{\gamma(s)} \frac{\theta r_1\nabla^h r_0}{|\nabla^h r_0|_h^2}\), so \(\text{vol}(s,0) = 1\).
+\end{proof}
+
+
+
+
+\section{Log term in energy of \(f: \overline{\mathbb{H}^2} \longrightarrow \overline{\mathbb{H}^{n+1}}\).}
+\label{sec:org6b8c471}
+
+
+
+
+\section{Commutative diagram revisited}
+\label{sec:orgc61064e}
+
+\section{\LaTeX{} in Inkscape: Incompatibility between \texttt{ghostscript} and \texttt{pstoedit} \textit{<2018-03-30 Fri>}}
+\label{sec:org9453df4}
+
+\section{\LaTeX{} indentation in org-mode \textit{<2018-02-20 Tue>}}
+\label{sec:org25f6eb5}
+
+\section{A (decent) map of mathematics \textit{<2017-10-17 Tue>}}
+\label{sec:org4446147}
+
+\section{My 2016-2017 internship \textit{<2017-07-31 Mon>}}
+\label{sec:orgd335b8a}
+\end{document}

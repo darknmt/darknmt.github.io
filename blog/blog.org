@@ -1,6 +1,9 @@
 #+TITLE: Welcome to my blog
 #+OPTIONS: toc:1 num:nil
 
+* Thèse 2018
+***** [#A] [[file:twistor-correspondence.org][Minimal surfaces and holomorphic curves]] <2018-10-26 Fri>
+
 
 * Stage 2018
 ***** [#A] [[file:minimal-immersion-S2.org][Minimal immersions of \( \mathbb{S}^2 \)]] <2018-06-24 Sun>

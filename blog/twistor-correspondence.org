@@ -1,0 +1,765 @@
+#+TITLE: Minimal surfaces and holomorphic curves
+#+AUTHOR: Tien NGUYEN MANH
+#+DATE: Oct 26, 2018
+# +STARTUP: indent
+# +STARTUP: showstars
+
+#+SETUPFILE: ../res/mathsetup.org
+#+INCLUDE: ../res/include.org
+
+#+LATEX:\iffalse
+This post is my reading note for cite:eells_twistorial_1985 writen using a more standard
+notation. The goal of their paper is, for a Riemannian four-manifold \( M \), to contruct
+complex six-manifold \( S \) such that minimal surfaces in \( M \) correspond to
+holomorphic curves in \( S_- \). The space \( S \), called *twistor space* of \( M \) is a \( \mathbb{S}_2 \)-bundle over \( M
+\) with fibre at point \( p\in M \) being the set of almost complex structures at \( p
+\) that are compatible with the Riemannian metric.
+#+LATEX:\fi
+
+* Minimal surfaces in \( \mathbb{R}^3 \) and Gauss map.
+
+We will start with the following result of S. S. Chern cite:chern_minimal_1965.
+
+#+ATTR_LATEX: :options [Chern]
+#+ATTR_HTML: :id thm:min-surface-R3 :btit (Chern) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:min-surface-R3}
+Let \( f:\Sigma^2 \hookrightarrow \mathbb{R}^3 \) be a compact oriented surface. The association to each
+point \( p\in \Sigma \) its normal vector at \( p \) gives a map 
+\[
+ \tilde f: \Sigma \longrightarrow \mathbb{S}^2
+\]
+Then \( \Sigma \) is minimal surface if and only if \( \tilde f: (\Sigma,i)
+\longrightarrow (\mathbb{S}^2,J) \) is antiholomorphic, where
+ - \(  i \) is the complex structure given by the conformal class of the induced
+   metric of Euclidean metric from \( \mathbb{R}^3 \),
+ - \( J \)  is the complex structure on \( \mathbb{S}^2 \) given by the diffeomorphism 
+   \begin{align*}
+    \mathbb{S}^2 &\longrightarrow Q_1 = \{z_0^2 + z_1^2 + z_2^2 = 0\}\subset
+   \mathbb{CP}^2\\ 
+   r & \longmapsto [(u_1 + iv_1, u_2+iv_2, u_3+ iv_3)] 
+   \end{align*}
+ where \( (u,v,r) \) form an oriented orthonormal basis of \( \mathbb{R}^3 \).
+#+END_theorem
+
+This result can also be generalised for surface \( \Sigma^2\subset \mathbb{R}^n \) by
+associating to each point \( p\in \Sigma \) its tangent plane \( T_p\Sigma\in  \widetilde {\rm
+Gr}_2(\mathbb{R}^n) \) the space of oriented 2-pane in \mathbb{R}^n \). We can then equip \( \widetilde {\rm
+Gr}_2(\mathbb{R}^n) \) with a complex structure given by the diffeomorphism
+\begin{align*}
+\widetilde {\rm Gr}_2(\mathbb{R}^n) &\longrightarrow Q_{n-2}=\{z_0^2 +\dots + z_{n-1}^2\}\subset \mathbb{CP}^{n-1}\\
+u\wedge v &\longmapsto [u+iv] = [(u_1+iv_1,\dots, u_n+iv_n)]
+\end{align*}
+where \( (u,v) \) forms an oriented orthonormal basis of \( T_p\Sigma \).
+
+The above association \( \tilde f \) is called the *Gauss map* of the surface \( \Sigma
+\).
+
+#+ATTR_HTML: :id rem:compl-inn-prod
+#+BEGIN_remark
+#+LATEX: \label{rem:compl-inn-prod}
+The above definition of \( Q_{n-2} \) suggests that we should complexify an inner product
+\( \langle \cdot , \cdot \rangle \) on a real vector space \( V \) to an inner product \(
+\langle  \cdot,\cdot \rangle_{\mathbb{C}} \) on \( V\otimes \mathbb{C} \) so that the latter is
+symetric, i.e.
+\[
+\langle iu, v \rangle_{\mathbb{C}} = \langle u, iv \rangle_{\mathbb{C}} = i\langle u, v \rangle_{\mathbb{C}}
+\]
+and not \( i \)-antilinear in the second parameter. This way, one has
+\[
+ \left| u+iv \right|^2 = \sum_i (u_i + iv_i)^2 = |u|^2 - |v|^2 + 2i \langle u,v \rangle =
+0 \text{ if \( u,v \) form an orthogonal basis}. 
+\]
+#+END_remark
+
+The correspondence that we will define between minimal surface in a Riemannian four-manifold and a
+holomorphic curve in an almost complex six-manifold is a generalised version of the Gauss
+map, called /Gauss lift/.
+
+
+* Twistor spaces and Gauss lift.
+
+** 2-forms in 4 dimensional geometry
+   Let \( M \) be an oriented four-manifold and \( \vol \) is a volume form on \( M
+   \). Then there is a symmetric bilinear form on \( \Lambda^2 T^*M \) given by the wedge
+   product
+   \begin{align*}
+     \Lambda^2 T^*M &\longrightarrow \mathbb{R}\\
+     (u,v)     	    &\longmapsto \frac{u\wedge v}{\vol}
+   \end{align*}
+   which is of signature (3,3), i.e. the (non-unique) maximal vector subspace on which \(
+   \wedge \) is positive (resp. negative) are of dimension 3.
+
+
+   Fixing a metric \( g \) on \( M \), one can dualise \( \wedge \), i.e. define the Hodge
+   star operator
+   \begin{align*}
+    \ast: \Lambda^2T^*M & \longrightarrow \Lambda^2 T^*M \\
+    v	  		& \longmapsto \ast v \text{ such that } u\wedge \ast v= \langle u, v \rangle \vol_g
+   \end{align*}
+   
+   #+BEGIN_remark
+   1. The inner product \( \langle \cdot , \cdot \rangle \) here is rescaled from the
+      induced metric on \( \Lambda^2 T^*M \) such that \( dx^i\wedge dx^j \) is of norm 1 (and
+      not 2) for
+      all orthonormal \( dx^i,dx^j \).
+   2. The Hodge star (on 2-forms in 4D) is conformal invariant. In fact, if \( g_\theta =
+      e^{2\theta} g\) then \( e^{-4\theta}\langle u, \ast_\theta v \rangle = \langle u,
+      \ast_\theta v \rangle_\theta = e^{-4\theta} \frac{u\wedge v}{\vol_g} = e^{-4\theta}
+      \langle u, \ast v \rangle\). On the other hand, knowing \( \ast \), one can recover
+      the conformal class of \( g \).
+   #+END_remark
+   
+   Since \( \ast \) is auto-adjoint, i.e. \( \langle  u,\ast v \rangle = \frac{u\wedge
+   v}{\vol} = \langle \ast u, v \rangle \), and \( (\ast)^2 = 1 \), its Eigenvalues are \(
+   \pm 1 \) with Eigenspaces \( \Lambda_\pm \) of dimension 3.
+
+   Similarly, one can define the bilinear form \( \wedge \) and the Hodge star \( \ast \)
+   for 2-vectors in \( \Lambda^2 TM \).
+
+   The above constructions are point-wise, so let us consider a 4 dimensional vector space
+   \( V \) that will be in our case the tangent space \( T_xM \) at a point \( x\in M \).
+
+   #+ATTR_HTML: :id rem:null-cone-simple
+   #+BEGIN_remark
+   #+LATEX: \label{rem:null-cone-simple}
+   The null-cone of 2-vectors (resp. 2-vectors) \( u \) such that \( u\wedge u =0 \) is exactly the set of
+   simple 2-vectors (resp. 2-forms). This is because of the standard form of 2-vectors
+   (resp. 2-forms), which in 4D can only be \( e_1\wedge f_1 \) or \( e_1\wedge f_1 +
+   e_2\wedge f_2 \) where \( \{e_i,f_i,i=1,2\} \) form a basis of \( V \). These
+   simple 2-forms represents an *oriented 2 dimensional subspace* of \( V \).
+   #+END_remark
+   
+   Now let \( g  \) be a metric on \( V \), as before we can talk about (anti)-self-dual
+   2-vectors (resp. 2-forms) on \( V \).
+   
+   #+ATTR_HTML: :id rem:complex-str-2-vect
+   #+BEGIN_remark
+   #+LATEX: \label{rem:complex-str-2-vect}
+   The set of complex structures \( J \) compatible
+   with \( g \) is in one-to-one correspondence with the set of self-dual 2-vectors (if \( J \)
+   preserves orientation) and anti-self-dual 2-vectors (if \( J \) reverses
+   orientation). In other words, the musical \( J^\sharp \) is of form
+   \[
+   J^\sharp = e_1\wedge e_2 + e_3\wedge e_4
+   \]
+   for an orthonormal basis \( \{e_i\} \) of \( g \). The orientation of \( J \) is given
+   by the orientation of the basis \( (e_1,e_2,e_3,e_4) \).
+   #+END_remark
+   
+   The surjectivity part of the following result may be useful when one needs a good basis of \( V \).
+   
+   #+ATTR_HTML: :id thm:SOV-cover 
+   #+BEGIN_theorem
+   #+LATEX: \label{thm:SOV-cover}
+   The group \( SO(V) \) acts separately and isometrically on \( \Lambda_+ \) and \(
+   \Lambda_- \) and the covering
+   \[
+    SO(V) \longrightarrow SO(\Lambda_+) \oplus SO(\Lambda_-) 
+   \]
+   is two-to-one.
+   #+END_theorem
+   #+BEGIN_proof
+   1. The separate action is because \( \ast \) (and hence \( \Lambda_\pm \)) only depends
+      on \( g \).
+   2. Surjectivity follows from 2-to-1, connectedness, compactness of the \(SO \) groups
+      and dimension: The image of \( SO(V) \) has to be a connected, compact subgroup of
+      \( SO(\Lambda_+)\oplus SO(\Lambda_-) \) having the same dimension.
+   3. 2-to-1: This is the only computational part of the proof. Let \( \alpha\) be an
+      element of \( SO(V) \) sending an orthonormal base \( e_i \) to another orthonormal
+      base \( f_i \) such that \( \alpha \) acts trivially on \( \Lambda_\pm \), then
+      clearly \( \alpha \) is trivial on \( \Lambda^2 \). One has \( e_i\wedge e_j =
+      \alpha(e_i)\wedge \alpha(e_j) = \alpha^h_i e_h \wedge \alpha^k_j e_k \), hence
+      \[
+       (\delta_i^h\delta_j^k -\delta_i^k\delta_j^h)e_h\wedge e_k = (\alpha_i^h\alpha_j^k
+      -\alpha_i^k\alpha_j^h)e_h\wedge e_k \quad\forall h,k,i,j
+      \]
+      Hence \( (\alpha_i^h)^2=(\delta_i^h)^2 \), meaning that \( \alpha = \pm \text{Id} \).
+   #+END_proof
+
+   An application of Theorem ref:thm:SOV-cover is the immediate (without computation) proof of the following
+   result. Denote by \( S_\pm \) the unit sphere of \( \Lambda_\pm \).
+
+   #+ATTR_HTML: :id cor:sum-null 
+   #+BEGIN_corollary
+   #+LATEX: \label{cor:sum-null}
+   For any \( \omega_+\in S_+ \) and \( \omega_-\in S_- \), the sum \( \omega_+ + \omega_-
+   \) is in the null-cone
+   #+END_corollary
+   #+BEGIN_proof
+   By surjectivity in Theorem ref:thm:SOV-cover, there exists \( \varphi\in SO(V) \) that maps
+    \(\omega_\pm\) to \( e_1\wedge e_2 \pm e_3\wedge e_4 \), hence it maps \( \omega_+
+    +\omega_- \) to \( 2e_1\wedge e_2 \) which is in the null-cone. It remains to evoke
+    that the null-cone is preserved by \( SO(V) \).
+   #+END_proof
+   
+   
+   
+** Twistor spaces and their natural complex structures
+
+   Given a Riemannian four-manifold \( (M,g) \), then \( \Lambda^2 TM \) splits as
+   \( \Lambda^2 TM = \Lambda_+ \oplus \Lambda_- \) and one obtains 2
+   \( \mathbb{S}^2 \)-bundle over \( M \) \( S_\pm = S(\Lambda_\pm)\) whose fibres are
+   unit spheres in \( \Lambda_{\pm} \). Again, then metric on \( \Lambda_\pm \) is
+   renormalised so that \( e_1\wedge e_2 \pm e_3\wedge e_4 \) are of norm 1. In
+   particular, if \( (e_1,e_2, e_3,e_4) \) is an oriented basis then an orthonormal basis
+   of \( S_- \) is \( \{e_1\wedge e_2 -e_3\wedge e_4, e_1\wedge e_3 +e_2\wedge e_4,
+   e_1\wedge e_4 -e_2\wedge e_3\} \).
+   The six-dimensional total spaces of these bundles are called *Twistor spaces* over \(
+   M \). 
+
+   #+ATTR_HTML: :id rem:orient-twistor
+   #+BEGIN_remark
+   #+LATEX: \label{rem:orient-twistor}
+   The distinction between \( S_+ \) and \( S_- \) only depends on the orientation
+   of \( M \), i.e. if one reverses the orientation, one becomes the other.   
+   #+END_remark
+ 
+
+   We will show that there are two natural (almost) complex structure on twistor spaces \(
+   S_\pm \). By Remark ref:rem:orient-twistor, let us define these complex structure on \(
+   S_- \) since the same construction applies for \( S_+ \).
+
+   
+   Take \( \omega\in S_- \) an anti-self-dual 2-vector over a point \( p\in M \), then by
+   Remark ref:rem:complex-str-2-vect the musical \( \omega_\flat \) gives rise to an
+   orientation-reversing complex structure \( J \) on \( T_pM \). Under \( J \), \(
+   \Lambda^2TM \) splits as
+   \[
+   \mathbb{C}\otimes_{\mathbb{R}}\Lambda^2 T_p M = \Lambda^{2,0}_p \oplus \Lambda^{1,1}_p
+   \oplus\Lambda^{0,2}_p 
+   \]
+   where the factors are of complex dimension 1, 4 and 1 respectively and \( \omega\in
+   \Lambda^{1,1}_p \). In particular, if \( \omega \) is given by \(\omega = e_1\wedge e_2
+   -e_3\wedge e_4 \), which we denote briefly as \( 12-34 \) then 
+   1. \( \Lambda^{1,1}_p \) is \( \mathbb{C} \)-generated by \( 12,34,14+23. 13-24 \),
+      i.e. \( \{\omega, 12+34, 14+23, 13-24\} \) is an orthonormal basis of \( \Lambda^{1,1}_p \).
+   2. \( \Lambda^{2,0} \) is \( \mathbb{C} \)-generated by \( (14-23)-i(13+24) \) and \( \Lambda^{0,2} \) is \( \mathbb{C} \)-generated by \( (14-23)+i(13+24) \).
+   
+   Writing
+   \[
+    \mathbb{C}\otimes \Lambda^2T_pM = (\mathbb{C}\otimes\Lambda_{+.p}) \oplus
+   (\mathbb{C}\otimes\Lambda_{-,p}) = \Lambda^{2,0}_p \oplus \Lambda^{1,1}_p
+   \oplus\Lambda^{0,2}_p, 
+   \]
+   one see  
+
+   - from the first point shows that \( \Lambda_p^{1,1} = \mathbb{C}\omega\oplus^\perp (\mathbb{C}\otimes \Lambda_{+,p}) \)
+   - from the second point shows that \( \mathbb{C}\otimes \Lambda_{-,p} = \left(
+     \Lambda^{2,0}_p \oplus \Lambda^{0,2}_p \right)
+     \oplus^\perp \mathbb{C}\omega \)
+
+   Therefore the complexified vertical tangent of \( S_- \) at \( \omega \) is \(
+   \Lambda^{2,0}_p\oplus \Lambda^{0,2}_p \) which is the complexification of \(
+   \mathbb{R}(14-23)\oplus \mathbb{R}(13 + 24) \).
+
+   The following result allows us to define Koszul-Malgrange almost complex structure on
+   \( S_\pm \).
+
+   #+ATTR_LATEX: :options []
+   #+ATTR_HTML: :id prop:reduced-LC :btit () 
+   #+BEGIN_proposition
+   #+LATEX: \label{prop:reduced-LC}
+   Let \( (M^4,g) \) be a Riemannian four-manifold and \( S_\pm \) be its twistor
+   spaces. Then the Levi--Civita connection \( \nabla \) reduces to \( S_\pm \),
+   meaning that the horizontal 4-planes at \( \omega\in S_+\subset \Lambda^2T^*M \)
+   (resp. \( \omega\in S_-\subset\Lambda^2 T^*M \)) are in \( T_\omega S_+\subset T_\omega
+   \Lambda^2 T^*M\) (resp. \( T_\omega S_-\subset T_\omega
+   \Lambda^2 T^*M\)).
+   #+END_proposition
+
+   #+BEGIN_definition
+   The two natural complex structure \( J_1, J_2 \) of \( S_- \) at \( \omega \) is given
+   by setting
+   \begin{equation*}
+     T^{1,0}(\omega) = 
+     \begin{cases}
+     (T^{1,0})^h \oplus \Lambda^{2,0} \text{ for } J_1\\
+     (T^{1,0})^h \oplus \Lambda^{0,2} \text{ for } J_2
+     \end{cases}
+   \end{equation*}
+   where \( T^{1,0} \) is the holomorphic tangent at the point \( p \), the base point of
+   \( \omega\in S_- \) on \( M \), under the complex structure given by \( \omega \),
+   parallelly lifted to the horizontal in plane at \( \omega \) using the Levi--Civita
+   connection of \( (M,g) \).
+   #+END_definition
+   
+   Another way to define these 2 complex structures is to say that
+   - One has a natural complex structure on the fibers of \( S_- \), under which,
+     if one supposes \( \omega = 12 - 34 \), \( J_1^v(14-23) = 13+24 \) and \( J_2^v = -J_1^v \).
+   - The complex structures on \( T_\omega S_- = H\oplus V \) is given by the sum of \(
+     J_1^v \) (resp. \( J_2^v \)) on the vertical component \( V \) and the complex structure
+     (given by \( \omega \) through horizontal lift) on the horizontal component \( H \).
+
+   We will know prove that the almost complex structure \( J_2 \) is never integrable. The
+   idea is to say that if this was true than there are very few holomorphic sections,
+   which contradicts the fact that under Koszul--Malgrange cite:koszul_sur_1958 complex structure
+   (component-wise complex structure) a section is holomorphic if and only if its image is
+   a complex sub manifold and there are plenty complex sub manifold in an integrable
+   complex manifold.
+
+   We will start by explaining two ways to complexify a connection.
+** Two different complexifications of a linear map.
+   The majority of computational details in the proof of holomorphic curve-minimal surface
+   correspondence will be very intuitive if one is able to go back and forth between the
+   following two ways to complexify a linear map \( f: (V,J_V) \longrightarrow (W,J_W) \)
+   between complex vector spaces.
+
+|                            | First way (A)                                                                                     | Second way (B)                                                                                                    |
+|----------------------------+---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------|
+| Definition                 | \begin{align*} F_1: V\otimes \mathbb{C} &\longrightarrow W\\iX &\longmapsto J_W f(X) \end{align*} | \begin{align*} F_2: V\otimes \mathbb{C} &\longrightarrow W\otimes \mathbb{C}\\ iX &\longmapsto i f(X)\end{align*} |
+|----------------------------+---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------|
+| \( f \) is holomorphic iff | \( F_1 (X + i J_V X) = 0 \), i.e. \(F_1( \frac{\partial }{\partial \bar z})=0\)                   | \(F_2(V^{1,0}) \subset W^{1,0}\)                                                                                  |
+|----------------------------+---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------|
+| Advantage                  | Do not need to complexify \( W \)                                                                 | \( F_2 \) preserves type                                                                                          |
+|----------------------------+---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------|
+|                            |                                                                                                   |                                                                                                                   |
+
+While the advantage of (B) is clear, the fact that in (A), we do not have to complexify
+\( W \) is quite convenient in certain cases, for example when \( f \) is a connection on
+a complex vector bundle \( F \) (with complex structure on each fibre) over an almost
+complex manifold \( M \). Imagine we have to complexify the fibre and then the defining
+horizontal planes of certain connection \( \nabla \) in order to talk about
+\( \nabla_{\frac{\partial}{\partial z}} \). A section \( s \) is then called holomorphic
+if and only if \( \nabla_{\frac{\partial }{\partial \bar z}}s=0 \). This means that
+\( s \) is holomorphic as a map from \( M \) to the total space \( F \) equipped with the
+Koszul-Malgrange complex structure.
+
+
+Now let us first use the complexification (B) for the Levi--Civita connection \( \nabla \)
+on \( S^- \). First note that if \( s:U\subset M \longrightarrow S_- \) is a section then
+\( U \) can be equipped with a natural complex structure \( J \) which is \( s(p) \) at every
+point \( p\in U\subset M \). The following result is straight-forward.
+
+#+ATTR_LATEX: :options [holomorphic section of \( S_- \)]
+#+ATTR_HTML: :id prop:holo-sec-S :btit (holomorphic section of \( S_- \)) 
+#+BEGIN_proposition
+#+LATEX: \label{prop:holo-sec-S}
+Given a section \( s: (U,J) \longrightarrow (S_-, J_\alpha), \alpha=1,2 \), then
+1. One only has to check the vertical component to prove \( s \) is holomorphic.
+2. To prove that \( s \) is holomorphic, take any \( \xi\in T^{1,0}_pM \) and check if \(v=\nabla_\xi s \) is in \(\Lambda^{2,0}\) (for \( J_1 \)) or in \( \Lambda^{0,2} \) (for \( J_2 \)).
+3. \( s \) is holomorphic if and only if \( s_* T_pM \) is a complex subspace of \( T_{s(p)}S_- \).
+#+END_proposition
+#+BEGIN_proof
+For the 'if' part of the last statement, note that \( s_*(J\xi) \) and \( Js_*\xi \) live
+in the same four-plane \( s_*T_pM \) with the same horizontal projection, therefore they coincide.
+#+END_proof
+
+
+Using complexification (B), we can see \( \nabla \) as a section of \( (\mathbb{C}\otimes
+T^*M)\otimes (\Lambda^{2,0}\oplus \Lambda^{1,1}\oplus \Lambda^{0,2}) \). Denote by \(
+D_1,D_2 \) the projection of \( \nabla \) on 
+\[
+\mathfrak{S}_1:=((T^{0,1})^*\otimes \Lambda^{2,0})\oplus ((T^{1,0})^*\otimes \Lambda^{0,2}),
+\]
+and
+\[
+ \mathfrak{S}_2:=((T^{0,1})^*\otimes \Lambda^{0,2})\oplus ((T^{1,0})^*\otimes \Lambda^{2,0}).
+\]
+then one has
+
+#+ATTR_HTML: :id prop:no-1-1 :btit () 
+#+BEGIN_proposition
+#+LATEX: \label{prop:no-1-1}
+For any section \( s \) over \( U \) and J the complex structure coming from \( s \),
+there is no \( \Lambda^{1,1} \) component in \( \nabla_X s \) for any vector \( X\in T_pM
+\). In other words,
+\[
+ \nabla s= D_1 s + D_2 s.
+\]
+#+END_proposition
+
+#+BEGIN_proof
+Let \( (e_1,e_2,e_3,e_4) \) be an orthonormal frame such that
+\( Je_1 = e_2, Je_3 = e_4 \) and \( s = e_1\wedge e_2 + e_3\wedge e_4 \) and denote \(
+\alpha_1 = \frac{1}{2}(e_1-ie_2) \) and \( \alpha_2 = \frac{1}{2}(e_3 - ie_4) \). One has
+\( \alpha_i\in T^{1,0} \) and
+\[
+ 2is = \alpha_1\wedge \bar \alpha_1 +\alpha_2\wedge \bar \alpha_2
+\]
+hence the \( \Lambda^{1,1} \) component of
+\(
+ 2i\nabla_X s = \nabla_x \alpha_i\wedge \bar \alpha_i + \alpha_i\wedge \nabla_X\bar\alpha_i
+\)
+is \( ( 2i\nabla_X s)^{1,1}=\lambda_i^j \alpha_j\wedge\bar\alpha_i + \tilde
+\lambda_i^j\alpha_i\wedge\bar\alpha_j\) where
+\begin{align*}
+  \nabla_X\alpha_i &= \lambda_i^j \alpha_j + \dots \text{ terms in } \bar\alpha_j\\
+  \nabla_X \bar\alpha_i &= \tilde\lambda_i^j \bar\alpha_j + \dots \text{ terms in } \alpha_j
+\end{align*}
+since \( \lambda_i^j = \langle \nabla_X \alpha_i,\bar \alpha_j \rangle = - \langle
+\alpha_i,\nabla_X \bar\alpha_j \rangle = -\tilde\lambda_j^i   \), one has 
+\[ 
+( 2i\nabla_X s)^{1,1}=\lambda_i^j \alpha_j\wedge\bar\alpha_i -
+\lambda_j^i\alpha_i\wedge\bar\alpha_j  =0.
+\]
+#+END_proof
+
+
+
+
+
+** Non-integrability of \( (S_-, J_2) \).
+
+
+It follows from Proposition ref:prop:holo-sec-S and Proposition ref:prop:no-1-1 that
+
+#+ATTR_LATEX: :options []
+#+ATTR_HTML: :id prop:holo-and-D :btit () 
+#+BEGIN_proposition
+#+LATEX: \label{prop:holo-and-D}
+A section \( s: (U,J) \longrightarrow (S_-, J_\alpha), \alpha=1,2 \) is holomorphic if and
+only if \( D_\alpha s = 0 \).
+#+END_proposition
+
+The equation \( D_1 s = 0 \) is equivalent to the Nijenhuis tensor of \( J \) being 0,
+therefore one has:
+
+#+ATTR_LATEX: :options []
+#+ATTR_HTML: :id thm:D1-integ :btit () 
+#+BEGIN_theorem
+#+LATEX: \label{thm:D1-integ}
+Let \( s \) be a section of \( S_- \) on \( U \) and \( J \) be the corresponding complex
+structure on \( U \). Then \( D_1 s = 0 \) if and only if \( J \) is integrable.
+#+END_theorem
+
+Now let us derive non-integrability of \( (S_-,J_2) \) using the previous results. If \( (S_-,J_2) \) was integrable, then take
+any 2 (complex) dimensional sub manifold of \( S_- \) that is graph of a non-parallel
+section \( s \). Then by Proposition ref:prop:holo-sec-S, \( s \) would be
+holomorphic meaning that \( D_2s = 0 \) by Proposition ref:prop:holo-and-D. Also,
+integrability of \( J_2 \) and holomorphicity of \( s \) would imply integrability of the
+complex structure \( J \) coming from \( s \) on \( U \), which means, by Theorem
+ref:thm:D1-integ, \( D_1 s = 0\). By Proposition ref:prop:no-1-1, \( \nabla s =D_1 s + D_2
+s= 0\) and \( s \) would be therefore parallel, which is a contradiction. 
+
+
+#+ATTR_LATEX: :options [Non-integrability of \( J_- \)]
+#+ATTR_HTML: :id thm:integ-Jminus :btit (Non-integrability of \( J_- \)) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:integ-Jminus}
+\( (S_-, J_-) \) is never integrable.
+#+END_theorem
+
+
+** Gauss lift.
+We finalise this section by defining the generalised Gauss map (i.e. Gauss lift) and
+giving the exact statement of Twistorial correspondence.
+
+Let \( f: (\Sigma,i) \longrightarrow (M^4,g) \) be an immersion of a Riemann surface \(
+\Sigma \) to a Riemannian four-manifold \( M \). Define \( \tilde f_- \) to be the
+anti-self-dual projection of the 2-vector associated to \( f_*T_p\Sigma \) (Remark
+ref:rem:null-cone-simple), i.e.
+\begin{align*}
+  \tilde f_-:\Sigma &\longrightarrow S_- \\
+  	 p	    &\longmapsto (1-\ast)(f_*T_pM)
+\end{align*}
+
+#+ATTR_HTML: :id rem:alt-def-Gausslift
+#+BEGIN_remark
+#+LATEX: \label{rem:alt-def-Gausslift}
+Another way to define \( \tilde f_- \) is to say that it is the unique anti-self-dual
+2-vector such that \( f \) is holomorphic under the corresponding complex structure
+(Remark ref:rem:complex-str-2-vect).
+#+END_remark
+
+It is clear that the Gauss lift can be continuously defined in case where \( f \) is a
+branched immersion cite:gulliver_theory_1973. We can now state the correspondence in cite:eells_twistorial_1985.
+
+#+ATTR_LATEX: :options [Eells-Salamon]
+#+ATTR_HTML: :id thm:twistor-cor :btit (Eells-Salamon) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:twistor-cor}
+There is a one-to-one correspondence between non-vertical \( J_2 \)-holomorphic curves in
+\( S_- \) and conformal harmonic map from \( (\Sigma,i) \) to \( (M,g) \) given by the
+Gauss lift.
+#+END_theorem
+
+
+* Twistor correspondence.
+The correspondence is between conformal harmonic branched immersions in \( M \) and
+\( J_2 \)-holomorphic curves in \( S_- \) via the Gauss lift. Therefore a branch
+point of \( f:\Sigma \longrightarrow M \) comes from
+- either a critical point of the holomorphic curve \( \tilde f_-: \Sigma \longrightarrow S_- \)
+- or a point \( p\in\Sigma \) where \( \tilde f_- \) is tangent to the twistor lines \(
+  (S_-)_{f(p)} \).
+We will show that in both cases, these points are isolated, hence of finite number by
+compactness of \( \Sigma \).
+
+
+** Review: A few local properties of (pseudo)holomorphic curve.
+
+#+ATTR_LATEX: :options [Dependence on \( \infty \)-jet]
+#+ATTR_HTML: :id thm:infty-jet :btit (Dependence on \( \infty \)) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:infty-jet}
+Let \( u:\Sigma \longrightarrow S \) be a holomorphic curve between a compact connected
+Riemann surface \( \Sigma \) and an almost complex manifold \( S \). Then \( u \) is
+uniquely determined by its \( \infty \)-jet at one point \( p\in\Sigma \), i.e. if there
+is another holomorphic curve \( v:\Sigma \longrightarrow M \) such that the \( \infty
+\)-jets of \( v \) and \( u \) coincide then the two maps \( u,v \) coincide.
+#+END_theorem
+
+For a proof of this Theorem ref:thm:infty-jet, see cite:mcdu_j-holomorphic_nodate. The
+idea is to write down the generalised Cauchy-Riemann equation for \( u \) and \( v \) then
+apply a PDE estimate. We are interested in how this theorem can be applied to prove that
+critical point of \( u \) is isolated. 
+
+#+ATTR_LATEX: :options [Isolated critical points]
+#+ATTR_HTML: :id prop:crit-isol :btit (Isolated critical points) 
+#+BEGIN_proposition
+#+LATEX: \label{prop:crit-isol}
+Given a non-constant holomorphic curve \( u; (\Sigma,i) \longrightarrow S \) from a Riemann surface \(
+\Sigma \) to an almost complex manifold \( S \). Then critical points \( p\in\Sigma \)
+where \( du(p)=0 \) are isolated in \( \Sigma. \)
+#+END_proposition
+
+This result is immediate when \( S \) has a holomorphic function \( \xi_1 \) locally defined at \( p
+\), for example when the complex structure on \( S \) is integrable. In that case, it
+suffices to notice that \( p \) has to be a critical point of \( \xi_1\circ u \) which, in a
+local chart of \( \Sigma \), is a zero of the holomorphic function \( \frac{(\partial
+\xi_1\circ u)}{\partial z} \).
+
+#+BEGIN_proof
+We can suppose that \( u(0)=0\in \mathbb{C}^n, du(0)=0 \) and the complex structure on \(
+M \) is \(J(\xi)\in GL(\mathbb{R}^{2n})\) with \( J^2 = -Id \) and \( J(0)=J_0 \) the
+standard complex structure of \( \mathbb{C}^n \). Let \( s,t \) be the isothermal
+coordinates of \( \Sigma \), the generalised Cauchy--Riemann equation reads
+\begin{equation}
+\label{eq:gen-cauchy-rie}
+ \frac{\partial u}{\partial s} + J(u)\frac{\partial u}{\partial t}=0
+\end{equation}
+
+Since \( u \) is non-constant, using Theorem ref:thm:infty-jet, one can find an \( l\geq 1
+\) such that
+\[
+ \left| u(z) \right| = O(|z|^l) \ne O(|z|^{l+1})
+\]
+therefore \( J(u(z)) = J_0 + O(|z|^l) \). Take the \( |z|^{l-1} \) term in
+eqref:eq:gen-cauchy-rie, one has
+\[
+ \frac{\partial T_l(u)}{\partial s} + J_0 \frac{\partial T_l(u)}{\partial t}=0
+\]
+where \( T_l(u) \) is the expansion of \( u \) at \( 0 \) upto order \( l \). This means
+\( T_l \) is holomorphic w.r.t \( J_0 \), i.e. \( T_l(u) = (a_1 z^l, \dots, a_n z^l) \)
+for a non-zero vector \( a\in \mathbb{C}^n \). Now that
+\[
+ u(z) = az^l + O(|z|^{l+1}),\quad du(z) = alz^{l-1} + O(|z|^l),
+\]
+one sees that for \( |z| <\epsilon \) sufficiently small \( du(z)\ne 0 \).
+#+END_proof
+
+In case where \( S \longrightarrow M \) is a twistor space with the twistor lines \( S_q
+\) over \( q\in M \) being a complex submanifold, using the same technique, one can prove
+that
+
+#+ATTR_LATEX: :options [Vertically tangent points]
+#+ATTR_HTML: :id prop:vert-tang :btit (Vertically tangent points) 
+#+BEGIN_proposition
+#+LATEX: \label{prop:vert-tang}
+Let \( u:\Sigma \longrightarrow S\) be a non-vertical holomorphic curve from a compact Riemann surface
+\( \Sigma \) to a twistor space \( S \), then the points \( p\in \Sigma \) where the
+tangent \( u_* T_p\Sigma \) is vertical at \( u(p)\in S \) are isolated and therefore of finite number.
+#+END_proposition
+
+#+BEGIN_proof
+The statement being local, we can suppose \( p=0\in \mathcal{U} \subset \Sigma= \mathbb{C} \). Let \( v: \mathcal{V}=\mathcal{O}p(0)
+\longrightarrow S=\mathbb{C}^n \) be the vertical
+twistor line \( z \longmapsto z\times \{0\} \) touching \( u \) at \( u(0)\equiv v(0)=0
+\). This means we also suppose that the restriction of complex structure on \(
+S=\mathbb{C}^n\) onto \( \mathbb{C}\times\{0\} \) is the standard one (we can always do this!). Choose isothermal coordinates \(
+\frac{\partial}{\partial s} \) and \( \frac{\partial}{\partial t} \) of \( \mathcal{U},
+\mathcal{V} \) such that \( u_* \frac{\partial}{\partial s} = v_*
+\frac{\partial}{\partial_s} \) and \( u_* \frac{\partial}{\partial t} = v_*
+\frac{\partial}{\partial_t} \) at \( 0 \). In other words, we suppose that \( u(0) = v(0)
+= 0\in \mathbb{C}^n \) and \( du(0) = dv(0) \).
+
+Subtracting the generalised Cauchy--Riemann equations for \( u \) and \( v \), one has
+\begin{equation}
+\label{eq:u-v-vertical}
+\partial_s (u-v) + (J(u)-J(v)) \partial_t u + J(v) \partial_t (u-v) = 0
+\end{equation}
+
+Since \( u \) is not vertical, by Theorem ref:thm:infty-jet, there exists \( l\geq 2 \)
+such that \( u-v = O(|z|^l)\ne O(|z|^{l+1}) \). Therefore \( J(u)-J(v) = O(|z|^l) \). Take
+the \( O(|z|^{l-1}) \) part in eqref:eq:u-v-vertical, one sees that \( T_l(u-v) \) is
+holomorphic in the usual sense, hence there exists \( 0\ne a\in \mathbb{C}^n \) such that
+\[
+(u-v)(z) = (a_1 z^l,\dots, a_n z^l)
+\]
+
+The proof is finished if there exists an \( a_i\ne 0, i\in \overline{2,n} \). If not, we
+can replace \( v \) by \( \tilde v: z\longmapsto (z+a_1 z^l)\times \{0\} \) which is still a holomorphic
+parametrisation of the twistor line \( \mathbb{C}\times\{0\} \), but \( |u(z)- v(z)| =
+O(|z|^{l+1}) \). By repeating this argument finitely many times, one reaches a moment when
+there exists a non-zero \( a_i \) for \( i\geq 2 \). The conclusion then follows.
+#+END_proof
+
+
+** Review: Harmonic maps from a Riemann surface.
+
+First of all this term makes sense because energy of a map \( f:\Sigma \longrightarrow M
+\) is a conformal invariant when \( \dim \Sigma = 2 \). We can therefore try to write the
+equation of harmonicity \( \tau(f)=0 \) using the complex structure of \( \Sigma \).
+
+Using a complex coordinate \( z \), one has \( df = \nabla_{\partial_z}f dz + \nabla_{\partial_{\bar z}}f\ d\bar z \)
+where \( \nabla_{\partial_z}f:=f_* \partial_z \), \( \nabla_{\partial_{\bar z}}f:=
+f_* \partial_{\bar z} \). The vector bundle \( f^*M \) over \( \Sigma \) is equiped with a
+fiberwise metric and a metric connection inherited from \( M \). Combining this with the
+Levi--Civita connection on \( (\Sigma,h) \) where \( [h]=i \) the complex structure on \(
+\Sigma \), one obtains a connection on all \( T^*M^{\otimes k}\otimes TM^{\otimes l}\otimes
+f^* TM\) that is compatible with tensor product and contraction. 
+We now use complexification (B) when we talk about covariant derivative \(
+\nabla_{\partial_z}s \) of a section \( s \).
+
+
+#+ATTR_HTML: :id rem:ddbarf
+#+BEGIN_remark
+#+LATEX: \label{rem:ddbarf}
+\nabla_{\partial_z} and \( \nabla_{\partial_{\bar z}} \) commute on \( f \). In fact
+\[
+\nabla_{\partial_z}\nabla_{\partial_{\bar z}}f - \nabla_{\partial_{\bar
+z}}\nabla_{\partial_{z}}f = \nabla^M_{f_* \partial_z}f_* \partial_{\bar z} - \nabla^M_{f_*
+\partial_{\bar z}}f_* \partial_{z} = [f_* \partial_z, f_* \partial_{\bar z}] =
+f_*[\partial_z,\partial_{\bar z}]=0
+\]
+This means that \( \nabla_{\partial_z}\nabla_{\partial_{\bar z}}f \) is always a real
+vector field along \(f \).
+#+END_remark
+
+
+
+
+We will write down the equation of harmonicity \( \tr_h \nabla df=0 \) explicitely using \(
+\partial_z, \partial_{\bar z} \) and the fact that \( \tr_h (dz\otimes dz) = \tr_h(d\bar
+z\otimes d\bar z)=0 \):
+\begin{align*}
+\nabla df &= \nabla_{\partial_z}(\nabla_{\partial_z}f dz + \nabla_{\partial_{\bar z}}f\ d\bar z)\otimes dz + \nabla_{\partial_{\bar z}}(\nabla_{\partial_z}f dz + \nabla_{\partial_{\bar z}}f\ d\bar z)\otimes d\bar z  \\
+       	  &=  \nabla_{\partial_z}\nabla_{\partial_{\bar z}}f (dz\otimes d\bar z + d\bar z\otimes dz) + \text{ terms in } dz\otimes dz \text{ and } d\bar z\otimes d\bar z
+\end{align*}
+in which we claim that the sum
+\[
+\mathcal{A} = \left(\nabla_{\partial_z}f \nabla_{\partial_z}dz + \nabla_{\partial_{\bar z}}f\nabla_{\partial_z}d\bar
+z\right)\otimes dz + \left(\nabla_{\partial_{z}}f\nabla_{\partial_{\bar z}}dz + \nabla_{\partial_{\bar z}}f \nabla_{\partial_{\bar z}}d\bar z\right)\otimes dz
+\]
+is in fact a "term in \(dz\otimes dz\) and \(d\bar z\otimes d\bar z\)". This can be seen
+by rewriting the first sum in \( \mathcal{A} \) as
+\[
+-\Gamma_{z\bar z}^{ z} f_* \partial_z  - \Gamma_{z\bar z}^{\bar
+z}f_* \partial_{\bar z}  + \text{ terms in } dz\otimes dz \text{ and } d\bar z\otimes d\bar z
+\]
+where \( \Gamma \) is the (B-complexified) Christoffel symbols of \( (\Sigma,h) \), and
+noticing that \( \Gamma_{z\bar z}^{z} f_* \partial_z  + \Gamma_{z\bar z}^{\bar
+z}f_* \partial_{\bar z} = f_* \nabla^\Sigma_{\partial_z} \partial_{\bar z}\). But 
+\[
+\nabla^\Sigma_{\partial_z}\partial_{\bar z} = \nabla_{\partial_x} \partial_x + \nabla_{J
+\partial_x}J \partial_x = 0
+\]
+since Riemann surfaces are Kahler manifolds (\( SO(2) = U(1) \)).
+
+
+** Proof of Theorem ref:thm:twistor-cor.
+We have now acquired enough technology to prove Theorem ref:thm:twistor-cor of
+Eells-Salamon. Keeping the same notation as before, with \( f:(\Sigma,i) \longrightarrow
+(M,g) \) the immersion of the surface \( \Sigma \) and \( \tilde f_- \) its Gauss lift, we
+can suppose that \( f \) has no branch point and its Gauss lift does not touch the vertical twistor
+lines. In other words, we only need to prove a "smooth version" of Theorem ref:thm:twistor-cor. This is because the Gauss lift can be
+continuously defined at branch points, which are of finite number, so there is no problem
+of associating a holomorphic curve on \( S_- \) to a harmonic conformal \( f:\Sigma
+\longrightarrow M \). On the other hand, given a holomorphic curve \( u: (\Sigma,i)
+\longrightarrow (S_-, J_2) \) and denote \( f:\Sigma \longrightarrow M \) its projection
+to \( M \), by Proposition ref:prop:crit-isol and Proposition
+ref:prop:vert-tang, the singular points of \( f \) (where \( f \) fails to be an
+immersion) are of finite number. Holomorphicity of \( u \) implies that, at
+regular points of \( f \), \( f \)
+is holomorphic with respect to the complex structure given by \( u \), but this
+is the defining property of Gauss lift \( \tilde f_- \), we have \( u\equiv \tilde f_- \)
+at non-singular points of \( f \). The continuity argument finishes the proof.
+
+
+It remains now to prove the smooth version of Theorem ref:thm:twistor-cor. 
+
+#+ATTR_LATEX: :options [Smooth version of Eells-Salamon]
+#+ATTR_HTML: :id thm:smooth-twistor-cor :btit (Smooth version of Eells-Salamon) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:smooth-twistor-cor}
+Given an immersion \( f:(\Sigma^2,J) \longrightarrow (M^4,g) \) of a Riemann surface to a
+Riemannian four-manifold. Then \( f \) is conformal and harmonic if and only if \( \tilde
+f_-:(\Sigma,J) \longrightarrow (S_-,J_2) \) is holomorphic.
+#+END_theorem
+
+
+#+BEGIN_proof
+We will denote by \( \sigma \) the 2-form (section of \( f^* S_- \)) corresponding to \( \tilde f_- \), i.e. \(
+(\tilde f_-)_*X = \nabla_X\sigma \oplus f_*X \) 
+where the former is vertical and the latter is the horizontal lift of \( f_* X \). Then \(
+\tilde f_- \) is holomorphic if and only if, using complexification (A), \( (\tilde
+f_-)_*(X+iJX) = 0 \), 
+which means, for horizontal and vertical components:
+\begin{align}
+f_*(X+iJX) &= 0,  \text{ which means } f_* X + (\tilde f_-) f_*JX=0 \text{ where \( (\tilde f_-) \) is the corresponding complex structure} \label{eq:smooth-twistor-1} \\
+\nabla_{X+iJX}\sigma &= 0,  \text{ which means } \nabla_X\sigma + J_2\nabla_{JX}\sigma = 0  \label{eq:smooth-twistor-2} 
+\end{align}
+
+This is because the induced complex structure of \( f^*S_-\subset S_- \) coincides with
+the Koszul--Malgrange complex structure of \( f^*S_- \) as a vector bundle on \( \Sigma
+\) (the last statement is because \( f: (\Sigma,i) \longrightarrow (f(\Sigma), \tilde f_-)
+\) is holomorphic).
+
+One sees that eqref:eq:smooth-twistor-1 is equivalent to \( f \) being harmonic because \(
+f_*X \) and \( f_* JX \) have the same length and are orthogonal in \( M \).
+
+
+We will prove that under eqref:eq:smooth-twistor-1,  eqref:eq:smooth-twistor-2 is
+equivalent to \( f \) being harmonic. To see that, we will translate
+eqref:eq:smooth-twistor-2 to an equivalent condition using complexification (B).
+\[
+ \nabla_X\sigma + J_2\nabla_{JX}\sigma = 0 \forall X\in T\Sigma \iff
+\nabla_{\frac{\partial}{\partial z}}\sigma=\nabla_{X-iJX}\sigma:=\nabla_X\sigma -i\nabla_{JX}\sigma=\nabla_X\sigma
+-iJ_2\nabla_X\sigma\in T^{1,0}S_-
+\]
+with respect to the complex structure \( J_2 \). But \( \nabla_{\frac{\partial}{\partial
+z}}\sigma \) is vertical and \( T^{1,0}S_- = (T^{1,0})^h\oplus
+(\Gamma^{0,2})^v \), one has eqref:eq:smooth-twistor-2 is equivalent to \(
+\nabla_{\frac{\partial}{\partial z}}\sigma\in \Gamma^{0,2} \). Since we knew from
+Proposition ref:prop:no-1-1 that \( \nabla_{\frac{\partial}{\partial z}} \sigma \) only has a \(
+\Lambda^{2,0} \) component and a \( \Lambda^{0,2} \) component (under \( \tilde f_- \)), eqref:eq:smooth-twistor-2
+means the former vanishes.
+
+
+We will denote by \( \delta \) and \( \bar\delta \) the covariant derivatives \( \nabla_{\frac{\partial}{\partial z}} \)
+and \( \nabla_{\frac{\partial}{\partial \bar z}} \) (complexification (B))
+respectively. Since \( f \) is conformal its Gauss lift \( \sigma \) is a multiple of \(
+i(1-\ast) (\delta f\wedge \bar\delta f) \), let suppose that \( \sigma = -ic(1-\ast)(\delta
+f\wedge\bar\delta f) \) 
+where the scalar \( c \) may varies from point to point. One has
+\[
+ \delta \sigma = (c^{-1}\delta c)\sigma -ic(1-\ast)(\delta^2 f\wedge \bar\delta f+\delta
+f\wedge \delta\bar\delta f).
+\]
+
+At the point of \( M \) in question and under the complex structure \( \tilde f_- \), one has
+ - \( \mathbb{C}\otimes\Lambda^2_- = \Lambda^{0,2}\oplus \Lambda^{2,0}\oplus \mathbb{C} \sigma \),
+ - \( \bar\delta f \) is of type (0,1) (\( f \) is holomorphic under \( \tilde f_- \))
+ - \( \delta f \) is of type (1,0).
+
+Therefore the \( \Lambda^{2,0} \) component of \( \delta\sigma \) is
+\[
+ -ic \delta f\wedge (\delta\bar\delta f)^{1,0} =: A
+\]
+The only way for \( A \) to be 0 without \( (\delta\bar\delta f)^{1,0} \) vanishing is
+that \( (\delta\bar\delta f)^{1,0} \) is a non-zero multiple of \( \delta f \), which is
+impossible because one always has
+\[
+ g(\bar\delta f, (\delta\bar\delta f)^{1,0}) = g(\bar\delta f, \delta\bar\delta f) =
+-g(\delta \bar\delta f,\bar\delta f)=0
+\]
+
+So \( A=0 \iff (\delta\bar\delta f)^{1,0}=0 \iff \delta\bar\delta f=0 \) because \(
+\delta\bar\delta f \) is real according to Remark ref:rem:ddbarf.
+#+END_proof
+
+
+#+LATEX:\iffalse
+bibliographystyle:alpha
+bibliography:../res/GeoDiff.bib
+#+LATEX:\fi

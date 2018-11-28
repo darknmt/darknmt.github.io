@@ -1,6 +1,6 @@
 #+TITLE: Welcome to my homepage
 
-I am currently in the first year of my PhD program under the supervision of [[http://homepages.ulb.ac.be/~joelfine/papers.html][Joel Fine]] at
+I am currently in the first year of my PhD program under supervision of [[http://homepages.ulb.ac.be/~joelfine][Joel Fine]] at
 [[http://geometry.ulb.ac.be/][Université Libre de Bruxelles]] and [[http://www.i2m.univ-amu.fr/perso/julien.keller/Julien-KELLER.html][Julien Keller]] at [[http://www.i2m.univ-amu.fr/Equipe-Analyse-Geometrie-Topologie-AGT][Aix-Marseille Université]]. 
 
 
@@ -14,6 +14,12 @@ The reasons that I write this blog instead of using Wordpress are
 3. [[https://darknmt.github.io/html/Cheeger-Gromoll-splitting.html][Here]] is a webpage, [[https://raw.githubusercontent.com/darknmt/darknmt.github.io/master/blog/Cheeger-Gromoll-splitting.org][here]] is what I have to type, and here are the LaTeX exports in [[../res/Cheeger-Gromoll-splitting.tex][TEX]] and [[../res/Cheeger-Gromoll-splitting.pdf][PDF]].
 
 
+* About this site
+- The *Blog* contains my reading notes of well-known articles. Most of them are writen as
+  part of the memoirs during my Master/PhD studies.
+- The *Miscellany* page is dedicated to shorter writings with a focus on what I am
+  currently doing.
+These pages are writen using [[https://en.wikipedia.org/wiki/Emacs][emacs]] [[http://orgmode.org/][org-mode]] and a [[https://github.com/darknmt/theorems-css][CSS]] to display LaTeX structure. 
 * Links
 - Here is my [[http://172.17.71.229/dokuwiki/doku.php][DokuWiki]] and personal [[http://172.17.71.229/nextcloud][nextcloud]].
 - [[https://darknmt.github.io/res/tikzcd-editor/][A GUI editor]] for commutative diagram with ~tikzcd~, also [[https://tikzcd.yichuanshen.de/][originally hosted by the author]].
@@ -21,3 +27,4 @@ The reasons that I write this blog instead of using Wordpress are
 
 # +ATTR_HTML: :width 60%
 # [[https://darknmt.github.io/res/xypic-editor][file:../img/simple-portrait.png]] 
+
