@@ -5,12 +5,12 @@
                      '(("article" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem") ("xy" "all")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -56,38 +56,41 @@
     "Enorm"
     "Anorm")
    (LaTeX-add-labels
-    "sec:org3d556b1"
+    "sec:org110e957"
     "thm:min-surface-R3"
     "rem:compl-inn-prod"
-    "sec:orgac80af6"
-    "sec:org6a209ff"
+    "sec:org17c31e9"
+    "sec:orge71a081"
     "rem:null-cone-simple"
     "rem:complex-str-2-vect"
     "thm:SOV-cover"
     "cor:sum-null"
-    "sec:orge30020e"
+    "sec:org574bc81"
     "rem:orient-twistor"
     "prop:reduced-LC"
-    "sec:org30c6e1b"
+    "sec:org65fef00"
     "prop:holo-sec-S"
     "prop:no-1-1"
-    "sec:org4b76a05"
+    "sec:orga46f54f"
     "prop:holo-and-D"
     "thm:D1-integ"
     "thm:integ-Jminus"
-    "sec:org5fe93d5"
+    "sec:org5da2a7a"
     "rem:alt-def-Gausslift"
     "thm:twistor-cor"
-    "sec:org2329e55"
-    "sec:org026812b"
+    "sec:org0e00d14"
+    "sec:org2990a00"
     "thm:infty-jet"
     "prop:crit-isol"
     "eq:gen-cauchy-rie"
     "prop:vert-tang"
     "eq:u-v-vertical"
-    "sec:org7410886"
-    "sec:org1232989"
-    "sec:org96ae2dc")
+    "sec:orgbe6c7d8"
+    "rem:ddbarf"
+    "sec:org088b53c"
+    "thm:smooth-twistor-cor"
+    "eq:smooth-twistor-1"
+    "eq:smooth-twistor-2")
    (LaTeX-add-bibliographies
     "../res/GeoDiff")
    (LaTeX-add-amsthm-newtheorems
