@@ -10,8 +10,8 @@
 #+LATEX:\iffalse
 This post is my reading note for cite:eells_twistorial_1985 writen using a more standard
 notation. The goal of their paper is, for a Riemannian four-manifold \( M \), to contruct
-complex six-manifold \( S \) such that minimal surfaces in \( M \) correspond to
-holomorphic curves in \( S_- \). The space \( S \), called *twistor space* of \( M \) is a \( \mathbb{S}_2 \)-bundle over \( M
+an almost complex six-manifold \( S \) such that minimal surfaces in \( M \) correspond to
+holomorphic curves in \( S \). The space \( S \), called *twistor space* of \( M \) is a \( \mathbb{S}_2 \)-bundle over \( M
 \) with fibre at point \( p\in M \) being the set of almost complex structures at \( p
 \) that are compatible with the Riemannian metric.
 #+LATEX:\fi
@@ -705,7 +705,7 @@ the Koszul--Malgrange complex structure of \( f^*S_- \) as a vector bundle on \(
 \) (the last statement is because \( f: (\Sigma,i) \longrightarrow (f(\Sigma), \tilde f_-)
 \) is holomorphic).
 
-One sees that eqref:eq:smooth-twistor-1 is equivalent to \( f \) being harmonic because \(
+One sees that eqref:eq:smooth-twistor-1 is equivalent to \( f \) being conformal because \(
 f_*X \) and \( f_* JX \) have the same length and are orthogonal in \( M \).
 
 
