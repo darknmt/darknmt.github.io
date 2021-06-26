@@ -8,7 +8,6 @@
 
 * These 2020-2021 :these:
 ***** [[file:unframed_normal_deg.private.org][Unframed normal degree]] <2021-05-14 Fri>                       :private:
-***** [[file:normal-deg.private.org][Normal degree of the hyperbolic \( zw=\epsilon \)]]  <2021-04-15 Thu> :private:
 ***** [[file:monotonicity-warped.org][Weighted Monotonicity Theorems with applications to minimal surfaces in hyperbolic spaces]] <2021-03-17 Wed> :private:
 ***** [[file:monotonicity-hyperbolic.private.org][Monotonicity theorems in hyperbolic space]] <2021-01-26 Tue>    :private:
 ***** [[file:report-quaternion-surfaces.private.org][Report: Minimal surfaces in 4D that are invariant by quaternion multiplication]] <2021-01-20 Wed> :private:
