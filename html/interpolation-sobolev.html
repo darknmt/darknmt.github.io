@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-31 Thu 22:51 -->
+<!-- 2021-06-25 Fri 23:03 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Interpolation theory and Sobolev spaces on compact manifolds</title>
@@ -253,44 +253,6 @@ for the JavaScript code in this tag.
 <li><a href='./contact.html'>Contact</a></li>
 </ul>
 </div>
-</div>
-<div id="content">
-<h1 class="title">Interpolation theory and Sobolev spaces on compact manifolds</h1>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#orgbd83145">1. Motivation</a></li>
-<li><a href="#org44d446e">2. Preparatory material</a>
-<ul>
-<li><a href="#org8ccc5a7">2.1. Stein's multiplier</a></li>
-<li><a href="#org889a976">2.2. Holomorphic interpolation of Banach spaces</a></li>
-</ul>
-</li>
-<li><a href="#org5678a20">3. Sobolev spaces on compact manifold without boundary</a></li>
-<li><a href="#orgdc0458a">4. Sobolev spaces on compact manifold with boundary</a>
-<ul>
-<li><a href="#orge160586">4.1. Sobolev spaces on half-plan</a>
-<ul>
-<li><a href="#org874fdf4">4.1.1. Smooth extensions</a></li>
-<li><a href="#orgcc0dd68">4.1.2. Functoriality of \( D_x \) and equivalent definitions</a></li>
-</ul>
-</li>
-<li><a href="#org806b308">4.2. Trace theorems</a></li>
-<li><a href="#org24efaaf">4.3. Trace operator on manifold</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<div class="info">
-<p>
-The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
-<code>pdf</code>. 
-For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
-</p>
-
-</div>
 \(
 \newcommand{\re}{\mathop{\rm Re}\nolimits}
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
@@ -308,14 +270,59 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
 \newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
 \newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
+\newcommand{\Enorm}{\mathop{\mathcal{E}_{\rm norm}}\nolimits}
+\newcommand{\Anorm}{\mathop{\mathcal{A}_{\rm norm}}\nolimits}
+\newcommand{\Cl}{\mathop{\rm Cl}\nolimits}
+\newcommand{\Spin}{\mathop{\rm Spin}\nolimits}
+\newcommand{\Pin}{\mathop{\rm Pin}\nolimits}
+\newcommand{\Hom}{\mathop{\rm Hom}\nolimits}
+\newcommand{\End}{\mathop{\rm End}\nolimits}
 \)
+</div>
+<div id="content">
+<h1 class="title">Interpolation theory and Sobolev spaces on compact manifolds</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orge509a92">1. Motivation</a></li>
+<li><a href="#org27596e6">2. Preparatory material</a>
+<ul>
+<li><a href="#org4d597ea">2.1. Stein's multiplier</a></li>
+<li><a href="#org0201527">2.2. Holomorphic interpolation of Banach spaces</a></li>
+</ul>
+</li>
+<li><a href="#orga7c140d">3. Sobolev spaces on compact manifold without boundary</a></li>
+<li><a href="#orgeab4e78">4. Sobolev spaces on compact manifold with boundary</a>
+<ul>
+<li><a href="#org57541c1">4.1. Sobolev spaces on half-plan</a>
+<ul>
+<li><a href="#org34f317b">4.1.1. Smooth extensions</a></li>
+<li><a href="#org9f87a39">4.1.2. Functoriality of \( D_x \) and equivalent definitions</a></li>
+</ul>
+</li>
+<li><a href="#org08c4287">4.2. Trace theorems</a></li>
+<li><a href="#orgde4fb64">4.3. Trace operator on manifold</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="info">
+<p>
+The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
+<code>pdf</code>. 
+For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
+</p>
 
-<div id="outline-container-orgbd83145" class="outline-2">
-<h2 id="orgbd83145"><span class="section-number-2">1</span> Motivation</h2>
+</div>
+
+<div id="outline-container-orge509a92" class="outline-2">
+<h2 id="orge509a92"><span class="section-number-2">1</span> Motivation</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 We will define a more general notion of Sobolev spaces on compact manifold than those in
-<a class='org-ref-reference' href="#aubin_nonlinear_1998">aubin_nonlinear_1998</a> and <a class='org-ref-reference' href="#jost_riemannian_2008">jost_riemannian_2008</a>, where Sobolev spaces on a
+<a class='org-ref-reference' href="#aubin_nonlinear_1998">aubin_nonlinear_1998</a> and <a class='org-ref-reference' href="#jost_riemannian_2011">jost_riemannian_2011</a>, where Sobolev spaces on a
 (Riemannian) manifold \( W^{k,p}(M) \) of dimension \( n \) are defined for
 \( k\in \mathbb{Z}_{\geq 0} \) and for <i>uniform weight</i>, meaning that a function \( f\in W^{k,p}(M)
 \) is supposed to be weakly differentiable up to order \( k \) in every variables \(
@@ -344,7 +351,7 @@ discuss the notion of trace in order to use the initial condition at \( t=0 \).
 <p>
 In this part, all manifolds will be compact, with no given metric. This is not really a
 generalisation since on compact manifolds, Sobolev spaces \( W^{k,p}(M) \), as defined in
-<a class='org-ref-reference' href="#aubin_nonlinear_1998">aubin_nonlinear_1998</a> and <a class='org-ref-reference' href="#jost_riemannian_2008">jost_riemannian_2008</a> set theoretically do not depend on
+<a class='org-ref-reference' href="#aubin_nonlinear_1998">aubin_nonlinear_1998</a> and <a class='org-ref-reference' href="#jost_riemannian_2011">jost_riemannian_2011</a> set theoretically do not depend on
 the metric and (the equivalent class of) their norms also independent of the metric.
 </p>
 
@@ -358,8 +365,8 @@ case of corners is not much (see <a class='org-ref-reference' href="#hamilton_ha
 </div>
 </div>
 
-<div id="outline-container-org44d446e" class="outline-2">
-<h2 id="org44d446e"><span class="section-number-2">2</span> Preparatory material</h2>
+<div id="outline-container-org27596e6" class="outline-2">
+<h2 id="org27596e6"><span class="section-number-2">2</span> Preparatory material</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 We will recall here basic elements of Fourier transform on the space of tempered
@@ -367,8 +374,8 @@ distributions and then we will have a quick review of interpolation theory.
 </p>
 </div>
 
-<div id="outline-container-org8ccc5a7" class="outline-3">
-<h3 id="org8ccc5a7"><span class="section-number-3">2.1</span> Stein's multiplier</h3>
+<div id="outline-container-org4d597ea" class="outline-3">
+<h3 id="org4d597ea"><span class="section-number-3">2.1</span> Stein's multiplier</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Let \( X = \mathbb{R}^n \) be the Euclidean space, coordinated by \( x_1,\dots, x_n \) and
@@ -503,8 +510,8 @@ where \( L^p \) stands for \( L^p(X\times [0,T]) \).</li>
 </div>
 </div>
 
-<div id="outline-container-org889a976" class="outline-3">
-<h3 id="org889a976"><span class="section-number-3">2.2</span> Holomorphic interpolation of Banach spaces</h3>
+<div id="outline-container-org0201527" class="outline-3">
+<h3 id="org0201527"><span class="section-number-3">2.2</span> Holomorphic interpolation of Banach spaces</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 The Interpolation theory is based on the following Three-lines theorem whose proof follows
@@ -915,8 +922,8 @@ The advantage of this proof is that it is valid for weighted Sobolev spaces over
 </div>
 </div>
 
-<div id="outline-container-org5678a20" class="outline-2">
-<h2 id="org5678a20"><span class="section-number-2">3</span> Sobolev spaces on compact manifold without boundary</h2>
+<div id="outline-container-orga7c140d" class="outline-2">
+<h2 id="orga7c140d"><span class="section-number-2">3</span> Sobolev spaces on compact manifold without boundary</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Let \( M \) be a compact manifold without boundary. We fix a finite atlas of \( M \) by
@@ -1022,8 +1029,8 @@ manifold \( M \).
 </div>
 
 
-<div id="outline-container-orgdc0458a" class="outline-2">
-<h2 id="orgdc0458a"><span class="section-number-2">4</span> Sobolev spaces on compact manifold with boundary</h2>
+<div id="outline-container-orgeab4e78" class="outline-2">
+<h2 id="orgeab4e78"><span class="section-number-2">4</span> Sobolev spaces on compact manifold with boundary</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 In this part, we will define the Sobolev spaces \( W^{k,p}(M/ \mathcal{A}) \) where \(k\in
@@ -1097,16 +1104,16 @@ operator in the next sections.
 </p>
 </div>
 
-<div id="outline-container-orge160586" class="outline-3">
-<h3 id="orge160586"><span class="section-number-3">4.1</span> Sobolev spaces on half-plan</h3>
+<div id="outline-container-org57541c1" class="outline-3">
+<h3 id="org57541c1"><span class="section-number-3">4.1</span> Sobolev spaces on half-plan</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 In this section, the Sobolev spaces on \( X\times Y \) or \( X\times Y^+ \) are defined
 with weight \( (\sigma_1,\dots,\sigma_n,\rho) \) and \( \sigma:= \lcm (\sigma_1,\dots,\sigma_n,\rho) \).
 </p>
 </div>
-<div id="outline-container-org874fdf4" class="outline-4">
-<h4 id="org874fdf4"><span class="section-number-4">4.1.1</span> Smooth extensions</h4>
+<div id="outline-container-org34f317b" class="outline-4">
+<h4 id="org34f317b"><span class="section-number-4">4.1.1</span> Smooth extensions</h4>
 <div class="outline-text-4" id="text-4-1-1">
 <p>
 Let \( \mathcal{S}(X\times Y^+) \) denote the space of
@@ -1342,8 +1349,8 @@ of \( W^{k,p}(X\times Y^+) \) is \( W^{-k, p'}(X\times Y^+/0) \).
 </div>
 </div>
 
-<div id="outline-container-orgcc0dd68" class="outline-4">
-<h4 id="orgcc0dd68"><span class="section-number-4">4.1.2</span> Functoriality of \( D_x \) and equivalent definitions</h4>
+<div id="outline-container-org9f87a39" class="outline-4">
+<h4 id="org9f87a39"><span class="section-number-4">4.1.2</span> Functoriality of \( D_x \) and equivalent definitions</h4>
 <div class="outline-text-4" id="text-4-1-2">
 <p>
 The following discussion appeared as 4 lemmas in <a class='org-ref-reference' href="#hamilton_harmonic_1975">hamilton_harmonic_1975</a> in the proof of Vanishing trace theorem <a href="#thm:vanishing-trace">thm:vanishing-trace</a>. I
@@ -1480,8 +1487,8 @@ Given \( k>0 \) and \( \sigma \mid k \),
 
 
 
-<div id="outline-container-org806b308" class="outline-3">
-<h3 id="org806b308"><span class="section-number-3">4.2</span> Trace theorems</h3>
+<div id="outline-container-org08c4287" class="outline-3">
+<h3 id="org08c4287"><span class="section-number-3">4.2</span> Trace theorems</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 To make the notation more intuitive, we abusively denote the horizontal arrows in the \(
@@ -1764,8 +1771,8 @@ W^{k,p}(X\times Y) \).
 </div>
 </div>
 
-<div id="outline-container-org24efaaf" class="outline-3">
-<h3 id="org24efaaf"><span class="section-number-3">4.3</span> Trace operator on manifold</h3>
+<div id="outline-container-orgde4fb64" class="outline-3">
+<h3 id="orgde4fb64"><span class="section-number-3">4.3</span> Trace operator on manifold</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 The following paragraph does not appear in <a class='org-ref-reference' href="#hamilton_harmonic_1975">hamilton_harmonic_1975</a> because of Remark <a href="#rem:hamilton-typo">rem:hamilton-typo</a>.
@@ -1819,7 +1826,7 @@ l< k- \frac{\sigma}{\rho p} \).
 
 <h1 class='org-ref-bib-h1'>Bibliography</h1>
 <ul class='org-ref-bib'><li><a id="aubin_nonlinear_1998">[aubin_nonlinear_1998] Aubin, Some Nonlinear Problems in Riemannian Geometry, Springer-Verlag (1998).</a></li>
-<li><a id="jost_riemannian_2008">[jost_riemannian_2008] Jost, Riemannian Geometry and Geometric Analysis, Springer-Verlag (2008).</a></li>
+<li><a id="jost_riemannian_2011">[jost_riemannian_2011] Jost, Riemannian Geometry and Geometric Analysis, Springer-Verlag (2011).</a></li>
 <li><a id="hamilton_harmonic_1975">[hamilton_harmonic_1975] Hamilton, Harmonic Maps of Manifolds with Boundary, Springer-Verlag (1975).</a></li>
 </ul>
 </p>
@@ -1830,7 +1837,7 @@ l< k- \frac{\sigma}{\rho p} \).
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-05-31 Thu 22:51. <br>
+Last updated 2021-06-25 Fri 23:03. <br>
 </div>
 </div>
 </body>

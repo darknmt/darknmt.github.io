@@ -12,6 +12,11 @@ This post is my reading note for cite:sacks_existence_1981. I want to present th
 ideas as clear as possible and I may probably skip a few (important) details and computations.
 #+LATEX:\fi
 
+On Sep 22, 2019 I gave a talk at I2M, Marseille about Sacks--Uhlenbeck's work, here is
+note of my talk.
+
+Local storage: [[file:/home/darknmt/Maths/Scan/2019-09/SU-rev.pdf][Manuscript]] in French
+
 * Brief view of Sacks and Uhlenbeck's strategy.
 
 Let \( M \) and \( N \) be compact Riemannian manifolds (without boundary), \( M \) is a
@@ -371,8 +376,9 @@ not contractible then the long exact sequence of homotopy for the bundle \( \til
 \]
 Since \( \tilde N \) is simply-connected and not contractible, there exists \( n\geq 2 \)
 such that \( 0\ne\pi_n(\tilde N) = \pi_n(N) = \pi_{n-2}(\Omega(\mathbb{S}^2,N)) \), where
-the last equality follows from definition of homotopy group. The
-general argument applies.
+the last equality follows from Exponential law in Pointed category (the role of
+cartesian product is played by [[https://en.wikipedia.org/wiki/Smash_product][smash product]]) and the fact that smash product of spheres
+is a sphere. The general argument applies.
 #+END_proof
 
 
@@ -510,7 +516,7 @@ E(s_\alpha) < \epsilon \), one has:
 \|ds_\alpha\|_{W^{1,4}(D(1/2), \mathbb{R}^k)} \leq C(4, D(1/2)) \| ds_\alpha\|_{L^2(D)} =
 C(4, D(1/2)) E(s_\alpha)^{1/2}
 \]
-So \( \{s_\alpha\} \) is bounded in \( W^{1,4}(D(1/2), \mathbb{R}^k) \) which is embedded
+So \( \{s_\alpha\} \) is bounded in \( W^{2,4}(D(1/2), \mathbb{R}^k) \) which is embedded
 compactly into \( C^1(\overline{D(1/2)}, \mathbb{R}^k) \).
 
 We now can prove that \( s_\alpha \) converges strongly to \( s \) in \(
@@ -550,7 +556,7 @@ ref:lem:uni-loc-finite-cover, \( h \) can be chosen independently of \( m \) as 
 
 Since \( \sum_i \int_{D(y_i, 2^{-m+1})} |ds_\alpha|^2 < B h\), choosing \( l = \lceil
 \frac{Bh}{2\epsilon} \rceil \), we see that there are at most \( l \) balls \( D(y_{\alpha,i},
-2^{-m+1}) \) with centers depending on \( \alpha \), on which the energy \( E(s_\alpha) \) is less than
+2^{-m+1}) \) with centers depending on \( \alpha \), on which the energy \( E(s_\alpha) \) is more than
 \( \epsilon \). Passing to a subsequence \( \{s_{\alpha(m)}\} \) of \( \{s_\alpha\} \),
 we can suppose that \( \{y_{\alpha(m),i} \}\) converges to \( x_{m,i} \) as \(
 \{\alpha(m)\} \to 1 \). But since the points \( \{y_i\} \) are of finite number and

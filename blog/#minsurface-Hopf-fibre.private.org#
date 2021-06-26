@@ -1,0 +1,317 @@
+#+TITLE: Minimal surfaces fibred by Hopf links
+#+AUTHOR: Tien 
+#+DATE: Dec 17, 2020
+# +STARTUP: latexpreview
+#+LINK: scan  file:/home/darknmt/Maths/Scan/%s
+#+SETUPFILE: ../res/mathsetup.org
+
+We are interested in minimal surfaces \( \Sigma \) in \( \mathbb{R}^4 \approx \mathbb{C}^2
+\) or \( \mathbb{R}^4 \cap \{r <1\} \) given by
+the equation
+\[
+ z_1 z_2 = F(\rho),\quad \rho = r^2 = z_1 \bar z_1 + z_2\bar z_2
+\]
+where \( F \) is a real, radially symmetric function. The
+intersection of \( \Sigma \) with any sphere of radius \( \rho^{1/2} \) is a Hopf link / a
+circle / empty if \( F(\rho) < \frac{\rho}{2} \) / \( F(\rho) = \frac{\rho}{2} \) / \(
+F(\rho) > \frac{\rho}{2} \).
+
+It will be showed that the minimal surface equation of \( \Sigma \) in a conformally flat metric is
+equivalent to a second order ODE on \( F \). In Euclidean space, an obious solution is \(
+F=\const \) which makes \( \Sigma \) into a complex curve. We will point out that \( F(\rho) = \frac{1}{2}\sqrt{\rho^2 - C} \) is
+another solution.
+
+* Orthogonal frame
+We will build an orthogonal frame of \( \Sigma \), starting from the normal frame \( \{N,\bar N\} \) of \( N\Sigma
+\) where
+\[
+N = \bar z_1 \partial_{z_2} + \bar z_2 \partial_{z_1} - F'(\rho) B
+\]
+where \( B:= z_1 \partial_{z_1} + z_2
+\partial_{z_2} + \bar z_1 \partial_{\bar z_1} + \bar z_2 \partial_{\bar z_2} =
+\frac{1}{2}\nabla\rho \)
+This frame of \( N\Sigma \) is obtained by differentiate the function \( z_1 z_2 -F \) and
+raised to vector fields using Euclidean metric. 
+
+From this, one can check that \( \{W,\bar
+W\} \) is a frame of \( T\Sigma \) where
+\[
+ W:=(F-F'\rho)C + \frac{F'}{2}(|z_1|^2 - |z_2|^2)B
+\]
+and \( C:= z_1 \partial_{z_1} - z_2 \partial_{z_2} \). We will denote \(F-F'\rho\) by \( x \) and \(\frac{F'}{2}(|z_1|^2 - |z_2|^2)\) by \( y \) and
+remark that \( y^2 = \frac{F'^2}{4}(\rho^2 - 4F^2) \). The computation of the second
+fundamental form is not carried out under the frame \(
+W,\bar W \) as they are not orthogonal.
+
+To turn \( \{W,\bar W\} \) into an orthogonal frame, we will split the term \( xC \) into \( x_1 C + x_2
+\bar C \). Because \(C - \bar C = \frac{1}{x}(W-\bar W) \in T\Sigma\),
+as long as \( x_1 + x_2=x \), the following \( Z,\bar Z \) will be a frame of \( T\Sigma \). 
+\begin{equation}
+\label{eq:frame-Z}
+\begin{align*}
+Z &:= x_1 C + x_2 \bar C + yB\\
+\bar Z &:= x_2 C + x_1 \bar C + yB
+\end{align*}
+\end{equation}
+Now \( \langle Z, Z \rangle =0 \) and \( x_1+x_2=0 \) together will give a quadratic
+equation on \( x_i \), which is solvable (i.e. \( Z,\bar Z \) exist) if \( F\leq \frac{\rho}{2}
+\) and has distinct real solutions (i.e \( Z,\bar Z \) are
+linear independent) if \( F < \frac{\rho}{2} \) . Concretely 
+\[ 
+x_i: = \frac{x \pm \sqrt\Delta}{2}= \frac{F - F'\rho}{2} \pm \frac{F}{2}\sqrt{1 - 8F'(\frac{F}{\rho} -
+\frac{F'}{2}) \)
+\] 
+
+
+* The ODEs
+Using the orthogonal frame \( Z,\bar Z \), one can write the mean curvature as \( k = g^{Z\bar Z}\sff(Z,\bar Z) \)
+where \( g^{Z\bar Z} = \langle Z,\bar Z \rangle^{-1} \), hence \( k \) vanishes if and only
+if \( n\nabla_Z\bar Z = 0 \). Compute the latter explicity, one can see that the minimal
+surface equations (in euclidean and hyperbolic metric) are equivalent to nonlinear
+second order ODEs on \( F \) and those ODE can be writen down explicitly.
+
+#+ATTR_LATEX: :options []
+#+ATTR_HTML: :id thm:ODE-E :btit () 
+#+BEGIN_theorem
+#+LATEX: \label{thm:ODE-E}
+The Euclidean minimal surface equation can be reduced to first order ODE in \( F \), and is equivalent to
+\[
+ \frac{x}{y} = \frac{C}{\rho}
+\]
+where \( C \) is non-zero constant. In term of \( F \), this means 
+\begin{equation}
+\label{eq:ODE-E}
+ F\rho  -F'\rho^2 = C F' \sqrt{\rho^2 - 4F^2}
+\end{equation}
+#+END_theorem
+
+#+ATTR_LATEX: :options []
+#+ATTR_HTML: :id thm:ODE-hyperbolic :btit () 
+#+BEGIN_theorem
+#+LATEX: \label{thm:ODE-hyperbolic}
+The minimal surface equation in the metric \( \tilde g = e^{2\varphi}g_{E} \), where \(
+\varphi = \varphi(\rho) \) is a radial function, equivalent to the following second order nonlinear ODE
+on \( F \):
+\begin{equation}
+\label{eq:ODE-varphi}
+ \frac{2x'}{x} - \frac{2y'}{y} + \frac{2}{\rho} + \varphi' \left[ 8 + \rho\left(
+\frac{x^2}{y^2} - 4 \right) \frac{F'}{F}  \right]=0
+\end{equation}
+In particular, for hyperbolic metric, \( \varphi' = \frac{1}{1-\rho} \) and the minimal
+surface equation is
+\begin{equation}
+\label{eq:ODE-H}
+ \frac{2x'}{x} - \frac{2y'}{y} + \frac{2}{\rho} + \frac{8}{1-\rho} + \frac{\rho}{1-\rho}\left(
+\frac{x^2}{y^2} - 4 \right) \frac{F'}{F}=0
+\end{equation}
+where \( x' = \frac{\partial}{\partial\rho}(F-F'\rho) \) and \( (y^2)' = \frac{\partial}{\partial\rho}(\frac{F'^2}{4}(\rho^2-4F^2)) \)
+#+END_theorem
+
+* Symmetry and solutions of the ODEs
+
+** Solving the Euclidean ODE eqref:eq:ODE-E
+It is possible to show the ODE eqref:eq:ODE-E explicitly. Put \( G:=
+\frac{1}{2}\sqrt{\rho^2 - 4F^2} \), one has
+\[
+G^2 + F^2 = \frac{1}{4}\rho^2,\quad GG' + FF'= \frac{\rho}{4}
+\]
+With no assumption on \( F \), one can check that
+\[
+\left(\frac{2G - C}{F}\right)' = \frac{1}{2F^2 G} (F\rho  - F'\rho^2 -2CF'G) =
+\frac{1}{2F^2 G} (F\rho - F'\rho^2 -CF'\sqrt{\rho^2 - 4F^2})
+\]
+So eqref:eq:ODE-E is equivalent to \( \frac{\sqrt{\rho^2 - 4F^2}-C_1}{F} = C_2 \), whose
+solutions are
+\[
+ F = \frac{-C_1C_2 \pm \sqrt{(C_2^2 + 4)\rho^2 - 4C_1^2}}{C_2^2 +4},\quad G = \frac{4C_1
+\pm C_2\sqrt{(C_2^2 + 4)\rho^2 - 4C_1^2}}{C_2^2 +4},\quad C_1\ne 0
+\]
+which is obviously in the range \( [-\frac{\rho}{2}, \frac{\rho}{2}] \)
+
+It can be checked that for the above solutions \( F \), \( z_1 z_2 = F \)
+is equivalent to \( |z_1|^2 - |z_2|^2 = \pm (C_2 z_1z_2 + C_1) \).
+
+#+ATTR_LATEX: :options []
+#+ATTR_HTML: :id thm:new-min-surface-E :btit () 
+#+BEGIN_theorem
+#+LATEX: \label{thm:new-min-surface-E}
+1. The following surfaces are minimal
+   \[
+   A(\left|z_1\right|^2 - |z_2|^2) + B z_1 z_2 = C
+   \]
+   and they are all minimal surfaces in 4D Euclidean space found by our method.
+2. Those surfaces are \( zw = \epsilon \) after a rotation in \( SO(4) \).
+#+END_theorem
+
+** Symmetry and solutions of the general ODE eqref:eq:ODE-varphi
+The following remark "explains" the change of variable we are about the make.
+#+ATTR_HTML: :id rem:gen-sol
+#+BEGIN_remark
+#+LATEX: \label{rem:gen-sol}
+If \( F \) solves eqref:eq:ODE-varphi, then \( G:= \frac{1}{2}\sqrt{\rho^2 - F^2} \) and
+   \[
+   F_\alpha := \cos\alpha\ F + \sin\alpha\ G,\quad G_\alpha := -\sin\alpha\ F + \cos\alpha\ G
+   \]
+   also solve eqref:eq:ODE-varphi. This can be seen by noticing that the transform
+   \[
+   \zeta_1 = \cos\alpha\ z_1 + \sin\alpha\ \bar z_2,\quad \zeta_2 = -\sin\alpha\ \bar z_1 +
+   \cos\alpha\ z_2
+   \]
+   is \( SO(4) \) and \( \zeta_1\zeta_2 = \cos 2\alpha\ F -\sin 2\alpha\ G \).
+#+END_remark
+Since \( F^2 + G^2 = \frac{\rho^2}{4} \), define \( \theta \) by \( F = \frac{\rho}{2}\cos
+   \theta(\rho) \), one has \( G = \frac{\rho}{2}\sin\theta(\rho) \) and
+\(
+    F_\alpha = \cos (\theta -\alpha)
+   \). So if we rewrite eqref:eq:ODE-varphi as a second order ODE on \( \theta \), we
+expect that it is actually a first order ODE on \( \theta' \).
+
+#+ATTR_LATEX: :options []
+#+ATTR_HTML: :id prop:ODE-theta :btit () 
+#+BEGIN_proposition
+#+LATEX: \label{prop:ODE-theta}
+After the change of variable \( F =:
+\frac{\rho}{2}\cos\theta(\rho) \), the ODE eqref:eq:ODE-varphi becomes,:
+\begin{equation}
+\label{eq:ODE-theta}
+\theta'' + (\rho + 2\rho^2\varphi')\theta'^3 + \left( \frac{2}{\rho} + 2\varphi' \right)\theta' = 0
+\end{equation}
+#+END_proposition
+
+The ODE eqref:eq:ODE-theta is a Bernoulli equation on \( \theta' \), and can be solved
+explicitly
+\[
+ \theta'^{-2} = -\rho^2 + C\rho^4e^{4\varphi}
+\]
+
+In Euclidean case where \( \varphi=0 \), this becomes 
+\[ 
+\theta'^2 = -\rho^2 + C\rho^4 
+\]
+which yields solution of form \( AF + BG = C \) as discussed in the previous section.
+
+In hyperbolic case where 
+\( 
+e^\varphi = \frac{2}{1-\rho},\varphi' = \frac{1}{1-\rho} 
+\),
+the solutions are 
+\[ 
+\theta'^{-2} = -\rho^2 + \frac{C\rho^4}{(1-\rho)^4} 
+\].
+
+** Sketching the solution
+We start with 2 remarks
+#+ATTR_HTML: :id rem:sketch-sol
+#+BEGIN_remark
+#+LATEX: \label{rem:sketch-sol}
+1. If \( F=\frac{\rho}{2}\cos\theta \) and \( G = \frac{\rho}{2}\sin\theta \) then \( z_1=\pm
+   r \cos(\frac{\pi}{4}+\frac{\theta}{2})\) and \( z_2 = \pm r \sin(\frac{\pi}{4}+\frac{\theta}{2}) \)
+2. \(\rho\theta' = r \frac{d \frac{\theta}{2}}{dr}\), so 
+   \[ 
+   \frac{1}{(\rho\theta')^2}+1 = \frac{1}{\sin^2\psi} 
+   \]
+   where \( \psi \) is the angle between the solution curve passing by a point \( p_0 \)
+   and \( \overrightarrow{Op_0} \).
+#+END_remark
+
+Together, they say that the solution curve satisfies
+\[
+\rho^2\sin^2\psi = Ce^{-4\varphi}
+\]
+There is a geometric argument to see that this is the hyperbole equation when \( \varphi =
+0\).
+* Appendice: Angle between planes in \( \mathbb{R}^4 \). Detecting \( zw=\epsilon \) up to \( SO(4) \)
+The intersection of \( \Sigma: z_1z_2=F(\rho) \) with the sphere \( S(\rho) \) of radius
+\( \rho \) contains generally two circles. We will compute the "angle" \( \varphi(\rho) \) formed by the two
+2-planes containing these circles. In general, the relative position between two 2-planes in \(
+\mathbb{R}^4 \) requires two real numbers in \( [-1,1] \): If one represent the planes by \( 2 \)-forms \(
+\omega_i \) of norm 1, living in the null cone of \( \Lambda^2 \) then these two
+\( SO(4) \)-invariant numbers are \( \langle \omega_1,\omega_2 \rangle \) and
+\( \langle \omega_1,\ast\omega_2 \rangle= \frac{\omega_1\wedge\omega_2}{\vol} \). They are
+unrelated in general and together completely
+determine \( \omega_2 \) in term of \( \omega_1 \) up to 4 positions, the same way that
+the inner product of/angle between two vectors in \( \mathbb{R}^2 \) completely determines one by
+the other, up to 2 positions.
+
+In our case where the two planes are invariant by the \( S^1 \)-action \( (z_1, z_2)\mapsto (z_1e^{i\theta}, z_2 e^{-i\theta}) \), these two numbers are actually related and allows us to talk about the angle
+between the two planes. Because this action is given by quaternion (left) multiplication with \( e^{i\theta} \) if we
+identify \( \mathbb{C}^2 \) with \( \mathbb{H} \) by \( (z_1,z_2) \mapsto z_1 + jz_2 \),
+its image \( S^1\hookrightarrow  SO(4) \) stays
+in one \( SU(2) \) of \( SO(4) = SU(2)\times_\pm SU(2) \). As a consequence, this copy of
+\( S^1 \) is trivial in \( \pi_1(SO(4))= \mathbb{Z}/2\mathbb{Z} \), and the induced action
+on the space of two-forms \( \Lambda=\Lambda_+ \oplus \Lambda_- \) is trivial on \( \Lambda_+ \),
+and is a rotation in \( \Lambda_- \) around \( dx_1\wedge dy_1 - dx_2 \wedge dy_2 \).
+
+Thus, the ASD part of a \( S^1 \)-invariant 2-form has a
+fixed direction (that of \( dx_1\wedge dy_1 - dx_2\wedge dy_2 \)) and if \( \omega_1,\omega_2 \) represent invariant 2-planes the two quantities \(
+\langle \omega_1,\omega_2 \rangle \) and \( \frac{\omega_1\wedge\omega_2}{\vol} \) are
+related by
+\begin{equation}
+\label{eq:sin-cos-4D}
+ \langle \omega_1,\omega_2 \rangle - \frac{\omega_1\wedge\omega_2}{\vol} = \pm 1
+\end{equation}
+
+Let \( (z_1,z_2) = (Ae^{i\theta}, Be^{-i\theta}) \) and \( (z_1,z_2)
+= (Be^{i\theta}, Ae^{-i\theta})\) be intersection of \( \Sigma: z_1z_2=F(\rho) \)  with the sphere \( S(\rho) \), where \( A(\rho), B(\rho) \) are real numbers satisfying \( A^2 + B^2
+= \rho, AB = F(\rho)\).
+
+#+ATTR_LATEX: :options []
+#+ATTR_HTML: :id prop:angle-function :btit () 
+#+BEGIN_proposition
+#+LATEX: \label{prop:angle-function}
+Let \( \omega_i \) be the volume 2-forms of the 2-plane containing the circle \( (Ae^{i\theta}, Be^{-i\theta}) \) and
+the one containing \( (Be^{i\theta}, Ae^{-i\theta}) \), then
+\[
+ \langle \omega_1,\omega_2 \rangle =  \frac{4}{(\frac{A}{B}+ \frac{B}{A})^2},\quad \langle \omega_1,\ast\omega_2 \rangle =  - \frac{(\frac{B}{A} -
+\frac{A}{B})^2}{(\frac{A}{B} + \frac{B}{A})^2}
+\]
+#+END_proposition
+#+BEGIN_proof
+The 2-plane containing \( (Ae^{i\theta}, Be^{i\theta}) \) is given by
+\[
+ \frac{x_1}{A} = \frac{x_2}{B},\quad \frac{y_1}{A}+ \frac{y_2}{B}=0
+\]
+The normal 1-forms are \( n_1:=\frac{1}{A}dx_1 - \frac{1}{B}dx_2 \) and \( n_1':=
+\frac{1}{A}dy_1 + \frac{1}{B}dy_2 \), so \( \ast\omega_1 = (\frac{1}{A^2} +
+\frac{1}{B^2})^{-1} \left[\frac{1}{A^2}dx_1dy_1 - \frac{1}{B^2}dx_2 dy_2 +
+\frac{1}{AB}(dx_1dy_2 - dx_2 dy_1)\right]\). The angle of two 2-planes is
+\[
+\langle \omega_1, \omega_2 \rangle = (\frac{1}{A^2}+ \frac{1}{B^2})^{-2} \frac{4}{A^2B^2} = \frac{4}{(\frac{A}{B}+ \frac{B}{A})^2}
+\] 
+and 
+\[
+\langle \omega_1,\ast\omega_2\rangle = -\frac{(\frac{1}{A^2}-
+\frac{1}{B^2})^2}{(\frac{1}{A^2} + \frac{1}{B^2})^2} = - \frac{(\frac{B}{A} -
+\frac{A}{B})^2}{(\frac{A}{B} + \frac{B}{A})^2}
+\]
+#+END_proof
+
+#+BEGIN_definition
+The /angle function/ associate to a surface \( \Sigma \) of type \( z_1z_2 = F(\rho) \) in \(
+\mathbb{R}^4 \) is define by \( \rho \mapsto \arccos \frac{2}{(\frac{A}{B} +
+\frac{B}{A})}=\arccos \frac{2F}{\rho} \)  where \( A(\rho), B(\rho) \) are the moduli of \( z_i \) in \(
+\Sigma\cap S(\rho) \). This is also the angle between the two lines connecting antipodal
+points of \( \Sigma\cap S(\rho)\cap \{\im z_1 = \im z_2 = 0\} \).
+#+END_definition
+
+#+ATTR_HTML: :id rem:angle-zw-epsilon
+#+BEGIN_remark
+#+LATEX: \label{rem:angle-zw-epsilon}
+1. The angle function of \( \Sigma_\epsilon: z_1z_2 = \epsilon \) is \( \theta_\epsilon =
+   \arccos \frac{2\epsilon}{\rho} \), and that of \( \Sigma_C: z_1 z_2 =
+   \frac{1}{2}\sqrt{\rho^2 - C} \) is \( \theta_C:= \arccos \frac{\sqrt{\rho^2 - C}}{\rho}
+   \). Since \( \theta_\epsilon + \theta_C = \frac{\pi}{2} \) if \( C = 4\epsilon^2 \),
+   the doubled surfaces \( z_1 z_2 = \pm \epsilon \) and \( z_1 z_2 = \pm
+   \frac{1}{2}\sqrt{\rho^2 - 4\epsilon^2} \) coincide, they intersect the sphere \(
+   S(\rho) \) in 4 circles, any two of them form a Hopf link.
+2. The previous argument shows that if \( F \) solves the second order ODE \( \frac{x'}{x}- \frac{y'}{y} + \frac{1}{\rho} = 0\), then \( G =\frac{1}{2}\sqrt{\rho^2 - 4F^2} \) also solves it. We will use this hint to
+   show the equation eqref:eq:ODE-E explicitly.
+3. If two surfaces \( z_1z_2 = \pm F_1 \) and \( z_1z_2 = \pm F_2 \) are identical after
+   an transformation in \( SO(4) \), then \( F_2 = \pm F_1 \) or \( F_2 = \pm
+   \frac{1}{2}\sqrt{\rho^2 - 4F_1^2} \).
+#+END_remark
+
+
+
+bibliographystyle:alpha
+bibliography:../res/GeoDiff.bib

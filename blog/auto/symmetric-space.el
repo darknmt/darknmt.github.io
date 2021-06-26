@@ -52,9 +52,7 @@
     "lcm"
     "gcd"
     "Ric"
-    "Riem"
-    "Enorm"
-    "Anorm")
+    "Riem")
    (LaTeX-add-labels
     "sec:orgf40c825"
     "eq:sxreverse"

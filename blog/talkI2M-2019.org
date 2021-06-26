@@ -1,0 +1,17 @@
+#+TITLE: Bonnet--Myers and Synge--Weinstein
+#+AUTHOR: Tien NGUYEN MANH
+#+DATE: Sep 21, 2019
+#+STARTUP: latexpreview
+
+# +STARTUP: indent
+# +STARTUP: showstars
+
+#+SETUPFILE: ../res/mathsetup.org
+
+Local storage: [[file:/home/darknmt/Maths/Scan/2019-09/Myers-Synge.pdf][Manuscript]] in French\( . \)
+
+This is the note of my talk to M2 students at I2M, Marseille about second variation of
+energy/length and applications. I introduce Bonnet--Myers' Theorem and give a proof of
+Synge's Theorem using Weinstein's Fixed point theorem.
+
+The reference is this [[http://math.uchicago.edu/~amathew/syngew.pdf][note]] of A. Mathew.

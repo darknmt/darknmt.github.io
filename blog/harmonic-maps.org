@@ -727,10 +727,17 @@ and the inverse of a totally geodesic map is totally geodesic.
 
 
 #+BEGIN_remark
-It is not true in general that the composition of harmonic maps are harmonic. For example,
-if one composes the harmonic maps \(\mathbb{R} \longrightarrow
-\mathbb{R}^2: x \mapsto (x,2x) \) and \(  \mathbb{R}^2 \longrightarrow
-\mathbb{R}: (x,y)\mapsto x^2 - y^2 \), the result is \( \mathbb{R}\longrightarrow \mathbb{R}: x \mapsto -3x^2 \),
+1. The Proposition says that SFF of composition follows chain rule: the SFF of \( f'\circ f \) is a 2-tensor on \( M \) valued in
+   \( TM'' \) is obtained by pushing forward the SFF of \( f \) and pulling back the SFF
+   of \( f' \) and then adding the two. In Cartan formalism:
+   \[
+    (f'\circ f)_{\alpha i j} = (f'_{\alpha k}(f)\ f_{ki})_j = f'_{\alpha k h} f_{hj}
+   f_{ki} + f'_{\alpha k} f_{kij} = f^* \beta(f') + f'_*\beta(f)
+   \]
+2. It is not true in general that the composition of harmonic maps are harmonic. For example,
+   if one composes the harmonic maps \(\mathbb{R} \longrightarrow
+   \mathbb{R}^2: x \mapsto (x,2x) \) and \(  \mathbb{R}^2 \longrightarrow
+   \mathbb{R}: (x,y)\mapsto x^2 - y^2 \), the result is \( \mathbb{R}\longrightarrow \mathbb{R}: x \mapsto -3x^2 \),
 which is not harmonic.
 #+END_remark
 

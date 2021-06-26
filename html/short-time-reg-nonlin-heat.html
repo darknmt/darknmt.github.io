@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-11-28 Wed 01:28 -->
+<!-- 2021-06-25 Fri 23:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Short-time existence and regularity for nonlinear heat equation</title>
@@ -253,39 +253,6 @@ for the JavaScript code in this tag.
 <li><a href='./contact.html'>Contact</a></li>
 </ul>
 </div>
-</div>
-<div id="content">
-<h1 class="title">Short-time existence and regularity for nonlinear heat equation</h1>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#org7b3863a">1. Review of Sobolev spaces and Linear equations.</a>
-<ul>
-<li><a href="#orge94415d">1.1. Sobolev spaces.</a></li>
-<li><a href="#org27da7c8">1.2. Trace theorem.</a></li>
-<li><a href="#org4ca6f55">1.3. Linear equations on manifolds.</a>
-<ul>
-<li><a href="#org5c01761">1.3.1. Existence and Regularity.</a></li>
-<li><a href="#orge21172b">1.3.2. Maximum principle and Comparison theorems.</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org146166b">2. Regularity estimate of the quadratic term.</a></li>
-<li><a href="#orga3c2451">3. Regularity for nonlinear heat equation.</a></li>
-<li><a href="#org5edd7a5">4. Short-time existence for nonlinear heat equation.</a></li>
-</ul>
-</div>
-</div>
-<div class="info">
-<p>
-The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
-<code>pdf</code>. 
-For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
-</p>
-
-</div>
 \(
 \newcommand{\re}{\mathop{\rm Re}\nolimits}
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
@@ -305,8 +272,45 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
 \newcommand{\Enorm}{\mathop{\mathcal{E}_{\rm norm}}\nolimits}
 \newcommand{\Anorm}{\mathop{\mathcal{A}_{\rm norm}}\nolimits}
+\newcommand{\Cl}{\mathop{\rm Cl}\nolimits}
+\newcommand{\Spin}{\mathop{\rm Spin}\nolimits}
+\newcommand{\Pin}{\mathop{\rm Pin}\nolimits}
+\newcommand{\Hom}{\mathop{\rm Hom}\nolimits}
+\newcommand{\End}{\mathop{\rm End}\nolimits}
 \)
+</div>
+<div id="content">
+<h1 class="title">Short-time existence and regularity for nonlinear heat equation</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgdab63dd">1. Review of Sobolev spaces and Linear equations.</a>
+<ul>
+<li><a href="#org259adc3">1.1. Sobolev spaces.</a></li>
+<li><a href="#org007abf3">1.2. Trace theorem.</a></li>
+<li><a href="#org1393a9c">1.3. Linear equations on manifolds.</a>
+<ul>
+<li><a href="#orge7cac3e">1.3.1. Existence and Regularity.</a></li>
+<li><a href="#org8466ecc">1.3.2. Maximum principle and Comparison theorems.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org6d4a289">2. Regularity estimate of the quadratic term.</a></li>
+<li><a href="#orgfe61a5f">3. Regularity for nonlinear heat equation.</a></li>
+<li><a href="#orgd8fa10b">4. Short-time existence for nonlinear heat equation.</a></li>
+</ul>
+</div>
+</div>
+<div class="info">
+<p>
+The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
+<code>pdf</code>. 
+For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
+</p>
 
+</div>
 <p>
 We will establish in this part a regularity estimate for the quadratic term of nonlinear
 heat operator use it to setup a bootstrap scheme that eventually will prove that any
@@ -320,8 +324,8 @@ function theorem for Banach spaces. Since the solution is smooth, we can apply T
 <a href="#thm:global-eq">thm:global-eq</a> to conclude that the it remains in \( M'\subset \mathbb{R}^N \).
 </p>
 
-<div id="outline-container-org7b3863a" class="outline-2">
-<h2 id="org7b3863a"><span class="section-number-2">1</span> Review of Sobolev spaces and Linear equations.</h2>
+<div id="outline-container-orgdab63dd" class="outline-2">
+<h2 id="orgdab63dd"><span class="section-number-2">1</span> Review of Sobolev spaces and Linear equations.</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 The following results are well-known and their statements are written here in the case of our interest (linear heat equation on
@@ -330,8 +334,8 @@ appendices.
 </p>
 </div>
 
-<div id="outline-container-orge94415d" class="outline-3">
-<h3 id="orge94415d"><span class="section-number-3">1.1</span> Sobolev spaces.</h3>
+<div id="outline-container-org259adc3" class="outline-3">
+<h3 id="org259adc3"><span class="section-number-3">1.1</span> Sobolev spaces.</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Let \( M \) be a Riemannian manifold, the <i>Sobolev spaces</i> \( W^{k,p}(M) \) on \( M
@@ -434,8 +438,8 @@ embedding and Kondrachov theorem) and refer to the appendices for all the detail
 </div>
 </div>
 
-<div id="outline-container-org27da7c8" class="outline-3">
-<h3 id="org27da7c8"><span class="section-number-3">1.2</span> Trace theorem.</h3>
+<div id="outline-container-org007abf3" class="outline-3">
+<h3 id="org007abf3"><span class="section-number-3">1.2</span> Trace theorem.</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 It is possible to avoid a discussion on Trace operator if we only want to make sense of the
@@ -475,11 +479,11 @@ W^{l,p}(M) \) for any \( l < k-\frac{1}{p} \).
 </div>
 </div>
 
-<div id="outline-container-org4ca6f55" class="outline-3">
-<h3 id="org4ca6f55"><span class="section-number-3">1.3</span> Linear equations on manifolds.</h3>
+<div id="outline-container-org1393a9c" class="outline-3">
+<h3 id="org1393a9c"><span class="section-number-3">1.3</span> Linear equations on manifolds.</h3>
 <div class="outline-text-3" id="text-1-3">
-</div><div id="outline-container-org5c01761" class="outline-4">
-<h4 id="org5c01761"><span class="section-number-4">1.3.1</span> Existence and Regularity.</h4>
+</div><div id="outline-container-orge7cac3e" class="outline-4">
+<h4 id="orge7cac3e"><span class="section-number-4">1.3.1</span> Existence and Regularity.</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <p>
 It can be easily verified that the linear heat operator \(AF:= \frac{d}{dt}F + \Delta F \)
@@ -534,8 +538,8 @@ In particular for homogeneous equation, the solution is \( C^\infty \) and an ar
 </div>
 </div>
 
-<div id="outline-container-orge21172b" class="outline-4">
-<h4 id="orge21172b"><span class="section-number-4">1.3.2</span> Maximum principle and Comparison theorems.</h4>
+<div id="outline-container-org8466ecc" class="outline-4">
+<h4 id="org8466ecc"><span class="section-number-4">1.3.2</span> Maximum principle and Comparison theorems.</h4>
 <div class="outline-text-4" id="text-1-3-2">
 <p>
 Other than regularity results which are generally true for parabolic operators, the linear
@@ -603,8 +607,8 @@ only on \( b \) such that
 </div>
 
 
-<div id="outline-container-org146166b" class="outline-2">
-<h2 id="org146166b"><span class="section-number-2">2</span> Regularity estimate of the quadratic term.</h2>
+<div id="outline-container-org6d4a289" class="outline-2">
+<h2 id="org6d4a289"><span class="section-number-2">2</span> Regularity estimate of the quadratic term.</h2>
 <div class="outline-text-2" id="text-2">
 <div id="thm:reg-quad" btit="(Regularity of the quadratic term)" class="theorem">
 <p>
@@ -685,8 +689,8 @@ The conclusion follows.
 
 
 
-<div id="outline-container-orga3c2451" class="outline-2">
-<h2 id="orga3c2451"><span class="section-number-2">3</span> Regularity for nonlinear heat equation.</h2>
+<div id="outline-container-orgfe61a5f" class="outline-2">
+<h2 id="orgfe61a5f"><span class="section-number-2">3</span> Regularity for nonlinear heat equation.</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Let \( p>\dim M + 2 \), using the regularity estimate for the quadratic term, we now can prove:
@@ -786,8 +790,8 @@ order to apply regularity result for elliptic operator on manifold with boundary
 
 
 
-<div id="outline-container-org5edd7a5" class="outline-2">
-<h2 id="org5edd7a5"><span class="section-number-2">4</span> Short-time existence for nonlinear heat equation.</h2>
+<div id="outline-container-orgd8fa10b" class="outline-2">
+<h2 id="orgd8fa10b"><span class="section-number-2">4</span> Short-time existence for nonlinear heat equation.</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 We will choose as always \( p > \dim M +2 \). As before, \( M \) is a compact Riemannian

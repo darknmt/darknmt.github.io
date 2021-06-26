@@ -3,12 +3,11 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-09-15 Sat 01:52 -->
+<!-- 2021-06-25 Fri 23:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>De Rham decomposition</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="Tien" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -253,27 +252,6 @@ for the JavaScript code in this tag.
 <li><a href='./contact.html'>Contact</a></li>
 </ul>
 </div>
-</div>
-<div id="content">
-<h1 class="title">De Rham decomposition</h1>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#org2d58b77">1. Decomposition theorem of de Rham</a></li>
-<li><a href="#org0081cce">2. Uniqueness</a></li>
-<li><a href="#org2b8ccdf">3. Application of uniqueness lemma: decomposition for Kähler manifold</a></li>
-</ul>
-</div>
-</div>
-<div class="info">
-<p>
-The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
-<code>pdf</code>. 
-For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
-</p>
-
-</div>
 \(
 \newcommand{\re}{\mathop{\rm Re}\nolimits}
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
@@ -291,7 +269,35 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
 \newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
 \newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
+\newcommand{\Enorm}{\mathop{\mathcal{E}_{\rm norm}}\nolimits}
+\newcommand{\Anorm}{\mathop{\mathcal{A}_{\rm norm}}\nolimits}
+\newcommand{\Cl}{\mathop{\rm Cl}\nolimits}
+\newcommand{\Spin}{\mathop{\rm Spin}\nolimits}
+\newcommand{\Pin}{\mathop{\rm Pin}\nolimits}
+\newcommand{\Hom}{\mathop{\rm Hom}\nolimits}
+\newcommand{\End}{\mathop{\rm End}\nolimits}
 \)
+</div>
+<div id="content">
+<h1 class="title">De Rham decomposition</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org26e4d59">1. Decomposition theorem of de Rham</a></li>
+<li><a href="#org336bf3b">2. Uniqueness</a></li>
+<li><a href="#org9d24ea6">3. Application of uniqueness lemma: decomposition for Kähler manifold</a></li>
+</ul>
+</div>
+</div>
+<div class="info">
+<p>
+The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
+<code>pdf</code>. 
+For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
+</p>
+
+</div>
 <div class="info">
 <p>
 This post is a part of the <a href="../res/Stage2017.pdf">memoire of my M1 internship</a> at I2M. The memoire contains,
@@ -300,8 +306,8 @@ needless to say, less errors than this page.
 
 </div>
 
-<div id="outline-container-org2d58b77" class="outline-2">
-<h2 id="org2d58b77"><span class="section-number-2">1</span> Decomposition theorem of de Rham</h2>
+<div id="outline-container-org26e4d59" class="outline-2">
+<h2 id="org26e4d59"><span class="section-number-2">1</span> Decomposition theorem of de Rham</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 We observe that if a manifold \((M,g)\) is globally a product \((M_1,g_1)\times (M_2,g_2)\) then
@@ -313,7 +319,7 @@ with irreducible holonomy representation.
 
 <div class="theorem">
 <p>
-<a id="org9a3350a"></a>
+<a id="orgcc7f77e"></a>
 Given \((M,g)\) a simply-connected and complete Riemannian manifold, there exists a unique
 decomposition up to isometry and permutation of factors
 \[
@@ -352,7 +358,7 @@ M\), there exist manifolds \(M_1, M_2\) whose tangent spaces are \(A\) and \(B\)
 
 <div class="theorem">
 <p>
-<a id="org4a3dec8"></a>
+<a id="orgbd3a54f"></a>
 Given a distribution \(D\) which to each point \(x\) associates a \(k\) -dimensional hyperplane of \(T_xM\)
 such that:
 </p>
@@ -380,8 +386,8 @@ geometry</i> (Lemma 6.8- Theorem 6.11, chapter III).
 
 
 
-<div id="outline-container-org0081cce" class="outline-2">
-<h2 id="org0081cce"><span class="section-number-2">2</span> Uniqueness</h2>
+<div id="outline-container-org336bf3b" class="outline-2">
+<h2 id="org336bf3b"><span class="section-number-2">2</span> Uniqueness</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 We note that the decomposition is unique in the following sense: 
@@ -389,7 +395,7 @@ We note that the decomposition is unique in the following sense:
 
 <div class="proposition">
 <p>
-<a id="org77cdb06"></a> If \(M\) is decomposed as \(p_1:\ M\longrightarrow E\times \prod M_i\) and \(p_2:\
+<a id="org5137eee"></a> If \(M\) is decomposed as \(p_1:\ M\longrightarrow E\times \prod M_i\) and \(p_2:\
 M\longrightarrow E'\times\prod M'_j\) where \(M_i, M'j\) are irreducible and \(E,E'\) are maximal
 Euclidean components (i.e. none of \(M_i, M'_j\) are isometric to \( \mathbb{R}\)). Then up to a
 rearrangement of indice \(j\) the composed map \(f=p_2\circ p_1^{-1}:\ E\times\prod M_i \longrightarrow
@@ -408,13 +414,13 @@ Euclidean metric.
 </p>
 
 <p>
-We first note that the uniqueness stated in Proposition <a href="#org77cdb06">2</a> comes from the uniqueness of
+We first note that the uniqueness stated in Proposition <a href="#org5137eee">2</a> comes from the uniqueness of
 the decomposition of each tangent fiber, we have the following lemma.
 </p>
 
 <div class="lemma">
 <p>
-<a id="org299f821"></a>
+<a id="org77d687c"></a>
 Let \(f: M\longrightarrow M'\) be an isometry that send \(x\in M\) to \(y\in M'\). Let 
 \[
 T_x M = E \oplus^\perp \bigoplus_i V_i,\quad T_yM' = E' \oplus^\perp \bigoplus_j V'_j
@@ -459,11 +465,11 @@ G\). This also illustrates the fact that not every groups (representations) are 
 </p>
 
 <p>
-We prove the following lemma, which implies Lemma <a href="#org299f821">2</a>.
+We prove the following lemma, which implies Lemma <a href="#org77d687c">2</a>.
 </p>
 <div class="lemma">
 <p>
-<a id="orgc61316b"></a>
+<a id="org1a9a23b"></a>
 Let \(G\subset SO(V)\) be an orthonormal representation on a finite dimensional vector space \(V\) with
 property (H), given any two orthogonal decompositions
 \[
@@ -516,8 +522,8 @@ V_i\longrightarrow E\oplus V_i\), hence by orthogonality \(J\) sends \(E\) and \
 </div>
 
 
-<div id="outline-container-org2b8ccdf" class="outline-2">
-<h2 id="org2b8ccdf"><span class="section-number-2">3</span> Application of uniqueness lemma: decomposition for Kähler manifold</h2>
+<div id="outline-container-org9d24ea6" class="outline-2">
+<h2 id="org9d24ea6"><span class="section-number-2">3</span> Application of uniqueness lemma: decomposition for Kähler manifold</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Now let apply the de Rham decomposition to a complete Riemannian manifold \(M\) with holonomy \(U(n)
@@ -527,7 +533,7 @@ fibers of \(TM\) one obtains a <i>almost complex structure</i> on \(M\).
 </p>
 
 <p>
-Apply Lemma <a href="#orgc61316b">2</a> to \(J\) which obviously commutes with \(G\) and orthonormal, one
+Apply Lemma <a href="#org1a9a23b">2</a> to \(J\) which obviously commutes with \(G\) and orthonormal, one
 see that such structure \(J\) passes to every manifold \(M_i\) and the Euclidean component \( \mathbb{R}^n\) and
 remains parallel on these manifolds. We proved that \(M\) is decomposed to \( \mathbb{C}^{n/2}\times
 \prod M_i\) where \(M_i\) are Kähler manifold. The decomposition map is both a Riemannian isometry and
@@ -538,7 +544,7 @@ a isomorphism between complex manifold (i.e. its preserves complex structure).
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
-By Tien.<br>
+By .<br>
 Last updated 2017-08-31 Thu 02:25. <br>
 </div>
 </div>

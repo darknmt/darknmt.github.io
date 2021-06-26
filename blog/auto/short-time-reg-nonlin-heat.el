@@ -1,86 +1,28 @@
 (TeX-add-style-hook
  "short-time-reg-nonlin-heat"
  (lambda ()
-   (TeX-add-to-alist 'LaTeX-provided-class-options
-                     '(("article" "11pt")))
-   (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem") ("xy" "all")))
-   (TeX-run-style-hooks
-    "latex2e"
-    "article"
-    "art11"
-    "inputenc"
-    "fontenc"
-    "graphicx"
-    "grffile"
-    "longtable"
-    "wrapfig"
-    "rotating"
-    "ulem"
-    "amsmath"
-    "textcomp"
-    "amssymb"
-    "capt-of"
-    "hyperref"
-    "amsthm"
-    "amscd"
-    "mathtools"
-    "tikz-cd"
-    "svg"
-    "xy"
-    "pgfplots")
-   (TeX-add-symbols
-    '("transp" ["argument"] 1)
-    '("restr" 2)
-    "re"
-    "im"
-    "coker"
-    "supp"
-    "ord"
-    "Spec"
-    "vol"
-    "sff"
-    "tr"
-    "const"
-    "lcm"
-    "gcd"
-    "Ric"
-    "Riem")
    (LaTeX-add-labels
-    "sec:org22faf28"
-    "sec:org5671233"
+    "sec:org4087266"
+    "sec:org8ba9ef0"
     "thm:interp-sobolev-d"
     "thm:Sobolev-Rn-d"
     "thm:Kondrachov-Rn-d"
-    "sec:org4cdc2fe"
-    "sec:org886825b"
-    "sec:org76293a6"
+    "sec:orgf736ac7"
+    "sec:orgd35bcf3"
+    "sec:org644a45f"
     "thm:elliptic-d"
     "thm:para-existence-d"
     "thm:para-eq-d "
-    "sec:org4cffd64"
+    "sec:org680ddd2"
     "thm:max-princ-d"
     "thm:infty-comparison-d"
     "thm:1-comparison-d"
-    "sec:orgfeacc02"
+    "sec:org7a9fe66"
     "thm:reg-quad"
     "eq:cond:thm:reg-poly-diff"
-    "sec:orgfe7e1e0"
+    "sec:orgfa5214c"
     "thm:reg-nonlin-heat"
-    "sec:orgbdcaf31"
-    "thm:short-time")
-   (LaTeX-add-environments
-    "remark"
-    "theorem"
-    "lemma"
-    "corollary"
-    "conjecture"
-    "proposition"
-    "problem"
-    "exampl"
-    "definition"
-    "propdef"
-    "fact"
-    "assertion"))
+    "sec:org05e16d6"
+    "thm:short-time"))
  :latex)
 

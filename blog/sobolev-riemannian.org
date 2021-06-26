@@ -93,6 +93,14 @@ where \( R \) denotes the Riemann curvature tensor.
    \]
    In particular, if \( Y,Z \) vanish at a same point \( p_0 \) in \( \gamma \) then
    \( \langle Y,\dot Z \rangle = \langle \dot Y, Z \rangle\) on \( \gamma \).
+4. Two special solutions to the Jacobi equation is \( T:= t\dot\gamma \) and \( \dot
+   T:=\dot\gamma \). By the previous remark, if \( Z(0)=0 \) and \( Z(t) \) is orthogonal to \( \dot\gamma
+   \) at one time \( t_0>0 \), then it is orthogonal to \( \dot\gamma \) at all time. This
+   is because \( \langle \dot Y(t_0), T \rangle = 0 \) and so \( \langle \dot Y,\dot T \rangle
+   \) is constant and is 0 at \( t_0 \), it has to vanish at all time. A consequence of
+   this is that all Jacobi fields can be decomposed into the tangential component which is
+   a linear combination \( aT+ b\dot T \) and a othorgonal component that is also a Jacobi
+   field.
 #+END_remark
 
 
@@ -386,7 +394,7 @@ Suppose that the sectional curvature \( K \leq b^2 \), then for every Jacobi fie
 defined a long a geodesic \( \gamma: [0,r] \longrightarrow M \) with \( r< \frac{\pi}{2b}
 \) such that \( Y(0)=0, Y\perp \dot\gamma \). Then
 \[
- I(Y) \geq I_b(Y):=\int_0^r \| \dot Y\|^2 - b \|Y\|^2 \geq b\cot br \|Y(r)\|^2
+ I(Y) \geq I_b(Y):=\int_0^r \| \dot Y\|^2 - b^2 \|Y\|^2 \geq b\cot br \|Y(r)\|^2
 \]
 #+END_lemma
 
@@ -423,6 +431,25 @@ where \( (\beta^1,\dots,\beta^{n-1})\) is the coordinates of \({\iota_1}_* Y(r) 
 \( I_b(\tilde Y) = b\cot br \|Y(r) \|^2 \).
 #+END_proof
 
+#+ATTR_HTML: :id rem:jacobi-index-comparison
+#+BEGIN_remark
+#+LATEX: \label{rem:jacobi-index-comparison}
+There are two other ways to do this comparison argument:
+1. Invoke the fact that any \( SO(n) \) bundles with connection on an interval are
+   isomorphic, then let \( \tilde\gamma:I\to M_b \) be a geodesic of the space-form \( M_b
+   \) with the same length. Use \(\tilde\gamma^* TM_b\equiv \gamma^* TM\) to identify \( Y
+   \) with a orthogonal vectir field on \( \tilde\gamma \) and apply Index inequality
+2. Algebraically
+   \(
+    \left|\dot Y\right|  - b^2 |Y|^2 \geq \frac{-b^2}{\sin^2 br}|Y|^2 + 2b\cot br \langle
+   Y, \dot Y \rangle
+   \). The RHS is \(\frac{d}{dr}(b\cot br |Y|^2) \).   
+
+Similarly, if \( K \leq -a^2 \) then
+\[
+  I(Y) \geq I_a(Y):=\int_0^r \| \dot Y\|^2 + a^2 \|Y\|^2 \geq a\coth ar \|Y(r)\|^2
+\]
+#+END_remark
 Now the remaining part of the proof of Theorem ref:thm:vol-comparison is straightforward.
 
 #+ATTR_LATEX: :options [Proof of Theorem \ref{thm:vol-comparison}]

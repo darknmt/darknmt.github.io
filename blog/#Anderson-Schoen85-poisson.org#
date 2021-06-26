@@ -1,0 +1,52 @@
+#+TITLE: Positive harmonic functions on Cartan--Hadamard manifolds
+#+AUTHOR: Tien NGUYEN MANH
+#+DATE: Dec 05, 2019
+#+STARTUP: latexpreview
+
+# +STARTUP: indent
+# +STARTUP: showstars
+
+#+SETUPFILE: ../res/mathsetup.org
+
+Local storage: [[file:/home/darknmt/Maths/Scan/2019-12/Poisson-representation-cartan-hadamard.pdf][Manuscript]]
+
+This is my reading note of cite:anderson_positive_1985. The Dirichlet problem for harmonic
+function on negatively curved space was solved during 1984-1985 by 4 different
+mathematicians starting from Anderson using Perron's method and Sullivan using random
+walk, then later by Schoen and Mazzeo. This article gives a Poisson type representation
+of the solution.
+
+Recall that Poisson representation gives the solution of harmonic function \( u \) on the
+disk with prescribed boundary value \( f \) as
+\[
+ u(x) = \frac{1}{2\pi}\int_{\partial B}f(\xi)P(x,\xi) d\xi,\qquad P(x,\xi):= \frac{1 - |x|^2}{|x-\xi|^2}
+\]
+Since harmonicity is conformal in 2D, this gives a solution to harmonic equation on \(
+\mathbb{H}^2 \) with prescribed value at infinity. The problem for \( \mathbb{H}^n \) with \(
+n>2 \) is not more complicated, as one knows its isometry group. See
+Joel's note for details.
+
+On a general Cartan--Hadamard manifold, i.e. manifold with sectional curvatures \( -b^2 <
+K < -a^2 \), the idea is to construct the analog \( K_\xi(x) \) of \( P(x,\xi) \) as a positive harmonic function that
+extends continuously to \( 0 \) on the sphere at infinity \( S(\infty)\setminus \{\xi\} \)
+by taking the limit (upto subsequence) of the normalised Green's kernel
+\(
+ h_i(x) = \frac{G(y_i,x)}{G(y_i, 0)}
+\). One can see that \( \{h_i\} \) subconverges in the interior using Harnack's
+inequality. This article carries out the extra analysis to guarantee behavior at
+infinity.
+
+It turns out that the Poisson kernels \( K_\xi \) are unique and any harmonic function \(
+u \) is a combination of \( K_\xi \), i.e.
+\(
+ u = \int_{S(\infty)}K_\xi d\mu
+\) for a certain positive Borel measure \( \mu \) on \( S(\infty) \)
+
+Note that we do not need continuity of \( u \) upto boundary in the representation. 
+A bonus of this is that behavior at infinity of \( u \) could not be complicated than \(
+K_\xi \). In particular, it was proved that \( u \) is /non-tangentially continuous/ at
+almost all points of \( S(\infty) \).
+
+
+bibliographystyle:alpha
+bibliography:../res/GeoDiff.bib

@@ -3,12 +3,11 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-11-28 Wed 01:28 -->
+<!-- 2021-06-25 Fri 22:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="Tien" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -253,24 +252,6 @@ for the JavaScript code in this tag.
 <li><a href='./contact.html'>Contact</a></li>
 </ul>
 </div>
-</div>
-<div id="content">
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#org0a551fb">1. Commutative diagram in \( \TeX \) revisited</a>
-<ul>
-<li><a href="#org7f2b65b">1.1. xypic and xyJax</a></li>
-</ul>
-</li>
-<li><a href="#orgf1b129f">2. LaTeX in Inkscape: Incompatibility between <code>ghostscript</code> and <code>pstoedit</code> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-03-30 Fri&gt;</span></span></a></li>
-<li><a href="#org8752665">3. LaTeX indentation in org-mode <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-02-20 Tue&gt;</span></span></a></li>
-<li><a href="#org9ba4fd2">4. A (decent) map of mathematics <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-10-17 Tue&gt;</span></span></a></li>
-<li><a href="#org5aa26c3">5. My 2016-2017 internship <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-07-31 Mon&gt;</span></span></a></li>
-</ul>
-</div>
-</div>
 \(
 \newcommand{\re}{\mathop{\rm Re}\nolimits}
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
@@ -290,15 +271,458 @@ for the JavaScript code in this tag.
 \newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
 \newcommand{\Enorm}{\mathop{\mathcal{E}_{\rm norm}}\nolimits}
 \newcommand{\Anorm}{\mathop{\mathcal{A}_{\rm norm}}\nolimits}
+\newcommand{\Cl}{\mathop{\rm Cl}\nolimits}
+\newcommand{\Spin}{\mathop{\rm Spin}\nolimits}
+\newcommand{\Pin}{\mathop{\rm Pin}\nolimits}
+\newcommand{\Hom}{\mathop{\rm Hom}\nolimits}
+\newcommand{\End}{\mathop{\rm End}\nolimits}
 \)
+</div>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org4af661b">Giải thích một video của 3Blue1Brown bằng ma trận 2x2 <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-05 Mon&gt;</span></span>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="public">public</span></span></a></li>
+<li><a href="#org67aefe2">Commutative diagram in \( \TeX \) revisited&#xa0;&#xa0;&#xa0;<span class="tag"><span class="public">public</span></span></a></li>
+<li><a href="#org979711d">LaTeX indentation in org-mode <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-02-20 Tue&gt;</span></span>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="public">public</span></span></a></li>
+<li><a href="#org87c785e">My 2016-2017 internship <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-07-31 Mon&gt;</span></span>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="public">public</span></span></a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4af661b" class="outline-2">
+<h2 id="org4af661b">Giải thích một video của 3Blue1Brown bằng ma trận 2x2 <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-05 Mon&gt;</span></span>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="public">public</span></span></h2>
+<div class="outline-text-2" id="text-org4af661b">
+</div><div id="outline-container-org7138d67" class="outline-3">
+<h3 id="org7138d67">Giới thiệu</h3>
+<div class="outline-text-3" id="text-org7138d67">
+<p>
+Trong một video trên kênh YouTube 3Blue1Brown (<i>The most unexpected answer to a counting puzzle</i>, taị
+<a href="https://www.youtube.com/watch?v=HEfHFsfGXjs">https://www.youtube.com/watch?v=HEfHFsfGXjs</a>) được chia sẻ rất nhiều trong thời gian gần
+đây, Grant Sanderson đã giới thiệu bài toán sau của Gregory
+Galperin về sự va chạm của 2 hình hộp như hình dưới đây, trong đó hộp bên trái có khối
+lượng bằng 1 và hộp bên phải có khối lượng là \( m \geq 1 \).
+<img src="../img/3B1B-1.png" alt="3B1B-1.png" />
+</p>
+
+<p>
+Ở thời điểm bắt đầu, hộp bên phải chuyển động thẳng đều về phía tường (bên trái) và hộp trái đứng yên. Hai hộp
+có thể va chạm với nhau và với tường. Giả sử không có ma sát và các va chạm đều
+là đàn hồi (động lượng và năng lượng được bảo toàn), ta muốn đếm tổng số va chạm (hộp-hộp và
+hộp-tường), chẳng hạn trong trường hợp khối lượng hai vật bằng nhau (\( m=1 \)) có tổng
+cộng 3 va chạm: hộp phải với hộp trái (sau đó hộp phải đứng yên), hộp trái với tường, và
+hộp trái với hộp phải (sau đó hộp trái đứng yên). Trong trường hợp \( m=100 \), tổng số va chạm
+là 31 và nếu \( m=10000 \), là 314. Grant Sanderson chỉ ra rằng nếu \( m \) là một lũy thừa của 100, giả sử \( 100^k \) thì
+số va chạm là \( k \) chữ số đầu tiên của số \( \pi \).
+</p>
+
+<p>
+Youtuber này cho rằng thực hiện thí nghiệm này và đếm số va chạm là cách tính số \( \pi \)
+đẹp nhất nhưng cũng kém hiệu quả nhất, so sánh khối lượng \( m \) cần thiết để
+tính chính xác 20 chữ số thập phân của \( \pi \) với khối lượng một lỗ đen. Anh dành một
+tuần để khán giả của mình suy nghĩ vì sao số \( \pi \) lại xuất hiện trong một bài toán va chạm đàn hồi.
+</p>
+
+<p>
+Qua bài tập
+sau, ta sẽ thấy đường tròn (hay số \( \pi \)) xuất hiện một cách tự nhiên qua góc argument của
+giá trị riêng (phức) của một ma trận 2x2. Sử dụng một số
+tính toán cơ bản được học trong môn đại số tuyến tính, ta sẽ chứng minh tổng số va chạm là
+\[
+N = \left \lfloor \frac{2\pi}{\arccos(\frac{m-1}{m+1})}\right\rfloor \text{ khi } m\geq 2
+\]
+</p>
+
+<p>
+Với \( m \) lớn, dùng khai triển Taylor \( \arccos(1 - 2\epsilon) = 2\sqrt{\epsilon} +
+O(\epsilon^{3/2}) \) ta có 
+\[ 
+\frac{2\pi}{\arccos(\frac{m-1}{m+1})} = \frac{2\pi}{2(m+1)^{-1/2} + O((m+1)^{-3/2})}=
+\pi\sqrt{m+1} + O(\frac{1}{\sqrt{m+1}})  
+\]
+Do đó khi \( m=100^k \) thì \( N = \pi .10^k \) là \( k \) chữ số đầu tiên của \( \pi \).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org10d2265" class="outline-3">
+<h3 id="org10d2265">Mô hình hoá</h3>
+<div class="outline-text-3" id="text-org10d2265">
+</div><div id="outline-container-org850cda7" class="outline-4">
+<h4 id="org850cda7">Va chạm giữa 2 hộp</h4>
+<div class="outline-text-4" id="text-org850cda7">
+<p>
+Chọn chiều dương từ trái sang phải và gọi \( a,b \) lần lượt là vận tốc của hộp phải và
+hộp trái trước khi va chạm, và \( a', b' \) là vận tốc ngay sau khi 2 hộp chạm nhau, định luật bảo toàn động lượng và
+năng lượng (Sách giáo khoa Vật Lý lớp 10) nói rằng
+</p>
+\begin{equation*}
+ \begin{cases}
+\frac{1}{2}ma'^2 + \frac{1}{2}b'^2 = \frac{1}{2}ma^2 + \frac{1}{2}b^2,  \\
+ma' + b' = ma + b
+ \end{cases}
+\end{equation*}
+<p>
+Viết lại phương trình thứ nhất thành \( \frac{1}{2}m(a' - a)(a'+a) =
+\frac{1}{2}(b-b')(b+b') \) và thế \( m(a'-a) = b-b' \) (phương trình thứ 2)
+ta có hệ phương trình
+</p>
+\begin{equation}
+\label{eq:bb}
+ \begin{cases}
+a'-b' = a-b,  \\
+ma' + b' = ma + b
+ \end{cases}
+\end{equation}
+</div>
 
 
-<div id="outline-container-org0a551fb" class="outline-2">
-<h2 id="org0a551fb"><span class="section-number-2">1</span> Commutative diagram in \( \TeX \) revisited</h2>
-<div class="outline-text-2" id="text-1">
-</div><div id="outline-container-org7f2b65b" class="outline-3">
-<h3 id="org7f2b65b"><span class="section-number-3">1.1</span> xypic and xyJax</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-orgb6b78da" class="outline-5">
+<h5 id="orgb6b78da">Câu 1.</h5>
+<div class="outline-text-5" id="text-orgb6b78da">
+<p>
+Dùng phép khử Gauss để tính \( a', b' \) theo \( a, b \) từ hệ phương trình
+\eqref{eq:bb}. Viết lại dưới dạng phép nhân ma trận \( \begin{bmatrix} a'
+\\ b' \end{bmatrix} = A_m  \begin{bmatrix} a
+\\ b \end{bmatrix} \) với \( A_m \) là một ma trận 2x2 có các hệ số phụ thuộc vào \( m
+\). Tính \( A_m \).
+</p>
+<div class="proof">
+<p>
+\[
+A_m =  \begin{bmatrix} \frac{m-1}{m+1} & \frac{2}{m+1}\\ \frac{2m}{m+1} &
+\frac{1-m}{1+m} \end{bmatrix}
+\]
+</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org6b6cc34" class="outline-4">
+<h4 id="org6b6cc34">Va chạm với tường</h4>
+<div class="outline-text-4" id="text-org6b6cc34">
+<p>
+Vector vận tốc của hộp bên trái đổi chiều khi va chạm với tường. Nếu gọi \( a,b \) lần lượt là
+vận tốc của hộp phải và hộp trái trước khi hộp trái chạm tường
+và \( a', b' \) là vận tốc ngay sau khi chạm, ta có 
+</p>
+\begin{equation*}
+\begin{bmatrix} a' \\ b'  \end{bmatrix} 
+= B  \begin{bmatrix} a \\ b \end{bmatrix}
+\text{ với } B = \begin{bmatrix}1 & 0 \\ 0 & -1 \end{bmatrix}
+\end{equation*}
+</div>
+</div>
+
+
+<div id="outline-container-org75ce3da" class="outline-4">
+<h4 id="org75ce3da">Điều kiện dừng</h4>
+<div class="outline-text-4" id="text-org75ce3da">
+<p>
+Vận tốc 2 hộp ban đầu được biểu diễn bởi vector \(\begin{bmatrix} a_0\\b_0 \end{bmatrix}
+:= \begin{bmatrix} -1\\0 \end{bmatrix} \) và vận tốc sau \( n \) lần va chạm biểu diễn bởi
+vector
+</p>
+\begin{equation*}
+ \begin{bmatrix} a_n\\b_n \end{bmatrix} = \dots B A_m B A_m \begin{bmatrix} a_0\\b_0 \end{bmatrix}
+\end{equation*}
+<p>
+cho bởi phép nhân bên trái xem kẽ với các ma trận \( A_m \) và \( B \), kết thúc bằng \( B
+\) nếu \( n \) chẵn và \( A_m \) nếu \( n \) lẻ.
+</p>
+
+<p>
+Sẽ không còn va chạm khi và chỉ khi vận tốc cả 2 hộp đều dương và hộp bên phải đi nhanh
+hơn hộp bên trái, nói cách khác là khi \( a_n\geq b_n\geq 0 \). Bài toán được mô hình hoá
+thành.
+</p>
+</div>
+
+<div id="outline-container-org069bd90" class="outline-5">
+<h5 id="org069bd90">Bài toán.</h5>
+<div class="outline-text-5" id="text-org069bd90">
+<p>
+Tìm số tự nhiên \( n \) nhỏ nhất sao cho \( a_n\geq b_n \geq 0 \).
+</p>
+
+<p>
+Nhận thấy rằng để tính \( a_n, b_n \), ta chỉ cần tính được lũy thừa của ma trận \( C :=A_m B \)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org83e0c13" class="outline-5">
+<h5 id="org83e0c13">Câu 2.</h5>
+<div class="outline-text-5" id="text-org83e0c13">
+<p>
+Tính ma trận \( C := A_m B \). Tìm vết và định thức của \( C \). Bạn có nhận xét gì về 2
+giá trị riêng của \( C \). 
+</p>
+
+
+<div class="proof">
+<p>
+\[
+ C = \begin{bmatrix} \frac{m-1}{m+1} & \frac{-2}{m+1}\\ \frac{2m}{m+1} &
+ \frac{m-1}{m+1} \end{bmatrix},\quad \tr(C) = 2\frac{m-1}{m+1},\quad \det C = 1
+\]
+<i>Nhận xét.</i> Hai giá trị riêng của \( C \) là 2 số phức liên hợp có module 1, do đó được biểu diễn bởi
+ một góc \( \theta \). Đây là lý do số
+ \( \pi \) xuất hiện trong kết quả đếm. Dựa vào phần thực của chúng, ta thấy \( \theta =
+ \arccos(\frac{m-1}{m+1}) \) là góc đã nhắc đến trong đầu bài.
+</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org45dd20b" class="outline-3">
+<h3 id="org45dd20b">Đơn giản hoá tính toán.</h3>
+<div class="outline-text-3" id="text-org45dd20b">
+<p>
+Nhận xét rằng \( \begin{bmatrix} a_0\\b_0 \end{bmatrix} = B\begin{bmatrix} a_0\\b_0
+\end{bmatrix} \), ta viết lại
+\[
+ \begin{bmatrix} a_n\\b_n \end{bmatrix} = \dots B A_m B A_m B \begin{bmatrix} a_0\\b_0
+\end{bmatrix} = \begin{cases}
+B C^k	\begin{bmatrix} a_0\\b_0
+\end{bmatrix}	,  & \text{khi $ n = 2k$} \\
+C^k \begin{bmatrix} a_0\\b_0
+\end{bmatrix}		, & \text{khi $n = 2k - 1$}
+		\end{cases}
+\]
+trong đó \( C = A_m B \) là ma trận ở câu 2.
+</p>
+
+<p>
+Một cách để tính \( C^k \) là chéo hoá ma trận \( C \), vì khi \( C = P^{-1} D P \) với \(
+D = \begin{bmatrix} \lambda_1 & 0\\ 0 &
+\lambda_2 \end{bmatrix} \) là một ma trận chéo thì \(C^k = P^{-1}D^k P\) với \( D^k = \begin{bmatrix} \lambda_1^k & 0\\ 0 &
+\lambda_2^k \end{bmatrix}  \).
+</p>
+</div>
+
+<div id="outline-container-orgaea280d" class="outline-5">
+<h5 id="orgaea280d">Câu 3.</h5>
+<div class="outline-text-5" id="text-orgaea280d">
+<p>
+Ma trận \( C \) có chéo hoá được trên \( \mathbb{C} \) không? Lưu ý: Bạn không cần chéo hóa ma trận
+\( C \) để trả lời.
+</p>
+<div class="proof">
+<p>
+Có. Nhắc lại rằng một ma trận vuông bậc \( k \) chéo hoá được khi và chỉ khi tổng số chiều
+cuả các không gian riêng bằng \( k \). Do 2 giá trị riêng cuả \( C \) khác nhau nên \( C
+\) có 2 không gian riêng, số chiều của mỗi
+không gian ít nhất là 1 nên tổng số chiều đúng bằng 2.
+</p>
+
+</div>
+
+
+<p>
+Sau đây ta sẽ tính luỹ thừa của ma trận \( C \) mà không chéo hoá.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd4d2571" class="outline-5">
+<h5 id="orgd4d2571">Câu 4.</h5>
+<div class="outline-text-5" id="text-orgd4d2571">
+<p>
+Tính đa thức tối tiểu \( Q(X) \) của ma trận \( C \).
+</p>
+<div class="proof">
+<p>
+Nhắc lại rằng đa thức tối tiểu là ước của đa thức đặc trưng của \( C \), i.e. \( X^2 - 2 \frac{m-1}{m+1} X + 1 = 0  \). Do 2 giá trị
+riêng của \( C \) khác nhau nên đa thức tối tiểu cũng là đa thức đặc trưng.
+</p>
+
+</div>
+
+<p>
+Ta sẽ tính \( C^k \) bằng cách thực hiện phép chia đa thức \( X^k \) cho \( Q(X)
+\):
+</p>
+\begin{equation}
+\label{eq:min-pol}
+ X^k = P_k(X)Q(X) + u_k X + v_k, \quad P_k\in \mathbb{R}[X], \quad u_k, v_k\in \mathbb{R}
+\end{equation}
+<p>
+Do đa thức \( Q \) triệt tiêu \( C \), ta có thể tính \( C^k = u_k C + v_k \) nếu biết hai
+số thực \(u_k \) và \( v_k \). 
+</p>
+
+<p>
+Gọi \( \lambda \) và \( \bar\lambda = \lambda^{-1} \) là hai
+giá trị riêng của \( C \).
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org769802d" class="outline-5">
+<h5 id="org769802d">Câu 5.</h5>
+<div class="outline-text-5" id="text-org769802d">
+<p>
+Chứng minh rằng \( u_k = \frac{\lambda^{2k} - 1}{\lambda^{k-1}(\lambda^2-1)} =
+\lambda^{-(k-1)} + \lambda^{-(k-1) + 2} + \dots + \lambda^{k-1} \) và \( -v_k
+=  \frac{\lambda^{2(k-1) - 1}}{\lambda^{k-2} (\lambda^2-1)} = \lambda^{-(k-2)} +
+\lambda^{-(k-2) + 2} + \dots + \lambda^{k-2} \).
+</p>
+<div class="proof">
+<p>
+Thế \( X \) bởi \( \lambda \) và \(\bar \lambda\) vào
+\eqref{eq:min-pol}, lưu ý rằng \( Q(X)=0 \), ta có hệ phương trình
+</p>
+\begin{equation*}
+ \begin{cases}
+u_k\lambda + v_k = \lambda^k   \\
+u_k\bar \lambda + v_k = \bar\lambda^k 
+ \end{cases}
+\end{equation*}
+<p>
+Sau đó giải hệ phương trình này để tính \( u_k, v_k \).
+</p>
+
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org46532de" class="outline-5">
+<h5 id="org46532de">Câu 6.</h5>
+<div class="outline-text-5" id="text-org46532de">
+<p>
+Tính \( \begin{bmatrix} a_{2k-1}\\b_{2k-1} \end{bmatrix} = C^k \begin{bmatrix} -1\\0
+\end{bmatrix} \) và \( \begin{bmatrix} a_{2k}\\b_{2k} \end{bmatrix} = BC^k \begin{bmatrix} -1\\0
+\end{bmatrix} \) theo \( u_k, v_k \). Thay \( \frac{m-1}{m+1} = \frac{1}{2}(\lambda + \lambda^{-1}) \)
+và \( \frac{2m}{m+1} = \frac{1}{2}(\lambda + \lambda^{-1}) + 1 \), chứng minh rằng \( a_{2k-1} - b_{2k-1} = u_k - v_k
+\) và \( b_{2k} - a_{2k} = u_k - v_k +\lambda^k + \lambda^{-k} \)
+</p>
+<div class="proof">
+\begin{equation*}
+ \begin{bmatrix} a_{2k-1}\\b_{2k-1} \end{bmatrix}   = \begin{bmatrix} -u_k.\frac{m-1}{m+1} -
+v_k\\-u_k.\frac{2m}{m+1} \end{bmatrix}, \qquad \begin{bmatrix} a_{2k}\\b_{2k} \end{bmatrix}=  \begin{bmatrix} -u_k.\frac{m-1}{m+1} -
+v_k\\u_k.\frac{2m}{m+1} \end{bmatrix}
+\end{equation*}
+<p>
+Với \( b_{2k} - a_{2k} \), để ý rằng \(  \)\( u_k\lambda^{\pm 1} = -v_k + \lambda^{\pm k} \).
+</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf72c719" class="outline-3">
+<h3 id="orgf72c719">Trực quan hình học</h3>
+<div class="outline-text-3" id="text-orgf72c719">
+<p>
+Viết \( \lambda = e^{i\theta} \) với \( \theta =
+ \arccos(\frac{m-1}{m+1}) \).  Với mọi \( k\geq 1 \), đặt
+\[
+S^2_k:= \lambda^{-k} + \lambda^{-k+2} + \dots + \lambda^{k-2} + \lambda^k\quad \text{và}\quad S^1_k = \lambda^{-k} + \lambda^{-k+1} + \dots + \lambda^{k-1} + \lambda^k
+\]
+</p>
+</div>
+
+
+<div id="outline-container-org6c3e1ff" class="outline-5">
+<h5 id="org6c3e1ff">Câu 7.</h5>
+<div class="outline-text-5" id="text-org6c3e1ff">
+<p>
+Chứng minh rằng \( (a_{2k-1},b_{2k-1}) \) thoả mãn điều kiện
+dừng \( a_{2k-1}\geq b_{2k-1}\geq 0 \) khi và chỉ khi \( S^1_{k-1} \geq 0 \) và \(
+   S^{2}_{k-1}\leq 0 \). Chứng minh rằng \( (a_{2k},b_{2k}) \) thoả mãn điều kiện
+dừng \( a_{2k}\geq b_{2k}\geq 0 \) khi và chỉ khi \( S^1_{k} \leq 0 \) và \(
+   S^{2}_{k-1}\geq 0 \).
+</p>
+<div class="proof">
+<p>
+Hiển nhiên khi viết lại \( u_k = S^2_{k-1} \), \( u_k-v_k = S^1_{k-1} \) và \( u_k-v_k +\lambda^k +\lambda^{-k} = S^1_{k} \).
+</p>
+
+</div>
+
+<p>
+Xem \( S^2_k \) ( tương ứng \( S^1_k \)) là tổng của \( k+1 \) (tương ứng \( 2k+1 \))
+vector cách đều trên đường tròn đơn vị, mệnh đề sau là hiển nhiên về mặt trực quan và
+được thừa nhận.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9e28531" class="outline-5">
+<h5 id="org9e28531">Mệnh đề.</h5>
+<div class="outline-text-5" id="text-org9e28531">
+<p>
+Giả sử \( k\leq \left \lfloor \frac{\pi}{\theta} \right\rfloor \). Khi đó 
+</p>
+<ol class="org-ol">
+<li>\( S^1_k \leq 0
+   \) khi và chỉ khi cung tròn từ \( \lambda^k \) đến \( \lambda^{-k} \) nhỏ hơn hoặc bằng \( \theta \).</li>
+<li>\( S^2_k \leq 0 \) khi và chỉ khi cung tròn từ \( \lambda^k \) đến \( \lambda^{-k} \)
+nhỏ hơn hoặc bằng \( 2\theta \).</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orgbf539cb" class="outline-5">
+<h5 id="orgbf539cb">Câu 8.</h5>
+<div class="outline-text-5" id="text-orgbf539cb">
+<p>
+Dùng mệnh đề, chứng minh rằng với \( h =  \left \lfloor \frac{\pi}{\theta} \right\rfloor
+\) thì hoặc \( (a_{2h}, b_{2h}) \) hoặc \( (a_{2h+1}, b_{2h+1}) \) thoả điều kiện dừng,
+còn các bộ \( (a_i, b_i) \) với \( i < 2h \) không dừng. Từ đó suy ra \( N = \left \lfloor
+\frac{2\pi}{\theta} \right \rfloor\).
+</p>
+<div class="proof">
+<p>
+Nếu cung từ \( \lambda^h \) đến -1 nhỏ hơn \( \frac{\theta}{2} \) thì \( (a_{2h}, b_{2h})
+\) dừng, ngược lại thì \( (a_{2h+1}, b_{2h+1}) \) dừng.
+</p>
+
+</div>
+
+<p>
+Một tuần sau video nói trên, Grant Sanderson đưa ra lời giải của anh tại
+<a href="https://www.youtube.com/watch?v=jsYwFizhncE">https://www.youtube.com/watch?v=jsYwFizhncE</a> bằng một lập luận tương đối đơn giản. Kết quả của
+anh là \( N = \left \lfloor \frac{\pi}{\phi} \right\rfloor \) với \( \phi = \arctan
+\frac{1}{\sqrt{m}} \)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5506732" class="outline-5">
+<h5 id="org5506732">Câu 9 (Không tính điểm).</h5>
+<div class="outline-text-5" id="text-org5506732">
+<p>
+So sánh hai số va chạm \( N \) ở đầu bài vơí kết quả cuả Grant Sanderson.
+</p>
+<div class="proof">
+<p>
+\(\theta = 2\phi\).
+</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org67aefe2" class="outline-2">
+<h2 id="org67aefe2">Commutative diagram in \( \TeX \) revisited&#xa0;&#xa0;&#xa0;<span class="tag"><span class="public">public</span></span></h2>
+<div class="outline-text-2" id="text-org67aefe2">
+</div><div id="outline-container-orgc888b4e" class="outline-3">
+<h3 id="orgc888b4e">xypic and xyJax</h3>
+<div class="outline-text-3" id="text-orgc888b4e">
 <p>
 To my knowledge, the only way to type commutative diagram on the web is to use <code>xyJax</code>, a
 third-party extension of <code>MathJax</code> that render diagram using <code>xypic</code>. This is also how
@@ -326,53 +750,14 @@ To config MathJax in org-mode, apropos <code>org-html-mathjax-template</code>.
 </div>
 </div>
 
-<div id="outline-container-orgf1b129f" class="outline-2">
-<h2 id="orgf1b129f"><span class="section-number-2">2</span> LaTeX in Inkscape: Incompatibility between <code>ghostscript</code> and <code>pstoedit</code> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-03-30 Fri&gt;</span></span></h2>
-<div class="outline-text-2" id="text-2">
-<p>
-Since Ghostscript 9.22, certain flags (e.g. <code>dREALLYDEALYBIND</code>) are deprecated and <code>pstoedit</code>,
-a piece of software that Inkscape uses to render LaTeX, remains unchanged since 2005. This
-makes Inkscape users unable use LaTeX. Textext developers claims that they will switch to
-<code>pdf2svg</code> frontend in their version 0.8 to avoid this trouble with <code>pstoedit</code>. Meanwhile,
-the only solution seems to be downgrade ghostscript to 9.21 each time one uses Inkscape.
-In ArchLinux, one can downgrade a package using <code>pacman</code>: 
-</p>
-
-<div class="org-src-container">
-<pre class="src src-bash">ls /var/cache/pacman/pkg/ | grep ghostscript
-pacman -U /var/cache/pacman/pkg/package-old_version.pkg.tar.xz
-</pre>
-</div>
-
-<p>
-or a AUR package called <code>downgrade</code>
-</p>
-
-<div class="org-src-container">
-<pre class="src src-bash">downgrade ghostscript
-</pre>
-</div>
-
-<p>
-I had good experience with both of them (<code>pacman</code> to downgrade <code>php</code> to be compatible
-with <code>nextcloud</code>, and <code>downgrade</code> for ghostscript)
-</p>
-
-
-<p>
-The problem is well documented <a href="https://bbs.archlinux.org/viewtopic.php?id=224340">here</a> and <a href="https://bitbucket.org/pitgarbe/textext/issues/48/ghostscript-still-bug-under-linux">here</a>.
-</p>
-</div>
-</div>
-
-<div id="outline-container-org8752665" class="outline-2">
-<h2 id="org8752665"><span class="section-number-2">3</span> LaTeX indentation in org-mode <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-02-20 Tue&gt;</span></span></h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-org979711d" class="outline-2">
+<h2 id="org979711d">LaTeX indentation in org-mode <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-02-20 Tue&gt;</span></span>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="public">public</span></span></h2>
+<div class="outline-text-2" id="text-org979711d">
 <p>
 I was told, in accordance with my experience, that we visually process text better if
-each line in a paragraph is approximately below 80 characters. This fact is also
-omnipresent on the internet, standardized tests, books, etc.. being among the
-fundamentals of web design (except wikipedia, that's why I use Wikiwand).
+each line in a paragraph is approximately below 80 characters. This can be observed
+everywhere from the Internet to books and standardized tests, and is now fundamentals of web
+design (somehow Wikipedia is an exception).
 </p>
 
 <p>
@@ -394,7 +779,7 @@ The problem has been noticed around the Internet <a href="https://emacs.stackexc
 </p>
 
 <p>
-Meanwhile AucTeX does not have this annoying problem. <a href="https://www.gnu.org/software/auctex/manual/auctex.html#index-LaTeX_002dfill_002dbreak_002dat_002dseparators">It turns out</a> that AUCTeX maps the
+Meanwhile AUCTeX does not have this annoying problem. <a href="https://www.gnu.org/software/auctex/manual/auctex.html#index-LaTeX_002dfill_002dbreak_002dat_002dseparators">It turns out</a> that AUCTeX maps the
 <code>M-q</code> key to a different function, called <code>LaTeX-fill-paragraph</code>. So the temporary fix is
 to load <code>latex.el</code> in org-mode and maps <code>M-q</code> to <code>LaTeX-fill-paragraph</code>
 </p>
@@ -407,36 +792,22 @@ to load <code>latex.el</code> in org-mode and maps <code>M-q</code> to <code>LaT
 </div>
 </div>
 
-<div id="outline-container-org9ba4fd2" class="outline-2">
-<h2 id="org9ba4fd2"><span class="section-number-2">4</span> A (decent) map of mathematics <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-10-17 Tue&gt;</span></span></h2>
-<div class="outline-text-2" id="text-4">
-<p>
-I saw this <a href="https://www.flickr.com/photos/95869671@N08/32264483720">map of mathematics</a> somewhere on YouTube and then again on the door of
-someone's office at the I2M. Although this map may help popularise mathematics, it
-should raise an eyebrow of a serious math student (or even an attentive highschool
-student, as for example 1 was listed among prime numbers in an earlier version of this
-map).
-</p>
-
-<p>
-For a decent map of Mathematics, made by a mathematician, see <a href="http://www.math.unm.edu/~buium/mapp.pdf">this</a>.
-</p>
-</div>
-</div>
-
-<div id="outline-container-org5aa26c3" class="outline-2">
-<h2 id="org5aa26c3"><span class="section-number-2">5</span> My 2016-2017 internship <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-07-31 Mon&gt;</span></span></h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-org87c785e" class="outline-2">
+<h2 id="org87c785e">My 2016-2017 internship <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-07-31 Mon&gt;</span></span>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="public">public</span></span></h2>
+<div class="outline-text-2" id="text-org87c785e">
 <p>
 I have just recently finished my Stage3A at <a href="https://www.i2m.univ-amu.fr/">Institut de Mathématiques de Marseille</a>. It is
-also in this period that I start this blog. The memoire can be founded here [<a href="../res/Stage2017.pdf">PDF</a>]
+also in this period that I start this blog. The memoire can be found here [<a href="../res/Stage2017.pdf">PDF</a>]
 </p>
 
 
 <p>
 
 <h1 class='org-ref-bib-h1'>Bibliography</h1>
-<ul class='org-ref-bib'><li><a id="eells_harmonic_1964">[eells_harmonic_1964] Eells & Sampson, Harmonic Mappings of Riemannian Manifolds, <i>American Journal of Mathematics</i>, <b>86(1)</b>, 109-160 (1964). <a href="http://www.jstor.org/stable/2373037">link</a>. <a href="http://dx.doi.org/10.2307/2373037">doi</a>.</a></li>
+<ul class='org-ref-bib'><li><a id="Schoen83_UniquenessSymmetryEmbeddedness">[Schoen83_UniquenessSymmetryEmbeddedness] Schoen, Uniqueness, symmetry, and embeddedness of minimal surfaces, <i>J. Differential Geom.</i>, <b>18(4)</b>, 791-809 (1983). <a href="https://projecteuclid.org/euclid.jdg/1214438183">link</a>. <a href="http://dx.doi.org/10.4310/jdg/1214438183">doi</a>.</a></li>
+<li><a id="Anderson82_CompleteMinimalVarieties">[Anderson82_CompleteMinimalVarieties] Anderson, Complete minimal varieties in hyperbolic space, <i>Inventiones Mathematicae</i>, <b>69(3)</b>, 477-494 (1982). <a href="http://link.springer.com/10.1007/BF01389365">link</a>. <a href="http://dx.doi.org/10.1007/BF01389365">doi</a>.</a></li>
+<li><a id="Nirenberg53_StrongMaximumPrinciple">[Nirenberg53_StrongMaximumPrinciple] Nirenberg, A strong maximum principle for parabolic equations, <i>Communications on Pure and Applied Mathematics</i>, <b>6(2)</b>, 167-177 (1953). <a href="http://doi.wiley.com/10.1002/cpa.3160060202">link</a>. <a href="http://dx.doi.org/10.1002/cpa.3160060202">doi</a>.</a></li>
+<li><a id="Gilbarg.Trudinger83_EllipticPartialDifferential">[Gilbarg.Trudinger83_EllipticPartialDifferential] Gilbarg & Trudinger, Elliptic Partial Differential Equations of Second Order, Springer Berlin Heidelberg (1983).</a></li>
 </ul>
 </p>
 </div>
@@ -444,8 +815,8 @@ also in this period that I start this blog. The memoire can be founded here [<a 
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
-By Tien.<br>
-Last updated 2018-11-28 Wed 01:28. <br>
+By .<br>
+Last updated 2021-06-25 Fri 22:12. <br>
 </div>
 </div>
 </body>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-11-28 Wed 10:53 -->
+<!-- 2021-06-25 Fri 22:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Minimal surfaces and holomorphic curves</title>
@@ -253,41 +253,6 @@ for the JavaScript code in this tag.
 <li><a href='./contact.html'>Contact</a></li>
 </ul>
 </div>
-</div>
-<div id="content">
-<h1 class="title">Minimal surfaces and holomorphic curves</h1>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#orgd2a4513">1. Minimal surfaces in \( \mathbb{R}^3 \) and Gauss map.</a></li>
-<li><a href="#orgffa9cab">2. Twistor spaces and Gauss lift.</a>
-<ul>
-<li><a href="#org67b188d">2.1. 2-forms in 4 dimensional geometry</a></li>
-<li><a href="#orgd41fcd0">2.2. Twistor spaces and their natural complex structures</a></li>
-<li><a href="#orgb24fc53">2.3. Two different complexifications of a linear map.</a></li>
-<li><a href="#orgc7d5d63">2.4. Non-integrability of \( (S_-, J_2) \).</a></li>
-<li><a href="#org98df267">2.5. Gauss lift.</a></li>
-</ul>
-</li>
-<li><a href="#org9cd65bf">3. Twistor correspondence.</a>
-<ul>
-<li><a href="#orgd413359">3.1. Review: A few local properties of (pseudo)holomorphic curve.</a></li>
-<li><a href="#org290912c">3.2. Review: Harmonic maps from a Riemann surface.</a></li>
-<li><a href="#orgca4888b">3.3. Proof of Theorem .</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<div class="info">
-<p>
-The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
-<code>pdf</code>. 
-For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
-</p>
-
-</div>
 \(
 \newcommand{\re}{\mathop{\rm Re}\nolimits}
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
@@ -307,10 +272,41 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
 \newcommand{\Enorm}{\mathop{\mathcal{E}_{\rm norm}}\nolimits}
 \newcommand{\Anorm}{\mathop{\mathcal{A}_{\rm norm}}\nolimits}
+\newcommand{\Cl}{\mathop{\rm Cl}\nolimits}
+\newcommand{\Spin}{\mathop{\rm Spin}\nolimits}
+\newcommand{\Pin}{\mathop{\rm Pin}\nolimits}
+\newcommand{\Hom}{\mathop{\rm Hom}\nolimits}
+\newcommand{\End}{\mathop{\rm End}\nolimits}
 \)
-
+</div>
+<div id="content">
+<h1 class="title">Minimal surfaces and holomorphic curves</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org8ccd036">1. Minimal surfaces in \( \mathbb{R}^3 \) and Gauss map.</a></li>
+<li><a href="#orgfbda398">2. Twistor spaces and Gauss lift.</a>
+<ul>
+<li><a href="#org0c9fa52">2.1. 2-forms in 4 dimensional geometry</a></li>
+<li><a href="#org0328c92">2.2. Twistor spaces and their natural complex structures</a></li>
+<li><a href="#orgae06d8f">2.3. Two different complexifications of a linear map.</a></li>
+<li><a href="#org4e5ee36">2.4. Non-integrability of \( (S_-, J_2) \).</a></li>
+<li><a href="#org838182d">2.5. Gauss lift.</a></li>
+</ul>
+</li>
+<li><a href="#orgc262174">3. Twistor correspondence.</a>
+<ul>
+<li><a href="#orgfbfcffd">3.1. Review: A few local properties of (pseudo)holomorphic curves.</a></li>
+<li><a href="#orgd0a74d4">3.2. Review: Harmonic maps from a Riemann surface.</a></li>
+<li><a href="#org5d4d247">3.3. Proof of Theorem .</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 <p>
-This post is my reading note for <a class='org-ref-reference' href="#eells_twistorial_1985">eells_twistorial_1985</a> writen using a more standard
+This post is my reading note for <a class='org-ref-reference' href="#Eells.Salamon85_TwistorialConstructionHarmonic">Eells.Salamon85_TwistorialConstructionHarmonic</a> writen using a more standard
 notation. The goal of their paper is, for a Riemannian four-manifold \( M \), to contruct
 an almost complex six-manifold \( S \) such that minimal surfaces in \( M \) correspond to
 holomorphic curves in \( S \). The space \( S \), called <b>twistor space</b> of \( M \) is a \( \mathbb{S}_2 \)-bundle over \( M
@@ -318,8 +314,8 @@ holomorphic curves in \( S \). The space \( S \), called <b>twistor space</b> of
 \) that are compatible with the Riemannian metric.
 </p>
 
-<div id="outline-container-orgd2a4513" class="outline-2">
-<h2 id="orgd2a4513"><span class="section-number-2">1</span> Minimal surfaces in \( \mathbb{R}^3 \) and Gauss map.</h2>
+<div id="outline-container-org8ccd036" class="outline-2">
+<h2 id="org8ccd036"><span class="section-number-2">1</span> Minimal surfaces in \( \mathbb{R}^3 \) and Gauss map.</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 We will start with the following result of S. S. Chern <a class='org-ref-reference' href="#chern_minimal_1965">chern_minimal_1965</a>.
@@ -356,7 +352,7 @@ where \( (u,v,r) \) form an oriented orthonormal basis of \( \mathbb{R}^3 \).
 <p>
 This result can also be generalised for surface \( \Sigma^2\subset \mathbb{R}^n \) by
 associating to each point \( p\in \Sigma \) its tangent plane \( T_p\Sigma\in  \widetilde {\rm
-Gr}_2(\mathbb{R}^n) \) the space of oriented 2-pane in \mathbb{R}^n \). We can then equip \( \widetilde {\rm
+Gr}_2(\mathbb{R}^n) \) the space of oriented 2-planes in \(\mathbb{R}^n \). We can then equip \( \widetilde {\rm
 Gr}_2(\mathbb{R}^n) \) with a complex structure given by the diffeomorphism
 </p>
 \begin{align*}
@@ -399,11 +395,11 @@ map, called <i>Gauss lift</i>.
 </div>
 
 
-<div id="outline-container-orgffa9cab" class="outline-2">
-<h2 id="orgffa9cab"><span class="section-number-2">2</span> Twistor spaces and Gauss lift.</h2>
+<div id="outline-container-orgfbda398" class="outline-2">
+<h2 id="orgfbda398"><span class="section-number-2">2</span> Twistor spaces and Gauss lift.</h2>
 <div class="outline-text-2" id="text-2">
-</div><div id="outline-container-org67b188d" class="outline-3">
-<h3 id="org67b188d"><span class="section-number-3">2.1</span> 2-forms in 4 dimensional geometry</h3>
+</div><div id="outline-container-org0c9fa52" class="outline-3">
+<h3 id="org0c9fa52"><span class="section-number-3">2.1</span> 2-forms in 4 dimensional geometry</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Let \( M \) be an oriented four-manifold and \( \vol \) is a volume form on \( M
@@ -553,8 +549,8 @@ By surjectivity in Theorem <a href="#thm:SOV-cover">thm:SOV-cover</a>, there exi
 
 
 
-<div id="outline-container-orgd41fcd0" class="outline-3">
-<h3 id="orgd41fcd0"><span class="section-number-3">2.2</span> Twistor spaces and their natural complex structures</h3>
+<div id="outline-container-org0328c92" class="outline-3">
+<h3 id="org0328c92"><span class="section-number-3">2.2</span> Twistor spaces and their natural complex structures</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Given a Riemannian four-manifold \( (M,g) \), then \( \Lambda^2 TM \) splits as
@@ -679,7 +675,7 @@ if one supposes \( \omega = 12 - 34 \), \( J_1^v(14-23) = 13+24 \) and \( J_2^v 
 <p>
 We will know prove that the almost complex structure \( J_2 \) is never integrable. The
 idea is to say that if this was true than there are very few holomorphic sections,
-which contradicts the fact that under Koszul&#x2013;Malgrange <a class='org-ref-reference' href="#koszul_sur_1958">koszul_sur_1958</a> complex structure
+which contradicts the fact that under Koszul&#x2013;Malgrange <a class='org-ref-reference' href="#Koszul.Malgrange58_CertainesStructuresFibrees">Koszul.Malgrange58_CertainesStructuresFibrees</a> complex structure
 (component-wise complex structure) a section is holomorphic if and only if its image is
 a complex sub manifold and there are plenty complex sub manifold in an integrable
 complex manifold.
@@ -690,8 +686,8 @@ We will start by explaining two ways to complexify a connection.
 </p>
 </div>
 </div>
-<div id="outline-container-orgb24fc53" class="outline-3">
-<h3 id="orgb24fc53"><span class="section-number-3">2.3</span> Two different complexifications of a linear map.</h3>
+<div id="outline-container-orgae06d8f" class="outline-3">
+<h3 id="orgae06d8f"><span class="section-number-3">2.3</span> Two different complexifications of a linear map.</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 The majority of computational details in the proof of holomorphic curve-minimal surface
@@ -850,8 +846,8 @@ since \( \lambda_i^j = \langle \nabla_X \alpha_i,\bar \alpha_j \rangle = - \lang
 
 
 
-<div id="outline-container-orgc7d5d63" class="outline-3">
-<h3 id="orgc7d5d63"><span class="section-number-3">2.4</span> Non-integrability of \( (S_-, J_2) \).</h3>
+<div id="outline-container-org4e5ee36" class="outline-3">
+<h3 id="org4e5ee36"><span class="section-number-3">2.4</span> Non-integrability of \( (S_-, J_2) \).</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 It follows from Proposition <a href="#prop:holo-sec-S">prop:holo-sec-S</a> and Proposition <a href="#prop:no-1-1">prop:no-1-1</a> that
@@ -900,8 +896,8 @@ s= 0\) and \( s \) would be therefore parallel, which is a contradiction.
 </div>
 
 
-<div id="outline-container-org98df267" class="outline-3">
-<h3 id="org98df267"><span class="section-number-3">2.5</span> Gauss lift.</h3>
+<div id="outline-container-org838182d" class="outline-3">
+<h3 id="org838182d"><span class="section-number-3">2.5</span> Gauss lift.</h3>
 <div class="outline-text-3" id="text-2-5">
 <p>
 We finalise this section by defining the generalised Gauss map (i.e. Gauss lift) and
@@ -930,7 +926,7 @@ Another way to define \( \tilde f_- \) is to say that it is the unique anti-self
 
 <p>
 It is clear that the Gauss lift can be continuously defined in case where \( f \) is a
-branched immersion <a class='org-ref-reference' href="#gulliver_theory_1973">gulliver_theory_1973</a>. We can now state the correspondence in <a class='org-ref-reference' href="#eells_twistorial_1985">eells_twistorial_1985</a>.
+branched immersion <a class='org-ref-reference' href="#Gulliver.etal73_TheoryBranchedImmersions">Gulliver.etal73_TheoryBranchedImmersions</a>. We can now state the correspondence in <a class='org-ref-reference' href="#Eells.Salamon85_TwistorialConstructionHarmonic">Eells.Salamon85_TwistorialConstructionHarmonic</a>.
 </p>
 
 <div id="thm:twistor-cor" btit="(Eells-Salamon)" class="theorem">
@@ -946,8 +942,8 @@ Gauss lift.
 </div>
 
 
-<div id="outline-container-org9cd65bf" class="outline-2">
-<h2 id="org9cd65bf"><span class="section-number-2">3</span> Twistor correspondence.</h2>
+<div id="outline-container-orgc262174" class="outline-2">
+<h2 id="orgc262174"><span class="section-number-2">3</span> Twistor correspondence.</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 The correspondence is between conformal harmonic branched immersions in \( M \) and
@@ -966,10 +962,10 @@ compactness of \( \Sigma \).
 </div>
 
 
-<div id="outline-container-orgd413359" class="outline-3">
-<h3 id="orgd413359"><span class="section-number-3">3.1</span> Review: A few local properties of (pseudo)holomorphic curve.</h3>
+<div id="outline-container-orgfbfcffd" class="outline-3">
+<h3 id="orgfbfcffd"><span class="section-number-3">3.1</span> Review: A few local properties of (pseudo)holomorphic curves.</h3>
 <div class="outline-text-3" id="text-3-1">
-<div id="thm:infty-jet" btit="(Dependence on \( \infty \))" class="theorem">
+<div id="thm:infty-jet" btit="(Dependence on \( \infty \)-jet)" class="theorem">
 <p>
 Let \( u:\Sigma \longrightarrow S \) be a holomorphic curve between a compact connected
 Riemann surface \( \Sigma \) and an almost complex manifold \( S \). Then \( u \) is
@@ -981,7 +977,7 @@ is another holomorphic curve \( v:\Sigma \longrightarrow M \) such that the \( \
 </div>
 
 <p>
-For a proof of this Theorem <a href="#thm:infty-jet">thm:infty-jet</a>, see <a class='org-ref-reference' href="#mcdu_j-holomorphic_nodate">mcdu_j-holomorphic_nodate</a>. The
+For a proof of this Theorem <a href="#thm:infty-jet">thm:infty-jet</a>, see <a class='org-ref-reference' href="#McDuff.Salamon00_JholomorphicCurvesQuantum">McDuff.Salamon00_JholomorphicCurvesQuantum</a> . The
 idea is to write down the generalised Cauchy-Riemann equation for \( u \) and \( v \) then
 apply a PDE estimate. We are interested in how this theorem can be applied to prove that
 critical point of \( u \) is isolated. 
@@ -1098,8 +1094,8 @@ there exists a non-zero \( a_i \) for \( i\geq 2 \). The conclusion then follows
 </div>
 
 
-<div id="outline-container-org290912c" class="outline-3">
-<h3 id="org290912c"><span class="section-number-3">3.2</span> Review: Harmonic maps from a Riemann surface.</h3>
+<div id="outline-container-orgd0a74d4" class="outline-3">
+<h3 id="orgd0a74d4"><span class="section-number-3">3.2</span> Review: Harmonic maps from a Riemann surface.</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 First of all this term makes sense because energy of a map \( f:\Sigma \longrightarrow M
@@ -1122,7 +1118,7 @@ We now use complexification (B) when we talk about covariant derivative \(
 
 <div id="rem:ddbarf" class="remark">
 <p>
-&nabla;_{&part;_z} and \( \nabla_{\partial_{\bar z}} \) commute on \( f \). In fact
+\(\nabla_{\partial_z}\) and \( \nabla_{\partial_{\bar z}} \) commute on \( f \). In fact
 \[
 \nabla_{\partial_z}\nabla_{\partial_{\bar z}}f - \nabla_{\partial_{\bar
 z}}\nabla_{\partial_{z}}f = \nabla^M_{f_* \partial_z}f_* \partial_{\bar z} - \nabla^M_{f_*
@@ -1145,7 +1141,7 @@ z\otimes d\bar z)=0 \):
 </p>
 \begin{align*}
 \nabla df &= \nabla_{\partial_z}(\nabla_{\partial_z}f dz + \nabla_{\partial_{\bar z}}f\ d\bar z)\otimes dz + \nabla_{\partial_{\bar z}}(\nabla_{\partial_z}f dz + \nabla_{\partial_{\bar z}}f\ d\bar z)\otimes d\bar z  \\
-       	  &=  \nabla_{\partial_z}\nabla_{\partial_{\bar z}}f (dz\otimes d\bar z + d\bar z\otimes dz) + \text{ terms in } dz\otimes dz \text{ and } d\bar z\otimes d\bar z
+       	  &=  (\nabla_{\partial_z}\nabla_{\partial_{\bar z}}f) (dz\otimes d\bar z + d\bar z\otimes dz) + \text{ terms in } dz\otimes dz \text{ and } d\bar z\otimes d\bar z
 \end{align*}
 <p>
 in which we claim that the sum
@@ -1168,12 +1164,41 @@ z}f_* \partial_{\bar z} = f_* \nabla^\Sigma_{\partial_z} \partial_{\bar z}\). Bu
 \]
 since Riemann surfaces are Kahler manifolds (\( SO(2) = U(1) \)).
 </p>
+
+
+<div id="rem:quad-diff-surface" class="remark">
+<p>
+An application of the last formula is that the tension field is
+\[
+ \tau(f) = -\tr_h \nabla df = - 4 \nabla_{\partial_z}\nabla_{\partial_{\bar z}}f,
+\]
+hence
+\[
+\frac{\partial}{\partial \bar z} \left\langle \frac{\partial f}{\partial z},  \frac{\partial
+f}{\partial z} \right\rangle_g = -\frac{1}{2} \left \langle \tau(f), f_*
+\frac{\partial}{\partial z} \right\rangle_g  
+\]
+Therefore the Hopf's quadratic differential \( q(f,[h],h):= \left \langle \frac{\partial
+f}{\partial z}, \frac{\partial
+f}{\partial z} \right \rangle_g dz\otimes dz \) is holomorphic if and only if the tension
+field \( \tau(f) \) is orthogonal to the tangent \( f_* T\Sigma \) of the surface. In
+particular if \( f \) is harmonic then its quadratic differential is holomorphic.
+</p>
+
+<p>
+A consequence is that all harmonic map from the 2-sphere \( \mathbb{S}^2 \) is
+quadratic. This is because \( \mathbb{S}^2 \) carries no non-zero holomorphic quadratic differential.
+</p>
+
+</div>
 </div>
 </div>
 
 
-<div id="outline-container-orgca4888b" class="outline-3">
-<h3 id="orgca4888b"><span class="section-number-3">3.3</span> Proof of Theorem <a href="#thm:twistor-cor">thm:twistor-cor</a>.</h3>
+
+
+<div id="outline-container-org5d4d247" class="outline-3">
+<h3 id="org5d4d247"><span class="section-number-3">3.3</span> Proof of Theorem <a href="#thm:twistor-cor">thm:twistor-cor</a>.</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 We have now acquired enough technology to prove Theorem <a href="#thm:twistor-cor">thm:twistor-cor</a> of
@@ -1239,7 +1264,7 @@ f_*X \) and \( f_* JX \) have the same length and are orthogonal in \( M \).
 <p>
 We will prove that under \eqref{eq:smooth-twistor-1},  \eqref{eq:smooth-twistor-2} is
 equivalent to \( f \) being harmonic. To see that, we will translate
-\eqref{eq:smooth-twistor-2} to an equivalent condition using complexification (B).
+\eqref{eq:smooth-twistor-2} to an equivalent condition using complexification (B):
 \[
  \nabla_X\sigma + J_2\nabla_{JX}\sigma = 0 \forall X\in T\Sigma \iff
 \nabla_{\frac{\partial}{\partial z}}\sigma=\nabla_{X-iJX}\sigma:=\nabla_X\sigma -i\nabla_{JX}\sigma=\nabla_X\sigma
@@ -1248,7 +1273,7 @@ equivalent to \( f \) being harmonic. To see that, we will translate
 with respect to the complex structure \( J_2 \). But \( \nabla_{\frac{\partial}{\partial
 z}}\sigma \) is vertical and \( T^{1,0}S_- = (T^{1,0})^h\oplus
 (\Gamma^{0,2})^v \), one has \eqref{eq:smooth-twistor-2} is equivalent to \(
-\nabla_{\frac{\partial}{\partial z}}\sigma\in \Gamma^{0,2} \). Since we knew from
+\nabla_{\frac{\partial}{\partial z}}\sigma\in \Lambda^{0,2} \). Since we knew from
 Proposition <a href="#prop:no-1-1">prop:no-1-1</a> that \( \nabla_{\frac{\partial}{\partial z}} \sigma \) only has a \(
 \Lambda^{2,0} \) component and a \( \Lambda^{0,2} \) component (under \( \tilde f_- \)), \eqref{eq:smooth-twistor-2}
 means the former vanishes.
@@ -1302,11 +1327,11 @@ So \( A=0 \iff (\delta\bar\delta f)^{1,0}=0 \iff \delta\bar\delta f=0 \) because
 <p>
 
 <h1 class='org-ref-bib-h1'>Bibliography</h1>
-<ul class='org-ref-bib'><li><a id="eells_twistorial_1985">[eells_twistorial_1985] Eells & Salamon, Twistorial construction of harmonic maps of surfaces into four-manifolds, <i>Annali della Scuola Normale Superiore di Pisa - Classe di Scienze</i>, <b>12(4)</b>, 589-640 (1985). <a href="https://eudml.org/doc/83968">link</a>.</a></li>
+<ul class='org-ref-bib'><li><a id="Eells.Salamon85_TwistorialConstructionHarmonic">[Eells.Salamon85_TwistorialConstructionHarmonic] Eells & Salamon, Twistorial construction of harmonic maps of surfaces into four-manifolds, <i>Annali della Scuola Normale Superiore di Pisa - Classe di Scienze</i>, <b>12(4)</b>, 589-640 (1985). <a href="https://eudml.org/doc/83968">link</a>.</a></li>
 <li><a id="chern_minimal_1965">[chern_minimal_1965] Chern, Minimal Surfaces in an Euclidean Space of N Dimensions, <i>Differential and Combinatorial Topology</i>, <b></b>, 187-198 (1965). <a href="http://www.jstor.org/stable/j.ctt183pp26.14">link</a>.</a></li>
-<li><a id="koszul_sur_1958">[koszul_sur_1958] Koszul & Malgrange, Sur certaines structures fibrées complexes, <i>Arch. Math</i>, <b>9(1)</b>, 102-109 (1958). <a href="https://doi.org/10.1007/BF02287068">link</a>. <a href="http://dx.doi.org/10.1007/BF02287068">doi</a>.</a></li>
-<li><a id="gulliver_theory_1973">[gulliver_theory_1973] Gulliver, Osserman & Royden, A Theory of Branched Immersions of Surfaces, <i>American Journal of Mathematics</i>, <b>95(4)</b>, 750-812 (1973). <a href="http://www.jstor.org/stable/2373697">link</a>. <a href="http://dx.doi.org/10.2307/2373697">doi</a>.</a></li>
-<li><a id="mcdu_j-holomorphic_nodate">[mcdu_j-holomorphic_nodate] McDuﬀ & Salamon, J-holomorphic Curves and Quantum Cohomology, <i></i>, <b></b>, 217 .</a></li>
+<li><a id="Koszul.Malgrange58_CertainesStructuresFibrees">[Koszul.Malgrange58_CertainesStructuresFibrees] Koszul & Malgrange, Sur certaines structures fibrées complexes, <i>Arch. Math</i>, <b>9(1)</b>, 102-109 (1958). <a href="https://doi.org/10.1007/BF02287068">link</a>. <a href="http://dx.doi.org/10.1007/BF02287068">doi</a>.</a></li>
+<li><a id="Gulliver.etal73_TheoryBranchedImmersions">[Gulliver.etal73_TheoryBranchedImmersions] Gulliver, Osserman & Royden, A Theory of Branched Immersions of Surfaces, <i>American Journal of Mathematics</i>, <b>95(4)</b>, 750-812 (1973). <a href="http://www.jstor.org/stable/2373697">link</a>. <a href="http://dx.doi.org/10.2307/2373697">doi</a>.</a></li>
+<li><a id="McDuff.Salamon00_JholomorphicCurvesQuantum">[McDuff.Salamon00_JholomorphicCurvesQuantum] McDuﬀ & Salamon, J-holomorphic Curves and Quantum Cohomology, <i></i>, <b></b>, 217 .</a></li>
 </ul>
 </p>
 </div>
@@ -1316,7 +1341,7 @@ So \( A=0 \iff (\delta\bar\delta f)^{1,0}=0 \iff \delta\bar\delta f=0 \) because
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-11-28 Wed 10:51. <br>
+Last updated 2021-06-25 Fri 22:32. <br>
 </div>
 </div>
 </body>

@@ -3,12 +3,11 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-09-15 Sat 01:52 -->
+<!-- 2021-06-25 Fri 23:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>From Busemann function to Cheeger-Gromoll splitting</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="Tien" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -253,27 +252,6 @@ for the JavaScript code in this tag.
 <li><a href='./contact.html'>Contact</a></li>
 </ul>
 </div>
-</div>
-<div id="content">
-<h1 class="title">From Busemann function to Cheeger-Gromoll splitting</h1>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#orgeb0cfda">1. Busemann function</a></li>
-<li><a href="#org1181f70">2. Harmonicity</a></li>
-<li><a href="#org387a1bd">3. Application</a></li>
-</ul>
-</div>
-</div>
-<div class="info">
-<p>
-The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
-<code>pdf</code>. 
-For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
-</p>
-
-</div>
 \(
 \newcommand{\re}{\mathop{\rm Re}\nolimits}
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
@@ -291,7 +269,35 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
 \newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
 \newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
+\newcommand{\Enorm}{\mathop{\mathcal{E}_{\rm norm}}\nolimits}
+\newcommand{\Anorm}{\mathop{\mathcal{A}_{\rm norm}}\nolimits}
+\newcommand{\Cl}{\mathop{\rm Cl}\nolimits}
+\newcommand{\Spin}{\mathop{\rm Spin}\nolimits}
+\newcommand{\Pin}{\mathop{\rm Pin}\nolimits}
+\newcommand{\Hom}{\mathop{\rm Hom}\nolimits}
+\newcommand{\End}{\mathop{\rm End}\nolimits}
 \)
+</div>
+<div id="content">
+<h1 class="title">From Busemann function to Cheeger-Gromoll splitting</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orged34540">1. Busemann function</a></li>
+<li><a href="#org8a7938d">2. Harmonicity</a></li>
+<li><a href="#org88f8b25">3. Application</a></li>
+</ul>
+</div>
+</div>
+<div class="info">
+<p>
+The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
+<code>pdf</code>. 
+For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
+</p>
+
+</div>
 <div class="info">
 <p>
 This post is a part of the <a href="../res/Stage2017.pdf">memoire of my M1 internship</a> at I2M. The memoire contains,
@@ -307,7 +313,7 @@ A. Besse.
 
 <div class="theorem">
 <p>
-<a id="orgec9e96d"></a>
+<a id="org40d72c3"></a>
 </p>
 <p>
 Let \(M\) be a complete, connected Riemannian manifold with non-negative Ricci curvature. Suppose
@@ -328,8 +334,8 @@ d(exp_p(tv), exp_p(-sv)) = s+t,\quad \forall s,t>0
 </p>
 
 
-<div id="outline-container-orgeb0cfda" class="outline-2">
-<h2 id="orgeb0cfda"><span class="section-number-2">1</span> Busemann function</h2>
+<div id="outline-container-orged34540" class="outline-2">
+<h2 id="orged34540"><span class="section-number-2">1</span> Busemann function</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Let \(\gamma\) be a geodesic ray. We construct the Busemann function \(b\) associated to the ray as
@@ -360,7 +366,7 @@ where \(exp_{x_0}(tX)\) is the geodesic starting at \(x_0\) with velocity \(X\).
 
 <div class="remark">
 <p>
-<a id="org6174308"></a>
+<a id="orgd4f3f83"></a>
 </p>
 <ol class="org-ol">
 <li>From the construction of \(X\), one has \(b(x_0) + t = b(exp_{x_0}(tX))\), therefore \(b_{X,t} \leq b\) with
@@ -427,7 +433,7 @@ The curvature term being \( \frac{t^2}{l^2}Ric(N,N)\) therefore non-negative, on
 
 
 <p>
-We also note that for Theorem <a href="#orgec9e96d">No description for this link</a> it suffices to show that \(b\) is harmonic. In fact,
+We also note that for Theorem <a href="#org40d72c3">No description for this link</a> it suffices to show that \(b\) is harmonic. In fact,
 from the smoothness one has \(\nabla b(x_0) =\nabla b_{X,t}(x_0)\), which means \(\|\nabla b\| = 1\) at
 every point in \(M\).  For each point \(y\in M\), there exists a unique \(x\) with \(b(x)=0\) and time \(t\)
 when the flow of \(\nabla b\) starting at \(x\) arrives at \(y\). \(M\) is therefore homeomorphic to \(\bar
@@ -463,8 +469,8 @@ since \(N\) is parallel and \(M\) is complete.</li>
 </div>
 </div>
 
-<div id="outline-container-org1181f70" class="outline-2">
-<h2 id="org1181f70"><span class="section-number-2">2</span> Harmonicity</h2>
+<div id="outline-container-org8a7938d" class="outline-2">
+<h2 id="org8a7938d"><span class="section-number-2">2</span> Harmonicity</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 The Busemann function associated to a geodesic ray is subharmonic, it is a consequence of the
@@ -533,16 +539,16 @@ splitting theorem of Cheeger-Gromoll follows.
 </div>
 
 
-<div id="outline-container-org387a1bd" class="outline-2">
-<h2 id="org387a1bd"><span class="section-number-2">3</span> Application</h2>
+<div id="outline-container-org88f8b25" class="outline-2">
+<h2 id="org88f8b25"><span class="section-number-2">3</span> Application</h2>
 <div class="outline-text-2" id="text-3">
 <p>
-A consequence of Theorem <a href="#orgec9e96d">No description for this link</a> is the following result from J.Cheeger- D.Gromoll, <i>The splitting
+A consequence of Theorem <a href="#org40d72c3">No description for this link</a> is the following result from J.Cheeger- D.Gromoll, <i>The splitting
 theorem for manifold of nonnegative Ricci curvature</i> (Theorem 2)
 </p>
 <div class="theorem">
 <p>
-<a id="orga05a189"></a>
+<a id="orgc5a4fbd"></a>
 Let \(M\) be a compact Riemannian manifold with non-negative Ricci curvature, then the universal
 covering space of \(M\) is of form \( \tilde M = \mathbb{R}^n\times \bar M\) where \(\bar M\) does not contain
 any lines. Then \(\bar M\) is compact.
@@ -601,7 +607,7 @@ then let \(n\to +\infty\), one sees that \(\bar M\) contains a geodesic line, wh
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
-By Tien.<br>
+By .<br>
 Last updated 2017-08-31 Thu 02:24. <br>
 </div>
 </div>

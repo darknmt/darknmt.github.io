@@ -52,9 +52,7 @@
     "lcm"
     "gcd"
     "Ric"
-    "Riem"
-    "Enorm"
-    "Anorm")
+    "Riem")
    (LaTeX-add-labels
     "sec:orgf3e7fb6"
     "thm:hartogs-subhar"

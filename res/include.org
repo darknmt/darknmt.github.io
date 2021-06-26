@@ -5,26 +5,4 @@ The PDF version of this page can be downloaded by replacing ~html~ in the its ad
 For example ~/html/sheaf-cohomology.html~ should become ~/pdf/sheaf-cohomology.pdf~.
 #+END_info
 #+LATEX: \fi
-# MathJax Config
-#+BEGIN_EXPORT html
-\(
-\newcommand{\re}{\mathop{\rm Re}\nolimits}
-\newcommand{\im}{\mathop{\rm Im}\nolimits}
-\newcommand{\coker}{\mathop{\rm coker}\nolimits}
-\newcommand{\supp}{\mathop{\rm supp}\nolimits}
-\newcommand{\ord}{\mathop{\rm ord}\nolimits}
-\newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
-\newcommand{\vol}{\mathop{\rm vol}\nolimits}
-\newcommand\restr[2]{{\left.#1\right|_{#2}}}
-\newcommand{\transp}{\mathop{\rm \,^t}\nolimits}
-\newcommand{\sff}{\mathop{\rm I\!I}\nolimits}
-\newcommand{\tr}{\mathop{\rm Tr}\nolimits}
-\newcommand{\const}{\mathop{\rm const }\nolimits}
-\newcommand{\lcm}{\mathop{\rm lcm}\nolimits}
-\newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
-\newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
-\newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
-\newcommand{\Enorm}{\mathop{\mathcal{E}_{\rm norm}}\nolimits}
-\newcommand{\Anorm}{\mathop{\mathcal{A}_{\rm norm}}\nolimits}
-\)
-#+END_EXPORT
+

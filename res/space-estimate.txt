@@ -1,0 +1,39 @@
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{qqwwtt}{rgb}{0,0.4,0.2}
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\definecolor{wwqqcc}{rgb}{0.4,0,0.8}
+\definecolor{ccqqqq}{rgb}{0.8,0,0}
+\definecolor{qqttzz}{rgb}{0,0.2,0.6}
+\definecolor{uququq}{rgb}{0.25098039215686274,0.25098039215686274,0.25098039215686274}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-0.9546188631438312,-7.137848514024658) rectangle (15.03579652703309,8.936024158982073);
+\draw [shift={(5,0)},line width=0.4pt,color=uququq]  plot[domain=0:3.141592653589793,variable=\t]({1*5*cos(\t r)+0*5*sin(\t r)},{0*5*cos(\t r)+1*5*sin(\t r)});
+\draw [shift={(5,-8)},line width=0.4pt,color=qqttzz]  plot[domain=1.0121970114513341:2.1293956421384594,variable=\t]({1*9.433981132056603*cos(\t r)+0*9.433981132056603*sin(\t r)},{0*9.433981132056603*cos(\t r)+1*9.433981132056603*sin(\t r)});
+\draw [shift={(5,7)},line width=0.4pt,color=ccqqqq]  plot[domain=3.9248511601818326:5.500759711080929,variable=\t]({1*5.567760638414523*cos(\t r)+0*5.567760638414523*sin(\t r)},{0*5.567760638414523*cos(\t r)+1*5.567760638414523*sin(\t r)});
+\draw [shift={(4.997477610202862,7.4276655428306055)},line width=0.4pt,color=ccqqqq]  plot[domain=3.9773017498135275:5.448726498601651,variable=\t]({1*5.099004921738412*cos(\t r)+0*5.099004921738412*sin(\t r)},{0*5.099004921738412*cos(\t r)+1*5.099004921738412*sin(\t r)});
+\draw [line width=0.4pt,color=qqttzz] (0,0)-- (10,0);
+\draw [color=ccqqqq](9.243861098649592,3.6949067972747898) node[anchor=north west] {$\frac{\xi_1}{\xi_0}=\beta$};
+\draw [color=ccqqqq](8.509437009747938,4.679702734665649) node[anchor=north west] {$\frac{\xi_1}{\xi_0}=\beta+\epsilon$};
+\draw [color=qqttzz](4.186349759167747,-0.09405384319512515) node[anchor=north west] {$\frac{\xi_1}{\xi_0}=\xi_1 = 0$};
+\draw [color=qqttzz](-0.9212359500119377,0.7071360719703195) node[anchor=north west] {$\xi_1 = \alpha$};
+\draw [line width=0.4pt,dash pattern=on 1pt off 1pt,color=wwqqcc] (5,0)-- (5,5);
+\draw [color=wwqqcc](4.637019086448308,5.9482534336776025) node[anchor=north west] {$\xi_0^2 - \xi_1^2 = 1$};
+\draw [shift={(0.006918256696223484,-0.1678195500719704)},line width=0.8pt,color=qqwuqq]  plot[domain=0.8038781540962868:1.2236842667574959,variable=\t]({1*3.723752301685894*cos(\t r)+0*3.723752301685894*sin(\t r)},{0*3.723752301685894*cos(\t r)+1*3.723752301685894*sin(\t r)});
+\draw [shift={(4.251475951962797,3.8977622406633503)},line width=0.8pt,color=qqwuqq]  plot[domain=3.8364989774587417:5.264407309183175,variable=\t]({1*2.1618850672035554*cos(\t r)+0*2.1618850672035554*sin(\t r)},{0*2.1618850672035554*cos(\t r)+1*2.1618850672035554*sin(\t r)});
+\draw [shift={(6.249640454868482,0.11708012301389668)},line width=0.8pt,color=qqwuqq]  plot[domain=1.283476457039884:1.990000176112451,variable=\t]({1*2.123799324112413*cos(\t r)+0*2.123799324112413*sin(\t r)},{0*2.123799324112413*cos(\t r)+1*2.123799324112413*sin(\t r)});
+\draw [shift={(7.099290575236087,3.1673346559911524)},line width=0.8pt,color=qqwuqq]  plot[domain=4.472596474142985:5.870260180007773,variable=\t]({1*1.043370154639803*cos(\t r)+0*1.043370154639803*sin(\t r)},{0*1.043370154639803*cos(\t r)+1*1.043370154639803*sin(\t r)});
+\draw [shift={(8.935401217245818,2.3384487586730986)},line width=0.8pt,color=qqwuqq]  plot[domain=1.7507673765667517:2.7055980485998474,variable=\t]({1*0.9712994068658328*cos(\t r)+0*0.9712994068658328*sin(\t r)},{0*0.9712994068658328*cos(\t r)+1*0.9712994068658328*sin(\t r)});
+\draw [color=qqwwtt](0.6477609671870505,4.195650494253193) node[anchor=north west] {$\Sigma$};
+\begin{scriptsize}
+\draw [fill=uuuuuu] (0,0) circle (2pt);
+\draw[color=uuuuuu] (0.1553629984916233,0.39834412550030435) node {$A$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}

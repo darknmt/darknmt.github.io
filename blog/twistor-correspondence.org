@@ -5,10 +5,9 @@
 # +STARTUP: showstars
 
 #+SETUPFILE: ../res/mathsetup.org
-#+INCLUDE: ../res/include.org
 
 #+LATEX:\iffalse
-This post is my reading note for cite:eells_twistorial_1985 writen using a more standard
+This post is my reading note for cite:Eells.Salamon85_TwistorialConstructionHarmonic writen using a more standard
 notation. The goal of their paper is, for a Riemannian four-manifold \( M \), to contruct
 an almost complex six-manifold \( S \) such that minimal surfaces in \( M \) correspond to
 holomorphic curves in \( S \). The space \( S \), called *twistor space* of \( M \) is a \( \mathbb{S}_2 \)-bundle over \( M
@@ -44,7 +43,7 @@ Then \( \Sigma \) is minimal surface if and only if \( \tilde f: (\Sigma,i)
 
 This result can also be generalised for surface \( \Sigma^2\subset \mathbb{R}^n \) by
 associating to each point \( p\in \Sigma \) its tangent plane \( T_p\Sigma\in  \widetilde {\rm
-Gr}_2(\mathbb{R}^n) \) the space of oriented 2-pane in \mathbb{R}^n \). We can then equip \( \widetilde {\rm
+Gr}_2(\mathbb{R}^n) \) the space of oriented 2-planes in \(\mathbb{R}^n \). We can then equip \( \widetilde {\rm
 Gr}_2(\mathbb{R}^n) \) with a complex structure given by the diffeomorphism
 \begin{align*}
 \widetilde {\rm Gr}_2(\mathbb{R}^n) &\longrightarrow Q_{n-2}=\{z_0^2 +\dots + z_{n-1}^2\}\subset \mathbb{CP}^{n-1}\\
@@ -293,7 +292,7 @@ map, called /Gauss lift/.
 
    We will know prove that the almost complex structure \( J_2 \) is never integrable. The
    idea is to say that if this was true than there are very few holomorphic sections,
-   which contradicts the fact that under Koszul--Malgrange cite:koszul_sur_1958 complex structure
+   which contradicts the fact that under Koszul--Malgrange cite:Koszul.Malgrange58_CertainesStructuresFibrees complex structure
    (component-wise complex structure) a section is holomorphic if and only if its image is
    a complex sub manifold and there are plenty complex sub manifold in an integrable
    complex manifold.
@@ -463,7 +462,7 @@ Another way to define \( \tilde f_- \) is to say that it is the unique anti-self
 #+END_remark
 
 It is clear that the Gauss lift can be continuously defined in case where \( f \) is a
-branched immersion cite:gulliver_theory_1973. We can now state the correspondence in cite:eells_twistorial_1985.
+branched immersion cite:Gulliver.etal73_TheoryBranchedImmersions. We can now state the correspondence in cite:Eells.Salamon85_TwistorialConstructionHarmonic.
 
 #+ATTR_LATEX: :options [Eells-Salamon]
 #+ATTR_HTML: :id thm:twistor-cor :btit (Eells-Salamon) 
@@ -486,10 +485,10 @@ We will show that in both cases, these points are isolated, hence of finite numb
 compactness of \( \Sigma \).
 
 
-** Review: A few local properties of (pseudo)holomorphic curve.
+** Review: A few local properties of (pseudo)holomorphic curves.
 
 #+ATTR_LATEX: :options [Dependence on \( \infty \)-jet]
-#+ATTR_HTML: :id thm:infty-jet :btit (Dependence on \( \infty \)) 
+#+ATTR_HTML: :id thm:infty-jet :btit (Dependence on \( \infty \)-jet) 
 #+BEGIN_theorem
 #+LATEX: \label{thm:infty-jet}
 Let \( u:\Sigma \longrightarrow S \) be a holomorphic curve between a compact connected
@@ -499,7 +498,7 @@ is another holomorphic curve \( v:\Sigma \longrightarrow M \) such that the \( \
 \)-jets of \( v \) and \( u \) coincide then the two maps \( u,v \) coincide.
 #+END_theorem
 
-For a proof of this Theorem ref:thm:infty-jet, see cite:mcdu_j-holomorphic_nodate. The
+For a proof of this Theorem ref:thm:infty-jet, see cite:McDuff.Salamon00_JholomorphicCurvesQuantum . The
 idea is to write down the generalised Cauchy-Riemann equation for \( u \) and \( v \) then
 apply a PDE estimate. We are interested in how this theorem can be applied to prove that
 critical point of \( u \) is isolated. 
@@ -615,7 +614,7 @@ We now use complexification (B) when we talk about covariant derivative \(
 #+ATTR_HTML: :id rem:ddbarf
 #+BEGIN_remark
 #+LATEX: \label{rem:ddbarf}
-\nabla_{\partial_z} and \( \nabla_{\partial_{\bar z}} \) commute on \( f \). In fact
+\(\nabla_{\partial_z}\) and \( \nabla_{\partial_{\bar z}} \) commute on \( f \). In fact
 \[
 \nabla_{\partial_z}\nabla_{\partial_{\bar z}}f - \nabla_{\partial_{\bar
 z}}\nabla_{\partial_{z}}f = \nabla^M_{f_* \partial_z}f_* \partial_{\bar z} - \nabla^M_{f_*
@@ -634,7 +633,7 @@ We will write down the equation of harmonicity \( \tr_h \nabla df=0 \) explicite
 z\otimes d\bar z)=0 \):
 \begin{align*}
 \nabla df &= \nabla_{\partial_z}(\nabla_{\partial_z}f dz + \nabla_{\partial_{\bar z}}f\ d\bar z)\otimes dz + \nabla_{\partial_{\bar z}}(\nabla_{\partial_z}f dz + \nabla_{\partial_{\bar z}}f\ d\bar z)\otimes d\bar z  \\
-       	  &=  \nabla_{\partial_z}\nabla_{\partial_{\bar z}}f (dz\otimes d\bar z + d\bar z\otimes dz) + \text{ terms in } dz\otimes dz \text{ and } d\bar z\otimes d\bar z
+       	  &=  (\nabla_{\partial_z}\nabla_{\partial_{\bar z}}f) (dz\otimes d\bar z + d\bar z\otimes dz) + \text{ terms in } dz\otimes dz \text{ and } d\bar z\otimes d\bar z
 \end{align*}
 in which we claim that the sum
 \[
@@ -655,6 +654,32 @@ z}f_* \partial_{\bar z} = f_* \nabla^\Sigma_{\partial_z} \partial_{\bar z}\). Bu
 \partial_x}J \partial_x = 0
 \]
 since Riemann surfaces are Kahler manifolds (\( SO(2) = U(1) \)).
+
+
+#+ATTR_HTML: :id rem:quad-diff-surface
+#+BEGIN_remark
+#+LATEX: \label{rem:quad-diff-surface}
+An application of the last formula is that the tension field is
+\[
+ \tau(f) = -\tr_h \nabla df = - 4 \nabla_{\partial_z}\nabla_{\partial_{\bar z}}f,
+\]
+hence
+\[
+\frac{\partial}{\partial \bar z} \left\langle \frac{\partial f}{\partial z},  \frac{\partial
+f}{\partial z} \right\rangle_g = -\frac{1}{2} \left \langle \tau(f), f_*
+\frac{\partial}{\partial z} \right\rangle_g  
+\]
+Therefore the Hopf's quadratic differential \( q(f,[h],h):= \left \langle \frac{\partial
+f}{\partial z}, \frac{\partial
+f}{\partial z} \right \rangle_g dz\otimes dz \) is holomorphic if and only if the tension
+field \( \tau(f) \) is orthogonal to the tangent \( f_* T\Sigma \) of the surface. In
+particular if \( f \) is harmonic then its quadratic differential is holomorphic.
+
+A consequence is that all harmonic map from the 2-sphere \( \mathbb{S}^2 \) is
+quadratic. This is because \( \mathbb{S}^2 \) carries no non-zero holomorphic quadratic differential.
+#+END_remark
+
+
 
 
 ** Proof of Theorem ref:thm:twistor-cor.
@@ -711,7 +736,7 @@ f_*X \) and \( f_* JX \) have the same length and are orthogonal in \( M \).
 
 We will prove that under eqref:eq:smooth-twistor-1,  eqref:eq:smooth-twistor-2 is
 equivalent to \( f \) being harmonic. To see that, we will translate
-eqref:eq:smooth-twistor-2 to an equivalent condition using complexification (B).
+eqref:eq:smooth-twistor-2 to an equivalent condition using complexification (B):
 \[
  \nabla_X\sigma + J_2\nabla_{JX}\sigma = 0 \forall X\in T\Sigma \iff
 \nabla_{\frac{\partial}{\partial z}}\sigma=\nabla_{X-iJX}\sigma:=\nabla_X\sigma -i\nabla_{JX}\sigma=\nabla_X\sigma
@@ -720,7 +745,7 @@ eqref:eq:smooth-twistor-2 to an equivalent condition using complexification (B).
 with respect to the complex structure \( J_2 \). But \( \nabla_{\frac{\partial}{\partial
 z}}\sigma \) is vertical and \( T^{1,0}S_- = (T^{1,0})^h\oplus
 (\Gamma^{0,2})^v \), one has eqref:eq:smooth-twistor-2 is equivalent to \(
-\nabla_{\frac{\partial}{\partial z}}\sigma\in \Gamma^{0,2} \). Since we knew from
+\nabla_{\frac{\partial}{\partial z}}\sigma\in \Lambda^{0,2} \). Since we knew from
 Proposition ref:prop:no-1-1 that \( \nabla_{\frac{\partial}{\partial z}} \sigma \) only has a \(
 \Lambda^{2,0} \) component and a \( \Lambda^{0,2} \) component (under \( \tilde f_- \)), eqref:eq:smooth-twistor-2
 means the former vanishes.

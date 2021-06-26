@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-11-28 Wed 01:29 -->
+<!-- 2021-06-25 Fri 22:58 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Minimal immersions of \( \mathbb{S}^2 \)</title>
@@ -253,36 +253,6 @@ for the JavaScript code in this tag.
 <li><a href='./contact.html'>Contact</a></li>
 </ul>
 </div>
-</div>
-<div id="content">
-<h1 class="title">Minimal immersions of \( \mathbb{S}^2 \)</h1>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#org08f948b">1. Brief view of Sacks and Uhlenbeck's strategy.</a></li>
-<li><a href="#org0ef546f">2. General machinery by Morse-Palais-Smale.</a>
-<ul>
-<li><a href="#orgf1f3a12">2.1. Perturbed functionals \( E_\alpha \).</a></li>
-<li><a href="#org895b9e9">2.2. Tubular neighborhood of the submanifold of trivial maps.</a></li>
-<li><a href="#org4afcf74">2.3. Critical values of \( E_\alpha \).</a></li>
-</ul>
-</li>
-<li><a href="#orga45e1cd">3. Local results: Estimates and extension.</a></li>
-<li><a href="#org7e5ae0f">4. Convergence of critical maps of \( E_{\alpha} \).</a></li>
-<li><a href="#orgcc0f2c6">5. Nontrivial harmonic maps from \( \mathbb{S}^2 \).</a></li>
-<li><a href="#org80ba5b2">6. Minimal immersions of \( \mathbb{S}^2 \).</a></li>
-</ul>
-</div>
-</div>
-<div class="info">
-<p>
-The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
-<code>pdf</code>. 
-For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
-</p>
-
-</div>
 \(
 \newcommand{\re}{\mathop{\rm Re}\nolimits}
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
@@ -302,15 +272,57 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
 \newcommand{\Enorm}{\mathop{\mathcal{E}_{\rm norm}}\nolimits}
 \newcommand{\Anorm}{\mathop{\mathcal{A}_{\rm norm}}\nolimits}
+\newcommand{\Cl}{\mathop{\rm Cl}\nolimits}
+\newcommand{\Spin}{\mathop{\rm Spin}\nolimits}
+\newcommand{\Pin}{\mathop{\rm Pin}\nolimits}
+\newcommand{\Hom}{\mathop{\rm Hom}\nolimits}
+\newcommand{\End}{\mathop{\rm End}\nolimits}
 \)
+</div>
+<div id="content">
+<h1 class="title">Minimal immersions of \( \mathbb{S}^2 \)</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org340b4ca">1. Brief view of Sacks and Uhlenbeck's strategy.</a></li>
+<li><a href="#orgb1e2176">2. General machinery by Morse-Palais-Smale.</a>
+<ul>
+<li><a href="#orga8147ce">2.1. Perturbed functionals \( E_\alpha \).</a></li>
+<li><a href="#org5be7aea">2.2. Tubular neighborhood of the submanifold of trivial maps.</a></li>
+<li><a href="#orgf204c0e">2.3. Critical values of \( E_\alpha \).</a></li>
+</ul>
+</li>
+<li><a href="#org2242963">3. Local results: Estimates and extension.</a></li>
+<li><a href="#orged7e3dc">4. Convergence of critical maps of \( E_{\alpha} \).</a></li>
+<li><a href="#orgc02d9d0">5. Nontrivial harmonic maps from \( \mathbb{S}^2 \).</a></li>
+<li><a href="#org827906e">6. Minimal immersions of \( \mathbb{S}^2 \).</a></li>
+</ul>
+</div>
+</div>
+<div class="info">
+<p>
+The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
+<code>pdf</code>. 
+For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
+</p>
 
+</div>
 <p>
 This post is my reading note for <a class='org-ref-reference' href="#sacks_existence_1981">sacks_existence_1981</a>. I want to present the authors'
 ideas as clear as possible and I may probably skip a few (important) details and computations.
 </p>
+<p>
+On Sep 22, 2019 I gave a talk at I2M, Marseille about Sacks&#x2013;Uhlenbeck's work, here is
+note of my talk.
+</p>
 
-<div id="outline-container-org08f948b" class="outline-2">
-<h2 id="org08f948b"><span class="section-number-2">1</span> Brief view of Sacks and Uhlenbeck's strategy.</h2>
+<p>
+Local storage: <a href="file:///home/darknmt/Maths/Scan/2019-09/SU-rev.pdf">Manuscript</a> in French
+</p>
+
+<div id="outline-container-org340b4ca" class="outline-2">
+<h2 id="org340b4ca"><span class="section-number-2">1</span> Brief view of Sacks and Uhlenbeck's strategy.</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Let \( M \) and \( N \) be compact Riemannian manifolds (without boundary), \( M \) is a
@@ -351,11 +363,11 @@ is a conformal, branched, minimal immersion of \( \mathbb{S}^2 \) to \( N \).
 </div>
 </div>
 
-<div id="outline-container-org0ef546f" class="outline-2">
-<h2 id="org0ef546f"><span class="section-number-2">2</span> General machinery by Morse-Palais-Smale.</h2>
+<div id="outline-container-orgb1e2176" class="outline-2">
+<h2 id="orgb1e2176"><span class="section-number-2">2</span> General machinery by Morse-Palais-Smale.</h2>
 <div class="outline-text-2" id="text-2">
-</div><div id="outline-container-orgf1f3a12" class="outline-3">
-<h3 id="orgf1f3a12"><span class="section-number-3">2.1</span> Perturbed functionals \( E_\alpha \).</h3>
+</div><div id="outline-container-orga8147ce" class="outline-3">
+<h3 id="orga8147ce"><span class="section-number-3">2.1</span> Perturbed functionals \( E_\alpha \).</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Let \( s: M \longrightarrow N \hookrightarrow \mathbb{R}^k \) be a map from a compact
@@ -482,8 +494,8 @@ submanifold \( N_0\cong N \) formed by constant maps.
 </div>
 </div>
 
-<div id="outline-container-org895b9e9" class="outline-3">
-<h3 id="org895b9e9"><span class="section-number-3">2.2</span> Tubular neighborhood of the submanifold of trivial maps.</h3>
+<div id="outline-container-org5be7aea" class="outline-3">
+<h3 id="org5be7aea"><span class="section-number-3">2.2</span> Tubular neighborhood of the submanifold of trivial maps.</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Fix \( y\in N \), considered as a constant maps in \( N_0 \). We will summarise a few
@@ -571,8 +583,8 @@ in the normal component. The Inverse function theorem applies.
 </div>
 </div>
 
-<div id="outline-container-org4afcf74" class="outline-3">
-<h3 id="org4afcf74"><span class="section-number-3">2.3</span> Critical values of \( E_\alpha \).</h3>
+<div id="outline-container-orgf204c0e" class="outline-3">
+<h3 id="orgf204c0e"><span class="section-number-3">2.3</span> Critical values of \( E_\alpha \).</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 The exponential map previously defined on the normal bundle of \( N_0 \) in  \( W^{1,
@@ -759,8 +771,9 @@ not contractible then the long exact sequence of homotopy for the bundle \( \til
 \]
 Since \( \tilde N \) is simply-connected and not contractible, there exists \( n\geq 2 \)
 such that \( 0\ne\pi_n(\tilde N) = \pi_n(N) = \pi_{n-2}(\Omega(\mathbb{S}^2,N)) \), where
-the last equality follows from definition of homotopy group. The
-general argument applies.
+the last equality follows from Exponential law in Pointed category (the role of
+cartesian product is played by <a href="https://en.wikipedia.org/wiki/Smash_product">smash product</a>) and the fact that smash product of spheres
+is a sphere. The general argument applies.
 </p>
 
 </div>
@@ -769,8 +782,8 @@ general argument applies.
 </div>
 
 
-<div id="outline-container-orga45e1cd" class="outline-2">
-<h2 id="orga45e1cd"><span class="section-number-2">3</span> Local results: Estimates and extension.</h2>
+<div id="outline-container-org2242963" class="outline-2">
+<h2 id="org2242963"><span class="section-number-2">3</span> Local results: Estimates and extension.</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 We will say that the map \( s: M \longrightarrow N \) is a critical point of \( E_\alpha
@@ -866,8 +879,8 @@ E(s) < \infty \), then \( s \) extends to a smooth harmonic map \( \tilde s:\ D 
 
 
 
-<div id="outline-container-org7e5ae0f" class="outline-2">
-<h2 id="org7e5ae0f"><span class="section-number-2">4</span> Convergence of critical maps of \( E_{\alpha} \).</h2>
+<div id="outline-container-orged7e3dc" class="outline-2">
+<h2 id="orged7e3dc"><span class="section-number-2">4</span> Convergence of critical maps of \( E_{\alpha} \).</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 We proved in Theorem <a href="#thm:3-nontrivial-crit">thm:3-nontrivial-crit</a> that if \( C^0(M,N) \) is not connected or
@@ -945,7 +958,7 @@ E(s_\alpha) < \epsilon \), one has:
 \|ds_\alpha\|_{W^{1,4}(D(1/2), \mathbb{R}^k)} \leq C(4, D(1/2)) \| ds_\alpha\|_{L^2(D)} =
 C(4, D(1/2)) E(s_\alpha)^{1/2}
 \]
-So \( \{s_\alpha\} \) is bounded in \( W^{1,4}(D(1/2), \mathbb{R}^k) \) which is embedded
+So \( \{s_\alpha\} \) is bounded in \( W^{2,4}(D(1/2), \mathbb{R}^k) \) which is embedded
 compactly into \( C^1(\overline{D(1/2)}, \mathbb{R}^k) \).
 </p>
 
@@ -997,7 +1010,7 @@ at most \( h \) times by the bigger balls \( D(y_i,2^{-m+1}) \). By Lemma
 <p>
 Since \( \sum_i \int_{D(y_i, 2^{-m+1})} |ds_\alpha|^2 < B h\), choosing \( l = \lceil
 \frac{Bh}{2\epsilon} \rceil \), we see that there are at most \( l \) balls \( D(y_{\alpha,i},
-2^{-m+1}) \) with centers depending on \( \alpha \), on which the energy \( E(s_\alpha) \) is less than
+2^{-m+1}) \) with centers depending on \( \alpha \), on which the energy \( E(s_\alpha) \) is more than
 \( \epsilon \). Passing to a subsequence \( \{s_{\alpha(m)}\} \) of \( \{s_\alpha\} \),
 we can suppose that \( \{y_{\alpha(m),i} \}\) converges to \( x_{m,i} \) as \(
 \{\alpha(m)\} \to 1 \). But since the points \( \{y_i\} \) are of finite number and
@@ -1067,8 +1080,8 @@ in \( N \).</li>
 </div>
 
 
-<div id="outline-container-orgcc0f2c6" class="outline-2">
-<h2 id="orgcc0f2c6"><span class="section-number-2">5</span> Nontrivial harmonic maps from \( \mathbb{S}^2 \).</h2>
+<div id="outline-container-orgc02d9d0" class="outline-2">
+<h2 id="orgc02d9d0"><span class="section-number-2">5</span> Nontrivial harmonic maps from \( \mathbb{S}^2 \).</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 We will now prove the existence of nontrivial harmonic maps from \( \mathbb{S}^2 \) to a
@@ -1307,8 +1320,8 @@ arbitrarily close to \( 1 \) and \( \delta \) arbitrarily small, one has
 
 
 
-<div id="outline-container-org80ba5b2" class="outline-2">
-<h2 id="org80ba5b2"><span class="section-number-2">6</span> Minimal immersions of \( \mathbb{S}^2 \).</h2>
+<div id="outline-container-org827906e" class="outline-2">
+<h2 id="org827906e"><span class="section-number-2">6</span> Minimal immersions of \( \mathbb{S}^2 \).</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 We use the following result:
@@ -1355,7 +1368,7 @@ a \( C^\infty \) conformal, branched, minimal immersion \( s: \mathbb{S}^2 \long
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-07-17 Tue 17:19. <br>
+Last updated 2019-10-22 Tue 18:03. <br>
 </div>
 </div>
 </body>

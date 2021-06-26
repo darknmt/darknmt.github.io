@@ -77,8 +77,6 @@
     "problem"
     "exampl"
     "definition"
-    "propdef"
-    "fact"
-    "assertion"))
+    "propdef"))
  :latex)
 

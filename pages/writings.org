@@ -1,621 +1,633 @@
-
 #+SETUPFILE: ../res/mathsetup.org
-
-#+BEGIN_EXPORT html
-\(
-\newcommand{\re}{\mathop{\rm Re}\nolimits}
-\newcommand{\im}{\mathop{\rm Im}\nolimits}
-\newcommand{\coker}{\mathop{\rm coker}\nolimits}
-\newcommand{\supp}{\mathop{\rm supp}\nolimits}
-\newcommand{\ord}{\mathop{\rm ord}\nolimits}
-\newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
-\newcommand{\vol}{\mathop{\rm vol}\nolimits}
-\newcommand\restr[2]{{\left.#1\right|_{#2}}}
-\newcommand{\transp}{\mathop{\rm \,^t}\nolimits}
-\newcommand{\sff}{\mathop{\rm I\!I}\nolimits}
-\newcommand{\tr}{\mathop{\rm Tr}\nolimits}
-\newcommand{\const}{\mathop{\rm const }\nolimits}
-\newcommand{\lcm}{\mathop{\rm lcm}\nolimits}
-\newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
-\newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
-\newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
-\newcommand{\Enorm}{\mathop{\mathcal{E}_{\rm norm}}\nolimits}
-\newcommand{\Anorm}{\mathop{\mathcal{A}_{\rm norm}}\nolimits}
-\)
-#+END_EXPORT
+#+OPTIONS: toc:1 num:nil
+#+STARTUP: latexpreview
+#+LINK: scan  file:/home/darknmt/Maths/Scan/%s
+#+SELECT_TAGS: public
+#+EXLUDE_TAGS: private  <--- Private tags should not be exported. Modify the above line to change this.
 
 
-* Variation of renormalised quantities <2018-11-26 Mon>   :noexport:
+* Barrier method and Maximum principle                              :private:
+This post aims to give a rigorous proof of the /Barrier principle/ which says that
+minimal surfaces could not kiss each other. This principle is well-known but hardly proved
+rigorously in other context than Minimal surfaces in \( \mathbb{R}^3 \). For a \(
+\mathbb{R}^3 \) proof, see cite:Schoen83_UniquenessSymmetryEmbeddedness. For minimal
+surface with boundary in hyperbolic space there is an ad hoc proof by Anderson
+cite:Anderson82_CompleteMinimalVarieties. A consequence of Anderson's result is that minimal surfaces
+in hyperbolic space stays inside the /convex hull/ of its boundary. We will see that this
+is also true for harmonic maps into hyperbolic space.
 
-Although we had a formula for the different \( \Enorm- 2\Anorm \)
+Given a map \( f: (\Sigma,g) \longrightarrow (M,h) \), using Cartan's moving frames on \(
+\Sigma \) and \( M \), one sees that \( f \) is harmonic if and only if
 \[
- \Enorm-2\Anorm = \frac{1}{4}\int_\Sigma \frac{|q(f,[h_0],g)|^2_{h}}{\tr_h f^*g + 2\sqrt{\det_h
-f^* g}}dV_h
+f_{\alpha i i}=0\quad \text{for all } \alpha
 \]
-it is not straightforward to differentiate this formula to find \( \frac{d}{dt}\Enorm
-(f_t) - \frac{d}{dt}2\Anorm (f_t(\Sigma)) \).
+Now if \( u \) is a foliating function on \( M \) whose level sets are totally geodesic,
+i.e. the Hessian of \( u \), when restricted to \( \ker du \), vanishes. Pull \( u \) back
+via \( f \), one has:
+\[
+ \Delta (u\circ f) = u_{\alpha\beta}f_{\alpha i} f_{\beta i}
+\]
+In particular, when \( u \) has no critical point and one of the following conditions is satisfied 
+1. \( u_{\alpha\beta}=0 \) for all \( \alpha,\beta \) in \( \ker du \),
+   i.e. level sets of \( u \) are totally geodesic in \( M \),
+2. \( f_{\alpha i} f_{\beta j} g^{ij} = \lambda h_{\alpha\beta} \) for all \( \alpha,\beta
+   \) in \( \ker du\) where \( \lambda\in C^0(\Sigma) \), for example when \( f \) is a
+   harmonic morphism,
+then one has \( \Delta u = u_{\alpha \gamma}f_{\alpha i} f_{\gamma i} = u_{\alpha
+\gamma}f_{\alpha i} \frac{1}{|du|} u_i \) where \( \gamma = \frac{\nabla u}{|\nabla u|} \)
+is the gradient direction of \( u \) and \( |du| \) is taken in \( M \).
 
-#+ATTR_LATEX: :options [Variation of renormalised quantities]
-#+ATTR_HTML: :id prop:var-var :btit (Variation of renormalised quantities) 
+
+We've just proved that \( u \) solves an "elliptic PDE" \( a_{ij}u_{ij} + b_i u_i + c u =
+0 \) with coefficient \( c = 0 \). This means that \( u \) satisfies strong maximum
+principle
+cite:Nirenberg53_StrongMaximumPrinciple,Gilbarg.Trudinger83_EllipticPartialDifferential.
+ 
+#+ATTR_LATEX: :options [Laplacian on \( \Sigma \)]
+#+ATTR_HTML: :id prop:lap-pullback :btit (Laplacian on \( \Sigma \)) 
 #+BEGIN_proposition
-#+LATEX: \label{prop:var-var}
-One has
-\begin{equation}
-\label{eq:var-var}
-\frac{d}{dt}\Enorm(f_t,h_0,g) - \frac{d}{dt}2\Anorm(f_t(\Sigma)) = \frac{1}{4}\int_\Sigma
-\langle \re q(f_0,[h_0],g), \frac{dh_t}{dt} \rangle_{h_0} dV_{h_0}
-\end{equation}
-In particular, at harmonic map \( f_0 \) who satisfies stronger boundary condition (then \( h_0 \) is
-conformal to \( f^*g \)), the two variation coincide.
+#+LATEX: \label{prop:lap-pullback}
+Given the previous conditions on \( u\in C^2(M) \) and suppose that \( f:\Sigma
+\longrightarrow M \) be harmonic, then \( u\circ f \) satisfies strong maximum principle
+on \( \Sigma \).
 #+END_proposition
 
-We will start by distinguishing the two notion in classical context. Let \( \Sigma_t \) be a
-family of surface in an ambiant space \( M \), then one way to look at them is as a family
-of immersions from a model surface \( \Sigma \) to \( M \).
+
+In the half-space model \( \{x>0, y^i\in \mathbb{R}\} \) of the hyperbolic space, one can
+take \( u=y^i \) so \( |du| = x >0 \)
+
+* Installing Arch Linux <2020-08-25 Tue>                              :private:
+It is a good idea to follow the [[https://wiki.archlinux.org/index.php/Installation_guide][Arch Installation guide]], until one sees steps like
+"Partition the disk" or "Install compatible bootloader" without clear instruction. Then
+follow [[https://itsfoss.com/install-arch-linux/][this guide]]. NOTE: I mount the ESP parition to ~/boot/efi~ instead of ~/efi~
+** Boot and Connect to internet
+- Acquire the installation image and use it to boot with a USB. Should boot using UEFI and
+  not LEGACY (BIOS) mode. Verify that the machine boots in UEFI: =# ls /sys/firmware/efi/efivars=
+- Set keyboard layout (My T470s has a GB keyboard): =loadkeys uk=
+- Connect to Internet using =iwctl=:
+  + device list
+  + station /device/ scan
+  + station /device/ get-networks
+  + station /device/ connect /SSID/
+  + Test the connection using =ping archlinux.org=
+- Update system clock: =timedatectl set-ntp true=
+** Partition the disk using =fdisk=
+- If Windows was installed on the hard drive, there is already one EFI
+  partition in the disk. DO NOT create another. Use =fdisk -l= to check this.
+- Run =fdisk /dev/sdX= and create new partition using =n= and change it type using =t=
+  + Create swap partition of 1/2 RAM volume and change its type to "Linux swap"
+  + Create root (150GB is more than enough) and home partitions
+  + Write change and exit using =w=
+** Format the partitions and Mount system
+- Format root and home partition using =mkfs.ext4 /dev/sdXy=
+- Create swap space using =mkswap /dev/swap_partition= and =swapon /dev/swap_partition=
+- Mount root parition to /mnt using =# mount /dev/root_partition /mnt=
+- Create (mkdir) =/mnt/home= and mount the home partitions
+** Installation
+- Use pacman to install =reflector= and choose 70 best mirror servers among 200 recent
+  ones: =reflector -l 200 -n 70  --sort rate --save /etc/pacman.d/mirrorlist= . This will
+  write =mirrorlist= file to the newly installed system, so it is worth doing it right.
+- Install essential packages: =pacstrap /mnt base linux linux-firmware nano=
+** System configuration
+- Generate fstab file: =genfstab -U /mnt >> /mnt/etc/fstab=
+- Change root into the new system =arch-chroot /mnt=
+- Set the time zone: =ln -sf /usr/share/zoneinfo/Region/City /etc/localtime= and generate
+  /etc/adjtime: =hwclock --systohc=
+- Localisation: edit =/etc/locale.gen= and uncomment =en_US.UTF-8 UTF-8= (French and
+  Vietnamese too). Run =locale-gen=. Create =/etc/locale.conf= file with: =echo LANG=en_GB.UTF-8 > /etc/locale.conf=
+- Create hostfile and rename the machine: =echo Cartan > /etc/hostname= Then =touch
+  /etc/hosts= and write this to the file:
+  127.0.0.1	localhost
+  ::1		localhost
+  127.0.1.1	Cartan
+- Set the root password: =passwd=
+** Install BootLoader
+- Install GRUB package =pacman -S grub efibootmgr=
+- Mount EFI partition: ~mount /dev/sda1 /boot/efi~
+- Install GRUB: 
+  ~grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi~
+- Update GRUB: ~grub-mkconfig -o /boot/grub/grub.cfg~
+  NOTE: output to ~/boot/grub~ and NOT the ESP partition. Check if Windows partition
+  exists using ~os-prober~
+** Post-Installation
+- Install DE: ~pacman -S xorg gnome~
+- Enable Display Manager
+  systemctl start gdm.service
+  systemctl enable gdm.service
+  systemctl enable NetworkManager.service
+- Exit and restart: ~exit~ then ~shutdown now~
+- Install Microcode: ~pacman -S intel-ucode~ or ~pacman -S amd-ucode~
+** Package installation
+*** ibus-unikey
+REF: https://wiki.archlinux.org/index.php/IBus
+- install ~ibus, ibus-unikey~
+- run ~ibus-setup~
+** Troubleshooting
+*** No sound and "dummy output"
+Delete =~/.config/pulse= and restart
+
+** Hibernation (suspend-to-disk)
+This will compress and write RAM to swap partition and turn the computer off. According to
+[[https://wiki.archlinux.org/index.php/Power_management/Suspend_and_hibernate#Hibernation_into_swap_file][Arch Wiki]], there are 3 things to do to set this up:
+- Creating swap partition or swap file. (We already had a swap partition). The image_size (~/sys/power/image_size~)
+  is set to 2/5 of RAM. This fits perfectly with the rule "swap = 1/2 RAM"
+- Add kernel parameter to GRUB: In /etc/default/grub, change 
+  GRUB_CMDLINE_LINUX_DEFAULT="resume=UUID=308a50c1-5e31-4597-9300-8aca19eb0757"
+  where the UUID can be found in ~lsblk -f~. Update GRUB by ~grub-mkconfig -o /boot/grub/grub.cfg~
+- Add HOOKS in /etc/mkinitcpio.conf: Add ~resume~ in ~HOOKS = (...)~ . Update using ~sudo mkinitcpio -p linux~
+ 
+
+* Fundamental group of \( SO(n) \)                              :private:
+This post is to explain how to compute the fundamental group of \( SO(n) \) and to give
+one geometric intepretation of the [[https://en.wikipedia.org/wiki/Plate_trick][Belt trick]]. One useful technique to compute the
+fundamental group of a space is to place it in a fibration \( F \hookrightarrow E
+\longrightarrow B \) either as the /fibre/ \( F \), the /base/ \( B \) or the /total
+space/ \( E \) and use the long exact sequence of homotopy.
+
+#+ATTR_LATEX: :options [Long exact sequence of homotopy]
+#+ATTR_HTML: :id thm:long-seq-pi :btit (Long exact sequence of homotopy) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:long-seq-pi}
+If the fibration \( F \hookrightarrow E \longrightarrow B \) is a Serre fibration, i.e. it
+satisfies /homotopy lifting property/, then one has the long exact sequence
 \[
-f_t:\Sigma \longrightarrow M
+\dots \longrightarrow  \pi_n(F) \longrightarrow \pi_n(E) \longrightarrow \pi_n(B)
+\longrightarrow \pi_{n-1}(F) \longrightarrow \dots
 \]
-equip \( \Sigma \) with a metric \( h \), the energy functional of \( f_t \) is 
-\[
- E(f_t,h, g) = \int_\Sigma \tr_h f_t^*g\ dV_h
-\]
-which generalises the area functional \( A(f_t,g) = \text{area}(f_t(\Sigma)) =
-\frac{1}{2}E(f_t,f_t^* g,g) \).
-
-However, by variation of energy, we mean
-\(
- \frac{d}{dt}E(f_t,h,g)
-\)
-which is different from the variation of area \(
-\frac{d}{dt}A(\Sigma_t)=\frac{1}{2}\frac{d}{dt}E(f_t,h_t,g)\) where \( h_t = f_t^*g \).
-
-The two variations are related by the following formula:
-\begin{equation}
-\label{eq:var-var-1}
-\frac{d}{dt}E(f_t,h_t,g) = \frac{d}{dt}E(f_t,h_0,g) + \frac{1}{4}\int_\Sigma \left\langle \re q(f_0,[h_0],g), \frac{d h_t}{dt} \right\rangle_{h_0}dV_{h_0}
-\end{equation}
-where \( q(f_0,[h_0],g) = \langle \frac{\partial f_0}{\partial z}, \frac{\partial
-f_0}{\partial z} \rangle_g dz\otimes dz \) is the *quadratic differential* of \( f \) as a
-map from the Riemann surface \( (\Sigma,[h_0]) \) to a Riemannian manifold \( (M,g) \).
-
-In order to prove eqref:eq:var-var, just note that 
-\begin{align*}
-\frac{d}{dt}(\Enorm - 2\Anorm) &= \frac{d}{dt}\lim_{\epsilon\to 0}(E_\epsilon - 2A_\epsilon)\\
-		      	      &= \lim_{\epsilon\to 0}\frac{d}{dt} \int_{\Sigma_\epsilon(f_t)} \tr_{h_0}f_t^* g dV_{h_0} - \tr_{h_t}f_t^* g dV_{h_t} \\
-			      &= \lim_{\epsilon\to 0}\frac{d}{dt} \int_{\Sigma_\epsilon(f_t)} \left(\tr_{h_0}f_0^* g - \tr_{h_0}f_0^* g \frac{dV_{h_0}}{dV_{h_0}}\right) dV_{h_0} + \lim_{\epsilon\to 0}\frac{d}{dt} \int_{\Sigma_\epsilon(f_0)} \left(\tr_{h_0}f_t^* g - \tr_{h_t}f_t^* g \frac{dV_{h_t}}{dV_{h_0}}\right) dV_{h_0} \\
-			      &= \lim_{\epsilon\to 0} \frac{1}{4} \int_{\Sigma_\epsilon(f_0)} \left\langle \re q(f_0,[h_0],g), \frac{dh_t}{dt} \right\rangle_{h_0} dV_{h_0}\\
-			      &= \frac{1}{4} \int_{\Sigma} \left\langle \re q(f_0,[h_0],g), \frac{dh_t}{dt} \right\rangle_{h_0} dV_{h_0}
-\end{align*}
-where we applied eqref:eq:var-var-1 in the 4th equality.
-
-
-
-* First variation of renormalised energy. <2018-10-26 Fri>  :noexport:
-** The results.
-
-  I will start by writing down the result before giving the proofs. Let \( (\Sigma,i) \)
-  be a Riemann surface and \( (M,g) \) be an asymptotically hyperbolic Riemannian
-  four-manifold. We are interested in critical points of renormalised energy \( \Enorm \)
-  because these maps form a special class among harmonic maps whose energy is critical to all
-  pertubation (and not just compact pertubation).
-
-  Even though we obtained an explicit formula for renormalised energy where a density appears
-  \[
-  \Enorm = -4\pi\chi + \int_\Sigma \left[ 2K(f^*g)\sqrt{{\rm det}_h f^*g} + \tr_h f^*g \right] dA_h,
-  \]
-  it is not easy to compute its variation directly from it. The following
-  approach gives us a formula that although is not explicit, allows us to see the
-  following phenomenon.
-  #+ATTR_LATEX: :options [Critical points of \(\Enorm\) = Harmonic + good germ on the boundary]
-  #+ATTR_HTML: :id thm:crit-Enorm-bndry-germ :btit (Critical points of \(\Enorm\) = Harmonic + good germ on the boundary) 
-  #+BEGIN_theorem
-  #+LATEX: \label{thm:crit-Enorm-bndry-germ}
-  Let \( f: (\Sigma,i) \longrightarrow (M,g) \) be a harmonic map from a Riemann surface \( \Sigma \) to
-  a AH Riemannian four-manifold \( M \) such that \( q(f)_{\bar g} = 0 \) on \( \partial\Sigma \). There is a boundary quantity \( \mathcal{B}_2(f)
-  \) that only concerns the germ of \( f \) on \( \partial\Sigma \) such that:
-  #+BEGIN_CENTER
-  \( f \) is critical to \( \Enorm \) if and only if \( \mathcal{B}_2(f) = 0 \).
-  #+END_CENTER
-  #+END_theorem
-
-  We know that the \( \epsilon \)-energy must be writen as
-  \[
-   E_\epsilon (f) = \frac{1}{\epsilon} {\rm length}(\gamma) + \Enorm + O(\epsilon)
-  \]
-  where \( \gamma\) is the boundary curve of \( f\) and the length is taken under the
-  metric \( \bar g \). Now given a pertubation \( \{f_t\} \) of \( f_0 \), we can recover
-  the variation of \( \Enorm \) by looking at the \( O(1) \) term of \(
-  \frac{dE_\epsilon}{dt}(f_t) \). It turns out that in order to compute the variation of
-  \( E_\epsilon \), we only need to do the following 2 tasks:
-  - Extend the computation made by Eells-Sampson cite:eells_harmonic_1964 to manifold with boundary.
-  - Take care of the variation of the domain of integration \( \Sigma_\epsilon(f_t):=
-    f_t^{-1}(r\geq\epsilon) \) which also depends on \( t \) where \( r \) is the boundary
-    defining function (bdf).
-
-  #+ATTR_LATEX: :options [Variation of \( E_\epsilon \)]
-  #+ATTR_HTML: :id prop:var-Eeps :btit (Variation of \( E_\epsilon \)) 
-  #+BEGIN_proposition
-  #+LATEX: \label{prop:var-Eeps}
-  For any pertubation \( \{f_t\} \) of \( f: (\Sigma,\partial\Sigma,i) \longrightarrow (M,\partial M,g) \), one has
-  \begin{equation}
-  \label{eq:var-Eeps}
-  \frac{d}{dt}E_\epsilon(f_t) = \int_{\Sigma_\epsilon(f_0)} \left\langle \tau(f_0), \frac{df_t}{dt} \right\rangle_g dV_h + \frac{1}{\epsilon^2}\int_{\partial\Sigma_\epsilon(f_0)}\left \langle 2 \frac{\partial f_0}{\partial n} + \frac{\nabla^g r(f_0)}{|d(r\circ f_0)|_h} \tr_h (f_0^*g) , \frac{df_t}{dt}\right \rangle_{\bar g} ds_h  
-  \end{equation}
-  where 
-   - \( h \) is a metric in the conformal class \( i \) of \( \Sigma \),
-   - \( \frac{\partial}{\partial n} \) is the \( h \)-unit normal vector of \( \partial\Sigma_\epsilon(f_0) \) in \(
-     \Sigma_\epsilon(f_0) \),
-   - \( \tau(f_0) \) is the tension field of \( f_0 \) with respect to the metric \( h \)
-     on \( \Sigma \) and \( g \) on \( M \).
-  Denote \( \mathcal{B} := \int_{\partial\Sigma_\epsilon(f_0)}\left
-  \langle 2 \frac{\partial f_0}{\partial n} + \frac{\nabla^g r(f_0)}{|d(r\circ f_0)|_h}\tr_h(f_0^*g)  ,
-  \frac{df_t}{dt}\right \rangle_{\bar g} ds_h =: \mathcal{B}_0 + \mathcal{B}_1 \epsilon +
-  \mathcal{B}_2 \epsilon^2 + O(\epsilon^3) \) then 
-   - \( \mathcal{B}_i \) only depends on the germ of \( f_0 \) on \( \partial\Sigma \)
-   - \(\mathcal{B}_0 = 2\int_{\partial\Sigma}\left \langle \frac{\partial f_0}{\partial n} +
-     \frac{\nabla^{\bar g}r(f_0)}{|\nabla^{\bar g}r(f_0)|_{\bar g}}, \frac{df_t}{dt}\right
-     \rangle_{\bar g} ds_h = 0\) where \( n \) is the \( f^* \bar g \)-normal vector of \( \Sigma \) on
-     the boundary.
-   #+END_proposition
-
-  As a straightforward consequence, one has
-  #+ATTR_LATEX: :options []
-  #+ATTR_HTML: :id prop: :btit () 
-  #+BEGIN_proposition
-  #+LATEX: \label{prop:}
-  Given a map \( f: (\Sigma, \partial\Sigma, i) \longrightarrow (M, \partial M, g) \), then:
-   1. \( f_0 \) is harmonic and \( \mathcal{B}_2(f_0) = 0 \) if and only if \( f_0 \) is a
-      critical point of \( \Enorm \).
-   2. The first variation of \( \Enorm \) can be writen as:
-      \begin{align*}
-      \frac{d \Enorm}{dt}(f_t) &= \int_{\Sigma} \left\langle \tau(f_0),
-      \frac{df_t}{dt} \right\rangle_g dV_h  \\ &+
-      \lim_{\epsilon\to 0} \frac{1}{\epsilon^2} \left
-      [\int_{\partial\Sigma_\epsilon(f_0)}\left \langle 2
-      \frac{\partial f_0}{\partial n} + \frac{\nabla^g r(f_0)}{|d(r\circ f_0)|_h} \tr_h(f_0^*g)  ,
-      \frac{df_t}{dt}\right \rangle_{\bar g} ds_h +  \int_{\Sigma_\epsilon(f_0)} \left
-      \langle \nabla^{\bar g}_{\dot\gamma} \frac{\dot\gamma}{|\dot\gamma|_h} ,
-      \frac{df_t}{dt}\right \rangle_{\bar g}\right]      
-      \end{align*}
-
-      where \( \gamma \) is the boundary curve of \( f \), \( \frac{\partial}{\partial n}
-      \) is the \( h \)-unit normal vector of \( \partial\Sigma_\epsilon \) in \( \Sigma_\epsilon \).
-  #+END_proposition
-  
-  
-** Proofs.
-   We [[ref:Eells-Sampson-bndry]] knew that the variation of energy functional can be represented by the tension field, in
-   case of manifolds with boundary, we obtain an additional term from Stokes formula: 
-   \begin{align}
-      \frac{d}{dt}E_\epsilon(f_t) &= \frac{d}{dt}\int_{\Sigma_\epsilon(f_0)} \tr_h (f_t^* g) +   \frac{d}{dt}\int_{\Sigma_\epsilon(f_t)} \tr_h (f_0^*g)\\
-      				  &= \int_{\Sigma_\epsilon(f_0)} \left \langle \tau(f_0), \frac{df_t}{dt} \right \rangle_g dV_h + 2\int_{\partial\Sigma_\epsilon(f_0)} \left \langle \frac{\partial f_0}{\partial n}, \frac{df_t}{dt}\right \rangle_g + \frac{d}{dt} \int_{\Sigma_\epsilon(f_t)} \tr_h( f_0^* g) dV_h
-   \end{align}
-   Equation eqref:eq:var-Eeps is a straightforward application of the
-   following lemma for \( \Omega_t = \Sigma_\epsilon(f_t)\), \(F=\tr_h(f_0^* g) \) and \( r_t = r\circ f_t \).
-
-   #+ATTR_LATEX: :options [Riemannian Cavalieri]
-   #+ATTR_HTML: :id lem:var-domain :btit (Riemannian Cavalieri) 
-   #+BEGIN_lemma
-   #+LATEX: \label{lem:var-domain}
-   Let \( \Omega \) be a domain in \( \Sigma \) and  \( \{r_t\}_{t=\overline{0,1}} \) be a familly of functions on \( \Omega \) where \(
-   dr_t \) are non-zero and \( \Omega_t\subset \Omega \) be subdomains of \( \Omega \) defined by \( \Omega_t =
-   \{r_t \geq \epsilon\}\). Then for any function \( F \) on \( \Omega \), one has
-   \[
-   \restr{\frac{d}{dt}}{t=0}\int_{\Omega_t}F dV_h = \int_{\partial\Omega_0}
-   \frac{r_1}{|\nabla^h r_0|_h}F ds_h
-   \]
-   where \( r_1 = \restr{\frac{dr_t}{dt}}{t=0} \).
-   #+END_lemma
-
-   
-   #+BEGIN_proof
-   Let us prove the lemma in case \( \Omega_t \) only has one connected component with
-   non-empty interior, since
-   the number of such components does not change for \( t \) near 0 (this is because
-   \( r_0 \) has no critical point in \( \Omega \)). Let
-   us also suppose that \( r_1 \geq 0 \) meaning that the domain \( \Omega_t \)
-   becomes bigger as \( t \) increases from \( 0 \). This is because one can always
-   partition the curve \(\gamma = \partial\Omega_0 \) into pieces where \( r_1>0, r_1 <0 \) or \( r_1=0 \)
-   and the area difference of pieces touching the \( r_1=0 \) parts is of \( O(t^2) \). 
-
-   The difference \( \Omega_t\setminus \Omega_0 \) is the region where \( \epsilon -r_1 t+
-   O(t^2)\leq r_0 \leq \epsilon \), therefore \( \Omega_t\setminus \Omega_0 \) is of \(
-   O(t^2) \) difference from the region \( \Phi_t = \{ \exp_{\gamma(s)}\frac{\theta r_1\nabla^h
-   r_0}{|\nabla^h r_0|^2}:\theta \in[0,t], s\in[0,1] \} \). Therefore
-   \[
-   \restr{\frac{d}{dt}}{t=0}\int_{\Omega_t}F dV_h
-   =\restr{\frac{d}{dt}}{t=0} \int_0^t \int_{\gamma} F \frac{r_1}{|\nabla^h r_0|_h} \text{vol }ds_h d\theta = \int_{\gamma} F\frac{r_1}{|\nabla^h r_0|_h} ds_h .
-   \]
-   where \(  \frac{r_1}{|\nabla^h r_0|_h}\text{vol}(s,\theta) ds_h d\theta \) is the
-   pullback of the volume form by exponential map
-   \( (s,\theta)\mapsto \exp_{\gamma(s)} \frac{\theta r_1\nabla^h r_0}{|\nabla^h r_0|_h^2}
-   \), so \( \text{vol}(s,0) = 1 \).
-   #+END_proof
-   
-
-
-
-* Another formula for \( \Enorm\). Harmonic maps are critical points of \( \Enorm \) under stronger vanishing condition. :noexport: 
-** Review of Alexakis--Mazzeo. Another formula of \( \Enorm \)
-Alexakis and Mazzeo obtained a formula for renormalised area \( \Anorm \) by rewriting 
-\[
- A_\epsilon = \int_{\Sigma_\epsilon}1 dA = \int_{\Sigma_\epsilon}(1 + K)dA - \int_{\Sigma_\epsilon}KdA
-\]
-where \( K \) is the Gauss curvature of the restriction of the metric \( g \) on \( \Sigma
-\). They then 
-- use Gauss--Codazzi formula and Ei
-nstein equation to rewrite \( 1+K \) in term of
-  second fundamental form to prove that \( \int_{\Sigma_\epsilon}(1+K)dA \) converges to a
-  finite limit as \( \epsilon\to 0 \)
-- use Gauss--Bonnet formula to rewrite \( \int_{\Sigma_\epsilon}KdA = 2\pi\chi -
-  \int_{\partial\Sigma_\epsilon}\kappa ds \)  where \( \chi \) is Euler characteristic of
-  \( \Sigma \) and \( \kappa \) is the geodesic curvature of the boundary curve \(
-  \partial\Sigma_{\epsilon} \) w.r.t the surface \( \Sigma_\epsilon \). Then prove that
-  the integral \(
-  \int_{\partial\Sigma_\epsilon}\kappa ds = \frac{{\rm
-  length}(\partial\Sigma_\epsilon)}{\epsilon} + O(\epsilon) \)
-Therefore \( \Anorm \) can be expressed as
-\[
- \Anorm = -2\pi\chi + \lim_{\epsilon\to 0}(A_\epsilon + K_\epsilon) = -2\pi\chi+ \int_{\Sigma}(1+K)dA
-\]
-where \( K_\epsilon = \int_{\Sigma_\epsilon}KdA \).
-
-
-We [[ref:existence-enorm][proved]] that \( E_\epsilon - 2A_\epsilon \) has a finite limit as \( \epsilon\to 0 \),
-i.e. \( \Enorm -2 \Anorm = \lim_{\epsilon\to 0} (E_\epsilon - 2A_\epsilon) \)
-so \( \Enorm = -4\pi\chi + \lim_{\epsilon\to 0}(E_\epsilon + 2K_\epsilon) \), or
-\begin{equation}
-\label{eq:enorm-simple}
- \Enorm = -4\pi\chi + \int_\Sigma \left[ 2K(f^*g)\sqrt{{\rm det}_h f^*g} + \tr_h f^*g \right] dA_h
-\end{equation}
-where \( h \) is the metric on \( \Sigma \), \( g \) is the AH metric on \( M \), \( K(f^*g) \)
-is the Gauss curvature of \( (\Sigma, f^*g) \)
-
-#+BEGIN_remark
-The expression eqref:eq:enorm-simple does not make it obvious that \( \Enorm \) is
-finite. It is however simpler and it allows us to see that \( \Enorm \) only depends on \( f^* g \), the
-restriction of \( g \) on the surface, and not the entire metric \( g \).
-#+END_remark
-
-
-
-** Eells--Sampson with boundary label:Eells-Sampson-bndry
-Eells and Sampson proved that the variation of energy \( E = \int_{\Sigma}|df|^2 \) of a
-map \( f: (\Sigma,h) \longrightarrow (M,g) \) between Riemannian manifolds without
-boundary is given by
-\[
- \frac{d}{dt}E(f_t) = \int_\Sigma \left\langle \tau(f_0), \frac{df_t}{dt} \right\rangle_g dV_h
-\]
-where they applied Stokes' formula once in their computation. 
-
-In case of manifold with
-boundary, the variation of \( E \) should be given by
-\[
- \frac{d}{dt}E(f_t) = \int_{\Sigma} \left\langle \tau(f_0),\frac{d f_t}{dt}\right
-\rangle_g dV_h + 2\int_{\partial\Sigma} \left\langle \frac{\partial f}{\partial n} , \frac{d
-f_t}{dt} \right\rangle_g dA_h
-\]
-
-In our case, if \( \{f_t\} \) is a perturbation of \( f_0: (\Sigma,h) \longrightarrow
-(M,g) \) with the same boundary curve \( \restr{f_t}{\partial\Sigma} \), but not
-necessarily of compact support, one has
-\begin{equation}
-\label{eq:eells-sampson-bndry}
-\frac{d E_\epsilon(f_t)}{dt} = \int_{\Sigma_\epsilon} \left \langle\tau(f_0), \frac{d
-f_t}{dt} \right \rangle_g dA_h + 2\int_{\partial\Sigma_\epsilon(f_0)} \left\langle
-\frac{\partial f_0}{\partial n}, \frac{d f_t}{dt}\right \rangle_g ds_h
-\end{equation}
-where \( n \) is the outward \( h \)-normal vector of \( \partial\Sigma_\epsilon \) in \(
-\Sigma_\epsilon \).
-
-In case of compact perturbation, the boundary term vanishes when \( \epsilon \) is
-sufficiently small, it follows that if \( f_0 \) is a critical point of \( \Enorm \) then
-
-\( f_0 \) is harmonic.
-
-** Critical points of \( \Enorm \)
-We will prove, modulo a justification to pass the limit inside an integral, that if we
-restrict to perturbations \( \{f_t\} \) with vanishing quadratic differential \( q(f_t)_g = 0
-\) (the stronger vanishing condition) then \( f_0 \) is a critical point of \( \Enorm \)
-if and only if it is harmonic. In fact we will prove that
-
-\begin{equation}
-\label{eq:var-Eep}
- \frac{d E_\epsilon(f_t)}{dt} = \int_{\Sigma_\epsilon} \left
- \langle \tau(f_0),\frac{df_t}{dt} \right \rangle_g dA_h
-\end{equation}
-
-for any admissible perturbation \( \{f_t\} \). 
-
-Since \( \Enorm = E_\epsilon
- -\frac{l}{\epsilon} + O(\epsilon) \) where \( l \) is the length of the boundary curve,
- by interchanging the limit and integral sign, one sees that \( \frac{d}{dt}\Enorm (f_0) = \lim_{\epsilon\to 0}
- \frac{d}{dt}E_\epsilon(f_0) \), hence any harmonic map is a critical point of \( \Enorm
- \).
-
-#+BEGIN_remark
-It follows from the development in our toy model (see the next paragraph) that \( |\frac{df_t}{dt}|_g =
-O(\epsilon^2)O(\epsilon^{-1}) = O(\epsilon) \). Let us suppose that \( h  = f^*g \) (since \( E_\epsilon \) is a conformal invariance with respect to \( h \) and the
-quadratic differential vanishes near the boundary), then Alexakis--Mazzeo proved that
-\( |\tau(f_0)|_g = O(\epsilon) \). Therefore \( \left
- \langle \tau(f_0),\frac{df_t}{dt} \right \rangle_g dA_h = O(1)  \) and the integral on
-RHS of eqref:eq:var-Eep is finite.
-#+END_remark
-
+#+END_theorem
 #+BEGIN_proof
-By eqref:eq:eells-sampson-bndry, we only need to prove that the boundary integral tends to
-0 as \( \epsilon \to 0 \). Let us prove this in our toy model \( f_t: \mathbb{H}^2
-\longrightarrow \mathbb{H^k} \) where \( \mathbb{H}^2 \) is coordinated by \( (u,s)\in
-\mathbb{R}_{\geq 0}\times \mathbb{R} \)
-and \( \mathbb{H^k} \) is coordinated by \( (x,y^i)\in \mathbb{R}_{\geq 0}\times
-\mathbb{R}^{k-1} \). Suppose that \( f_t \) are given by
-\[
- x = au +bu^2 +\dots,\qquad y^i = \gamma^i + W^iu^2 + \dots
-\]
-where \( b, W^i \) depend on \( t \), \( \gamma^i \) and \( a \) do not depend on \( t \)
-because we fixed the boundary curve \( \gamma \) and \( \restr{q(f)_{\bar g}}{\partial
-\mathbb{H}^2}=0 \) (the weaker vanishing condition) implies \( a^2 = |\dot\gamma|^2 \). It
-follows that \( \frac{df_t}{dt} = u^2 (b_t \frac{\partial}{\partial x} + W^i_t
-\frac{\partial}{\partial y^i}) + O(u^3) \).
-
-It is also straightforward to check that \( \frac{\partial f}{\partial n} = a
-\frac{\partial}{\partial x}+ O(u) \). Therefore 
-\[
- \left \langle \frac{\partial f}{\partial n}, \frac{df_t}{dt} \right \rangle_g = b_t a
-O(1) + O(u)
-\]
-
-The stronger vanishing condition \( \restr{q(f)_g}{\partial \mathbb{H}^2} \) implies \(
-b=0 \) for all admissible \( \{f_t\} \), one has \( b_t=0 \) and therefore \(  \left
-\langle \frac{\partial f}{\partial n}, \frac{df_t}{dt} \right \rangle_g= O(u) \). It
-follows that the boundary integral in eqref:eq:eells-sampson-bndry tends to \( 0 \) as \(
-\epsilon\to 0 \).
-
+One way to prove this theorem is to establish that \( \pi_n(B,b) = \pi_n(E, F_b) \). The
+map \( \pi_n(E, F_b) \) to \( \pi_n(B) \) naturally comes from the composition any map \(
+(D^n, \mathbb{S}^{n-1}) \longrightarrow (E, F_b) \) with the
+bundle map \( E \longrightarrow B \). To produce the inverse, suppose that one has a map
+\(f: S^n \longrightarrow B \), by realising it as a map from \( S^{n-1}\times [0,1] \)
+with \( f(x,0) = b_0 \) and \( f(x,1)=b_1 \), then choosing an arbitrary lift above \( b_0
+\) and applying lifting property, one obtains \( \tilde f: S^n\times \{1\} \longrightarrow
+F_{b_1} \). This is the inverse element in \( \pi_n(E,F) \).
 #+END_proof
 
-
-
-
-* Existence and invariance by special bdf of the renormalised energy.  label:existence-enorm :noexport:
-
-Let \( f: (\Sigma, \partial\Sigma) \longrightarrow  (M,\partial M) \) be smooth map
-from a Riemann surface to an asymptotically hyperbolic manifold \( M \). Let \( r \) be a
-special bdf of \( M \), \( \bar g = r^2 g \) be the metric underwhich \( M \) is compact, and \( A_\epsilon(f), E_\epsilon(f) \) be the area and energy of \(
-f \) in the region \( r\geq \epsilon \) as a map from \( (\Sigma,h) \) to \( (M,g) \)
-for any choice of metric \( h \) in the natural conformal class of \( \Sigma \). 
-
-Denote by 
- - \( q(f)_{g} \) and \( q(f)_{\bar g} = r^2 q(f)_{g} \) the quadratic differentials of \( f \) from the Riemann surface \( \Sigma \) to the Riemannian manifolds \( (M, g) \) and \( (M,\bar g) \) respectively.
- - \( |q(f)_g| \) and \( |q(f)_{\bar g}| \) their norm under \( h \).
-
-We will prove that
-
-#+ATTR_LATEX: :options [Renormalised energy]
-#+ATTR_HTML: :id prop:renorm-en :btit (Renormalised energy) 
-#+BEGIN_proposition
-#+LATEX: \label{prop:renorm-en}
-Under no further supposition, one has
-\begin{align}
-  E_{\epsilon}(f)-2A_\epsilon(f) &= \frac{1}{4} \int_{r\geq\epsilon}\frac{1}{r^2} \frac{|q(f)_{\bar g}|^2}{\tr_h(f^* \bar g) + 2 \sqrt{\det_h(f^* \bar g)}} dA_h \label{eq:en-1}\\
-       &= \frac{1}{4}\int_{r\geq\epsilon} \frac{|q(f)_{g}|^2}{\tr_h(f^* g) + 2 \sqrt{\det_h(f^* g)}}dA_h \label{eq:en-2}
-\end{align}
-One can see from eqref:eq:en-1 that if the quadratic differential of \( f \) vanishes on
-\( \partial \Sigma \) then \( |q(f)_{\bar g}|^2 = O(r)^2 \) and the integral increases to
-a finite limit as \( \epsilon \to 0 \). Meanwhile eqref:eq:en-2 shows that this limit,
-which is the difference between the renormalised energy and renormalised area is
-independent of the special bdf \( r \).
-#+END_proposition
-
-We remark that the two integrals only depend on the conformal class of \( h \) and the
-denominators are sums of densities of energy and area of \( f \) under \( \bar g \) and \(
-g \) respectively.
-
-#+BEGIN_proof
-It suffices to prove eqref:eq:en-2, which means, at any point \( P \) of \( \Sigma \)
+Now to compute \( \pi_1(SO(n)) \), use this sequence
 \[
- \tr_h(f^*g)^2 - 4{\rm det}_{h}(f^*g) = \frac{1}{4}|q(f)_g|^2
+SO(n) \hookrightarrow SO(n+1) \longrightarrow S^n
 \]
-Under any holomorphic coordinates \( x,y \) centered at \( P \), one has:
+which comes from fixing a unit vector \( v_0\in S^n \) and seeing where an element of \(
+SO(n+1) \) sends it.
+
+The long exact sequence says, for \( n\geq 3\)
+\[
+\pi_2(S^n)=0 \longrightarrow \pi_1(SO(n)) \longrightarrow  \pi_1(SO(n+1)) \longrightarrow \pi_1(S^n)=0
+\]
+which means \( \pi_1(SO(3)) = \pi_1(SO(4)) = \dots \). When \( n=2 \), since \( SO(2) = S^1 \)one has
+\[
+\mathbb{Z} \longrightarrow \mathbb{Z} \longrightarrow \pi_1(SO(3)) \longrightarrow 0
+\]
+which means that \( \pi_1(SO(3)) \) is either trivial or \( \mathbb{Z}/n \mathbb{Z} \) for
+certain \( n >1 \).
+
+A quick way to find \( n \) is to notice that it is the torsion of the generator of \(
+\pi_1(SO(3)) \), which comes from the generator of \( \pi_1(SO(2)) \). Image of this loop
+in \( SO(3) \) is the \( S^1 \)-family of rotation around the same axis, exactly what is
+demonstrated in the Belt trick to be of torsion 2.
+
+Another way to see that \( n=2 \) is to come back to the map \( \pi_2(S^2) \longrightarrow
+\pi_1(S^1) \) in Theorem ref:thm:long-seq-pi. In the following discussion, we describe a
+3D rotation either by giving its axis, or its equator. Suppose that \( b_0 \) is the South
+pole, \( b_1 \) is the North pole and call \( R_\alpha \) the rotation whose equator is the latitude \( \alpha \), \(
+\alpha\in [0,2\pi[ \), by the angle \( \pi \), and \( R(\theta) \) the rotation around
+axis \( b_0-b_1 \) by angle \( \theta \). The image of the generator of \(
+\pi_2(S^2) \) in \( \pi_1(S^1)\hookrightarrow \pi_1(SO(3)) \) is the \( S^1 \)-family \(
+R_\alpha, \alpha\in [0,2\pi[ \). Those are rotations that maps \( b_0 \) to \( b_1 \) and
+to identify them with a loop in \( ]pi_1(SO(2)) \), one uses
+\[
+R_\alpha = R(2\alpha)\circ R_0
+\]
+So this is twice the generator loop \( R(\theta),\theta\in [0,2\pi[ \) of \( \pi_1(SO(2))
+\), and we conclude that \( n=2 \).
+
+#+BEGIN_remark
+An interesting exercise is to check that \( n=1 \) for the Hopf fibration, i.e. the map \(
+\pi_2(S^2) \longrightarrow \pi_1(S^1) \) in the long exact sequence of \( S^1
+\hookrightarrow S^3 \longrightarrow S^2 \) is isomorphism. This means that the Hopf
+fibration is the "universal" \( S^2 \)-bundle over \( S^1 \). Note that \( S^3 \) is the universal
+cover of \( SO(3) \).
+#+END_remark
+* Complexification and How to see  \( SU(2)  = Sp(1) \)                              :private:
+We will define \( SU(2) \) as the group of complex linear maps preserving a hermitian
+metric with determinant 1 and \( Sp(1) \) as the group of unit quaternions, or equivalently the unit sphere of \(
+{\rm Aut}_{\mathbb{H}}(\mathbb{H}, \mathbb{H}) \).
+
+Let \( (V,I,h) \) be a 4-dimensional vector space with a complex structure \( I \) and a
+hermitian metric \( h \). Recall that since \( I^2 = -1 \), the extension of \( I \) on \(
+V\otimes_{\mathbb{R}}\mathbb{C} \) decomposes this \( \mathbb{C} \)-vector space into \(
+V\otimes_{\mathbb{R}}\mathbb{C} = V^{1,0} \oplus V^{0,1} \) on which \( I=\pm i \)
+respectively. We also have \( V^*\otimes_{\mathbb{R}} \mathbb{C} = \Hom_\mathbb{C}((V,I),
+(\mathbb{C},i))\oplus \Hom_\mathbb{C}((V,J),
+(\mathbb{C},-i)) = (V^{1,0})^*\oplus (V^{0,1})^* \) where \( (V^{1,0})^*
+:=\Hom_{\mathbb{C}}(V^{1,0}, \mathbb{C}) = \Hom_{\mathbb{C}}((V,J), (\mathbb{C},i)) \). It
+is conventional to write a \( \mathbb{R} \)-basis of \( V \) as \( \frac{\partial}{\partial x^i},
+\frac{\partial}{\partial y^i} = I \frac{\partial}{\partial x^i}, i=\overline{1,2} \) and
+the corresponding \( \mathbb{C} \)-basis of \( V^{1,0} \) as \(
+\frac{\partial}{\partial z^i} = \frac{1}{2}\left(\frac{\partial}{\partial x^i} - i
+\frac{\partial}{\partial y^i}\right) \) and that of \( (V^{1,0})^* \) as \( dz^i = dx^i +
+i dy^i \). 
+
+Note that when writing \(\Hom_{\mathbb{C}}(V^{1,0}, \mathbb{C}) =
+\Hom_{\mathbb{C}}((V,I), (\mathbb{C},i)) \) or \( dz^i + d\bar{z^j} \), we implicitly identify \( V \) with \(
+V^{1,0} \) as \( \mathbb{R} \)-vector spaces by \( \frac{\partial}{\partial x^i}\mapsto
+\frac{\partial}{\partial z^i} \) and \( \frac{\partial}{\partial y^i} \mapsto i
+\frac{\partial}{\partial z^i} \).
+
+The hermitian metric \( h \) is an element of \( (V^{1,0})^*\otimes
+(V^{0,1})^* =\Hom_{\mathbb{C}}((V,I)\oplus (V,-I), \mathbb{C})\), typically writen as \( h
+= dz^1\otimes d\bar{z^1} + dz^2\otimes d\bar{z^2}\), 
+and the subspace of  \(
+{\rm Aut}_{\mathbb{C}}((V,I), (V,I)) \) of automorphism perserving \( h \) is denoted by
+\( U(V) \). Saying that the determinant of such automorphism \( f \) is 1 means that \( f
+\) preserves the form \(w_\alpha = \alpha  dz^1\wedge dz^2 \).
+
+We can see that there is always an \( \mathbb{R} \)-automorphism \( J_\alpha \) of \( V \) such
+that \( h(u,J_\alpha v) = w_\alpha(u, v) \). If \( V^{1,0} = \mathbb{C}^2 \) and \( I \) is given
+by \( {\rm diag}(i, -i) \) then \( J_{-i}= \begin{bmatrix} 0 & i \\ i & 0\end{bmatrix} \)
+and \( J_{-1} = \begin{bmatrix} 0 & -1 \\ 1 & 0\end{bmatrix}  \). 
+In any case, \( f \) preserves an additional complex structure \( J \) that satisfies
+\( [I,J]=0 \) and therefore is a \( \mathbb{H} \)-morphism.
+
+#+BEGIN_remark
+The space of second complex structure, i.e. the space of additional quaternion structure
+compatible with \( I \), is the same as the space of \( \mathbb{C} \)-linear skew 2-form
+of norm 2.
+#+END_remark
+
+
+
+
+* The Trace operator in Yang--Mill theory                               :private:
+
+/TL;DR:/ Physicists abuse notations most of the time for good reasons. The Trace
+operator in gauge theory, for example in [[https://www.wikiwand.com/en/Chern%E2%80%93Simons_form][Chern--Simons form]], is another instance of this.
+
+
+Every time I came across an abused notation from physicists, I tend to tell myself
+that these guys messes up things again, yet days, or months later I find it to be
+intuitive and useful. The last time that this occurs was when I tried to figure out
+the Trace operator that confuses students in both [[https://mathoverflow.net/questions/36178/what-is-the-trace-in-the-chern-simons-action][mathematics]] and [[https://www.physicsoverflow.org/31671/%24a-wedge-a-wedge-a%24-in-chern-simons][physics]] when reading
+lines like
+\[
+\tr(A\wedge dA) = \langle A, dA \rangle \text{ or } \tr(A\wedge A\wedge A) = \langle [A, A],
+A \rangle.
+\]
+I will explain that the operator noted as \( \tr \) here is "most of the time" a multiplicative constant
+different from the trace of matrice and argue why I will continue to abuse this operator.
+
+** Calculus of gauge theory.
+Recall that gauge theory is about studying the space of connections (and its subspaces) of
+a principal \( G \)-bundle \( P \) over a manifold \( X \). For Yang--Mill, \( G \) is \(
+SU(n) \). A connection \( A \) is an \( G \)-equivariant 1-form on \( P \) with value in its Lie
+algebra \( \mathfrak{g} \), and the difference \( A-A' \) of 2
+connections descend to \( \mathfrak{g} \)-valued 1-form on the base \( X \). The spaces of
+all these forms are denoted by \( \Omega_P^1(\mathfrak{g}) \) and \(
+\Omega_X^1(\mathfrak{g}) \). 
+An alternative point of view is via a vector bundle \( E =
+P\times_G V \) associated to a representation \( V \) of \( G \). A connection \( A \)
+induces a covariant derivative \( \nabla_A \) on tensor valued in \( E \) and an exterior derivative \(
+d_A: \Omega_X^p(E) \longrightarrow \Omega_X^{p+1}(E) \) 
+on \( E \)-valued forms that extends \( \nabla_A \) using Leibniz rule.
+
+One no longer has \( d_A\circ d_A = 0 \), but the failure of this being zero is measure by the
+/curvature/ \( F_A\in \Omega_X^2(\mathfrak{g}) \): \( d_A\circ d_A s = F_A. s \)
+where the dot (that we will obmit eventually) is the combination of 2 operations: wedging
+the form and having \( \mathfrak{g} \) acting of a fibre \( V \) of \( E \) via \(
+\mathfrak{g} \longrightarrow \End(V) \) since \( G \longrightarrow Aut(V) \).
+
+When \( V\) is chosen to be the adjoint representation \( \rm Ad \) of \( G \) on
+its Lie algebra  \( \mathfrak{g} \), the vector bundle is called \( {\rm ad}P \) and the action \( \mathfrak{g}\longrightarrow \End(\mathfrak{g}) \) is 
+by definition the Lie bracket \( a\mapsto \left({\rm
+ad}_a: b\mapsto [a,b] \right) \). So for any \( a\in \Omega^1_X(\mathfrak{g}) \), \(
+d_A d_A a = [F_A,a] \). 
+
+Note that for \( a,b\in \Omega^\bullet_X(\mathfrak{g}) \), the Lie bracket \( [a,b] \)
+makes sense, but the product \( a\wedge b \), given by combining wedge product and matrice
+multiplication, does not, except when \( b=a \) and they have
+odd degree then \( a\wedge a = \frac{1}{2}[a,a]  \). This means that \( A\wedge dA \) and
+\( A\wedge A\wedge A \) are not even forms in \( \Omega_X^\bullet(\mathfrak{g}) \) (we
+will see that if they are, then the trace will be 0) but we
+will be able to take their "trace" any way.
+
+
+** It is the Killing form.
+The above trace operator is an abusive way to denote the [[https://en.wikipedia.org/wiki/Killing_form][Killing form]] on \( \mathfrak{g}
+\).
+
+#+ATTR_HTML: :id thm:killing 
+#+BEGIN_theorem
+#+LATEX: \label{thm:killing}
+There is a symmetric bilinear form \( B \) on a Lie algebra \( \mathfrak{g} \) that is
+ad-invariant, i.e. \( B([x,y], z) = B (x,[y,z]) \) given by 
+\[
+ B(x,y) = \tr({\rm ad}(x).{\rm ad}(y)).
+\]
+This allows us to define a cycle-invariant product \( x_1\dots x_n \) given by any way of
+placing the Killing form and Lie brackets between them.
+#+END_theorem
+So \( \tr(a\wedge b\wedge c) \) denotes the combined operation of wedging the form and
+doing \( B(a, [b,c]) \) in \( \mathfrak{g} \) with their coefficients.
+
+#+BEGIN_remark
+1. The cycle-invariant property means that \( x_1\dots x_n = x_n x_1\dots x_{n-1} \). This
+   fits well with the matrice trace \( \tr(AB) = \tr(BA) \) and \( \tr(ABC) = \tr(CAB) \).
+2. Let \( e^i \) be a (vector-space) basis of \( \mathfrak{g} \) and \( [e^i, e^j]=:
+   c^{ij}_ke^k \) be structure coefficients, then \( {\rm ad}(e^i){\rm ad}(e^j) e^k =
+   [e^i, [e^j, e^k]]= [e^i,c^{jk}_he^h] = c^{jk}_h c^{ih}_l e_l \) so
+   \[
+    B^{ij}:=B(e^i, e^j) = c^{ih}_kc^{jk}_h
+   \]
+    is the simplest 2-tensor created using structure coefficients. 
+3. Another reason for which this cycle product fits well with matrice trace is that it is
+   most of the times matrice trace. If \( \mathfrak{g} = \mathfrak{su}(2)\) then identify
+   \( \mathfrak{g} \) with \(\im \mathbb{H}
+   \) we see that \( B(A,B) = 4\tr(AB) = -4\|A\|^2 \). More example can be found in the table [[https://en.wikipedia.org/wiki/Killing_form][here]].
+#+END_remark
+
+Using the trace notation is a way to avoid writing the Killing form in context such as \(
+\langle A,A \rangle \) and possible confusion with the Euclidean norm \( \|A\|^2 \). It is
+important to distinguish the two because 
+1. \( \tr F_A^2 = \tr ((F_A^+)^2 - (F_A^-)^2) = (-
+   \|F_A^+\|^2 + \|F_A^-\|^2)\vol  \) is a characteristic class in \( H^4(X) \) of the
+   bundle, so \( \int_X \tr F_A^2 \) is a constant independent of the connection \( A \)
+2. Meanwhile, \( \int_X \|F_A\|^2 = \int\|F^+_A\|^2 + \|F_A^-\|^2 \) is the Yang--Mill functional.
+
+A connection \( A \) is called ASD if and only if these two are equal.
+* Giải thích một video của 3Blue1Brown bằng ma trận 2x2 <2019-08-05 Mon>     :public:
+
+** Giới thiệu
+Trong một video trên kênh YouTube 3Blue1Brown (/The most unexpected answer to a counting puzzle/, taị
+https://www.youtube.com/watch?v=HEfHFsfGXjs) được chia sẻ rất nhiều trong thời gian gần
+đây, Grant Sanderson đã giới thiệu bài toán sau của Gregory
+Galperin về sự va chạm của 2 hình hộp như hình dưới đây, trong đó hộp bên trái có khối
+lượng bằng 1 và hộp bên phải có khối lượng là \( m \geq 1 \).
+file:../img/3B1B-1.png
+
+Ở thời điểm bắt đầu, hộp bên phải chuyển động thẳng đều về phía tường (bên trái) và hộp trái đứng yên. Hai hộp
+có thể va chạm với nhau và với tường. Giả sử không có ma sát và các va chạm đều
+là đàn hồi (động lượng và năng lượng được bảo toàn), ta muốn đếm tổng số va chạm (hộp-hộp và
+hộp-tường), chẳng hạn trong trường hợp khối lượng hai vật bằng nhau (\( m=1 \)) có tổng
+cộng 3 va chạm: hộp phải với hộp trái (sau đó hộp phải đứng yên), hộp trái với tường, và
+hộp trái với hộp phải (sau đó hộp trái đứng yên). Trong trường hợp \( m=100 \), tổng số va chạm
+là 31 và nếu \( m=10000 \), là 314. Grant Sanderson chỉ ra rằng nếu \( m \) là một lũy thừa của 100, giả sử \( 100^k \) thì
+số va chạm là \( k \) chữ số đầu tiên của số \( \pi \).
+
+Youtuber này cho rằng thực hiện thí nghiệm này và đếm số va chạm là cách tính số \( \pi \)
+đẹp nhất nhưng cũng kém hiệu quả nhất, so sánh khối lượng \( m \) cần thiết để
+tính chính xác 20 chữ số thập phân của \( \pi \) với khối lượng một lỗ đen. Anh dành một
+tuần để khán giả của mình suy nghĩ vì sao số \( \pi \) lại xuất hiện trong một bài toán va chạm đàn hồi.
+
+Qua bài tập
+sau, ta sẽ thấy đường tròn (hay số \( \pi \)) xuất hiện một cách tự nhiên qua góc argument của
+giá trị riêng (phức) của một ma trận 2x2. Sử dụng một số
+tính toán cơ bản được học trong môn đại số tuyến tính, ta sẽ chứng minh tổng số va chạm là
+\[
+N = \left \lfloor \frac{2\pi}{\arccos(\frac{m-1}{m+1})}\right\rfloor \text{ khi } m\geq 2
+\]
+
+Với \( m \) lớn, dùng khai triển Taylor \( \arccos(1 - 2\epsilon) = 2\sqrt{\epsilon} +
+O(\epsilon^{3/2}) \) ta có 
 \[ 
-q(f)_g = \left(\left|\frac{\partial f}{\partial x}\right|^2_g - \left|\frac{\partial f}{\partial y}\right|^2_g - 2i
-\langle \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \rangle_g\right)
-dz\otimes dz\]
-hence
-\[
-\frac{1}{4}\left|q(f)_g\right|^2 = (f^\alpha_x f^\beta_x g_{\alpha\beta} - f^\alpha_y f^\beta_y
-g_{\alpha\beta})^2 + 4(f^\alpha_xf^\beta_y g_{\alpha\beta})^2
+\frac{2\pi}{\arccos(\frac{m-1}{m+1})} = \frac{2\pi}{2(m+1)^{-1/2} + O((m+1)^{-3/2})}=
+\pi\sqrt{m+1} + O(\frac{1}{\sqrt{m+1}})  
 \]
+Do đó khi \( m=100^k \) thì \( N = \pi .10^k \) là \( k \) chữ số đầu tiên của \( \pi \).
 
-Moreover
-\[
- \tr_h(f^*g) = f^\alpha_x f^\beta_x g_{\alpha\beta} + f^\alpha_y f^\beta_y g_{\alpha\beta}  
-\]
-and
-\[
- {\rm det}_h(f^*g) = f^\alpha_x f^\beta_x g_{\alpha\beta}f^\gamma_yf^\delta_y
-g_{\gamma\delta}-f^\alpha_x f^\beta_y g_{\alpha\beta}f^\gamma_xf^\delta_y g_{\gamma\delta}
-\]
-The result follows.
-#+END_proof
+** Mô hình hoá
+*** Va chạm giữa 2 hộp
 
-Therefore the renormalised energy \( E_{\rm norm} \) is given by 
-\begin{align}
-   E_{\rm norm} &= 2A_{\rm norm} + \frac{1}{4}\int_\Sigma \frac{|q(f)_g|^2}{\tr_h (f^*g) + 2\sqrt{\det_{h}(f^*g)}}dA_h\\
-   	  	&= -4\pi\chi(f(\Sigma)) + \int_{f(\Sigma)}(2W_{1212}+ 2|H|^2 - |\hat k|^2) + \frac{1}{4}\int_\Sigma \frac{|q(f)_g|^2}{\tr_h (f^*g) + 2\sqrt{\det_{h}(f^*g)}}dA_h
-\end{align}
-according Alexasky-Mazzeo [[https://arxiv.org/abs/0802.2250][formula]] for renormalised area.
-
-
-#+ATTR_HTML: :id rem:compact-perb
-#+BEGIN_remark
-#+LATEX: \label{rem:compact-perb}
-Let \( \{f_t\} \) be a perturbation of \( f \) with compact support lying outside of
-\(r\leq \epsilon_0 \). Then since \( E_\epsilon(f_t) - E_\delta(f_t) =  E_\epsilon(f) -
-E_\delta(f) \) for all \( t \), one has
-\[
- E_\epsilon(f_t) - E_\epsilon(f) = E_{\rm norm}(f_t) - E_{\rm norm}(f).
-\]
-
-Because harmonicity of \( f \) means that \( f \) is critical point of \( E_\epsilon  \) on
-\( r\geq \epsilon \) for all \( \epsilon \) arbitrarily closed to 0, it follows that any critical point of \(
-E_{\rm norm} \) is harmonic.
-#+END_remark
+Chọn chiều dương từ trái sang phải và gọi \( a,b \) lần lượt là vận tốc của hộp phải và
+hộp trái trước khi va chạm, và \( a', b' \) là vận tốc ngay sau khi 2 hộp chạm nhau, định luật bảo toàn động lượng và
+năng lượng (Sách giáo khoa Vật Lý lớp 10) nói rằng
+\begin{equation*}
+ \begin{cases}
+\frac{1}{2}ma'^2 + \frac{1}{2}b'^2 = \frac{1}{2}ma^2 + \frac{1}{2}b^2,  \\
+ma' + b' = ma + b
+ \end{cases}
+\end{equation*}
+Viết lại phương trình thứ nhất thành \( \frac{1}{2}m(a' - a)(a'+a) =
+\frac{1}{2}(b-b')(b+b') \) và thế \( m(a'-a) = b-b' \) (phương trình thứ 2)
+ta có hệ phương trình
+\begin{equation}
+\label{eq:bb}
+ \begin{cases}
+a'-b' = a-b,  \\
+ma' + b' = ma + b
+ \end{cases}
+\end{equation}
 
 
-
-
-
-* Log term in energy: half-sphere in \( \mathbb{H}^3 \).  :noexport:
-The following example concerns a compact surface (a half-sphere) in \( \mathbb{H}^3 \) (so
-there is no subtlety of its boundary in Poincaré's \( \mathbb{H}^3 \) or
-\(\mathbb{D}^3\)).
-
-Let \( \mathbb{D}^2 \) be the unit disk coordinated by \( (s,\theta)\in [0,1)\times
-[0,2\pi)  \) and \( \mathbb{H}^3 \) be the Poincaré half-space coordinated by \(
-(x_0,r,\theta)\in (0,+\infty)\times [0,+\infty)\times [0,2\pi) \). Consider the map \( f:
-\mathbb{D}^2 \longrightarrow \mathbb{H}^3 \) given by 
-\[
- (s,\theta) \longmapsto \left( \frac{1-s^2}{1+s^2}, (\frac{2s}{1+s^2},\theta) \right)
-\]
-which is the totally geodesic imbedding of \( (\mathbb{D}^2,\text{Poincaré}) \) into \(
-(\mathbb{H}^3,\text{Poincaré}) \). One can verify that if \( g = \frac{1}{x_0^2} (dx_0^2 +
-dr^2 + r^2d\theta^2) \) is the Poincaré metric on \( \mathbb{H}^3 \) then
-\[
- f^* g = \frac{4}{(1-s^2)^2} (ds^2 + s^2 d\theta^2)
-\]
-is the Poincaré metric on \( \mathbb{D}^2 \).
-
-We will equip \( \mathbb{D}^2 \) with the following metric
-\[
- g_A = dx^2 + dy^2 + 2A dxdy = (1+A\sin 2\theta) ds^2 + s^2 (1-A\sin 2\theta) d\theta^2 +
-2As\cos 2\theta ds d\theta
-\]
-where \( A \) is a suitable smooth function on \( \mathbb{D}^2 \) with \( |A|< 1 \). We
-will show that when \( A:=\frac{2s^2}{1+s^4} \) then there will be a \( \ln\epsilon \)
-term in the energy of \( f: (\mathbb{D}^2,g_A) \longrightarrow (\mathbb{H}^3,
-g=\text{Poincaré}) \).
-
-
+**** Câu 1.
+Dùng phép khử Gauss để tính \( a', b' \) theo \( a, b \) từ hệ phương trình
+eqref:eq:bb. Viết lại dưới dạng phép nhân ma trận \( \begin{bmatrix} a'
+\\ b' \end{bmatrix} = A_m  \begin{bmatrix} a
+\\ b \end{bmatrix} \) với \( A_m \) là một ma trận 2x2 có các hệ số phụ thuộc vào \( m
+\). Tính \( A_m \).
+#+ATTR_LATEX: :options [Đáp án.]
 #+BEGIN_proof
-One can check that \( \det
-(g_A) = s^2(1-A^2) \) and the contravariant metric is
 \[
- (g_A)^{ij} = \frac{1}{s^2 (1-A^2)}\begin{bmatrix}s^2 (1-A\sin 2\theta) & -As\cos 2\theta\\-As\cos 2\theta &
-1+A\sin 2\theta\end{bmatrix}
-\]
-
-The trace of the pullback metric \( f^*g \) under the metric \( g_A \) is
-\[
- \tr_{g_A} (f^*g) = \frac{8}{(1-s^2)^2}.\frac{1}{1-A^2}
-\]
-Therefore
-\[
-E_\epsilon(f) := \int_{x_0\geq \epsilon} \tr_{g_A}(f^* g) \sqrt{|\det g_A|} ds d\theta = \int_{x_0\geq
-\epsilon} \frac{8}{\sqrt{1-A^2}}.\frac{s}{(1-s^2)^2} ds d\theta
-\]
-
-
-Take \( A:= \frac{2s^2}{1+s^4} \) then \( \sqrt{1-A^2} = \frac{1-s^4}{1+s^4} \) and 
-\[
-E_\epsilon(f) = 8\pi \int_{y\leq y_{\max}} \frac{1+y^2}{1-y^2}.\frac{1}{(1-y)^2} dy
-\]
-where \( y=s^2 \) running from \( 0 \) to \( y_{\max}=\frac{1-\epsilon}{1+\epsilon} \).
-
-By writing the rational function as
-\[
- \frac{1+y^2}{(1-y^2)(1-y)^2} = -\frac{1}{2} .\frac{1}{(1-y)^2} + \frac{1}{(1-y)^3} +
-\frac{1}{4}.\frac{1}{1+y} + \frac{1}{4}.\frac{1}{1-y},
-\]
-one sees that
-\[
- E_\epsilon(f) = \frac{\pi}{\epsilon^2} + \frac{4\pi}{\epsilon} -2\pi \ln\epsilon - 5\pi.
+A_m =  \begin{bmatrix} \frac{m-1}{m+1} & \frac{2}{m+1}\\ \frac{2m}{m+1} &
+\frac{1-m}{1+m} \end{bmatrix}
 \]
 #+END_proof
 
-Let us reuse the formula
+
+*** Va chạm với tường
+Vector vận tốc của hộp bên trái đổi chiều khi va chạm với tường. Nếu gọi \( a,b \) lần lượt là
+vận tốc của hộp phải và hộp trái trước khi hộp trái chạm tường
+và \( a', b' \) là vận tốc ngay sau khi chạm, ta có 
+\begin{equation*}
+\begin{bmatrix} a' \\ b'  \end{bmatrix} 
+= B  \begin{bmatrix} a \\ b \end{bmatrix}
+\text{ với } B = \begin{bmatrix}1 & 0 \\ 0 & -1 \end{bmatrix}
+\end{equation*}
+
+
+*** Điều kiện dừng
+Vận tốc 2 hộp ban đầu được biểu diễn bởi vector \(\begin{bmatrix} a_0\\b_0 \end{bmatrix}
+:= \begin{bmatrix} -1\\0 \end{bmatrix} \) và vận tốc sau \( n \) lần va chạm biểu diễn bởi
+vector
+\begin{equation*}
+ \begin{bmatrix} a_n\\b_n \end{bmatrix} = \dots B A_m B A_m \begin{bmatrix} a_0\\b_0 \end{bmatrix}
+\end{equation*}
+cho bởi phép nhân bên trái xem kẽ với các ma trận \( A_m \) và \( B \), kết thúc bằng \( B
+\) nếu \( n \) chẵn và \( A_m \) nếu \( n \) lẻ.
+
+Sẽ không còn va chạm khi và chỉ khi vận tốc cả 2 hộp đều dương và hộp bên phải đi nhanh
+hơn hộp bên trái, nói cách khác là khi \( a_n\geq b_n\geq 0 \). Bài toán được mô hình hoá
+thành.
+
+**** Bài toán.
+Tìm số tự nhiên \( n \) nhỏ nhất sao cho \( a_n\geq b_n \geq 0 \).
+
+Nhận thấy rằng để tính \( a_n, b_n \), ta chỉ cần tính được lũy thừa của ma trận \( C :=A_m B \)
+
+**** Câu 2.
+Tính ma trận \( C := A_m B \). Tìm vết và định thức của \( C \). Bạn có nhận xét gì về 2
+giá trị riêng của \( C \). 
+
+
+#+ATTR_LATEX: :options [Đáp án.]
+#+BEGIN_proof
 \[
- E_\epsilon(f) = \int_{x\geq \epsilon} \frac{8}{\sqrt{1-A^2}} \frac{s}{(1-s^2)^2}dsd\theta
- = 8\pi\int_{z\geq z_{\min}} \frac{1}{B(z)} \frac{1}{z^2}dz
+ C = \begin{bmatrix} \frac{m-1}{m+1} & \frac{-2}{m+1}\\ \frac{2m}{m+1} &
+ \frac{m-1}{m+1} \end{bmatrix},\quad \tr(C) = 2\frac{m-1}{m+1},\quad \det C = 1
 \]
-where \( z = 1-s^2 \) running from \( z_{\min} = \frac{2\epsilon}{1+\epsilon} \) to \( 1
-\) and \( B = \sqrt{1-A^2} \).
+/Nhận xét./ Hai giá trị riêng của \( C \) là 2 số phức liên hợp có module 1, do đó được biểu diễn bởi
+ một góc \( \theta \). Đây là lý do số
+ \( \pi \) xuất hiện trong kết quả đếm. Dựa vào phần thực của chúng, ta thấy \( \theta =
+ \arccos(\frac{m-1}{m+1}) \) là góc đã nhắc đến trong đầu bài.
+#+END_proof
 
-Let us assume that 
- - \( A \) is at least \( C^1 \) on \( z = 1-s^2 \),
- - \( A \) tends to \( 0 \) near the boundary circle, i.e. when \( z\to 0 \),
-The second assumption is equivalent to \( B(z=0) = 1 \) and the first assumption at \( z=0
-\) (given that the second holds) is equivalent to \( B'(z=0) = 0 \). So \( B = 1 + az^2 + O(z^3) \) 
-
-Trying to integrate \( \frac{1}{z^2 (z-a)(z-b)(z-c)} \) when \( abc=1 \) and \( ab+bc+ca=0
-\), one sees that there is no \( \ln z \) term (there may be \( \ln(z+\omega) \) with \(
-\omega\ne 0 \) term though).
-
-#+ATTR_HTML: :id rem:cond-A-bndry
-#+BEGIN_remark
-#+LATEX: \label{rem:cond-A-bndry}
-So an appropriate condition to add (so that there is no \( \ln\epsilon \) term in the
-energy) is that \( A\to 0 \) near the boundary circle, meaning that \( f \) is 
-conformal at the boundary.
-#+END_remark
-
-
-
-* Log term in energy of \( f: \overline{\mathbb{H}^2} \longrightarrow \overline{\mathbb{H}^{n+1}} \).  :noexport:
-Let \(\mathbb{H}^2 \) be coordinated by \( (t,s) \) with \( t>0,s\in \mathbb{R} \) and \( \mathbb{H}^{n+1} \) be cordinated by \( x> 0, y^1,\dots, y^n\in \mathbb{R} \).
-
-Define \( f: \overline{\mathbb{H}^2} \longrightarrow \overline{\mathbb{H}^{n+1}} \) by
+** Đơn giản hoá tính toán.
+Nhận xét rằng \( \begin{bmatrix} a_0\\b_0 \end{bmatrix} = B\begin{bmatrix} a_0\\b_0
+\end{bmatrix} \), ta viết lại
 \[
-(t,s) \mapsto \left(t+t^2, \gamma^i(s)\right)
+ \begin{bmatrix} a_n\\b_n \end{bmatrix} = \dots B A_m B A_m B \begin{bmatrix} a_0\\b_0
+\end{bmatrix} = \begin{cases}
+B C^k	\begin{bmatrix} a_0\\b_0
+\end{bmatrix}	,  & \text{khi $ n = 2k$} \\
+C^k \begin{bmatrix} a_0\\b_0
+\end{bmatrix}		, & \text{khi $n = 2k - 1$}
+		\end{cases}
 \]
-whose image is the vertical cylinder over the curve \( s \mapsto (\gamma^i(s)) \).
+trong đó \( C = A_m B \) là ma trận ở câu 2.
 
-#+BEGIN_exampl
-If \( n=2 \), one can take \( (y^1,y^2) := \left(\frac{2s}{s^2+1},\frac{s^2-1}{s^2+1}
-\right)  \). Its image is the unit circle in \( \{x=0\} \), only filled once as \( s \)
-varies in \( \mathbb{R} \).
-#+END_exampl
+Một cách để tính \( C^k \) là chéo hoá ma trận \( C \), vì khi \( C = P^{-1} D P \) với \(
+D = \begin{bmatrix} \lambda_1 & 0\\ 0 &
+\lambda_2 \end{bmatrix} \) là một ma trận chéo thì \(C^k = P^{-1}D^k P\) với \( D^k = \begin{bmatrix} \lambda_1^k & 0\\ 0 &
+\lambda_2^k \end{bmatrix}  \).
 
-Now that 
+**** Câu 3.
+Ma trận \( C \) có chéo hoá được trên \( \mathbb{C} \) không? Lưu ý: Bạn không cần chéo hóa ma trận
+\( C \) để trả lời.
+#+ATTR_LATEX: :options [Đáp án.]
+#+BEGIN_proof
+Có. Nhắc lại rằng một ma trận vuông bậc \( k \) chéo hoá được khi và chỉ khi tổng số chiều
+cuả các không gian riêng bằng \( k \). Do 2 giá trị riêng cuả \( C \) khác nhau nên \( C
+\) có 2 không gian riêng, số chiều của mỗi
+không gian ít nhất là 1 nên tổng số chiều đúng bằng 2.
+#+END_proof
+
+
+Sau đây ta sẽ tính luỹ thừa của ma trận \( C \) mà không chéo hoá.
+
+**** Câu 4.
+Tính đa thức tối tiểu \( Q(X) \) của ma trận \( C \).
+#+ATTR_LATEX: :options [Đáp án.]
+#+BEGIN_proof
+Nhắc lại rằng đa thức tối tiểu là ước của đa thức đặc trưng của \( C \), i.e. \( X^2 - 2 \frac{m-1}{m+1} X + 1 = 0  \). Do 2 giá trị
+riêng của \( C \) khác nhau nên đa thức tối tiểu cũng là đa thức đặc trưng.
+#+END_proof
+
+Ta sẽ tính \( C^k \) bằng cách thực hiện phép chia đa thức \( X^k \) cho \( Q(X)
+\):
+\begin{equation}
+\label{eq:min-pol}
+ X^k = P_k(X)Q(X) + u_k X + v_k, \quad P_k\in \mathbb{R}[X], \quad u_k, v_k\in \mathbb{R}
+\end{equation}
+Do đa thức \( Q \) triệt tiêu \( C \), ta có thể tính \( C^k = u_k C + v_k \) nếu biết hai
+số thực \(u_k \) và \( v_k \). 
+
+Gọi \( \lambda \) và \( \bar\lambda = \lambda^{-1} \) là hai
+giá trị riêng của \( C \).
+
+
+**** Câu 5.
+Chứng minh rằng \( u_k = \frac{\lambda^{2k} - 1}{\lambda^{k-1}(\lambda^2-1)} =
+\lambda^{-(k-1)} + \lambda^{-(k-1) + 2} + \dots + \lambda^{k-1} \) và \( -v_k
+=  \frac{\lambda^{2(k-1) - 1}}{\lambda^{k-2} (\lambda^2-1)} = \lambda^{-(k-2)} +
+\lambda^{-(k-2) + 2} + \dots + \lambda^{k-2} \).
+#+ATTR_LATEX: :options [Đáp án.]
+#+BEGIN_proof
+Thế \( X \) bởi \( \lambda \) và \(\bar \lambda\) vào
+eqref:eq:min-pol, lưu ý rằng \( Q(X)=0 \), ta có hệ phương trình
+\begin{equation*}
+ \begin{cases}
+u_k\lambda + v_k = \lambda^k   \\
+u_k\bar \lambda + v_k = \bar\lambda^k 
+ \end{cases}
+\end{equation*}
+Sau đó giải hệ phương trình này để tính \( u_k, v_k \).
+#+END_proof
+
+
+**** Câu 6.
+Tính \( \begin{bmatrix} a_{2k-1}\\b_{2k-1} \end{bmatrix} = C^k \begin{bmatrix} -1\\0
+\end{bmatrix} \) và \( \begin{bmatrix} a_{2k}\\b_{2k} \end{bmatrix} = BC^k \begin{bmatrix} -1\\0
+\end{bmatrix} \) theo \( u_k, v_k \). Thay \( \frac{m-1}{m+1} = \frac{1}{2}(\lambda + \lambda^{-1}) \)
+và \( \frac{2m}{m+1} = \frac{1}{2}(\lambda + \lambda^{-1}) + 1 \), chứng minh rằng \( a_{2k-1} - b_{2k-1} = u_k - v_k
+\) và \( b_{2k} - a_{2k} = u_k - v_k +\lambda^k + \lambda^{-k} \)
+#+ATTR_LATEX: :options [Đáp án.]
+#+BEGIN_proof
+\begin{equation*}
+ \begin{bmatrix} a_{2k-1}\\b_{2k-1} \end{bmatrix}   = \begin{bmatrix} -u_k.\frac{m-1}{m+1} -
+v_k\\-u_k.\frac{2m}{m+1} \end{bmatrix}, \qquad \begin{bmatrix} a_{2k}\\b_{2k} \end{bmatrix}=  \begin{bmatrix} -u_k.\frac{m-1}{m+1} -
+v_k\\u_k.\frac{2m}{m+1} \end{bmatrix}
+\end{equation*}
+Với \( b_{2k} - a_{2k} \), để ý rằng \(  \)\( u_k\lambda^{\pm 1} = -v_k + \lambda^{\pm k} \).
+#+END_proof
+
+** Trực quan hình học
+
+Viết \( \lambda = e^{i\theta} \) với \( \theta =
+ \arccos(\frac{m-1}{m+1}) \).  Với mọi \( k\geq 1 \), đặt
 \[
- dx = (1+2t)dt,\quad dy^i = \dot \gamma^i ds,
+S^2_k:= \lambda^{-k} + \lambda^{-k+2} + \dots + \lambda^{k-2} + \lambda^k\quad \text{và}\quad S^1_k = \lambda^{-k} + \lambda^{-k+1} + \dots + \lambda^{k-1} + \lambda^k
 \]
-the pullback by \( f \) of Poincaré metric \( g = \frac{1}{x^2}(dx^2 + \sum d{y^i}^2) \) on \(
-\mathbb{H}^{n+1} \) is
-\[
- f^* g = \frac{1}{t^2 (1+t)^2} \left( (1+2t)^2 dt^2 + \sum \dot {\gamma^i}^2(s) ds^2 \right)
-\]
-Its trace w.r.t the Euclidean metric on the half 2-plane is
-\[
- \tr f^* g = \frac{(1+2t)^2}{t^2(1+t)^2} + \frac{\varphi(s)}{t^2(1+t)^2}
-\]
-where \( \varphi \) only depends on \( s \) and can be replaced by \( a^2\varphi \) for
-any constant \( a>0 \) when one modifies the boundary curve \( \gamma \to a\gamma \)).
-
-Integrate by \( s\in \mathbb{R} \) and \( t \) in \( (t_{\min},1) \) (we can suppose
-\(t\leq 1 \) since we are only interested in the energy near boundary, \( t_{\min} =
-\frac{-1 + \sqrt{1+4\epsilon}}{2} = \epsilon + O(\epsilon^2) \)):
-
-\[
- \int_t \frac{1}{t^2} + \frac{1}{(1+t)^2} + \frac{2}{t(1+t)} + \const(\varphi) \left(
- \frac{1}{t^2} - \frac{2}{t(1+t)} + \frac{1}{(1+t)^2} \right)
-\]
-where \( \const(\varphi) \) can be scaled up \( a^2 \) times when one replaces \( \gamma
- \) by \( a\gamma \). Choose \( a \) so that the term \( \frac{2}{t(1+t)} \) remains,
- which integrates to \( \log t_{\min} = \log(\epsilon) + O(\epsilon) \).
 
 
-#+ATTR_HTML: :id rem:bndry-condition
-#+BEGIN_remark
-#+LATEX: \label{rem:bndry-condition}
-It is clear that one needs a certain regularity of \( f \) at boundary of the initial
-space so that the \( \log\epsilon \) term does not appear. The "Poincaré half-plane to
-Poincaré disk" transform is only smooth and diffeomorphic in the interior. The boundary map
-\( (y^1,y^2) := \left(\frac{2s}{s^2+1},\frac{s^2-1}{s^2+1} \right) \) in the example above
-(\( n=2 \)) is the restriction on boundary of the half-plane-to-disk transform.
-#+END_remark
+**** Câu 7.
+Chứng minh rằng \( (a_{2k-1},b_{2k-1}) \) thoả mãn điều kiện
+dừng \( a_{2k-1}\geq b_{2k-1}\geq 0 \) khi và chỉ khi \( S^1_{k-1} \geq 0 \) và \(
+   S^{2}_{k-1}\leq 0 \). Chứng minh rằng \( (a_{2k},b_{2k}) \) thoả mãn điều kiện
+dừng \( a_{2k}\geq b_{2k}\geq 0 \) khi và chỉ khi \( S^1_{k} \leq 0 \) và \(
+   S^{2}_{k-1}\geq 0 \).
+#+ATTR_LATEX: :options [Đáp án.]
+#+BEGIN_proof
+Hiển nhiên khi viết lại \( u_k = S^2_{k-1} \), \( u_k-v_k = S^1_{k-1} \) và \( u_k-v_k +\lambda^k +\lambda^{-k} = S^1_{k} \).
+#+END_proof
+
+Xem \( S^2_k \) ( tương ứng \( S^1_k \)) là tổng của \( k+1 \) (tương ứng \( 2k+1 \))
+vector cách đều trên đường tròn đơn vị, mệnh đề sau là hiển nhiên về mặt trực quan và
+được thừa nhận.
+
+**** Mệnh đề.
+Giả sử \( k\leq \left \lfloor \frac{\pi}{\theta} \right\rfloor \). Khi đó 
+1. \( S^1_k \leq 0
+   \) khi và chỉ khi cung tròn từ \( \lambda^k \) đến \( \lambda^{-k} \) nhỏ hơn hoặc bằng \( \theta \).
+2. \( S^2_k \leq 0 \) khi và chỉ khi cung tròn từ \( \lambda^k \) đến \( \lambda^{-k} \)
+   nhỏ hơn hoặc bằng \( 2\theta \).
 
 
-* Commutative diagram in \( \TeX \) revisited 
+**** Câu 8.
+Dùng mệnh đề, chứng minh rằng với \( h =  \left \lfloor \frac{\pi}{\theta} \right\rfloor
+\) thì hoặc \( (a_{2h}, b_{2h}) \) hoặc \( (a_{2h+1}, b_{2h+1}) \) thoả điều kiện dừng,
+còn các bộ \( (a_i, b_i) \) với \( i < 2h \) không dừng. Từ đó suy ra \( N = \left \lfloor
+\frac{2\pi}{\theta} \right \rfloor\).
+#+ATTR_LATEX: :options [Đáp án.]
+#+BEGIN_proof
+Nếu cung từ \( \lambda^h \) đến -1 nhỏ hơn \( \frac{\theta}{2} \) thì \( (a_{2h}, b_{2h})
+\) dừng, ngược lại thì \( (a_{2h+1}, b_{2h+1}) \) dừng.
+#+END_proof
+
+Một tuần sau video nói trên, Grant Sanderson đưa ra lời giải của anh tại
+https://www.youtube.com/watch?v=jsYwFizhncE bằng một lập luận tương đối đơn giản. Kết quả của
+anh là \( N = \left \lfloor \frac{\pi}{\phi} \right\rfloor \) với \( \phi = \arctan
+\frac{1}{\sqrt{m}} \)
+
+**** Câu 9 (Không tính điểm).
+So sánh hai số va chạm \( N \) ở đầu bài vơí kết quả cuả Grant Sanderson.
+#+ATTR_LATEX: :options [Đáp án.]
+#+BEGIN_proof
+\(\theta = 2\phi\).
+#+END_proof
+
+* Commutative diagram in \( \TeX \) revisited     :public:
 ** xypic and xyJax
 To my knowledge, the only way to type commutative diagram on the web is to use ~xyJax~, a
 third-party extension of ~MathJax~ that render diagram using ~xypic~. This is also how
@@ -633,7 +645,7 @@ The configuration of ~xyJax~ or any third-party extension MathJax was not very e
 
 To config MathJax in org-mode, apropos ~org-html-mathjax-template~.
 
-* LaTeX in Inkscape: Incompatibility between ~ghostscript~ and ~pstoedit~ <2018-03-30 Fri>
+* LaTeX in Inkscape: Incompatibility between ~ghostscript~ and ~pstoedit~ <2018-03-30 Fri>       :private:
 Since Ghostscript 9.22, certain flags (e.g. ~dREALLYDEALYBIND~) are deprecated and ~pstoedit~,
 a piece of software that Inkscape uses to render LaTeX, remains unchanged since 2005. This
 makes Inkscape users unable use LaTeX. Textext developers claims that they will switch to
@@ -658,11 +670,11 @@ with ~nextcloud~, and ~downgrade~ for ghostscript)
 
 The problem is well documented [[https://bbs.archlinux.org/viewtopic.php?id=224340][here]] and [[https://bitbucket.org/pitgarbe/textext/issues/48/ghostscript-still-bug-under-linux][here]].
 
-* LaTeX indentation in org-mode <2018-02-20 Tue>
+* LaTeX indentation in org-mode <2018-02-20 Tue>                              :public:
   I was told, in accordance with my experience, that we visually process text better if
-  each line in a paragraph is approximately below 80 characters. This fact is also
-  omnipresent on the internet, standardized tests, books, etc.. being among the
-  fundamentals of web design (except wikipedia, that's why I use Wikiwand).
+  each line in a paragraph is approximately below 80 characters. This can be observed
+  everywhere from the Internet to books and standardized tests, and is now fundamentals of web
+  design (somehow Wikipedia is an exception).
 
   In Emacs, the key binding ~M-q~ will execute the ~fill-paragraph~ function that
   automatically shrinks text and insert "soft" newlines to shorten line below a certain
@@ -677,7 +689,7 @@ The problem is well documented [[https://bbs.archlinux.org/viewtopic.php?id=2243
 
 The problem has been noticed around the Internet [[https://emacs.stackexchange.com/questions/29122/prevent-fill-paragraph-from-breaking-latex-displayed-equations-in-org-mode][here]] and [[https://emacs.stackexchange.com/questions/34938/is-there-a-fill-paragraph-function-which-tries-to-not-break-subordinate-parenthe?rq=1][there]].  
 
-Meanwhile AucTeX does not have this annoying problem. [[https://www.gnu.org/software/auctex/manual/auctex.html#index-LaTeX_002dfill_002dbreak_002dat_002dseparators][It turns out]] that AUCTeX maps the
+Meanwhile AUCTeX does not have this annoying problem. [[https://www.gnu.org/software/auctex/manual/auctex.html#index-LaTeX_002dfill_002dbreak_002dat_002dseparators][It turns out]] that AUCTeX maps the
 ~M-q~ key to a different function, called ~LaTeX-fill-paragraph~. So the temporary fix is
 to load ~latex.el~ in org-mode and maps ~M-q~ to ~LaTeX-fill-paragraph~
 
@@ -686,20 +698,19 @@ to load ~latex.el~ in org-mode and maps ~M-q~ to ~LaTeX-fill-paragraph~
 (global-set-key "\M-q" 'LaTeX-fill-paragraph)
 #+END_SRC
 
-* A (decent) map of mathematics <2017-10-17 Tue>
+* A map of mathematics <2017-10-17 Tue>                              :private:
 
   I saw this [[https://www.flickr.com/photos/95869671@N08/32264483720][map of mathematics]] somewhere on YouTube and then again on the door of
   someone's office at the I2M. Although this map may help popularise mathematics, it
-  should raise an eyebrow of a serious math student (or even an attentive highschool
-  student, as for example 1 was listed among prime numbers in an earlier version of this
-  map).
+  could not please a serious math student (or even an attentive highschool
+  student, as 1 was listed among prime numbers).
 
   For a decent map of Mathematics, made by a mathematician, see [[http://www.math.unm.edu/~buium/mapp.pdf][this]].
 
-* My 2016-2017 internship <2017-07-31 Mon> 
+* My 2016-2017 internship <2017-07-31 Mon>     :public:
 
 I have just recently finished my Stage3A at [[https://www.i2m.univ-amu.fr/][Institut de Mathématiques de Marseille]]. It is
-also in this period that I start this blog. The memoire can be founded here [[[../res/Stage2017.pdf][PDF]]]
+also in this period that I start this blog. The memoire can be found here [[[../res/Stage2017.pdf][PDF]]]
 
 
 #+LATEX:\iffalse

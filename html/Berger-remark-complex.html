@@ -3,12 +3,11 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-09-15 Sat 01:52 -->
+<!-- 2021-06-25 Fri 23:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Berger classification and remarks on parallel structures</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="Tien" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -253,44 +252,6 @@ for the JavaScript code in this tag.
 <li><a href='./contact.html'>Contact</a></li>
 </ul>
 </div>
-</div>
-<div id="content">
-<h1 class="title">Berger classification and remarks on parallel structures</h1>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#orgad77890">1. Our story so far</a></li>
-<li><a href="#org0620d32">2. Berger classification of non-symmetric irreducible manifolds</a></li>
-<li><a href="#org1ef4402">3. Almost complex structure</a>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#org3511295">3.0.0.1. Complexification.</a></li>
-<li><a href="#org310d1ed">3.0.0.2. Eigenspaces.</a></li>
-<li><a href="#orgdc48e20">3.0.0.3. Hermitian form.</a></li>
-<li><a href="#orge46f182">3.0.0.4. Identification.</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgdb4a4d7">4. Complexified dual and forms, prelude to Kähler geometry</a></li>
-<li><a href="#org827c931">5. Symplectic holonomy</a></li>
-</ul>
-</div>
-</div>
-<div class="info">
-<p>
-The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
-<code>pdf</code>. 
-For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
-</p>
-
-</div>
 \(
 \newcommand{\re}{\mathop{\rm Re}\nolimits}
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
@@ -308,7 +269,52 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
 \newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
 \newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
+\newcommand{\Enorm}{\mathop{\mathcal{E}_{\rm norm}}\nolimits}
+\newcommand{\Anorm}{\mathop{\mathcal{A}_{\rm norm}}\nolimits}
+\newcommand{\Cl}{\mathop{\rm Cl}\nolimits}
+\newcommand{\Spin}{\mathop{\rm Spin}\nolimits}
+\newcommand{\Pin}{\mathop{\rm Pin}\nolimits}
+\newcommand{\Hom}{\mathop{\rm Hom}\nolimits}
+\newcommand{\End}{\mathop{\rm End}\nolimits}
 \)
+</div>
+<div id="content">
+<h1 class="title">Berger classification and remarks on parallel structures</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org75a5d62">1. Our story so far</a></li>
+<li><a href="#org890d02a">2. Berger classification of non-symmetric irreducible manifolds</a></li>
+<li><a href="#orga7f75cb">3. Almost complex structure</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#org2610d86">3.0.0.1. Complexification.</a></li>
+<li><a href="#org6638484">3.0.0.2. Eigenspaces.</a></li>
+<li><a href="#org3cec8f1">3.0.0.3. Hermitian form.</a></li>
+<li><a href="#orgf87086e">3.0.0.4. Identification.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orga5353b5">4. Complexified dual and forms, prelude to Kähler geometry</a></li>
+<li><a href="#orga530577">5. Symplectic holonomy</a></li>
+</ul>
+</div>
+</div>
+<div class="info">
+<p>
+The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
+<code>pdf</code>. 
+For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
+</p>
+
+</div>
 <div class="info">
 <p>
 This post is a part of the <a href="../res/Stage2017.pdf">memoire of my M1 internship</a> at I2M. The memoire contains,
@@ -317,8 +323,8 @@ needless to say, less errors than this page.
 
 </div>
 
-<div id="outline-container-orgad77890" class="outline-2">
-<h2 id="orgad77890"><span class="section-number-2">1</span> Our story so far</h2>
+<div id="outline-container-org75a5d62" class="outline-2">
+<h2 id="org75a5d62"><span class="section-number-2">1</span> Our story so far</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <a href="./de-rham-decomposition.html">De Rham decomposition theorem</a> allows us to split a Riemannian manifold under certain conditions
@@ -331,12 +337,12 @@ focus on non-symmetric irreducible manifolds.
 </div>
 
 
-<div id="outline-container-org0620d32" class="outline-2">
-<h2 id="org0620d32"><span class="section-number-2">2</span> Berger classification of non-symmetric irreducible manifolds</h2>
+<div id="outline-container-org890d02a" class="outline-2">
+<h2 id="org890d02a"><span class="section-number-2">2</span> Berger classification of non-symmetric irreducible manifolds</h2>
 <div class="outline-text-2" id="text-2">
 <div class="theorem">
 <p>
-<a id="org12907d1"></a>
+<a id="org7b16548"></a>
 For a non-symmetric irreducible manifold, the holonomy representation has to be one of the
 following
 </p>
@@ -384,8 +390,8 @@ defined up to its conjugacy class.
 </div>
 </div>
 
-<div id="outline-container-org1ef4402" class="outline-2">
-<h2 id="org1ef4402"><span class="section-number-2">3</span> Almost complex structure</h2>
+<div id="outline-container-orga7f75cb" class="outline-2">
+<h2 id="orga7f75cb"><span class="section-number-2">3</span> Almost complex structure</h2>
 <div class="outline-text-2" id="text-3">
 <div class="definition">
 <p>
@@ -407,8 +413,8 @@ direct consequences:
 </p>
 </div>
 
-<div id="outline-container-org3511295" class="outline-5">
-<h5 id="org3511295"><span class="section-number-5">3.0.0.1</span> Complexification.</h5>
+<div id="outline-container-org2610d86" class="outline-5">
+<h5 id="org2610d86"><span class="section-number-5">3.0.0.1</span> Complexification.</h5>
 <div class="outline-text-5" id="text-3-0-0-1">
 <p>
 \(g\) and \(J\) extend in an unique way over \(V_{ \mathbb{C}}\), the complexification of \(V\), to a
@@ -418,8 +424,8 @@ still has \(g_{\mathbb{C}}\circ J = g_{\mathbb{C}}\).
 </div>
 </div>
 
-<div id="outline-container-org310d1ed" class="outline-5">
-<h5 id="org310d1ed"><span class="section-number-5">3.0.0.2</span> Eigenspaces.</h5>
+<div id="outline-container-org6638484" class="outline-5">
+<h5 id="org6638484"><span class="section-number-5">3.0.0.2</span> Eigenspaces.</h5>
 <div class="outline-text-5" id="text-3-0-0-2">
 <p>
 The complexified space \(V_{ \mathbb{C}}\) is decomposed to \(V_{\mathbb{C}} =
@@ -431,8 +437,8 @@ corresponding to eigenvalues \(i\) and \(-i\) of \(J\) on \(V_{\mathbb{C}}\). Th
 </div>
 </div>
 
-<div id="outline-container-orgdc48e20" class="outline-5">
-<h5 id="orgdc48e20"><span class="section-number-5">3.0.0.3</span> Hermitian form.</h5>
+<div id="outline-container-org3cec8f1" class="outline-5">
+<h5 id="org3cec8f1"><span class="section-number-5">3.0.0.3</span> Hermitian form.</h5>
 <div class="outline-text-5" id="text-3-0-0-3">
 <p>
 The <span class="underline">fundamental form</span> \(\omega\) of \((V,J)\) is defined by
@@ -449,8 +455,8 @@ in the sense that \(h(.,.)\) is \(\mathbb{R}\) -bilinear with \(h(Ja,b) = ih(a,b
 </div>
 </div>
 
-<div id="outline-container-orge46f182" class="outline-5">
-<h5 id="orge46f182"><span class="section-number-5">3.0.0.4</span> Identification.</h5>
+<div id="outline-container-orgf87086e" class="outline-5">
+<h5 id="orgf87086e"><span class="section-number-5">3.0.0.4</span> Identification.</h5>
 <div class="outline-text-5" id="text-3-0-0-4">
 <p>
 One usually identifies \((V,J)\) and \((V^{1,0},i)\) as vector spaces equipped with complex structure,
@@ -527,8 +533,8 @@ J_0 = \begin{pmatrix}
 </div>
 
 
-<div id="outline-container-orgdb4a4d7" class="outline-2">
-<h2 id="orgdb4a4d7"><span class="section-number-2">4</span> Complexified dual and forms, prelude to Kähler geometry</h2>
+<div id="outline-container-orga5353b5" class="outline-2">
+<h2 id="orga5353b5"><span class="section-number-2">4</span> Complexified dual and forms, prelude to Kähler geometry</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 We state first some linear algebra facts, whose proofs are tedious and can be consulted in the Manuscript.
@@ -536,7 +542,7 @@ We state first some linear algebra facts, whose proofs are tedious and can be co
 
 <div class="lemma">
 <p>
-<a id="org66792cd"></a>
+<a id="orge0a1ccb"></a>
 </p>
 <ol class="org-ol">
 <li>Let \(V = W_1 \oplus W_2\) be \(R\) -module then the exterior algebra of \(V\) splits into \[\bigwedge^nV
@@ -567,7 +573,7 @@ Therefore \((V^*)_{\mathbb{C}} = (V^*)^{1,0} \oplus (V^{*})^{0,1}\) is rewriten 
 \[
 Hom_{\mathbb{R}}(V,\mathbb{C}) = Hom_{\mathbb{C}}((V,J),\mathbb{C}) \oplus Hom_{\mathbb{C}}((V,-J), \mathbb{C})
 \]
-Using the first point of Lemma <a href="#org66792cd">4</a>, one has
+Using the first point of Lemma <a href="#orge0a1ccb">4</a>, one has
 \[
 \bigwedge^n (V^*)_{\mathbb{C}} = \bigoplus_{p+q=n}\bigwedge^{p,q}(V^*)_{\mathbb{C}}
 \]
@@ -782,8 +788,8 @@ nature and can be found in the Manuscript.
 </div>
 
 
-<div id="outline-container-org827c931" class="outline-2">
-<h2 id="org827c931"><span class="section-number-2">5</span> Symplectic holonomy</h2>
+<div id="outline-container-orga530577" class="outline-2">
+<h2 id="orga530577"><span class="section-number-2">5</span> Symplectic holonomy</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 One can look at symplectic group \(Sp(r)\) from the following two points of view:
@@ -839,7 +845,7 @@ non-degenerate, one has \(K = IJ = -JI\).
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
-By Tien.<br>
+By .<br>
 Last updated 2017-08-31 Thu 02:24. <br>
 </div>
 </div>

@@ -1,30 +1,77 @@
-#+TITLE: Welcome to my homepage
+#+TITLE: Welcome to my homepage !
+#+AUTHOR: Tien
+#+OPTIONS: num:nil
 
-I am currently in the first year of my PhD program under supervision of [[http://homepages.ulb.ac.be/~joelfine][Joel Fine]] at
-[[http://geometry.ulb.ac.be/][Université Libre de Bruxelles]] and [[http://www.i2m.univ-amu.fr/perso/julien.keller/Julien-KELLER.html][Julien Keller]] at [[http://www.i2m.univ-amu.fr/Equipe-Analyse-Geometrie-Topologie-AGT][Aix-Marseille Université]]. 
+* Hello \(!\)   
+My name is Manh Tien NGUYEN.
+
+I am PhD student in Mathematics at [[http://geometry.ulb.ac.be/][Université Libre de Bruxelles]] and [[http://www.i2m.univ-amu.fr/Equipe-Analyse-Geometrie-Topologie-AGT][Aix-Marseille Université]]. 
+#+BEGIN_EXPORT html
+<div class="row">
+  <div class="col-md-9">
+  <p>My supervisors are <a href="http://homepages.ulb.ac.be/~joelfine">Joel Fine</a> and <a href="http://profmath.uqam.ca/~jkeller/">Julien Keller</a>.</p>
+  
+  <p>For the last 3 years, I studied harmonic maps and minimal surfaces, mostly in(to) the
+  hyperbolic space.<br>
+  On your right is a surface of the Euclidean 3-space. It looks quite minimal and it grows on my lemon tree.</p>
+  </div>
+  <div class="col-md-3">
+    <img src="../img/lemon-leaf.jpg" style="width:100%">
+  </div>
+</div>
+#+END_EXPORT
+
+Here are a few more minimal surfaces, this time in 4D. They are all
+[[https://en.wikipedia.org/wiki/Surface_of_revolution][surfaces of revolution]].
+
+# These pages are writen using [[https://en.wikipedia.org/wiki/Emacs][emacs]] [[http://orgmode.org/][org-mode]] and a [[https://github.com/darknmt/theorems-css][CSS]] to display LaTeX structure. 
+
+#+BEGIN_EXPORT html
+<div class="row">
+  <div class="col-md-4">
+    <img src="../img/2021-01-21-minsurface-quaternion-H4.png" style="width:90%">
+  </div>
+  <div class="col-md-4">
+  <div class="row">
+  <div class="col-md-6">
+    <img src="../img/2021-06-3-petal.png" style="width:100%">
+  </div>
+  <div class="col-md-6">
+    <img src="../img/2021-06-5-petal.png" style="width:100%">
+  </div>
+  </div>
+  <div class="row">
+  <div class="col-md-6">
+    <img src="../img/2021-06-7-petal.png" style="width:100%">
+  </div>
+  <div class="col-md-6">
+    <img src="../img/2021-06-8-petal.png" style="width:100%">
+  </div>
+  </div>
+  </div>
+  <div class="col-md-4">
+  The rotation used here is given by simultaneously changing each complex coordinate of \(\mathbb{C}^2\) by an opposite phase.
+  I claim that when you rotate these curves,
+  <ul>
+  <li> those in the left figure will form minimal annuli in the hyperbolic four-space. </li>
+  <li> those in the 4 figures on the right will become minimal tori of the round four-sphere. </li>
+  </ul>
+  By design, they are fibred by <a href="https://en.wikipedia.org/wiki/Hopf_link">Hopf links</a>.
+</div>
+</div>
+#+END_EXPORT
 
 
-* About this site :noexport:
-This website is written using [[https://en.wikipedia.org/wiki/Emacs][emacs]] [[http://orgmode.org/][org-mode]]. The blog is inspired from [[https://ogbe.net/blog/blogging_with_org.html][here]] and [[https://nicolas.petton.fr/blog/blogging-with-org-mode.html][here]].
-The reasons that I write this blog instead of using Wordpress are 
-1. I am more convenient with editing in emacs using [[https://github.com/joaotavora/yasnippet][YASnippet]]. The fact that org-mode is both a MarkDown language
-   and a [[http://orgmode.org/manual/Publishing.html][publishing tool]] is also taken into account.
-2. LaTeX (and the writing of mathematics) is not just about mathematical formulae, structures like
-   theorem/lemma/definition also play a crucial role.
-3. [[https://darknmt.github.io/html/Cheeger-Gromoll-splitting.html][Here]] is a webpage, [[https://raw.githubusercontent.com/darknmt/darknmt.github.io/master/blog/Cheeger-Gromoll-splitting.org][here]] is what I have to type, and here are the LaTeX exports in [[../res/Cheeger-Gromoll-splitting.tex][TEX]] and [[../res/Cheeger-Gromoll-splitting.pdf][PDF]].
 
 
-* About this site
-- The *Blog* contains my reading notes of well-known articles. Most of them are writen as
-  part of the memoirs during my Master/PhD studies.
-- The *Miscellany* page is dedicated to shorter writings with a focus on what I am
-  currently doing.
-These pages are writen using [[https://en.wikipedia.org/wiki/Emacs][emacs]] [[http://orgmode.org/][org-mode]] and a [[https://github.com/darknmt/theorems-css][CSS]] to display LaTeX structure. 
+
 * Links
-- Here is my [[http://172.17.71.229/dokuwiki/doku.php][DokuWiki]] and personal [[http://172.17.71.229/nextcloud][nextcloud]].
+# - Here is my [[http://172.17.71.229/dokuwiki/doku.php][DokuWiki]] and personal [[http://172.17.71.229/nextcloud][nextcloud]].
 - [[https://darknmt.github.io/res/tikzcd-editor/][A GUI editor]] for commutative diagram with ~tikzcd~, also [[https://tikzcd.yichuanshen.de/][originally hosted by the author]].
 - If you prefer ~xypic~, use [[https://darknmt.github.io/res/xypic-editor/][this one]]. [[https://github.com/darknmt/xypic-editor][Source code]].
 
-# +ATTR_HTML: :width 60%
-# [[https://darknmt.github.io/res/xypic-editor][file:../img/simple-portrait.png]] 
-
+* About this site :noexport:
+- The *Blog* contains my reading notes of well-known articles. Most of them are writen as
+  part of the memoirs during my Master/PhD studies.
+- The *Miscellany* page is dedicated to shorter writings of either non-mathetical things
+  or mathematical ideas for large audience.

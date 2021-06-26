@@ -1,0 +1,2051 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-06-25 Fri 22:52 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Weighted monotonicity theorems and applications to minimal surfaces in hyperbolic space</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Manh Tien NGUYEN" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' href='../res/blog.css' type='text/css'/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path["Extra"] = "https://darknmt.github.io/res/XyJax/extensions/TeX";MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    "HTML-CSS": {
+      styles: {".MathJax_Preview": {visibility: "hidden"}}
+    },
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+    TeX: {equationNumbers: {  autoNumber: "AMS"  }, extensions: ["[Extra]/xypic.js", "AMSmath.js","AMSsymbols.js"]}
+    //                  ^^^^^^^^load xypic.js
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js"></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='./index.html'>Home</a></li>
+<li><a href='./blog.html'>Blog</a></li>
+<li><a href='./writings.html'>Miscellany</a></li>
+<li><a href='http://github.com/darknmt/'>GitHub</a></li>
+<li><a href='./contact.html'>Contact</a></li>
+</ul>
+</div>
+\(
+\newcommand{\re}{\mathop{\rm Re}\nolimits}
+\newcommand{\im}{\mathop{\rm Im}\nolimits}
+\newcommand{\coker}{\mathop{\rm coker}\nolimits}
+\newcommand{\supp}{\mathop{\rm supp}\nolimits}
+\newcommand{\ord}{\mathop{\rm ord}\nolimits}
+\newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
+\newcommand{\vol}{\mathop{\rm vol}\nolimits}
+\newcommand\restr[2]{{\left.#1\right|_{#2}}}
+\newcommand{\transp}{\mathop{\rm \,^t}\nolimits}
+\newcommand{\sff}{\mathop{\rm I\!I}\nolimits}
+\newcommand{\tr}{\mathop{\rm Tr}\nolimits}
+\newcommand{\const}{\mathop{\rm const }\nolimits}
+\newcommand{\lcm}{\mathop{\rm lcm}\nolimits}
+\newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
+\newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
+\newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
+\newcommand{\Enorm}{\mathop{\mathcal{E}_{\rm norm}}\nolimits}
+\newcommand{\Anorm}{\mathop{\mathcal{A}_{\rm norm}}\nolimits}
+\newcommand{\Cl}{\mathop{\rm Cl}\nolimits}
+\newcommand{\Spin}{\mathop{\rm Spin}\nolimits}
+\newcommand{\Pin}{\mathop{\rm Pin}\nolimits}
+\newcommand{\Hom}{\mathop{\rm Hom}\nolimits}
+\newcommand{\End}{\mathop{\rm End}\nolimits}
+\)
+</div>
+<div id="content">
+<h1 class="title">Weighted monotonicity theorems and applications to minimal surfaces in hyperbolic space</h1>
+\begin{abstract}
+We show that there is a weighted version of monotonicity theorem corresponding 
+to each function on a Riemannian manifold whose Hessian is a multiple of the metric tensor. 
+Such function appears in the Euclidean space, the hyperbolic space \( \mathbb{H}^n \) and 
+the round sphere \( \mathbb{S}^n \) as the distance function, 
+the Minkowskian coordinates of \( \mathbb{R}^{n,1} \) and the Euclidean coordinates of \( \mathbb{R}^{n+1} \). 
+
+In \( \mathbb{H}^n \), we show that the time-weighted monotonicity theorem implies the unweighted version of Anderson 
+\cite{Anderson82_CompleteMinimalVarieties}. Applications include upper bounds for Graham--Witten renormalised area 
+of minimal surfaces in term of the length of boundary curve and a complete computation of Alexakis--Mazzeo degrees defined in \cite{Alexakis.Mazzeo10_RenormalizedAreaProperly}. 
+
+An argument on area-minimising cones suggests the existence of a minimal surface in \( \mathbb{H}^4 \) bounded by the Hopf
+link \( \{zw=\epsilon > 0, |z|^2 +|w|^2 = 1\} \) other than the pair of disks. 
+We give an explicit construction of a minimal annulus in \( \mathbb{H}^4 \) with this property and obtain by the same method
+its sister in \( \mathbb{S}^4 \).
+
+A weighted monotonicity theorem is also proved in Riemannian manifolds whose sectional curvature is bounded from above.
+\end{abstract}
+<div id="outline-container-org588c616" class="outline-2">
+<h2 id="org588c616"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Let \( h \) be a function on a Riemannian manifold \( (M,g) \) with
+\( \hess h = Ug \). We will prove a monotonicity
+theorem for minimal surfaces (\( k \)-dimensional orientable submanifolds with vanishing mean
+curvature) in \( M \) where the area functional is weighted
+by \( U \). The theorem also holds for exterior extension of a minimal surface by the
+gradient flow of \( h \) in the same fashion as the extended monotonicity theorem of
+Ekholm, White and Wienholtz <a class='org-ref-reference' href="#Ekholm.etal02_EmbeddednessMinimalSurfaces">Ekholm.etal02_EmbeddednessMinimalSurfaces</a>.
+</p>
+
+<p>
+The existence of such function \( h \) was proved by Cheeger and Colding
+<a class='org-ref-reference' href="#Cheeger.Colding96_LowerBoundsRicci">Cheeger.Colding96_LowerBoundsRicci</a> to be equivalent to the metric locally being a warped product.
+The manifold \( M \) can therefore be specialised to be the hyperbolic space \(
+  \mathbb{H}^n \) or the round sphere \( \mathbb{S}^n \), on which the
+Minkowskian coordinates \( \xi_\alpha \) and the Euclidean coordinates \( x_i \) satisfy \( \hess \xi_\alpha
+  = \xi_\alpha g_{\mathbb{H}^n}\) and \( \hess x_i = -x_i g_{\mathbb{S}^n} \) respectively. 
+On \( \mathbb{R}^n \), there are only 2 ways to write the
+Euclidean metric locally as a warped product, either by the coordinate functions \( x_i \), in which
+case the weighted monotonicity theorem trivialises, or by the distance function \( \rho
+  = \sum_{i=1}^n x_i^2 \) whose 
+corresponding monotonicity theorem is the classical one.
+</p>
+
+<p>
+In hyperbolic space, an unweighted monotonicity theorem was proved by Anderson in
+<a class='org-ref-reference' href="#Anderson82_CompleteMinimalVarieties">Anderson82_CompleteMinimalVarieties</a>. We will show by a Comparison Lemma (Lemma <a href="#lem:comparison">lem:comparison</a>) that the
+monotonicity theorem corresponding to the time coordinate implies
+the unweighted version. For any surface not necessarily minimal, the Comparison Lemma
+says that if its density with respect to a weight function is increasing
+then so is the density with respect to any <i>weaker</i>
+weight. In particular, for the unit ball \(\mathbb{B}^n\) equipped
+with the Poincaré, Euclidean and round-sphere metrics, one has the following chain of monotonicity
+\[
+   \text{time-weighted }  g_{\mathbb{H}^n} \gg   \text{unweighted } g_{\mathbb{H}^n}
+   \gg g_E  \gg \text{unweighted } g_{\mathbb{S}^n}   \gg \text{weighted } g_{\mathbb{S}^n}.
+  \]
+A surface having increasing density with respect to an area functional in the chain
+automatically has increasing density with respect to any area functional on the right of it.
+This is partly the reason why our statements concerning minimal surfaces in \( \mathbb{H}^n \), which
+are time-monotone, outnumber what we can say about their counterparts in \( \mathbb{S}^n
+  \) which are at the opposite end of the chain. 
+</p>
+
+<p>
+While minimal surfaces in \( \mathbb{S}^n \) are weighted-monotone, the Clifford torus of \(
+  \mathbb{S}^3 \) shows that unweighted monotonicity does not hold even in a
+hemisphere. Despite this, there is a way to use Lemma <a href="#lem:comparison">lem:comparison</a> to obtain meaningful
+statements about the unweighted area. We illustrate this by giving a geometric proof of
+some results in <a class='org-ref-reference' href="#Cheng.etal84_HeatEquationsMinimal">Cheng.etal84_HeatEquationsMinimal</a> and
+<a class='org-ref-reference' href="#Hoffman.Spruck74_SobolevIsoperimetricInequalities">Hoffman.Spruck74_SobolevIsoperimetricInequalities</a>. 
+</p>
+
+<p>
+One application of the monotonicity chain is the following statement about minimising cones
+from <a class='org-ref-reference' href="#Anderson82_CompleteMinimalVarieties">Anderson82_CompleteMinimalVarieties</a>.
+</p>
+
+<div id="thm:minimising-cone" btit="(cf. Theorem 9 of cite:Anderson82_CompleteMinimalVarieties)" class="theorem">
+<p>
+If a \( k \)-dimensional radial cone \( C_\gamma \), constructed over a submanifold \(
+\gamma \) on the sphere at infinity of the Poincaré model is Euclidean area-minimising,
+then it is the only complete minimal surface asymptotic to \( \gamma \).
+</p>
+
+<p>
+In particular, area minimising cones in hyperbolic space are exactly those which are minimal in Euclidean space.
+</p>
+
+</div>
+
+<p>
+The first half of Theorem <a href="#thm:minimising-cone">thm:minimising-cone</a> is slightly stronger than the second
+half: Knowing that the pair of 2-planes \(zw =
+0\) in \( \mathbb{C}^2 \) is hyperbolic area-minimising only allows us to rule out minimal surfaces of \(
+\mathbb{H}^4 \) 
+that agree with the planes on a neighborhood of infinity.
+</p>
+
+<p>
+The pair of 2-planes in \( \mathbb{R}^4\cong
+\mathbb{C}^2 \) that contains the Hopf link \( \{zw=\epsilon, |z|^2 + |w|^2 = 1\} \) is
+not Euclidean area-minimising when \( \epsilon\in(0, \frac{1}{2}) \). Theorem
+<a href="#thm:minimising-cone">thm:minimising-cone</a> therefore suggests another minimal
+surface in the Poincaré ball filling the link. 
+We will point out an explicit family of minimal annuli with this
+property as the orbit of curves in the real plane \( \im z = \im w = 0 \) by the quaternionic rotation \( (z,w)\mapsto (ze^{i\theta},
+w e^{-i\theta})\). 
+The same construction also yields minimal annuli fibred by Hopf links under any metric  \( g =
+e^{2\varphi(\rho)}g_E\) of \( \mathbb{R}^4 \) that is conformal to the Euclidean metric by a factor \(
+\varphi\) depending only on \(\rho = |z|^2 +|w|^2 \).
+</p>
+
+<div id="prop:min-annuli" btit="()" class="proposition">
+<p>
+Let \( M_{C}\) be the surface in \( \mathbb{R}^4 \) given by rotating the following real plane curve:
+</p>
+\begin{equation}
+\label{eq:min-annuli}
+\sin^2\psi = \frac{e^{-4\varphi}}{C^2\rho^2}, \quad C > 0
+\end{equation}
+<p>
+where \( \psi \) is the angle formed by the tangent of the curve at a point \( p \) and the
+radial direction \( \overrightarrow{Op} \). Then \( M_{C} \) is
+minimal under the metric \( g =
+e^{2\varphi}g_E\). Up to \( SO(4) \), the annuli \( M_{C} \) and the 2-planes are the only
+minimal surfaces obtained as orbit of a real plane curve by quaternionic rotation.
+</p>
+
+</div>
+
+<p>
+In the round four-sphere, the family \( \{M_C\} \) starts with a Clifford torus and end
+with a totally geodesic \( \mathbb{S}^2 \). There is a countable number of parameter \( C
+\) in between for which the annulus \( M_C \) can be rearranged periodically to
+obtain a minimally immersed torus with one-dimensional self-intersection.
+The profile curves of \( M_C \) in \( \mathbb{H}^4 \) and
+\( \mathbb{S}^4 \) are drawn in Figure <a href="#fig:min-HS">fig:min-HS</a> for different values of \( C \). 
+</p>
+
+\begin{figure}%
+    \centering
+    \subfloat[\centering in \( \mathbb{H}^4 \) with \( C\) in \(\{.025, .1, .25, .5, 1, 2, 4, 8, 16, 64\} \).]{{\includegraphics[width=6.5cm]{../img/2021-01-21-minsurface-quaternion-H4.png} }}%
+    \qquad
+    \subfloat[\centering in \( \mathbb{S}^4 \) with \( C=6.15 \). The angle \( \theta_C\approx \frac{2\pi}{3} \). \newline The unit circle represents the Clifford torus.]{{\includegraphics[width=7cm]{../img/2021-06-3-petal.png} }}%
+    \caption{The profile curve of \( M_C \)}%
+    \label{fig:min-HS}%
+\end{figure}
+
+<p>
+Denote by  \( \omega_{k} \) the Euclidean \(k \)-volume of \( \mathbb{S}^{k} \). Another application of monotonicity theorem is:
+</p>
+<div id="cor:intro-2pi" btit="()" class="corollary">
+<p>
+The boundary at infinity of a complete \( k \)-dimensional minimal surface containing the center of
+Poincaré ball has Euclidean \( (k-1)
+\)-volume at least \( \omega_{k-1} \).
+</p>
+
+</div>
+
+<div class="definition">
+<p>
+Let  \( \gamma^{k-1}\) be a submanifold of the sphere at infinity and \( p \) be an interior
+point of the ball. We say that \( p \) is in the <i>center
+set</i> of \( \gamma \) if the Euclidean volume of \( \gamma \) in the Poincaré model centered at \( p \) is at least \( \omega_{k-1} \).
+</p>
+
+</div>
+
+<p>
+Corollary <a href="#cor:intro-2pi">cor:intro-2pi</a> can be rephrased as: A complete minimal surface of \( \mathbb{H}^n \) is
+contained in the center set of its boundary. 
+Together with the convex hull introduced in
+<a class='org-ref-reference' href="#Anderson82_CompleteMinimalVarieties">Anderson82_CompleteMinimalVarieties</a>, 
+the center set poses sufficient restriction on minimal surface filling a given curve to prove:
+</p>
+
+<div id="thm:separation" btit="()" class="theorem">
+<p>
+Let \( L^{k-1}:=  L_1 \sqcup L_2 \) be a separated union of two links \( L_1,
+L_2\) in \(\mathbb{S}^{n-1} \). There is a way to rearrange \( L \) in its isotopy class such
+that any minimal surface \( \Sigma^k \) in \( \mathbb{H}^n \) filling \( L \) is a disjoint union of minimal surfaces filling
+each \( L_i \).
+</p>
+
+</div>
+<div class="proof">
+<p>
+We isotope \( L \) so that \( L_1 \) (respectively \( L_2 \)) is contained in a small ball centered at the
+North (respectively South) pole of the Poincaré ball and so that the Euclidean volume of \( L \) is less than \( \frac{1}{2}\omega_{k-1} \). 
+It suffices to prove that \( \Sigma \) has no intersection with the equatorial hyperplane. By convexity, such
+intersection is contained in a small ball centered at the origin \( O \). If it was
+non-empty, by a small Möbius transform we could suppose that \( \Sigma \) contains \(
+O \) while keeping the Euclidean length of \( L \) less than \( \omega_{k-1} \). 
+This contradicts Corollary <a href="#cor:intro-2pi">cor:intro-2pi</a>.
+</p>
+
+</div>
+
+<p>
+It was proved in <a class='org-ref-reference' href="#Alexakis.Mazzeo10_RenormalizedAreaProperly">Alexakis.Mazzeo10_RenormalizedAreaProperly</a> that:
+</p>
+
+<div id="thm:AM" btit="(Alexakis--Mazzeo)" class="theorem">
+<p>
+Let  \( \mathcal{M}_{g, b} \) be the space of properly embedded, connected \(C^{3,\alpha} \)
+   two-dimensional minimal surfaces in \(
+   \mathbb{H}^3 \) of genus \( g \) and \( b \) boundary components, \( \mathcal{C}_b \)
+   be the space of \( C^{3,\alpha} \) closed, embedded curves of \( b \)
+   connected components in \(\mathbb{S}^2 \) and  \( \Pi_{g,b}:\mathcal{M}_{g,b} \longrightarrow
+   \mathcal{C}_b \) be the map which sends a surface to its boundary. Then
+</p>
+<ol class="org-ol">
+<li>\( \mathcal{M}_{g, b} \) is a Banach manifold.</li>
+<li>\( \Pi_{g,b} \) is proper, Fredholm, of index 0 and it has a well-defined degree \( d(g,b) \).</li>
+</ol>
+
+</div>
+
+<p>
+Since the only minimal surface filling a round circle of
+\( \mathbb{S}^2 \) is a totally geodesic disk, one has \( d(0,1) = 1 \) and \( d (g,1)=0
+\) for any \( g\geq 1 \). It follows from Theorem <a href="#thm:separation">thm:separation</a> that:
+</p>
+
+<div id="thm:AM-deg" btit="()" class="theorem">
+<p>
+All Alexakis&#x2013;Mazzeo degrees are zero except \( d(0,1) \).
+</p>
+
+</div>
+
+<p>
+It is of great interest to try to replace \( \mathbb{H}^3 \) in the statement of Theorem <a href="#thm:AM">thm:AM</a> by \(
+\mathbb{H}^4 \). The connected components of \( \mathcal{C}_b \) would be
+by definition knots (\(
+b=1 \)) or links (\( b>1 \)) and Alexakis&#x2013;Mazzeo degrees would be knot/link invariants.
+This direction was studied by Alves and Fine and their work will appear later. The results above
+suggest that one can distinguish the Hopf link from two unlinked circles by this method. It
+follows from Theorem <a href="#thm:separation">thm:separation</a> that the degree among surfaces of Euler characteristic zero of the
+latter vanishes while the
+existence of \( M_C \) suggests that it is non-zero for the former.
+</p>
+
+<p>
+The total area of a complete two-dimensional minimal surface in
+\( \mathbb{H}^n \) is necessarily infinite. By looking at its expansion as
+the surface runs to infinity, Graham and Witten
+<a class='org-ref-reference' href="#Graham.Witten99_ConformalAnomalySubmanifold">Graham.Witten99_ConformalAnomalySubmanifold</a> were able to renormalise the area to a
+finite number \( \mathcal{A}_R \).
+Both the time monotonicity and the space monotonicity theorems can be used to obtain upper
+bounds of this number. Note that the zero set of a
+space coordinate is a totally geodesic hyperplane which separates the sphere at infinity \( \mathbb{S}_\infty \) into two halves. The <i>doubled
+hyperbolic metric</i> is obtained by putting the \( {(n-1)} \)-dimensional hyperbolic metric on 
+each of them.
+</p>
+
+<div id="thm:upper-AR" btit="()" class="theorem">
+<p>
+Let \( \Sigma^2\subset \mathbb{H}^n \) be a minimal surface with boundary \( \gamma^1\in
+\mathbb{S}_\infty \). Then
+</p>
+\begin{equation}
+\label{eq:upper-AR}
+ \mathcal{A}_R(\Sigma) + \sup_{\text{round } \tilde g}|\gamma|_{\tilde g} \leq 0
+\end{equation}
+<p>
+where the supremum is taken among metrics of curvature +1 in the standard conformal class of \(
+\mathbb{S}_\infty \). 
+</p>
+
+</div>
+
+<p>
+By choosing any point of \( \Sigma \) as center of the Poincaré ball and
+applying Corollary <a href="#cor:intro-2pi">cor:intro-2pi</a>, one has: 
+</p>
+<div btit="()" class="corollary">
+<p>
+\( \mathcal{A}_R(\Sigma)\leq -2\pi \) for any minimal surface \( \Sigma^2 \) in \( \mathbb{H}^n \).
+</p>
+
+</div>
+
+<p>
+Corollary <a href="#cor:intro-AR-2pi">cor:intro-AR-2pi</a> can also be proved from the space version of
+Theorem <a href="#thm:upper-AR">thm:upper-AR</a>.
+</p>
+<div id="thm:intro-AR-space" btit="()" class="theorem">
+<p>
+If the space coordinate \( \xi_1 \geq \alpha >0 \) on a minimal surface \( \Sigma^2\subset
+\mathbb{H}^n\) then
+   \[ 
+   \mathcal{A}_R(\Sigma) + \frac{1}{2}\left(\alpha - \frac{1}{\alpha}\right)|\gamma_\infty|_{\tilde g} \leq 0  
+   \]
+where \( \tilde g \) is the doubled hyperbolic metric associated to \( \xi_1 \).
+</p>
+
+</div>
+
+<p>
+During the preparation of this paper, Theorem <a href="#thm:upper-AR">thm:upper-AR</a> and Corollary <a href="#cor:intro-AR-2pi">cor:intro-AR-2pi</a> were independently proved by Bernstein 
+in <a class='org-ref-reference' href="#Bernstein21_SharpIsoperimetricProperty">Bernstein21_SharpIsoperimetricProperty</a> using the work of Choe and Gulliver
+<a class='org-ref-reference' href="#Choe.Gulliver92_SharpIsoperimetricInequality">Choe.Gulliver92_SharpIsoperimetricInequality</a>. It was via
+<a class='org-ref-reference' href="#Bernstein21_SharpIsoperimetricProperty">Bernstein21_SharpIsoperimetricProperty</a> that the author learned about
+<a class='org-ref-reference' href="#Choe.Gulliver92_SharpIsoperimetricInequality">Choe.Gulliver92_SharpIsoperimetricInequality</a> and its companion
+<a class='org-ref-reference' href="#Choe.Gulliver92_IsoperimetricInequalitiesMinimal">Choe.Gulliver92_IsoperimetricInequalitiesMinimal</a>. Theorem <a href="#thm:monotonicity-H-time">thm:monotonicity-H-time</a> and
+<a href="#thm:monotonicity-S">thm:monotonicity-S</a> are indeed Theorem 3 of <a class='org-ref-reference' href="#Choe.Gulliver92_IsoperimetricInequalitiesMinimal">Choe.Gulliver92_IsoperimetricInequalitiesMinimal</a>, the time-weighted area in \(
+\mathbb{H}^n \) and the weighted area in \( \mathbb{S}^n \) (Section 3) were called
+<i>modified volume</i> there. The fact that a minimal surface in \( \mathbb{H}^n \) has less
+area than the cone built upon its boundary (Proposition 2 of
+<a class='org-ref-reference' href="#Choe.Gulliver92_SharpIsoperimetricInequality">Choe.Gulliver92_SharpIsoperimetricInequality</a>, Corollary <a href="#cor:2pi">cor:2pi</a> in this text) was crucial to the proof of sharp
+isoperimetric inequality \( 4\pi A + A^2 \leq L^2 \), where \( A \) is the area of a two-dimensional minimal surface
+and \( L \) is the length of its boundary. By this fact, since
+\( 4\pi A + A^2 \) is increasing in \( A \), it suffices to check the inequality only for
+cones. The Comparison Lemma <a href="#lem:comparison">lem:comparison</a> allows us to arrive at Corollary <a href="#cor:2pi">cor:2pi</a> in a 
+simpler way than <a class='org-ref-reference' href="#Choe.Gulliver92_SharpIsoperimetricInequality">Choe.Gulliver92_SharpIsoperimetricInequality</a>.
+</p>
+
+
+<p>
+One can hope, since a monotonicity theorem is an inequality, that the results above still
+ hold when the Hessian of the function \( h \) is comparable to the metric as symmetric
+ 2-tensors. Such function arises naturally as the distance function in a Riemannian
+ manifold whose sectional curvature is bounded from above. We explore this
+ idea in Section 5. We note that although the unweighted monotonicity theorem does
+ not hold in case of positive curvature, an unweighted monotonicity <i>inequality</i> was obtained
+ by Scharrer <a class='org-ref-reference' href="#Scharrer21_GeometricInequalitiesVarifolds">Scharrer21_GeometricInequalitiesVarifolds</a>.
+</p>
+
+<p>
+\paragraph{Acknowledgements.}
+The author thanks Joel Fine for introducing him to minimal surfaces and
+harmonic maps in hyperbolic space, for proposing the search of the minimal annuli \( M_C \) and
+for other valuable discussions. The paper
+<a class='org-ref-reference' href="#Hoffman.Spruck74_SobolevIsoperimetricInequalities">Hoffman.Spruck74_SobolevIsoperimetricInequalities</a> was pointed out to him by Christian Scharrer. The author was supported by 
+<i>Excellence of Science grant number 30950721, Symplectic techniques in differential geometry</i>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org874e545" class="outline-2">
+<h2 id="org874e545"><span class="section-number-2">2</span> The hyperbolic space and the sphere as warped spaces.</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+A metric on a Riemannian manifold \( M=N\times [a,b] \) is a <i>warped product</i> if it has the
+ form 
+</p>
+\begin{equation}
+\label{eq:warped-metric}
+ g = dr^2 + f^2(r) g_N 
+\end{equation}
+<p>
+where \( r\in [a,b] \) and \( g_N \) is a Riemannian metric on \( N
+\). It can be checked that an anti-derivative \( h \) of the warping function \( f \) satisifies  \( \hess(h) =
+f'(r) g \). On the other hand, if such function \( h \) exists, the space is locally
+warped by its level sets <a class='org-ref-reference' href="#Cheeger.Colding96_LowerBoundsRicci">Cheeger.Colding96_LowerBoundsRicci</a>.
+</p>
+
+<div id="prop:cheeger-colding" btit="(cf cite:Cheeger.Colding96_LowerBoundsRicci)" class="proposition">
+<p>
+Suppose that there exists a function \( h \) on \( (M,g) \) with no critical point,
+whose level set are connected and 
+</p>
+\begin{equation}
+\label{eq:xi}
+\hess h = U.g
+\end{equation}
+<p>
+for a function \(U\in C^0(M)\). Then:
+</p>
+<ol class="org-ol">
+<li>\( U=U(h) \) is a function of \( h \), i.e. a composition of \( h \) and a function \( U:
+   \mathbb{R}\longrightarrow \mathbb{R} \). The function \( V:= |dh|^2\in C^1(M) \) is
+also a function of \( h \) and one has \( U = \frac{1}{2}V' \).</li>
+<li>The metrics \( g_a, g_b \) induced from \( g \) on level sets \( h^{-1}(a) \) and \( h^{-1}(b) \) are related
+by \( \frac{g_a}{V(a)}= \frac{g_b}{V(b)}\) via the inverse gradient flow of \( h \). 
+This defines a metric \(
+   \tilde g \) on level sets under which the flow is isometric. 
+The metric \( g \) on \( M \) pulls back
+via the flow map \( h^{-1}(a)\times {\rm Range}(h) \longrightarrow M \) to
+\[
+    g = \frac{V(h)}{V(a)}g_a + \frac{dh^2}{V(h)} = V(h)\tilde g + \frac{dh^2}{V(h)},
+   \]
+which is a warped product after a change of variable \( dr = \frac{dh}{V(h)^{1/2}} \).</li>
+</ol>
+
+</div>
+
+<div class="proof">
+<p>
+For any vector field \( v \), one has 
+\[
+ v(V) = 2 g(\nabla_v \nabla h, \nabla h)= 2 \hess(h)(v, \nabla h) = 2U g(v, \nabla h)
+\]
+It follows, by first taking \( v \) to be any vector field tangent to level
+sets of \( h \), then to be the inverse gradient \(u:= \frac{\nabla h}{|\nabla h|^2} \), that
+\( V \) is constant on the level sets, and as a function of \( h \), \( V' = 2U \).
+</p>
+
+<p>
+For the second part, let \( v_t \) be a vector field of \( M \) tangent to level sets \(
+h^{-1}(t) \) given by 
+pushing forward via the flow of \(u \) a vector field \( v_a \) tangent to \( h^{-1}(a) \). The Lie bracket \( [v_t, u] \)
+vanishes by definition and for all time \( t \),
+\[
+ \frac{d}{dt}|v_t|^2 = 2 g(\nabla_u v_t, v_t) = 2 g(\nabla_{v_t}u, v_t) =
+\frac{2}{|\nabla h|^2}\hess(h)(v_t, v_t) = \frac{V'}{V}|v_t|^2.
+\]
+This means that \( \frac{|v_t|^2}{V(t)} \) is constant along the flow and so \(
+\frac{g_a}{V(a)} = \frac{g_b}{V(b)}\) for all \( a,b\in {\rm Range}(h) \).
+</p>
+
+</div>
+
+<p>
+We note that \( \tilde g \) is the metric \( g_N \) in \eqref{eq:warped-metric}. We will use
+\( \tilde g \) to denote the metric \( V(h)^{-1}g \) on \( M \). 
+</p>
+
+<p>
+In applications, we will only assume that the function \( h \) satisfies
+\eqref{eq:xi} on \( M \) and it can have critical points, as in the following examples.
+</p>
+
+<div btit="()" class="exampl">
+<p>
+In Euclidean space \( \mathbb{R}^n \), the only functions satisfying
+   \eqref{eq:xi} are the coordinates \( x_i, i=1,\dots,n \) with \( U=0, V=1 \) and the square of distance \( \rho := \frac{1}{2}\sum_{i=1}^n
+   x_i^2\) with \( U= 1, V = 2\rho \).
+</p>
+
+</div>
+
+<div btit="()" class="exampl">
+<p>
+In the unit sphere \( \mathbb{S}^n = \{(x_1,\dots, x_n, x_{n+1})\in
+\mathbb{R}^{n+1}:\sum_{i=1}^{n+1} x_i^2 = 1\} \), the Euclidean coordinates \( x_i \)
+ satisfy \eqref{eq:xi} with \( U = -x_i, V = 1-x_i^2 \). 
+</p>
+
+</div>
+
+<div btit="()" class="exampl">
+<p>
+In the hyperbolic space \( \mathbb{H}^n=\{(\xi_0,\dots,\xi_n)\in \mathbb{R}^{n,1}:
+   \xi_0^2 - \sum_{i=1}^n\xi_i^2=1, \xi_0 > 0\} \), the Minkowskian coordinates \( \xi_\alpha \) satisfies
+   \eqref{eq:xi} with \( U=\xi_\alpha, V = \xi_\alpha^2 + |\partial_{\xi_\alpha}|^2 \),
+   where  \( |\partial_{\xi_\alpha}|^2 \) is the Minkowskian norm, which is -1 for
+   time-like unit
+   vectors and +1 for space-like ones.
+</p>
+
+<p>
+Unlike the round sphere, the hyperbolic space can be written as a warped
+product in two different ways up to isometry. Each interior point corresponds to a
+unique time coordinate \( \xi_0 \) that it minimises and 
+each oriented totally geodesic hyperplane
+corresponds to a unique space coordinate \( \xi_1 \) that
+vanishes on it. Note that no other level set of \( \xi_1 \) is totally
+geodesic.
+</p>
+
+</div>
+
+<p>
+We remark that metric \( \tilde g \) in the case \( (\mathbb{R}^n, \rho), (\mathbb{S}^n, x_i) \) and
+   \( (\mathbb{H}^n, \xi_0) \) is the round metric on \( \mathbb{S}^{n-1}
+   \). For \((\mathbb{H}^n, \xi_1) \), \( \tilde g \)
+   is the doubled hyperbolic metric on \( \mathbb{S}^{n-1} \). 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2d7a272" class="outline-2">
+<h2 id="org2d7a272"><span class="section-number-2">3</span> Monotonicity Theorems and Comparison Lemma</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+The following lemma often appears as \( \dive_\Sigma X^\Sigma = \dive_\Sigma X + k(\Sigma)X
+\) where \( \Sigma \) is a submanifold of \( M \), \( X \) is a vector
+field along \( \Sigma \) and \( X^\Sigma \) is its tangent component to \( \Sigma
+\). Similarly, we will denote the gradient vector in \( M
+\) of a function \( h \) by \( \nabla
+h\) and its projection to \( \Sigma \) by \( \nabla^\Sigma h \).
+</p>
+<div id="lem:chain-rule" btit="(Leibniz rule)" class="lemma">
+<p>
+Let \( f:(\Sigma^k,g_\Sigma) \longrightarrow (M^n, g) \) be a map between Riemannian manifolds and \( \tau(f) \) be its tension
+field, then for any \( C^2 \) function \( h \) on \( M \), one has
+</p>
+\begin{equation}
+\label{eq:chain-rule}
+\Delta_{\Sigma} (h\circ f) = \tr_{\Sigma} f^*\hess h + dh.\tau(f)
+\end{equation}
+<p>
+In particular, the Laplacian of \( h \) on a submanifold \( \Sigma \) is given by 
+</p>
+\begin{equation}
+\label{eq:hess-lap}
+\Delta_\Sigma h = \tr_\Sigma \hess h  
+\end{equation} 
+<p>
+if \( \Sigma \) is either minimal or tangent to the gradient of \( h \) at the point in question.
+</p>
+
+</div>
+</div>
+
+<div id="outline-container-orgf81a2ce" class="outline-3">
+<h3 id="orgf81a2ce"><span class="section-number-3">3.1</span> Weighted monotonicity</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Condition \eqref{eq:xi} forces all non-degenerate critical points of \( h \) to be either
+ local maxima or local minima. The functions in Examples <a href="#ex:xi-R">ex:xi-R</a>,
+<a href="#ex:xi-S">ex:xi-S</a>, <a href="#ex:xi-H">ex:xi-H</a> fall into two types:
+</p>
+<ol class="org-ol">
+<li>\( h \) has no other critical value than its minimum \( h_{\min} \) and the sublevel sets
+\( \{h\leq t\} \) are compact. 
+This is the case of \( (\mathbb{R}^n,\rho), (\mathbb{S}^n\setminus\{\rm pt\},x_i) \) and \( (\mathbb{H}^n,\xi_0) \).</li>
+<li>\( h \) has no critical point and the sublevel sets are no longer
+compact, as in the case of \( (\mathbb{H}^n,\xi_1) \).</li>
+</ol>
+
+<p>
+Given a subset \( \gamma \) of a level set of \( h \), the <i>\( h\)-tube</i> \( T_{\gamma}(t_1, t_2) \) is obtained by flowing \( \gamma \) along the
+gradient field of \( h \) from level \( h=t_1 \) to level \( h=t_2 \). When \( h
+\) is of the first type and \( t_1=h_{\min} \), this is visually a cone.
+</p>
+
+<p>
+For a function \(h \) of the first type, we define the <i>weighted area</i> and the <i>weighted density</i> of a surface \( \Sigma^k \) to be
+</p>
+\begin{equation}
+\label{eq:xi-weighted-area}
+ A_h(\Sigma)(t) := \int_{\Sigma,h\leq t}U,\qquad \Theta^A_h(t) := \frac{A_h(t)}{\frac{\omega_{k-1}}{k}V^{k/2}(t)}.
+\end{equation}
+<p>
+Note that the denominator of \( \Theta_h^A \) is up to constant the weighted area of
+a tube \( T_\gamma(h_{\min},t) \):
+</p>
+\begin{equation}
+\label{eq:area-tube-1}
+A_h(T_\gamma)= \frac{|\gamma|}{k} \left(V(t)^{k/2}- V(h_{\min})^{k/2}\right) = \frac{|\gamma|}{k} V(t)^{k/2}
+\end{equation}
+<p>
+where \( |\gamma| \) is the volume of \( \gamma \) under the metric \( \tilde g \).
+</p>
+
+<p>
+For the second type, it is possible that the integral
+in \eqref{eq:xi-weighted-area} does not converge. One can remedy this by only counting
+area in the region \( h\geq h_0 \). We will assume that \( \Sigma \) intersects
+the level set \( h^{-1}(h_0) \) at a smooth \( (k-1) \)-dimensional submanifold \(
+\gamma_0 \) and define the weighted area and the weighted density by
+</p>
+\begin{equation}
+\label{eq:xi-weighted-area-plus}
+B_h(\Sigma)(t):= \int_{\Sigma,h_0\leq h\leq t}U(h) + \frac{1}{k}\int_{\gamma_0}|\nabla^\Sigma h|,\qquad \Theta_h^B:=
+\frac{B_h(t)}{\frac{\omega_{k-1}}{k}V^{k/2}(t)}.
+\end{equation}
+<p>
+which are finite for a large class of surfaces. The denominator of \( \Theta^B_h \) is again the
+weighted area of a tube \( T_\gamma(h_0,t) \):
+</p>
+\begin{equation}
+\label{eq:area-tube-2}
+ B_h(T_\gamma)= \frac{|\gamma|}{k}(V(t)^{k/2} - V(h_0)^{k/2}) + \frac{|\gamma|}{k}V(h_0)^{k/2} = \frac{|\gamma|}{k}V(t)^{k/2}.
+\end{equation}
+
+<div id="thm:monotonicity-warped" btit="(Weighted Monotonicity)" class="theorem">
+<p>
+Suppose that \( h\) is a \( C^2 \) function on a Riemannian manifold \( M \) that
+satisfies \eqref{eq:xi} with \( U \) and \(V= |\nabla h|^2 \) being functions of \( h \)
+such that \( U = \frac{1}{2}V' \). Let \( \Sigma^k \) be a minimal
+surface in \( M \).
+Assume that the integral in \eqref{eq:xi-weighted-area} (respectively
+\eqref{eq:xi-weighted-area-plus})  is finite, then \( \frac{d}{dt}\Theta^A_h \)
+(respectively \(\frac{d}{dt}\Theta^B_h\) ) has the same sign as \( U \).
+</p>
+
+<p>
+Moreover, the conlusion still holds for an extension  \( \tilde\Sigma \)  of a minimal
+surface \( \Sigma^k\subset\{h \leq t_0\} \) whose boundary \( \gamma^{k-1} \) is piecewise
+smooth and contained in \( h^{-1}(t_0) \) by an 
+exterior \( h \)-tube \( T_{\gamma}(t_0, t)\) built upon \( \gamma \). 
+</p>
+
+<p>
+In both case,  \( \frac{d}{dt}\Theta^A_h \) (respectively \(\frac{d}{dt}\Theta^B_h\) )
+vanishes if and only if the gradient of \( h \) is tangent to \( \Sigma \).
+</p>
+
+</div>
+<div class="proof">
+<p>
+It follows from Lemma <a href="#lem:chain-rule">lem:chain-rule</a> that \( \Delta_\Sigma h = kU \) on \( \Sigma \). By
+Stokes' theorem,
+</p>
+\begin{equation}
+\label{eq:stokes}
+A_h(t) = \int_{\Sigma,h\leq t} U(h) = \frac{1}{k}\int_{\Sigma,h\leq t}\Delta_\Sigma h = \frac{1}{k}\int_{\Sigma,h=t}\nabla^\Sigma h\cdot n = \frac{1}{k}\int_{\Sigma,h=t}|\nabla^\Sigma h|
+\end{equation}
+<p>
+because the outer normal of \( \{h\leq t\} \) in \( \Sigma \) is \( n=
+\frac{\nabla^{\Sigma} h}{|\nabla^{\Sigma} h|} \). By the coarea formula, 
+\[
+ \frac{dA_h}{dt} = U(t)\int_{\Sigma,h = t} \frac{1}{|\nabla^\Sigma h|}.
+\]
+Combining this with \eqref{eq:stokes} and \( |\nabla^\Sigma h|^2\leq  V(h) \), one has \( \frac{1}{U}\frac{dA_h}{dt} \geq \frac{k A}{V}
+ \), or
+\(
+\frac{1}{U} \frac{d}{dt}(\frac{A_h}{V^{k/2}})\geq 0
+\).
+</p>
+
+<p>
+Similarly, one has \( B_h(t) = \frac{1}{k}\int_{\Sigma,h = t}|\nabla^\Sigma h| \), and
+\(\frac{dB_h}{dt} = U(t)\int_{\Sigma,h = t} \frac{1}{|\nabla^\Sigma h|}\) and the
+same conclusion is drawn for the second type function.
+</p>
+
+<p>
+For cone extension, it suffices to rewrite equation \eqref{eq:stokes} when \( t > t_0 \) as
+   \[
+    kA_h(t) = \left(\int_{\Sigma,h\leq t_0}+
+   \int_{T_{\gamma}(t_0,t)}\right)\Delta h =
+   \int_{\tilde\Sigma,h=t}|\nabla^{\tilde\Sigma} h| +
+   \int_{\gamma}\left( |\nabla^\Sigma h| - |\nabla^M h|  \right)\leq
+   \int_{\tilde\Sigma,h=t}|\nabla^{\tilde\Sigma} h|.
+   \]
+</p>
+
+</div>
+
+<div id="rem:monotonicity-warped" class="remark">
+<ol class="org-ol">
+<li>If \( \Sigma \) contains a multiple of \( \gamma \), the area of the tube should be counted with multiplicity.</li>
+<li>We only need the "\( \leq \)" sign in \eqref{eq:stokes} and hence it suffices that \( \Delta_\Sigma h \geq k U(h) \). Theorem <a href="#thm:monotonicity-warped">thm:monotonicity-warped</a>
+still holds if \( \hess h\geq
+   U.g \), provided that \( U \) and \( V = |d h|^2 \) are still
+functions of \( h \) and that \( U = \frac{1}{2}V' \).</li>
+</ol>
+
+</div>
+
+<div id="rem:monotonicity-current" class="remark">
+<p>
+When \( \Sigma \) is a stationary rectifiable \( k \)-current, the proof of Theorem
+   <a href="#thm:monotonicity-warped">thm:monotonicity-warped</a> can be adapted in the same fashion as
+   <a class='org-ref-reference' href="#Anderson82_CompleteMinimalVarieties">Anderson82_CompleteMinimalVarieties</a> and  <a class='org-ref-reference' href="#Ekholm.etal02_EmbeddednessMinimalSurfaces">Ekholm.etal02_EmbeddednessMinimalSurfaces</a>. We replace the integration by part \eqref{eq:stokes}
+   by the first variation formula of current, which reads \( \int_\Sigma
+   {\rm div}_\Sigma X\ d\|\Sigma\| = 0 \) where \( X \) is any smooth vector field and
+   \( d\|\Sigma\| \) is the mass measure. We recover \( k A_h - \frac{V}{U}A'_h \leq 0 \)
+   by choosing  \(X:= \chi(h)\nabla h
+   \) where \( \chi \) is a decreasing function that approximates the characteristic
+   function of \( [-\infty, t]\), and by noting that \( \dive_\Sigma X =   \chi' |\nabla^\Sigma h|^2 + \chi\Delta_\Sigma h \geq \chi' V + k \chi U\).
+</p>
+
+<p>
+For the tube extension and the formulation of \( B_h \) when \( h \) is of the second
+   type, we replace the intersection \(
+   \gamma =\Sigma \cap h^{-1}(t_0) \) (or \( \gamma_{0} = \Sigma\cap h^{-1}(h_0) \) respectively) by an
+   \( \mathcal{H}^{k-1} \)-rectifiable set such that the pair  \(
+   (\Sigma, \gamma) \) is <i>strongly stationary</i>. This means that 
+\( \int_\Sigma {\rm div}_\Sigma X
+   \leq \int_{\gamma} |X^\perp| \) 
+for any smooth vector field \( X \) whose normal
+   component to \( \gamma \) is \( X^\perp \), or equivalently that there exists an \(
+   \mathcal{H}^{k-1} \)-measurable normal vector field \( \nu \) on \( \gamma \) with \(
+   \sup|\nu| \leq 1 \) such that \(
+   \int_\Sigma {\rm div}_\Sigma X = \int_\gamma g(X,\nu) \). 
+The definition \eqref{eq:xi-weighted-area-plus} should be rewritten for strongly stationary
+   pair \( (\Sigma,\gamma_0) \) as
+\[ B_h(\Sigma)(t):= \int_{\Sigma}U(h) - \frac{1}{k}\int_{\gamma_0}g(\nabla h,\nu_0).
+\]
+</p>
+
+</div>
+<p>
+Theorem <a href="#thm:monotonicity-warped">thm:monotonicity-warped</a> can also be extended for harmonic maps. Given a map \(
+f:\Sigma \longrightarrow M \), we
+define its <i>dimension at a point</i> \( p\in \Sigma \) to be the ratio \(\frac{|df_p|^2}{|df_p|_o^2}\)
+of the tensor norm of the derivative at \( p \) (called energy
+density) and its operator norm, or \(
++\infty \) if the latter vanishes. Note that when \( df_p \) is non-zero and conformal, 
+this is the dimension of \( \Sigma \). The <i>dimension</i> of \( f \), defined as the smallest
+dimension among all points, will play the role of \( k\) in our argument.
+</p>
+
+<p>
+The <i>weighted Dirichlet energy</i> of \( f \)
+in the region \( h\leq t \) is defined as \( E_h(t):=\int_{\Sigma, h\circ f\leq t} U |df|^2 \) or \( E_h(t):=
+\int_{\Sigma, h_0\leq h\circ f\leq t} U|df|^2 + \int_{\Sigma,h\circ f = h_0}|d(h\circ f)|\)
+depending on the type of \( h \). The <i>weighted density</i> is \( \Theta_h(t):= \frac{E_h(t)}{V(t)^{k/2}} \).
+</p>
+
+<div class="theorem">
+<p>
+Let \( h, U, V \) be as in Theorem <a href="#thm:monotonicity-warped">thm:monotonicity-warped</a> and
+\( f:\Sigma \longrightarrow M \) be a harmonic map. Then \( \frac{d}{dt}\Theta_h
+\) has the same sign as \( U \). 
+</p>
+
+</div>
+<div class="proof">
+<p>
+By Lemma <a href="#lem:chain-rule">lem:chain-rule</a> one has \( \Delta (h\circ f) = U |df|^2 \) and by
+integration by part, \( E_h(t) = \int_{\Sigma, h\circ f = t} |d(h\circ f)| \). One then
+compares \( E_h \) with its derivative obtained from coarea formula \( \frac{dE_h}{dt} = U(t) \int_{\Sigma, h\circ f = t}
+\frac{|df|^2}{|d(h\circ f)|} \).
+The definition of 
+\( k \) guarantees \( \frac{|df|^2}{|d(h\circ f)|} \geq k \frac{|d(h\circ f)|}{|dh|^2} \) and therefore \( U^{-1}\frac{dE_h(t)}{dt} \geq \frac{k}{V}E_h \). 
+</p>
+
+</div>
+
+
+<p>
+We will restate Theorem <a href="#thm:monotonicity-warped">thm:monotonicity-warped</a> when \( M \) is the hyperbolic space
+and the sphere. 
+</p>
+
+<p>
+Given a time coordinate \( \xi_0 \) of \( \mathbb{H}^n \),
+the <i>time-weighted area</i> functional is defined as
+\[
+ A_{\xi_0}(\Sigma)(t):= \int_{\Sigma,1\leq \xi_0\leq t}\xi_0,
+\]
+For a totally geodesic copy of \(\mathbb{H}^k\) in \( \mathbb{H}^n \) passing by \( \xi_0^{-1}(1) \), it is given by
+\(
+A_{\xi_0}(\mathbb{H}^k)(t)={\frac{\omega_{k-1}}{k}(t^2-1)^{k/2}}
+\).
+Define the <i>time-weighted density</i> by \(
+\Theta_{\xi_0}(\Sigma)(t):=\frac{A_{\xi_0}(\Sigma)(t)}{A_{\xi_0}(\mathbb{H}^k)(t)}
+\) and substitute \( h=\xi_0 \) into Theorem
+<a href="#thm:monotonicity-warped">thm:monotonicity-warped</a>, one has:
+</p>
+<div id="thm:monotonicity-H-time" btit="(Time Monotonicity)" class="theorem">
+<p>
+The time-weighted density of an extension by exterior
+\(\xi_0 \)-tube of a minimal
+surface is increasing on \( (1,+\infty) \).
+</p>
+
+</div>
+
+<p>
+To state the weighted monotonicity theorem corresponding to a space coordinate \( \xi_1 \),
+we will assume that the surface \( \Sigma^k \) is contained in the region \(
+\{\xi_1 \geq 0\}
+\) and that its boundary consists of a (possibly empty) part
+\(\gamma_0\) in \(\xi_1^{-1}(0) \) and a part \( \gamma_\infty\) in \( \mathbb{S}_\infty \), both of them
+are disjoint from the equator \( \xi_1^{-1}(0) \cap \mathbb{S}_{\infty} \).
+The <i>space-weighted area</i> functional is defined by
+\[
+B_{\xi_1}(\Sigma)(t):=\int_{\Sigma, 0\leq\xi_1\leq t}\xi_1 + \frac{1}{k}\int_{\Sigma,\xi_1=0}|\nabla^\Sigma\xi_1|
+\]
+and is finite for such surface \( \Sigma \). In particular, if  \(
+\gamma^{k-1}\) is a submanifold in the interior of \( \xi_1^{-1}(0) \) with hyperbolic volume \( |\gamma| \), the \(
+\xi_1 \)-tube  \( T_\gamma(0,t) \) built upon \( \gamma \) has space-weighted area \(\frac{|\gamma|}{k}(t^2+1)^{k/2}
+\).
+The <i>space-weighted density</i> is defined as \(
+\Theta_{\xi_1}(t):=\frac{B_{\xi_1}(\Sigma)(t)}{\frac{\omega_{k-1}}{k}(t^2+1)^{k/2}} \) and is
+constant for such tube.
+</p>
+<div id="thm:monotonicity-H-space" btit="(Space Monotonicity)" class="theorem">
+<p>
+The space-weighted density of an extension by exterior \(\xi_1 \)-tube of a minimal
+surface is increasing on \( (0,+\infty) \).
+</p>
+
+</div>
+
+<p>
+When \( M \) is the round sphere \( \mathbb{S}^n \) seen as a warped space using an Euclidean coordinate \( x=x_i \), we
+define the <i>weighted area</i> and <i>weighted density</i> by
+\[
+ A_x(\Sigma)(t):= \int_{\Sigma,x\geq t}x,\qquad \Theta_x(\Sigma)(t) :=
+\frac{A_x(\Sigma)(t)}{A_x(\mathbb{S}^k)(t)}.
+\]
+A totally geodesic \( \mathbb{S}^k\subset \mathbb{S}^n \) passing by \( x^{-1}(1) \) has  \(
+A_x(\mathbb{S}^k)(t) = \frac{\omega_{k-1}}{k}(1-t^2)^{k/2}
+\). 
+It follows from Theorem <a href="#thm:monotonicity-warped">thm:monotonicity-warped</a> for \(h=1-x \) that:
+</p>
+
+<div id="thm:monotonicity-S" btit="()" class="theorem">
+<p>
+The weighted density of an extension by exterior
+\(x \)-tube of a minimal surface in \( \mathbb{S}^n \), is decreasing on \( (0, 1) \) and increasing on \( (-1,0) \).
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orgaab7c82" class="outline-3">
+<h3 id="orgaab7c82"><span class="section-number-3">3.2</span> Comparison lemma</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+It is useful to weight the area functional of \eqref{eq:xi-weighted-area} by a
+function \( P(h) \) other than \( U(h) \). The <i>\( P \)-area</i> is defined
+by 
+\[ 
+A_P(\Sigma)(t):= \int_{\Sigma,h\leq t}P(h), \quad B_P(\Sigma)(t):=\int_{\Sigma,h_0\leq h\leq t}P(h) +
+\frac{1}{k}\int_{h=h_0}|\nabla^\Sigma h|.
+\]
+We normalise
+the \( P \)-area of a minimal surface by that of an \( h \)-tube,
+which is up to a factor
+</p>
+\begin{equation}
+\label{eq:Q}
+Q(t):=
+\begin{cases}
+\omega_{k-1}\int_{h\leq t} P(h)V^{\frac{k}{2}-1}(h) dh,  & \text{if $h$ is of the first type}, \\
+\omega_{k-1}\left(\int_{h=h_0}^t P(h)V^{\frac{k}{2}-1}(h)dh + \frac{1}{k}V(h_0)^{k/2}\right) & \text{if $h$ is of the second type}
+\end{cases}
+\end{equation}
+<p>
+and define the <i>\( P \)-density</i> as 
+\( \Theta_P(\Sigma)(t):= \frac{A_P(t)}{Q(t)}\) or \( \frac{B_P(t)}{Q(t)}\)
+respectively. When \( P=U \), these are the weighted area/density defined in
+\eqref{eq:xi-weighted-area} and \eqref{eq:xi-weighted-area-plus}. We will always assume that the weight function is positive in the relevant
+region of \( M \). 
+</p>
+<div btit="()" class="exampl">
+<ol class="org-ol">
+<li>On the round sphere \( \mathbb{S}^n \), modeled as the compactification of \( \mathbb{R}^n \)
+with \( g_{\mathbb{S}^n}= \frac{4}{(1+r^2)^2}g_E \), the function \( x:=
+   \frac{1-r^2}{1+r^2} \) is the Euclidean
+coordinate of Example <a href="#ex:xi-S">ex:xi-S</a> that is maximised at the origin and minimised at 
+infinity. The Euclidean area of \( \mathbb{R}^n \) is a \( P \)-area with \(
+   P = (1+x)^{-k} \).</li>
+<li>In the Poincaré ball \( \mathbb{B}^n \) with metric \( g_{\mathbb{H}^n}=
+   \frac{4}{(1-r^2)^2}g_E \), the function \( \xi_0 := \frac{1+r^2}{1-r^2} \) is the time
+coordinate minimised at the center. The Euclidean area corresponds to \( P = (1+\xi_0)^{-k} \). 
+The unweighted area of the round metric \(
+   g_{\mathbb{S}^n} \) corresponds to \( P=\xi_0^{-k} \) and the \( x \)-weighted area above
+corresponds to \( P = \xi_0^{-k-1} \).</li>
+</ol>
+
+</div>
+
+<div class="definition">
+<p>
+Given 2 weight functions \( P_1, P_2 \) whose tube area \( Q_1, Q_2 \) are defined by
+\eqref{eq:Q}, we say that \( P_1 \) is <i>weaker</i> than \( P_2 \) if \(
+\frac{P_1}{Q_1}\leq \frac{P_2}{Q_2} \), in other words if \(
+\frac{d}{dt}\frac{Q_1}{Q_2}\leq 0 \), i.e. the \( P_2 \)-area 
+of a \( k \)-dimensional tube increases faster than its \( P_1 \)-area. This is obviously
+a transitive relation.
+</p>
+
+</div>
+
+
+<div id="lem:comparison" btit="(Comparison)" class="lemma">
+<p>
+Let \( \Sigma^k\subset M^n\) be any surface (not necessarily minimal), \( P_1, P_2 \) be
+two non-negative continuous
+weights and \( \Theta_1,\Theta_2 \) be the corresponding densities.
+</p>
+
+<ol class="org-ol">
+<li>Suppose that \( P_1\) is weaker than \( P_2 \) and that \( \frac{d\Theta_2}{dt}\geq 0 \), then one has \(
+   \Theta_1\leq\Theta_2 \) and 
+\[ 
+   \frac{d\Theta_1}{dt} \geq \frac{Q_2}{P_2}\frac{P_1}{Q_1}
+   \frac{d\Theta_2}{dt}.
+   \]
+In particular, the density \( \Theta_1 \) is also increasing.</li>
+<li>On the other hand, if \( P_2 \) is weaker than \( P_1 \) and \(
+   \frac{d\Theta_2}{dt}\geq 0 \), then one has \( \Theta_1\geq\Theta_2 \).</li>
+</ol>
+
+</div>
+<div class="proof">
+<p>
+One has \( P_1^{-1} \frac{dA_{P_1}}{dt} = P_2^{-1}\frac{dA_{P_2}}{dt} \) from coarea
+formula, therefore
+</p>
+\begin{equation}
+\label{eq:comparison-1}
+\frac{Q_1}{P_1}\frac{d\Theta_1}{dt} + \omega_{k-1}V^{\frac{k}{2}-1}\Theta_1 = \frac{Q_2}{P_2}\frac{d\Theta_2}{dt} + \omega_{k-1}V^{\frac{k}{2}-1}\Theta_2
+\end{equation}
+<p>
+which can be rearranged into
+</p>
+\begin{equation}
+\label{eq:comparison-2}
+P_1^{-1} \frac{d}{dt}\left( Q_1(\Theta_1 -\Theta_2) \right) = \left(\frac{Q_2}{P_2}-\frac{Q_1}{P_1}\right) \frac{d\Theta_2}{dt}
+\end{equation}
+<p>
+For the second part of the Lemma, it follows from the hypothesis  that the RHS of
+\eqref{eq:comparison-2} is positive, and therefore \( Q_1(
+\Theta_1- \Theta_2) \) is an increasing function. The latter vanishing at \( t=0 \) for both types of function \( h \) means that \( \Theta_1\geq\Theta_2 \)
+for all time.
+</p>
+
+<p>
+For the first part, the RHS of \eqref{eq:comparison-2} is negative by hypothesis and
+ therefore \( \Theta_2 \geq \Theta_1 \). The rest of the conclusion follows by substituing this into \eqref{eq:comparison-1}.
+</p>
+
+</div>
+
+
+<div id="rem:comparison" class="remark">
+<p>
+In the Poincaré ball \( \mathbb{B}^n \) (see Example <a href="#ex:weight-P">ex:weight-P</a>), let 
+   \( P_1 = \xi_0^{-k-1}\), \(P_2 =\xi_0^{-k}\), \(P_3 = (1+\xi_0)^{-k}\), \(P_4=1\) and \( P_5=\xi_0
+   \). It can be checked that \( P_i \) is weaker than \( P_{i+1} \). Lemma
+   <a href="#lem:comparison">lem:comparison</a> says that there is the following chain of monotonicity:
+</p>
+\begin{equation}
+\label{eq:chain}
+\text{time-weighted }  g_{\mathbb{H}^n} \gg   \text{unweighted } g_{\mathbb{H}^n}
+\gg g_E  \gg \text{unweighted } g_{\mathbb{S}^n}   \gg \text{weighted } g_{\mathbb{S}^n} 
+\end{equation}
+<p>
+where any surface \( \Sigma^k\subset \mathbb{B}^n \) having increasing density of one area
+functional in the chain will automatically have increasing density of any area functional
+following it.
+</p>
+
+</div>
+
+
+<p>
+Let \( \tilde\Sigma^k \) be a tube extension of a minimal surface as in Theorem
+<a href="#thm:monotonicity-warped">thm:monotonicity-warped</a>. It turns out that the additional
+information gained in the tube region \( h \geq t_0 \) from the monotonicity of the \( P
+\)-density can be rewriten as a comparison of the
+\( P \)-area of \( \Sigma \) and that of the tube.
+</p>
+
+<div id="lem:less-than-tube" btit="()" class="lemma">
+<p>
+The density \( \Theta_P(t) \) of \( \tilde \Sigma \) is increasing on \( t \geq t_0 \) if and
+only if
+\[
+ A_P(\Sigma)(t_0) \leq A_P(T_\gamma(h_{\min}, t_0))\quad (\text{respectively }
+B_P(\Sigma)(t_0)\leq B_P(T_\gamma(h_0, t_0)))
+\]
+when \( h \) is of first (respectively second) type.
+</p>
+
+</div>
+<div class="proof">
+<p>
+It follows directly from \(
+\frac{Q(t)}{Q(t_0)}=\frac{A_P(T_\gamma(h_{\min},t))}{A_P(T_\gamma(h_{\min},t_0))} \) (or
+\(\frac{B_P(T_\gamma(h_0,t))}{B_P(T_\gamma(h_0,t_0))}\) for second type).
+</p>
+
+</div>
+
+<div id="cor:less-than-tube" btit="()" class="corollary">
+<p>
+Let \( P \) be a weaker weight than \( U \). Then in the region \( U\geq 0 \), the \( P
+\)-density of a minimal surface is an increasing function and its \( P
+\)-area in \( \{h\leq t\} \) (respectively \( \{h_0\leq h\leq t\} \)) is less than
+that of the \( h \)-cone (respectively tube) with the same boundary.
+</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgeee0ea4" class="outline-2">
+<h2 id="orgeee0ea4"><span class="section-number-2">4</span> Applications to minimal surfaces in \( \mathbb{S}^n \) and \( \mathbb{H}^n \)</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+It is well known that there is no closed minimal surfaces in any hemisphere of \(
+\mathbb{S}^n \).  To see this, let \( x \) be the Euclidean coordinate that is positive on
+the hemisphere then any closed minimal surface has \(\int x = 0 \). 
+Quantitatively, one has:
+</p>
+<div btit="()" class="corollary">
+<p>
+Let \( \Sigma^k \subset \mathbb{S}^n\) be a minimal surface (or its extension by \( x \)-tube), \(
+\gamma_t\) be its intersection with \( x^{-1}(t) \), \( t\in[0,1] \). Let
+\( |\gamma_t|_{\tilde g} \) be the volume of \( \gamma_t \) under the metric \( \tilde g
+\) of Proposition <a href="#prop:cheeger-colding">prop:cheeger-colding</a>. <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> 
+</p>
+<ol class="org-ol">
+<li><p>
+One has 
+</p>
+\begin{equation}
+\label{eq:cor-sphere-1}
+  A_x(\Sigma)(t):=\int_{\Sigma, x\geq t}x  \leq \frac{|\gamma_t|_{\tilde g}}{k} (1-t^2)^{k/2}
+\end{equation}</li>
+<li><p>
+Let \( m \) be the density of \( \Sigma \) at the North pole, then \( \Theta_x(t)\geq
+   m \), i.e.
+</p>
+\begin{equation}
+\label{eq:cor-sphere-2}
+A_x(\Sigma)(t) \geq m\frac{\omega_{k-1}}{k}(1-t^2)^{k/2}   
+\end{equation}</li>
+</ol>
+<p>
+In particular, if \( \Sigma \) contains the North pole \( x^{-1}(1) \) then the \( g_{\mathbb{S}^n} \)-volume of \( \gamma_t \) is bigger than that of a great \( (k-1) \)-sphere in \( x^{-1}(t) \), which is \( \omega_{k-1}(1-t^2)^{k/2} \).
+</p>
+
+</div>
+<div class="proof">
+<p>
+The first part follows from Corollary <a href="#cor:less-than-tube">cor:less-than-tube</a>, the second part
+from \( \lim_{t\to 1}\Theta_x(t) = m \).
+</p>
+
+</div>
+
+<p>
+Although the weight \( x \) is weaker than the uniform weight, we can still obtain a
+statement about the unweighted area from the second
+half of Lemma <a href="#lem:comparison">lem:comparison</a>. We illustrate the technique by giving a geometric proof of the following volume
+bound from <a class='org-ref-reference' href="#Cheng.etal84_HeatEquationsMinimal">Cheng.etal84_HeatEquationsMinimal</a>. Our technique can be used in spaces with curvature bounded from above (see Proposition <a href="#prop:uniform-area-sphere">prop:uniform-area-sphere</a>).
+</p>
+<div btit="()" class="corollary">
+<ol class="org-ol">
+<li>Let \( \Sigma^k \) be a minimal surface (or its extension by \( x \)-tube) in \(
+   \mathbb{S}^n \) that contains the North pole \( O =
+   x^{-1}(1) \) with multiplicity \( m \). Suppose that \( \Sigma \) has no boundary in the interior of the geodesic
+ball \( B(O,s) \) for a certain \( s < \frac{\pi}{2} \), then the volume of \( \Sigma\cap B(O,s) \) is at least \(
+   m \) times that of the ball of radius \( s \) in \( \mathbb{S}^k \), i.e.
+\[
+     A(\Sigma\cap B(O,s)) \geq m \omega_{k-1}\int_{r=0}^{s} \frac{\sin^{k-1}(br)}{b^{k-1}}dr 
+   \]</li>
+<li>Any closed \( k \)-dimensional minimal surface of \( \mathbb{S}^n \) has volume at least \(
+   \omega_k \). Equality happens only for totally geodesic spheres.</li>
+</ol>
+
+</div>
+<div class="proof">
+<p>
+The first part follows from Lemma <a href="#lem:comparison">lem:comparison</a> and Corollary <a href="#cor:sphere">cor:sphere</a>:  \( \Theta_1(t)\geq \Theta_x(t)\geq m\) for all \( 0\leq
+ t\leq 1\), where \( \Theta_1 \) is the unweighted density. 
+</p>
+
+<p>
+For the second part, \( \Sigma \) may not contain the
+South pole \( -O \), but we still have the same lower bound for the \( (-x) \)-weighted area of \(
+\Sigma \) in the southern hemisphere because
+\[
+A_x(\Sigma\cap B(O,\frac{\pi}{2})) - A_{-x}(\Sigma\cap B(-O,\frac{\pi}{2})) = \int_\Sigma x = -\int_\Sigma \Delta x = 0.
+\]
+</p>
+
+</div>
+</div>
+
+<div id="outline-container-orgea570b7" class="outline-3">
+<h3 id="orgea570b7"><span class="section-number-3">4.1</span> Time monotonicity</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+The non-existence of closed minimal surfaces in the hyperbolic space, or
+Minkowskian hemisphere, can
+be seen via the time coordinate \( \xi_0 \) which would have vanishing integral over such
+surface. Each choice of interior point \( p\in \mathbb{H}^n \) as center of the Poincaré ball defines a
+time coordinate \( \xi_0=\frac{1+r^2}{1-r^2} \) and a metric
+\( \tilde g_p = \frac{g_{\mathbb{H}^n}}{\xi_0^2 - 1} \) on \(
+{\mathbb{H}^n\setminus\{p\}}\) which extends to the Euclidean metric on the boundary of
+the ball.  Conversely, all round metrics in
+the standard conformal class of \( \mathbb{S}^{n-1} \) are obtained this way. 
+</p>
+
+<p>
+Corollary <a href="#cor:2pi">cor:2pi</a> below is the hyperbolic version of Corollary <a href="#cor:sphere">cor:sphere</a> and it
+follows from Corollary <a href="#cor:less-than-tube">cor:less-than-tube</a> for the time-weighted area and the
+unweighted area.
+</p>
+
+<div btit="()" class="corollary">
+<p>
+Let \( \Sigma^k \subset \mathbb{H}^n\) be a minimal surface (or its extension by \( \xi_0 \)-tube), \( \gamma_t \) be its
+intersection with \( \xi_0^{-1}(t) \), \( t\in(1,+\infty) \). Let \( |\gamma_t|_{\tilde g}
+\) be the \( \tilde g \)-volume of \( \gamma_t \). <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>
+</p>
+<ol class="org-ol">
+<li><p>
+The time-weighted area and the unweighted area of \( \Sigma \) in the region \( \{\xi_0 \leq t\}
+   \) are
+less than those of the radial cone of section \( \gamma_t \), i.e.
+</p>
+\begin{equation}
+\label{eq:cor:2pi-1}
+A_{\xi_0}(\Sigma)(t):=\int_{\Sigma, \xi_0\leq t}\xi_0 \leq \frac{|\gamma_t|_{\tilde g}}{k}(t^2-1)^{k/2},\quad A(\Sigma)(t)\leq |\gamma_t|_{\tilde g} \int_{1}^t (s^2-1)^{\frac{k}{2}-1}ds
+\end{equation}</li>
+<li><p>
+Let \( m \) be the density of \( \Sigma \) at the origin, then
+</p>
+\begin{equation}
+\label{eq:cor:2pi-2}
+A_{\xi_0} \geq m\frac{\omega_{k-1}}{k}(t^2-1)^{k/2} 
+\end{equation}</li>
+</ol>
+<p>
+In particular, if \( \Sigma \) contains the center \( p \) then \( \gamma_t \) has \( g_{\mathbb{H}^n} \)-volume at least \(
+\omega_{k-1}(t^2-1)^{k/2} \) 
+and the boundary of \( \Sigma \) on the sphere at infinity has Euclidean volume at least \( \omega_{k-1} \).
+</p>
+
+</div>
+
+<div id="rem:choe-gulliver-bndry" class="remark">
+<p>
+The \( \tilde g \)-volume \( |\gamma|_{\tilde g} \) was called the <i>angle</i> of \( \gamma \) in
+<a class='org-ref-reference' href="#Choe.Gulliver92_SharpIsoperimetricInequality">Choe.Gulliver92_SharpIsoperimetricInequality</a> and the area comparison with cone \eqref{eq:cor:2pi-1}
+was proved there without assuming that the boundary lies on one level set of \( \xi_0
+\). However, because Theorem <a href="#thm:monotonicity-warped">thm:monotonicity-warped</a> holds for extension of minimal
+surfaces by \( \xi_0 \)-tube, we can always reduce to this case.
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5422f40" class="outline-3">
+<h3 id="org5422f40"><span class="section-number-3">4.2</span> Area-minimising cones and the annuli \( M_C \)</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Area-minimising cones in Euclidean space appear naturally as <i>oriented tangent cones</i> of an
+area-minimising surface (see <a class='org-ref-reference' href="#Morgan16_GeometricMeasureTheory">Morgan16_GeometricMeasureTheory</a>). It follows by
+Corollary <a href="#cor:less-than-tube">cor:less-than-tube</a> that in \(
+\mathbb{R}^n \) and \( \mathbb{H}^n \),
+minimising cones are the only minimal surfaces bounded by their section. 
+It is clear that a hyperbolic minimising cone is
+also Euclidean minimising. The converse is also true, as pointed out in
+<a class='org-ref-reference' href="#Anderson82_CompleteMinimalVarieties">Anderson82_CompleteMinimalVarieties</a>. We provide here a proof using the Comparison
+Lemma <a href="#lem:comparison">lem:comparison</a>.
+</p>
+
+<div class="proof">
+<p>
+A \( \mathbb{H}^n \)-minimal surface \( \Sigma^k \) asymptotic to \( \gamma \) would satisfies Euclidean
+monotonicity and thus by Lemma <a href="#lem:less-than-tube">lem:less-than-tube</a> would have Euclidean area smaller
+than that of \( C_\gamma \). This contradicts the hypothesis on \( C_\gamma \).
+</p>
+
+</div>
+
+<p>
+Theorem <a href="#thm:minimising-cone">thm:minimising-cone</a> can be illustrated in the Poincaré four-ball \(
+\mathbb{B}^4=\{(z,w)\in \mathbb{C}^2:|z|^2+|w|^2 \leq 1\} \) as follows. We denote by \( L_\epsilon\)
+the Hopf link cut out in \( \mathbb{S}^3 \) by the complex curve \(C_\epsilon: zw=\epsilon \), \(
+\epsilon\in [0, \frac{1}{2}) \), of \( \mathbb{C}^2 \). Each \( L_\epsilon \) bounds a
+pair of 2-planes which, because of the complex curves, is not
+Euclidean-minimising unless \( \epsilon=0 \). Therefore the pair of planes, although
+totally geodesic, is not hyperbolic-minimising.
+</p>
+
+<p>
+It is possible to construct explicitly the analog of \( C_\epsilon \) in any radially
+conformally flat metric \( g =
+e^{2\varphi(\rho)} g_E \). We assume that \( \varphi \) is a function of \( \rho:=|z|^2 + |w|^2 \) and look for \( g
+\)-minimal surfaces 
+that are invariant by the \( \mathbb{S}^1 \) action \(
+(z,w)\mapsto(ze^{i\theta}, we^{-i\theta}) \). If \( \mathbb{C}^2 \) is identified with the
+space of quaternions by \( (z,w) \mapsto z + jw \) then this action corresponds to
+multiplication on the left by \( e^{i\theta} \). 
+</p>
+
+<p>
+We will obtain such surfaces by rotating a curve in the real plane \( \im z = \im w = 0
+\). Such curve is given by \( zw = F(\rho) \) 
+where \( F \) is a real function on \( \rho \). The minimal surface
+equation is equivalent to the following second order ODE of \( F \)
+\[
+ \frac{x'}{x} - \frac{y'}{y} + \frac{1}{\rho} +
+\frac{\varphi'}{2}\left[8+\rho\left(\frac{x^2}{y^2}-4\right)\frac{F'}{F}
+\right]=0,\quad\text{where }x=F-F'\rho,\quad y = \frac{F'}{2}\sqrt{\rho^2 - 4F^2}
+\]
+which should reduce to a first order ODE. This is because we can obtain more solution
+curves by rotating a given one in the real plane. This second rotation corresponds to 
+multiplying on the right of \( z+jw \) by \( e^{j\alpha} \) and it commutes with the left
+multiplication by \( e^{i\theta} \).
+</p>
+
+<p>
+Concretely, by a change of variable \(
+F=\frac{\rho}{2}\sin\theta(\rho) \) the previous ODE reduces either to the first order Bernoulli equation
+\( \theta'^2 = -\rho^2 + C^2\rho^4 e^{4\varphi}\) for a parameter \(C > 0\),
+or to \( \theta'=0 \) which corresponds to pairs of 2-planes. This is the same parameter
+\( C \) of Proposition <a href="#prop:min-annuli">prop:min-annuli</a>.
+In Figure <a href="#fig:min-HS">fig:min-HS</a>, the solution curves in \(
+\mathbb{H}^4 \) and \( \mathbb{S}^4 \) are drawn with different
+values of \( C \).
+</p>
+
+
+
+<div id="rem:min-annuli" class="remark">
+<ol class="org-ol">
+<li>When \( g \) is the Euclidean metric, \eqref{eq:min-annuli} is
+the hyperbola equation.</li>
+<li>For the hyperbolic space, \( e^\varphi = \frac{2}{1-\rho}  \). The total angle \( \theta_C \) wiped by the profile curve converges to 0 as
+\( C\to 0 \) and to \( \frac{\pi}{2} \) as \( C\to\infty \). The profile curves expectedly meet
+the unit circle at right angle.</li>
+<li>For the round sphere, \( e^\varphi = \frac{2}{1+\rho} \) and the parameter \( C \) can only be chosen in \( (4,\infty) \). The angle \(
+   \theta_C \) can take any value between \( \frac{\pi}{2} \) (\( C=\infty \), \( M_C
+   \) being a totally geodesic \( \mathbb{S}^2 \)) and
+\( \frac{\pi}{\sqrt{2}} \) (\( C=4 \), \( M_C \) being a Clifford torus). In particular, if \( \theta_C \) is a
+rational multiple of \( \pi \) in this interval, we can close the surface by repeating
+the profile curve. This produces a countable family of immersed tori in \(
+   \mathbb{S}^4 \) that are invariant by the quaternionic rotation.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orge559386" class="outline-3">
+<h3 id="orge559386"><span class="section-number-3">4.3</span> Convex hull and renormalised area of minimal surfaces in \( \mathbb{H}^n \)</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+We are interested in minimal surfaces \( \Sigma^k \)
+that are asymptotic to a properly embedded submanifold \( \gamma^{k-1} \) in \( \mathbb{S}_\infty \). The Poincaré ball model \( \mathbb{B}^n \) provides a \( C^\infty \)
+compactification \( \overline{\mathbb{H}^n} \) of \( \mathbb{H}^n \), we will assume that
+all surfaces considered in this section are \( C^2 \)
+near \( \mathbb{S}_\infty \) and that its interior lies strictly inside the interior of \(
+\mathbb{B}^n \).
+</p>
+
+<p>
+It was observed in <a class='org-ref-reference' href="#Anderson82_CompleteMinimalVarieties">Anderson82_CompleteMinimalVarieties</a> that if the boundary of a
+minimal surface lies on one half of the hyperbolic space cut out by a totally geodesic
+hyperplane \( H \) then the entire surface also lies on that side. One can see this by
+applying maximum principle<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> to the space coordinate \( \xi_1 \) whose zero set is \( H \),
+which satisfies \( \Delta \xi_1 = k \xi_1 \) on any minimal surface of dimension \( k \). It follows that a
+minimal surface is contained in the <i>convex hull</i> of its boundary, defined the the
+intersection of all half spaces containing it.
+An immediate application of the convex hull is that such \( \Sigma \) meets the sphere at infinity
+at a right angle, i.e. the normal vector of \( \mathbb{S}_\infty \) is
+contained in the tangent of \( \Sigma \).
+</p>
+
+<p>
+Using the convex hull and the unweighted monotonicity theorem, Anderson solved the
+asymptotic Plateau problem.
+In <a class='org-ref-reference' href="#Anderson82_CompleteMinimalVarieties">Anderson82_CompleteMinimalVarieties</a>, an area-minimising locally
+integral \( k\)-current asymptotic to a given immersed closed \( (k-1) \)-submanifold of
+\( \mathbb{S}_\infty \) was constructed.
+</p>
+
+<p>
+We note that there is also a notion of convex hull for  
+minimal surfaces in \( \mathbb{S}^n \) that could be contained in one hemisphere due to
+Lawson <a class='org-ref-reference' href="#Lawson70_GlobalBehaviorMinimal">Lawson70_GlobalBehaviorMinimal</a>.
+</p>
+
+<p>
+A <i>boundary defining function</i> of \( \mathbb{H}^n \) is a non-negative function \( \rho \)
+on the compactification \( \overline{\mathbb{H}^n} \) that vanishes exactly on \( \mathbb{S}_{\infty} \) and
+exactly to first order. 
+Such function is called <i>special</i> if \( |d\ln\rho|_{g_{\mathbb{H}^n}} = 1 \) on a neighborhood
+of the boundary. It was proved by Graham and Witten in
+<a class='org-ref-reference' href="#Graham.Witten99_ConformalAnomalySubmanifold">Graham.Witten99_ConformalAnomalySubmanifold</a> that for any \( C^2 \) minimal surface \(\Sigma^2
+\) and any special 
+boundary defining function \( \rho \), the area functional has the expansion
+</p>
+\begin{equation}
+\label{eq:GW-1}
+ A(\Sigma\cap \{\rho \geq \epsilon\}) = \frac{|\gamma|_{\bar g}}{\epsilon} +
+\mathcal{A}_R + O(\epsilon)
+\end{equation}
+<p>
+where \( \bar g = \rho^2 g \) and the coefficient \( \mathcal{A}_R \), called <i>renormalised
+area</i> of \( \Sigma \), is independent of the choice of \( \rho \).
+</p>
+
+<p>
+The function \( \rho = \xi_0^{-1} \) can be used as a boundary defining function. Although
+it is not special, it is third order close to one:
+The function \( \bar\rho = 2 \frac{1-r}{1+r} \) is special and \( \rho =
+\frac{\bar\rho}{1 + \frac{\bar\rho^2}{4}}={\bar \rho + O(\bar\rho^3)} \). 
+Because the metrics \( \bar g \) and \( \tilde g \) coincide on \( \mathbb{S}_\infty \), Graham&#x2013;Witten expansion \eqref{eq:GW-1} can be rewritten as
+</p>
+\begin{equation}
+\label{eq:Graham-Witten}
+ A(\Sigma)(t) = |\gamma|_{\tilde g} t + \mathcal{A}_R + O(t^{-1})
+\end{equation}
+<p>
+where \( A(\Sigma)(t) \) is the unweighted area of \( \Sigma \) in the region \( \xi_0\leq
+t\).
+</p>
+</div>
+</div>
+<div id="outline-container-org06be5ac" class="outline-3">
+<h3 id="org06be5ac"><span class="section-number-3">4.4</span> An upper bound of renormalised area</h3>
+<div class="outline-text-3" id="text-4-4">
+<div class="proof">
+<p>
+It suffices to prove that 
+</p>
+\begin{equation}
+\label{eq:upper-AR-1}
+\mathcal{A}_R(\Sigma) + |\gamma|_{\tilde g}\leq 0
+\end{equation}
+<p>
+for any minimal surface \( \Sigma \) (not necessarily containing the origin). Let \( \gamma_t
+:= \Sigma\cap\xi_0^{-1}(t)\) and \( T \) be the radial cone 
+with section \( \gamma_t \). By Corollary <a href="#cor:2pi">cor:2pi</a>, one has 
+\[
+A(\Sigma)(t) \leq A(T) = |\gamma_t|_{\tilde g} (t-1) \quad\forall t \geq 1.
+\]
+Because \( \Sigma \) meets \( \mathbb{S}_\infty \) at right angle, one has \(
+\left|\gamma_t\right|_{\tilde g} = |\gamma|_{\tilde g} + O(t^{-2})
+\), which together with the Graham&#x2013;Witten expansion <a href="#eq:Graham-Witten">eq:Graham-Witten</a> implies \eqref{eq:upper-AR-1}
+</p>
+
+</div>
+
+<div id="rem:upper-AR" class="remark">
+<ol class="org-ol">
+<li>The renormalised area of a totally geodesic copy of \( \mathbb{H}^2 \) in \(
+   \mathbb{H}^n \) is \( -2\pi \). The estimate \eqref{eq:upper-AR} is verified in this case because round circles of \( \mathbb{S}^{n-1} \) have length
+at most \( 2\pi \).</li>
+<li>The upper bound \( \mathcal{A}_R\leq -2\pi \) for
+minimal disks was known in <a class='org-ref-reference' href="#Alexakis.Mazzeo10_RenormalizedAreaProperly">Alexakis.Mazzeo10_RenormalizedAreaProperly</a>, which proved that \( \mathcal{A}_R(\Sigma) \leq
+   -2\pi\chi \) where
+\( \chi \) is the Euler characteristic of \( \Sigma \).</li>
+<li><p>
+The estimate \eqref{eq:upper-AR} can also be seen as an upper bound for the length of a
+curve \(
+   \gamma \) under round metrics. 
+Note that the space of round metrics in the standard conformal sphere is not compact
+and we used the fact that \( \gamma \)
+bounds a \( C^2 \) surface. The spiral curve
+</p>
+\begin{equation}
+\label{eq:spiral}
+\theta(r) = \left(r^{1/4} - r^{-1/4}\right)^2   
+\end{equation}
+<p>
+which turns around the origin of \( \mathbb{R}^2\cup\{\infty\}\cong \mathbb{S}^2 \) infinitely many times has finite length
+under any round metric, but its length can be arbitrarily large. On the other hand, one
+can prove that round metric lengths have an upper bound when the curve has positive normal injectivity radius.
+</p></li>
+</ol>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0a3edad" class="outline-3">
+<h3 id="org0a3edad"><span class="section-number-3">4.5</span> Space monotonicity</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+We can also estimate renormalised area using the space coordinate \( \xi_1 \) of Example
+<a href="#ex:xi-H">ex:xi-H</a>. Recall that the weights \( P_i \) in the Comparison Lemma <a href="#lem:comparison">lem:comparison</a>
+only need to be \( C^0 \).
+</p>
+
+<div id="lem:weaker-space" btit="()" class="lemma">
+<p>
+For any \( k\geq 2 \) and \( \alpha >0 \), the following weights are weaker than \(
+   U(\xi_1) = \xi_1 \) in the region \( \xi_1\geq 0 \):
+   \[
+    P_1 (t) = \begin{cases}
+    t  ,  & \text{when $t\leq \alpha$} \\
+    \alpha	  , & \text{when $t > \alpha$}
+	  \end{cases}
+	  \qquad \text{ and }\qquad P_2(t) = \alpha\tanh \frac{t}{\alpha}
+   \]
+</p>
+
+</div>
+
+<p>
+The function \( \rho = |\xi_1|^{-1} \) is a boundary defining function except on the
+equator and it is special up to third order. This is because the
+function \( l=|\arsinh\xi_1| \) which computes the distance to the totally geodesic hyperplane \( \xi_1^{-1}(0) \)
+satisfies \( |dl|=1 \), hence \( \bar\rho = 2\exp(-l) \) is a special boundary defining
+function. The latter is related to \( \rho \) by \( \rho = \frac{\bar\rho}{1 - (\bar\rho/2)^2}
+= \bar\rho + O(\bar\rho^3) \). 
+</p>
+
+<p>
+The Graham&#x2013;Witten expansion \eqref{eq:Graham-Witten} is still applicable to \( \rho \) and can be rewriten as
+</p>
+\begin{equation}
+\label{eq:Graham-Witten-space}
+A(\Sigma\cap \{ \xi_1 \leq t\}) = |\gamma_\infty|_{\tilde g} t + \mathcal{A}_R + O(t^{-1})	
+\end{equation}
+<p>
+where \( \tilde g \) is the
+doubled hyperbolic metric described in Example <a href="#ex:xi-H">ex:xi-H</a>,
+which coincides with \( \rho^2g_{\mathbb{H}^n} \) on \( \mathbb{S}_\infty \). The
+space versions of Corollary <a href="#cor:2pi">cor:2pi</a> and Theorem <a href="#thm:upper-AR">thm:upper-AR</a> are as follow.
+</p>
+
+<div btit="()" class="corollary">
+<p>
+Let \( \Sigma \) be a minimal surface with boundary as in the paragraph preceding Theorem <a href="#thm:monotonicity-H-space">thm:monotonicity-H-space</a>. Then for all \( t > 0 \),
+   \[
+   \frac{(t^2+1)^{k/2}}{k}\int_{\Sigma,\xi_1 = 0}|\nabla^\Sigma\xi_1| \leq B_{\xi_1} \leq \frac{|\gamma_t|_{\tilde g}}{k} (t^2+1)^{k/2}
+   \]
+In particular,
+\( 
+ \left|\gamma_\infty\right|_{\tilde g} \geq \int_{\Sigma,\xi_1 = 0}|\nabla^\Sigma\xi_1|.
+\)
+</p>
+
+</div>
+
+<div id="thm:upper-AR-space" btit="()" class="theorem">
+<p>
+Assume in addition to the hypothesis of Corollary <a href="#cor:2pi-space">cor:2pi-space</a>, that \( k=2 \). 
+Then for all \( \alpha >0 \), one has
+</p>
+\begin{equation}
+\label{eq:AR-space-1}
+ \alpha \mathcal{A}_R(\Sigma) - \int_{\Sigma, 0\leq\xi_1\leq\alpha}(\alpha-\xi_1) +
+ \frac{1}{2}\int_{\xi_1=0}|\nabla^\Sigma\xi_1| \leq
+ \frac{1-\alpha^2}{2}|\gamma_\infty|_{\tilde g} 
+\end{equation}
+
+</div>
+<p>
+In particular, if \( \xi_1 \geq \alpha >0 \) on \( \Sigma \), one obtains the estimate of Theorem <a href="#thm:intro-AR-space">thm:intro-AR-space</a>:
+</p>
+\begin{equation}
+\label{eq:upper-AR-space}
+\mathcal{A}_R(\Sigma) + \frac{1}{2}\left(\alpha - \frac{1}{\alpha}\right)|\gamma_\infty|_{\tilde g} \leq 0  
+\end{equation}
+<div class="proof">
+<p>
+By Lemma <a href="#lem:weaker-space">lem:weaker-space</a>, the monotonicity theorem holds for weight \( P_1
+\), 
+which by Corollary <a href="#cor:less-than-tube">cor:less-than-tube</a> implies
+</p>
+\begin{equation}
+\label{eq:upper-AR-space-1}
+B_{P_1}(\Sigma)(t) \leq B_{P_1}(T_{\gamma_t})(t) = |\gamma_t|_{\tilde g}\left(\alpha t + \frac{1-\alpha^2}{2}\right)\quad \forall t>0
+\end{equation}
+<p>
+where \( T_{\gamma_t}(0,t) \) is the \( \xi_1 \)-tube built upon \( \gamma_t:=\Sigma\cap\xi_1^{-1}(t) \). By definition
+</p>
+\begin{equation}
+\label{eq:upper-AR-space-2}
+ B_{P_1}(\Sigma)(t) =  \frac{1}{2}\int_{\Sigma,\xi_1=0}|\nabla^\Sigma\xi_1| -\int_{\Sigma,
+ 0\leq\xi_1\leq\alpha}(\alpha-\xi_1) + \alpha A(\Sigma)(t)
+\end{equation}
+<p>
+One obtains \eqref{eq:AR-space-1} by replacing \( A(\Sigma)(t) \) in \eqref{eq:upper-AR-space-2}
+with the expansion \eqref{eq:Graham-Witten-space} and by using \( |\gamma_t|_{\tilde g}
+= |\gamma_\infty|_{\tilde g}+O(t^{-2}) \) which is because \( \Sigma \) meets \(
+\mathbb{S}_\infty \) at a right angle. 
+</p>
+
+</div>
+
+<div id="rem:space-est" class="remark">
+<p>
+It is possible to prove Corollary <a href="#cor:intro-AR-2pi">cor:intro-AR-2pi</a>
+from the estimate \eqref{eq:upper-AR-space}. Since the function \( y:=\frac{\xi_1}{\xi_0} \)
+foliates \( \mathbb{H}^n \) 
+into totally geodesic codimension 1, by a Mobius transform, one can put the
+boundary curve of \( \Sigma \), and by convexity the entire minimal surface, between level sets \( y=\beta,\) and \( y=\beta+\epsilon, \beta >0\). 
+This guarantees that \( \xi_1\geq\alpha :=
+\frac{\beta}{\sqrt{1-\beta^2}} \) on the surface. 
+The Mobius transform can be chosen so that the \( \tilde g \)-length of the boundary curve is \( \epsilon
+\)-near to that of a great
+circle on \( \{y=\beta\}\cap \mathbb{S}_\infty \), which is \( 2\pi
+\frac{\sqrt{1-\beta^2}}{\beta} \). Combine all these with \eqref{eq:upper-AR-space} and send
+\( \epsilon \) to 0, one has
+\( \mathcal{A}_R + 2\pi (1 - \frac{1}{2\beta^2})\leq 0 \) for all \( \beta >0 \), which
+means \( \mathcal{A}_R\leq -2\pi \). Figure <a href="#fig:space-est">fig:space-est</a> illustrates the level sets of \( y = \frac{\xi_1}{\xi_0} \)
+and those of \( \xi_1 \) in the Poincaré model.
+</p>
+
+</div>
+
+\begin{figure}[hbt!]
+    \centering
+    \includegraphics[width=6.5cm]{../img/2021-04-28-space-est.png} 
+    \caption{Level sets of \( y \) (totally geodesic, in red) and those of \( \xi_1 \) (in blue). The \( (n-1) \)-dimensional disks \( y=\beta\) and \( \xi_1 = \alpha = \frac{\beta}{\sqrt{1-\beta^2}} \) touch each other at the center.}
+    \label{fig:space-est}
+\end{figure}
+</div>
+</div>
+</div>
+
+<div id="outline-container-org160a4c4" class="outline-2">
+<h2 id="org160a4c4"><span class="section-number-2">5</span> Weighted monotonicity in spaces with curvature bounded from above</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Fix a point \( O \) in a Riemannian manifold \( (M^n,g) \), and let \( r_{\rm inj} \) be the
+injectivity radius at \( O \). The Hessian of the distance function \( r \) to \( O \) is
+given by:
+</p>
+\begin{equation}
+\label{eq:hess-r}
+\hess_p r (\partial_r, \cdot) =0, \qquad \hess_p r (v, v)=: I(v), \quad\forall p\in B(O,r_{\rm inj}),\ \forall v\perp \partial_r
+\end{equation}
+<p>
+where \( I(v)=\int_{\Gamma}\left(|\dot V|^2 - K_M(\dot\gamma,V)|V|^2\right) \) is the index
+form of the Jacobi field \( V \) along the geodesic \(\Gamma \) between \( O \) and \( p
+\) that
+interpolates \( 0 \) at \( O \) and \( v \) at \( p \). 
+</p>
+
+<p>
+When the sectional curvature
+satisfies \( K_M\leq -a^2 \) (respectively \( b^2 \)), one can check that
+\( I(v) \geq a\coth(ar)|v|^2 \) (respectively \( b\cot (br)|v|^2 \)). This gives an estimate of the \( \hess r \) on the
+directions orthogonal to \( \partial_r \). By a change of variable, we can estimate the Hessian in a more isotropic way. 
+</p>
+
+<div id="prop:hess-r" btit="()" class="proposition">
+<p>
+Inside \(B(O,r_{\rm inj}) \), one has
+</p>
+<ol class="org-ol">
+<li>\( \hess (a^{-2}\cosh ar) \geq \cosh ar.\ g \) if \( K_M\leq -a^2 \).</li>
+<li>\( \hess (-b^{-2}\cos br) \geq \cos br.\ g \) if \( K\leq b^2 \) and \( r\leq \frac{\pi}{b} \).</li>
+</ol>
+
+</div>
+<p>
+This means that the functions \( h=a^{-2}\cosh ar \) and \( h=-b^{-2}\cos br \) satisfy \( \hess h \geq
+U.g \). 
+We note that the functions \( U, V \) defined as in Proposition <a href="#prop:cheeger-colding">prop:cheeger-colding</a>
+are still functions of \( h \): \( U= a^2 h \) (respectively \( -b^2 h \)) and \( V = |\nabla h|^2 = a^2
+(h^2-1) \) (respectively \( -b^2 (h^2-1) \)) and one still has \( U = \frac{1}{2}V' \).
+</p>
+
+<p>
+The <i>eligible interval</i> \( [0,r_{ \max}) \) is defined to be \( [0, r_{\rm inj}) \) when
+\( K_M\leq -a^2 \) and \( [0, \min (r_{\rm inj}, \frac{\pi}{2b})) \) when \( K_M\leq b^2 \).
+</p>
+
+<div id="rem:no-min-K" class="remark">
+<ol class="org-ol">
+<li>When \( M \) is \( \mathbb{H}^n \) or \( \mathbb{S}^n \), the function \( h \) is the time-coordinate \( \xi_0 \) and
+the Euclidean coordinate \( x \) in Example <a href="#ex:xi-H">ex:xi-H</a> and Example <a href="#ex:xi-S">ex:xi-S</a>.</li>
+<li>It follows from maximum principle and Proposition <a href="#prop:hess-r">prop:hess-r</a> that there exists no closed
+minimal surface in \( B(O, r_{\max}) \). If \( M \) is Cartan&#x2013;Hadamard (\(
+   r_{\max}=+\infty \)) and if the boundary of a
+minimal surface is contained in a geodesic ball, the entire surface stays inside that ball.</li>
+</ol>
+
+</div>
+</div>
+
+<div id="outline-container-org8c7cafe" class="outline-3">
+<h3 id="org8c7cafe"><span class="section-number-3">5.1</span> Weighted monotonicity theorem</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+As explained in Remark <a href="#rem:monotonicity-warped">rem:monotonicity-warped</a>, we can still have weighted
+monotonicity theorem for the function \( h \). 
+The <i>weighted area</i> and <i>weighted density</i> of a surface \( \Sigma^k \) are defined to be
+\[
+\bar A(\Sigma)(t):= \int_{\Sigma, r\leq t}U,\quad \bar\Theta(t):= \frac{\bar
+A(\Sigma)(t)}{Q(t)}, \quad 
+Q(t):= \begin{cases}
+\frac{\omega_{k-1}}{k}\frac{\sinh^k at}{a^k}       ,  & \text{when } K_M\leq -a^2 \\
+\frac{\omega_{k-1}}{k}\frac{\sin^k bt}{b^k}       , & \text{when } K_M\leq b^2
+       \end{cases}
+\]
+Note that \( Q \) is the weighted area of a ball of radius \( t \) in the \( k \)-dimensional
+space-forms of curvature \( -a^2 \) or \( b^2 \) and that the
+density converges to 1 as \( t \) decreases to 0.
+</p>
+
+
+<div id="thm:monotonicity-geodesic" btit="()" class="theorem">
+<p>
+Let \( M \) be a Riemannian manifold with sectional curvature \(
+K_M\leq -a^2 \) or \( K_M\leq b^2 \) 
+and \( \Sigma^k\subset M \) be an extension of a minimal surface by geodesic cone, then
+the density \( \bar\Theta(\Sigma)(t) \) is an increasing function in the eligible interval.
+</p>
+
+</div>
+
+<p>
+By a different argument than that of Corollary <a href="#cor:sphere">cor:sphere</a> and
+Corollary <a href="#cor:2pi">cor:2pi</a>, one can prove that
+the intersection curve of a minimal surface with a geodesic sphere of \( M \) is longer than the
+great circle of the sphere of same radius in space-form.
+</p>
+<div btit="()" class="corollary">
+<p>
+Let \( \Sigma^k\subset M \) be a minimal surface containing the point \( O \) with
+multiplicity \( m \) and \( l_t
+:= \vol_{k-1}\left(\Sigma\cap r^{-1}(t)\right) \). For all \( t \) in the eligible
+interval, one has
+\[
+Q(t) \leq \bar A(\Sigma)(t)\leq \frac{l_t}{k}V(t)^{1/2}
+\]
+In particular, one has
+\[
+ l_t \geq \begin{cases}
+ m\omega_{k-1}\left(\frac{\sinh at}{a}\right)^{k-1}	  ,  & \text{if $K_M\leq -a^2$} \\
+ m\omega_{k-1}\left(\frac{\sin bt}{b}\right)^{k-1}	  , & \text{if $K_M\leq b^2$}
+	  \end{cases}
+\]
+</p>
+
+</div>
+<div class="proof">
+<p>
+Instead of Lemma <a href="#lem:less-than-tube">lem:less-than-tube</a> (see Remark <a href="#rem:no-less-tube">rem:no-less-tube</a>), the upper estimate of \( \bar A \) follows from
+\eqref{eq:stokes}:
+\[
+\bar A(\Sigma)(t) \leq \frac{1}{k}\int_{\Sigma, h=t}|\nabla^\Sigma h| \leq \frac{V(t)^{1/2}}{k}l_t.
+\]
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org72f6ea1" class="outline-3">
+<h3 id="org72f6ea1"><span class="section-number-3">5.2</span> Comparison lemma</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+It is more convenient see a weight \( P \) as a non-negative
+continuous function of \( r \) instead of \( h \). The <i>\( P\)-area</i> is defined as \( A_P(\Sigma)(t):= \int_{\Sigma, r\leq t}P(r) \) and the <i>\( P \)-density</i> is \(
+\Theta_P:= \frac{A_P}{Q} \) where \( Q = Q_P \) is
+\( P \)-area of a ball of radius \( r \) in space-form:
+</p>
+\begin{equation}
+\label{eq:Q-geodesic}
+ Q(t):= \begin{cases}
+\omega_{k-1}\int_{r\leq t}P(r)\frac{\sinh^{k-1} ar}{a^{k-1}}dr       ,  & \text{when } K_M\leq -a^2 \\
+\omega_{k-1}\int_{r\leq t}P(r)\frac{\sin^{k-1} br}{b^{k-1}}dr       , & \text{when } K_M\leq b^2
+       \end{cases}
+\end{equation}
+
+<div id="lem:comparison-geodesic" btit="(Comparison)" class="lemma">
+<p>
+Let \( \Sigma^k\subset M \) be any surface not necessarily minimal and \( P_1,P_2 \) be two
+non-negative, continuous weight functions. Define \( Q_1, Q_2 \) from \( P_1,
+P_2 \) as in \eqref{eq:Q-geodesic}. 
+</p>
+<ol class="org-ol">
+<li>If \( P_1 \) is weaker than \( P_2 \), i.e. \( \frac{P_1}{Q_1} \leq
+   \frac{P_2}{Q_2} \), and \( \frac{d}{dt}\Theta_2\geq 0
+   \) in the eligible interval, then one has \( \Theta_1\leq\Theta_2 \)
+and
+ \[
+  \frac{d\Theta_1}{dt} \geq \frac{Q_2}{P_2}\frac{P_1}{Q_1} \frac{d\Theta_2}{dt}\geq 0
+  \]</li>
+<li>If \( P_2 \) is weaker than \( P_1 \) and \( \frac{d}{dt}\Theta_2\geq 0
+   \) in the eligible interval, then one has \( \Theta_1\geq\Theta_2 \)</li>
+</ol>
+
+</div>
+
+<p>
+We note that it is necessary to mention \( a \) or \( b \) in order to compare two
+weights. However, it can be checked that
+</p>
+<div id="lem:compare-geodesic" btit="()" class="lemma">
+<p>
+For any \( a, b\geq 0 \) and \( u\geq v \geq 0 \),
+</p>
+<ol class="org-ol">
+<li>\( P_1 = \cosh v r \) is weaker than \( P_2 = \cosh ur \) when \( K_M\leq -a^2 \),</li>
+<li>\( P_1 = \cos ur \) is weaker than \( P_2 = \cos vr \) in the interval \( t \leq \frac{\pi}{2u} \) when \( K_M\leq b^2 \).</li>
+</ol>
+
+</div>
+
+<div id="rem:compare-geodesic" class="remark">
+<ol class="org-ol">
+<li>It follows from Lemma <a href="#lem:compare-geodesic">lem:compare-geodesic</a> and Theorem <a href="#thm:monotonicity-geodesic">thm:monotonicity-geodesic</a> that for negatively curved space \(
+   K_M\leq -a^2 \), the monotonicity theorem holds for
+any weight \( P_u =\cosh ur \) with \( u\in [0, a) \) and in particular the uniform weight
+\( P_0 = 1 \). One recovers the Theorem 1 of <a class='org-ref-reference' href="#Anderson82_CompleteMinimalVarieties">Anderson82_CompleteMinimalVarieties</a>.</li>
+<li>When \( K_M\leq b^2 \), the monotonicity theorem holds for any weight \( P_u = \cos
+   ur \) with \( u\in[b,\infty) \) and the first part of Comparison Lemma 
+could not be used on the uniform weight. However, one can still use the second part to
+obtain  \(\Theta(t) \geq \bar\Theta(t) \geq  \text{multiplicity at $O$} \).</li>
+</ol>
+
+</div>
+
+<div id="prop:uniform-area-sphere" btit="()" class="proposition">
+<p>
+Suppose that \( K\leq b^2 \), the minimal surface \( \Sigma^k \) contains a point \( O
+\) with multiplicity \( m \) and it has no boundary in the interior of \( B(O,t) \) for
+certain \(t<r_{\max}\). Then
+\[
+A(\Sigma\cap B(O,t)) \geq m \omega_{k-1}\int_{r=0}^{t} \frac{\sin^{k-1}(br)}{b^{k-1}}dr
+\]
+In particular, if \( M \) is simply connected, with curvature pinched between \(
+\frac{b^2}{4} \) and \( b^2 \) and \( \Sigma\subset M \) is a closed minimal surface, then
+</p>
+\begin{equation}
+\label{eq:lower-area}
+ A(\Sigma)\geq \frac{1}{2}\omega_k b^{-k}. 
+\end{equation}
+
+</div>
+
+<p>
+A weaker version of inequality \eqref{eq:lower-area}, with \( \frac{1}{2}\omega_k \) replaced by
+the volume of the <i>unit \( k \)-ball</i>, was proved in <a class='org-ref-reference' href="#Hoffman.Spruck74_SobolevIsoperimetricInequalities">Hoffman.Spruck74_SobolevIsoperimetricInequalities</a>.
+</p>
+
+<div id="rem:no-less-tube" class="remark">
+<p>
+Lemma <a href="#lem:less-than-tube">lem:less-than-tube</a> does not generalise because the \( P \)-area of a
+geodesic cone in \( M \) is  no longer proportional to \( Q \).
+</p>
+
+</div>
+<p>
+
+<h1 class='org-ref-bib-h1'>Bibliography</h1>
+<ul class='org-ref-bib'><li><a id="Ekholm.etal02_EmbeddednessMinimalSurfaces">[Ekholm.etal02_EmbeddednessMinimalSurfaces] Ekholm, White & Wienholtz, Embeddedness of Minimal Surfaces with Total Boundary Curvature at Most \$4\textbackslashpi\$, <i>Annals of Mathematics</i>, <b>155(1)</b>, 209-234 (2002). <a href="https://www.jstor.org/stable/3062155">link</a>. <a href="http://dx.doi.org/10.2307/3062155">doi</a>.</a></li>
+<li><a id="Cheeger.Colding96_LowerBoundsRicci">[Cheeger.Colding96_LowerBoundsRicci] Cheeger & Colding, Lower Bounds on Ricci Curvature and the Almost Rigidity of Warped Products, <i>The Annals of Mathematics</i>, <b>144(1)</b>, 189 (1996). <a href="https://www.jstor.org/stable/2118589?origin=crossref">link</a>. <a href="http://dx.doi.org/10.2307/2118589">doi</a>.</a></li>
+<li><a id="Anderson82_CompleteMinimalVarieties">[Anderson82_CompleteMinimalVarieties] Anderson, Complete minimal varieties in hyperbolic space, <i>Inventiones Mathematicae</i>, <b>69(3)</b>, 477-494 (1982). <a href="http://link.springer.com/10.1007/BF01389365">link</a>. <a href="http://dx.doi.org/10.1007/BF01389365">doi</a>.</a></li>
+<li><a id="Cheng.etal84_HeatEquationsMinimal">[Cheng.etal84_HeatEquationsMinimal] Cheng, Li & Yau, Heat Equations on Minimal Submanifolds and Their Applications, <i>American Journal of Mathematics</i>, <b>106(5)</b>, 1033 (1984). <a href="https://www.jstor.org/stable/2374272?origin=crossref">link</a>. <a href="http://dx.doi.org/10.2307/2374272">doi</a>.</a></li>
+<li><a id="Hoffman.Spruck74_SobolevIsoperimetricInequalities">[Hoffman.Spruck74_SobolevIsoperimetricInequalities] Hoffman & Spruck, Sobolev and isoperimetric inequalities for riemannian submanifolds, <i>Comm. Pure Appl. Math.</i>, <b>27(6)</b>, 715-727 (1974). <a href="http://doi.wiley.com/10.1002/cpa.3160270601">link</a>. <a href="http://dx.doi.org/10.1002/cpa.3160270601">doi</a>.</a></li>
+<li><a id="Alexakis.Mazzeo10_RenormalizedAreaProperly">[Alexakis.Mazzeo10_RenormalizedAreaProperly] Alexakis & Mazzeo, Renormalized Area and Properly Embedded Minimal Surfaces in Hyperbolic 3-Manifolds, <i>Commun. Math. Phys.</i>, <b>297(3)</b>, 621-651 (2010). <a href="http://dx.doi.org/10.1007/s00220-010-1054-3">doi</a>.</a></li>
+<li><a id="Graham.Witten99_ConformalAnomalySubmanifold">[Graham.Witten99_ConformalAnomalySubmanifold] Graham & Witten, Conformal Anomaly Of Submanifold Observables In AdS/CFT Correspondence, <i>Nuclear Physics B</i>, <b>546(1-2)</b>, 52-64 (1999). <a href="http://arxiv.org/abs/hep-th/9901021">link</a>. <a href="http://dx.doi.org/10.1016/S0550-3213(99)00055-3">doi</a>.</a></li>
+<li><a id="Bernstein21_SharpIsoperimetricProperty">[Bernstein21_SharpIsoperimetricProperty] Bernstein, A Sharp Isoperimetric Property of the Renormalized Area of a Minimal Surface in Hyperbolic Space, <i>arXiv:2104.13317 [math-ph]</i>, <b></b>, (2021). <a href="http://arxiv.org/abs/2104.13317">link</a>.</a></li>
+<li><a id="Choe.Gulliver92_SharpIsoperimetricInequality">[Choe.Gulliver92_SharpIsoperimetricInequality] Choe & Gulliver, The sharp isoperimetric inequality for minimal surfaces with radially connected boundary in hyperbolic space, <i>Invent Math</i>, <b>109(1)</b>, 495-503 (1992). <a href="http://link.springer.com/10.1007/BF01232035">link</a>. <a href="http://dx.doi.org/10.1007/BF01232035">doi</a>.</a></li>
+<li><a id="Choe.Gulliver92_IsoperimetricInequalitiesMinimal">[Choe.Gulliver92_IsoperimetricInequalitiesMinimal] Choe & Gulliver, Isoperimetric inequalities on minimal submanifolds of space forms, <i>Manuscripta Math</i>, <b>77(1)</b>, 169-189 (1992). <a href="http://link.springer.com/10.1007/BF02567052">link</a>. <a href="http://dx.doi.org/10.1007/BF02567052">doi</a>.</a></li>
+<li><a id="Scharrer21_GeometricInequalitiesVarifolds">[Scharrer21_GeometricInequalitiesVarifolds] Scharrer, Some geometric inequalities for varifolds on Riemannian manifolds based on monotonicity identities, <i>arXiv:2105.13211 [math]</i>, <b></b>, (2021). <a href="http://arxiv.org/abs/2105.13211">link</a>.</a></li>
+<li><a id="Morgan16_GeometricMeasureTheory">[Morgan16_GeometricMeasureTheory] Morgan, Geometric measure theory: a beginner's guide, Elsevier/AP (2016).</a></li>
+<li><a id="Lawson70_GlobalBehaviorMinimal">[Lawson70_GlobalBehaviorMinimal] Lawson, The Global Behavior of Minimal Surfaces in \$S\textasciicircumn\$, <i>The Annals of Mathematics</i>, <b>92(2)</b>, 224 (1970). <a href="https://www.jstor.org/stable/1970835?origin=crossref">link</a>. <a href="http://dx.doi.org/10.2307/1970835">doi</a>.</a></li>
+</ul>
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+This is the volume of its
+image by the radial projection centered at \( x^{-1}(1) \) onto the equator \( x^{-1}(0) \).
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+This is also the Euclidean volume of its image under the radial projection centered at \( p \)
+onto \( \mathbb{S}_{\infty} \).
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+When \( \Sigma \) is merely an integral current whose boundary is supported in \(
+\xi_1 < 0 \), replace maximum principle by the first variation formula with the perturbative vector field \( X =
+\chi(\xi_1)\nabla\xi_1 \) where \( \chi \) is an increasing function supported in \(
+[0,\infty] \).
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<div class='footer'>
+By Manh Tien NGUYEN.<br>
+Last updated 2021-06-22 Tue 11:28. <br>
+</div>
+</div>
+</body>
+</html>

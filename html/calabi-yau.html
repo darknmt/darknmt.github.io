@@ -3,12 +3,11 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-09-15 Sat 01:52 -->
+<!-- 2021-06-25 Fri 23:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Calabi-Yau theorem</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="Tien" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -253,43 +252,6 @@ for the JavaScript code in this tag.
 <li><a href='./contact.html'>Contact</a></li>
 </ul>
 </div>
-</div>
-<div id="content">
-<h1 class="title">Calabi-Yau theorem</h1>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#org41a1828">1. Calabi conjecture</a></li>
-<li><a href="#orgc0fad35">2. Reduction to local charts, Yau theorem</a>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#org406b053">2.0.0.1. \(h,g,\omega\) in local coordinates.</a></li>
-<li><a href="#org2c520c5">2.0.0.2. The Ricci curvature.</a></li>
-<li><a href="#orgd3cb0b0">2.0.0.3. \(dd^c\) lemma .</a></li>
-<li><a href="#org03b6163">2.0.0.4. Yau's theorem.</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgba0dba4">3. A sketch of proof</a></li>
-<li><a href="#org88c4a8b">4. Calabi-Yau manifold</a></li>
-</ul>
-</div>
-</div>
-<div class="info">
-<p>
-The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
-<code>pdf</code>. 
-For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
-</p>
-
-</div>
 \(
 \newcommand{\re}{\mathop{\rm Re}\nolimits}
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
@@ -307,7 +269,51 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
 \newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
 \newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
+\newcommand{\Enorm}{\mathop{\mathcal{E}_{\rm norm}}\nolimits}
+\newcommand{\Anorm}{\mathop{\mathcal{A}_{\rm norm}}\nolimits}
+\newcommand{\Cl}{\mathop{\rm Cl}\nolimits}
+\newcommand{\Spin}{\mathop{\rm Spin}\nolimits}
+\newcommand{\Pin}{\mathop{\rm Pin}\nolimits}
+\newcommand{\Hom}{\mathop{\rm Hom}\nolimits}
+\newcommand{\End}{\mathop{\rm End}\nolimits}
 \)
+</div>
+<div id="content">
+<h1 class="title">Calabi-Yau theorem</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org2de4c9a">1. Calabi conjecture</a></li>
+<li><a href="#org7cbfcf1">2. Reduction to local charts, Yau theorem</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#org226e6fb">2.0.0.1. \(h,g,\omega\) in local coordinates.</a></li>
+<li><a href="#org6f2fc45">2.0.0.2. The Ricci curvature.</a></li>
+<li><a href="#orga565309">2.0.0.3. \(dd^c\) lemma .</a></li>
+<li><a href="#org5bab5ed">2.0.0.4. Yau's theorem.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org18406ed">3. A sketch of proof</a></li>
+<li><a href="#orgd17bf2d">4. Calabi-Yau manifold</a></li>
+</ul>
+</div>
+</div>
+<div class="info">
+<p>
+The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
+<code>pdf</code>. 
+For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
+</p>
+
+</div>
 <div class="info">
 <p>
 This post is a part of the <a href="../res/Stage2017.pdf">memoire of my M1 internship</a> at I2M. The memoire contains,
@@ -316,8 +322,8 @@ needless to say, less errors than this page.
 
 </div>
 
-<div id="outline-container-org41a1828" class="outline-2">
-<h2 id="org41a1828"><span class="section-number-2">1</span> Calabi conjecture</h2>
+<div id="outline-container-org2de4c9a" class="outline-2">
+<h2 id="org2de4c9a"><span class="section-number-2">1</span> Calabi conjecture</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 In complex geometry, one usually defines the <i>Ricci curvature</i> to be the real (1,1)-form \(\rho\)
@@ -383,11 +389,11 @@ derivative is hence easy to define.
 </div>
 </div>
 
-<div id="outline-container-orgc0fad35" class="outline-2">
-<h2 id="orgc0fad35"><span class="section-number-2">2</span> Reduction to local charts, Yau theorem</h2>
+<div id="outline-container-org7cbfcf1" class="outline-2">
+<h2 id="org7cbfcf1"><span class="section-number-2">2</span> Reduction to local charts, Yau theorem</h2>
 <div class="outline-text-2" id="text-2">
-</div><div id="outline-container-org406b053" class="outline-5">
-<h5 id="org406b053"><span class="section-number-5">2.0.0.1</span> \(h,g,\omega\) in local coordinates.</h5>
+</div><div id="outline-container-org226e6fb" class="outline-5">
+<h5 id="org226e6fb"><span class="section-number-5">2.0.0.1</span> \(h,g,\omega\) in local coordinates.</h5>
 <div class="outline-text-5" id="text-2-0-0-1">
 <p>
 We note by \(h_{i\bar j} = h(\partial_{x_i},\partial_{x_j}) =
@@ -422,8 +428,8 @@ It would be convenient to define \(d^c =i(\bar\partial - \partial)\) then obviou
 </div>
 
 
-<div id="outline-container-org2c520c5" class="outline-5">
-<h5 id="org2c520c5"><span class="section-number-5">2.0.0.2</span> The Ricci curvature.</h5>
+<div id="outline-container-org6f2fc45" class="outline-5">
+<h5 id="org6f2fc45"><span class="section-number-5">2.0.0.2</span> The Ricci curvature.</h5>
 <div class="outline-text-5" id="text-2-0-0-2">
 <p>
 The Ricci curvature form is given in local coordinates by
@@ -435,8 +441,8 @@ Ric_{\omega} = -\frac{1}{2}dd^c\log\det(h_{i\bar j})
 </div>
 
 
-<div id="outline-container-orgd3cb0b0" class="outline-5">
-<h5 id="orgd3cb0b0"><span class="section-number-5">2.0.0.3</span> \(dd^c\) lemma .</h5>
+<div id="outline-container-orga565309" class="outline-5">
+<h5 id="orga565309"><span class="section-number-5">2.0.0.3</span> \(dd^c\) lemma .</h5>
 <div class="outline-text-5" id="text-2-0-0-3">
 <p>
 We then can state the \(dd^c\) lemma
@@ -451,8 +457,8 @@ and only if there exists \(\eta\in C^\infty(M)\) globally defined such that \(\a
 </div>
 </div>
 
-<div id="outline-container-org03b6163" class="outline-5">
-<h5 id="org03b6163"><span class="section-number-5">2.0.0.4</span> Yau's theorem.</h5>
+<div id="outline-container-org5bab5ed" class="outline-5">
+<h5 id="org5bab5ed"><span class="section-number-5">2.0.0.4</span> Yau's theorem.</h5>
 <div class="outline-text-5" id="text-2-0-0-4">
 <p>
 The \(dd^c\) lemma tells us that every form \(R\in c_1(K_X)\) is of form \(Ric_{\omega} + dd^c\eta\). If one
@@ -495,8 +501,8 @@ up to constant, \(\phi\in C^\infty(M)\) such that \(\omega + dd^c\phi >0\) and
 </div>
 </div>
 
-<div id="outline-container-orgba0dba4" class="outline-2">
-<h2 id="orgba0dba4"><span class="section-number-2">3</span> A sketch of proof</h2>
+<div id="outline-container-org18406ed" class="outline-2">
+<h2 id="org18406ed"><span class="section-number-2">3</span> A sketch of proof</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 The uniqueness is straightforward. In fact if \(\phi\) and \(\psi\)
@@ -666,7 +672,7 @@ hence
 \[
 \|\phi\|_{L^1(B(y,R))} \leq \|u\|_{L^1(B(y,R))} \leq \text{vol}(B(y,2R)) (\inf_{B(y,R)} |\phi| + \max_M |g|)
 \]
-To see that \(\|\phi\|_1\) is bounded, we apply the following Lemma <a href="#org691dad7">3</a> to the covering of \(M\) by
+To see that \(\|\phi\|_1\) is bounded, we apply the following Lemma <a href="#orge0ebd29">3</a> to the covering of \(M\) by
 finitely many ball \(B(y_i,R_i)\), \(c_i = \text{vol}(B(y_i,2R_i))\), \(d_i = c_i \max_M |g|\) and
 \(r=1\).
 </p>
@@ -682,7 +688,7 @@ The case \(p>1\) follows analoguously using the following estimate: if \(u\) is 
 
 <div class="lemma">
 <p>
-<a id="org691dad7"></a>
+<a id="orge0ebd29"></a>
 Let \(M\) be a connected compact manifold covered by finitely many local charts \(\{V_i\}_{i=1}^{l}\) and
 \(r, c_i, d_i>0\). Then for any continuous function \(\phi\) globally
 defined on \(M\) such that
@@ -728,8 +734,8 @@ Take the sum for all \(i=0,\dots, l\) and the result follows.
 
 
 
-<div id="outline-container-org88c4a8b" class="outline-2">
-<h2 id="org88c4a8b"><span class="section-number-2">4</span> Calabi-Yau manifold</h2>
+<div id="outline-container-orgd17bf2d" class="outline-2">
+<h2 id="orgd17bf2d"><span class="section-number-2">4</span> Calabi-Yau manifold</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Recall that we defined a Calabi-Yau manifold to be a compact Riemannian manifold of dimension \(2n\)
@@ -771,7 +777,7 @@ construct Ricci-flat metric.
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
-By Tien.<br>
+By .<br>
 Last updated 2017-08-31 Thu 02:25. <br>
 </div>
 </div>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-11-28 Wed 01:28 -->
+<!-- 2021-03-15 Mon 14:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds</title>
@@ -253,42 +253,6 @@ for the JavaScript code in this tag.
 <li><a href='./contact.html'>Contact</a></li>
 </ul>
 </div>
-</div>
-<div id="content">
-<h1 class="title">A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds</h1>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#orgf479651">1. Quick recall of Jacobi fields, Index inequality</a></li>
-<li><a href="#org58bd034">2. Local comparison with space forms</a>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#org6f478d2">2.0.0.1. Notation.</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgafbbe9e">3. Some covering lemmas</a></li>
-<li><a href="#orgc21d424">4. Sobolev imbeddings for Riemannian manifolds</a></li>
-<li><a href="#orgcd48abe">5. Kondrachov's theorem</a></li>
-<li><a href="#orgf38859a">6. Solving \( \Delta u = f \) on a Riemannian manifold.</a></li>
-</ul>
-</div>
-</div>
-<div class="info">
-<p>
-The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
-<code>pdf</code>. 
-For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
-</p>
-
-</div>
 \(
 \newcommand{\re}{\mathop{\rm Re}\nolimits}
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
@@ -308,8 +272,48 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
 \newcommand{\Enorm}{\mathop{\mathcal{E}_{\rm norm}}\nolimits}
 \newcommand{\Anorm}{\mathop{\mathcal{A}_{\rm norm}}\nolimits}
+\newcommand{\Cl}{\mathop{\rm Cl}\nolimits}
+\newcommand{\Spin}{\mathop{\rm Spin}\nolimits}
+\newcommand{\Pin}{\mathop{\rm Pin}\nolimits}
+\newcommand{\Hom}{\mathop{\rm Hom}\nolimits}
+\newcommand{\End}{\mathop{\rm End}\nolimits}
 \)
+</div>
+<div id="content">
+<h1 class="title">A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org1964889">1. Quick recall of Jacobi fields, Index inequality</a></li>
+<li><a href="#orge89f914">2. Local comparison with space forms</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#org1d7b7f0">2.0.0.1. Notation.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgc759157">3. Some covering lemmas</a></li>
+<li><a href="#orgb616811">4. Sobolev imbeddings for Riemannian manifolds</a></li>
+<li><a href="#org3c11abb">5. Kondrachov's theorem</a></li>
+<li><a href="#org56bb3e5">6. Solving \( \Delta u = f \) on a Riemannian manifold.</a></li>
+</ul>
+</div>
+</div>
+<div class="info">
+<p>
+The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
+<code>pdf</code>. 
+For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
+</p>
 
+</div>
 <p>
 This post is the first part of my reading note for <a class='org-ref-reference' href="#aubin_nonlinear_1998">aubin_nonlinear_1998</a>. The second
 part is <a href="green-function.html">here</a>.
@@ -388,8 +392,8 @@ combinatorial result (Vitali's covering lemma).</li>
 Finally, we will apply imbedding theorems to solve the equation \( -\Delta u = f \) on a
 Riemannian manifold when \( f \) is square-integrable.
 </p>
-<div id="outline-container-orgf479651" class="outline-2">
-<h2 id="orgf479651"><span class="section-number-2">1</span> Quick recall of Jacobi fields, Index inequality</h2>
+<div id="outline-container-org1964889" class="outline-2">
+<h2 id="org1964889"><span class="section-number-2">1</span> Quick recall of Jacobi fields, Index inequality</h2>
 <div class="outline-text-2" id="text-1">
 <div class="definition">
 <p>
@@ -417,6 +421,14 @@ where \( R \) denotes the Riemann curvature tensor.
    \]
 In particular, if \( Y,Z \) vanish at a same point \( p_0 \) in \( \gamma \) then
 \( \langle Y,\dot Z \rangle = \langle \dot Y, Z \rangle\) on \( \gamma \).</li>
+<li>Two special solutions to the Jacobi equation is \( T:= t\dot\gamma \) and \( \dot
+   T:=\dot\gamma \). By the previous remark, if \( Z(0)=0 \) and \( Z(t) \) is orthogonal to \( \dot\gamma
+   \) at one time \( t_0>0 \), then it is orthogonal to \( \dot\gamma \) at all time. This
+is because \( \langle \dot Y(t_0), T \rangle = 0 \) and so \( \langle \dot Y,\dot T \rangle
+   \) is constant and is 0 at \( t_0 \), it has to vanish at all time. A consequence of
+this is that all Jacobi fields can be decomposed into the tangential component which is
+a linear combination \( aT+ b\dot T \) and a othorgonal component that is also a Jacobi
+field.</li>
 </ol>
 
 </div>
@@ -610,8 +622,8 @@ if and only if \( W\equiv 0 \), i.e. \( Z\equiv Y \).
 </div>
 </div>
 
-<div id="outline-container-org58bd034" class="outline-2">
-<h2 id="org58bd034"><span class="section-number-2">2</span> Local comparison with space forms</h2>
+<div id="outline-container-orge89f914" class="outline-2">
+<h2 id="orge89f914"><span class="section-number-2">2</span> Local comparison with space forms</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Our goal in this section is to prove the following Comparison Theorem. Before going to the
@@ -619,8 +631,8 @@ precise statement, let us explain the notation.
 </p>
 </div>
 
-<div id="outline-container-org6f478d2" class="outline-5">
-<h5 id="org6f478d2"><span class="section-number-5">2.0.0.1</span> Notation.</h5>
+<div id="outline-container-org1d7b7f0" class="outline-5">
+<h5 id="org1d7b7f0"><span class="section-number-5">2.0.0.1</span> Notation.</h5>
 <div class="outline-text-5" id="text-2-0-0-1">
 <p>
 Given \( M^n \) a Riemannian manifold and \( B(p,r_0) \) be the geodesic ball centered in
@@ -795,7 +807,7 @@ Suppose that the sectional curvature \( K \leq b^2 \), then for every Jacobi fie
 defined a long a geodesic \( \gamma: [0,r] \longrightarrow M \) with \( r< \frac{\pi}{2b}
 \) such that \( Y(0)=0, Y\perp \dot\gamma \). Then
 \[
- I(Y) \geq I_b(Y):=\int_0^r \| \dot Y\|^2 - b \|Y\|^2 \geq b\cot br \|Y(r)\|^2
+ I(Y) \geq I_b(Y):=\int_0^r \| \dot Y\|^2 - b^2 \|Y\|^2 \geq b\cot br \|Y(r)\|^2
 \]
 </p>
 
@@ -841,6 +853,30 @@ where \( (\beta^1,\dots,\beta^{n-1})\) is the coordinates of \({\iota_1}_* Y(r) 
 
 </div>
 
+<div id="rem:jacobi-index-comparison" class="remark">
+<p>
+There are two other ways to do this comparison argument:
+</p>
+<ol class="org-ol">
+<li>Invoke the fact that any \( SO(n) \) bundles with connection on an interval are
+isomorphic, then let \( \tilde\gamma:I\to M_b \) be a geodesic of the space-form \( M_b
+   \) with the same length. Use \(\tilde\gamma^* TM_b\equiv \gamma^* TM\) to identify \( Y
+   \) with a orthogonal vectir field on \( \tilde\gamma \) and apply Index inequality</li>
+<li>Algebraically
+\(
+    \left|\dot Y\right|  - b^2 |Y|^2 \geq \frac{-b^2}{\sin^2 br}|Y|^2 + 2b\cot br \langle
+   Y, \dot Y \rangle
+   \). The RHS is \(\frac{d}{dr}(b\cot br |Y|^2) \).</li>
+</ol>
+
+<p>
+Similarly, if \( K \leq -a^2 \) then
+\[
+  I(Y) \geq I_a(Y):=\int_0^r \| \dot Y\|^2 + a^2 \|Y\|^2 \geq a\coth ar \|Y(r)\|^2
+\]
+</p>
+
+</div>
 <p>
 Now the remaining part of the proof of Theorem <a href="#thm:vol-comparison">thm:vol-comparison</a> is straightforward.
 </p>
@@ -992,8 +1028,8 @@ according to Proposition <a href="#prop:index-form-variation">prop:index-form-va
 </div>
 </div>
 
-<div id="outline-container-orgafbbe9e" class="outline-2">
-<h2 id="orgafbbe9e"><span class="section-number-2">3</span> Some covering lemmas</h2>
+<div id="outline-container-orgc759157" class="outline-2">
+<h2 id="orgc759157"><span class="section-number-2">3</span> Some covering lemmas</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 The goal of this section is to prove a covering lemma for Riemannian manifolds with
@@ -1111,8 +1147,8 @@ equivalence was denoted by \( C(\delta) \) can be bounded uniformly when \( \del
 </div>
 
 
-<div id="outline-container-orgc21d424" class="outline-2">
-<h2 id="orgc21d424"><span class="section-number-2">4</span> Sobolev imbeddings for Riemannian manifolds</h2>
+<div id="outline-container-orgb616811" class="outline-2">
+<h2 id="orgb616811"><span class="section-number-2">4</span> Sobolev imbeddings for Riemannian manifolds</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 The goal of this section is to prove that Sobolev imbeddings are also available for complete Riemannian manifold
@@ -1479,8 +1515,8 @@ number of balls overlapping at the point in question.
 
 
 
-<div id="outline-container-orgcd48abe" class="outline-2">
-<h2 id="orgcd48abe"><span class="section-number-2">5</span> Kondrachov's theorem</h2>
+<div id="outline-container-org3c11abb" class="outline-2">
+<h2 id="org3c11abb"><span class="section-number-2">5</span> Kondrachov's theorem</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 The generalised version of Kondrachov's theorem is much easier to prove
@@ -1505,8 +1541,8 @@ Euclidean version of Kondrachov's theorem.
 </div>
 
 
-<div id="outline-container-orgf38859a" class="outline-2">
-<h2 id="orgf38859a"><span class="section-number-2">6</span> Solving \( \Delta u = f \) on a Riemannian manifold.</h2>
+<div id="outline-container-org56bb3e5" class="outline-2">
+<h2 id="org56bb3e5"><span class="section-number-2">6</span> Solving \( \Delta u = f \) on a Riemannian manifold.</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 With Kondrachov's theorem <a href="#thm:kondrachov">thm:kondrachov</a>, one can uses the familiar "subsequence
@@ -1568,7 +1604,7 @@ where \( f\in L^2(M) \), then:
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-07-02 Mon 11:31. <br>
+Last updated 2021-03-15 Mon 14:42. <br>
 </div>
 </div>
 </body>

@@ -63,8 +63,8 @@
     "sec:orgd6da54a"
     "sec:org6aae0cb"
     "sec:org1211c66"
-    "sec:org99962f8"
-    "sec:org0fa3792"
+    "sec:orgf1c65c6"
+    "sec:org29d7886"
     "prop:adjunction"
     "sec:org6163414"
     "thm:Kodaira-vanishing"
@@ -82,8 +82,6 @@
     "problem"
     "exampl"
     "definition"
-    "propdef"
-    "fact"
-    "assertion"))
+    "propdef"))
  :latex)
 

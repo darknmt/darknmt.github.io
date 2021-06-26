@@ -3,12 +3,11 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-11-28 Wed 01:29 -->
+<!-- 2021-06-25 Fri 23:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Divisors, Picard group and Kodaira embedding theorem</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="Tien" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -253,50 +252,6 @@ for the JavaScript code in this tag.
 <li><a href='./contact.html'>Contact</a></li>
 </ul>
 </div>
-</div>
-<div id="content">
-<h1 class="title">Divisors, Picard group and Kodaira embedding theorem</h1>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#org1a9ec8e">1. Divisors and Picard group</a>
-<ul>
-<li><a href="#orga97b958">1.1. Holomorphic line bundles and first Chern class</a></li>
-<li><a href="#org6f1eb05">1.2. Divisors, line bundles and sheaves</a>
-<ul>
-<li><a href="#orga394849">1.2.1. From divisors to Picard group</a></li>
-<li><a href="#org05dda1b">1.2.2. The corresponding line bundle of \( \mathcal{O}(Y) \)</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org989f1ff">2. Example: Projective space</a>
-<ul>
-<li><a href="#org9128e3a">2.1. \( \mathcal{O}(d) \) and its sections</a></li>
-<li><a href="#orgb2e3860">2.2. Line bundles and maps to projective space, Veronese embedding</a></li>
-<li><a href="#orgb68c1e7">2.3. Canonical bundle and Euler sequence</a></li>
-</ul>
-</li>
-<li><a href="#org5673b0c">3. Blowing-up</a>
-<ul>
-<li><a href="#orgea2e9c7">3.1. Blowing-up</a></li>
-</ul>
-</li>
-<li><a href="#org9723dcf">4. Kodaira vanishing theorem</a></li>
-<li><a href="#orgc23d73e">5. The traditional proof of Kodaira embedding theorem</a></li>
-<li><a href="#orgcf21022">6. An analytic proof by Donaldson</a></li>
-</ul>
-</div>
-</div>
-<div class="info">
-<p>
-The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
-<code>pdf</code>. 
-For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
-</p>
-
-</div>
 \(
 \newcommand{\re}{\mathop{\rm Re}\nolimits}
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
@@ -316,13 +271,62 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
 \newcommand{\Enorm}{\mathop{\mathcal{E}_{\rm norm}}\nolimits}
 \newcommand{\Anorm}{\mathop{\mathcal{A}_{\rm norm}}\nolimits}
+\newcommand{\Cl}{\mathop{\rm Cl}\nolimits}
+\newcommand{\Spin}{\mathop{\rm Spin}\nolimits}
+\newcommand{\Pin}{\mathop{\rm Pin}\nolimits}
+\newcommand{\Hom}{\mathop{\rm Hom}\nolimits}
+\newcommand{\End}{\mathop{\rm End}\nolimits}
 \)
+</div>
+<div id="content">
+<h1 class="title">Divisors, Picard group and Kodaira embedding theorem</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orge66ae7f">1. Divisors and Picard group</a>
+<ul>
+<li><a href="#orgf37dee1">1.1. Holomorphic line bundles and first Chern class</a></li>
+<li><a href="#org017920c">1.2. Divisors, line bundles and sheaves</a>
+<ul>
+<li><a href="#orgdcc871a">1.2.1. From divisors to Picard group</a></li>
+<li><a href="#orgd67d07d">1.2.2. The corresponding line bundle of \( \mathcal{O}(Y) \)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org3c75f90">2. Example: Projective space</a>
+<ul>
+<li><a href="#org0dfd0d3">2.1. \( \mathcal{O}(d) \) and its sections</a></li>
+<li><a href="#org3b9aa45">2.2. Line bundles and maps to projective space, Veronese embedding</a></li>
+<li><a href="#orgefcacdd">2.3. Canonical bundle and Euler sequence</a></li>
+</ul>
+</li>
+<li><a href="#org53d25ee">3. Blowing-up</a>
+<ul>
+<li><a href="#orgd11eb29">3.1. Blowing-up</a></li>
+</ul>
+</li>
+<li><a href="#orgd979004">4. Kodaira vanishing theorem</a></li>
+<li><a href="#orgb834a0b">5. The traditional proof of Kodaira embedding theorem</a></li>
+<li><a href="#org2d1f520">6. An analytic proof by Donaldson</a></li>
+</ul>
+</div>
+</div>
+<div class="info">
+<p>
+The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
+<code>pdf</code>. 
+For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
+</p>
 
-<div id="outline-container-org1a9ec8e" class="outline-2">
-<h2 id="org1a9ec8e"><span class="section-number-2">1</span> Divisors and Picard group</h2>
+</div>
+
+<div id="outline-container-orge66ae7f" class="outline-2">
+<h2 id="orge66ae7f"><span class="section-number-2">1</span> Divisors and Picard group</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-orga97b958" class="outline-3">
-<h3 id="orga97b958"><span class="section-number-3">1.1</span> Holomorphic line bundles and first Chern class</h3>
+</div><div id="outline-container-orgf37dee1" class="outline-3">
+<h3 id="orgf37dee1"><span class="section-number-3">1.1</span> Holomorphic line bundles and first Chern class</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 A <span class="underline">complex line bundle</span> is a 2 dimensional vector bundle with a complex structure on each
@@ -392,8 +396,8 @@ resolution and vertical is the Čech resolution and diagram chasing.
 
 
 
-<div id="outline-container-org6f1eb05" class="outline-3">
-<h3 id="org6f1eb05"><span class="section-number-3">1.2</span> Divisors, line bundles and sheaves</h3>
+<div id="outline-container-org017920c" class="outline-3">
+<h3 id="org017920c"><span class="section-number-3">1.2</span> Divisors, line bundles and sheaves</h3>
 <div class="outline-text-3" id="text-1-2">
 <div class="remark">
 <ol class="org-ol">
@@ -404,8 +408,8 @@ resolution and vertical is the Čech resolution and diagram chasing.
 
 </div>
 </div>
-<div id="outline-container-orga394849" class="outline-4">
-<h4 id="orga394849"><span class="section-number-4">1.2.1</span> From divisors to Picard group</h4>
+<div id="outline-container-orgdcc871a" class="outline-4">
+<h4 id="orgdcc871a"><span class="section-number-4">1.2.1</span> From divisors to Picard group</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <p>
 A <span class="underline">divisor</span> is a formal sum of irreducible hypersurface, which can also be intepreted as
@@ -461,8 +465,8 @@ example section \( 1 = (U_i, f_i) \)</li>
 </div>
 </div>
 
-<div id="outline-container-org05dda1b" class="outline-4">
-<h4 id="org05dda1b"><span class="section-number-4">1.2.2</span> The corresponding line bundle of \( \mathcal{O}(Y) \)</h4>
+<div id="outline-container-orgd67d07d" class="outline-4">
+<h4 id="orgd67d07d"><span class="section-number-4">1.2.2</span> The corresponding line bundle of \( \mathcal{O}(Y) \)</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <div class="proposition">
 <p>
@@ -482,11 +486,11 @@ By consequence, \( K_Y = \restr{(K_X\otimes \mathcal{O}(Y))}{Y} \).
 
 
 
-<div id="outline-container-org989f1ff" class="outline-2">
-<h2 id="org989f1ff"><span class="section-number-2">2</span> Example: Projective space</h2>
+<div id="outline-container-org3c75f90" class="outline-2">
+<h2 id="org3c75f90"><span class="section-number-2">2</span> Example: Projective space</h2>
 <div class="outline-text-2" id="text-2">
-</div><div id="outline-container-org9128e3a" class="outline-3">
-<h3 id="org9128e3a"><span class="section-number-3">2.1</span> \( \mathcal{O}(d) \) and its sections</h3>
+</div><div id="outline-container-org0dfd0d3" class="outline-3">
+<h3 id="org0dfd0d3"><span class="section-number-3">2.1</span> \( \mathcal{O}(d) \) and its sections</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Let's have some examples for the point of view discussed above, starting with the torsion
@@ -526,8 +530,8 @@ associated to the sheaf of holomorphic functions vanishing on \( A_d \).
 </div>
 </div>
 
-<div id="outline-container-orgb2e3860" class="outline-3">
-<h3 id="orgb2e3860"><span class="section-number-3">2.2</span> Line bundles and maps to projective space, Veronese embedding</h3>
+<div id="outline-container-org3b9aa45" class="outline-3">
+<h3 id="org3b9aa45"><span class="section-number-3">2.2</span> Line bundles and maps to projective space, Veronese embedding</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 A linearly independent family \( s_0,\dots, s_N \) of global sections of a holomorphic
@@ -547,8 +551,8 @@ is in fact a embedding, called <span class="underline">Veronese embedding</span>
 
 
 
-<div id="outline-container-orgb68c1e7" class="outline-3">
-<h3 id="orgb68c1e7"><span class="section-number-3">2.3</span> Canonical bundle and Euler sequence</h3>
+<div id="outline-container-orgefcacdd" class="outline-3">
+<h3 id="orgefcacdd"><span class="section-number-3">2.3</span> Canonical bundle and Euler sequence</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 \[
@@ -567,11 +571,11 @@ K_{\mathbb{P}^n_{\mathbb{C}} = \mathcal{O}(-n-1)}
 </div>
 
 
-<div id="outline-container-org5673b0c" class="outline-2">
-<h2 id="org5673b0c"><span class="section-number-2">3</span> Blowing-up</h2>
+<div id="outline-container-org53d25ee" class="outline-2">
+<h2 id="org53d25ee"><span class="section-number-2">3</span> Blowing-up</h2>
 <div class="outline-text-2" id="text-3">
-</div><div id="outline-container-orgea2e9c7" class="outline-3">
-<h3 id="orgea2e9c7"><span class="section-number-3">3.1</span> Blowing-up</h3>
+</div><div id="outline-container-orgd11eb29" class="outline-3">
+<h3 id="orgd11eb29"><span class="section-number-3">3.1</span> Blowing-up</h3>
 <div class="outline-text-3" id="text-3-1">
 <div id="prop:adjunction" btit="(Adjunction)" class="proposition">
 <p>
@@ -650,8 +654,8 @@ For the consequence, note that \( \mathcal{K}_E = \mathcal{O}(-n) = \restr{(K_{\
 
 
 
-<div id="outline-container-org9723dcf" class="outline-2">
-<h2 id="org9723dcf"><span class="section-number-2">4</span> Kodaira vanishing theorem</h2>
+<div id="outline-container-orgd979004" class="outline-2">
+<h2 id="orgd979004"><span class="section-number-2">4</span> Kodaira vanishing theorem</h2>
 <div class="outline-text-2" id="text-4">
 <div id="thm:Kodaira-vanishing" btit="(Kodaira vanishing)" class="theorem">
 <p>
@@ -693,8 +697,8 @@ Therefore \( 0\leq(\alpha,\Delta'a)_{L^2} = 2\pi (n-k)(\alpha,\alpha)_{L^2}\leq 
 
 
 
-<div id="outline-container-orgc23d73e" class="outline-2">
-<h2 id="orgc23d73e"><span class="section-number-2">5</span> The traditional proof of Kodaira embedding theorem</h2>
+<div id="outline-container-orgb834a0b" class="outline-2">
+<h2 id="orgb834a0b"><span class="section-number-2">5</span> The traditional proof of Kodaira embedding theorem</h2>
 <div class="outline-text-2" id="text-5">
 <div id="thm:Kodaira-embedding" btit="(Kodaira embedding)" class="theorem">
 <p>
@@ -762,13 +766,13 @@ remains to observe \( E\subset \hat X \) which is in fact \( \mathbb{CP}^{n-1} \
 </div>
 
 
-<div id="outline-container-orgcf21022" class="outline-2">
-<h2 id="orgcf21022"><span class="section-number-2">6</span> An analytic proof by Donaldson</h2>
+<div id="outline-container-org2d1f520" class="outline-2">
+<h2 id="org2d1f520"><span class="section-number-2">6</span> An analytic proof by Donaldson</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
-By Tien.<br>
+By .<br>
 Last updated 2017-12-13 Wed 01:27. <br>
 </div>
 </div>

@@ -1,0 +1,94 @@
+#+TITLE: Welcome to my blog
+#+OPTIONS: toc:1 num:nil
+#+STARTUP: showall
+#+LINK: scan  file:/home/darknmt/Maths/Scan/%s
+#+SELECT_TAGS: public
+#+EXLUDE_TAGS: private  <--- Private tags should not be exported. Modify the above line to change this.
+#+AUTHOR: Tien
+
+* These 2020-2021 :these:
+***** [[file:unframed_normal_deg.private.org][Unframed normal degree]] <2021-05-14 Fri>                       :private:
+***** [[file:monotonicity-warped.org][Weighted Monotonicity Theorems with applications to minimal surfaces in hyperbolic spaces]] <2021-03-17 Wed> :private:
+***** [[file:monotonicity-hyperbolic.private.org][Monotonicity theorems in hyperbolic space]] <2021-01-26 Tue>    :private:
+***** [[file:report-quaternion-surfaces.private.org][Report: Minimal surfaces in 4D that are invariant by quaternion multiplication]] <2021-01-20 Wed> :private:
+***** [[file:minsurface-Hopf-fibre.private.org][Minimal surfaces fibred by Hopf links]] <2020-12-15 Tue>        :private:
+***** [[file:flow-Newton-Raphson.private.org][Flow version of Newton--Raphson iteration]] <2020-11-26 Thu>    :private:
+***** [[file:donaldson-10-glueing-Eguchi-Hanson.org][*Donaldson 2010:* Calabi--Yau metric on K3 surface from glueing Eguchi--Hanson metric]] <2020-11-09 Mon> :public:
+***** [[file:bochner-yang-mills.private.org][Yang--Mills fields and Einstein metrics]] <2020-10-30 Fri>      :private:
+
+* Thèse 2019-2020                                                     :these:
+***** [[file:obstruction-CW.private.org][Obstruction theory for CW complexes]] <2020-07-14 Tue>          :private:
+***** [[scan:2020-05/Gauss-Codazzi-harmonic.xopp][Gauss--Codazzi (Bochner) equation for harmonic maps, proved by Cartan formalism]] <2020-05-13 Wed> :private:manuscript:
+***** [[file:harmonic-hyperboloid.private.org][Harmonic map equation in the hyperboloid model of hyperbolic space]] <2020-05-10 Sun> :private:
+***** [[scan:2020-04/curve-shortening-flow.pdf][Curve-shortening flow]] <2020-04-23 Thu> :private:manuscript:
+***** [[file:2020-hooks.private.org][A few targets to aim for]] <2020-04-17 Fri>                     :private:
+***** [[file:curvature-est.private.org][Curvature estimate or Level set of minimal surfaces in \( \mathbb{H}^3 \)]] <2020-04-15 Wed> :private:
+***** [[scan:2020-03/Wang-Wei-nontrivial-foliation-H3.pdf][*Wang--Walter Wei:* Nontrivial foliation of \( \mathbb{H}^3 \) by minimal surfaces]] <2020-03-25 Wed> :private:manuscript:
+***** [[file:atiyah-bott-yang-mills.private.org][*Atiyah--Bott:* Yang--Mills equation on Riemann surfaces]] :private:manuscript:
+***** [[scan:2020-02/Universal-Coefficient-thm.pdf][Universal coefficient theorem]]                             :private:manuscript:
+***** [[file:schoen83.private.org][*Schoen83:* Symmetry of minimal surfaces]]           :private:manuscript:
+*****  [[file:mori-surface.private.org][*Mori--Krtous--Zelnikov:* Minimal surfaces of revolution in \(\mathbb{H}^3\)]] <2020-01-17 Fri> :private:article:
+***** [[scan:2020-01/White-lecture-minimal-surface-1.pdf][*White13:* Lecture on Minimal surfaces]] <2020-01-03 Fri>    :private:manuscript:
+***** [[file:misc-2019.private.org][Misc 2019]]                                                     :private:
+***** [[file:Anderson-Schoen85-poisson.private.org][*Anderson--Schoen 85:* Positive harmonic functions on Cartan--Hadamard manifolds]] <2019-12-05 Thu> :private:article:manuscript:
+***** [[file:moser-iteration.private.org][Rewriting Moser iteration and \( \epsilon \)-regularity]] <2019-12-04 Wed> :private:manuscript:
+***** [[file:characteristic-classes.private.org][Characteristic classes]] <2019-11-12 Tue>                  :private:book:
+***** [[file:calculus-hyperbolic.private.org][Calculus in hyperbolic space]] <2019-11-06 Wed>     :private:computation:
+***** [[file:Donaldson5-Connection-Topo.private.org][*Donaldson*: Chapter5: Connections and Topology]] <2019-11-01 Fri> :private:book:manuscript:
+***** [[file:Nirenberg53-maximum-principle.private.org][*Nirenberg 53*: Strong Maximum Principle for Parabolic equations]] <2019-10-27 Sun> :private:article:manuscript:
+***** [[file:Hartman67-homotopic-harmonic.private.org][*Hartman 67*: Homotopic harmonic maps]] <2019-10-27 Sun> :private:article:manuscript:
+***** [[file:Schoen-Yau79-harmonic.private.org][*Schoen--Yau 79*: Harmonic maps from a finite volume to a negatively curved space]] <2019-10-20 Sun> :private:article:manuscript:
+***** [[file:sharper-energy-density-hyperbolic.private.org][Sharper estimate of energy density in negatively curved space]] <2019-10-20 Sun> :private:manuscript:
+***** [[file:Li-Tam93.private.org][*Li--Tam 93*: Uniqueness of \( C^1 \) harmonic maps \( \mathbb{H}^m \longrightarrow \mathbb{H}^n \)]] <2019-10-03 Thu> :private:article:
+***** [[file:2018-report.private.org][2018-2019 Annual report]]  <2019-07-16 Tue>                     :private:             
+***** [[file:talkI2M-2019.org][Bonnet--Myers and Synge--Weinstein]] <2019-09-21 Sat>        :public:manuscript:
+***** [[file:tension-field-rev.private.org][Tension field revisited & Euler--Lagrange equation of \( \alpha \)-energy]] <2019-09-21 Sat> :private:manuscript:
+
+* Thèse 2018-2019                                                     :these:
+*****  [[file:meeks-yau-80.private.org][*Meeks--Yau 80:* Variational problem for harmonic maps with free boundary data]] <2019-06-30 Sun> :private:article:manuscript:
+***** TODO [[file:anderson-05.private.org][*Anderson 05:* Einstein metric with prescribed conformal infinity]] <2019-05-24 Fri> :private:article:
+***** [[file:anderson-01.private.org][*Anderson 01*: \( L^2 \) curvature and Volume renormalisation of AHE Metrics on 4-Manifolds]] <2019-05-20 Mon> :private:article:
+***** [[file:graham-17.private.org][*Graham 17*: Higher-dimensional Willmore Energies via Minimal Submanifold Asymptotics]] <2019-05-17 Fri> :private:article:
+***** [[file:graham-lee-91.private.org][*Graham--Lee 91*: Einstein metrics on Conformally compact manifolds]]                     <2019-05-07 Tue> :private:article:
+***** [[file:alexakis-mazzeo10.private.org][*Alexakis--Mazzeo 10*: Renormalized Area and Properly Embedded Minimal Surfaces in Hyperbolic 3-Manifolds]] <2019-05-03 Fri> :private:article:
+***** [[file:anderson82.private.org][*Anderson 82*: Complete minimal varieties in hyperbolic space]] <2019-04-29 Mon> :private:article:
+***** [[file:misc-2018.private.org][Misc 2018]]                                                     :private:
+***** [[file:unbounded-operator.org][Unbounded operator, self-adjoint and formally self-adjoint]] <2019-04-19 Fri> :private:analysis:differential_operator:
+***** [[file:seiberg-witten.private.org][Seiberg--Witten invariants]]  <2019-04-09 Tue> :private:seiberg_witten:4_manifold:geo_diff:geo_spin:
+***** [[file:twistor-correspondence.org][*Eells--Salamon 85*: Minimal surfaces and holomorphic curves]] <2018-10-26 Fri> :public:geo_diff:harmonic_map:holomorphic_curve:geo_symp:twistor:
+***** [[file:renormalised-alpha-energy.private.org][Renormalised Alpha-Energy]] <2018-12-31 Mon>                    :private:
+      
+* Stage 2018 :stage:
+***** [[file:summary-stage-2018.org][Summary and the report]] <2018-05-29 Tue>                           :public:
+***** [[file:minimal-immersion-S2.org][Minimal immersions of \( \mathbb{S}^2 \)]] <2018-06-24 Sun>                     :public:harmonic_map:
+***** [[file:harmonic-map-existence.org][Energy estimates and Existence of harmonic maps between Riemannian manifolds]] <2018-05-06 Sun>    :public:
+***** [[file:short-time-reg-nonlin-heat.org][Short-time existence and regularity for nonlinear heat equation]] <2018-06-01 Fri>   :public:
+***** [[file:polynomial-besov.org][Polynomial differential operators and Besov spaces]] <2018-05-27 Sun>                :public:
+***** [[file:elliptic-parabolic.org][Elliptic and parabolic equations on compact manifolds]] <2018-04-30 Mon>                 :public:pde:microlocal_analysis:
+***** [[file:interpolation-sobolev.org][Interpolation theory and Sobolev spaces on compact manifolds]] <2018-04-30 Mon>       :public:geometric_analysis:sobolev_space:
+***** [[file:green-function.org][Parametrix and Green's function of Laplacian operator on Riemannian manifolds]] <2018-03-22 Thu>       :public:geometric_analysis:
+***** [[file:sobolev-riemannian.org][A comparison theorem, Sobolev imbeddings and Konrachov theorem for Riemannian manifolds]] <2018-03-22 Thu>     :public:
+***** [[file:harmonic-maps.org][Harmonic maps of Riemannian manifolds]] <2018-02-20 Tue>   :public:harmonic_map:
+
+* Orsay 2017-2018 :orsay:
+***** TODO [[file:h-principe-Stein.private.org][Gromov's h-principle and Topological characterisation of Stein manifolds]] <2018-06-11 Mon>     :private:
+***** [[file:chow-theorem.org][Algebraisation theorems I: Chow's theorem]] <2018-04-05 Thu>                       :public:
+***** [[file:two-Hartogs.private.org][Two theorems of Hartogs]] <2018-01-08 Mon>                      :private:
+***** [[file:local-several-complex-var.private.org][Local results of several complex variables]] <2017-12-22 Fri>                       :private:
+***** [[file:kodaira.org][Divisors, Picard group and Kodaira embedding theorem]] <2017-12-13 Wed>                       :public:
+***** [[file:sheaf-cohomology.private.org][Sheaves and Cohomology]] <2017-11-01 Wed>                       :private:
+
+# ***** TODO [#C] [[file:one-complex-variable.org][Some results in one complex variable]]
+* Summer 2017   :private:
+***** [[file:isotopy-method-darboux-theorem.private.org][Moser's Isotopy method and Darboux theorem]] <2017-08-31 Thu>        :private:
+***** [[file:hodge-decomp-kodaira.private.org][Hodge decomposition and Kodaira embedding theorem]]  <2017-08-31 Thu> :private:
+
+* Stage 2017
+***** [[file:bogomolov-beauville.org][Bogomolov-Beauville classification]], <2017-08-31 Thu>    :public:
+***** [[file:calabi-yau.org][Calabi-Yau theorem]], <2017-08-31 Thu>     :public:
+***** [[file:Cheeger-Gromoll-splitting.org][From Busemann function to Cheeger-Gromoll splitting]], <2017-08-31 Thu>    :public:
+***** [[file:Berger-remark-complex.org][Berger classification and remarks on parallel structures]], <2017-08-31 Thu>     :public:
+***** [[file:symmetric-space.org][Symmetric spaces and Lie groups]], <2017-08-31 Thu>     :public:
+***** [[file:de-rham-decomposition.org][De Rham decomposition]], <2017-08-31 Thu>     :public:
+
+

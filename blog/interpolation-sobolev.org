@@ -10,7 +10,7 @@
 * Motivation
 
 We will define a more general notion of Sobolev spaces on compact manifold than those in
-cite:aubin_nonlinear_1998 and cite:jost_riemannian_2008, where Sobolev spaces on a
+cite:aubin_nonlinear_1998 and cite:jost_riemannian_2011, where Sobolev spaces on a
 (Riemannian) manifold \( W^{k,p}(M) \) of dimension \( n \) are defined for
 \( k\in \mathbb{Z}_{\geq 0} \) and for /uniform weight/, meaning that a function \( f\in W^{k,p}(M)
 \) is supposed to be weakly differentiable up to order \( k \) in every variables \(
@@ -33,7 +33,7 @@ discuss the notion of trace in order to use the initial condition at \( t=0 \).
 
 In this part, all manifolds will be compact, with no given metric. This is not really a
 generalisation since on compact manifolds, Sobolev spaces \( W^{k,p}(M) \), as defined in
-cite:aubin_nonlinear_1998 and cite:jost_riemannian_2008 set theoretically do not depend on
+cite:aubin_nonlinear_1998 and cite:jost_riemannian_2011 set theoretically do not depend on
 the metric and (the equivalent class of) their norms also independent of the metric.
 
 We will mainly follow the discussion in cite:hamilton_harmonic_1975, where the author also

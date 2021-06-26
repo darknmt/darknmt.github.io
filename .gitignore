@@ -192,3 +192,9 @@ TSWLatexianTemp*
 
 # KBibTeX
 *~[0-9]*
+
+# Private file
+*.private.org
+*.private.html
+*.private.pdf
+*.private.tex

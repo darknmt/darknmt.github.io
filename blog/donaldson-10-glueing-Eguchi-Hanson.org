@@ -1,0 +1,413 @@
+#+TITLE: Calabi--Yau metric on K3 surface
+#+AUTHOR: Tien 
+#+DATE: Nov 09, 2020
+#+STARTUP: latexpreview
+#+LINK: scan  file:/home/darknmt/Maths/Scan/%s
+#+SETUPFILE: ../res/mathsetup.org
+
+
+* Kähler geometry and Calabi--Yau theorem.
+A /hermitian manifold/ is a manifold \( M^{2n} \) with an /almost complex structure/ \( J\)
+such and a /hermitian metric/ \( h \), i.e. \( J^2=-1 \), \(h \) is \( i \)-linear, \(
+h(v,u)=\overline{h(u,v)} \), \( h(u,u) \) is positive and \( h(Ju,v) = ih(u,v) = h(u, -Jv) \) for all \( u,v\in C\otimes
+TM \). 
+Writing \( h=g + i\omega \), one sees that \( g \) is a Riemannian metric and \(\omega \)
+is a nondegenerate 2-form of type (1,1), \( g \) and \( \omega \) are \( J \)-invariant, \( J^*g=g, J^*\omega=\omega
+\) and one can compute the triplet \( (g,\omega,h) \) knowing one of the three.
+
+The following 3 conditions are equivalent and imply integrability of \( J \): (i) \(
+\omega \) is closed, (ii) \( \omega \) is parallel w.r.t \( g \), (iii) J is parallel
+w.r.t \( g \). In this case, one calls \( M \) a /Kähler manifold/, \( \omega \) the
+/Kähler form/ (or metric) and its cohomology class in \( H^2(M,\mathbb{R}) \) the /Kähler
+class/. [fn:1]
+It follows from the following lemma 
+that Kähler metrics of the same cohomology class are parameterised by an open cone of \(
+\Omega^0(M)/\mathbb{R}  \).
+#+ATTR_LATEX: :options [\(\partial \bar\partial\) Lemma]
+#+ATTR_HTML: :id lem:ddc :btit (\(\partial \bar\partial\) Lemma) 
+#+BEGIN_lemma
+#+LATEX: \label{lem:ddc}
+A real (1,1) form on a compact Kähler manifold is exact if and only if it can be writen as
+\( i \partial \bar \partial \varphi \) where \( \varphi \) is a real function on \( M \), unique
+up to constant.
+#+END_lemma
+
+If we choose a basis \( \{\partial_{x_i}, \partial_{y_i}\}_{i=\overline{1,n}} \) such that \( J \partial_{x_i} = \partial_{y_i} \) then \( dz_i = dx_i + i dy_i \) are \( i
+\)-eigenvectors of \( J \), i.e. \( J(dz_i) = J^*(dz_i) = i dz_i \) and \( J(d\bar z_i) =
+-i d\bar z_i \). 
+The hermitian metric can be writen as \( h = \sum
+h_{ij}dz_i\otimes d\bar z_j \) where \( h_{ij}=h(\partial_{x_i}, \partial_{x_j})=\overline
+{h_{ji}}\), and Kähler form is \( \omega = \frac{i}{2}h_{ij}dz_i\wedge d\bar z_j
+\). Because \( J \) is parallel, the Ricci curvature is \( J \)-invariant, and because it
+is symmetric, we can turn it into a 2-form called /Ricci form/ \( \rho(u,v)=\Ric(Ju,v) \),
+which we will abusively denote by \( \Ric \) and can be computed in local coordinates as 
+\begin{equation}
+\label{eq:ricci-ddc}
+\Ric = -i \partial \bar
+\partial\log \det (h_{ij}) 
+\end{equation}
+
+#+ATTR_HTML: :id rem:ric-ddc
+#+BEGIN_remark
+#+LATEX: \label{rem:ric-ddc}
+1. The RHS of eqref:eq:ricci-ddc is globally well-defined: if one writes \( h \) in
+   another chart \( \{d\zeta_i = \alpha_{ij}dz_j\} \), then \( h^z = {\transp\alpha}h^\zeta \bar\alpha \) and \( \log\det h^z =
+   \log\det h^\zeta + \log|\det\alpha|^2 \)
+   and the last term solves \( \partial\bar \partial=0 \) because \( \det\alpha \) is holomorphic.
+2. The Ricci curvature of \( \omega \) is
+   completely determined by its volume form \(\frac{\omega^n}{n!}=   \det(h_{ij})\bigwedge_i
+   \frac{i}{2} dz_i\wedge d\bar z_i \). Given 2 Kähler
+   metrics \( \omega_1,\omega_2 \), the difference of 2 Ricci forms is \( \Ric_1-\Ric_2 = -i \partial\bar
+   \partial\log \frac{\omega_1^n}{\omega_2^n} \).
+3. Since \( \partial \bar\partial\log\det(h_{ij}) \) is the curvature of the canonical bundle
+   \(K_M = \Lambda^{n,0}T^*M \), the cohomology class of \( \rho \) only depends on the
+   complex structure of \( M \) and not its Kähler metric: \( [\Ric]=-2\pi c_1(K_M) \). It
+   follows that Ricci-flat Kähler manifolds have real Chern class \( c_1(K_M)=0 \) which implies, if \(
+   M \) is simply connected, that \( K_M \) is holomorphically trivial.[fn:2]
+#+END_remark
+
+Let \( (M,J,\omega_0) \) be a compact Kähler manifold, by \( \partial\bar \partial
+\)-Lemma one can write any (1,1)-form \(\rho\in -2\pi c_1(K_M) \) as \( \rho = \Ric_0-i
+\partial \bar \partial \eta \) and any Kähler metric 
+cohomologous to \( \omega_0 \) as \( \omega = \omega_0 + i \partial\bar \partial\phi
+\). By the previous remark, \( \rho \) is the Ricci form of \( \omega \) if and only if 
+\begin{equation}
+\label{eq:c-y}
+(\omega_0 + i \partial\bar \partial\phi)^n =
+e^{c+\eta}\omega_0^n =: f\omega_0^n
+\end{equation}
+for a constant \( c \). Because \( [\omega]=[\omega_0] \) the two metrics have equal
+volume, i.e. \( \int_M (f - 1)\omega_0^n=0 \). Yau resolved /Calabi conjecture/ by showing
+that for any \( f \) with average volume 1, there exists a potential \( \phi\in \Omega^0(M) \) unique up to
+constant with \( \omega_0 + i \partial\bar \partial\phi >0 \) satisfying eqref:eq:c-y. 
+
+#+ATTR_LATEX: :options [Calabi--Yau]
+#+ATTR_HTML: :id thm:c-y :btit (Calabi--Yau) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:c-y}
+Let \( (M,\omega_0,J) \) be a compact Kähler manifold and \( \rho \) be any (1,1) form in
+\(-2\pi c_1(K_M)\). There exists a unique Kähler metric \( \omega \) cohomologous to \(
+\omega_0 \) in \( H^2(M, \mathbb{R}) \) such that its Ricci form is \( \rho \).
+#+END_theorem
+
+Since we are interested in Ricci-flat metric, we will suppose that the canonical bundle is holomorphically
+trivial, i.e. there is a global nowhere-vanishing holomorphic
+(n,0)-form \( \chi\) uniquely up to constant (due to Maximum Principle),
+and the Ricci form can be writen as \( \Ric= -i \partial \bar \partial \log
+\frac{\omega^n}{\chi\wedge\bar\chi}\) by the first point of Remark
+ref:rem:ric-ddc. Because \( M \) has no non constant (pluri-) harmonic function, the Ricci
+flat condition is 
+\begin{equation}
+\label{eq:ric-flat-chi}
+\omega^n =\lambda\ \chi\wedge\bar \chi
+\end{equation}
+for a constant \( \lambda \) depending only \( [\omega] \).
+
+One way to generate Kähler metric /locally/ is by using a Kähler potential, i.e. we set
+\( \omega_0=0 \) and look for \( \omega =: i \partial\bar \partial\phi \). [fn:kahler-pot]
+Now if we restrict to rotational potential \( \phi =\phi(\rho)\) where \( \rho=r^2 \) on
+\( \mathbb{C}^2 \), the Ricci-flat equation becomes
+\( (\phi')^2 + r^2 \phi'\phi'' = \lambda \). Up to multiplicative constant, one has 2
+solutions: the Euclidean potential \( \phi_E =\rho \) and the Eguchi--Hanson potential
+\( \phi_{EH}(\rho) = -\tanh^{-1}(1 +\rho^2)^{1/2} \) that explodes at 0. Both of them give
+a positive metric. We will not need the close formula for \( \phi_{EH} \), but it is
+useful to keep in mind its development at \( \rho \) near \( 0 \) and \( +\infty \).
+\begin{equation}
+\label{eq:EH-near-0}
+\phi_{EH} = \log\rho + \frac{1}{4}\rho^2 + O(\rho^4),\quad \rho \approx 0
+\end{equation}
+which will show that the corresponding Kähler metric extends to the blowup and
+\begin{equation}
+\label{eq:EH-near-infty}
+\phi_{EH} = \rho - \frac{1}{2}\rho^{-1} + O(\rho^{-3}),\quad \rho \approx +\infty
+\end{equation}
+which shows that when \( \rho \) is big, the metric looks Euclidean.
+
+* Kummer surfaces as desingularisation of \( T^2/\pm \).  Eguchi--Hanson metric on the Blowup of \( \mathbb{C}^2/\pm \). Glueing Kähler potentials.
+A complex torus \( T^2 = \mathbb{C}^2/\Lambda \) has a natural involution \( x\mapsto -x
+\) which admits \( 2^4=16 \) fixed points (there 2 choices, integer or half-integer, for
+each generator of \( \Lambda \)) and they become 16 singular points in the
+quotient space \( T^2/\pm \), whose regular set \( X \) is equiped with the induced metric and complex
+structure of \( \mathbb{C}^2 \). The neighborhood of each singular is modeled by \(
+\mathbb{C}^2/\pm \) at 0, in term of metric and complex structure. Let \( Z \) be the
+blowup of \( T^2/\pm \) at its singular points, we will see soon that \( Z \) is Kähler
+and its canonical bundle is trivial. Our goal is to rediscover Yau's theorem ref:thm:c-y
+for \( Z \) as a glueing problem.
+
+To see how blowing up change a singular point, we isomorph \( Y:=\mathbb{C}^2/\pm \) with the
+surface \(\mathcal{C}:= \{(w_1, w_2, w_3): w_3^2=w_1w_2\}\subset \mathbb{C}^3 \) via \(
+(z_1,z_2)\mapsto (z_1^2, z_2^2, z_1 z_2) \). The blowup \( \hat{\mathbb{C}^3} \) of \( \mathbb{C}^3 \) at 0 is
+obtained by replacing the origin by complex lines passing by it, i.e. a \( \mathbb{C}P^2
+\): \( \hat{\mathbb{C}^3}:=\{((w_1,w_2,w_3),[u_1:u_2:u_3]):\ u_iw_j=u_jw_i
+\}\subset \mathbb{C}^3\times \mathbb{C}P^2 \). The blowup of \( \mathcal{C} \) at 0 is
+obtained by taking preimage (the so-called /proper transform/ of \( \mathcal{C} \))
+\[
+ \hat{\mathcal{C}}:= \left\{ ((w_1,w_2,w_3),[u_1:u_2:u_3])\in \mathbb{C}^3\times \mathbb{C}P^2:
+w_3^2=w_1w_2,\ u_iw_j=u_jw_i,\ u_3^2=u_1u_2  \right\}
+\]
+
+
+#+ATTR_LATEX: :options []
+#+ATTR_HTML: :id prop:blowup-C :btit () 
+#+BEGIN_proposition
+#+LATEX: \label{prop:blowup-C}
+1. The holomorphic (2,0)-form \( dz_1\wedge dz_2 \) which is well defined on \(\mathcal{C}\setminus \{0\} \)
+   extends to a nowhere vanishing holomorphic (2,0)-form on \( \hat{\mathcal{C}} \). This
+   means that \( Z \) has trivial canonical bundle.
+2. The Eguchi--Hanson metric \( \omega_{EH}=i \partial\bar \partial\phi_{EH} \) on \(
+   \hat{\mathcal{C}}\setminus\{0\} \) extends to a Ricci-flat metric on \( \hat{\mathcal{C}} \). 
+#+END_proposition
+
+#+BEGIN_proof
+Since the \( u \)'s are coordinates of \( \mathbb{C}P^2 \), at least \( u_1 \) or \( u_2
+\) is non-zero. Rewrite \( dz \)'s in term of \( dw \)'s and use \( \frac{dw_1}{w_1} = 2\frac{dw_3}{w_3} - \frac{dw_2}{w_2} \), one has 
+\begin{align*}
+4dz_1\wedge dz_2 &= \frac{1}{w_3}dw_1\wedge dw_2 = \frac{w_1}{w_3} \left( 2\frac{dw_3}{w_3} - \frac{dw_2}{w_2}\right)\wedge dw_2 \\
+	    &= \frac{w_3}{w_2} \left( 2\frac{dw_3}{w_3} - 2\frac{dw_2}{w_2}\right)\wedge dw_2 = \frac{u_3}{u_2} \left( 2\frac{du_3}{u_3} - 2\frac{du_2}{u_2}\right)\wedge dw_2\\
+ 	    &=2 \frac{u_3}{u_2} d\log \frac{u_3}{u_2}\wedge dw_2 = 2 d\left(\frac{u_3}{u_2}\right)\wedge dw_2
+\end{align*}
+So the form extends to \( \hat{\mathcal{C}} \), the extension is nowhere vanishing because
+the \( \frac{u_3}{u_2} \)-direction is tangent to the divisor and the \( w_2 \)-direction
+is normal to it.
+
+To prove that the Kähler metric \( \omega_{EH} \) extends, we make use of the development
+eqref:eq:EH-near-0. The similar argument as the above shows that any metric of the form \( i \partial \bar
+\partial (\log\rho + \frac{1}{4}\rho^2 + O(\rho^4)) \) extends[fn:ext-quad]. An even
+easier way to see that \(\omega_{EH}\) extends is to rewrite the Kähler with the log term
+replaced by
+\begin{align*}
+i \partial\bar \partial \log \rho &=  i \partial\bar \partial \log (|w_1| + |w_2|) =i \partial\bar \partial \log \frac{|w_1| + |w_2|}{|w_2|} \\
+  &= i \partial\bar \partial \log \frac{|u_1| + |u_2|}{|u_2|} = i \partial\bar \partial \log (|u_1| + |u_2|)
+\end{align*}
+where the function \( \log(|u_1|+|u_2|) \) is well-defined on the entire \( \hat{\mathcal{C}} \).
+#+END_proof
+
+#+ATTR_HTML: :id rem:EH-ALE
+#+BEGIN_remark
+#+LATEX: \label{rem:EH-ALE}
+The space \( Y:= \widehat{\mathbb{C}^2/\pm 1} \) equiped with \( \omega_{EH} \), often
+called /Eguchi--Hanson Einstein ALE manifolds/, has /asymptomtically locally Euclidean/
+structure at infinity (blowing up at the origin obviously does not change anything at
+infinity). Because of the expansion eqref:eq:EH-near-infty, the ALE order is exactly 4.
+#+END_remark
+
+Now we will use the expansions ref:eq:EH-near-infty to glue Euguchi--Hanson potential \(
+\phi_{EH} \) to the Euclidean potential outside of a big ball, i.e. let \( \phi_{Y,R} \)
+be an intepolation of \( \phi_{EH} \) on \( \rho\leq \frac{R}{4} \) and \( \phi_E= \rho\) on \( \rho
+> R\):
+\[
+ \phi_{Y,R}(\rho) = \phi_{EH}(\rho) + \beta   (\frac{\rho}{R}).(\phi_E-\phi_{EH})(\rho)
+\]
+where \( \beta\in C^\infty(\mathbb{R}) \) taking value in \( [0,1] \), \( \beta=0 \)
+on \( (-\infty,  \frac{1}{4}+\epsilon) \) and \( \beta = 1 \) on \( [1-\epsilon, +\infty)
+\). Recall that \( \rho = r_Y^2 \) where \( r_Y \) is the Euclidean distance to the origin
+on \( Y=\widehat{\mathbb{C}^2/\pm 1} \), descended from that of \( \mathbb{C}^2\), and
+that \( \phi_E-\phi_{EH} = \frac{1}{2}\rho^{-1} + O(\rho^{-3})=\frac{1}{2}r_Y^{-2} +
+O(r_Y^{-6}) \), so \( |\nabla^k(\phi_{Y,R} - \phi_{EH})|=O(R^{-1-\frac{k}{2}}) \) and if
+we denote \( \omega_{Y,R} :=i \partial \bar\partial\phi_{Y,R} \) to be the Kähler metric
+coming from the potential \( \phi_{Y,R} \) then:
+\[
+\omega_{Y,R} = \omega_{EH} + O(R^{-2}),\qquad \omega_{Y,R}^2 = (1+\eta)\omega_{EH}^2
+\]
+where \( \eta \) is supported in \( \frac{1}{2}R^{1/2}\leq r_X\leq R^{1/2} \) and \(  |\nabla^k\eta| = O(R^{-2-\frac{k}{2}}) \) . Therefore \( \Ric_{\omega_{Y,R}} = \Ric_{\omega_{EH}} -i \partial\bar \partial\log(1+\eta)
+= O(R^{-3})\) in the region of interpolation, and is 0 elsewhere.
+
+Now we will equip the Kummer surface \( Z \) with a family of metrics \( \omega_R \) given
+by scaling down \( Y \) by \( R \) (in length) and glue to \( X \). Concretely, we build a
+function \( r_X \) on \( X \) which is globally bounded and equal to the Euclidean
+distance to singular point in \( T^2/\pm 1 \), then near each singular point \( p_i \), we
+glue the truncated \( X\setminus\{r_X\leq R^{-1/2}\} \) to the region \( \{r_Y\geq R^{1/2}\}
+\) in \( Y \) and construct the (1,1)-form \( \omega_R \) on \( Z \) that is the flat \(\omega_X \) on the \(
+X \)-side, i.e. \( X\setminus \{r_X\leq R^{-1/2}\} \), and is \( R^2 \omega_{Y, R} \) on \( Y
+\)-side, i.e. \(Y\cap\{r_Y\leq R^{1/2}\}\).
+
+#+ATTR_HTML: :id rem:glued-metric
+#+BEGIN_remark
+#+LATEX: \label{rem:glued-metric}
+1. It can be seen from eqref:eq:ricci-ddc that the Ricci curvature is scale-invariant, so as
+   \( R \) gets bigger, the 16 \( Y \)-parts get smaller in size, and bigger in curvature,
+   but their Ricci curvature stays the same.
+2. The Kähler class \( [\omega_R]\in H^2(Z, \mathbb{R}) \) depends on \( R \). This makes
+   sense because in the next section, we are going to find Ricci-flat metric on \( Z \)
+   very close to \( \omega_R \) and in its cohomology class. What we will obtain is a
+   family of Ricci-flat metrics \( \tilde \omega_R \) (unique in \( [\omega_R] \)) which
+   are shrinking in size and exploding in curvature near the 16 singular points. This is
+   the reversed process of Einstein metric bubbling as in
+   cite:Nakajima88_HausdorffConvergenceEinstein,Bando.etal89_ConstructionCoordinatesInfinity,Anderson89_ModuliSpacesEinstein. The
+   Gromov--Hausdorff limit of \( (Z,\tilde\omega_R) \) will be the orbifold \( X \). If in
+   addition, we know that \( \tilde\omega_{Y,R} \) is \( C^2 \)-close to \( \omega_{Y,R} \).
+   - The scale-up process at the bubble \( (\{r_X \leq R^{1/2}\},R^2\omega_{Y,R}) \) turns
+     \( R^2\omega_{Y,R} \) to \( \omega_{EH} \). The 16 Einstein ALEs obtained are
+     Eguchi--Hanson ALEs, which by ref:eq:EH-near-infty are of /ALE order/ 4 as expected by cite:Nakajima88_HausdorffConvergenceEinstein.
+   - There is no "bubble on bubble". One can check that the energy
+     \(\int_Z |Rm_{\tilde\omega_R}|^2\vol_{\omega_R} \approx
+     \int_Z|Rm_{\omega_R}|^2\vol_{\omega_R}\approx 16\int_Y |Rm_{EH}|^2\vol_{EH}
+     \). 
+   However, we are only able to find \( \tilde\omega_R \) via a small \( L^2_5 \) pertubation of the Kähler
+   potential of \( \omega_R \), which translates to \( L^{2}_3 \hookrightarrow C^{0,\alpha} \) pertubation
+   of the metric.
+#+END_remark
+
+* Tube metric and Monge--Ampère equation 
+A clearer way to to understand the procedure of "scaling down \(Y\) and glueing it to \(X\)" is
+via tube metric. We first remark that the quantity \( r^-2\omega \) is scale-invariant:
+\begin{equation}
+\label{eq:r2omega-scale}
+ r_X^{-2}\omega_R = 
+ \begin{cases}
+r_X^{-2}\omega_E ,  & \text{in $X$} \\
+R^2 r_Y^{-2}R^{-2}\omega_{R,Y}=r_Y^{-2}\omega_{R,Y}\approx r_Y^{-2}\omega_{EH} , & \text{in $Y$}
+ \end{cases}
+\end{equation}
+
+#+ATTR_LATEX: :options [Tube metric]
+#+ATTR_HTML: :id lem:tube-metric :btit (Tube metric) 
+#+BEGIN_lemma
+#+LATEX: \label{lem:tube-metric}
+Let \( g_E \) be the Euclidean metric on \( \mathbb{C}^2 \) and \( r \) be the distance function to
+the origin, then \( r^{-2}g_E \) is the product metric on \( S^3\times \mathbb{R}
+\cong \mathbb{C}^2\setminus\{0\}\). Similarly \( r^{-2}g_E \) on \( \mathbb{C}^2/\pm1\setminus\{0\} \) is the product metric on \(
+S^3/\pm1\times \mathbb{R} \).
+#+END_lemma
+This can be seen via a change of variable \( t=\log r \), so \( g_E = dr^2 + r^2 g_{S^3} =
+r^2dt^2 + r^2g_{S^3}\). This means \( r^{-2}g_E \) is the product metric \( dt^2 + g_{S^3}
+\) of \( S^3\times \mathbb{R} \).
+
+Now we come back to the two pictures of \( X \) and \( Y \) and think of \( X \) as a
+manifold with 16 cylindrical ends at the singular points and think of \( Y \) as having 1
+cylindrical end at infinity of \( \mathbb{C}^2/\pm1 \). We mark the \( S^3/\pm1 \)
+sections in \( X,Y \) that correspond to \( r_X=1\) and \(r_Y=1 \), then as \( R \)
+increase, we move further to to ends by tube-distance \(\frac{1}{2}\log R \) and glue the
+two sections \( \{r_X = R^{-1/2}\} \) and \( \{r_Y = R^{1/2}\} \) together. If we choose
+one, in our case \( X \), and turn the tube metric into the finite one by multiplying it
+by \( r^2 \), then it becomes the Gromov--Hausdorff limit in Anderson-Bando-Kasue-Nakajima
+theorem, while the other becomes the "bubble".
+
+Not only does the tube metric provide a clear geometric view of the glueing procedure, but
+also an analysis toolbox for solving the Ricci-flat equation.
+
+We want to find a Kähler potential \( \phi \) so that \(\tilde\omega_R:= \omega_R + i \partial\bar
+\partial\phi \) is Ricci-flat, i.e. \( \tilde\omega_R^2 = (\omega_R +i \partial\bar\partial\phi)^2 = \lambda\chi\wedge\bar\chi \)
+where \( \chi \) is the non-vanishing holomorphic \( (2,0) \)-form. But since \(
+\omega_R^2 = \frac{1}{1+\eta}\chi\wedge\bar\chi \) where \( \eta \) is as before
+(in the glueing procedure, we also recaled the holomorphic (2,0)-form on \( Y \)), i.e. it
+is supported in \( \frac{1}{2}R^{-1/2}\leq r_X\leq R^{1/2} \) and \( |\eta|=O(R^{-2})
+\), one has \(
+( \omega_R + i \partial\bar \partial\phi)^2 = (1+\eta)\omega_R^2
+\). 
+
+We then substitute \( \omega_R \) by the tube metric \( \Theta_R :=r_X^{-2}\omega_R \) and
+rearrange, and divide by \( \Theta_R^2 \)
+to have \( 2r_X^{-2} i\partial\bar \partial\phi\wedge\Theta_R/\Theta_R^2 + (r_X^{-2} i\partial\bar
+\partial\phi)^2/\Theta_R^2  = \lambda(1+\eta)-1 \). This is a PDE, with nonlinearity
+appears in highest order, its linearisation at \( \phi=0 \) is the first term of
+LHS. We will do a change the variable \( f = r_X\phi \) and multiply the two sides by \(
+r_X^3 \) to have
+\begin{equation}
+\label{eq:MA-f}
+2r_X i\partial\bar \partial(r_X^{-1}f)\wedge\Theta_R/\Theta_R^2 + r_X^{-3}(r_X i\partial\bar
+\partial(r_X^{-1}f))^2/\Theta_R^2  = (\lambda(1+\eta)-1)r_X^3
+\end{equation}
+The justification for this manoeuvre is that it turns the linear term into the Laplacian
+with respect to the tube metric.
+#+ATTR_LATEX: :options []
+#+ATTR_HTML: :id lem:lap-tube :btit () 
+#+BEGIN_lemma
+#+LATEX: \label{lem:lap-tube}
+1. If \( \omega=r_X^2\Theta \) is Kähler then \( r_X i \partial\bar \partial(r_X^1 f) =
+   \Delta_{\Theta} f + V \) where \( V = r_X^3\Delta_{\omega}r_X^{-1} \). In
+   particular, if \( \omega \) is the Euclidean metric on \( \mathbb{C}^2 \), then \(
+   V\equiv 1 \).
+2. If \( M \) is a manifold with cylindrical end, equiped with a tube metric and \( V \)
+   is a function on \( M \) that is approximately 1 in its end, then \( \Delta + V:
+   L^2_{k+2} \longrightarrow L^2_k \) is Fredholm. Elements of its kernel are smooth, have
+   exponential decay in all derivatives.
+3. Let \(X_1,X_2 \) be manifolds, each with a compact part and one cylindrical end of the same
+   section and \( V_i \) be potentials on \( V_i \)
+   which equal to 1 in the end. Denote by \(X_T:= X_1\#_T X_2 \) the manifold given by glueing the two ends at
+   distance \( T \) away from the compact part and \( V \) the potential glued from \( V_i
+   \). If \( \Delta_i + V_i \) are invertible on \( X_i \) then the operator \( \Delta_T + V \) has
+   right inverse when \( T \) is sufficiently big, and its norm is bounded independently
+   of \( T \).
+#+END_lemma
+
+The linearisation of eqref:eq:MA-f is not invertible, since the function \( f=r_X \) is
+obviously in the kernel. It turns out that this is the only direction in the kernel. So we should modify the RHS of eqref:eq:MA-f by adding the term
+\( \tau r_X \) where \( \tau\in \mathbb{R} \) and look for pair of solution \( (f,\tau)
+\). The linearised operator, which is self-adjoint, is obviously invertible. And if we can
+solve
+\[
+ 2r_X i\partial\bar \partial(r_X^{-1}f)\wedge\Theta_R/\Theta_R^2 + r_X^{-3}(r_X i\partial\bar
+\partial(r_X^{-1}f))^2/\Theta_R^2  = (\lambda(1+\eta)-1)r_X^3 + \tau r_X
+\]
+Integrate and use the fact that the \( \omega_R \) volume is the same as the \( \tilde
+\omega_R \) volume, one can see that \( \tau=0 \).
+
+Now suppose that we can solve the linearised equation, it remains to solve
+the nonlinear one eqref:eq:MA-f. To do this, one uses the quantitative Inverse Function
+theorem.
+#+ATTR_LATEX: :options [Quantitative IFT]
+#+ATTR_HTML: :id thm:quant-ift :btit (Quantitative IFT) 
+#+BEGIN_theorem
+#+LATEX: \label{thm:quant-ift}
+Let \( F: X \longrightarrow Y \) be a \( C^2 \) map between Banach space such that \( F(a)
+= b \) and the derivative \( F'(a): X
+\longrightarrow Y\) of \( F \) at \( a \) is invertible. Suppose that \( F'' \) is bounded
+on an open set \( U\supset B(a,r_U)\ni a \). Then the image \( F(U) \) contains a ball centered at \( b
+\), of radius
+\(
+r = \min\{ \frac{1}{4|F''||F'(a)^{-1}|^2}, \frac{r_U}{2|F'(a)^{-1}|}\}
+\)
+where \( |F''| \) is the constant such that \( |F'(x_1) v - F'(x_2) v|\leq |F''||x_1-x_2||v| \)
+#+END_theorem
+It is often proved by contraction mapping, but before going to the detail let us explain
+how the quantity \( \frac{1}{4|F''|F'(a)^{-1}|^2} \) appears using the Taylor
+expansion of \( F \): \( F(a +\delta) = F(a) + F'(a)\delta + \frac{1}{2}F''(a)\delta^2
++o(\delta^2) \). Infinitesimally to move \( F \) in a direction \( v \) at \( F(a) \), \(
+x \) should be move in the direction \( F'(a)^{-1}v \), but to go from "infinitesimally"
+to "locally" we get interference from higher order term. To guarantee that it is negligible,
+one needs
+\[
+\left|F''(a)\right||\delta|^2\leq \left|F'(a)\delta\right|
+\] 
+Since \(  |F'(a)^{-1}|^{-1}|\delta|\leq|F'(a)\delta| \), one only needs
+\( |F''||\delta|^2\leq |F'(a)^{-1}|^{-1}|\delta| \), or \( |\delta| \leq
+\frac{1}{|F'(a)^{-1}||F''|} \). To garuantee this, \( F \) should move less than \( \frac{1}{|F'(a)^{-1}|^2|F''|} \).
+#+BEGIN_proof
+Let \( y\in Y \) be a point close to \( b \). Define \( x_0 = a \) and \( x_{n+1} = G(x_n)
+\) where \(G(x) = x + F_a^{-1}(y-F(x))  \). We will prove that if \( y \) is sufficiently
+close to \( b \) then \( G \) is contraction and
+so \( \{x_n\} \) converges. One has
+\[
+\left|G'\right| = |1 - F_a^{-1}F_x| = |F_a^{-1}(F_a-F_x)| \leq |F_a^{-1}||F''||x-a|
+\]
+So \( G \) is \( \frac{1}{2} \)-contraction, as long as \( x\in U \) and \( |x-a|\leq
+\frac{1}{2|F_a^{-1}||F''|} \). One has \( |x_{n+1}-x_{n}|\leq 2^{-n}|x_1-x_0| \leq
+2^{-n}|F_a^{-1}||y-b| \) and so \( \{x_n\} \) converges to a limit \( x_\infty \) in the ball of radius
+\( 2|F_a^{-1}||y-b| \) around \( a \), which we can suppose to lie in \( U\cap B(a,
+\frac{1}{2|F_a^{-1}|F''|})\) if \( |y-b| \leq \frac{1}{4|F_a^{-1}|^2|F''|}\).
+The limit \( x_\infty \) satisfies \( G(x_\infty)=x_\infty \), i.e. \( F(x_\infty) = y \).
+#+END_proof
+
+* Footnotes
+
+[fn:ext-quad] One only needs the first-order term in \( \rho \) to vanish.
+
+[fn:kahler-pot] In fact the \( \bar \partial \)-Poincare lemma means any Kähler metric can
+be writen locally this way. 
+
+[fn:1] One can also define Kähler manifold as riemannian manifold with /holonomy group/ reducing from
+\( SO(2n) \) to \( U(n) \). This means that there is a /parallel, compatible/ complex
+structure \( J \), i.e. \( \nabla J = 0 \) and \( g\circ J = J \). These two conditions
+implies integrability of \( J \), and when \( J \) is compatible, \( \nabla J = 0 \) is
+equivalent to \( d\omega = 0 \) where \( \omega(u,v) = g(Ju, v) \).
+
+[fn:2] When \( M \) is simply connected, vanishing real Chern class (flatness) implies vanishing
+integral Chern class (topological triviality). Topologically trivial line bundles that are not holomorphically trivial
+are the kernel of \( c_1: H^1(M, \mathcal{O}^*) \longrightarrow H^2(M, \mathbb{Z}) \),
+which by the exponential sequence is the Dolbeault cohomology \( H^1(M,
+\mathcal{O}) \) which vanishes due to Hodge theory.
+
+
+bibliographystyle:alpha
+bibliography:../res/GeoDiff.bib

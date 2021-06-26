@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-11-16 Fri 14:31 -->
+<!-- 2021-06-26 Sat 16:11 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Welcome to my homepage</title>
+<title>Welcome to my homepage !</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Tien" />
 <style type="text/css">
@@ -179,8 +179,13 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
-<link rel='stylesheet' href='../res/blog.css' type='text/css'/>
+<!-- Bootstrap core CSS -->
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="../bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+
+<!-- Theorem CSS -->
+    <link rel='stylesheet' href='../res/blog.css' type='text/css'/>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -227,6 +232,20 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path["Extra"] = "https://darknmt.github.io/res/XyJax/extensions/TeX";MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    "HTML-CSS": {
+      styles: {".MathJax_Preview": {visibility: "hidden"}}
+    },
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+    TeX: {equationNumbers: {  autoNumber: "AMS"  }, extensions: ["[Extra]/xypic.js", "AMSmath.js","AMSsymbols.js"]}
+    //                  ^^^^^^^^load xypic.js
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js"></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -234,48 +253,95 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href='./index.html'>Home</a></li>
 <li><a href='./blog.html'>Blog</a></li>
-<li><a href='./writings.html'>Miscellany</a></li>
+<li><a href='./papers.html'>Publications</a></li>
 <li><a href='http://github.com/darknmt/'>GitHub</a></li>
 <li><a href='./contact.html'>Contact</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
-<h1 class="title">Welcome to my homepage</h1>
+<h1 class="title">Welcome to my homepage !</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org47bc4b7">1. About this site</a></li>
-<li><a href="#org5a4e2ff">2. Links</a></li>
+<li><a href="#org86d7624">Hello \(!\)</a></li>
+<li><a href="#orgabca2f6">Links</a></li>
 </ul>
 </div>
 </div>
+
+<div id="outline-container-org86d7624" class="outline-2">
+<h2 id="org86d7624">Hello \(!\)</h2>
+<div class="outline-text-2" id="text-org86d7624">
 <p>
-I am currently in the first year of my PhD program under supervision of <a href="http://homepages.ulb.ac.be/~joelfine">Joel Fine</a> at
-<a href="http://geometry.ulb.ac.be/">Université Libre de Bruxelles</a> and <a href="http://www.i2m.univ-amu.fr/perso/julien.keller/Julien-KELLER.html">Julien Keller</a> at <a href="http://www.i2m.univ-amu.fr/Equipe-Analyse-Geometrie-Topologie-AGT">Aix-Marseille Université</a>. 
+My name is Manh Tien NGUYEN.
 </p>
 
-
-<div id="outline-container-org47bc4b7" class="outline-2">
-<h2 id="org47bc4b7"><span class="section-number-2">1</span> About this site</h2>
-<div class="outline-text-2" id="text-1">
-<ul class="org-ul">
-<li>The <b>Blog</b> contains my reading notes of well-known articles. Most of them are writen as
-part of the memoirs during my Master/PhD studies.</li>
-<li>The <b>Miscellany</b> page is dedicated to shorter writings with a focus on what I am
-currently doing.</li>
-</ul>
 <p>
-These pages are writen using <a href="https://en.wikipedia.org/wiki/Emacs">emacs</a> <a href="http://orgmode.org/">org-mode</a> and a <a href="https://github.com/darknmt/theorems-css">CSS</a> to display LaTeX structure. 
+I am PhD student in Mathematics at <a href="http://geometry.ulb.ac.be/">Université Libre de Bruxelles</a> and <a href="http://www.i2m.univ-amu.fr/Equipe-Analyse-Geometrie-Topologie-AGT">Aix-Marseille Université</a>. 
 </p>
+<div class="row">
+  <div class="col-md-9">
+  <p>My supervisors are <a href="http://homepages.ulb.ac.be/~joelfine">Joel Fine</a> and <a href="http://profmath.uqam.ca/~jkeller/">Julien Keller</a>.</p>
+  
+  <p>For the last 3 years, I studied harmonic maps and minimal surfaces, mostly in(to) the
+  hyperbolic space.<br>
+  On your right is a surface of the Euclidean 3-space. It looks quite minimal and it grows on my lemon tree.</p>
+  </div>
+  <div class="col-md-3">
+    <img src="../img/lemon-leaf.jpg" style="width:100%">
+  </div>
+</div>
+
+<p>
+Here are a few more minimal surfaces, this time in 4D. They are all
+<a href="https://en.wikipedia.org/wiki/Surface_of_revolution">surfaces of revolution</a>.
+</p>
+
+<div class="row">
+  <div class="col-md-4">
+    <img src="../img/2021-01-21-minsurface-quaternion-H4.png" style="width:90%">
+  </div>
+  <div class="col-md-4">
+  <div class="row">
+  <div class="col-md-6">
+    <img src="../img/2021-06-3-petal.png" style="width:100%">
+  </div>
+  <div class="col-md-6">
+    <img src="../img/2021-06-5-petal.png" style="width:100%">
+  </div>
+  </div>
+  <div class="row">
+  <div class="col-md-6">
+    <img src="../img/2021-06-7-petal.png" style="width:100%">
+  </div>
+  <div class="col-md-6">
+    <img src="../img/2021-06-8-petal.png" style="width:100%">
+  </div>
+  </div>
+  </div>
+  <div class="col-md-4">
+  The rotation used here is given by simultaneously changing each complex coordinate of \(\mathbb{C}^2\) by an opposite phase.
+  I claim that when you rotate these curves,
+  <ul>
+  <li> those in the left figure will form minimal annuli in the hyperbolic four-space. </li>
+  <li> those in the 4 figures on the right will become minimal tori of the round four-sphere. </li>
+  </ul>
+  By design, they are fibred by <a href="https://en.wikipedia.org/wiki/Hopf_link">Hopf links</a>.
 </div>
 </div>
-<div id="outline-container-org5a4e2ff" class="outline-2">
-<h2 id="org5a4e2ff"><span class="section-number-2">2</span> Links</h2>
-<div class="outline-text-2" id="text-2">
+</div>
+</div>
+
+
+
+
+
+<div id="outline-container-orgabca2f6" class="outline-2">
+<h2 id="orgabca2f6">Links</h2>
+<div class="outline-text-2" id="text-orgabca2f6">
 <ul class="org-ul">
-<li>Here is my <a href="http://172.17.71.229/dokuwiki/doku.php">DokuWiki</a> and personal <a href="http://172.17.71.229/nextcloud">nextcloud</a>.</li>
 <li><a href="https://darknmt.github.io/res/tikzcd-editor/">A GUI editor</a> for commutative diagram with <code>tikzcd</code>, also <a href="https://tikzcd.yichuanshen.de/">originally hosted by the author</a>.</li>
 <li>If you prefer <code>xypic</code>, use <a href="https://darknmt.github.io/res/xypic-editor/">this one</a>. <a href="https://github.com/darknmt/xypic-editor">Source code</a>.</li>
 </ul>
@@ -285,7 +351,7 @@ These pages are writen using <a href="https://en.wikipedia.org/wiki/Emacs">emacs
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien.<br>
-Last updated 2018-11-16 Fri 14:31. <br>
+Last updated 2021-06-26 Sat 16:11. <br>
 </div>
 </div>
 </body>

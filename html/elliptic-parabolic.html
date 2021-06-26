@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-06-01 Fri 13:48 -->
+<!-- 2021-06-25 Fri 23:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Elliptic and parabolic equation on compact manifolds</title>
@@ -253,61 +253,6 @@ for the JavaScript code in this tag.
 <li><a href='./contact.html'>Contact</a></li>
 </ul>
 </div>
-</div>
-<div id="content">
-<h1 class="title">Elliptic and parabolic equation on compact manifolds</h1>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#org39826d3">1. Commutative diagram and linear PDE. Example: Semi-elliptic equation on \( \mathbb{R}^n \)</a></li>
-<li><a href="#orgfdc8cf0">2. Elliptic equation on half-plan \( X\times Y^+ \). Boundary conditions. </a>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#orgc81f56e">2.0.0.1. Approximate inverse of boundary operator \( B \).</a></li>
-<li><a href="#orgc94544e">2.0.0.2. Some auxilary functions.</a></li>
-<li><a href="#orgca8eafc">2.0.0.3. Approximate inverse of elliptic operator \( A \) on half-plan.</a></li>
-<li><a href="#org1c57279">2.0.0.4. Approximate inverse of the combined operator.</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org2617295">3. From local to global.</a>
-<ul>
-<li><a href="#org8893314">3.1. Pertubation of exact squares and consequences.</a></li>
-<li><a href="#org0548911">3.2. Consequences of Theorem .</a></li>
-</ul>
-</li>
-<li><a href="#org7f902e6">4. Parabolic equation on manifold.</a>
-<ul>
-<li><a href="#orgd5e75c7">4.1. Parabolicity and local results.</a></li>
-<li><a href="#org8515017">4.2. Global results and causality. </a></li>
-<li><a href="#org7ef7e1a">4.3. Regularisation effect and Gårding inequality.</a></li>
-</ul>
-</li>
-<li><a href="#org9702aa6">5. Example: Linear heat equation.</a>
-<ul>
-<li><a href="#orgf37d21d">5.1. Linear system.</a></li>
-<li><a href="#org30ad1a4">5.2. Maximum principle and \( L^\infty \)-Comparison theorem.</a></li>
-<li><a href="#org4dc2da8">5.3. Backwards heat equation and \( L^1 \)-Comparison theorem.</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<div class="info">
-<p>
-The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
-<code>pdf</code>. 
-For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
-</p>
-
-</div>
 \(
 \newcommand{\re}{\mathop{\rm Re}\nolimits}
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
@@ -325,10 +270,72 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
 \newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
 \newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
+\newcommand{\Enorm}{\mathop{\mathcal{E}_{\rm norm}}\nolimits}
+\newcommand{\Anorm}{\mathop{\mathcal{A}_{\rm norm}}\nolimits}
+\newcommand{\Cl}{\mathop{\rm Cl}\nolimits}
+\newcommand{\Spin}{\mathop{\rm Spin}\nolimits}
+\newcommand{\Pin}{\mathop{\rm Pin}\nolimits}
+\newcommand{\Hom}{\mathop{\rm Hom}\nolimits}
+\newcommand{\End}{\mathop{\rm End}\nolimits}
 \)
+</div>
+<div id="content">
+<h1 class="title">Elliptic and parabolic equation on compact manifolds</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org99aee62">1. Commutative diagram and linear PDE. Example: Semi-elliptic equation on \( \mathbb{R}^n \)</a></li>
+<li><a href="#orgddf3f9d">2. Elliptic equation on half-plan \( X\times Y^+ \). Boundary conditions. </a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#org58b64d1">2.0.0.1. Approximate inverse of boundary operator \( B \).</a></li>
+<li><a href="#orgfe7c02a">2.0.0.2. Some auxilary functions.</a></li>
+<li><a href="#org219bf79">2.0.0.3. Approximate inverse of elliptic operator \( A \) on half-plan.</a></li>
+<li><a href="#org63061be">2.0.0.4. Approximate inverse of the combined operator.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgd0cb6e6">3. From local to global.</a>
+<ul>
+<li><a href="#org926626b">3.1. Pertubation of exact squares and consequences.</a></li>
+<li><a href="#org166b0a1">3.2. Consequences of Theorem .</a></li>
+</ul>
+</li>
+<li><a href="#orgc1cf3d6">4. Parabolic equation on manifold.</a>
+<ul>
+<li><a href="#org97b4cdb">4.1. Parabolicity and local results.</a></li>
+<li><a href="#org6043f52">4.2. Global results and causality. </a></li>
+<li><a href="#org9876cf9">4.3. Regularisation effect and Gårding inequality.</a></li>
+</ul>
+</li>
+<li><a href="#orgd583d31">5. Example: Linear heat equation.</a>
+<ul>
+<li><a href="#org1d45cb7">5.1. Linear system.</a></li>
+<li><a href="#org5ae8344">5.2. Maximum principle and \( L^\infty \)-Comparison theorem.</a></li>
+<li><a href="#orgba31c73">5.3. Backwards heat equation and \( L^1 \)-Comparison theorem.</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="info">
+<p>
+The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
+<code>pdf</code>. 
+For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
+</p>
 
-<div id="outline-container-org39826d3" class="outline-2">
-<h2 id="org39826d3"><span class="section-number-2">1</span> Commutative diagram and linear PDE. Example: Semi-elliptic equation on \( \mathbb{R}^n \)</h2>
+</div>
+
+<div id="outline-container-org99aee62" class="outline-2">
+<h2 id="org99aee62"><span class="section-number-2">1</span> Commutative diagram and linear PDE. Example: Semi-elliptic equation on \( \mathbb{R}^n \)</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Fix a weight \( (\sigma_1,\dots,\sigma_n) \) on \( X = \mathbb{R}^n \) and recall that
@@ -628,8 +635,8 @@ the theory to cover the case \( A \) of variable coefficients.
 </div>
 
 
-<div id="outline-container-orgfdc8cf0" class="outline-2">
-<h2 id="orgfdc8cf0"><span class="section-number-2">2</span> Elliptic equation on half-plan \( X\times Y^+ \). Boundary conditions. <div id="ell-half-plan"></h2>
+<div id="outline-container-orgddf3f9d" class="outline-2">
+<h2 id="orgddf3f9d"><span class="section-number-2">2</span> Elliptic equation on half-plan \( X\times Y^+ \). Boundary conditions. <div id="ell-half-plan"></h2>
 <div class="outline-text-2" id="text-2">
 <p>
 We will quickly review in this part the ideas to solve elliptic equations with constant
@@ -719,8 +726,8 @@ B^j(\xi,\eta) \equiv C^j(\xi,\eta) = \sum_{\beta =
 </div>
 </div>
 
-<div id="outline-container-orgc81f56e" class="outline-5">
-<h5 id="orgc81f56e"><span class="section-number-5">2.0.0.1</span> Approximate inverse of boundary operator \( B \).</h5>
+<div id="outline-container-org58b64d1" class="outline-5">
+<h5 id="org58b64d1"><span class="section-number-5">2.0.0.1</span> Approximate inverse of boundary operator \( B \).</h5>
 <div class="outline-text-5" id="text-2-0-0-1">
 <p>
 The CBC condition allows us to approximately inverse boundary operator \( B \).
@@ -780,8 +787,8 @@ where \( \Gamma\subset \mathbb{C} \) is a curve enclosing all zeros of \( A(\xi,
 </div>
 </div>
 
-<div id="outline-container-orgc94544e" class="outline-5">
-<h5 id="orgc94544e"><span class="section-number-5">2.0.0.2</span> Some auxilary functions.</h5>
+<div id="outline-container-orgfe7c02a" class="outline-5">
+<h5 id="orgfe7c02a"><span class="section-number-5">2.0.0.2</span> Some auxilary functions.</h5>
 <div class="outline-text-5" id="text-2-0-0-2">
 <p>
 We cannot use the operator \( G \) as in the case of whole plan as an inverse of \( A \)
@@ -855,8 +862,8 @@ itself, not \( \mathcal{S}(Y^-/0) \) to itself as we wish.
 </div>
 
 
-<div id="outline-container-orgca8eafc" class="outline-5">
-<h5 id="orgca8eafc"><span class="section-number-5">2.0.0.3</span> Approximate inverse of elliptic operator \( A \) on half-plan.</h5>
+<div id="outline-container-org219bf79" class="outline-5">
+<h5 id="org219bf79"><span class="section-number-5">2.0.0.3</span> Approximate inverse of elliptic operator \( A \) on half-plan.</h5>
 <div class="outline-text-5" id="text-2-0-0-3">
 <p>
 The auxilary function \( w \) will play the role of \( \psi \) in the whole plan case.
@@ -900,8 +907,8 @@ first extending a function to the whole plan, applying \( G_0 \) and finally cut
 </div>
 
 
-<div id="outline-container-org1c57279" class="outline-5">
-<h5 id="org1c57279"><span class="section-number-5">2.0.0.4</span> Approximate inverse of the combined operator.</h5>
+<div id="outline-container-org63061be" class="outline-5">
+<h5 id="org63061be"><span class="section-number-5">2.0.0.4</span> Approximate inverse of the combined operator.</h5>
 <div class="outline-text-5" id="text-2-0-0-4">
 <p>
 Let \( \mathcal{C} \) be the combined operator:
@@ -968,11 +975,11 @@ for all \( k>l> \frac{\sigma}{\rho p} + \max_j r_j \).
 </div>
 
 
-<div id="outline-container-org2617295" class="outline-2">
-<h2 id="org2617295"><span class="section-number-2">3</span> From local to global.</h2>
+<div id="outline-container-orgd0cb6e6" class="outline-2">
+<h2 id="orgd0cb6e6"><span class="section-number-2">3</span> From local to global.</h2>
 <div class="outline-text-2" id="text-3">
-</div><div id="outline-container-org8893314" class="outline-3">
-<h3 id="org8893314"><span class="section-number-3">3.1</span> Pertubation of exact squares and consequences.</h3>
+</div><div id="outline-container-org926626b" class="outline-3">
+<h3 id="org926626b"><span class="section-number-3">3.1</span> Pertubation of exact squares and consequences.</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 We will extend the result of Theorem <a href="#thm:elliptic-const">thm:elliptic-const</a> (exactness of heterogeneous elliptic
@@ -1375,8 +1382,8 @@ h - B^j f = \sum (\psi h_j - B^j \tilde f)  & \text{is in $ \partial W^{k-r_j,p}
 </div>
 
 
-<div id="outline-container-org0548911" class="outline-3">
-<h3 id="org0548911"><span class="section-number-3">3.2</span> Consequences of Theorem <a href="#thm:compact-op-exact">thm:compact-op-exact</a>.</h3>
+<div id="outline-container-org166b0a1" class="outline-3">
+<h3 id="org166b0a1"><span class="section-number-3">3.2</span> Consequences of Theorem <a href="#thm:compact-op-exact">thm:compact-op-exact</a>.</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 Under the same setup as Theorem <a href="#thm:elliptic-general">thm:elliptic-general</a>, one has
@@ -1426,11 +1433,11 @@ C^\infty (\partial M) \).
 </div>
 
 
-<div id="outline-container-org7f902e6" class="outline-2">
-<h2 id="org7f902e6"><span class="section-number-2">4</span> Parabolic equation on manifold.</h2>
+<div id="outline-container-orgc1cf3d6" class="outline-2">
+<h2 id="orgc1cf3d6"><span class="section-number-2">4</span> Parabolic equation on manifold.</h2>
 <div class="outline-text-2" id="text-4">
-</div><div id="outline-container-orgd5e75c7" class="outline-3">
-<h3 id="orgd5e75c7"><span class="section-number-3">4.1</span> Parabolicity and local results.</h3>
+</div><div id="outline-container-org97b4cdb" class="outline-3">
+<h3 id="org97b4cdb"><span class="section-number-3">4.1</span> Parabolicity and local results.</h3>
 <div class="outline-text-3" id="text-4-1">
 <div class="definition">
 <p>
@@ -1517,8 +1524,8 @@ W^{l,p}(X\times Y^+\times T^+/0) \ar@{->}[r]^<<<<<{(A,B^j)} & W^{l-r,p}(X\times 
 </div>
 
 
-<div id="outline-container-org8515017" class="outline-3">
-<h3 id="org8515017"><span class="section-number-3">4.2</span> Global results and causality. <div id="sec:global-result-para"></h3>
+<div id="outline-container-org6043f52" class="outline-3">
+<h3 id="org6043f52"><span class="section-number-3">4.2</span> Global results and causality. <div id="sec:global-result-para"></h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 We will use the following setup. Let \( M \) be a compact manifold (possibly with boundary), of the form \( N\times
@@ -1661,8 +1668,8 @@ equation \( (A f_\#, B^j f) = (g,h) \) where \( g,h \) and the coefficients of \
 
 
 
-<div id="outline-container-org7ef7e1a" class="outline-3">
-<h3 id="org7ef7e1a"><span class="section-number-3">4.3</span> Regularisation effect and Gårding inequality.</h3>
+<div id="outline-container-org9876cf9" class="outline-3">
+<h3 id="org9876cf9"><span class="section-number-3">4.3</span> Regularisation effect and Gårding inequality.</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 With the same technique used for elliptic equation, one can also prove regularity result
@@ -1747,8 +1754,8 @@ cokernel of elliptic operator, Theorem <a href="#thm:reg-coker">thm:reg-coker</a
 </div>
 
 
-<div id="outline-container-org9702aa6" class="outline-2">
-<h2 id="org9702aa6"><span class="section-number-2">5</span> Example: Linear heat equation.</h2>
+<div id="outline-container-orgd583d31" class="outline-2">
+<h2 id="orgd583d31"><span class="section-number-2">5</span> Example: Linear heat equation.</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 We use the same setup of \( M,N,\alpha,\omega \) as Section
@@ -1765,8 +1772,8 @@ D_{x^i} \)). Hence on \( M = N\times [\alpha,\omega] \) the operator \(
 </p>
 </div>
 
-<div id="outline-container-orgf37d21d" class="outline-3">
-<h3 id="orgf37d21d"><span class="section-number-3">5.1</span> Linear system.</h3>
+<div id="outline-container-org1d45cb7" class="outline-3">
+<h3 id="org1d45cb7"><span class="section-number-3">5.1</span> Linear system.</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 We will look at the linear parabolic system of equations for \( F = (f^1,\dots, f^n): M
@@ -1855,8 +1862,8 @@ terms. We conclude that \( F=0 \) since \( e= 0 \) by the following Maximum prin
 </div>
 </div>
 
-<div id="outline-container-org30ad1a4" class="outline-3">
-<h3 id="org30ad1a4"><span class="section-number-3">5.2</span> Maximum principle and \( L^\infty \)-Comparison theorem.</h3>
+<div id="outline-container-org5ae8344" class="outline-3">
+<h3 id="org5ae8344"><span class="section-number-3">5.2</span> Maximum principle and \( L^\infty \)-Comparison theorem.</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 With the same proof as for open set in \( \mathbb{R}^n \), one has the maximum principle
@@ -1937,8 +1944,8 @@ Plugging these in \eqref{eq:infty-comparison}, one has a contradiction.
 </div>
 
 
-<div id="outline-container-org4dc2da8" class="outline-3">
-<h3 id="org4dc2da8"><span class="section-number-3">5.3</span> Backwards heat equation and \( L^1 \)-Comparison theorem.</h3>
+<div id="outline-container-orgba31c73" class="outline-3">
+<h3 id="orgba31c73"><span class="section-number-3">5.3</span> Backwards heat equation and \( L^1 \)-Comparison theorem.</h3>
 <div class="outline-text-3" id="text-5-3">
 <p>
 We will use backwards heat equation, which is just heat equation with the reversed sense

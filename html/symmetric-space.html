@@ -3,12 +3,11 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-11-28 Wed 01:28 -->
+<!-- 2021-06-25 Fri 23:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Symmetric spaces and Lie groups</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="Tien" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -253,27 +252,6 @@ for the JavaScript code in this tag.
 <li><a href='./contact.html'>Contact</a></li>
 </ul>
 </div>
-</div>
-<div id="content">
-<h1 class="title">Symmetric spaces and Lie groups</h1>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#org5f170fd">1. Symmetric space</a></li>
-<li><a href="#org368ea6b">2. Locally symmetric space</a></li>
-<li><a href="#orgf896dfc">3. Annex: Group of isometries as Lie group</a></li>
-</ul>
-</div>
-</div>
-<div class="info">
-<p>
-The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
-<code>pdf</code>. 
-For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
-</p>
-
-</div>
 \(
 \newcommand{\re}{\mathop{\rm Re}\nolimits}
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
@@ -293,7 +271,33 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
 \newcommand{\Enorm}{\mathop{\mathcal{E}_{\rm norm}}\nolimits}
 \newcommand{\Anorm}{\mathop{\mathcal{A}_{\rm norm}}\nolimits}
+\newcommand{\Cl}{\mathop{\rm Cl}\nolimits}
+\newcommand{\Spin}{\mathop{\rm Spin}\nolimits}
+\newcommand{\Pin}{\mathop{\rm Pin}\nolimits}
+\newcommand{\Hom}{\mathop{\rm Hom}\nolimits}
+\newcommand{\End}{\mathop{\rm End}\nolimits}
 \)
+</div>
+<div id="content">
+<h1 class="title">Symmetric spaces and Lie groups</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgef2e3ab">1. Symmetric space</a></li>
+<li><a href="#orgac3fb9f">2. Locally symmetric space</a></li>
+<li><a href="#org4925cad">3. Annex: Group of isometries as Lie group</a></li>
+</ul>
+</div>
+</div>
+<div class="info">
+<p>
+The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
+<code>pdf</code>. 
+For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
+</p>
+
+</div>
 <div class="info">
 <p>
 This post is a part of the <a href="../res/Stage2017.pdf">memoire of my M1 internship</a> at I2M. The memoire contains,
@@ -302,8 +306,8 @@ needless to say, less errors than this page.
 
 </div>
 
-<div id="outline-container-org5f170fd" class="outline-2">
-<h2 id="org5f170fd"><span class="section-number-2">1</span> Symmetric space</h2>
+<div id="outline-container-orgef2e3ab" class="outline-2">
+<h2 id="orgef2e3ab"><span class="section-number-2">1</span> Symmetric space</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 By de Rham decomposition, we now focus more on the building blocks: Riemannian manifolds with irreducible
@@ -345,7 +349,7 @@ of the form \(s_x\circ s_y\) acts transitively on \(M\).
 
 <div class="theorem">
 <p>
-<a id="org2083dcd"></a> 
+<a id="org0f5d9bf"></a> 
 Let \(M\) be a symmetric Riemannian manifold then 
 </p>
 <ol class="org-ol">
@@ -378,8 +382,8 @@ classify all such pairs \((\frak{g},\frak{h})\).
 </div>
 </div>
 
-<div id="outline-container-org368ea6b" class="outline-2">
-<h2 id="org368ea6b"><span class="section-number-2">2</span> Locally symmetric space</h2>
+<div id="outline-container-orgac3fb9f" class="outline-2">
+<h2 id="orgac3fb9f"><span class="section-number-2">2</span> Locally symmetric space</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 The previous results can be extended to locally symmetric spaces.
@@ -405,7 +409,7 @@ If they are satisfied, \(M\) is called  <span class="underline">locally symmetri
 
 <div class="theorem">
 <p>
-<a id="org594d3c1"></a>
+<a id="org443ecd1"></a>
 Let \(M\) be a locally symmetric Riemannian manifold, then there exists a unique symmetric simply
 connected Riemannian manifold \(N\) such that \(M\) and \(N\) are locally isometric, i.e. for every
 \(x\in M\) and \(y\in N\), there exists neighborhoods \(U\) of \(x\) and \(V\) of \(y\) that are isometric.
@@ -419,8 +423,8 @@ As a result, the reduced holonomy of \(M\) is the same as the holonomy of \(N\).
 </div>
 </div>
 
-<div id="outline-container-orgf896dfc" class="outline-2">
-<h2 id="orgf896dfc"><span class="section-number-2">3</span> Annex: Group of isometries as Lie group</h2>
+<div id="outline-container-org4925cad" class="outline-2">
+<h2 id="org4925cad"><span class="section-number-2">3</span> Annex: Group of isometries as Lie group</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 We explain in this annex some subtle details: how can a group of isometries be a manifold. We state, with
@@ -429,7 +433,7 @@ Montgomery-Zippin, <i>Transformation groups</i> as reference, the following gene
 
 <div class="theorem">
 <p>
-<a id="orge28c614"></a>
+<a id="orgc0e49e0"></a>
 Let \(G\) be a group acting faithfully on a connected manifold \(M\) of class \(C^k\) such that each
 action is \(C^1\) and \(G\) is locally compact. Then \(G\) is a Lie group and the map \(G\times M\longrightarrow M\) is \(C^1\).
 </p>
@@ -446,7 +450,7 @@ Note that we equip <span class="underline">a group</span> of isometries with the
 
 <div class="theorem">
 <p>
-<a id="org4491a2b"></a>
+<a id="org132d92c"></a>
 Let \(M\) be a connected, locally-compact metric space and \(G\) be the group of isometries of
 \(M\), then
 </p>
@@ -462,7 +466,7 @@ Let \(M\) be a connected, locally-compact metric space and \(G\) be the group of
 </div>
 <div id="postamble" class="status">
 <div class='footer'>
-By Tien.<br>
+By .<br>
 Last updated 2017-08-31 Thu 02:25. <br>
 </div>
 </div>

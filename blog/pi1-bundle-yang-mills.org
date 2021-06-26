@@ -1,0 +1,15 @@
+#+TITLE: \( \pi_1 \)-bundle and Atiyah--Bott description of Yang--Mills connection on Riemann surface
+#+AUTHOR: Tien NGUYEN MANH
+#+DATE: Jan 15, 2020
+#+STARTUP: latexpreview
+
+
+* Riemann surface as its \( \pi_1 \) classifying space. Flat bundles.
+
+* Cannonical central extension of \( \pi_1 \) and Atiyah--Bott construction
+
+
+
+
+bibliographystyle:alpha
+bibliography:../res/GeoDiff.bib

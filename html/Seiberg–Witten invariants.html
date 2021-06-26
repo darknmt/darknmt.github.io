@@ -1,0 +1,1046 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-04-15 Mon 16:25 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Seiberg&#x2013;Witten invariants</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Tien NGUYEN MANH" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' href='../res/blog.css' type='text/css'/>
+<script type="text/javascript">
+
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path["Extra"] = "https://darknmt.github.io/res/XyJax/extensions/TeX";MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    "HTML-CSS": {
+      styles: {".MathJax_Preview": {visibility: "hidden"}}
+    },
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+    TeX: {equationNumbers: {  autoNumber: "AMS"  }, extensions: ["[Extra]/xypic.js", "AMSmath.js","AMSsymbols.js"]}
+    //                  ^^^^^^^^load xypic.js
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js"></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='./index.html'>Home</a></li>
+<li><a href='./blog.html'>Blog</a></li>
+<li><a href='./writings.html'>Miscellany</a></li>
+<li><a href='http://github.com/darknmt/'>GitHub</a></li>
+<li><a href='./contact.html'>Contact</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<h1 class="title">Seiberg&#x2013;Witten invariants</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org50ef5ad">1. Review: Gauge theory</a></li>
+<li><a href="#org3c9774b">2. Spin geometry</a>
+<ul>
+<li><a href="#org5c61417">2.1. Spin group and spin representation</a>
+<ul>
+<li><a href="#orge723973">2.1.1. Clifford algebra</a></li>
+<li><a href="#orge38485b">2.1.2. \( \Spin(n) \) as the universal cover of \( SO(n) \)</a></li>
+<li><a href="#org8933f9f">2.1.3. Spin representation and its decomposition</a></li>
+</ul>
+</li>
+<li><a href="#org04a2084">2.2. Examples and computations in 4 dimensions</a>
+<ul>
+<li><a href="#orgeb4b387">2.2.1. Representation of \( \Cl(2)\otimes \mathbb{C} \).</a></li>
+<li><a href="#org236d724">2.2.2. Representation of \( \Cl(3)\otimes \mathbb{C} \).</a></li>
+<li><a href="#org0e3f4ff">2.2.3. Representation of \( \Spin(4)\).</a></li>
+</ul>
+</li>
+<li><a href="#org0e87c6f">2.3. Spinor bundle and Clifford multiplication</a></li>
+</ul>
+</li>
+<li><a href="#org9c52b77">3. Seiberg&#x2013;Witten equations and moduli space of solutions</a></li>
+</ul>
+</div>
+</div>
+<div class="info">
+<p>
+The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
+<code>pdf</code>. 
+For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
+</p>
+
+</div>
+
+
+<p>
+This post is my reading note for <a class='org-ref-reference' href="#morgan_seiberg-witten_1996">morgan_seiberg-witten_1996</a> which introduces elements
+of Spin geometry, Gauge theory and Seiberg&#x2013;Witten invariants. This small book of John Morgan is among the
+best I have ever read.
+</p>
+
+
+
+
+<div id="outline-container-org50ef5ad" class="outline-2">
+<h2 id="org50ef5ad"><span class="section-number-2">1</span> Review: Gauge theory</h2>
+</div>
+
+<div id="outline-container-org3c9774b" class="outline-2">
+<h2 id="org3c9774b"><span class="section-number-2">2</span> Spin geometry</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+As illustrated by <a href="https://en.wikipedia.org/wiki/Plate_trick">the Dirac's belt trick</a> (imagine slices of the belt as many
+instance of the first slice through a loop in \( SO(3) \)), the fundamental group \( \pi_1(SO(n)) \) of the special orthogonal group is \(
+\mathbb{Z}/_{2 \mathbb{Z}} \). 
+Its universal cover is hence a double cover and therefore a compact simply-connected Lie
+group, called the Spin group. It is useful to see the Spin group as a subset of <i>Clifford
+algebra</i>, which is the exterior algebra with multiplication modified, and study their representations as representations of the latter. It turns out
+that when \( n=2m \) is even, Clifford algebra has a unique complex irreducible
+representation \( S \) of dimension \( 2^m \), that splits into two, says \( S= S_+ \oplus
+S_- \) as representation of the Spin group.
+</p>
+
+<p>
+The frame bundle of an \( n \)-dimensional Riemannian manifold \( X \) is a principal \( SO(n) \) bundle over
+\( X \). If this bundle can be lifted to a \( \Spin(n) \) bundle, the manifold is said to
+be a <i>Spin manifold</i>. Suppose \( n=2m \), one can construct 
+</p>
+<ol class="org-ol">
+<li>the associated vector bundles \( S_{\pm}(X) \), called <i>Spinor bundles</i>, using the
+representations \( S_{\pm} \) of Spin. These are hermitian vector bundles because one can
+choose a hermitian metric on \( S_\pm \) that is invariant by action of the (compact) Spin group.</li>
+<li>the Clifford bundle using action of Spin group on Clifford algebra by conjugation. This
+is, as a vector bundle, just the exterior product \( \bigwedge^\bullet TM \) of tangent
+bundle, but the action by multiplication of an element of Clifford algebra on elements of \(
+   S_{\pm} \) gives a well-defined action of a point of Clifford bundle on Spinor
+bundles \( S_{\pm}(X) \) that sends one to the other. This is called <i>Clifford multiplication</i>.</li>
+</ol>
+
+<p>
+The (<a href="https://en.wikipedia.org/wiki/Ehresmann_connection">Ehresmann)</a> connection given by pulling back the Levi-Civita connection from the frame
+bundle to the Spin bundle (its double cover) induces a connection on \( S_{\pm}(X) \):
+\[
+ \nabla: \Gamma(S_\pm(X)) \longrightarrow \Gamma(TX^*\otimes S_{\pm(X)})
+\]
+Contracting using Clifford multiplication (and identifying \( TX^* \) with \( TX \) using
+the Riemannian metric), one obtains the <i>Dirac operator</i>
+\[
+ \not{\partial}: \Gamma(S_\pm(X)) \longrightarrow \Gamma(S_\mp(X))
+\]
+</p>
+
+<p>
+One can repeat the previous construction for the <i>complex Spin group</i> \( \Spin^c(n) =
+\Spin(n)\times_{\pm}U(1) \) which is a double cover of \( SO(n)\times U(1) \) and is not
+\( \Spin(n)\times U(1) \):
+\[
+\xymatrix{
+\Spin(n)\times U(1) \ar@{->}[r]^{2:1} \ar@{->}[d]_{2:1} & SO(n)\times U(1) \ar@{->}[d]^{2:1} \\
+\Spin^c(n) \ar@{->}[r]^{2:1} & SO(n)\times U(1) 
+}
+\]
+Given a \( \Spin^c \) principal bundle the bottom-right \( U(1) \) gives a hermitian
+(complex) line bundle \( L \) where one will need a connection \( A \), in addition to the
+Levi-Civita connection on the \( SO(n) \) factor, in order to define Dirac operator \(
+\not{\partial_A} \) on spinors. The advantage is that \( \Spin^c \) structure always
+exists in four-dimensional manifolds.
+</p>
+</div>
+
+
+
+
+<div id="outline-container-org5c61417" class="outline-3">
+<h3 id="org5c61417"><span class="section-number-3">2.1</span> Spin group and spin representation</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Let \( (V,g) \) be a \( \mathbb{R} \)-vector space equiped with a metric of dimension
+\( n \). We will construct its Clifford algebra \(\Cl (V) \) and define the spin group
+\( \Spin(V) \) as the group generated by element of \( \Cl(V) \) with unit norm and pair
+degree. We will then see that there is only one irreducible complex representation of
+\( \Cl (V)\otimes \mathbb{C} \) when \( n=2m \) (two irreducible
+representations if \( n=2m+1 \)). These representations induces reducible representations of the
+corresponding Spin group and their decomposition will also be studied.
+</p>
+</div>
+
+<div id="outline-container-orge723973" class="outline-4">
+<h4 id="orge723973"><span class="section-number-4">2.1.1</span> Clifford algebra</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<div class="definition">
+<p>
+The <b>Clifford algebra</b> \( \Cl (V) \) of \( V \) is defined as a quotient of its <i>tensor
+algebra</i> \( T(V)=\bigoplus_{k=0}^\infty V^{\otimes k} \):
+\[
+ \Cl(V) := {T(V)}/_{(v\otimes v + |v|^2)} = \Cl_0(V)\oplus\Cl_1(V)
+\]
+which is a \( ^\mathbb{Z}/_{2 \mathbb{Z}} \)-graded algebra where even degree elements live
+in \( \Cl_1(V) \) and odd degree elements lives in \( \Cl_1(V) \).
+</p>
+
+<p>
+We also denote by \( \Cl(n) \) the algebra structure of \( \Cl(V) \) for any \( n
+\)-dimensional normed vector space \( V \).
+</p>
+
+</div>
+
+
+<div id="rem:cl-first" class="remark">
+<p>
+Let \( \{e_i\}\) be an orthonormal basis of \( V \), then 
+</p>
+<ol class="org-ol">
+<li>\( \Cl (V) \) is generated by \(
+   e_{i_1}\dots e_{i_k} \) for \( k=0,1,\dots,n \), hence \( \dim_{\mathbb{R}}\Cl(V) = 2^n
+   \) is also the dimension of exterior algebra \( \bigwedge^\bullet V \) of \( V \).</li>
+<li>As \( \mathbb{R} \)-algebra, \( \Cl_0(V\oplus \mathbb{R}) \) is isomorphic to \( \Cl(V)
+   \) via
+\[
+   \Cl(V) \ni v_0 + v_1 \longmapsto v_0 + v_1 e_{n+1}\in \Cl_0(V\oplus \mathbb{R)}
+   \]
+where \( e_{n+1} \) is the extra unit vector of \( V\oplus \mathbb{R} \).</li>
+</ol>
+
+</div>
+
+
+<p>
+By dimension, \( \Cl (V) \) and \( \bigwedge^\bullet V \) are isomorphic as \( \mathbb{R}
+\)-vector spaces. We can, in addition, have a canonical linear (but not multiplicative)
+map \( \Cl(V) \longrightarrow
+\bigwedge^\bullet V \) given by reducing the identity map on \( T(V) \). This is because
+there is a natural linear (not multiplicative) map from \( \Cl(V) \) to its associated
+graded algebra corresponding to the filtration \( \mathcal{F}_k = \{ v\in Cl(V): \exists
+u\in \bigoplus_{i=0^k}V^{\otimes i}\subset T(V) \text{ representing } v\}, k=0,..,n \) and
+the following fact.
+</p>
+
+<div id="prop:cl-ext" btit="(Clifford and Exterior)" class="proposition">
+<p>
+Let \( \mathcal{F}_0\subset \mathcal{F}_1\subset\dots \) be the filtration of \( \Cl(V) \)
+given by the filtration of \( T(V) \) by degree. Then
+\[
+{\rm Gr}_{\mathcal{F}_\bullet} \simeq \bigwedge^\bullet(V)
+\]
+as \( \mathbb{R} \)-algebra.
+</p>
+
+</div>
+<div class="proof">
+<p>
+Let \( \widetilde{\mathcal{F}_\bullet} \) be the filtration of \( \bigwedge^\bullet(V) \)
+given by the filtration of \( T(V) \) by degree, then \(
+\widetilde{\mathcal{F}_k}/_{\widetilde{\mathcal{F}_{k-1}}} \simeq \mathcal{F}_k/_{\mathcal{F}_{k-1}}  \).
+</p>
+
+</div>
+
+<div class="definition">
+<ol class="org-ol">
+<li>The <b>Pin group</b> \( \Pin(V) \) is the subgroup of \( \Cl^\times(V) \) generated by
+elements \(v\in V \) with \( |v|=1 \).</li>
+<li>The <b>Spin group</b> \( \Spin(V):=\Pin(V)\cap \Cl_0(V) \) is the subgroup of index 2 of Pin
+group containing elements of even degree.</li>
+</ol>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge38485b" class="outline-4">
+<h4 id="orge38485b"><span class="section-number-4">2.1.2</span> \( \Spin(n) \) as the universal cover of \( SO(n) \)</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<div id="rem:unique-cl" class="remark">
+<p>
+the construction of Clifford algebra is unique in the sense that any isometry \( h:
+V_1 \stackrel{\simeq}{\longrightarrow} V_2 \) can be extended to an \( \mathbb{R} \)-algebra isomorphism of
+Clifford algebras.
+\[
+\xymatrix{
+\Cl(V_1) \ar@{->}[r]^{H} & \Cl(V_2) \\
+V_1 \ar@{->}[r]^{h} \ar@{^{(}->}[u] & V_2 \ar@{^{(}->}[u]
+}
+\]
+</p>
+
+</div>
+
+<p>
+The first consequence of Remark <a href="#rem:unique-cl">rem:unique-cl</a> is that any isometry of \( V \) induces a
+\( \mathbb{R} \)-algebra automorphism. The other direction also holds.
+</p>
+
+<div id="prop:auto-cl" class="proposition">
+<p>
+Any automorphism of \( \Cl(V) \) as \( \mathbb{R} \)-algebra preserving \( V \) as a whole
+is induced by a unique element of \( O(V) \). Therefore \( O(V) \) is in 1:1
+correspondence with the set of \( \mathbb{R} \)-algebra automorphisms of \( \Cl(V) \)
+preserving \( V \).
+</p>
+
+</div>
+
+<p>
+So one can associate an isometry of \( V \) to each element of \( \Pin(V) \) via its
+action by conjugation. 
+</p>
+
+<div id="prop:spin-so" btit="(\( \Spin = \tilde{SO} \))" class="proposition">
+<ol class="org-ol">
+<li>The action by conjugation of \( \Pin(V) \) on \( \Cl(V) \) gives a group morphism \(
+   \Pin(V) \longrightarrow O(V) \) and \( \Spin(V) \longrightarrow SO(V) \). The image of
+\( \Pin(V) \) in \( O(V) \) contains all reflections. Hence these two morphisms are surjective,</li>
+<li>The kernel of \( \Spin(V) \longrightarrow SO(V) \) is the intersection with the center
+of \( \Cl(V) \), hence, is \( \{\pm 1\} \). In other words, \( \Spin(V) \) is a double
+cover of \( SO(V) \).</li>
+<li>\( \Spin(V) \) is connected for any \( n=\dim V \geq 2 \) and \( \pi_1(SO(V)) =
+   \mathbb{Z}/2 \mathbb{Z} \) for any \( n\geq 3 \).Hence \( \Spin(V) \) is the universal
+cover of \( SO(V) \) if the dimension of \( V \) is at least 3.</li>
+</ol>
+
+</div>
+<div class="proof">
+<p>
+For the first 2 claims, note that conjugation by \( v\in V\subset \Cl(V) \) is the
+reflection by the hyperplane \( v=0 \).
+</p>
+
+<p>
+To see that \( \Spin(V) \) is connected and hence not the trivial \( 2:1 \) cover of \(
+SO(V) \), note that 
+\[
+-\cos(\theta_2-\theta_1) e_1 + \sin(\theta_2 -\theta_1) e_2 = (\cos\theta_1 e_1 + \sin\theta_1 e_2)(\cos\theta_2 e_1 + \sin\theta_2 e_2)\in\Spin(V),
+\]
+so \( \pm 1 \) can be connected by a path.
+</p>
+
+</div>
+
+<p>
+The second consequence of Remark <a href="#rem:unique-cl">rem:unique-cl</a> is that: if \( h:V_1 \stackrel{\simeq}{\longrightarrow} V_2
+\) is isometry then the induced the adjoint map \( Ad(h): SO(V_1) \longrightarrow SO(V_2)
+\) can be lifted to Spin groups and the following \( h^\# \) is just the restriction of \( h^\# \) on \(
+\Cl(V_1)\supset \Spin(V_1) \)
+\[
+ \xymatrix{
+\Spin(V_1) \ar@{->}[r]^{h^\#} \ar@{->}[d] & \Spin(V_2) \ar@{->}[d] \\
+SO(V_1) \ar@{->}[r]^{Ad(h)} & SO(V_2)
+}
+\]
+In particular (take \( V_1=V_2) \), this says that the action of \( SO(V) \) on
+itself by conjugation can be lifted to \( \Spin(V) \). Same story with \( \Pin(V) \longrightarrow O(V) \).
+</p>
+
+
+<div class="corollary">
+<p>
+Let \( (e_1,\dots, e_n) \) be an oriented orthonormal basis of \( V \), then the element
+\[
+ q:=e_1\dots e_n\in \Pin(V)\subset\Cl(V)
+\]
+is independent of the choice of the oriented basis.
+</p>
+
+</div>
+<div class="proof">
+<p>
+This is equivalent to saying that for any \(h\in SO(V) \), \( h^\# \) preserves \( q \). 
+\[
+ \xymatrix{
+\Pin(V) \ar@{->}[r]^{h^\#} \ar@{->}[d] & \Pin(V) \ar@{->}[d] \\
+O(V) \ar@{->}[r]^{Ad(h)} & O(V)
+}
+\]
+Since image of \( q \) through vertical arrows is \( (-1)^{n+1} \), therefore preserved by
+any bottom horizontal arrow \( Ad(h) \), we know that \( h^\# \) sends \( q \) to \( \{\pm q\}
+\). It remains to evoke connectedness of \( SO(V) \) and the fact that \( {\rm
+Id}_{\Pin(V)}={\rm Id}_V^\# \) preserves \( q \).
+</p>
+
+</div>
+
+<p>
+Define \( q_0:=i^{\lfloor \frac{n+1}{2}\rfloor}q \) then \( q_0^2=1 \).
+</p>
+
+<div class="remark">
+<p>
+If \( n \) is odd, then \( q \) commutes with the entire \( \Cl(V) \). If \( n \) is
+even, \( q \) commutes with \( \Cl_0(V) \) and anticommutes with \( \Cl_1(V) \). Idem for \( q_0 \).
+</p>
+
+</div>
+
+<div id="def:split-cl" class="definition">
+<p>
+The eigenspaces corresponding to eigenvalues \( \pm 1 \) of \( q_0 \) as linear map on
+\(\Cl(V)\otimes \mathbb{C} \) are denoted by \( (\Cl(V)\otimes
+\mathbb{C})^\pm \), i.e.
+\[
+\Cl(V)\otimes \mathbb{C} \simeq (\Cl(V)\otimes \mathbb{C})^+\oplus (\Cl(V)\otimes \mathbb{C})^-
+\]
+This is a decomposition of \( \mathbb{C} \)-vector spaces and, in addition if \( n \) is
+odd, a decomposition of \( \mathbb{C} \)-algebra.
+</p>
+
+</div>
+
+<div id="rem:cl0-decomp" class="remark">
+<ol class="org-ol">
+<li>When \( n \) is even, the previous decomposition is not multiplicative. However, it is the
+case when one restricts to \(\Cl_0(2m)\otimes \mathbb{C}\subset \Cl(2m)\otimes \mathbb{C}
+   \), i.e. the decomposition
+\[
+   \Cl_0(2m)\otimes \mathbb{C} \simeq (\Cl_0(2m)\otimes \mathbb{C})^+\oplus (\Cl_0(2m)\otimes \mathbb{C})^-
+   \]
+is among \( \mathbb{C} \)-algebras.</li>
+<li>Moreover the two decompositions coincide via the map \( \Cl_0(2m)\simeq \Cl(2m-1) \),
+i.e.
+\[
+    \xymatrix{
+    \Cl_0(2m)\otimes\mathbb{C} \ar@{->}[r] \ar@{->}[d] & (\Cl_0(2m)\otimes \mathbb{C})^{\pm} \ar@{->}[d] \ar@/^/@{->}[l] \\
+    \Cl(2m-1)\otimes\mathbb{C} \ar@{->}[r] & (\Cl(2m-1)\otimes\mathbb{C})^{\pm} \ar@/^/@{->}[l]
+    }
+   \]</li>
+</ol>
+
+</div>
+
+
+
+<div id="prop:alg-str-cl" btit="(Algebraic structure of \( \Cl(V)\otimes \mathbb{C} \))" class="proposition">
+<p>
+One has the following isomorphisms of \( \mathbb{C} \)-algebras:
+</p>
+<ol class="org-ol">
+<li>\( \Cl(2m)\otimes \mathbb{C}\simeq M(\mathbb{C}, 2^m) \),</li>
+<li>\( \Cl(2m+1)\otimes \mathbb{C}\simeq M(\mathbb{C},2^m)\oplus M(\mathbb{C}, 2^m) \),</li>
+</ol>
+<p>
+where \( M(\mathbb{C},k) \) denotes the algebra of square matrices of size \( k \).
+</p>
+
+</div>
+<div class="proof">
+<p>
+By induction, using
+</p>
+\begin{align*}
+\Cl(V\oplus \mathbb{R}^2)\otimes \mathbb{C} &\stackrel{\simeq}{\longrightarrow} (\Cl(V\oplus \mathbb{R}^2)\otimes \mathbb{C})\otimes(\Cl(\mathbb{R}^2)\otimes\mathbb{C})\\
+  e_1, e_2 &\longmapsto 1\otimes e_1, 1\otimes e_2\\
+v      	   &\longmapsto i v\otimes e_1e_2  
+\end{align*} 
+<p>
+where \( \{e_i\} \) is an orthonormal basis of \( \mathbb{R}^2 \) and \( \{v\} \) is an orthonormal
+basis of \( V \). As for the base case,
+</p>
+<ol class="org-ol">
+<li>\( \Cl(1)\simeq \mathbb{C} \) so \( \Cl(1)\otimes
+   \mathbb{C}\simeq \mathbb{C}\oplus \mathbb{C} \),</li>
+<li>\( \Cl(2)\simeq \mathbb{H} \) so \(
+   \Cl(2)\otimes \mathbb{C}\simeq \mathbb{H}\otimes \mathbb{C}\simeq M(\mathbb{C},2) \).</li>
+</ol>
+
+</div>
+
+<p>
+Another way to see that \(\Cl(2m+1)\otimes \mathbb{C}\simeq M(\mathbb{C},2^m)\oplus
+M(\mathbb{C}, 2^m) \) is by noticing that 
+</p>
+<ol class="org-ol">
+<li>the decomposition of Definition <a href="#def:split-cl">def:split-cl</a>
+is a decomposition of \( \mathbb{C} \)-algebra when \( n \) is odd.</li>
+<li>\(\Cl_0(2m+1)\otimes \mathbb{C}\simeq (\Cl(2m+1)\otimes \mathbb{C})^{\pm} \) as \(
+   \mathbb{C} \)-algebra via \( v\longmapsto \frac{v+q_0v}{2} \) which is injective (hence
+bijective by dimension) because \( q_0\in \Cl_1(2m+1)\otimes \mathbb{C} \). This map is
+multiplicative because \( q_0 \) commutes with \( \Cl_0(2m+1) \).</li>
+</ol>
+
+<p>
+Composing the maps, one has
+</p>
+\begin{align*}
+ \Cl(2m+1)\otimes \mathbb{C} &\simeq (\Cl(2m+1)\otimes \mathbb{C})^+\oplus(\Cl(2m+1)\otimes \mathbb{C})^-\\
+ 		  	     &\simeq (\Cl_0(2m+1)\otimes \mathbb{C})\oplus (\Cl_0(2m+1)\otimes \mathbb{C})  \\
+			     &\simeq  (\Cl(2m)\otimes \mathbb{C})\oplus(\Cl(2m)\otimes \mathbb{C})
+\end{align*}
+<p>
+Keeping track of the composition, one has
+</p>
+\begin{align*}
+  \Cl(2m+1)\otimes \mathbb{C} &\stackrel{\simeq}{\longrightarrow}  (\Cl(2m)\otimes \mathbb{C})\oplus(\Cl(2m)\otimes \mathbb{C})\\
+  v		   	      &\longmapsto \restr{(v+q_0 v)_0}{e_{2m+1} = 1 } \oplus \restr{(v-q_0 v)_0}{e_{2m+1} = 1 } \\	
+  \frac{u_1 + u_2 + q_0(u_1 - u_2)}{2} &\longleftarrow\!\shortmid  u_1 \oplus u_2
+\end{align*}
+<p>
+where
+</p>
+<ul class="org-ul">
+<li>\( v\mapsto v_0 \) denotes the projection to \( \Cl_0 \) and</li>
+<li>\( v\mapsto
+   \restr{v}{e_{2m+1}=1} \) is the inverse of the map in Remark <a href="#rem:cl-first">rem:cl-first</a>,
+i.e. "push" \( e_{2m+1} \) in the last, then replace it by 1.</li>
+</ul>
+
+<p>
+Since \( q_0 \in Cl(2m+1) \) when \( m \) is even, one has
+</p>
+
+
+<div id="cor:cl-incr-1" class="corollary">
+<p>
+For any \( m\geq 1 \),
+\[
+  \Cl(2m+1)\otimes \mathbb{C} \simeq (\Cl(2m)\otimes \mathbb{C})\oplus(\Cl(2m)\otimes \mathbb{C})
+\]
+In addition, if \( m \) is even, one can remove all tensor product with \( \mathbb{C} \).
+</p>
+
+</div>
+
+<p>
+This will later help us to see that \( \Cl(3)\simeq \mathbb{H}\oplus \mathbb{H} \).
+</p>
+
+<div class="definition">
+<p>
+The <b>complex Spin group</b> \( \Spin^c(V) \) is the subgroup of \( (\Cl(V)\otimes
+\mathbb{C})^\times \) generated by \( \Spin(V) \) and \( \{z\in \mathbb{C}: |z|=1 \} \).
+</p>
+
+<p>
+In other words, as a group \( \Spin^c(V) \simeq \Spin(V)\times_{\pm}U(1) \) where \( \mathbb{Z}/2
+\mathbb{Z} \) acts on \( U(1) \) by \( e^{i\theta}\mapsto e^{-i\theta} \).
+</p>
+
+</div>
+
+<p>
+The following commutative diagram clarify what we mean when we say that \( \Spin^c(n) \)
+is a double cover of \( SO(n)\times U(1) \) and \( \Spin(n)\times U(1) \) is a double
+cover of \( \Spin^c(n) \). 
+\[
+\xymatrix{
+(s,z) \ar@{|->}[r] & (\pm s, z) \\
+\Spin(n)\times U(1) \ar@{->}[r]^{2:1} \ar@{->}[d]_{2:1} & SO(n)\times U(1) \ar@{->}[d]^{2:1} \\
+\Spin^c(n) \ar@{->}[r]^{2:1} & SO(n)\times U(1) \\
+\pm(s,z) \ar@{|->}[r] & (\pm s, z^2)
+}
+\]
+</p>
+
+<p>
+To compute the fundamental group of \( \Spin^c(n) \), one can use the following exact
+sequence:
+\[
+ \xymatrix{
+0 \ar@{->}[r] & \Spin(n) \ar@{->}[r]_{{w\mapsto \pm(w,1)}} & \Spin^c(n) \ar@{->}[r]_{{\pm(w,z)\mapsto z^2}} & U(1) \ar@{->}[r] & 0
+}
+\]
+One see that \( \pi_1(\Spin^c(n))=\mathbb{Z} \) because
+\[
+ \xymatrix{
+0 \ar@{->}[r] & 0 \ar@{->}[r] & \pi_1(\Spin^c(n)) \ar@{->}[r] & \mathbb{Z} \ar@{->}[r] & 0
+}
+\]
+</p>
+
+
+
+<div class="remark">
+<p>
+It is also useful to mention the following exact sequence
+\[
+\xymatrix{
+0 \ar@{->}[r] & U(1) \ar@{->}[r]_{{z\mapsto \pm(1,z)}} & \Spin^c(n) \ar@{->}[r]_{{\pm(w,z) \mapsto\pm w}} & SO(n) \ar@{->}[r] & 0
+}
+\]
+which gives
+\[
+\xymatrix{
+ 0 \ar@{->}[r] & \mathbb{Z} \ar@{->}[r] & \pi_1(\Spin^c(n)) \ar@{->}[r] &
+\mathbb{Z}/2\mathbb{Z} \ar@{->}[r] & 0 
+}
+\]
+</p>
+
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org8933f9f" class="outline-4">
+<h4 id="org8933f9f"><span class="section-number-4">2.1.3</span> Spin representation and its decomposition</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<p>
+Proposition <a href="#prop:alg-str-cl">prop:alg-str-cl</a> and the following fact tells us all irreducible complex
+representation of \( \Cl(V) \)
+</p>
+<div class="fact">
+<p>
+The \(\mathbb{C}\)-algebra \( M(\mathbb{C},k) \) has a unique irreducible \( \mathbb{C}
+\)-representation \( S_{\mathbb{C}}(k) \) and it has dimension \( k \).
+</p>
+
+</div>
+
+<p>
+We can conclude that there is only one irreducible complex representation
+\(S_{\mathbb{C}}(2m) \) of \( \Cl(2m)\otimes \mathbb{C} \), called the <b>Spin
+representation</b>. On the other hand, \( \Cl(2m+1)\otimes \mathbb{C} \) has two irreducible complex
+representations given by having one factor \( M(\mathbb{C},2^m) \) acting nontrivially on
+\( S_{\mathbb{C}}(2m) \) and the other acts trivially.
+</p>
+
+<div id="prop:spin-rep-split" btit="(Splitting of Spin representation)" class="proposition">
+<ol class="org-ol">
+<li>The representation \( S_{\mathbb{C}}(2m) \) of \( \Cl(2m)\otimes \mathbb{C} \) splits by
+action of \( q_0 \)
+\[
+   S_{\mathbb{C}}(2m) \stackrel{\simeq}{\longrightarrow}  S_{\mathbb{C}}(2m)^+ \oplus S_{\mathbb{C}}(2m)^-
+   \]
+not only as \( \mathbb{C} \)-vector space, but also as \( \Cl_0(2m)\otimes \mathbb{C} \)-module.</li>
+<li>Action by multiplication of \( \Cl_1(2m) \) swaps the 2 subspaces. Moreover the
+decomposition of the action of an element of \( \Cl_1(2m)\otimes \mathbb{C} \) to its
+restrictions on \( S_{\mathbb{C}}(2m)^{\pm} \longrightarrow S_{\mathbb{C}}(2m)^{\mp}
+   \) is exactly the decomposition \( \Cl_1(2m)\otimes \mathbb{C} \simeq (\Cl_1(2m)\otimes
+   \mathbb{C})^+\oplus (\Cl_1(2m)\otimes \mathbb{C})^- \), i.e.
+\[
+   \xymatrix@C=5pc{
+   \Cl_1(2m)\otimes \mathbb{C} \ar@{->}[r]^>>>>>>>>>>{{w\mapsto (w,w)}} \ar@{->}[rd]_<<<<<<<<<<<{{w\mapsto (w^-, w^+)}} & \Hom_{\mathbb{C}}(S_{\mathbb{C}}^+,S_{\mathbb{C}}^-)\oplus\Hom_{\mathbb{C}}(S_{\mathbb{C}}^-,S_{\mathbb{C}}^+) \\
+   & (\Cl_1(2m)\otimes    \mathbb{C})^+\oplus (\Cl_1(2m)\otimes \mathbb{C})^- \ar@{->}[u]_{{(w^-,w^+)\mapsto (w^-,w^+)}}
+   }
+   \]
+where all arrows are \( \mathbb{C} \)-vector space isomorphisms.</li>
+<li>The subalgebra \( \Cl_0(2m) \) acts separately on \( S_{\mathbb{C}}^{\pm}(2m) \) and
+its restriction on  \( S_{\mathbb{C}}(2m)^{\pm} \longrightarrow S_{\mathbb{C}}(2m)^{\pm}
+   \) is exactly the decomposition \( \Cl_0(2m)\otimes \mathbb{C} \simeq (\Cl_0(2m)\otimes
+   \mathbb{C})^+\oplus (\Cl_0(2m)\otimes \mathbb{C})^- \), i.e.
+\[
+   \xymatrix@C=5pc{
+   \Cl_0(2m)\otimes \mathbb{C} \ar@{->}[r]^>>>>>>>>>>{{w\mapsto (w,w)}} \ar@{->}[rd]_<<<<<<<<<<<{{w\mapsto (w^-, w^+)}} & \End_{\mathbb{C}}(S_{\mathbb{C}}^+)\oplus\End_{\mathbb{C}}(S_{\mathbb{C}}^-) \\
+   & (\Cl_0(2m)\otimes    \mathbb{C})^+\oplus (\Cl_0(2m)\otimes \mathbb{C})^- \ar@{->}[u]_{{(w^-,w^+)\mapsto (w^-,w^+)}}
+   }
+   \]
+where all arrows are \( \mathbb{C} \)-algebra isomorphism.</li>
+</ol>
+
+</div>
+
+
+<div id="cor:spin-rep-split" class="corollary">
+<ol class="org-ol">
+<li>\( S_{\mathbb{C}} (2m)^{\pm}\) are the only irreducible representations of \(
+   \Spin(2m)\) that extend to (automatically irreducible) representation of \( \Cl_0(2m) \).</li>
+<li>\( S_{\mathbb{C}} (2m)\) is irreducible representation of \( \Spin(2m+1) \) that extends to (automatically irreducible) representation of \( \Cl_0(2m+1) \).</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org04a2084" class="outline-3">
+<h3 id="org04a2084"><span class="section-number-3">2.2</span> Examples and computations in 4 dimensions</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+It is clear that \( \Cl(1) = \mathbb{R}[i]/_{(i^2+1)}=\mathbb{C} \). So \( \Cl(1)\otimes
+\mathbb{C} = \mathbb{C}\oplus \mathbb{C} \).
+</p>
+
+<p>
+Our strategy for the next computations will be as follows:
+</p>
+<ul class="org-ul">
+<li>Suppose we already know \( \Cl(2) \) and its complex representation \(
+   S_{\mathbb{C}}(2) \).</li>
+<li>We can compute \( \Cl(3)\simeq \Cl(2)\oplus\Cl(2) \) using Corollary
+<a href="#cor:cl-incr-1">cor:cl-incr-1</a>. Its representation will be \( S_\mathbb{C}(2)\oplus
+   S_{\mathbb{C}}(2) \) where each factor acts separately.</li>
+<li>Knowing \( \Cl(3) \) means knowing \( \Cl_0(4) \). By Remark <a href="#rem:cl0-decomp">rem:cl0-decomp</a>, \(
+   \Cl_0(4) = \Cl_0(4)^+\oplus \Cl_0(4)^- \) (we do not need to complexify 
+because \(
+   q_0\in \Cl(4) \)) coincides with \( \Cl(3)=\Cl(3)^+\oplus \Cl(3)^-=\Cl(2)\oplus\Cl(2)
+   \). Apply Proposition <a href="#prop:spin-rep-split">prop:spin-rep-split</a>, we see that \( S_{\mathbb{C}}^\pm(4) \)
+are complex representations of \( \Cl(2) \), so we can 
+identify \( \Cl_0(4) =
+   \Cl(2)\oplus\Cl(2) \) and \( S_{\mathbb{C}}(4) = S_{\mathbb{C}}(2)\oplus S_{\mathbb{C}}(2) \).</li>
+</ul>
+</div>
+
+<div id="outline-container-orgeb4b387" class="outline-4">
+<h4 id="orgeb4b387"><span class="section-number-4">2.2.1</span> Representation of \( \Cl(2)\otimes \mathbb{C} \).</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+The \( \mathbb{R} \)-algebra \( \Cl(2) \) is isomorphic to \( \mathbb{H}=\mathbb{R}\oplus\mathbb{R}I\oplus
+\mathbb{R}J\oplus \mathbb{R}K\) via \(
+e_1, e_2\mapsto J,K \). The following Lemma computes \( \Cl(2)\otimes \mathbb{C} \) and
+the Spin representation.
+</p>
+
+<div id="lem:rep-H" btit="(Representation of \( \mathbb{H} \))" class="lemma">
+<p>
+The \( \mathbb{R} \)-algebra \( \mathbb{H} \) of quaternions is isomorphic to
+\[
+\mathbb{H}\simeq
+ \left\{   \begin{bmatrix}
+    a & -\bar b  \\
+    b & \bar a 
+  \end{bmatrix}: a,b\in \mathbb{C}\right\}
+\]
+where 
+</p>
+\begin{equation}
+\label{eq:rep-H}
+ I:= \begin{bmatrix}
+    i & 0  \\
+    0 & -i 
+  \end{bmatrix},\qquad
+J:=  \begin{bmatrix}
+    0 & -1  \\
+    1 & 0 
+  \end{bmatrix},\qquad 
+K:=  \begin{bmatrix}
+    0 & -i  \\
+    -i & 0 
+  \end{bmatrix},\qquad
+\end{equation}
+
+<p>
+This \(\mathbb{R}\)-algebra of matrices is not a \( \mathbb{C} \)-vector space and can be
+complexified by adding
+\[
+ \sqrt{-1}:=\begin{bmatrix}
+    i & 0  \\
+    0 & i 
+  \end{bmatrix}
+\]
+which gives \( \mathbb{H}\otimes \mathbb{C}=M(\mathbb{C},2) \).
+</p>
+
+<p>
+Moreover, \eqref{eq:rep-H} is the representation of \( \mathbb{H} \) on \( \mathbb{C}\oplus
+J\mathbb{C}\) where \( \mathbb{C}=R[I]/_{(I^2+1)} \).
+</p>
+
+</div>
+
+<p>
+Since \( q_0 = \sqrt{-1}e_1e_2 =  \sqrt{-1}:=\begin{bmatrix}
+    -1 & 0  \\
+    0 & 1 
+  \end{bmatrix} \) and
+\[
+ \Spin(2) = \left\{ \cos\theta +\sin\theta e_1e_2 = \begin{bmatrix}
+    e^{i\theta} & 0  \\
+    0 & e^{-i\theta} 
+  \end{bmatrix}\right\} \simeq U(1),
+\]
+one has
+</p>
+
+<div class="corollary">
+<p>
+The Spin representation in dimension 2 is
+\[
+S_{\mathbb{C}}(2) = \mathbb{C}\oplus J\mathbb{C} = S_{\mathbb{C}}^-(2) \oplus S_{\mathbb{C}}^+(2)
+\]
+where \( S_{\mathbb{C}}^-(2) = \mathbb{C} \) and \(  S_{\mathbb{C}}^+(2) = J \mathbb{C} \).
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org236d724" class="outline-4">
+<h4 id="org236d724"><span class="section-number-4">2.2.2</span> Representation of \( \Cl(3)\otimes \mathbb{C} \).</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<p>
+By Corollary <a href="#cor:cl-incr-1">cor:cl-incr-1</a>, \( \Cl(3)\simeq \Cl(2)\oplus \Cl(2)\simeq \mathbb{H}\oplus
+\mathbb{H}\) as \( \mathbb{R} \)-algebra and the isomorphism is given by
+\[
+ e_1 \mapsto (K,-K),\qquad e_2\mapsto (-J,J),\qquad e_3\mapsto (I,-I)
+\]
+and \( q_0 = -e_1e_2e_3\mapsto (1,-1) \) as it should be.
+</p>
+
+<p>
+Therefore, one has
+</p>
+<ol class="org-ol">
+<li>\( \Cl_0(3) \subset \Cl(3)\simeq \mathbb{H}\oplus \mathbb{H} \) is the diagonal</li>
+<li>The Pin group is
+\[
+   \Pin(3) = \langle (q,-q): q\in \im \mathbb{H} \rangle
+   \]</li>
+<li>The Spin group is (after a quick computation):
+\[
+   \Spin(3) = \langle (q,q): q\in \mathbb{H}, |q|=1 \rangle \simeq Sp(1)\simeq SU(2)
+   \]
+where \( Sp(1) = \{q\in \mathbb{H}: |q|=1\} \) is the unit sphere in \( \mathbb{H} \),
+which can be seen by Lemma <a href="#lem:rep-H">lem:rep-H</a> to be isomorphic to \( SU(2) \).</li>
+<li>The Spin representation, as seen by Corollary <a href="#cor:spin-rep-split">cor:spin-rep-split</a>, is given by
+action of \( \Spin(3)\subset \Cl_0(3) \) (as diagonal of \( \mathbb{H}\oplus \mathbb{H} \)) on \( \mathbb{H}\simeq \mathbb{C}^2 \).</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org0e3f4ff" class="outline-4">
+<h4 id="org0e3f4ff"><span class="section-number-4">2.2.3</span> Representation of \( \Spin(4)\).</h4>
+</div>
+</div>
+
+
+<div id="outline-container-org0e87c6f" class="outline-3">
+<h3 id="org0e87c6f"><span class="section-number-3">2.3</span> Spinor bundle and Clifford multiplication</h3>
+</div>
+</div>
+
+
+
+<div id="outline-container-org9c52b77" class="outline-2">
+<h2 id="org9c52b77"><span class="section-number-2">3</span> Seiberg&#x2013;Witten equations and moduli space of solutions</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+
+<h1 class='org-ref-bib-h1'>Bibliography</h1>
+<ul class='org-ref-bib'><li><a id="morgan_seiberg-witten_1996">[morgan_seiberg-witten_1996] Morgan, The Seiberg-Witten Equations and Applications to the Topology of Smooth Four-Manifolds. (MN-44), Princeton University Press (1996).</a></li>
+</ul>
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<div class='footer'>
+By Tien NGUYEN MANH.<br>
+Last updated 2019-04-15 Mon 16:25. <br>
+</div>
+</div>
+</body>
+</html>

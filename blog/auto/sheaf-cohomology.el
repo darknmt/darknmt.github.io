@@ -63,7 +63,7 @@
     "fig:morph-short-sequence"
     "thm:prism-operator"
     "fig:homotopy-operator"
-    "sec:org8b30707"
+    "sec:orgf209fdc"
     "thm:Kunneth"
     "sec:org62ef2d8"
     "sec:org65911e0"
@@ -71,7 +71,7 @@
     "lem:exactness"
     "thm:uniqueness-cohomology"
     "thm:fine-resolution"
-    "sec:org6b8dfb5"
+    "sec:org0a3e395"
     "sec:orgbd2adbd"
     "thm:de-rham-singular"
     "sec:org91022b2"
@@ -90,8 +90,6 @@
     "problem"
     "exampl"
     "definition"
-    "propdef"
-    "fact"
-    "assertion"))
+    "propdef"))
  :latex)
 

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-10-02 Tue 17:39 -->
+<!-- 2021-06-25 Fri 23:03 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Harmonic maps of Riemannian manifolds</title>
@@ -253,85 +253,6 @@ for the JavaScript code in this tag.
 <li><a href='./contact.html'>Contact</a></li>
 </ul>
 </div>
-</div>
-<div id="content">
-<h1 class="title">Harmonic maps of Riemannian manifolds</h1>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#orga716e8c">1. Harmonic maps</a>
-<ul>
-<li><a href="#org2b417a5">1.1. Variational approach: energy integral and tension field</a>
-<ul>
-<li>
-<ul>
-<li><a href="#orgb2e5edd">1.1.0.1. Notation.</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org26662a5">1.2. Formulation using connection on vector bundle</a>
-<ul>
-<li>
-<ul>
-<li><a href="#orge8b763e">1.2.0.1. Setup and notation.</a></li>
-<li><a href="#org5fb62b4">1.2.0.2. Covariant derivatives and exterior derivatives.</a></li>
-<li><a href="#org17d1b28">1.2.0.3. Laplacian operator and harmonic forms.</a></li>
-<li><a href="#orgb352094">1.2.0.4. Riemannian connected bundle.</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org8806f6b">1.3. The case of \( E = f^* TM' \)</a>
-<ul>
-<li><a href="#orgeadf23c">1.3.1. Energy functional and tension field</a></li>
-<li><a href="#orgf595675">1.3.2. Fundamental form, some results in case of signed curvature</a>
-<ul>
-<li><a href="#org62a8390">1.3.2.1. Notation.</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgd47a8bc">1.4. Example: Riemannian immersion</a>
-<ul>
-<li><a href="#org0016185">1.4.1. Second fundamental form.</a></li>
-<li><a href="#orgb6a0bfe">1.4.2. The case of signed curvature.</a></li>
-</ul>
-</li>
-<li><a href="#orga763902">1.5. Example: Riemannian submersion</a>
-<ul>
-<li><a href="#orgc3b7a78">1.5.1. Results of Ehresmann and Hermann.</a></li>
-<li><a href="#org0ac83eb">1.5.2. Tension fields and harmonic fibrations.</a></li>
-</ul>
-</li>
-<li><a href="#org3505d05">1.6. Composition of maps</a></li>
-</ul>
-</li>
-<li><a href="#org3b55faf">2. Nonlinear heat flow: Global equation and existence of harmonic maps.</a>
-<ul>
-<li><a href="#orge56f960">2.1. Statement of the main results.</a></li>
-<li><a href="#orgd94674e">2.2. Strategy of the proof.</a></li>
-<li><a href="#orgcdd778c">2.3. Global equation and Uniqueness of nonlinear heat equation.</a></li>
-</ul>
-</li>
-<li><a href="#org957565f">3. A few energy estimates.</a>
-<ul>
-<li><a href="#org9f38118">3.1. Estimate of density energies</a></li>
-<li><a href="#org33ab1a3">3.2. Estimate of total energies</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<div class="info">
-<p>
-The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
-<code>pdf</code>. 
-For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
-</p>
-
-</div>
 \(
 \newcommand{\re}{\mathop{\rm Re}\nolimits}
 \newcommand{\im}{\mathop{\rm Im}\nolimits}
@@ -349,20 +270,105 @@ For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sh
 \newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
 \newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
 \newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
+\newcommand{\Enorm}{\mathop{\mathcal{E}_{\rm norm}}\nolimits}
+\newcommand{\Anorm}{\mathop{\mathcal{A}_{\rm norm}}\nolimits}
+\newcommand{\Cl}{\mathop{\rm Cl}\nolimits}
+\newcommand{\Spin}{\mathop{\rm Spin}\nolimits}
+\newcommand{\Pin}{\mathop{\rm Pin}\nolimits}
+\newcommand{\Hom}{\mathop{\rm Hom}\nolimits}
+\newcommand{\End}{\mathop{\rm End}\nolimits}
 \)
+</div>
+<div id="content">
+<h1 class="title">Harmonic maps of Riemannian manifolds</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org9399791">1. Harmonic maps</a>
+<ul>
+<li><a href="#orge490382">1.1. Variational approach: energy integral and tension field</a>
+<ul>
+<li>
+<ul>
+<li><a href="#orgfd20812">1.1.0.1. Notation.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgc9b8ecc">1.2. Formulation using connection on vector bundle</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org6839e83">1.2.0.1. Setup and notation.</a></li>
+<li><a href="#orgf6e6ae1">1.2.0.2. Covariant derivatives and exterior derivatives.</a></li>
+<li><a href="#org5663a12">1.2.0.3. Laplacian operator and harmonic forms.</a></li>
+<li><a href="#orgf3f731c">1.2.0.4. Riemannian connected bundle.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgb1dabe2">1.3. The case of \( E = f^* TM' \)</a>
+<ul>
+<li><a href="#org4fcdf4c">1.3.1. Energy functional and tension field</a></li>
+<li><a href="#org8d78534">1.3.2. Fundamental form, some results in case of signed curvature</a>
+<ul>
+<li><a href="#org4f1ecc5">1.3.2.1. Notation.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org8a5d9ed">1.4. Example: Riemannian immersion</a>
+<ul>
+<li><a href="#orgf52bc5c">1.4.1. Second fundamental form.</a></li>
+<li><a href="#orgc35d35c">1.4.2. The case of signed curvature.</a></li>
+</ul>
+</li>
+<li><a href="#org0df250e">1.5. Example: Riemannian submersion</a>
+<ul>
+<li><a href="#org2015732">1.5.1. Results of Ehresmann and Hermann.</a></li>
+<li><a href="#orgb3b8169">1.5.2. Tension fields and harmonic fibrations.</a></li>
+</ul>
+</li>
+<li><a href="#org897ba3f">1.6. Composition of maps</a></li>
+</ul>
+</li>
+<li><a href="#orge33592a">2. Nonlinear heat flow: Global equation and existence of harmonic maps.</a>
+<ul>
+<li><a href="#org7094d5f">2.1. Statement of the main results.</a></li>
+<li><a href="#orgd846535">2.2. Strategy of the proof.</a></li>
+<li><a href="#org9d6d690">2.3. Global equation and Uniqueness of nonlinear heat equation.</a></li>
+</ul>
+</li>
+<li><a href="#org1b67162">3. A few energy estimates.</a>
+<ul>
+<li><a href="#orgc5a143f">3.1. Estimate of density energies</a></li>
+<li><a href="#orgc8a0941">3.2. Estimate of total energies</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="info">
+<p>
+The PDF version of this page can be downloaded by replacing <code>html</code> in the its address by
+<code>pdf</code>. 
+For example <code>/html/sheaf-cohomology.html</code> should become <code>/pdf/sheaf-cohomology.pdf</code>.
+</p>
 
+</div>
 <p>
 This is my reading note for <a class='org-ref-reference' href="#eells_harmonic_1964">eells_harmonic_1964</a>.
 </p>
 
-<div id="outline-container-orga716e8c" class="outline-2">
-<h2 id="orga716e8c"><span class="section-number-2">1</span> Harmonic maps</h2>
+<div id="outline-container-org9399791" class="outline-2">
+<h2 id="org9399791"><span class="section-number-2">1</span> Harmonic maps</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-org2b417a5" class="outline-3">
-<h3 id="org2b417a5"><span class="section-number-3">1.1</span> Variational approach: energy integral and tension field</h3>
+</div><div id="outline-container-orge490382" class="outline-3">
+<h3 id="orge490382"><span class="section-number-3">1.1</span> Variational approach: energy integral and tension field</h3>
 <div class="outline-text-3" id="text-1-1">
-</div><div id="outline-container-orgb2e5edd" class="outline-5">
-<h5 id="orgb2e5edd"><span class="section-number-5">1.1.0.1</span> Notation.</h5>
+</div><div id="outline-container-orgfd20812" class="outline-5">
+<h5 id="orgfd20812"><span class="section-number-5">1.1.0.1</span> Notation.</h5>
 <div class="outline-text-5" id="text-1-1-0-1">
 <p>
 Let \( M, M', M''\) be Riemannian manifolds of dimension \( n, n' \) and \( n''\)
@@ -552,11 +558,11 @@ every point \( P\in M \).
 </div>
 
 
-<div id="outline-container-org26662a5" class="outline-3">
-<h3 id="org26662a5"><span class="section-number-3">1.2</span> Formulation using connection on vector bundle</h3>
+<div id="outline-container-orgc9b8ecc" class="outline-3">
+<h3 id="orgc9b8ecc"><span class="section-number-3">1.2</span> Formulation using connection on vector bundle</h3>
 <div class="outline-text-3" id="text-1-2">
-</div><div id="outline-container-orge8b763e" class="outline-5">
-<h5 id="orge8b763e"><span class="section-number-5">1.2.0.1</span> Setup and notation.</h5>
+</div><div id="outline-container-org6839e83" class="outline-5">
+<h5 id="org6839e83"><span class="section-number-5">1.2.0.1</span> Setup and notation.</h5>
 <div class="outline-text-5" id="text-1-2-0-1">
 <p>
 Let \( E \) be a metric vector bundle over a Riemannian manifold \( M \), i.e. each fiber
@@ -568,8 +574,8 @@ of \( M \) of the fiber.
 </div>
 
 
-<div id="outline-container-org5fb62b4" class="outline-5">
-<h5 id="org5fb62b4"><span class="section-number-5">1.2.0.2</span> Covariant derivatives and exterior derivatives.</h5>
+<div id="outline-container-orgf6e6ae1" class="outline-5">
+<h5 id="orgf6e6ae1"><span class="section-number-5">1.2.0.2</span> Covariant derivatives and exterior derivatives.</h5>
 <div class="outline-text-5" id="text-1-2-0-2">
 <p>
 We recall that a <b>covariant derivative</b> or a <b>connection</b> \( \tilde\nabla \) of \( E \) is uniquely determined in 
@@ -620,8 +626,8 @@ all \( s\in A^{p}(M,E), s'\in A^{p+1}(M,E) \).
 
 
 
-<div id="outline-container-org17d1b28" class="outline-5">
-<h5 id="org17d1b28"><span class="section-number-5">1.2.0.3</span> Laplacian operator and harmonic forms.</h5>
+<div id="outline-container-org5663a12" class="outline-5">
+<h5 id="org5663a12"><span class="section-number-5">1.2.0.3</span> Laplacian operator and harmonic forms.</h5>
 <div class="outline-text-5" id="text-1-2-0-3">
 <p>
 The <b>Hodge Laplacian</b> is defined as a endomorphism of \( A^p(M,E) \) given by
@@ -640,8 +646,8 @@ one has \( \tilde\Delta s = 0 \) if and only if \( Ds = \delta s = 0 \).
 
 
 
-<div id="outline-container-orgb352094" class="outline-5">
-<h5 id="orgb352094"><span class="section-number-5">1.2.0.4</span> Riemannian connected bundle.</h5>
+<div id="outline-container-orgf3f731c" class="outline-5">
+<h5 id="orgf3f731c"><span class="section-number-5">1.2.0.4</span> Riemannian connected bundle.</h5>
 <div class="outline-text-5" id="text-1-2-0-4">
 <p>
 The metric vector bundle \( E \) over \( M \) is called a <b>Riemannian-connected bundle</b> if
@@ -718,15 +724,15 @@ Computational in nature.
 </div>
 
 
-<div id="outline-container-org8806f6b" class="outline-3">
-<h3 id="org8806f6b"><span class="section-number-3">1.3</span> The case of \( E = f^* TM' \)</h3>
+<div id="outline-container-orgb1dabe2" class="outline-3">
+<h3 id="orgb1dabe2"><span class="section-number-3">1.3</span> The case of \( E = f^* TM' \)</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 <div id="sec:general-calcul">
 </p>
 </div>
-<div id="outline-container-orgeadf23c" class="outline-4">
-<h4 id="orgeadf23c"><span class="section-number-4">1.3.1</span> Energy functional and tension field</h4>
+<div id="outline-container-org4fcdf4c" class="outline-4">
+<h4 id="org4fcdf4c"><span class="section-number-4">1.3.1</span> Energy functional and tension field</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <p>
 Our interest will be the case of Example <a href="#ex:pullback-tangent">ex:pullback-tangent</a> where \( E =f^*TM'\) for
@@ -795,8 +801,8 @@ f_* \) is harmonic as form in \( A^1(M,f^* TM') \).
 </div>
 </div>
 
-<div id="outline-container-orgf595675" class="outline-4">
-<h4 id="orgf595675"><span class="section-number-4">1.3.2</span> Fundamental form, some results in case of signed curvature</h4>
+<div id="outline-container-org8d78534" class="outline-4">
+<h4 id="org8d78534"><span class="section-number-4">1.3.2</span> Fundamental form, some results in case of signed curvature</h4>
 <div class="outline-text-4" id="text-1-3-2">
 <div class="definition">
 <p>
@@ -863,8 +869,8 @@ M \) and \( M' \) are of definite sign.
 </p>
 </div>
 
-<div id="outline-container-org62a8390" class="outline-5">
-<h5 id="org62a8390"><span class="section-number-5">1.3.2.1</span> Notation.</h5>
+<div id="outline-container-org4f1ecc5" class="outline-5">
+<h5 id="org4f1ecc5"><span class="section-number-5">1.3.2.1</span> Notation.</h5>
 <div class="outline-text-5" id="text-1-3-2-1">
 <p>
 Given a Riemannian manifold \( M \), we will use the following notation:
@@ -913,16 +919,16 @@ planes formed by \( f_*e_i, f_*e_j \), and therefore negative.</li>
 
 
 
-<div id="outline-container-orgd47a8bc" class="outline-3">
-<h3 id="orgd47a8bc"><span class="section-number-3">1.4</span> Example: Riemannian immersion</h3>
+<div id="outline-container-org8a5d9ed" class="outline-3">
+<h3 id="org8a5d9ed"><span class="section-number-3">1.4</span> Example: Riemannian immersion</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 Let \( f: M \longrightarrow M' \) be a Riemannian immersion, i.e. \( Tf \) is injective and \( f^*g' = g \). We will
 see that the fundamental form \( \beta(f) \) that we defined earlier is the same as usual definition in courses of Riemannian geometry.
 </p>
 </div>
-<div id="outline-container-org0016185" class="outline-4">
-<h4 id="org0016185"><span class="section-number-4">1.4.1</span> Second fundamental form.</h4>
+<div id="outline-container-orgf52bc5c" class="outline-4">
+<h4 id="orgf52bc5c"><span class="section-number-4">1.4.1</span> Second fundamental form.</h4>
 <div class="outline-text-4" id="text-1-4-1">
 <p>
 One defines the symmetric (0,2)-tensor \( \sff \) of \( f^*TM' \) as the unique normal vector of \( M \) such that
@@ -1020,8 +1026,8 @@ The immersion \( f \) is said to be <b>minimal</b> if \( \xi \) vanishes identic
 </div>
 </div>
 
-<div id="outline-container-orgb6a0bfe" class="outline-4">
-<h4 id="orgb6a0bfe"><span class="section-number-4">1.4.2</span> The case of signed curvature.</h4>
+<div id="outline-container-orgc35d35c" class="outline-4">
+<h4 id="orgc35d35c"><span class="section-number-4">1.4.2</span> The case of signed curvature.</h4>
 <div class="outline-text-4" id="text-1-4-2">
 <p>
 If \( f: M \longrightarrow M' \) is a Riemannian immersion then the Ricci
@@ -1040,11 +1046,11 @@ Riem}(M')\leq 0 \) and \( r=g^{ij} {\rm Ric}_{ij} <0 \) at one point of \( M \).
 </div>
 </div>
 
-<div id="outline-container-orga763902" class="outline-3">
-<h3 id="orga763902"><span class="section-number-3">1.5</span> Example: Riemannian submersion</h3>
+<div id="outline-container-org0df250e" class="outline-3">
+<h3 id="org0df250e"><span class="section-number-3">1.5</span> Example: Riemannian submersion</h3>
 <div class="outline-text-3" id="text-1-5">
-</div><div id="outline-container-orgc3b7a78" class="outline-4">
-<h4 id="orgc3b7a78"><span class="section-number-4">1.5.1</span> Results of Ehresmann and Hermann.</h4>
+</div><div id="outline-container-org2015732" class="outline-4">
+<h4 id="org2015732"><span class="section-number-4">1.5.1</span> Results of Ehresmann and Hermann.</h4>
 <div class="outline-text-4" id="text-1-5-1">
 <p>
 In this section, the function \( f: M \longrightarrow M' \) will be a Riemannian submersion \( \pi: M \longrightarrow B \), i.e. \( T\pi \) is subjective and \( \pi^*g' = g \). We will
@@ -1225,8 +1231,8 @@ associate to a basic vector field \( X \), it preserves \( \hat g \).
 </div>
 </div>
 
-<div id="outline-container-org0ac83eb" class="outline-4">
-<h4 id="org0ac83eb"><span class="section-number-4">1.5.2</span> Tension fields and harmonic fibrations.</h4>
+<div id="outline-container-orgb3b8169" class="outline-4">
+<h4 id="orgb3b8169"><span class="section-number-4">1.5.2</span> Tension fields and harmonic fibrations.</h4>
 <div class="outline-text-4" id="text-1-5-2">
 <p>
 We will now calculate the tension field of a fibration map \( \pi: M \longrightarrow B \).
@@ -1281,8 +1287,8 @@ A complete Riemannian fibration \( \pi: M \longrightarrow B \) with totally geod
 </div>
 </div>
 
-<div id="outline-container-org3505d05" class="outline-3">
-<h3 id="org3505d05"><span class="section-number-3">1.6</span> Composition of maps</h3>
+<div id="outline-container-org897ba3f" class="outline-3">
+<h3 id="org897ba3f"><span class="section-number-3">1.6</span> Composition of maps</h3>
 <div class="outline-text-3" id="text-1-6">
 <p>
 The following results come from direct computation of the second fundamental form and
@@ -1349,11 +1355,20 @@ and the inverse of a totally geodesic map is totally geodesic.
 
 
 <div class="remark">
-<p>
-It is not true in general that the composition of harmonic maps are harmonic. For example,
+<ol class="org-ol">
+<li>The Proposition says that SFF of composition follows chain rule: the SFF of \( f'\circ f \) is a 2-tensor on \( M \) valued in
+\( TM'' \) is obtained by pushing forward the SFF of \( f \) and pulling back the SFF
+of \( f' \) and then adding the two. In Cartan formalism:
+\[
+    (f'\circ f)_{\alpha i j} = (f'_{\alpha k}(f)\ f_{ki})_j = f'_{\alpha k h} f_{hj}
+   f_{ki} + f'_{\alpha k} f_{kij} = f^* \beta(f') + f'_*\beta(f)
+   \]</li>
+<li>It is not true in general that the composition of harmonic maps are harmonic. For example,
 if one composes the harmonic maps \(\mathbb{R} \longrightarrow
-\mathbb{R}^2: x \mapsto (x,2x) \) and \(  \mathbb{R}^2 \longrightarrow
-\mathbb{R}: (x,y)\mapsto x^2 - y^2 \), the result is \( \mathbb{R}\longrightarrow \mathbb{R}: x \mapsto -3x^2 \),
+   \mathbb{R}^2: x \mapsto (x,2x) \) and \(  \mathbb{R}^2 \longrightarrow
+   \mathbb{R}: (x,y)\mapsto x^2 - y^2 \), the result is \( \mathbb{R}\longrightarrow \mathbb{R}: x \mapsto -3x^2 \),</li>
+</ol>
+<p>
 which is not harmonic.
 </p>
 
@@ -1449,11 +1464,11 @@ M \longrightarrow N\), \( \pi\circ f \) is harmonic if and only if \( \tau(f) \)
 
 
 
-<div id="outline-container-org3b55faf" class="outline-2">
-<h2 id="org3b55faf"><span class="section-number-2">2</span> Nonlinear heat flow: Global equation and existence of harmonic maps.</h2>
+<div id="outline-container-orge33592a" class="outline-2">
+<h2 id="orge33592a"><span class="section-number-2">2</span> Nonlinear heat flow: Global equation and existence of harmonic maps.</h2>
 <div class="outline-text-2" id="text-2">
-</div><div id="outline-container-orge56f960" class="outline-3">
-<h3 id="orge56f960"><span class="section-number-3">2.1</span> Statement of the main results.</h3>
+</div><div id="outline-container-org7094d5f" class="outline-3">
+<h3 id="org7094d5f"><span class="section-number-3">2.1</span> Statement of the main results.</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 We want to prove in the next part existence of harmonic map between manifolds \( M \)
@@ -1524,8 +1539,8 @@ geodesic of \( M' \) in relative homotopy class.
 </div>
 </div>
 
-<div id="outline-container-orgd94674e" class="outline-3">
-<h3 id="orgd94674e"><span class="section-number-3">2.2</span> Strategy of the proof.</h3>
+<div id="outline-container-orgd846535" class="outline-3">
+<h3 id="orgd846535"><span class="section-number-3">2.2</span> Strategy of the proof.</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 In order to have a global frame, we will embed \( M' \) into an Euclidean space \( V \),
@@ -1573,8 +1588,8 @@ long-time solution and the vanishing of its tension field.
 </div>
 
 
-<div id="outline-container-orgcdd778c" class="outline-3">
-<h3 id="orgcdd778c"><span class="section-number-3">2.3</span> Global equation and Uniqueness of nonlinear heat equation.</h3>
+<div id="outline-container-org9d6d690" class="outline-3">
+<h3 id="org9d6d690"><span class="section-number-3">2.3</span> Global equation and Uniqueness of nonlinear heat equation.</h3>
 <div class="outline-text-3" id="text-2-3">
 <div id="thm:global-eq" btit="(Global equation)" class="theorem">
 <p>
@@ -1740,11 +1755,11 @@ O(x^4)  \). So \( \sigma(a,b) = \frac{1}{2}d(a,b)^2 \) has no third-order term.
 </div>
 </div>
 
-<div id="outline-container-org957565f" class="outline-2">
-<h2 id="org957565f"><span class="section-number-2">3</span> A few energy estimates.</h2>
+<div id="outline-container-org1b67162" class="outline-2">
+<h2 id="org1b67162"><span class="section-number-2">3</span> A few energy estimates.</h2>
 <div class="outline-text-2" id="text-3">
-</div><div id="outline-container-org9f38118" class="outline-3">
-<h3 id="org9f38118"><span class="section-number-3">3.1</span> Estimate of density energies</h3>
+</div><div id="outline-container-orgc5a143f" class="outline-3">
+<h3 id="orgc5a143f"><span class="section-number-3">3.1</span> Estimate of density energies</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 We finish this part with a few straightforward computation concerning the <b>potential
@@ -1865,8 +1880,8 @@ t} \right \rangle
 </div>
 </div>
 
-<div id="outline-container-org33ab1a3" class="outline-3">
-<h3 id="org33ab1a3"><span class="section-number-3">3.2</span> Estimate of total energies</h3>
+<div id="outline-container-orgc8a0941" class="outline-3">
+<h3 id="orgc8a0941"><span class="section-number-3">3.2</span> Estimate of total energies</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 We will now work with the total energies, in particular the <b>total potential energy</b> \(
@@ -1968,7 +1983,7 @@ an Euclidean ball \( B \).
 <div id="postamble" class="status">
 <div class='footer'>
 By Tien NGUYEN MANH.<br>
-Last updated 2018-10-02 Tue 17:39. <br>
+Last updated 2020-05-06 Wed 10:40. <br>
 </div>
 </div>
 </body>

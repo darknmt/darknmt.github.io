@@ -1,0 +1,11 @@
+#+SETUPFILE: ../res/mathsetup.org
+#+OPTIONS: toc:1 num:nil
+#+STARTUP: latexpreview
+#+LINK: scan  file:/home/darknmt/Maths/Scan/%s
+#+SELECT_TAGS: public
+#+EXLUDE_TAGS: private  <--- Private tags should not be exported. Modify the above line to change this.
+
+* 2021
+ * Weighted monotonicity theorems and applications to minimal surfaces in hyperbolic space.\\
+   Manh Tien Nguyen \\
+   [[https://arxiv.org/abs/2105.12625][arxiv:2105.12625]]

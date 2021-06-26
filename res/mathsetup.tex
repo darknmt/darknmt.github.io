@@ -1,4 +1,4 @@
-% Created 2017-06-20 Tue 18:05
+% Created 2021-05-04 Tue 03:01
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -14,27 +14,69 @@
 \usepackage{amssymb}
 \usepackage{capt-of}
 \usepackage{hyperref}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
 \usepackage{amsthm}
+\usepackage{amscd,mathtools,geometry,textcomp,xcolor,enumerate,titling,graphicx,subfig}
 \usepackage{tikz-cd}
-\newtheorem{prop-def}[definition]{Proposition-Definition}
-\newtheorem{remark}{Remark}
+\usepackage{tikz}
+\usepackage{svg}
+\usepackage[all]{xy}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{esint,mathpazo,hyperref}
+\usepackage[mathletters]{ucs}
+\usepackage[T1]{fontenc}
+\newtheorem{remark}[theorem]{Remark}
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{conjecture}[theorem]{Conjecture}
-\newtheorem{proposition}{Proposition}[theorem]
+\newtheorem{proposition}{Proposition}
 \newtheorem{problem}{Problem}
 \newtheorem{exampl}{Example}
 \newtheorem{definition}{Definition}
-\author{darknmt}
+\newtheorem{propdef}[definition]{Proposition-Definition}
+\newtheorem{fact}{Fact}
+\newtheorem{assertion}{Assertion}
+\newcommand{\re}{\mathop{\rm Re}\nolimits}
+\newcommand{\im}{\mathop{\rm Im}\nolimits}
+\newcommand{\coker}{\mathop{\rm coker}\nolimits}
+\newcommand{\supp}{\mathop{\rm supp}\nolimits}
+\newcommand{\ord}{\mathop{\rm ord}\nolimits}
+\newcommand{\Spec}{\mathop{\rm Spec}\nolimits}
+\newcommand{\vol}{\mathop{\rm vol}\nolimits}
+\newcommand*{\transp}[2][-3mu]{\ensuremath{\mskip1mu\prescript{\smash{\mathrm t\mkern#1}}{}{\mathstrut#2}}}
+\newcommand{\sff}{\mathop{\rm I\*I}\nolimits}
+\newcommand{\tr}{\mathop{\rm Tr}\nolimits}
+\newcommand{\const}{\mathop{\rm const }\nolimits}
+\newcommand{\lcm}{\mathop{\rm lcm}\nolimits}
+\newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
+\newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
+\newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
+\newcommand{\Enorm}{\mathop{\mathcal{E}_{\rm norm}}\nolimits}
+\newcommand{\Anorm}{\mathop{\mathcal{A}_{\rm norm}}\nolimits}
+\newcommand{\Cl}{\mathop{\rm Cl }\nolimits}
+\newcommand{\Spin}{\mathop{\rm Spin}\nolimits}
+\newcommand{\Pin}{\mathop{\rm Pin}\nolimits}
+\newcommand{\Hom}{\mathop{\rm Hom}\nolimits}
+\newcommand{\End}{\mathop{\rm End}\nolimits}
+\newcommand{\dive}{\mathop{\rm div}\nolimits}
+\DeclareMathOperator{\hess}{Hess}
+\DeclareMathOperator\arsinh{arsinh}
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+\left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+#1 % the function
+\vphantom{\big|} % pretend it's a little taller at normal size
+\right|_{#2} % this is the delimiter
+}}
 \date{\today}
 \title{}
 \hypersetup{
- pdfauthor={darknmt},
+ pdfauthor={},
  pdftitle={},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 25.2.1 (Org mode 9.0.5)}, 
+ pdfcreator={Emacs 27.2 (Org mode 9.0.5)}, 
  pdflang={English}}
 \begin{document}
 

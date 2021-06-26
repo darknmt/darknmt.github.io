@@ -1,13 +1,18 @@
 #+OPTIONS: tex:t H:4 num:t
 # +HTML_MATHJAX: path:"../res/MathJax/MathJax.js" 
-
+#+LATEX_HEADER: \usepackage[a4paper, total={6in, 8in}]{geometry}
 #+LATEX_HEADER: \usepackage{amsthm}
-#+LATEX_HEADER: \usepackage{amsmath,amscd,amssymb,mathtools}
+#+LATEX_HEADER: \usepackage{amscd,mathtools,geometry,textcomp,xcolor,enumerate,titling,graphicx,subfig}
 #+LATEX_HEADER: \usepackage{tikz-cd}
+#+LATEX_HEADER: \usepackage{tikz}
 #+LATEX_HEADER: \usepackage{svg}
 #+LATEX_HEADER: \usepackage[all]{xy}
 #+LATEX_HEADER: \usepackage{pgfplots}
+#+LATEX_HEADER: \pgfplotsset{compat=1.15}
 
+#+LATEX_HEADER: \usepackage{esint,mathpazo,hyperref}
+#+LATEX_HEADER: \usepackage[mathletters]{ucs}
+#+LATEX_HEADER: \usepackage[T1]{fontenc}
 #+BEGIN_COMMENT
 #+LATEX_HEADER: \DeclareMathOperator{\im}{Im}
 #+LATEX_HEADER: \DeclareMathOperator{\supp}{supp}
@@ -15,19 +20,18 @@
 #+LATEX_HEADER: \DeclareMathOperator{\Spec}{Spec}
 #+END_COMMENT
 
-#+LATEX_HEADER: \newtheorem{remark}{Remark}  
 #+LATEX_HEADER: \newtheorem{theorem}{Theorem}
+#+LATEX_HEADER: \newtheorem{remark}[theorem]{Remark}  
 #+LATEX_HEADER: \newtheorem{lemma}[theorem]{Lemma}
-#+LATEX_HEADER: \newtheorem{corollary}{Corollary}[theorem]
+#+LATEX_HEADER: \newtheorem{corollary}[theorem]{Corollary}
 #+LATEX_HEADER: \newtheorem{conjecture}[theorem]{Conjecture} 
-#+LATEX_HEADER: \newtheorem{proposition}{Proposition}[theorem]
+#+LATEX_HEADER: \newtheorem{proposition}[theorem]{Proposition}
 #+LATEX_HEADER: \newtheorem{problem}{Problem} 
-#+LATEX_HEADER: \newtheorem{exampl}{Example} 
-#+LATEX_HEADER: \newtheorem{definition}{Definition} 
-#+LATEX_HEADER: \newtheorem{propdef}[definition]{Proposition-Definition}
+#+LATEX_HEADER: \newtheorem{exampl}[theorem]{Example} 
+#+LATEX_HEADER: \newtheorem{definition}[theorem]{Definition} 
+#+LATEX_HEADER: \newtheorem{propdef}[theorem]{Proposition-Definition}
 #+LATEX_HEADER: \newtheorem{fact}{Fact}
 #+LATEX_HEADER: \newtheorem{assertion}{Assertion}
-
 
 #+LATEX_HEADER:    \newcommand{\re}{\mathop{\rm Re}\nolimits}
 #+LATEX_HEADER:    \newcommand{\im}{\mathop{\rm Im}\nolimits}
@@ -41,13 +45,18 @@
 #+LATEX_HEADER:    \newcommand{\tr}{\mathop{\rm Tr}\nolimits}
 #+LATEX_HEADER:    \newcommand{\const}{\mathop{\rm const }\nolimits}
 #+LATEX_HEADER:    \newcommand{\lcm}{\mathop{\rm lcm}\nolimits}
-#+LATEX_HEADER:    \newcommand{\gcd}{\mathop{\rm gcd}\nolimits}
 #+LATEX_HEADER:    \newcommand{\Ric}{\mathop{\rm Ric}\nolimits}
 #+LATEX_HEADER:    \newcommand{\Riem}{\mathop{\rm Riem}\nolimits}
 #+LATEX_HEADER:    \newcommand{\Enorm}{\mathop{\mathcal{E}_{\rm norm}}\nolimits}
 #+LATEX_HEADER:    \newcommand{\Anorm}{\mathop{\mathcal{A}_{\rm norm}}\nolimits}
-
-
+#+LATEX_HEADER:    \newcommand{\Cl}{\mathop{\rm Cl }\nolimits}
+#+LATEX_HEADER:    \newcommand{\Spin}{\mathop{\rm Spin}\nolimits}
+#+LATEX_HEADER:    \newcommand{\Pin}{\mathop{\rm Pin}\nolimits}
+#+LATEX_HEADER:    \newcommand{\Hom}{\mathop{\rm Hom}\nolimits}
+#+LATEX_HEADER:    \newcommand{\End}{\mathop{\rm End}\nolimits}
+#+LATEX_HEADER:    \newcommand{\dive}{\mathop{\rm div}\nolimits}
+#+LATEX_HEADER:    \DeclareMathOperator{\hess}{Hess}
+#+LATEX_HEADER:    \DeclareMathOperator\arsinh{arsinh}
 #+LATEX_HEADER: \newcommand\restr[2]{{% we make the whole thing an ordinary symbol
 #+LATEX_HEADER:  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
 #+LATEX_HEADER:  #1 % the function

@@ -1,4 +1,9 @@
-Please contact me by the email: 
-#+attr_html: :width 50%
-[[file:../res/email.jpg]]
+*Postal address:*
 
+[[https://geometry.ulb.ac.be/][Service de Géométrie Différentielle]] \\
+CP 218 - [[https://sciences.ulb.be/departement-mathematique][Départment de Mathématique]],\\
+[[https://www.ulb.be/][Université Libre de Bruxelles]],\\
+Boulevard du Triomphe,\\
+B-1050 Bruxelles, Belgique.\\
+
+*Email:* ~nmtien(dot)math(at)gmail.com~
