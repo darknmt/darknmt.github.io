@@ -198,13 +198,19 @@ GameManager.prototype.move = function (direction) {
         if (tile.value == 1 && next) {
           self.moveTile(tile, positions.farthest);
           if (self.relTime) {
+            //if postdoc then gameover
+            if (next.value == 512 || next.value == 1024){this.over=true}  else 
+            { 
             if (next.benefitedFrom != self.relTime) {
+
+            
               next.value *= 2;
               if (next.value > self.maxTile) self.maxTile = next.value;
               if (next.value >= 2048) self.won = true;
               next.benefitedFrom = self.relTime;
               self.karma++;
               moved = true;
+            }
             }
           }
           else {

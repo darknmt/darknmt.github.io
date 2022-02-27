@@ -7,7 +7,7 @@ function update_captions(){
       //"<span style='font-size:11px;display:inline-block;line-height:11px;vertical-align:middle'>Propo-sition</span>",
       "<span style='font-size:11px'>Theorem</span>", 
       "Paper",
-      "<span style='font-size:11px'>Seminar</span>", 
+      //"<span style='font-size:11px'>Seminar</span>", 
       "<span style='font-size:11px'>Conference</span>", "Thesis", 
       "<span style='font-size:smaller'>Postdoc</span>",
       "<span style='font-size:smaller'>Senior Postdoc</span>",  //Because 1 postdoc is impossible.
@@ -23,7 +23,7 @@ function update_captions(){
       //"<span style='font-size:20px;display:inline-block;line-height:20px;vertical-align:middle'>Propo-sition</span>",
       "<span style='font-size:20px'>Theorem</span>",
       "Paper",
-      "<span style='font-size:20px'>Seminar</span>",
+      //"<span style='font-size:20px'>Seminar</span>",
       "<span style='font-size:20px'>Conference</span>", "Thesis",
       "<span style='font-size:smaller'>Postdoc</span>",
       "<span style='font-size:smaller'>Senior Postdoc</span>",
@@ -34,7 +34,7 @@ function update_captions(){
 }
 
 var span_en;
-
+/*
 function create_switch_en(){
   span_en = document.createElement('div');
   span_en.style.position = "absolute";
@@ -74,7 +74,7 @@ function create_switch_zh(){
   var container = document.querySelector('.container');
   container.insertBefore(span_zh, container.firstChild);
 }
-
+*/
 function play_in_english(){
   update_captions();
   window.addEventListener('resize', update_captions, true);
@@ -89,13 +89,13 @@ function play_in_english(){
   if(titleElem.textContent != "Love") titleElem.textContent = game_title;
   document.querySelector('.restart-button').textContent = "Drop out";
   document.querySelector('.retry-button').textContent = "Try again";
-  document.querySelector('.game-explanation').innerHTML = "<strong class='important'>How to play:</strong> Use your <strong>arrow keys</strong> to move the bricks. When two bricks of the same type touch, they <strong>merge into one!</strong><br>However, your ideas and computations may not always work &mdash; they may produce the sticky <strong>garbage</strong>, which is resistant to moves. Two garbage bricks vanish when they touch. You will stop producing garbage after getting a <strong>Theorem</strong> (except for one more piece to help you eliminate any existing garbage).<br>A <strong>relationship</strong> upgrades any brick it touches for the first time. The brick shows the number of times you have benefited from it. When the 10-sec relationship ends, it will become a <strong>break-up</strong> (or garbage if you didn't use it), which downgrades bricks until you have repaid the benefits.";
+  document.querySelector('.game-explanation').innerHTML = "<strong class='important'>How to play:</strong> Use your <strong>arrow keys</strong> to move the bricks. When two bricks of the same type touch, they <strong>merge into one!</strong>.<ul><li>Your ideas and computations may not always work &mdash; they may produce the sticky <strong>garbage</strong>, which is resistant to moves.</li><li>Two garbage bricks vanish when they touch. You will stop producing garbage after getting a <strong>theorem</strong> (except for one more piece to eliminate any existing garbage).</li><li>A <strong>relationship</strong> upgrades any brick it touches for the first time. When the relationship ends, it will become a <strong>break-up</strong> (or garbage if you didn't use it), which downgrades bricks until you have repaid the benefits.</li><li> If a <strong>relationship</strong> touches a <strong>postdoc</strong>, <strong>GAME OVER!</strong></li></ul>";
 
   if(span_en) span_en.parentNode.removeChild(span_en);
   create_switch_zh();
   window.game.storageManager.storage.setItem('lang', 'en');
 }
-
+/*
 var zh_var = null;
 
 function determine_zh_var(){
@@ -172,3 +172,4 @@ function play_in_chinese(){
   create_switch_en();
   window.game.storageManager.storage.setItem('lang', 'zh');
 }
+*/
