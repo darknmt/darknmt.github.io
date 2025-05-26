@@ -1,6 +1,5 @@
-#+OPTIONS: tex:t H:4 num:t
 # +HTML_MATHJAX: path:"../res/MathJax/MathJax.js" 
-#+LATEX_HEADER: \usepackage[a4paper, total={6in, 8in}]{geometry}
+# +LATEX_HEADER: \usepackage[a4paper, total={6in, 8in}]{geometry}
 #+LATEX_HEADER: \usepackage{amsthm}
 #+LATEX_HEADER: \usepackage{amscd,mathtools,geometry,textcomp,xcolor,enumerate,titling,graphicx,subfig}
 #+LATEX_HEADER: \usepackage{tikz-cd}
@@ -30,8 +29,19 @@
 #+LATEX_HEADER: \newtheorem{exampl}[theorem]{Example} 
 #+LATEX_HEADER: \newtheorem{definition}[theorem]{Definition} 
 #+LATEX_HEADER: \newtheorem{propdef}[theorem]{Proposition-Definition}
+#+LATEX_HEADER: \newtheorem{question}[theorem]{Question}
 #+LATEX_HEADER: \newtheorem{fact}{Fact}
 #+LATEX_HEADER: \newtheorem{assertion}{Assertion}
+#+LATEX_HEADER: \usepackage[framemethod=TikZ]{mdframed}
+ 
+#+LATEX_HEADER:\surroundwithmdframed[
+#+LATEX_HEADER:   topline=false,
+#+LATEX_HEADER:   rightline=false,
+#+LATEX_HEADER:   bottomline=false,
+#+LATEX_HEADER:   leftmargin=\parindent,
+#+LATEX_HEADER:   skipabove=\medskipamount,
+#+LATEX_HEADER:   skipbelow=\medskipamount
+#+LATEX_HEADER:]{proof}
 
 #+LATEX_HEADER:    \newcommand{\re}{\mathop{\rm Re}\nolimits}
 #+LATEX_HEADER:    \newcommand{\im}{\mathop{\rm Im}\nolimits}
@@ -42,6 +52,9 @@
 #+LATEX_HEADER:    \newcommand{\vol}{\mathop{\rm vol}\nolimits}
 #+LATEX_HEADER:    \newcommand*{\transp}[2][-3mu]{\ensuremath{\mskip1mu\prescript{\smash{\mathrm t\mkern#1}}{}{\mathstrut#2}}}
 #+LATEX_HEADER:    \newcommand{\sff}{\mathop{\rm I\*I}\nolimits}
+#+LATEX_HEADER:    \newcommand{\fff}{\mathop{\rm \*I}\nolimits}
+#+LATEX_HEADER:    \newcommand{\tff}{\mathop{\rm I\*I\*I}\nolimits}
+
 #+LATEX_HEADER:    \newcommand{\tr}{\mathop{\rm Tr}\nolimits}
 #+LATEX_HEADER:    \newcommand{\const}{\mathop{\rm const }\nolimits}
 #+LATEX_HEADER:    \newcommand{\lcm}{\mathop{\rm lcm}\nolimits}
@@ -55,6 +68,11 @@
 #+LATEX_HEADER:    \newcommand{\Hom}{\mathop{\rm Hom}\nolimits}
 #+LATEX_HEADER:    \newcommand{\End}{\mathop{\rm End}\nolimits}
 #+LATEX_HEADER:    \newcommand{\dive}{\mathop{\rm div}\nolimits}
+#+LATEX_HEADER:    \newcommand{\ConvHull}{\mathop{\rm ConvHull}\nolimits}
+#+LATEX_HEADER:    \newcommand{\VisHull}{\mathop{\rm VisHull}\nolimits}
+#+LATEX_HEADER:    \newcommand{\Vis}{\mathop{\rm Vis}\nolimits}
+#+LATEX_HEADER:    \newcommand{\ind}{\mathop{\rm index}\nolimits}
+#+LATEX_HEADER:    \newcommand{\mres}{\mathbin{\vrule height 1.6ex depth 0pt width 0.13ex\vrule height 0.13ex depth 0pt width 1.3ex}}
 #+LATEX_HEADER:    \DeclareMathOperator{\hess}{Hess}
 #+LATEX_HEADER:    \DeclareMathOperator\arsinh{arsinh}
 #+LATEX_HEADER: \newcommand\restr[2]{{% we make the whole thing an ordinary symbol
